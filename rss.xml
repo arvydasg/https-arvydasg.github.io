@@ -4,39 +4,13 @@
 <title><![CDATA[My Static Org Blog]]></title>
 <description><![CDATA[My Static Org Blog]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Sun, 22 Jan 2023 20:06:23 +0200</lastBuildDate>
-<item>
-  <title><![CDATA[testauskas]]></title>
-  <description><![CDATA[
-
-
-<div id="outline-container-orga6fa0f2" class="outline-2">
-<h2 id="orga6fa0f2">sdgfgdfgfddf</h2>
-<div class="outline-text-2" id="text-orga6fa0f2">
-<p>
-Cia yra tiesiog testas.
-</p>
-</div>
-</div>
-<div class="taglist"></div>]]></description>
-  <link>https://arvydasg.github.io/2023-01-22-testauskas.html</link>
-  <guid>https://arvydasg.github.io/2023-01-22-testauskas.html</guid>
-  <pubDate>Sun, 22 Jan 2023 19:28:00 +0200</pubDate>
-</item>
+<lastBuildDate>Sun, 22 Jan 2023 21:17:17 +0200</lastBuildDate>
 <item>
   <title><![CDATA[Uses]]></title>
   <description><![CDATA[
 <p>
-Some of the stuff that I use. Laptop, text editor, languages etc.
+Stuff that I use. Laptop, text editor, languages etc.
 </p>
-<div id="outline-container-orgabc5966" class="outline-2">
-<h2 id="orgabc5966">usinu ta ir ana blet</h2>
-<div class="outline-text-2" id="text-orgabc5966">
-<p>
-o ka tu usini mazuti
-</p>
-</div>
-</div>
 <div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-emacs.html">Emacs</a> </div>]]></description>
   <category><![CDATA[Emacs]]></category>
   <link>https://arvydasg.github.io/uses.html</link>
@@ -58,7 +32,7 @@ Some of my projects here with github links.
   <title><![CDATA[About]]></title>
   <description><![CDATA[
 <p>
-Add CV's here both in English and Lithuanian. Encrypt idk.
+Add CV's here both in English and Lithuanian. Encrypt?
 </p>
 <div class="taglist"></div>]]></description>
   <link>https://arvydasg.github.io/about.html</link>
