@@ -10,7 +10,10 @@
 <title>Create a Blog with Emacs</title>
 <meta name="author" content="Arvydas Gasparavicius">
 <meta name="referrer" content="no-referrer">
-<link href= "static/bastibe.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1">
+<link href= "static/style.css" rel="stylesheet" type="text/css" />
+<script src="static/lightbox.js"></script>
+<script src="static/auto-render.min.js"></script>
 <link rel="icon" href="static/ag.ico"></head>
 <body>
 <div id="preamble" class="status"><div class="header">
@@ -22,9 +25,9 @@
 <div id="content">
 <div class="post-date">21 Jan 2023</div><h1 class="post-title"><a href="https://arvydasg.github.io/2023-01-21-create-emacs-blog.html">Create a Blog with Emacs</a></h1>
 
-<div id="outline-container-org14126df" class="outline-2">
-<h2 id="org14126df">Intro</h2>
-<div class="outline-text-2" id="text-org14126df">
+<div id="outline-container-org39e393a" class="outline-2">
+<h2 id="org39e393a">Intro</h2>
+<div class="outline-text-2" id="text-org39e393a">
 <p>
 If you are using Emacs and org mode as much as me, you must have come up to
 <code>org-publish</code> feature that allows you to convert org files to html.
@@ -38,17 +41,17 @@ static website ;)
 </div>
 </div>
 
-<div id="outline-container-org3b82b8c" class="outline-2">
-<h2 id="org3b82b8c">Create Emacs blog the "System Crafters" way</h2>
-<div class="outline-text-2" id="text-org3b82b8c">
+<div id="outline-container-org5bf2f10" class="outline-2">
+<h2 id="org5bf2f10">Create Emacs blog the "System Crafters" way</h2>
+<div class="outline-text-2" id="text-org5bf2f10">
 <p>
 Best description in a video format is <a href="https://www.youtube.com/watch?v=AfkrzFodoNw&amp;t=1612s&amp;ab_channel=SystemCrafters">here</a>. To later publish it
 automaticall,y video <a href="https://www.youtube.com/watch?v=za99DwdZEyg&amp;t=996s&amp;ab_channel=SystemCrafters">here</a>.
 </p>
 </div>
-<div id="outline-container-org21cd74e" class="outline-3">
-<h3 id="org21cd74e">Choose a directory</h3>
-<div class="outline-text-3" id="text-org21cd74e">
+<div id="outline-container-org6fc2bb0" class="outline-3">
+<h3 id="org6fc2bb0">Choose a directory</h3>
+<div class="outline-text-3" id="text-org6fc2bb0">
 <p>
 You will place your org files inside content/ directory.
 </p>
@@ -60,13 +63,13 @@ You will place your org files inside content/ directory.
 </div>
 </div>
 
-<div id="outline-container-orge2fcba5" class="outline-3">
-<h3 id="orge2fcba5">Creating the build script</h3>
-<div class="outline-text-3" id="text-orge2fcba5">
+<div id="outline-container-org857a234" class="outline-3">
+<h3 id="org857a234">Creating the build script</h3>
+<div class="outline-text-3" id="text-org857a234">
 </div>
-<div id="outline-container-orgfeeac29" class="outline-4">
-<h4 id="orgfeeac29">build-site.el</h4>
-<div class="outline-text-4" id="text-orgfeeac29">
+<div id="outline-container-orgb6ee31e" class="outline-4">
+<h4 id="orgb6ee31e">build-site.el</h4>
+<div class="outline-text-4" id="text-orgb6ee31e">
 <p>
 Inside of this directory:
 </p>
@@ -108,9 +111,9 @@ variable using M-x describe-variable for a lot more information!
 </div>
 </div>
 
-<div id="outline-container-orgfb97d74" class="outline-4">
-<h4 id="orgfb97d74">build.sh</h4>
-<div class="outline-text-4" id="text-orgfb97d74">
+<div id="outline-container-orgb9fd636" class="outline-4">
+<h4 id="orgb9fd636">build.sh</h4>
+<div class="outline-text-4" id="text-orgb9fd636">
 <p>
 We also need a shell script that can run our Emacs Lisp script. We'll call that build.sh:
 </p>
@@ -145,9 +148,9 @@ html in public folder, open it in the browser.
 </div>
 </div>
 
-<div id="outline-container-org9846584" class="outline-3">
-<h3 id="org9846584">Improving the HTML output</h3>
-<div class="outline-text-3" id="text-org9846584">
+<div id="outline-container-org0cf76e3" class="outline-3">
+<h3 id="org0cf76e3">Improving the HTML output</h3>
+<div class="outline-text-3" id="text-org0cf76e3">
 <p>
 There are a few things about the page we just looked at that I'd like
 to change to make the output look a bit cleaner:
@@ -184,9 +187,9 @@ better result.
 </div>
 </div>
 </div>
-<div id="outline-container-org043f378" class="outline-3">
-<h3 id="org043f378">Improving the page styling</h3>
-<div class="outline-text-3" id="text-org043f378">
+<div id="outline-container-orgf37e288" class="outline-3">
+<h3 id="orgf37e288">Improving the page styling</h3>
+<div class="outline-text-3" id="text-orgf37e288">
 <p>
 At this point have a decent basic output for our website, but what if we want to make it look a little bit nicer?
 </p>
@@ -207,9 +210,9 @@ By setting a few more variables, we can use a nice stylesheet to give our site a
 </div>
 </div>
 </div>
-<div id="outline-container-org033ef07" class="outline-3">
-<h3 id="org033ef07">Generating pages with code blocks</h3>
-<div class="outline-text-3" id="text-org033ef07">
+<div id="outline-container-org8099812" class="outline-3">
+<h3 id="org8099812">Generating pages with code blocks</h3>
+<div class="outline-text-3" id="text-org8099812">
 <p>
 So far we've been looking at a very simple example page that doesn't really have much on it. What happens when we try to generate a more elaborate Org file containing code blocks?
 </p>
@@ -263,9 +266,9 @@ In a future video I'll show you how to convert your Emacs color theme to a CSS f
 </div>
 </div>
 
-<div id="outline-container-orga4e50c4" class="outline-3">
-<h3 id="orga4e50c4">Linking between pages</h3>
-<div class="outline-text-3" id="text-orga4e50c4">
+<div id="outline-container-org4929f68" class="outline-3">
+<h3 id="org4929f68">Linking between pages</h3>
+<div class="outline-text-3" id="text-org4929f68">
 <p>
 One last thing I want to show you is how you can create links between
 pages on your site. Let's open up index.org and create a link to the
@@ -296,9 +299,9 @@ It will also complain when a linked file can't be found!
 </div>
 </div>
 
-<div id="outline-container-org7904981" class="outline-3">
-<h3 id="org7904981">The final build script</h3>
-<div class="outline-text-3" id="text-org7904981">
+<div id="outline-container-orgbdbac7e" class="outline-3">
+<h3 id="orgbdbac7e">The final build script</h3>
+<div class="outline-text-3" id="text-orgbdbac7e">
 <p>
 Here is the final form of our <code>build-site.el</code> script:
 </p>
@@ -354,12 +357,20 @@ Here is the final form of our <code>build-site.el</code> script:
 </div>
 </div>
 
-<div id="outline-container-org18b3f96" class="outline-2">
-<h2 id="org18b3f96">Create Emacs blog with "org-static-blog" package</h2>
-<div class="outline-text-2" id="text-org18b3f96">
+<div id="outline-container-orgc017dda" class="outline-2">
+<h2 id="orgc017dda">Create Emacs blog with "org-static-blog" package</h2>
+<div class="outline-text-2" id="text-orgc017dda">
 <p>
 "<a href="https://github.com/bastibe/org-static-blog">org-static-blog</a>" is a package written by <a href="https://github.com/bastibe">Bastian Bechtold</a> is a static site
-generator. Install the plugin, you get all it's functions. They are
+generator. I believe it started <a href="https://bastibe.de/2013-11-13-blogging-with-emacs.html">here</a>.
+</p>
+
+<p>
+My current Emacs configuration for "<a href="https://github.com/arvydasg/.emacs.d/blob/master/recipes/org-static-blog.el">org-static-blog</a>" is here.
+</p>
+
+<p>
+Install the plugin, you get all it's functions. They are
 clearly documented within the plugin, it's super easy to read the
 instructions and understand what it does. One command
 <code>org-static-blog-create-new-post</code> creates new post, then
@@ -379,12 +390,39 @@ stored, it also automatically generates tag's file and then in the
 browser I can filter my posts.. It is easy to generate header and
 footer. Yes, I like it more than the first method.
 </p>
+
+<p>
+If you would like to add an image to your org file, try this:
+</p>
+
+<p>
+<code>C-c C-x C-v</code> to display the image in your org file.
+<code>C-c C-l</code> then choose <code>file</code> option to insert the image.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">#+attr_html: <span style="color: #fe8019;">:width</span> 1200px
+#+ATTR_ORG: <span style="color: #fe8019;">:width</span> 600
+<span style="color: #fe8019;">[</span><span style="color: #cc241d;">[</span>file:~/Dropbox/src/arvydasg.github.io/static/images/emacs.png<span style="color: #cc241d;">]</span><span style="color: #fe8019;">]</span>
+</pre>
+</div>
+
+
+<figure id="orgcc7cb9d">
+<img src="file:///home/arvydas/Dropbox/src/arvydasg.github.io/static/images/org-static-blog.png" alt="org-static-blog.png" width="1200px">
+
+</figure>
+
+<p>
+lightbox.js that you can see in this page source helps with the lightbox effect that you get when clicking on
+the image.
+</p>
 </div>
 </div>
 
-<div id="outline-container-org4a56718" class="outline-2">
-<h2 id="org4a56718">Conclusion</h2>
-<div class="outline-text-2" id="text-org4a56718">
+<div id="outline-container-org8e6ea80" class="outline-2">
+<h2 id="org8e6ea80">Conclusion</h2>
+<div class="outline-text-2" id="text-org8e6ea80">
 <p>
 Now the only thing is left - I have to blog. :) I am thinking why
 don't I whenever learning a new thing write such little summary about
@@ -397,6 +435,6 @@ learn it is to teach it" they say.
 <div id="postamble" class="status"><div id="archive">
   <a href="./archive.html">Other posts</a>
 </div>
-<center><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" href="https://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">bastibe.de</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://bastibe.de" property="cc:attributionName" rel="cc:attributionURL">Bastian Bechtold</a> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</center></div>
+<center><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" href="https://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">arvydasg.github.io</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://https://arvydasg.github.io/" property="cc:attributionName" rel="cc:attributionURL">Arvydas Gasparavicius</a> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</center></div>
 </body>
 </html>
