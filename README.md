@@ -1,1 +1,0 @@
-# https-arvydasg.github.io
