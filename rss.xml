@@ -4,7 +4,7 @@
 <title><![CDATA[My Static Org Blog]]></title>
 <description><![CDATA[My Static Org Blog]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Sun, 22 Jan 2023 20:00:03 +0200</lastBuildDate>
+<lastBuildDate>Sun, 22 Jan 2023 20:03:37 +0200</lastBuildDate>
 <item>
   <title><![CDATA[testauskas]]></title>
   <description><![CDATA[
@@ -69,9 +69,9 @@ Add CV's here both in English and Lithuanian. Encrypt idk.
   <title><![CDATA[Create a Blog with Emacs]]></title>
   <description><![CDATA[
 
-<div id="outline-container-org39e393a" class="outline-2">
-<h2 id="org39e393a">Intro</h2>
-<div class="outline-text-2" id="text-org39e393a">
+<div id="outline-container-orgd6565d0" class="outline-2">
+<h2 id="orgd6565d0">Intro</h2>
+<div class="outline-text-2" id="text-orgd6565d0">
 <p>
 If you are using Emacs and org mode as much as me, you must have come up to
 <code>org-publish</code> feature that allows you to convert org files to html.
@@ -85,17 +85,17 @@ static website ;)
 </div>
 </div>
 
-<div id="outline-container-org5bf2f10" class="outline-2">
-<h2 id="org5bf2f10">Create Emacs blog the "System Crafters" way</h2>
-<div class="outline-text-2" id="text-org5bf2f10">
+<div id="outline-container-orgcda4181" class="outline-2">
+<h2 id="orgcda4181">Create Emacs blog the "System Crafters" way</h2>
+<div class="outline-text-2" id="text-orgcda4181">
 <p>
 Best description in a video format is <a href="https://www.youtube.com/watch?v=AfkrzFodoNw&amp;t=1612s&amp;ab_channel=SystemCrafters">here</a>. To later publish it
 automaticall,y video <a href="https://www.youtube.com/watch?v=za99DwdZEyg&amp;t=996s&amp;ab_channel=SystemCrafters">here</a>.
 </p>
 </div>
-<div id="outline-container-org6fc2bb0" class="outline-3">
-<h3 id="org6fc2bb0">Choose a directory</h3>
-<div class="outline-text-3" id="text-org6fc2bb0">
+<div id="outline-container-orgf0bc7be" class="outline-3">
+<h3 id="orgf0bc7be">Choose a directory</h3>
+<div class="outline-text-3" id="text-orgf0bc7be">
 <p>
 You will place your org files inside content/ directory.
 </p>
@@ -107,13 +107,13 @@ You will place your org files inside content/ directory.
 </div>
 </div>
 
-<div id="outline-container-org857a234" class="outline-3">
-<h3 id="org857a234">Creating the build script</h3>
-<div class="outline-text-3" id="text-org857a234">
+<div id="outline-container-org69761ea" class="outline-3">
+<h3 id="org69761ea">Creating the build script</h3>
+<div class="outline-text-3" id="text-org69761ea">
 </div>
-<div id="outline-container-orgb6ee31e" class="outline-4">
-<h4 id="orgb6ee31e">build-site.el</h4>
-<div class="outline-text-4" id="text-orgb6ee31e">
+<div id="outline-container-org25b8b55" class="outline-4">
+<h4 id="org25b8b55">build-site.el</h4>
+<div class="outline-text-4" id="text-org25b8b55">
 <p>
 Inside of this directory:
 </p>
@@ -155,9 +155,9 @@ variable using M-x describe-variable for a lot more information!
 </div>
 </div>
 
-<div id="outline-container-orgb9fd636" class="outline-4">
-<h4 id="orgb9fd636">build.sh</h4>
-<div class="outline-text-4" id="text-orgb9fd636">
+<div id="outline-container-org41858d6" class="outline-4">
+<h4 id="org41858d6">build.sh</h4>
+<div class="outline-text-4" id="text-org41858d6">
 <p>
 We also need a shell script that can run our Emacs Lisp script. We'll call that build.sh:
 </p>
@@ -192,9 +192,9 @@ html in public folder, open it in the browser.
 </div>
 </div>
 
-<div id="outline-container-org0cf76e3" class="outline-3">
-<h3 id="org0cf76e3">Improving the HTML output</h3>
-<div class="outline-text-3" id="text-org0cf76e3">
+<div id="outline-container-org61d5f9f" class="outline-3">
+<h3 id="org61d5f9f">Improving the HTML output</h3>
+<div class="outline-text-3" id="text-org61d5f9f">
 <p>
 There are a few things about the page we just looked at that I'd like
 to change to make the output look a bit cleaner:
@@ -231,9 +231,9 @@ better result.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf37e288" class="outline-3">
-<h3 id="orgf37e288">Improving the page styling</h3>
-<div class="outline-text-3" id="text-orgf37e288">
+<div id="outline-container-orgf584b12" class="outline-3">
+<h3 id="orgf584b12">Improving the page styling</h3>
+<div class="outline-text-3" id="text-orgf584b12">
 <p>
 At this point have a decent basic output for our website, but what if we want to make it look a little bit nicer?
 </p>
@@ -254,9 +254,9 @@ By setting a few more variables, we can use a nice stylesheet to give our site a
 </div>
 </div>
 </div>
-<div id="outline-container-org8099812" class="outline-3">
-<h3 id="org8099812">Generating pages with code blocks</h3>
-<div class="outline-text-3" id="text-org8099812">
+<div id="outline-container-org8498502" class="outline-3">
+<h3 id="org8498502">Generating pages with code blocks</h3>
+<div class="outline-text-3" id="text-org8498502">
 <p>
 So far we've been looking at a very simple example page that doesn't really have much on it. What happens when we try to generate a more elaborate Org file containing code blocks?
 </p>
@@ -310,9 +310,9 @@ In a future video I'll show you how to convert your Emacs color theme to a CSS f
 </div>
 </div>
 
-<div id="outline-container-org4929f68" class="outline-3">
-<h3 id="org4929f68">Linking between pages</h3>
-<div class="outline-text-3" id="text-org4929f68">
+<div id="outline-container-org9775bd0" class="outline-3">
+<h3 id="org9775bd0">Linking between pages</h3>
+<div class="outline-text-3" id="text-org9775bd0">
 <p>
 One last thing I want to show you is how you can create links between
 pages on your site. Let's open up index.org and create a link to the
@@ -343,9 +343,9 @@ It will also complain when a linked file can't be found!
 </div>
 </div>
 
-<div id="outline-container-orgbdbac7e" class="outline-3">
-<h3 id="orgbdbac7e">The final build script</h3>
-<div class="outline-text-3" id="text-orgbdbac7e">
+<div id="outline-container-org19bda27" class="outline-3">
+<h3 id="org19bda27">The final build script</h3>
+<div class="outline-text-3" id="text-org19bda27">
 <p>
 Here is the final form of our <code>build-site.el</code> script:
 </p>
@@ -401,9 +401,9 @@ Here is the final form of our <code>build-site.el</code> script:
 </div>
 </div>
 
-<div id="outline-container-orgc017dda" class="outline-2">
-<h2 id="orgc017dda">Create Emacs blog with "org-static-blog" package</h2>
-<div class="outline-text-2" id="text-orgc017dda">
+<div id="outline-container-org052bb17" class="outline-2">
+<h2 id="org052bb17">Create Emacs blog with "org-static-blog" package</h2>
+<div class="outline-text-2" id="text-org052bb17">
 <p>
 "<a href="https://github.com/bastibe/org-static-blog">org-static-blog</a>" is a package written by <a href="https://github.com/bastibe">Bastian Bechtold</a> is a static site
 generator. I believe it started <a href="https://bastibe.de/2013-11-13-blogging-with-emacs.html">here</a>.
@@ -452,8 +452,8 @@ If you would like to add an image to your org file, try this:
 </div>
 
 
-<figure id="orgcc7cb9d">
-<img src="file:///home/arvydas/Dropbox/src/arvydasg.github.io/static/images/org-static-blog.png" alt="org-static-blog.png" width="1200px">
+<figure id="org9f020f2">
+<img src="./static/images/org-static-blog.png" alt="org-static-blog.png" width="1200px">
 
 </figure>
 
@@ -464,9 +464,9 @@ the image.
 </div>
 </div>
 
-<div id="outline-container-org8e6ea80" class="outline-2">
-<h2 id="org8e6ea80">Conclusion</h2>
-<div class="outline-text-2" id="text-org8e6ea80">
+<div id="outline-container-org8b545f9" class="outline-2">
+<h2 id="org8b545f9">Conclusion</h2>
+<div class="outline-text-2" id="text-org8b545f9">
 <p>
 Now the only thing is left - I have to blog. :) I am thinking why
 don't I whenever learning a new thing write such little summary about
