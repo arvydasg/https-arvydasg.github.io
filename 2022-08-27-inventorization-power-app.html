@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://arvydasg.github.io/rss.xml"
+      title="RSS feed for https://arvydasg.github.io/">
+<title>Inventorization Power App</title>
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1">
+<link href= "static/style.css" rel="stylesheet" type="text/css" />
+<script src="static/lightbox.js"></script>
+<script src="static/auto-render.min.js"></script>
+<link rel="icon" href="static/ag.ico"></head>
+<body>
+<div id="preamble" class="status"><div class="header">
+  <a href="https://arvydasg.github.io/">Arvydas Scratchpad on the Internet</a>
+  <div class="sitelinks">
+    <a href="https://github.com/arvydasg">Github</a> | <a href="https://arvydasg.github.io/projects.html">Projects</a> | <a href="https://arvydasg.github.io/uses.html">Uses</a> | <a href="https://arvydasg.github.io/about.html">About</a>
+  </div>
+</div></div>
+<div id="content">
+<div class="post-date">23 Jan 2023</div><h1 class="post-title"><a href="https://arvydasg.github.io/2022-08-27-inventorization-power-app.html">Inventorization Power App</a></h1>
+
+<figure id="org2f9c012">
+<img src="./static/images/powerapp.png" alt="powerapp.png" width="1200px">
+
+</figure>
+
+<div id="outline-container-org7b5c3bd" class="outline-2">
+<h2 id="org7b5c3bd">The problem</h2>
+<div class="outline-text-2" id="text-org7b5c3bd">
+<p>
+Many odd, but necessary jobs appear in PKC on a daily basis. This
+Saturday I have worked on Inventorization solution for PKC. Since I
+got the responsibility to manage invoices of purchased IT items, I
+also noticed that there is no system whatsoever of where/when/how many
+things arrive to our IT office or how many we hand out to users or
+production or how many are being sent to other sites.
+</p>
+
+<p>
+And then once in a while someone from Finances asks me: Who this
+computer belongs to? What inv.nr sticker does it have? Who has this
+phone, what are the phone numbers that PKC uses and SO ON.
+</p>
+
+<p>
+I basically never have the answers, because there was no
+documentation.
+</p>
+
+<p>
+Even a simple excel sheet with all this info written would have been
+better than a stack of paper sheets with user info that PKC collected
+over 5 or so years.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org176d038" class="outline-2">
+<h2 id="org176d038">The solution</h2>
+<div class="outline-text-2" id="text-org176d038">
+</div>
+<div id="outline-container-org04e5bad" class="outline-3">
+<h3 id="org04e5bad">First attempt</h3>
+<div class="outline-text-3" id="text-org04e5bad">
+<p>
+I have been looking for a solution for almost a week. My first attempt
+was this - <a href="https://www.youtube.com/watch?v=0PtnVvrVTCY&amp;ab_channel=TheMobileSalesEngineer">Check in / out Google Sheets</a>, it worked quite well, I was
+about to present it to my Manager, but after 50scans I have figured
+out that it’s a paid app. Nope. On a closer look - it was quite
+clumpsy to use.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga0aacba" class="outline-3">
+<h3 id="orga0aacba">Second attempt</h3>
+<div class="outline-text-3" id="text-orga0aacba">
+<p>
+Okay, now I thought I found what I need. This excelent example that
+uses forms - <a href="https://www.youtube.com/watch?v=cdqEB78cHpw&amp;ab_channel=RandyBennett">Google QR Inventory</a> I was sure will solve my problem, I
+just need to tweak it a little. I tweaked, I weaked.. 3 days, I keep
+tweaking.. it is too confusing with all these sheets that get
+created… + I keep updating my excel data sheet and I don’t see how
+this could work.. I need another solution.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc80d5e2" class="outline-3">
+<h3 id="orgc80d5e2">Third and Final attempt</h3>
+<div class="outline-text-3" id="text-orgc80d5e2">
+</div>
+<div id="outline-container-orgc3249d5" class="outline-4">
+<h4 id="orgc3249d5">License</h4>
+<div class="outline-text-4" id="text-orgc3249d5">
+<p>
+I am glad I did not give up after all this work. I was obsessed with a
+solution, no matter where I went I was googling about this
+inventorization app. I then found <a href="https://developers.google.com/apps-script">Google Apps Script</a> thought okay,
+maybe I should look into that… then I came up <a href="https://powerapps.microsoft.com/en-us/">Microsoft Power Apps</a> and
+thought wait, is it included in my E3 license? Went to PKC o365 admin
+panel, found myself, assigned a the proper license and I can now start
+playing with Power apps.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7b285ab" class="outline-4">
+<h4 id="org7b285ab">Extremely Intuitive</h4>
+<div class="outline-text-4" id="text-org7b285ab">
+<p>
+I was shocked that one can create web and phone apps with Wordpress
+like interface. Many videos on YouTube of how it can be done… I have
+found one that resembled my case and followed it. Build Cloud
+Inventory Management App using power apps and SharePoint. 24hours of
+intense tweaking and redoing and I have finally made my app. It was
+quite simple and intuitive…
+</p>
+
+<ul class="org-ul">
+<li>Now I can SCAN new inv.nr as well as serial numbers and add new
+items AS SOON AS they arrive to our office.</li>
+<li>Whenever me or my colleague is handing out equipment from IT
+warehouse - they will scan the TTR number and fill out the info to
+whom, when the item will be given.</li>
+<li>All of the information will be tracked in google list and achieved
+on our IT Team sharepoint, so whenever anyone from financses or my
+manager needs to review anything - they will be able to comfortably.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga483d94" class="outline-2">
+<h2 id="orga483d94">Conclusion</h2>
+<div class="outline-text-2" id="text-orga483d94">
+<p>
+At first I wasn’t so happy doing “IT warehouse worker” job… after all
+I am here to get IT experience, now warehouse experience… BUT I found
+a way how I can implement my knowledge and my drive for learning new
+things and automating/making processes easier in this situation. I
+will continue doing the inventorization part of work, but now with an
+app that I have made. :)
+</p>
+</div>
+</div>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">Pkc</a> </div></div>
+<div id="postamble" class="status"><div id="archive">
+  <a href="./archive.html">Other posts</a>
+</div></div>
+</body>
+</html>

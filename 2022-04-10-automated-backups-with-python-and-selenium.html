@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://arvydasg.github.io/rss.xml"
+      title="RSS feed for https://arvydasg.github.io/">
+<title>Automated backups with Python and Selenium</title>
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1">
+<link href= "static/style.css" rel="stylesheet" type="text/css" />
+<script src="static/lightbox.js"></script>
+<script src="static/auto-render.min.js"></script>
+<link rel="icon" href="static/ag.ico"></head>
+<body>
+<div id="preamble" class="status"><div class="header">
+  <a href="https://arvydasg.github.io/">Arvydas Scratchpad on the Internet</a>
+  <div class="sitelinks">
+    <a href="https://github.com/arvydasg">Github</a> | <a href="https://arvydasg.github.io/projects.html">Projects</a> | <a href="https://arvydasg.github.io/uses.html">Uses</a> | <a href="https://arvydasg.github.io/about.html">About</a>
+  </div>
+</div></div>
+<div id="content">
+<div class="post-date">10 Apr 2022</div><h1 class="post-title"><a href="https://arvydasg.github.io/2022-04-10-automated-backups-with-python-and-selenium.html">Automated backups with Python and Selenium</a></h1>
+
+<figure id="org09aee3b">
+<img src="./static/images/ivbackups.png" alt="ivbackups.png" width="1200px">
+
+</figure>
+
+<div id="outline-container-org136e5cf" class="outline-2">
+<h2 id="org136e5cf">About the project</h2>
+<div class="outline-text-2" id="text-org136e5cf">
+<p>
+Since I don’t trust/understand automated backups of websites and I
+would rather backup things myself, know where they are stored and what
+is actually “backuped”, I create backups for my client sites manually.
+The procedure is:
+</p>
+
+<p>
+Open website Add username Add password .click Log in to client’s
+hosting provider’s dashboard panel .click on the needed server .click
+on directadmin panel .click on “atsargines kopijos” .click on
+“generuoti atsargine kopija” .close tab .click log out REPEAT 3x times
+</p>
+
+<p>
+10 clicks at least
+</p>
+
+<p>
+And I prefer to have at least one backup for every client at least
+once or twice a week for general maintenance.
+</p>
+
+<p>
+When I want to do more modifications during the week, I like to make
+backups more often. Same 10 click procedure every time…
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9558a12" class="outline-2">
+<h2 id="org9558a12">My idea</h2>
+<div class="outline-text-2" id="text-org9558a12">
+<p>
+Since I have decided I want to slowly move away from Wordpress sites
+(the work itself is meh, drag and drop interfaces, have to learn php
+(when i prefer JS or Python), the competition is enormous (50
+developers for one job), I don’t get to type nothing, losing my EMACS
+skills..) to learn more of real programming. Learn what you like the
+most, not what is needed most, right? And after half a year or so I
+realized that I prefer coding instead of drag and drop WordPress
+website building.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf11c3a9" class="outline-2">
+<h2 id="orgf11c3a9">Solution</h2>
+<div class="outline-text-2" id="text-orgf11c3a9">
+<p>
+For a while now I have been thinking how cool it would be to automate
+some tasks. A year ago that is why I started to learn coding, so I can
+automate boring tasks!
+</p>
+
+<p>
+So why not use Python to automate the process described above? It
+should be quite simple, right?
+</p>
+
+<p>
+After a looooong period of not touching text editors, I installed
+emacs, configured it to my liking once again (my muscle memory
+surprises me).
+</p>
+
+<p>
+I then found out about selenium and it can be used to interact with
+websites.
+</p>
+
+<p>
+First I installed it and configured by watching some YouTube videos
+and when it finally didn’t work out as expected I directed all of my
+attention to the official docs -
+<a href="https://selenium-python.readthedocs.io/getting-started.html">https://selenium-python.readthedocs.io/getting-started.html</a>
+</p>
+
+<p>
+Then I insalled python venv to organize my packages better? But I
+already had them installed in my whole system, so kind of not needed I
+guess, but good to remember from the Django times and to know for the
+future.
+</p>
+
+<p>
+Got a correct chrome driver. In my version it was - version
+96.0.4664.45
+</p>
+
+<p>
+Any deprecation errors were fixed by this -
+<a href="https://stackoverflow.com/questions/69875125/find-element-by-commands-are-deprecated-in-selenium">https://stackoverflow.com/questions/69875125/find-element-by-commands-are-deprecated-in-selenium</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbcfeafb" class="outline-2">
+<h2 id="orgbcfeafb">What I learned</h2>
+<div class="outline-text-2" id="text-orgbcfeafb">
+<ul class="org-ul">
+<li>What is a webdriver</li>
+<li>How to open a webpage with Selenium</li>
+<li>How to login into a page with Selenium</li>
+<li>How to scroll with selenium - <a href="https://stackoverflow.com/questions/20986631/how-can-i-scroll-a-web-page-using-selenium-webdriver-in-python">https://stackoverflow.com/questions/20986631/how-can-i-scroll-a-web-page-using-selenium-webdriver-in-python</a></li>
+<li>how to click on all kinds of web elements with Selenium</li>
+<li>how to create a function with Python</li>
+<li>How to return a value from a function with Python</li>
+<li>How to reuse a returned function in another function with Python - <a href="https://www.youtube.com/watch?v=nuNXiEDnM44">https://www.youtube.com/watch?v=nuNXiEDnM44</a> (had to also go back to my CodeInPlace course for a reference)</li>
+<li>How to use an external config file to store values for a python function to use (so the passwords and usernames I use in a function wouldn’t be visible to you ;&gt; ) - <a href="https://www.youtube.com/watch?v=Gdw0-QGq-z0">https://www.youtube.com/watch?v=Gdw0-QGq-z0</a></li>
+<li>How to run multiple python scripts from one one bash file</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc44f7a9" class="outline-2">
+<h2 id="orgc44f7a9">Known bugs</h2>
+<div class="outline-text-2" id="text-orgc44f7a9">
+<p>
+Doesn’t close browser windows after each script runs (not a biggie,
+everything still works, might fix later)
+</p>
+</div>
+</div>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">Pkc</a> </div></div>
+<div id="postamble" class="status"><div id="archive">
+  <a href="./archive.html">Other posts</a>
+</div></div>
+</body>
+</html>

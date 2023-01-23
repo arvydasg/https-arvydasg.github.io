@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://arvydasg.github.io/rss.xml"
+      title="RSS feed for https://arvydasg.github.io/">
+<title>Django Tags</title>
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1">
+<link href= "static/style.css" rel="stylesheet" type="text/css" />
+<script src="static/lightbox.js"></script>
+<script src="static/auto-render.min.js"></script>
+<link rel="icon" href="static/ag.ico"></head>
+<body>
+<div id="preamble" class="status"><div class="header">
+  <a href="https://arvydasg.github.io/">Arvydas Scratchpad on the Internet</a>
+  <div class="sitelinks">
+    <a href="https://github.com/arvydasg">Github</a> | <a href="https://arvydasg.github.io/projects.html">Projects</a> | <a href="https://arvydasg.github.io/uses.html">Uses</a> | <a href="https://arvydasg.github.io/about.html">About</a>
+  </div>
+</div></div>
+<div id="content">
+<div class="post-date">19 Jun 2022</div><h1 class="post-title"><a href="https://arvydasg.github.io/2022-06-19-django-tags.html">Django Tags</a></h1>
+
+<figure id="org36499d9">
+<img src="./static/images/django_tags.png" alt="django_tags.png" width="1200px">
+
+</figure>
+
+<div id="outline-container-org251dfb6" class="outline-2">
+<h2 id="org251dfb6">Intro</h2>
+<div class="outline-text-2" id="text-org251dfb6">
+<p>
+Alright, I will just write all the thoughts in my head for now. I am
+too excited that I managed tags to work on this site!
+</p>
+
+<p>
+The idea was to have page with Blogposts and list all the posts in it.
+Then, when I click on the posts, I wanted to be able to read it. Then,
+if I click on any tags associated with that posts, I wanted to get a
+list of other posts with the same tags.
+</p>
+
+<p>
+This task proved to be a 2 day headache for me, django novice dude. I
+have seen people using djangotaggit package, but dint want myself to
+get involved in it, since I knew that somehow, it should be possible
+to create this functionality by django itself.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org88e566e" class="outline-2">
+<h2 id="org88e566e">Body</h2>
+<div class="outline-text-2" id="text-org88e566e">
+<p>
+I am not even sure what part of code I should share here.. I want to
+share all the steps that took me to reach the result, but that would
+just be a too long post and this blog is not even finished yet, so
+yeah… let me just share a key piece.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fb4934;">def</span> <span style="color: #b8bb26;">tag</span><span style="color: #fe8019;">(</span>request, pk_test<span style="color: #fe8019;">)</span>:
+  <span style="color: #83a598;">tag</span> = Tag.objects.get<span style="color: #fe8019;">(</span><span style="color: #fe8019;">id</span>=pk_test<span style="color: #fe8019;">)</span>
+  <span style="color: #928374;"># </span><span style="color: #928374;">postauskai = Blog_post.objects.filter(tags__name='emacs')</span>
+  postauskai = tag.blog_post_set.<span style="color: #fe8019;">all</span><span style="color: #fe8019;">()</span>
+  context = <span style="color: #fe8019;">{</span><span style="color: #b8bb26;">'tag'</span>: tag, <span style="color: #b8bb26;">'postauskai'</span>: postauskai<span style="color: #fe8019;">}</span>
+
+  <span style="color: #fb4934;">return</span> render<span style="color: #fe8019;">(</span>request, <span style="color: #b8bb26;">'base/tag.html'</span>, context<span style="color: #fe8019;">)</span>
+</pre>
+</div>
+
+<p>
+This, above, is my final result. First of all, this piece:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #83a598;">postauskai</span> = Blog_post.objects.<span style="color: #fe8019;">filter</span><span style="color: #fe8019;">(</span>tags__name=<span style="color: #b8bb26;">'emacs'</span><span style="color: #fe8019;">)</span>
+</pre>
+</div>
+
+<p>
+After a day of fiddling, using this line I have finally managed to
+output SOMETHING into the tag.html template. Now I could filter by
+tag. Was super happy about it. Learned that I can put as many things
+in the context are as I want, as this video -Rendering Data to
+Templates | Template Tags | Django (3.0) Crash Course Tutorials (pt 8)
+has proved it to be possible.
+</p>
+
+<p>
+Then I skimmed though another video of his in this playlist and
+noticed that he is doing something very similar that I am trying to
+achive. He wants to output all the orders of a single customer. Well,
+that is exaclty what I want to do. Output all the posts of a single
+tag. Digging through a few of his videos I have noticed him using
+_setDatabase Model Queries | Django (3.0) Crash Course Tutorials (pt
+7).That was it. It basically queries the childer on the thingie? Not
+sure exactly how it works and what it does, but I knew this is the
+thing for me right when I saw it.
+</p>
+
+<p>
+I used it and vuolia. The posts that have a certain tag appeared
+inside that tags page. AMAZING!!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd3e09b5" class="outline-2">
+<h2 id="orgd3e09b5">Final config</h2>
+<div class="outline-text-2" id="text-orgd3e09b5">
+<p>
+I then had to step back and think how to make a link to that specific
+blog post. This worked.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fe8019;">{</span>% extends <span style="color: #b8bb26;">'app/main.html'</span> %<span style="color: #fe8019;">}</span>
+
+<span style="color: #fe8019;">{</span>% block content %<span style="color: #fe8019;">}</span>
+    &lt;h1&gt;<span style="color: #fe8019;">{</span><span style="color: #cc241d;">{</span>tag.name<span style="color: #cc241d;">}</span><span style="color: #fe8019;">}</span>&lt;/h1&gt;
+    &lt;hr/&gt;
+    <span style="color: #fe8019;">{</span>% <span style="color: #fb4934;">for</span> x <span style="color: #fb4934;">in</span> postauskai %<span style="color: #fe8019;">}</span>
+        &lt;p&gt;<span style="color: #fe8019;">{</span><span style="color: #cc241d;">{</span>x.created|date:<span style="color: #b8bb26;">'Y-m-d'</span><span style="color: #cc241d;">}</span><span style="color: #fe8019;">}</span> - &lt;a <span style="color: #83a598;">href</span>=<span style="color: #b8bb26;">"{% url 'blog_post' x.id %}"</span>&gt;<span style="color: #fe8019;">{</span><span style="color: #cc241d;">{</span>x.title<span style="color: #cc241d;">}</span><span style="color: #fe8019;">}</span>&lt;/a&gt;&lt;/p&gt;
+    <span style="color: #fe8019;">{</span>% endfor %<span style="color: #fe8019;">}</span>
+<span style="color: #fe8019;">{</span>% endblock content %<span style="color: #fe8019;">}</span>
+</pre>
+</div>
+
+<p>
+AMAZING!! I am done and I can not believe I did it. Link to Github project.
+</p>
+</div>
+</div>
+<div class="taglist"></div></div>
+<div id="postamble" class="status"><div id="archive">
+  <a href="./archive.html">Other posts</a>
+</div></div>
+</body>
+</html>
