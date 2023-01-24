@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://arvydasg.github.io/rss.xml"
+      title="RSS feed for https://arvydasg.github.io/">
+<title>Black Box Machine Learning</title>
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1">
+<link href= "static/style.css" rel="stylesheet" type="text/css" />
+<script src="static/lightbox.js"></script>
+<script src="static/auto-render.min.js"></script>
+<link rel="icon" href="static/ag.ico"></head>
+<body>
+<div id="preamble" class="status"><div class="header">
+  <a href="https://arvydasg.github.io/">Arvydas Scratchpad on the Internet</a>
+  <div class="sitelinks">
+    <a href="https://github.com/arvydasg">Github</a> | <a href="https://arvydasg.github.io/projects.html">Projects</a> | <a href="https://arvydasg.github.io/uses.html">Uses</a> | <a href="https://arvydasg.github.io/about.html">About</a>
+  </div>
+</div></div>
+<div id="content">
+<div class="post-date">16 Mar 2021</div><h1 class="post-title"><a href="https://arvydasg.github.io/2021-03-16-black-box-machine-learning.html">Black Box Machine Learning</a></h1>
+
+<div id="outline-container-orgc3b5df5" class="outline-2">
+<h2 id="orgc3b5df5">Classification algorithms</h2>
+<div class="outline-text-2" id="text-orgc3b5df5">
+<p>
+There is a lot of classification algorithms available now but it is
+not possible to conclude which one is superior to other. It depends on
+the application and nature of available data set. For example, if the
+classes are linearly separable, the linear classifiers like Logistic
+regression, Fisher’s linear discriminant can outperform sophisticated
+models and vice versa.
+</p>
+</div>
+
+<div id="outline-container-org606cf25" class="outline-3">
+<h3 id="org606cf25">Decision Tree</h3>
+<div class="outline-text-3" id="text-org606cf25">
+
+<figure id="orgc8b7d59">
+<img src="./static/images/decision-tree.png" alt="decision-tree.png" width="1200px">
+
+</figure>
+
+<p>
+Decision tree builds classification or regression models in the form
+of a tree structure. It utilizes an if-then rule set. The rules are
+learned sequentially using the training data one at a time. Each time
+a rule is learned, the tuples covered by the rules are removed. This
+process is continued on the training set until meeting a termination
+condition.
+</p>
+
+<p>
+The tree is constructed in a top-down recursive divide-and-conquer
+manner. All the attributes should be categorical. Otherwise, they
+should be discretized in advance? Attributes in the top of the tree
+have more impact towards in the classification and they are identified
+using the information gain concept.
+</p>
+
+<p>
+A decision tree can be easily over-fitted generating too many branches
+and may reflect anomalies due to noise or outliers. An over-fitted
+model has a very poor performance on the unseen data even though it
+gives an impressive performance on training data.
+</p>
+
+<p>
+This can be avoided by pre-pruning which halts tree construction early
+or post-pruning which removes branches from the fully grown tree.
+What?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfb1f456" class="outline-3">
+<h3 id="orgfb1f456">Naive Bayes</h3>
+<div class="outline-text-3" id="text-orgfb1f456">
+<p>
+Naive Bayes is a probabilistic classifier inspired by the Bayes
+theorem under a simple assumption which is the attributes are
+conditionally independent.
+</p>
+
+
+<figure id="org02514cf">
+<img src="./static/images/naive-bayes-formula.png" alt="naive-bayes-formula.png" width="1200px">
+
+</figure>
+
+<p>
+Naive Bayes is a very simple algorithm to implement and good results
+have obtained in most cases. It can be easily scalable to larger
+datasets since it takes linear time, rather than by expensive
+iterative approximation as used for many other types of classifiers.
+</p>
+
+<p>
+Naive Bayes can suffer from a problem called the zero probability
+problem. When the conditional probability is zero for a particular
+attribute, it fails to give a valid prediction. This needs to be fixed
+explicitly using a Laplacian estimator?.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1de49ec" class="outline-3">
+<h3 id="org1de49ec">Artificial Neuraul Networks</h3>
+<div class="outline-text-3" id="text-org1de49ec">
+<p>
+Artificial Neural Network is a set of connected input/output units
+where each connection has a weight associated. During the learning
+phase, the network learns by adjusting the weights so as to be able to
+predict the correct class label of the input tuples.
+</p>
+
+<p>
+There are many network architectures available:
+</p>
+
+<ul class="org-ul">
+<li>Feed-forward</li>
+
+<li>Convolutional</li>
+
+<li>Recurrent</li>
+</ul>
+
+<p>
+There can be multiple hidden layers in the model depending on the
+complexity of the function which is going to be mapped by the model.
+Having more hidden layers will enable to model complex relationships
+such as deep neural networks.
+</p>
+
+<p>
+However, when there are many hidden layers, it takes a lot of time to
+train and adjust wights. The other disadvantage of is the poor
+interpretability of model compared to other models like Decision Trees
+due to the unknown symbolic meaning behind the learned weights.
+</p>
+
+<p>
+But Artificial Neural Networks have performed impressively in most of
+the real world applications. It has high tolerance to noisy data and
+is able to classify untrained patterns. Usually, Artificial Neural
+Networks perform better with continuous-valued inputs and outputs.
+</p>
+
+<p>
+All of the above algorithms are eager learners since they train a
+model in advance to generalize the training data and use it for
+prediction later.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org86d8abf" class="outline-3">
+<h3 id="org86d8abf">k-Nearest Neighbor (KNN)</h3>
+<div class="outline-text-3" id="text-org86d8abf">
+
+<figure id="org3024376">
+<img src="./static/images/k-nearest-neighbors.png" alt="k-nearest-neighbors.png" width="1200px">
+
+</figure>
+
+<p>
+k-Nearest Neighbor is a lazy learning algorithm which stores all
+instances correspond to training data points in n-dimensional space.
+When an unknown discrete data is received, it analyzes the closest k
+number of instances saved (nearest neighbors)and returns the most
+common class as the prediction and for real-valued data it returns the
+mean of k nearest neighbors.
+</p>
+
+<p>
+nice
+</p>
+
+
+<figure id="org705ba97">
+<img src="./static/images/k-nearest-formula.png" alt="k-nearest-formula.png" width="1200px">
+
+</figure>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4cc1833" class="outline-2">
+<h2 id="org4cc1833">Evaluating a classifier</h2>
+<div class="outline-text-2" id="text-org4cc1833">
+<p>
+After training the model the most important part is to evaluate the
+classifier to verify its applicability
+</p>
+</div>
+
+<div id="outline-container-orgf253c7e" class="outline-3">
+<h3 id="orgf253c7e">Holdout method</h3>
+<div class="outline-text-3" id="text-orgf253c7e">
+<p>
+There are several methods exists and the most common method is the
+holdout method. In this method, the given data set is divided into 2
+partitions as test and train 20% and 80% respectively. The train set
+will be used to train the model and the unseen test data(aaaa, unseen
+data, I see now) will be used to test its predictive power.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org15bdbe0" class="outline-3">
+<h3 id="org15bdbe0">Cross-validation</h3>
+<div class="outline-text-3" id="text-org15bdbe0">
+<p>
+Over-fitting is a common problem in machine learning which can occur
+in most models. k-fold cross-validation can be conducted to verify
+that the model is not over-fitted. In this method, the data-set is
+randomly partitioned into k mutually exclusive subsets, each
+approximately equal size and one is kept for testing while others are
+used for training. This process is iterated throughout the whole k
+folds.Sorry what?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd61efa1" class="outline-3">
+<h3 id="orgd61efa1">Precision and Recall</h3>
+<div class="outline-text-3" id="text-orgd61efa1">
+<p>
+Precision is the fraction of relevant instances among the retrieved
+instances, while recall is the fraction of relevant instances that
+have been retrieved over the total amount of relevant instances.
+Precision and Recall are used as a measurement of the
+relevance.Hmmm&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-org049820e" class="outline-3">
+<h3 id="org049820e">ROC curve Receiver Operatning Characteristics</h3>
+<div class="outline-text-3" id="text-org049820e">
+
+<figure id="org4b013d7">
+<img src="./static/images/roc-curve.png" alt="roc-curve.png" width="1200px">
+
+</figure>
+
+<p>
+ROC curve is used for visual comparison of classification models which
+shows the trade-off between the true positive rate and the false
+positive rate. The area under the ROC curve is a measure of the
+accuracy of the model. When a model is closer to the diagonal, it is
+less accurate and the model with perfect accuracy will have an area of
+1.0
+</p>
+
+<p>
+Alright enough machine lern&#x2026;oh wait, there are more things to get
+familiar with in my curriculum.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge348f4a" class="outline-2">
+<h2 id="orge348f4a">SVM (Support Vector Machine)</h2>
+<div class="outline-text-2" id="text-orge348f4a">
+<p>
+<a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47">Link</a>
+</p>
+
+<p>
+Support vector machine is highly preferred by many as it produces
+significant accuracy with less computation power. Support Vector
+Machine can be used for both regression and classification tasks. But,
+it is widely used in classification objectives.
+</p>
+
+<p>
+The objective of the support vector machine algorithm is to find a
+hyperplane in an N-dimensional space(N — the number of features) that
+distinctly classifies the data points.
+</p>
+
+
+<figure id="org58bdce2">
+<img src="./static/images/hyperplanes.png" alt="hyperplanes.png" width="1200px">
+
+</figure>
+
+
+<figure id="orge663030">
+<img src="./static/images/hyperplanes2.png" alt="hyperplanes2.png" width="1200px">
+
+</figure>
+
+<p>
+To separate the two classes of data points, there are many possible
+hyperplanes that could be chosen. Our objective is to find a plane
+that has the maximum margin, i.e the maximum distance between data
+points of both classes. Maximizing the margin distance provides some
+reinforcement so that future data points can be classified with more
+confidence.
+</p>
+</div>
+
+<div id="outline-container-orga7754fa" class="outline-3">
+<h3 id="orga7754fa">Hyperplanes and Support Vectors</h3>
+<div class="outline-text-3" id="text-orga7754fa">
+
+<figure id="orgc5e17cb">
+<img src="./static/images/hyperplane3d.png" alt="hyperplane3d.png" width="1200px">
+
+</figure>
+
+<p>
+Hyperplanes are decision boundaries that help classify the data
+points. Data points falling on either side of the hyperplane can be
+attributed to different classes. Also, the dimension of the hyperplane
+depends upon the number of features. If the number of input features
+is 2, then the hyperplane is just a line. If the number of input
+features is 3, then the hyperplane becomes a two-dimensional plane. It
+becomes difficult to imagine when the number of features exceeds 3.
+</p>
+
+
+<figure id="org4c4b91a">
+<img src="./static/images/support-vectors.png" alt="support-vectors.png" width="1200px">
+
+</figure>
+
+<p>
+Support vectors are data points that are closer to the hyperplane and
+influence the position and orientation of the hyperplane. Using these
+support vectors, we maximize the margin of the classifier. Deleting
+the support vectors will change the position of the hyperplane. These
+are the points that help us build our SVM.
+</p>
+
+
+<figure id="org5eca45d">
+<img src="./static/images/batman-thinking.gif" alt="batman-thinking.gif" width="1200px">
+
+</figure>
+
+<p>
+Cool, that's a first gif on this website. As easy to put it in as an
+image, cool. Don't really use them, but why not, I might start to
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb6f0384" class="outline-3">
+<h3 id="orgb6f0384">Logistic Regression</h3>
+<div class="outline-text-3" id="text-orgb6f0384">
+
+<figure id="org608b80e">
+<img src="./static/images/logistic-regression.png" alt="logistic-regression.png" width="1200px">
+
+</figure>
+
+<p>
+Logistic Regression was used in the biological sciences in early
+twentieth century. It was then used in many social science
+applications. Logistic Regression is used when the dependent
+variable(target) is categorical.
+</p>
+
+<ul class="org-ul">
+<li>To predict whether an email is spam (1) or (0)</li>
+<li>Whether the tumor is malignant (1) or not (0)</li>
+</ul>
+
+<p>
+Logistic regression models the probabilities for classification
+problems with two possible outcomes. It's an extension of the linear
+regression model for classification problems
+</p>
+</div>
+</div>
+
+<div id="outline-container-org094d083" class="outline-3">
+<h3 id="org094d083">K-means Clustering</h3>
+<div class="outline-text-3" id="text-org094d083">
+
+<figure id="org47a7714">
+<img src="./static/images/k-means-clustering.png" alt="k-means-clustering.png" width="1200px">
+
+</figure>
+
+<p>
+K-means clustering is one of the simplest and popular unsupervised
+machine learning algorithms.
+</p>
+
+<p>
+The objective of K-means is simple: group similar data points together
+and discover underlying patterns. To achieve this objective, K-means
+looks for a fixed number (k) of clusters in a dataset.
+</p>
+
+<p>
+A cluster refers to a collection of data points aggregated together
+because of certain similarities.
+</p>
+
+<p>
+You’ll define a target number k, which refers to the number of centroids you need in the dataset. A centroid is the imaginary or real location representing the center of the cluster.
+</p>
+
+<p>
+Every data point is allocated to each of the clusters through reducing
+the in-cluster sum of squares? Hm?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org990fb9e" class="outline-3">
+<h3 id="org990fb9e">k-fold Cross-Validation</h3>
+<div class="outline-text-3" id="text-org990fb9e">
+
+<figure id="orgc47c294">
+<img src="./static/images/k-fold-cross-validation.png" alt="k-fold-cross-validation.png" width="1200px">
+
+</figure>
+
+<p>
+Lots of k's here
+</p>
+
+<p>
+Cross-validation is a statistical method used to estimate the skill of
+machine learning models.
+</p>
+
+<p>
+It is commonly used in applied machine learning to compare and select
+a model for a given predictive modeling problem because it is easy to
+understand, easy to implement, and results in skill estimates that
+generally have a lower bias than other methods.
+</p>
+
+<p>
+Oh, so there are even methods to compare and select a model?!? Why do
+you even need humans for then? Let the machine face a problem, it will
+select the method to solve it and then solve it. Uh, even data
+scientists might become unecessary soon. Overexaggerating of course,
+but damn.
+</p>
+</div>
+</div>
+</div>
+<div class="taglist"></div></div>
+<div id="postamble" class="status"><div id="archive">
+  <a href="./archive.html">Other posts</a>
+</div></div>
+</body>
+</html>

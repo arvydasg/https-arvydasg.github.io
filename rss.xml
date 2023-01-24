@@ -4,7 +4,133 @@
 <title><![CDATA[arvydasg.github.io]]></title>
 <description><![CDATA[arvydasg.github.io]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Mon, 23 Jan 2023 20:59:39 +0200</lastBuildDate>
+<lastBuildDate>Tue, 24 Jan 2023 18:17:15 +0200</lastBuildDate>
+<item>
+  <title><![CDATA[Excel Stuff]]></title>
+  <description><![CDATA[
+
+<figure id="org981017e">
+<img src="./static/images/excel-fun.png" alt="excel-fun.png" width="1200px">
+
+</figure>
+
+<p>
+I would really like to have some actual data to work with, but I can
+not find any that I would 1-know how to read, 2-know how to work with,
+3-would not get frustrated just by looking at csv file full of digits
+and and commas.
+</p>
+
+<p>
+Creating my own dataset just by typing words and numbers in a google
+sheet is possible(and probably I will end up doing that and using what
+I come up with for the next two weeks), but&#x2026; I forgot what I wanted
+to say.
+</p>
+
+<p>
+The thing is, according to my "plan" I am supposed to be learning
+about excel and statistics right now, but for some reason as I watch a
+tutorial or read a book (think stats) I come up to a road block which
+tells me that to continue you need to know how to use python or how to
+use excel. 1-I dont know how to use python and I am supposed to learn
+in in 2 weeks(according to my plan :D) and 2-I dont have excel on my
+computer (need to install in on linux through vine after finding a
+free ISO&#x2026;) and google sheets lacks some functions that I see
+tutorials about&#x2026;
+</p>
+
+<p>
+Again, I don't feel that I am progressing anywhere, I am just looking
+at various ways to get data, learning about various types of data and
+basically finding out ways of how NOT to start learning DS :D But it's
+alright, I'll get therer.
+</p>
+
+<p>
+Lets focus on excel for the rest of today. 16:20
+</p>
+
+<p>
+Filters in excel a quite useful.
+</p>
+
+<p>
+<b>Filters</b> in - <a href="https://www.youtube.com/watch?v=wMlTDXPEjag&amp;t=21s">excel</a> are quite useful. Watching in 1.5x speed just to
+get an idea of what is possible. Totals, nice. Transform your data
+into a table to get an easy totals/averages and so on. You get not
+only filering options but also your forumulas or charts referencing
+the data - they both get updated. Kay, will keep in mind.
+</p>
+
+<p>
+Formulas and Functions by the <a href="https://www.youtube.com/watch?v=Jl0Qk63z2ZY">guy</a> who works at Microsoft :D.
+</p>
+
+<p>
+Been seeing median here and there, so here is a refresher:
+</p>
+
+
+<figure id="org937350b">
+<img src="./static/images/median-math-is-fun.png" alt="median-math-is-fun.png" width="1200px">
+
+</figure>
+
+<p>
+<b>Concatenate</b> - =CONCAT(x1,x2) takes value from one row, then from the
+other one that you selec and separate with comman and puts them
+together in one "langeli".
+</p>
+
+<p>
+<b>If</b> - <code>IF(D13</code>"smile", "yay", "boo") good times Csongor, good times ;) IF
+a field equals to a word "smile", the returned value will be "yay", if
+the field equals to anything else than "smile", returns the value
+"boo".
+</p>
+
+<p>
+<b>Countif</b> - Selecting a range of values and asking the formula to
+calculate how many instances that we have specied are in the given
+range. For example. =COUNTIF(B1:G7, 1) formula presents me with a
+number that tells me how many numbers "1" are in the field that I
+asked to look in.
+</p>
+
+<p>
+<b>Vlookup</b> - things are getting more interesting. So Vlookup looks at the
+table, lest say the table has two values&#x2026; you know, let me just put
+an image rly quick (more vim and html practice on top of that).
+</p>
+
+
+<figure id="orgde1dd85">
+<img src="./static/images/vlookup.png" alt="vlookup.png" width="1200px">
+
+</figure>
+
+<p>
+So the formula that found out the favorite color of ciongibongi is as
+such - =VLOOKUP(D18,D15:E18,2,FALSE)
+</p>
+
+<p>
+<b>Sumif</b> - is a nice function I guess but wont make an example, I am
+aware of it alright.
+</p>
+
+<p>
+p.s. damn it takes a lot of time to write this html document in a
+proper way. I sometimes miss Word document, but sometimes I don't. Vim
+has it's own advantages, but I am new with it so I am a little bit
+slow. Learned how to yank, paste a word or a whole line today.
+</p>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-15-excel-stuff.html</link>
+  <guid>https://arvydasg.github.io/2021-03-15-excel-stuff.html</guid>
+  <pubDate>Tue, 24 Jan 2023 16:51:00 +0200</pubDate>
+</item>
 <item>
   <title><![CDATA[Inventorization Power App]]></title>
   <description><![CDATA[
@@ -1939,6 +2065,882 @@ Link to site - <a href="https://julija.consulting/">https://julija.consulting/</
   <pubDate>Thu, 05 Aug 2021 19:53:00 +0300</pubDate>
 </item>
 <item>
+  <title><![CDATA[Sim Card Back]]></title>
+  <description><![CDATA[
+<p>
+Main reason to sit down and write this because Linux started behaving
+weirdly.. as I open a program (browser for example), it would show
+that it has been opened, but I wouldn't see the window, couldn't
+interract with it.
+</p>
+
+<p>
+It is a first time such thing has happened. I could open anki, could
+open terminal and so on, but not a browser, not a "localbyflywheel" or
+"xampp".
+</p>
+
+<p>
+And so I don't want to wait until tomorrow or for monday to fix this,
+I would like to find a solution now so I can continue watching my
+downloaded tutorials and follow them without any prblems&#x2026;
+</p>
+
+<p>
+Alright so hi again. Will make this quick and perhaps later will edit
+it more.
+</p>
+
+<p>
+The situation now is this - it has been 5 days since I have taken my
+sim-card with an internet from my smartphone and put it inside a flip
+phone that I bought purely for this experiment and
+</p>
+
+<p>
+Honestly I wanted it for a really long time.
+</p>
+
+<p>
+Friday evening, I am sitting at home&#x2026; you know what, instead of
+trying to fix my linux and install arch and all that, why don't I just
+go get some sweet stawberries, sit in the balcony and read a book in
+the sun&#x2026;
+</p>
+
+<p>
+Just came back to the computer after finishing reading the turing
+test&#x2026; it has been a while on my shelf, but probably wasn't the good
+time to read it yet, didnt get much of it.
+</p>
+
+<div id="outline-container-org229236d" class="outline-2">
+<h2 id="org229236d">Thoughts of week without 24/7 internet</h2>
+<div class="outline-text-2" id="text-org229236d">
+<p>
+I loved not being able to take picture of whateve moment I was in, I
+was able to just be in it
+</p>
+
+<p>
+I loved to be forced out of the library to take a break from "coding",
+researching, because I would have never done that by myeself
+</p>
+
+<p>
+I loved being dependent on the internet in the library, if I wanted to
+know something new - I had to go there and connect to the internet.
+</p>
+
+<p>
+I loved the bits of time that I got to do nothing. When I am bored.. I
+would just sit down and look around, or most often I would pick up
+kindle and start reading. Way better than mindless scrolling.
+</p>
+
+<p>
+I loved the time that I had when I came back from the library after
+6pm. I would know okay I have 3-4 hours before I hit the bed, if there
+was nothing urgent to do on my computer, then I would get up and move.
+</p>
+
+<p>
+I loved that I took time to lear someting new.. I mean I would have
+done that otherwise as well, but this time if I have one video that I
+downloaded, I coudnt just skip it and watch a different one
+</p>
+
+<p>
+As soon as I was bored, I had to stick with it, watch it until the end
+and usually I was happy I did that becauce I learned something.
+</p>
+
+<p>
+Same can go with all the things I didnt like. Sometimes yes, I wanted
+to have my phone there to take and share that picture, yes I wanted to
+google an answer to something and yeah sometimes some music would be
+nice..
+</p>
+
+<p>
+I felt like I was back in Nepal Vipassana center&#x2026; only calm moments
+around me&#x2026; not many distractions, mind is no constantly bombarded
+with music, unlimited amount of information at my fingertips 24/7,
+</p>
+
+<p>
+No music to get me distracted, no other kinds of bullshit&#x2026; This kind
+of lifestyle is my preferred actually.
+</p>
+
+<p>
+But since I am not in a Vipassana center, I shouldn't totally restrict
+myself from things.. Balance is everything, right? Why don't I take
+these lessons and observations about myself and apply them
+</p>
+
+<p>
+in my days that are ahead.. I am sure I will be more mindful.
+</p>
+
+<p>
+Everything in moderation&#x2026;
+</p>
+
+<p>
+Last p tag. I will have to end here, going to insert the sim card into
+my smartphone and connect to the interwebs once again, but this time
+more mindful. 21:49
+</p>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-06-04-sim-card-back.html</link>
+  <guid>https://arvydasg.github.io/2021-06-04-sim-card-back.html</guid>
+  <pubDate>Fri, 04 Jun 2021 20:38:00 +0300</pubDate>
+</item>
+<item>
+  <title><![CDATA[Little By Little]]></title>
+  <description><![CDATA[
+<p>
+Just came back to the library after another "desinfection" thing for
+30min, was sitting in the square, sun was shining, was reading the
+Turing paper, eating some ice cream, taking a walk.
+</p>
+
+<p>
+As I was coming back to the library, I saw a guy that was literally
+burned by the sun. I thought&#x2026; Is it better for me to sit in the sun
+10 minutes a day and get an okey tan or sit once for 5 hours a day and
+get a sick tan..
+</p>
+
+<p>
+Maybe its the same with learning to program. Why don't I learn little
+by little daily, same like doing duolingo little by little daily, same
+like learning guitar little by little daily&#x2026;
+</p>
+
+<p>
+At least I would be doing something, learning something little by
+little and progressing little by little. Instead of picking a subject,
+going all in and then burning out.
+</p>
+
+<p>
+Little bit of Js, php, spaninsh, kali, python and etc daily&#x2026;
+</p>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-06-04-little-by-little.html</link>
+  <guid>https://arvydasg.github.io/2021-06-04-little-by-little.html</guid>
+  <pubDate>Fri, 04 Jun 2021 11:30:00 +0300</pubDate>
+</item>
+<item>
+  <title><![CDATA[Modifying Wordpress PHP]]></title>
+  <description><![CDATA[
+<p>
+Since I MUST know what is underneath the hood when learning something
+new, the time has come to see under the Wordpress hood. There is lots
+of linked php files, lots of functions, variables and so on. I want to
+understand how they relate to each other and how to modify the files
+to my liking. Yesterday after doing a little bit of digging I have
+managed to change for some reason not transated woocommerce checkout
+field text, hopefully today I will manage to find how to translate the
+"view card" button. Then my site will be fully translated to
+Lithuanian
+</p>
+
+<p>
+Yep, to get a better idea of whats happening I will watch a video "How
+to customize WooCommerce with PHP snippets". No internet, so I will
+have to focus on it alone. Let's go.
+</p>
+
+<ul class="org-ul">
+<li>Create a child theme.</li>
+<li>Don't edit your theme and your WC plugin files. Next time a theme or
+plugin update comes in - it will wipe all your updates.</li>
+<li>Don't use WP editor, use FTP. If you forget a comma or smth, the
+site will break and its hard to recover. Use FTP. Create BACKUPS of
+the files you're currently modifying.</li>
+<li>Don't verride tempates. take advantage of do<sub>action</sub>. That's the
+beauty of php.</li>
+</ul>
+
+<p>
+Okay so nice, you can add a snippet of code to your funtions.php
+(which resides in the child theme, right? A function for example to
+see the "UNITS SOLD" of an item, or better yet, think of something
+your really need, you can add. ALL the information about he products
+is already sitting in the database. The fields in the DB are already
+created by the WooCommerce guys. What I am doing as a developer is
+just taking the information and displaying to the screen. Cool man&#x2026;
+</p>
+
+<p>
+Nice, so there is a single.php, header.php, footer.php, products.php
+and so on&#x2026; if you make an update to one, the changes will appear to
+the all of the single pages for exmple. And there just soo many files
+that can be to modify&#x2026; not many, relly. So you will always find a
+way to customize something you want.
+</p>
+
+<p>
+What, where in the page, on witch page.
+</p>
+
+<p>
+Instead of copying the old template and changing the php or the html,
+you can simply HOOK your own function from your functions.php file
+without having to change anything in WC template?
+</p>
+
+<p>
+actions - add, filters - modify existing content.
+</p>
+
+<p>
+ALL the possible hooks you can add on specific pages. Check it out.
+Super helpful, was expecting something like this.
+</p>
+
+<p>
+Priority 1 - above the title, priority - 6, under the title.
+</p>
+
+<p>
+So everything is happening in your functions.php. You can add<sub>action</sub>,
+remove<sub>action</sub> (then copy the whole line with priorities and stuff you
+want to remove). Wow, this is exactly what I wanted.
+</p>
+
+<div id="outline-container-org67ca844" class="outline-2">
+<h2 id="org67ca844">Second tutorial</h2>
+<div class="outline-text-2" id="text-org67ca844">
+<p>
+Name of it - Wordpress produtct catalog - how to create a custom
+wordpress catalogue.
+</p>
+
+<p>
+What is sas? Compiling css code to style.css file? huh?
+</p>
+
+<p>
+Dude using bootstartp, it does all the styling for him when he sets
+classes to items? Interesting.
+</p>
+
+<p>
+Loading js into his theme&#x2026; throught functions.php
+</p>
+
+<p>
+33:34 he is using some bootstarp I will assume again? Changing class
+of the item with "mb-4" which means margin-bottom=4; and it magically,
+somehow changes the css of the file.
+</p>
+
+<p>
+These both, especially the last tutorial was amazing&#x2026; I learned so
+much, just need to practice. Jquery, bootstrap, catalogs, creating
+custom stuff with php. The guy is so confided wiht every action of
+his. Should look him up and watch some more tutorials. This is exactly
+how I felt when I was doing the Revit stuff. And why I was so
+confident? Because I spend a lot of time on it and was breaking a lot
+of stuff!!! Yes my brother, break stuff.
+</p>
+
+<p>
+Time to get dressed and go to the library fetch some internet, learn
+some js finally with Steph.
+</p>
+
+<p>
+15:51
+</p>
+
+<p>
+So far no js, because I have been optimizing the client's websites SEO
+(for the first time, learned a lot), then now I found some php files
+that will allow me to edit the damn checkout page and some words that
+did not get translated to Lithuanian, I will manually edit the theme
+files of woocommerce plugin throught FTP, then update the woocomerce
+theme(yes! an update just in time for my testing purposes) and see if
+the changes remained or not.
+</p>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-06-03-modifying-wordpress-php.html</link>
+  <guid>https://arvydasg.github.io/2021-06-03-modifying-wordpress-php.html</guid>
+  <pubDate>Thu, 03 Jun 2021 08:22:00 +0300</pubDate>
+</item>
+<item>
+  <title><![CDATA[Confused Internet Linux]]></title>
+  <description><![CDATA[
+<p>
+Hey look at me, once again typing in vim on Linux without any plugins.
+Writing all the html tags by hand.
+</p>
+
+<div id="outline-container-org265b214" class="outline-2">
+<h2 id="org265b214">Confused</h2>
+<div class="outline-text-2" id="text-org265b214">
+<p>
+So, my current interests are: Kali, js, php, vim, linux shell, python.
+</p>
+
+<p>
+Seems like every day I find something more intersting than I learned
+was studying before. Because of the internet situation - I started to
+read more. Finally opened the humble bundle thingy, found some
+interesting books, about shell, python and so on&#x2026; If I was using
+linux until now and would not have changed to windows, I would be
+quite good in both Linux and vim by now I think. So my question still
+exists&#x2026; should I do things little by little&#x2026; many things at the
+same time but spending little time to each or take only JAVASCRIPT
+from now on ant put my 100% effort into it. Leaving it as that for
+now..
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1b9e290" class="outline-2">
+<h2 id="org1b9e290">Internet</h2>
+<div class="outline-text-2" id="text-org1b9e290">
+<p>
+Today its evening of Wednesday. Since monday I have been without
+internet on my phone, meaning - no internet at home as well. But I
+stil had to study and do the ecommerce website for the sausage people,
+so every day I would spend in the library just 10min on bike from me.
+So far its going good, the only thing I am worried about is my bike
+getting stolen and the heavy laptop that I have to carry with me all
+the way there and back. But that is okay, the time in the library is
+worth it. I spend 0 time wasting my time there doing random things or
+waching youtube. I know that from 11:00 to 11:30 and from 15:00 to
+15:30 - is the time when the room I am staying in has to be
+ventilated. What that means is that I am forced to get up and take a
+break. If not it, I doubt that I would take breaks. I love them so
+far. I go the the very heart of my city, lie on the bench in the sun
+and read a book. I would never do that if I stayed the whole day in my
+appartment. Also during one of the breaks I am forced to eat or go to
+the gym&#x2026;
+</p>
+
+<p>
+I feel that having breaks is important, I experience it myself, so
+when the week is over and I am back with the internet, I will know how
+to use it more mindfully.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbb0276d" class="outline-2">
+<h2 id="orgbb0276d">Linux</h2>
+<div class="outline-text-2" id="text-orgbb0276d">
+<p>
+Again I got this feeling of my computer being dirty with all the dual
+boot windows and ubuntu, so I decided to install Linux solo and maybe
+run a virtual box of windows when I need to use Lightroom to edit my
+pictures and so on. Struggling a little wiht it once a gain, but the
+muscle memory helps me. I need to get some addons for vim, I would
+like to start reading manuals for vim and shell commands, get better
+to know them&#x2026; would like to work with tiling window manager, like
+dwm, but on a clean slate.. something like arch maybe. Now on ubuntu I
+can not get it working properly, there are some gliches when I change
+between the tabs in dwm and yeah&#x2026; just having all that "bloat".. it
+better wouldnt be there. VIM man&#x2026; ctrl+z command that I got used to
+when in Windows now is messing up my vim experience. I press it when I
+want to undo something and my whole document is gone, gg :)
+</p>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-06-02-confused-internet-linux.html</link>
+  <guid>https://arvydasg.github.io/2021-06-02-confused-internet-linux.html</guid>
+  <pubDate>Wed, 02 Jun 2021 20:31:00 +0300</pubDate>
+</item>
+<item>
+  <title><![CDATA[JavaScript Crypto Busyness]]></title>
+  <description><![CDATA[
+<p>
+Okay, so as the title indicates, I will talk about 3 things.
+JavaScript, Crypto and Busyness(being busy).
+</p>
+
+<div id="outline-container-orgacbb7f0" class="outline-2">
+<h2 id="orgacbb7f0">Javascript</h2>
+<div class="outline-text-2" id="text-orgacbb7f0">
+<p>
+Today is the day I decided to start looking into JavaScript
+programming language. I feel a certain aversion towards it, I imagine
+that I can do exact same things with python as with JavaScript, so I
+don't really have to learn it, I should just stick with Python&#x2026; BUT,
+I later realized, that come on man, learn Javascript, its on every
+"web dev roadmap", later you will have to learn raact, because
+everyone is using it, and Lithuania job adds require that as well.
+Both use Javascript, so might as well learn it. Put the php aside,
+focus on your thrird language - Javascript.
+</p>
+
+<p>
+As I am writing this I just realized that the majority of my time
+learning programming so far I spend time making decisions. Or thinking
+aobut the decisions I have previously made, or adjusting to those
+decisions.
+</p>
+
+<p>
+Just because I didnt have anything mentoring me or guiding me "How to
+use programming so you could work remotely from the mountains or from
+the beach while travelling in a van and make a living off it". I
+started as a "machine learning guy" with Andrew Ng coursera course.
+Then I got interested in Linux a lot. Then I thought I will do some
+data science and use python a lot. Then I got an offer to build an
+eccomerce site and changed my attention to web development, which I am
+fousing on these days. I think starting off programming as a Machine
+learning engineer would be a quite big thing to chew on, I relize now
+that me getting down a few levels is a good idea and starting with the
+webdev path is a good choice. It helps me to understand the whole
+programming type of lifestyle.
+</p>
+
+<p>
+I start seeeing that all these fields that I tried dipping my toes in
+using similar kind of langauges even thought they are named
+differently. Now, learning Javascript, I can skip throught many
+beginning tutorials, because I have heard about the "variables,
+functions, etc" material before, in machine learnign and python
+courses that I took. So that is good news for me. I just glanced at an
+email I got with ecommerce shop examples and lost my train of thought.
+Choo choo&#x2026; on to the next topic.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb83cadc" class="outline-2">
+<h2 id="orgb83cadc">Crypto</h2>
+<div class="outline-text-2" id="text-orgb83cadc">
+<p>
+So, today Julyte decided to buy crypto currencty, I thought about it
+as well, it might be an intersting thing to get involved, overlooking
+all the possible dangers. To help her a little with It I watched this
+video. It is so far first and only video I have wached about crypto
+currency. I heard one podcast before and thought that all this is not
+really form me right now, I am too busy learning programming to get
+involved in something like this.this video
+</p>
+
+<p>
+After watching a video I made a summary of the talking points and
+realized that there are a lof of things to consider when getting into
+all this crypto thing. Especially about security.. Hackers are
+constantly trying to get into your wallet, trying to get into your
+prefered gates that you use to buy crypto, wallets.. dangers are
+everywhere and you are alone in this, you can not really call
+customers service and ask for help. You are your own bank and you are
+responsible for its safety. I might give it a try one day, just
+curious how it works. Will do it with litle amounts, with all the
+notebooks and stuff.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org735bf14" class="outline-2">
+<h2 id="org735bf14">Busyness</h2>
+<div class="outline-text-2" id="text-org735bf14">
+<p>
+Quite a strange title, I know. It is just a direct translation from
+Lithuanian. Uzimtumas means Busyness. There is a goverment institution
+that is making sure the unemployed people stay busy. So today I got a
+call from them, because I am unemployed at the moment, explained about
+my situation, that I am learning to program for a few monhts now and
+that I am building an eccomemrce site and so on.. she seemed okay wiht
+my answer, and after I asked her if there are any courses provided by
+the country for people like me, she advised me to read this article.
+In it, the sitution of a girl, who finished a certain course story is
+being told, how she can not find a job and she is being pressed by the
+government to find a job, otherwise she will have to return the
+tuition fees and so on&#x2026;
+</p>
+
+<p>
+Not sure why she shared it with me, but I am not taking any such
+courses and will continue learning by myself. I already see the
+progress and I know way more things than I did when I started. Its
+cool to see yourself progress.
+</p>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-05-25-javascript-crypto-busyness.html</link>
+  <guid>https://arvydasg.github.io/2021-05-25-javascript-crypto-busyness.html</guid>
+  <pubDate>Tue, 25 May 2021 15:47:00 +0300</pubDate>
+</item>
+<item>
+  <title><![CDATA[Renaming Files With Python]]></title>
+  <description><![CDATA[
+<p>
+Dude, I just renamed like 30 files wiht a single button click. Python
+is amazing. Programming is amazing. This is exactly why I started
+learning how to program.. to first of all aid me wiht tasks in my
+everyday life, then help me financially in the future and allow me the
+freedom to travel.
+</p>
+
+<p>
+This is great, my first simple, but useful task completed :)
+</p>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-05-21-renaming-files-with-python.html</link>
+  <guid>https://arvydasg.github.io/2021-05-21-renaming-files-with-python.html</guid>
+  <pubDate>Fri, 21 May 2021 20:19:00 +0300</pubDate>
+</item>
+<item>
+  <title><![CDATA[Python In Browser]]></title>
+  <description><![CDATA[
+<p>
+Ok let me think out real quick. I have got around 10 python scripts
+that I would like to share to my website for people to interract. Part
+of the scrips will require only to enter a number and view the result.
+Others will require to upload files for the script to be ran.. There
+will be some sort of communication between the user and the python
+program in the website.
+</p>
+
+<p>
+I think it would be cool to do that so I could show my projets to friends and family members.
+</p>
+
+<p>
+So far I have seen many tools for simialr tasks. Something that starts with B.. django and flask were mentioned I think, some other frameworks or how to call them.
+</p>
+
+<p>
+Just have to see which one works with the most basic code in my now php website and then upload the rest.
+</p>
+
+<p>
+09:30
+</p>
+
+<p>
+Been doing some python exercises form Code in Place and I came up to
+<a href="https://www.w3schools.com/python/">w3schools</a> with a hope to find an explanation how to work with
+functions inside other functions, reuse their returned information and
+so on. (that would be really useful for me when working wiht images).
+So I came up to this python interpreter I can say? It runs the code
+that w3schools asks us to run, BUT if I put my own code - it doesn't
+execute.
+</p>
+
+
+<figure id="orgaa5d09e">
+<img src="./static/images/pythonexecute.png" alt="pythonexecute.png" width="1200px">
+
+</figure>
+
+<p>
+So, if w3schools cant make it work properly, like.. I am thinking
+now.. make a browser have all the functions that python has&#x2026;? Is it
+even possible? Well, definitely not for me, not for now. I will stick
+to making a blog wiht all the cool functions that I learned so I can
+execute them anywhere, from anyones computer just by looking up on my
+website.
+</p>
+
+<p>
+19:19
+</p>
+
+<p>
+Wrote the same question again - running python script in the browser.
+Opened like 10-15 links, will watch them all and see if I find
+something suitable for myself. If not - I will just upload the code
+and that's it.
+</p>
+
+<ul class="org-ul">
+<li>Brython - aims to replace Javascript for web scripting. It
+allows you to directly use Python Scripts on a webpage to handle
+DOM (Document Object Model) elements and events, all using our
+favorite language Python.</li>
+<li>Flask - deploying python script as a flash app to google app
+engine. Looks promising, user gets to put his input, then
+getting the result in an html page. Sounds good to me, but is it
+free tho? But first let me finish checking the other 15 opened
+solutions.</li>
+<li>Python anywhere - not free</li>
+<li>Anvil - seems free</li>
+<li>cgitb" library?</li>
+<li>Trinket is a python interpreter for a website. Also an option?
+Works when chaning inches to feet, but when I tried to run an
+image editing script, it told me that SimpleImage can not be
+imported. Upsy daisy.</li>
+</ul>
+
+<p>
+Okay, most likely I will not try to get any interpreters or apps to
+run my scripts on my website. Placing just the code itself will
+suffice for now and when I learn little bit more about python django,
+flask and stuff like this, I will come back to this post and use the
+methods tht I found to host and use my scripts online. By that time I
+will probably have some coool scripts :p Looking forward to that.
+Okay, bye for now. Going to do some web dev stuff :)
+</p>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-python.html">Python</a> </div>]]></description>
+  <category><![CDATA[Python]]></category>
+  <link>https://arvydasg.github.io/2021-05-17-python-in-browser.html</link>
+  <guid>https://arvydasg.github.io/2021-05-17-python-in-browser.html</guid>
+  <pubDate>Mon, 17 May 2021 07:11:00 +0300</pubDate>
+</item>
+<item>
+  <title><![CDATA[Focus on What's Important]]></title>
+  <description><![CDATA[
+<p>
+Okay so before I start fixing this page to be more asthetic and all, I
+have to dump out some thoughts.
+</p>
+
+<p>
+I have just listened to "What I'd Do to Become A Web Developer in 6
+months" by a guy named Chris. I can relate to his story and his way of
+thinking.
+</p>
+
+<p>
+After hearing what he has to say I realized that we also had similar
+goals in mind. I am aiming to become a "programmer" at the end
+of 2021. I will run out of my savings at that time and I'll either go
+drive a forklift or I will be paid to program cool stuff.
+</p>
+
+<p>
+But the problem is I realized was that.. yes.. just like I hate biting
+an enormous 5 layer burger, the same way I am attempting to bite this
+goal&#x2026; I open my mouth way too much, trying to get hold of many
+comepletely new things to me (python, wordpress, php, php, css, linux,
+vim, ftp, terminals, local and live servers, vscode and all that
+stuff&#x2026;
+</p>
+
+<p>
+YES. All of this is going to be necessary to me one day, all of this
+is super interesting to me and I can't get this mindset of "know how
+everything works" out of my head.
+</p>
+
+<p>
+My learning process would look like this - I want to make a website
+for myself. Okay, what do I need? I need a domain name, I need a
+hosting provider I need some php and css background, I need to know
+how to manage my servers admin panel, maybe I should build it with
+wordpress, so then I need to learn that and then php would be useful
+as well&#x2026; I start learning all those things first, getting wayyy off
+my original goal of just simply building a website. Of course, I learn
+a lot by following such a messy path, some information even get's
+stuck in my head, like for example I am now comfortably using vim and
+its commands, I have integrated hmtl addon so I don't have to manually
+type the php tags like I did back in the day. So jumping from place to
+place is a useful way of learning, BUT it doesn't give me any sense of
+achievement&#x2026; To reach my goal of building a simple website I will
+learn all these skills&#x2026; but that process will be endless because
+there is always something to learn. I will be chasing something and
+not actually use my skills. (up until now it was going good with this
+story but now I have to jump, cuz I lost my train of thought.)
+</p>
+
+<p>
+Okay, so my realization - I have a limited amount of time. I have to
+use it to learn skills that will allow me o workd remotely and I will
+enjoy such work. After checking some job ads in Lithuania, a lot of
+the positions are available for junior positions. I think it would be
+a good idea for me to work for someone first before doing freelancing.
+Many jobs requiring hmtl, css, js, php, wordpress&#x2026; not so many
+requiring python.
+</p>
+
+<p>
+Right now I am heavily invested in learing python, doing a Stanford
+course that I love and I am using a lof of hours of the day for it.
+Then after I do php/css stuff and lastly some php. I feel like if I
+dedicate lest say 4 hours to python, then 3 to css stuff and 2 to php,
+I learn little bit of everything, but&#x2026; I am not good at anything and
+I am moving at a really slow pace. And slow pace is not the problem in
+itself is the sense of achievement perhaps.. I would like to have
+something tangible in my hands that I have completed or learned.. Now,
+after 3-4 months of being curious about programming I feel like I
+don't know anything that could make me a living. But perpahs I don't
+know how to sell mysefl.. idk.
+</p>
+
+<p>
+What the Chris guy explained and that seemed like a solid strategy is
+to focus on HTML / CSS for one month. (I tried this beforer wiht
+machine leanring and also wiht data science) and after that, for the
+second month - focus on JavaScript. Just JavaScript. My intention
+would be to mix side things, learn little bit of php learn little bit
+of react, learn little bit of terminal and so on and so on, but
+WAIT!!!!! In this way I feel like there is no end to learning, I feel
+like every waking moment of my day has to be spent learning to code,
+because there is so much to learn! I skip meals, I skip workouts, I
+skip meetings with loved ones, I skip reading and other random tasks
+just to sit more in front of the computer and absorbe little pieces of
+all sort of information that are not really realted to the thing I am
+tryint to learn, which is in second month - JavaScript.
+</p>
+
+<p>
+You see what I mean? After the second month of learning solo
+JavaScript I would be all up until my neck in various other side
+skills that I am not perfect and the JavaScript knowledge also would
+not be sufficient to move to the next level&#x2026; I already imagine how
+sweet my days will look like when I am learning just one topic at a
+time, dedicating myself in it, asking questions that I come up with on
+some forums and so on, having time for mysefl and so on.
+</p>
+
+<p>
+No order
+</p>
+
+<p>
+I forgot to mention what I am involved in right now:
+</p>
+
+<ul class="org-ul">
+<li>Python course by Stanford university.</li>
+<li>Html/css/Js course by Steph</li>
+<li>Wordpress course by some guy on Udemy</li>
+<li>Building a wordpress ecommerce site for a friend's friend</li>
+<li>Fantasizing about all the books I want to read</li>
+</ul>
+
+<p>
+Yes order
+</p>
+
+<ul class="org-ul">
+<li>Learn fron and back end web development so I can start taking jobs</li>
+<li>Direction</li>
+<li>Tangible things</li>
+</ul>
+
+<p>
+I mean&#x2026; I kind of understand how wordpres, php and python work in
+essence. I know that many things can be done and I just need to search
+for it, but perhaps I could focus on those whenever I need it in my
+project, little by little, no all at once now. Yes, my goal was to be
+a professional with python to automate eveyday task form myself and
+others, but perhaps I could first focus on the "yes order" things and
+only later on what is fun&#x2026;
+</p>
+
+<p>
+So does it mean that I will put aside the python project? That I am
+currently almost finished with? I might, it won't run away anywhere.
+Same wiht php? Yes. I should do less of the turorials and wiht that
+extra headspace try to solve my own problems rather that following
+someone else solving them form me.
+</p>
+
+<p>
+Tutorial hell is real.
+</p>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-05-16-focus-on-what's-important.html</link>
+  <guid>https://arvydasg.github.io/2021-05-16-focus-on-what's-important.html</guid>
+  <pubDate>Sun, 16 May 2021 15:16:00 +0300</pubDate>
+</item>
+<item>
+  <title><![CDATA[Report 05/11]]></title>
+  <description><![CDATA[
+<p>
+Hey.
+</p>
+
+<p>
+You might not notice this, but it has been a while I have written
+here
+</p>
+
+<p>
+A few reasons being that I have put linux, vim, data science stuff
+on the shelf for a while.
+</p>
+
+<p>
+I offered my help to Julytes friend that is starting a sausage
+business and needed a website.
+</p>
+
+<p>
+I am using wordpress and building that. I have also noticed that I
+really need to have strong hmtl and css skills to be able to build a
+proper wordpress site. I also noticed I should know some php as well
+</p>
+
+<p>
+So during my time in Vilnius, it is 4th week now, I have been
+learning that. Most of the time got taken by figuring wordpress out,
+now since that is done, I am looking into hmtl and css and that is
+getting more clear.
+</p>
+
+<p>
+What I have learned now is how to color the things, got an idea how
+to work wiht the blocks and make stuff responsive in mobile.
+Tomorrow I think I will nail that with Steph's classe.
+</p>
+
+<p>
+You might think why don't I learn that right now - I'll tell you
+why. I am trying to divide my time a little. For now there are 3
+parts. Python - Html/css - wordpress.
+</p>
+
+<p>
+As of now I have done the first two, time will be for wordpress.
+</p>
+
+
+<p>
+<b>Python</b>
+</p>
+
+<p>
+Dalykai kurie sekasi: karel done. Short input and math stuff is
+clear. What I want to learn: how to use external files/programs
+from python to start doing some useful stuff.
+</p>
+
+<p>
+<b>Html/css</b>
+</p>
+
+<p>
+Dalykai kurie sekasi: basic text editing, styling, etc. What I
+would like to know: how to work with those responsive design
+boxes, mobile layouts and etc.
+</p>
+
+<p>
+<b>Wordpess</b>
+</p>
+
+<p>
+Dalykai kurie sekasi: manual backups, elementor templates for
+various parts of the site (head, nav, footer, single page etc).
+What I would like to know: how to edit php files and find a way to
+show only what I want. Make website faster as well.
+</p>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-05-11-report-05-11.html</link>
+  <guid>https://arvydasg.github.io/2021-05-11-report-05-11.html</guid>
+  <pubDate>Tue, 11 May 2021 07:07:00 +0300</pubDate>
+</item>
+<item>
   <title><![CDATA[Obelsdumas E-shop]]></title>
   <description><![CDATA[
 
@@ -1963,6 +2965,2206 @@ My first Webev client project. Build with Wordpress.
   <link>https://arvydasg.github.io/2021-04-14-obelsdumas-e-shop.html</link>
   <guid>https://arvydasg.github.io/2021-04-14-obelsdumas-e-shop.html</guid>
   <pubDate>Wed, 14 Apr 2021 19:35:00 +0300</pubDate>
+</item>
+<item>
+  <title><![CDATA[Black Box Statistics]]></title>
+  <description><![CDATA[
+<p>
+Excited about starting to learn python on April 1st, so thought I will
+try to look into something I should have looked into during this whole
+month of March&#x2026; Last day huh. Like always. Hm.. anyway, some black
+boxing of some statistics terms.
+</p>
+
+<p>
+<b>MEAN</b> - the average of the numbeers. Add up all numbers, divide by how
+many numbesr there are.
+</p>
+
+<p>
+<b>MEDIAN</b> - middle of a sorted list of numbers. If can't find the middle
+number, add the 2 close ones and divide them by two.
+</p>
+
+<p>
+<b>MODE</b> - Numbers in order, count how many of each number, which appears
+most often is the mode. Two modes - bimodal. Grouping is useful also.
+</p>
+
+
+<figure id="orgd79130c">
+<img src="./static/images/variance.png" alt="variance.png" width="1200px">
+
+</figure>
+
+<p>
+<b>VARIANCE</b> + (standard deviation) - the average of the squared
+differences from the Mean. <a href="https://www.mathsisfun.com/data/standard-deviation.html">Dogs</a>.
+</p>
+
+<p>
+<b>IQR</b> - interquartile range - numbers in order, find median. Take from
+both sides medians again and then minus one from the other, you get
+the IQR.
+</p>
+
+<p>
+<b>CORRELATION and CAUSALITY</b> - <a href="https://www.youtube.com/watch?v=ROpbdO-gRUo">explanation Khan</a>.
+</p>
+
+<p>
+MAXIMUM LIKELIHOOD - looks cool. Finding the best fit
+<a href="https://www.youtube.com/watch?v=XepXtl9YKwc">first stat quest video</a>.
+</p>
+
+<p>
+2021-04-08 10:24
+</p>
+
+<p>
+Was learning more statistics, feeling bad that I left it behind. Have
+some time before the python course that I registered for, so will
+catch up with stats.
+</p>
+
+<p>
+Was looking at Khan accademy statistics course and found some things
+that I struggle with. The first paragraph presented the two way table
+and it was so confusing for me. The second day I crcked it.
+</p>
+
+<p>
+Okay back to the business. Since I dont have a proper notebook that I
+dream about, I will just write my notes here and improve my vim and
+html skils at the same time.
+</p>
+
+<p>
+<a href="https://www.khanacademy.org/math/statistics-probability/displaying-describing-data/comparing-features-distributions/v/shapes-of-distributions?modal=1%22target">Currently I am here</a>.
+</p>
+
+
+<figure id="org5ea13fa">
+<img src="./static/images/skewerdtoleft.png" alt="skewerdtoleft.png" width="1200px">
+
+</figure>
+
+<p>
+Point means one or more value is there, then other side the same, then
+the meat of the distribution is where the box is. Line is the median -
+the middle number. Distribution is skewed to the left. more values on
+the left.
+</p>
+
+<p>
+<b>Outlier</b> - data point is way off from all the other data points.
+</p>
+
+<p>
+<b>Cluster</b> - group of data. 0-2 days is a cluster for example.
+</p>
+
+<p>
+2021-04-09 15:08
+</p>
+
+
+<figure id="org95706e0">
+<img src="./static/images/interquartile.png" alt="interquartile.png" width="1200px">
+
+</figure>
+
+<p>
+<b>Standard deviation</b> - how far on average we are form the mean. Cool,
+makes sense in the last sentence of <a href="https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-population/v/range-variance-and-standard-deviation-as-measures-of-dispersion?modal=1">This video</a>
+</p>
+
+<p>
+Few notes on variance and how to find it. From the video above as
+well. Just wannah have those here.
+</p>
+
+
+<figure id="org14736ca">
+<img src="./static/images/variance1.png" alt="variance1.png" width="1200px">
+
+</figure>
+
+
+<figure id="org7a31989">
+<img src="./static/images/variance2.png" alt="variance2.png" width="1200px">
+
+</figure>
+
+
+<figure id="org48c8318">
+<img src="./static/images/variance3.png" alt="variance3.png" width="1200px">
+
+</figure>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-30-black-box-statistics.html</link>
+  <guid>https://arvydasg.github.io/2021-03-30-black-box-statistics.html</guid>
+  <pubDate>Tue, 30 Mar 2021 07:13:00 +0300</pubDate>
+</item>
+<item>
+  <title><![CDATA[Illusions of Competence]]></title>
+  <description><![CDATA[
+
+<div id="outline-container-orgd899ef9" class="outline-2">
+<h2 id="orgd899ef9">Chunking</h2>
+<div class="outline-text-2" id="text-orgd899ef9">
+<p>
+What is a chunk?
+</p>
+
+<p>
+When you first look at a brand new concept it sometimes doesn't make
+much sense, as shown by the jumbled puzzle pieces here. Chunking is
+the mental leap that helps you unite bits of information together
+through meaning. The new logical whole makes the chunk easier to
+remember, and also makes it easier to fit the chunk into the larger
+picture of what you're learning. Just memorizing a fact without
+understanding or context doesn't help you understand what's really
+going on or how the concept fits together with other concepts you're
+learning. Notice there are no interlocking puzzle edges on the puzzle
+piece to help you fit it to other pieces.
+</p>
+
+
+<figure id="orgd251fb2">
+<img src="./static/images/octupus-of-attention.png" alt="octupus-of-attention.png" width="1200px">
+
+</figure>
+
+<p>
+Four slots of working memory appear to hang out in the part of your
+brain right behind your forehead known as the <b>prefrontal cortex</b>. When
+you're focusing your attention on something it's almost as if you have
+an octopus. The octopus of attention that slips its tentacles through
+those four slots of working memory when necessary to help you make
+connections to information that you might have in various parts of
+your brain.
+</p>
+
+<p>
+Remember, this is different from the random connections of the diffuse
+mode. Focusing your attention to connect parts of the brain to tie
+together ideas is an important part of the focused mode of learning.
+It is also often what helps get you started in creating a chunk.
+Interestingly when you're stressed your attentional octopus begins to
+lose the ability to make some of those connections. This is why your
+brain doesn't seem to work right when you're angry, stressed, or afraid.
+</p>
+
+<p>
+If you had the television going on in the background or you;re
+looking up every few minutes to check or answer your phone or
+computer messages, it means you're going to have more
+difficulty in making a chunk, because your brain is not really
+focusing on chunking the new material. When you first begin to
+learn something, you're making new neural patterns and
+connecting them with preexisting patterns that are spread
+through many areas of the brain. Your octupus tentacles can't
+reach very well if some of them are off on other thoughts
+using up some of the limited slots in your working memory.
+</p>
+
+
+<figure id="org85afb07">
+<img src="./static/images/tentacles.png" alt="tentacles.png" width="1200px">
+
+</figure>
+
+<p>
+Allow the focused and diffused modes of thinking to take turns in
+helping them figure out what's going on.
+</p>
+
+<p>
+Can you create a chunk if you don't understand? Yes, but it's often a
+useless chunk that won't fit in with or relate to other material
+you're learning. That said, it's important to realize that just
+understanding how a problem was solved for example, does not
+necessarily create a chunk that you can easily call to mind later.
+Don't confuse the aha! of a breakthrough and understanding with solid
+expertise. That's part of what you can grasp an idea when a teacher
+presented in class, but if you don't review it fairly soon after you
+first learned it, it can seem incomprehensible when it comes time to
+prepare for a test.
+</p>
+
+<blockquote>
+<p>
+In math and science related subjects, closing the book and testing
+yourself on whether you yourself can solve the problem you think you
+understand will speed up your learning at this stage. You often
+realize the first time you actually understand something is when you
+can actually do it yourself.
+</p>
+</blockquote>
+
+<p>
+Just because you see it or even that you understand it,
+</p>
+
+<p>
+it doesn't mean that you can actually do it.
+</p>
+
+<p>
+Only doing it yourself helps create the neural patterns that underlie
+true mastery.
+</p>
+
+<p>
+Okay, don't think there can appear something more important during my
+next 2 pomodoros than something above this paragraph.
+</p>
+
+<blockquote>
+<p>
+Doing a rapid two-minute picture walk through a chapter in a book
+before you begin studying it, glancing at pictures and section
+headings can allow you to gain a sense of the big picture, so can
+listening to a very well-organized lecture. These kinds of activities
+can help you know where to put the chunks you're constructing, how the
+chunks relate to one another; just as you see here with the image of
+the man in the car. Learn the major concepts or points first, once you
+have doen this, fill in the details. Even if a few of the puzzle
+pieces are missing at the end of your studies, you can still see the
+big picture.
+</p>
+</blockquote>
+
+
+<figure id="org73fcbbd">
+<img src="./static/images/fill-in-the-details.png" alt="fill-in-the-details.png" width="1200px">
+
+</figure>
+
+
+<figure id="org941966c">
+<img src="./static/images/lol-question.png" alt="lol-question.png" width="1200px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org69ef71d" class="outline-2">
+<h2 id="org69ef71d">Illusions of Competence</h2>
+<div class="outline-text-2" id="text-org69ef71d">
+<p>
+One of the most common approaches for trying to learn material from a
+book or from notes is simply to reread it. But psychologist, Jeffrey
+Karpicke, has shown that this approach is actually much less
+productive than another, very simple, technique. Recall. After you've
+read the material, simply look away, and see what you can recall from
+the material you've just read.The retrieval process itself enhances
+deep learning
+</p>
+
+<p>
+and helps us to begin forming chunks. It's almost as if the recall
+process helps build in little neural hooks, that we can hang our
+thinking.
+</p>
+
+<p>
+One way to think about this type of learning and recall, is shown
+right here. As we mentioned earlier, there are four or so slots, in
+working memory. When you're first learning how to understand a
+concept, or technique to solve a problem, your entire working memory
+is involved in the process. As shown by this sort of, mad tangle of
+connections between the four slots of working memory.
+</p>
+
+
+<figure id="org937ed59">
+<img src="./static/images/mad-connections1.png" alt="mad-connections1.png" width="1200px">
+
+</figure>
+
+<p>
+As you begin to chunk the concept, you will feel it connecting more
+easily and smoothly in your mind.
+</p>
+
+
+<figure id="orgf5aa911">
+<img src="./static/images/mad-connections2.png" alt="mad-connections2.png" width="1200px">
+
+</figure>
+
+<p>
+Once the concept is chunked, it takes up only one slot in working
+memory. It simultaneously becomes one smooth strand that's easy to
+follow, and to use to make new connections. The rest of your working
+memory is left clear. That dangling strand of chunked material has, in
+some sense, increased the amount of information available to your
+working memory. It's as if the slot in working memory is a hyperlink
+that's been connected to a great big web page.
+</p>
+
+
+<figure id="org95f8999">
+<img src="./static/images/mad-connections3.png" alt="mad-connections3.png" width="1200px">
+
+</figure>
+
+<p>
+Now, you understand, why it is key that you are the one doing the
+problem solving or mastering the concept. Not whoever wrote the solution manual, or book, on whatever subject
+you're studying. If you just look at the solution, for example, then
+tell yourself. Oh yeah, I see why they did that. Then the solution is
+not really yours. You've done almost nothing to knit those concepts
+into your own underlying neural circuitry. Merely glancing at a
+solution and thinking you truly know it yourself is one of the most common illusions of competence in
+learning.
+</p>
+
+<p>
+Okay this is exactly what every data science youtuber is saying. do
+the project, don't spend too much time on learning concepts and etc.
+"I have learned way more from doing than from actually learning". keep
+that in mind.
+</p>
+</div>
+
+<div id="outline-container-orga7b3e59" class="outline-3">
+<h3 id="orga7b3e59"><b>Labai gold info below</b></h3>
+<div class="outline-text-3" id="text-orga7b3e59">
+<p>
+The reason students like to keep rereading their notes or a textbook,
+is that when they have the book or Google open right in front of them,
+it provides the illusion that the material is also in their brains.
+But it's not, because it can be easier to look at the book instead of
+recalling, students persist in their illusions studying in a way that
+just isn't very effective. This is a reminder that just wanting to
+learn the material, and spending a lot of time with it, doesn't guarantee you'll actually
+learn it. A super helpful way to make sure you're learning and not
+fooling yourself with illusions of competence, is to test yourself on
+whatever you're learning. In some sense, that's what recall is
+actually doing. Allowing you to see whether or not you really grasp an
+idea. If you make a mistake in what you are doing, it's actually a very good
+thing. You want to try not to repeat your mistakes, of course, but mistakes
+are very valuable to make in your little self tests before high stakes
+real tests. Because they allow you to make repairs and you're thinking flaws bit
+by bit mistakes help correct your thinking, so that you can learn better and
+do better.
+</p>
+
+<p>
+But here's another tip, recalling material when you are outside your
+usual place of study can also help you strengthen your grasp of the
+material. You don't realize it, but when you are learning something
+new you can often take in subliminal cues for the room and the space
+around you at the time you were originally learning the material. This
+can throw you off when you take tests because you often take tests in
+a room that's different from the room you were learning in. By recalling and thinking about the material when you are in various
+physical environment, you become independent of the cues from any one given
+location.
+</p>
+
+<p>
+Alright my third pomodoro is over, going to take a little break now
+and then review, try to recall the material.
+</p>
+
+<blockquote>
+<p>
+"I have cancelled several commitments since this course has started so
+that I could stay home and take notes on video lectures and do my
+Pomodoros (on my to do list I write down the number of Pomodoros I am
+going to apply on each topic instead of a length of minutes or hours,
+I just like writing '2 pomodoros' ;) And I feel fantastic! Really,
+there is nothing that has helped my mood, sleep, eating, anxiety,
+feelings of guilt/shame etc than making small 'process oriented' to do
+lists for myself and accomplishing them without focus on the actual
+product. After doing two Pomodoros with a break in-between I feel like
+I can just keep going, bring it on, bring on more (okay, well it took
+a few days to get to that level of excitement, but I got there)."
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-28-illusions-of-competence.html</link>
+  <guid>https://arvydasg.github.io/2021-03-28-illusions-of-competence.html</guid>
+  <pubDate>Sun, 28 Mar 2021 15:50:00 +0300</pubDate>
+</item>
+<item>
+  <title><![CDATA[Fan WoW Excel]]></title>
+  <description><![CDATA[
+
+<figure id="orgb820c35">
+<img src="./static/images/fan.png" alt="fan.png" width="1200px">
+
+</figure>
+
+<p>
+Alright, hi. Two weeks of my learning excel and statistics are nearly
+over, and what I am doing? Installing windows so I could play video
+games.
+</p>
+
+<p>
+On ubuntu, I don't have excel. I see everyone using excel and I don't
+want to spend my time trying to do the same tasks with google sheets
+or some ubuntu alternative programs, because it won't be the same.. I
+prefer excel as well, don't know why. So, reason nr.1 why I need
+Windows.
+</p>
+
+<p>
+There are some tasks that I need and want to do with my images&#x2026; it
+is just way easier to modify them and sort them and pick the proper
+ones in the software that I am familiar with - Lightroom. To be
+learning another software (Gimp, darkroom or RawTherapee on top of
+learning Vim, Linux, data science stuff is a bit too much I feel.
+Especially after a month me trying to juggle all of those things at
+the same time and feeling like I am going through too much of
+unecessary struggle&#x2026; Just get Windows and use Lightroom to sort all
+the pictures stuff you have been holding on your to-do list for months
+now&#x2026; thats reason nr.2
+</p>
+
+<p>
+Another reason is that I feel like I would like to give myself a break
+from learnign somehow. I know that I tend to get into things too fast
+and too deep, which is unhealthy sometimes, that is why I started to
+do the Learing how to learn course in which I have already, during the
+fist week found a lot of "mistakes" with the way I approach learning.
+One is I see learning anything as a sprint. The more time I put in,
+the faster and more I will learn. But I start to learn to see it as a
+marathon, rather than the sprint. I must have some breaks, I must
+reward myself somewhow and that reward will be wow. My addiction that
+I had for years. Hehe :D I don't know if it is because I feel a little
+bit sick now from walking outside half naked during the first days of
+the "spring" or I am conciously letting myself get loose into
+something I rarely find a smooth way out of, but maybe I should try to
+live with my flaws rather than shutting them down, because I noticed
+that it is like a rubber band, the more I pull it, the more it
+backfires later. Keep the balance. everything in moderation. Let's try
+this Arvy ;)
+</p>
+
+<p>
+Oh yes there is another reason. The fan of my laptop while I am
+running ubuntu. It is constantly at nearly critical high temperature,
+which doesn't allow me to focsu.. the sound that my poor 8 year old
+laptop is making is hard to listen to. Instead of looking for a cure
+to this, I will just remove the problem, whihc is - ubuntu after every
+clean install.
+</p>
+
+
+<figure id="orgddd66ea">
+<img src="./static/images/htop.png" alt="htop.png" width="1200px">
+
+</figure>
+
+
+<figure id="orga58669b">
+<img src="./static/images/sensors.png" alt="sensors.png" width="1200px">
+
+</figure>
+
+<p>
+Also, I can see this as a good learning opportunity. I have never
+tried to dual boot anything on my or someone else's computer. I just
+remember Pali Pali dude from my Uni that had windows on his mac for
+similar reasons. That's it. Now I will know how to do it as well.
+</p>
+
+<p>
+And yes, I will continue using ubuntu and other linux systems for my
+daily learning/website stuff and pretty much 80-90% of the time,
+since I want to learn the system, but for the remaining 20% and the
+reasons mentioned above it's going to be windows :)
+</p>
+
+<p>
+Let's see how I am going to manage, curious to see myslef in a half a
+year. I will definitely not crumble, since the Linux system is just so
+much more efficient I feel, I love using the terminal and and can't
+imagine mysefl editing text or code in anything else than Vim right
+now. So I am comforatble letting myself loose on not so major tasks
+like wow and image editing, since I will always come back to linux for
+my data science journey. So cheesy.
+</p>
+
+<p>
+Alright, I continue being sick. Glad I found the time to type this one
+out.
+</p>
+
+<blockquote>
+<p>
+p.s. I should probably try to find some addon thingy for vim that
+would auto-correct the typing mistakes. I am fast as a lightning with
+this home row typing now, but sometimes a mistake slips in I guess.
+Sorry about that, I'll do somethig about it.
+</p>
+</blockquote>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-25-fan-wow-excel.html</link>
+  <guid>https://arvydasg.github.io/2021-03-25-fan-wow-excel.html</guid>
+  <pubDate>Thu, 25 Mar 2021 15:08:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Learn summary mod 2]]></title>
+  <description><![CDATA[
+<p>
+<b>Bunch of thoughts will sort them during review</b>
+</p>
+
+
+<figure id="org54d15bb">
+<img src="./static/images/it-all-makes-sense.png" alt="it-all-makes-sense.png" width="1200px">
+
+</figure>
+
+<p>
+Didn't sort the thoughts here, takes too much time.. Idk let's say these are the notes and I will clean them later as I review.
+</p>
+
+<p>
+I just realized that everything can be summarized in these points
+</p>
+
+<ul class="org-ul">
+<li>Study groups - discussing new material, testing each other. CRUCIAL</li>
+<li>Teaching - teaching other just shows you the gaps in your knowledge.</li>
+<li>Deliberate - practice. Doing hard things over the easy things.</li>
+<li>Little bit - wet your appetite with the topic, learn the rest later.</li>
+<li>Stuff adds up - it only gets easier.</li>
+<li>Set goals - deadlines and missions. Crucial for not wandering around&#x2026;</li>
+</ul>
+
+<p>
+Me now as of 2021-03-29 - Don't have a goal anymore. Got discouraged
+by others that if I set up big goals I will burn out. I am still
+trying to get something done each day but I am choosing easy tasks
+such as doing this sort of course. (I keep talking about it as it is
+something negative but perhaps it will be the most useful thing I
+could do). And I am spending a lot of time, uncalcualted amount of
+time on the tasks.. bro.. I need those time sheets again like in UCN,
+I need to track my time and sort the priorities otherwise I will feel
+like I am going nowhere for the next month.
+</p>
+
+<p>
+Transfer - the idea that a chunk you’ve mastered in one area can often
+help you much more easily learn chunks of information in different
+areas that can share surprising commonalities.
+</p>
+
+<p>
+<b>Steps for making a chunk</b>:
+</p>
+
+<ul class="org-ul">
+<li>Practice until you can sense the big-picture context</li>
+
+<li>Understand the basic idea</li>
+
+<li>Focused attention</li>
+</ul>
+
+<p>
+<b>DELIBERATE PRACTICE</b> - Focusing intently on the parts of the problem
+that are the most difiult to you.
+</p>
+
+<p>
+<b>Chunking</b>
+</p>
+
+<ul class="org-ul">
+<li>As you gain more experience in chunking in any particular subject,
+you will see that the chunks you are able to create are bigger—in
+some sense, the ribbons are longer.</li>
+
+<li>Concepts and problem-solving methods you might learn for physics can
+be very similar to chunked concepts in business.</li>
+
+<li>When you are trying to figure something out, if you have a good
+library of chunks, you can more easily skip to the right solution
+by—metaphorically speaking—“listening” to whispers from your diffuse
+mode. Your diffuse mode can help you connect two or more chunks
+together in new ways to solve novel problems.</li>
+
+<li>"Chunking" involves compressing information more compactly&#x2013;this is
+part of why it is easier to draw a "chunked" idea or concept into
+mind.</li>
+</ul>
+
+<p>
+<b>Stuff on learning</b>
+</p>
+
+<ul class="org-ul">
+<li>Although practice and repetition are important in helping build
+solid neural patterns to draw on, it’s interleaving that starts
+building flexibility and creativity. It’s where you leave the world
+of practice and repetition and begin thinking more independently.</li>
+
+<li>Once you’ve got the basic idea down during a session, continuing to
+hammer away at it during the same session doesn’t strengthen the
+kinds of long-term memory connections you want to have strengthened.
+Worse yet, focusing on one technique is a little like learning
+carpentry by only practicing with a hammer. After a while, you think
+you can fix anything by just bashing it</li>
+
+<li>Interleaving your studies—making a point to review for a test, for
+example, by skipping around through problems in the different
+chapters and materials—can sometimes seem to make your learning more
+difficult. But in reality, it helps you learn more deeply.</li>
+
+<li>One significant mistake students sometimes make in learning is
+jumping into the water before they learn to swim. In other words,
+they blindly start working on homework without reading the textbook,
+attending lectures, viewing online lessons, or speaking with someone
+knowledgeable. It’s like randomly allowing a thought to pop off in
+the focused-mode pinball machine without paying any real attention
+to where the solution truly lies.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Acetylcholine - affects focused learning and attention.</li>
+
+<li>Seratonin - affects social life adn risk-taking behavior.</li>
+
+<li>Dopamine - signals in relation to unexpected reward.</li>
+</ul>
+
+<p>
+Simple recall. Remember, connecting concepts isn't going to help if
+you don't have the concepts already well-embedded in the brain. It's
+like trying to learn higher strategy in chess without having learned
+the basics about how the pieces move.
+</p>
+
+<p>
+When the text is open right in front of you, it fools you into
+thinking that you know the material. But you only really know that
+material for certain when you can recall the material&#x2013;or at least the
+key ideas&#x2013;WITHOUT the text open in front of you.
+</p>
+
+<p>
+Chunking helps your brain run more efficiently. Once you chunk an
+idea, concept, or action, you don’t need to remember all the little
+underlying details; you’ve got the main idea—the chunk—and that’s
+enough.
+</p>
+
+<p>
+People get caught up in low efficiency, low intensity studying habits
+and because they learned a lot slower with those methods,they end up
+spending a lot more time studying.
+</p>
+
+<p>
+Because they're spending a lot more time studying which is naturally
+more tiring, you go into less efficient studying methods.
+</p>
+
+<p>
+It's a little bit like exercising. It's as if you're not getting the
+exercise results you want so you extend your workout from one hour to
+two hour but now you're not working out as more intensely so you make
+it four hours. Now, you really can't do more than just a light jog for
+four hours or maybe just walking and eventually it eats up all of your
+time but you're not having the intensity your muscles in your body
+really need to get physical improvement.
+</p>
+
+<p>
+Similarly, I think the same is true with mental improvement. So, what
+I tried to do is I tried to pick specific chunks of time that I'm
+going to study and they don't have to be too big. So, right now I'm
+learning Korean over these three months and I'm actually only doing
+three to four hours a day of studying time which is considerably less
+than I would say a typical full-time students studying Korean. But I
+think that I've been making quite good progress just because the
+actual time I'm spending is highly focuses this kind of test yourself
+feedback so that I am using things like Anki for flashcards and I'm
+doing actual conversations one-on-one with the tutor and these things
+are very efficient but they are also very intense but the benefit of
+that is that you have more time and you can relax outside of it.
+</p>
+
+<p>
+This is exactly what lady is talking about, deliberate practice. Time
+Ferris 4 hour workweek, now this guy with learning languages. This is
+the key.. Learning smart&#x2026; not wasting time to these other things.
+Does it mean that what I am doing is one of those wasteful activities?
+Can be..
+</p>
+
+
+<figure id="orge686e96">
+<img src="./static/images/lady-luck.png" alt="lady-luck.png" width="1200px">
+
+</figure>
+
+<p>
+Learning by solving solved problems.
+</p>
+
+<p>
+Continuing to practice/stuyd something after your practice or master
+it in a session - overlearning.
+</p>
+
+<p>
+Repeating what you know is well&#x2026; easy&#x2026; this action can also bring
+an illusion of competence towards the full range of the material when
+you have actually learned only the easy stuff.
+</p>
+
+<p>
+DELIBERATE PRACTICE - focusing only on what's difficult. (Exactly what
+I am not doing now by writing some articles and stuff instead of
+learning the Data science)
+</p>
+
+<p>
+To know HOW is not enough. Knowing WHEN to use a technique, algorithm
+or a word is as much if not even more important.
+</p>
+
+<div id="outline-container-orgf52fc75" class="outline-2">
+<h2 id="orgf52fc75">Programming is a team sport</h2>
+<div class="outline-text-2" id="text-orgf52fc75">
+<blockquote>
+<p>
+Must find your team as quickly as possible and make sure that the
+members of your team are very serious about their studies as well.
+</p>
+</blockquote>
+
+<p>
+Keeping your nose to the grind is fine, but not for too long. Take
+breaks. The dude's break is watching cartoons or the woman's - reading
+gossip magazines. All of us have something we get away from the stuff
+with, turing off all the mental stuff and enjoying whatever stupid is
+in front of us. It is not only good for us it is mandatory. I think we
+all know what guilty pleasure I will be having during my breaks.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga83887f" class="outline-2">
+<h2 id="orga83887f">Study groups</h2>
+<div class="outline-text-2" id="text-orga83887f">
+<p>
+Challenge each other. TEACHING is one of the best ways to learn!!!
+Imagine trying to explain a subject to someone just to find out you
+don't know how to start to do so. Means you don't understand it well
+enough. Explainign something is a simple way will only show that you
+know what you are talking about. If you are discussing with someone
+about a subject and someone disagrees you have to prove your point,
+all this is just strenghtening the learning!!! Makes sense?
+</p>
+
+<p>
+If you are trying to explain something and you are using some vague
+abstract terms, it just shows that you don't really understand the
+subject and this is exactly what you need to be working on.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org028eb08" class="outline-2">
+<h2 id="org028eb08">Wrong as quikcly as possible</h2>
+<div class="outline-text-2" id="text-org028eb08">
+<p>
+Try to dive in the position where you can be wrong as quickly as
+possible.
+</p>
+
+<p>
+While listening to a lecture there is not really a way to get antyhing
+wrong. No real way to check what you have learned.
+</p>
+
+<p>
+Getting to problems as quikcly as possible, trying to solve them and
+failing while doing so. Great way to learn. Better than just listening
+or reading. Learning languages, programming and so on. Good stuff.
+</p>
+
+<p>
+Just little steps at a time, litle projects at a time. Stuff adds up.
+Stuff piles up and it ONLY GETS EASIER.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd06d353" class="outline-2">
+<h2 id="orgd06d353">Concrete exciting projects</h2>
+<div class="outline-text-2" id="text-orgd06d353">
+<p>
+Always have a mission. 3 months for example. No concrete goals - ah I
+will just learn it.." there is no specific motivation. It tapers off
+and you don't atchieve that much. Like the guy learning languages. 3
+months in france just reading books and going to classes - can't
+speark. Spending 3 months in some other country and TALKING to natives
+and so on, is able to speak the chosen language.
+</p>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-24-learn-summary-mod-2.html</link>
+  <guid>https://arvydasg.github.io/2021-03-24-learn-summary-mod-2.html</guid>
+  <pubDate>Wed, 24 Mar 2021 16:39:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Sleep and Exercise]]></title>
+  <description><![CDATA[
+
+<div id="outline-container-org903d756" class="outline-2">
+<h2 id="org903d756">Sleep</h2>
+<div class="outline-text-2" id="text-org903d756">
+
+<figure id="orgc97e51c">
+<img src="./static/images/brain-cleanse.png" alt="brain-cleanse.png" width="1200px">
+
+</figure>
+
+<p>
+Being awake - creates toxic products. Sleep - washes out of toxins.
+Brains way to keep it clean and healthy.
+</p>
+
+<p>
+Poison that doesn't make us think clear. Washing out toxins. Some,
+including me, would sacrifice sleep to cram more info hoping to learn
+more effectively and faster. Damn I've been learning the wrong way.
+Glad to find this information, which makes sense, to help me with my
+furhter learning.
+</p>
+
+<p>
+Brain tidies up the learning material, deepens the neural patterns and
+strengthens them. Complete deactivation of “you” helps me
+unconsciously sort of the material. Think what you are learning
+about - you might dream about it. Dreaming about what you are
+studying - helps you to understand the material. Wow.
+</p>
+
+<p>
+Allows the brain a chance to rehearse difficult material &#x2013; going over
+and over the tougher aspects of what you are trying to learn.
+</p>
+
+<p>
+Trying to study without having slept the night before is like trying
+to think with POISON on the brain. NOOOOOO.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org21d14bc" class="outline-2">
+<h2 id="org21d14bc">Exercise</h2>
+<div class="outline-text-2" id="text-org21d14bc">
+
+<figure id="org3a1ae88">
+<img src="./static/images/exercise.png" alt="exercise.png" width="1200px">
+
+</figure>
+
+<p>
+And just as importantly, exercise is surprisingly valuable in helping
+to improve both our memory and our ability to learn.
+</p>
+
+<p>
+Jogging etc, helps to come up with new thoughts and etc unconscious
+thoughts bubble into. The only problem is to remember those
+ideas.Taking notes to remember what he was thinking about doing the
+run.
+</p>
+
+<p>
+Your brain needs that moment of pause to use your muscles rather than
+your brain to be able to process that information and get the neurons
+working on it.
+</p>
+
+<p>
+Be in a creative environment with other people. Might seem the
+contrary compared with the painter guy, closing yourself up and stuff.
+But he find its easier for him to learn stuff when he is discussing
+new ideas and trying to explain them the process (<b>**</b> this is really
+important I think to bounce my ideas off from them…I like that as
+well).
+</p>
+
+
+<figure id="org63f48a8">
+<img src="./static/images/learn-isolating.png" alt="learn-isolating.png" width="1200px">
+
+</figure>
+
+<p>
+"Isolating ourselves…” BUT - For many years the scientific view of the
+brain was that once our brain was mature the neurons we had could be
+strengthened with learning but new neurons couldn’t develop as we
+aged. A lot of people still believe this is true, which creates a
+pretty bleak outlook as they get older. But now scientists have better
+methods of watching the brain in action and they can see that our
+brains develop new neurons while we sleep, when we surround ourselves
+with stimulating environments and people - and when we exercise!
+Interestingly, even if we don't have a stimulating environment
+exercise still assists our brains in growing new neurons. Good news
+for introverts.
+</p>
+</div>
+
+<div id="outline-container-orgc07c2e6" class="outline-3">
+<h3 id="orgc07c2e6">Interview with Dr. Terrence Sejnowski dude</h3>
+<div class="outline-text-3" id="text-orgc07c2e6">
+<p>
+2 things at once - not productive. Switching from one to the other is
+possible apparently. But not as productive.
+</p>
+
+<p>
+You are born with a specific amount of neurons. Rich environment -
+helpful. So you can actively improve. Like a rat example.
+</p>
+
+<p>
+Exercise also increases that, same like being with many rats instead
+of shutting yourself in a box and becoming passive.
+</p>
+
+<p>
+Passion, persistence &gt; smart
+</p>
+
+<p>
+Don't get hung up on one question, jump to the next one. Answers might
+come later. Make it a dance.
+</p>
+</div>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-24-sleep-and-exercise.html</link>
+  <guid>https://arvydasg.github.io/2021-03-24-sleep-and-exercise.html</guid>
+  <pubDate>Wed, 24 Mar 2021 16:20:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Take it slow]]></title>
+  <description><![CDATA[
+
+
+<div id="outline-container-org77e2a95" class="outline-2">
+<h2 id="org77e2a95">A Procrastination Preview</h2>
+<div class="outline-text-2" id="text-org77e2a95">
+
+<figure id="org545e6bc">
+<img src="./static/images/lebowski.png" alt="lebowski.png" width="1200px">
+
+</figure>
+
+<blockquote>
+<p>
+Everybody has some issues with procrastination. Because if
+you're working on something, it means you're not working on a
+lot of other things.
+</p>
+</blockquote>
+
+<p>
+Zombie tube - you are happier.
+</p>
+
+<p>
+<b>Difficult things - pain..</b> When you think about something you would
+rather not do - you activate the areas of your brain that are
+associated wiht pain. Your brain, naturally enough looks for ways to
+stop that stimulation by switching your attention to something else.
+Oh poor little brain is in pain :( . Neural discomfort disappears when
+you start working on the actual task. Poor little baby brain gets
+tricked and starts to like the activity.
+</p>
+
+<p>
+<b>Reward</b> when you are done pomodoro - allow the brain to change its
+focus for a little bit. Mental workout followed with a mental
+relaxation.
+</p>
+
+
+<figure id="org10e8a8a">
+<img src="./static/images/learn-pomodoro.png" alt="learn-pomodoro.png" width="1200px">
+
+</figure>
+
+
+<p>
+Arvydas default option, all the time - 3. Building mental stamina&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-org96e3e96" class="outline-2">
+<h2 id="org96e3e96">Practice Makes Permanent</h2>
+<div class="outline-text-2" id="text-org96e3e96">
+<p>
+Girl hated math her whole young life through school - now she is an
+engineering professor. Started studying math at 26 when he got out of
+the military! You go girl!!!! At first it was reaaaaly hard. Would
+take a break and go work on some russian project stuff, then would get
+back and get a better job opportunity because of her new
+</p>
+
+<p>
+<b>Wasn't natural in maths and science.</b>
+</p>
+
+<p>
+Math and terms are more abstract. That's why it's trickier to grasp
+it. IMPORTANT TO PRACTICE strengthen the neural connections.
+</p>
+
+<p>
+Neurons are linked together through repeated use. The more abstract
+the subject is, the more important it is to practice it to bring those
+ideas into reality. Even if the ideas are abstract, the things you
+build (neurons) are real.
+</p>
+
+
+<figure id="org45adce0">
+<img src="./static/images/neural-structure.png" alt="neural-structure.png" width="1200px">
+
+</figure>
+
+<p>
+All at once, learning by cramming, your knowledge base will look more
+like this me before this course ffs. All in a jumble with everything
+confused, a poor foundation.
+</p>
+
+<p>
+Study hard, take a break, look at smth else, change your
+</p>
+
+<p>
+Your neural mortar will have a chance to dry. Brains diffuse mode has
+a chance to work in the background.
+</p>
+
+<p>
+First the pathways are not as strong, then a bit stronger and as you
+practice, you don't need help to solve a particular problem, you did
+some projects and all yourselfl - you will make a strong pattern.
+</p>
+
+<p>
+BLEM. 10min learn - 10min study.
+</p>
+
+<p>
+Pomodoro - building neural patterns you need to be more successful in
+learning more challenging materials. Prevents tasks becoming OPEN
+ended. Very important.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5f1f426" class="outline-2">
+<h2 id="org5f1f426">Introduction to Memory</h2>
+<div class="outline-text-2" id="text-org5f1f426">
+
+<figure id="orgf2261da">
+<img src="./static/images/neural-paths.png" alt="neural-paths.png" width="1200px">
+
+</figure>
+
+<p>
+Working memory - like not very good blackboard - what you immediately
+focus on fits into one of 4 chunks/slots. Things can fall out of those
+slots unless we keep repeating them to hold them in mind. Grouping the
+</p>
+
+<p>
+Keep repeating something to keep it in your memory.
+</p>
+
+<p>
+Nice Just like the phone number. Shutting your eyes to close other
+types of information to disturb you.
+</p>
+
+<p>
+Long term memory - storage warehouse. info stored into different parts
+of the brain. Repeat so it's easier to get to
+</p>
+
+<p>
+Make a path like a road.
+</p>
+
+<p>
+Working to long term memory spaced repetition. Space the info over a
+certain day. 20 times one evening - not effective. 20 times over a
+week - better pathways, easier to recall the information. Like trying
+to build muscles all in one day.
+</p>
+
+<p>
+There is no time for solid structures to grow.
+</p>
+
+<p>
+Research has swon that if you try to glue things into your memory by
+repeating something twenty times in one evening, for example, it won't
+stick nearly as well as if you practice it the same number of times
+over several days.
+</p>
+
+<p>
+Repetition is needed so your metabolic vampires &#x2013; Natural dissipating
+processes &#x2013; don't suck the memories away.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge56b8a9" class="outline-2">
+<h2 id="orge56b8a9">Time for the mortar to dry</h2>
+<div class="outline-text-2" id="text-orge56b8a9">
+
+<figure id="orgd9516f7">
+<img src="./static/images/mortar.png" alt="mortar.png" width="1200px">
+
+</figure>
+
+<p>
+Option 2 used to be the default all these years.
+</p>
+
+
+<figure id="orgbda83e2">
+<img src="./static/images/learn-switch.png" alt="learn-switch.png" width="1200px">
+
+</figure>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-24-take-it-slow.html</link>
+  <guid>https://arvydasg.github.io/2021-03-24-take-it-slow.html</guid>
+  <pubDate>Wed, 24 Mar 2021 16:09:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Black Box Machine Learning]]></title>
+  <description><![CDATA[
+
+<div id="outline-container-orgc3b5df5" class="outline-2">
+<h2 id="orgc3b5df5">Classification algorithms</h2>
+<div class="outline-text-2" id="text-orgc3b5df5">
+<p>
+There is a lot of classification algorithms available now but it is
+not possible to conclude which one is superior to other. It depends on
+the application and nature of available data set. For example, if the
+classes are linearly separable, the linear classifiers like Logistic
+regression, Fisher’s linear discriminant can outperform sophisticated
+models and vice versa.
+</p>
+</div>
+
+<div id="outline-container-org606cf25" class="outline-3">
+<h3 id="org606cf25">Decision Tree</h3>
+<div class="outline-text-3" id="text-org606cf25">
+
+<figure id="orgc8b7d59">
+<img src="./static/images/decision-tree.png" alt="decision-tree.png" width="1200px">
+
+</figure>
+
+<p>
+Decision tree builds classification or regression models in the form
+of a tree structure. It utilizes an if-then rule set. The rules are
+learned sequentially using the training data one at a time. Each time
+a rule is learned, the tuples covered by the rules are removed. This
+process is continued on the training set until meeting a termination
+condition.
+</p>
+
+<p>
+The tree is constructed in a top-down recursive divide-and-conquer
+manner. All the attributes should be categorical. Otherwise, they
+should be discretized in advance? Attributes in the top of the tree
+have more impact towards in the classification and they are identified
+using the information gain concept.
+</p>
+
+<p>
+A decision tree can be easily over-fitted generating too many branches
+and may reflect anomalies due to noise or outliers. An over-fitted
+model has a very poor performance on the unseen data even though it
+gives an impressive performance on training data.
+</p>
+
+<p>
+This can be avoided by pre-pruning which halts tree construction early
+or post-pruning which removes branches from the fully grown tree.
+What?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfb1f456" class="outline-3">
+<h3 id="orgfb1f456">Naive Bayes</h3>
+<div class="outline-text-3" id="text-orgfb1f456">
+<p>
+Naive Bayes is a probabilistic classifier inspired by the Bayes
+theorem under a simple assumption which is the attributes are
+conditionally independent.
+</p>
+
+
+<figure id="org02514cf">
+<img src="./static/images/naive-bayes-formula.png" alt="naive-bayes-formula.png" width="1200px">
+
+</figure>
+
+<p>
+Naive Bayes is a very simple algorithm to implement and good results
+have obtained in most cases. It can be easily scalable to larger
+datasets since it takes linear time, rather than by expensive
+iterative approximation as used for many other types of classifiers.
+</p>
+
+<p>
+Naive Bayes can suffer from a problem called the zero probability
+problem. When the conditional probability is zero for a particular
+attribute, it fails to give a valid prediction. This needs to be fixed
+explicitly using a Laplacian estimator?.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1de49ec" class="outline-3">
+<h3 id="org1de49ec">Artificial Neuraul Networks</h3>
+<div class="outline-text-3" id="text-org1de49ec">
+<p>
+Artificial Neural Network is a set of connected input/output units
+where each connection has a weight associated. During the learning
+phase, the network learns by adjusting the weights so as to be able to
+predict the correct class label of the input tuples.
+</p>
+
+<p>
+There are many network architectures available:
+</p>
+
+<ul class="org-ul">
+<li>Feed-forward</li>
+
+<li>Convolutional</li>
+
+<li>Recurrent</li>
+</ul>
+
+<p>
+There can be multiple hidden layers in the model depending on the
+complexity of the function which is going to be mapped by the model.
+Having more hidden layers will enable to model complex relationships
+such as deep neural networks.
+</p>
+
+<p>
+However, when there are many hidden layers, it takes a lot of time to
+train and adjust wights. The other disadvantage of is the poor
+interpretability of model compared to other models like Decision Trees
+due to the unknown symbolic meaning behind the learned weights.
+</p>
+
+<p>
+But Artificial Neural Networks have performed impressively in most of
+the real world applications. It has high tolerance to noisy data and
+is able to classify untrained patterns. Usually, Artificial Neural
+Networks perform better with continuous-valued inputs and outputs.
+</p>
+
+<p>
+All of the above algorithms are eager learners since they train a
+model in advance to generalize the training data and use it for
+prediction later.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org86d8abf" class="outline-3">
+<h3 id="org86d8abf">k-Nearest Neighbor (KNN)</h3>
+<div class="outline-text-3" id="text-org86d8abf">
+
+<figure id="org3024376">
+<img src="./static/images/k-nearest-neighbors.png" alt="k-nearest-neighbors.png" width="1200px">
+
+</figure>
+
+<p>
+k-Nearest Neighbor is a lazy learning algorithm which stores all
+instances correspond to training data points in n-dimensional space.
+When an unknown discrete data is received, it analyzes the closest k
+number of instances saved (nearest neighbors)and returns the most
+common class as the prediction and for real-valued data it returns the
+mean of k nearest neighbors.
+</p>
+
+<p>
+nice
+</p>
+
+
+<figure id="org705ba97">
+<img src="./static/images/k-nearest-formula.png" alt="k-nearest-formula.png" width="1200px">
+
+</figure>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4cc1833" class="outline-2">
+<h2 id="org4cc1833">Evaluating a classifier</h2>
+<div class="outline-text-2" id="text-org4cc1833">
+<p>
+After training the model the most important part is to evaluate the
+classifier to verify its applicability
+</p>
+</div>
+
+<div id="outline-container-orgf253c7e" class="outline-3">
+<h3 id="orgf253c7e">Holdout method</h3>
+<div class="outline-text-3" id="text-orgf253c7e">
+<p>
+There are several methods exists and the most common method is the
+holdout method. In this method, the given data set is divided into 2
+partitions as test and train 20% and 80% respectively. The train set
+will be used to train the model and the unseen test data(aaaa, unseen
+data, I see now) will be used to test its predictive power.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org15bdbe0" class="outline-3">
+<h3 id="org15bdbe0">Cross-validation</h3>
+<div class="outline-text-3" id="text-org15bdbe0">
+<p>
+Over-fitting is a common problem in machine learning which can occur
+in most models. k-fold cross-validation can be conducted to verify
+that the model is not over-fitted. In this method, the data-set is
+randomly partitioned into k mutually exclusive subsets, each
+approximately equal size and one is kept for testing while others are
+used for training. This process is iterated throughout the whole k
+folds.Sorry what?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd61efa1" class="outline-3">
+<h3 id="orgd61efa1">Precision and Recall</h3>
+<div class="outline-text-3" id="text-orgd61efa1">
+<p>
+Precision is the fraction of relevant instances among the retrieved
+instances, while recall is the fraction of relevant instances that
+have been retrieved over the total amount of relevant instances.
+Precision and Recall are used as a measurement of the
+relevance.Hmmm&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-org049820e" class="outline-3">
+<h3 id="org049820e">ROC curve Receiver Operatning Characteristics</h3>
+<div class="outline-text-3" id="text-org049820e">
+
+<figure id="org4b013d7">
+<img src="./static/images/roc-curve.png" alt="roc-curve.png" width="1200px">
+
+</figure>
+
+<p>
+ROC curve is used for visual comparison of classification models which
+shows the trade-off between the true positive rate and the false
+positive rate. The area under the ROC curve is a measure of the
+accuracy of the model. When a model is closer to the diagonal, it is
+less accurate and the model with perfect accuracy will have an area of
+1.0
+</p>
+
+<p>
+Alright enough machine lern&#x2026;oh wait, there are more things to get
+familiar with in my curriculum.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge348f4a" class="outline-2">
+<h2 id="orge348f4a">SVM (Support Vector Machine)</h2>
+<div class="outline-text-2" id="text-orge348f4a">
+<p>
+<a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47">Link</a>
+</p>
+
+<p>
+Support vector machine is highly preferred by many as it produces
+significant accuracy with less computation power. Support Vector
+Machine can be used for both regression and classification tasks. But,
+it is widely used in classification objectives.
+</p>
+
+<p>
+The objective of the support vector machine algorithm is to find a
+hyperplane in an N-dimensional space(N — the number of features) that
+distinctly classifies the data points.
+</p>
+
+
+<figure id="org58bdce2">
+<img src="./static/images/hyperplanes.png" alt="hyperplanes.png" width="1200px">
+
+</figure>
+
+
+<figure id="orge663030">
+<img src="./static/images/hyperplanes2.png" alt="hyperplanes2.png" width="1200px">
+
+</figure>
+
+<p>
+To separate the two classes of data points, there are many possible
+hyperplanes that could be chosen. Our objective is to find a plane
+that has the maximum margin, i.e the maximum distance between data
+points of both classes. Maximizing the margin distance provides some
+reinforcement so that future data points can be classified with more
+confidence.
+</p>
+</div>
+
+<div id="outline-container-orga7754fa" class="outline-3">
+<h3 id="orga7754fa">Hyperplanes and Support Vectors</h3>
+<div class="outline-text-3" id="text-orga7754fa">
+
+<figure id="orgc5e17cb">
+<img src="./static/images/hyperplane3d.png" alt="hyperplane3d.png" width="1200px">
+
+</figure>
+
+<p>
+Hyperplanes are decision boundaries that help classify the data
+points. Data points falling on either side of the hyperplane can be
+attributed to different classes. Also, the dimension of the hyperplane
+depends upon the number of features. If the number of input features
+is 2, then the hyperplane is just a line. If the number of input
+features is 3, then the hyperplane becomes a two-dimensional plane. It
+becomes difficult to imagine when the number of features exceeds 3.
+</p>
+
+
+<figure id="org4c4b91a">
+<img src="./static/images/support-vectors.png" alt="support-vectors.png" width="1200px">
+
+</figure>
+
+<p>
+Support vectors are data points that are closer to the hyperplane and
+influence the position and orientation of the hyperplane. Using these
+support vectors, we maximize the margin of the classifier. Deleting
+the support vectors will change the position of the hyperplane. These
+are the points that help us build our SVM.
+</p>
+
+
+<figure id="org5eca45d">
+<img src="./static/images/batman-thinking.gif" alt="batman-thinking.gif" width="1200px">
+
+</figure>
+
+<p>
+Cool, that's a first gif on this website. As easy to put it in as an
+image, cool. Don't really use them, but why not, I might start to
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb6f0384" class="outline-3">
+<h3 id="orgb6f0384">Logistic Regression</h3>
+<div class="outline-text-3" id="text-orgb6f0384">
+
+<figure id="org608b80e">
+<img src="./static/images/logistic-regression.png" alt="logistic-regression.png" width="1200px">
+
+</figure>
+
+<p>
+Logistic Regression was used in the biological sciences in early
+twentieth century. It was then used in many social science
+applications. Logistic Regression is used when the dependent
+variable(target) is categorical.
+</p>
+
+<ul class="org-ul">
+<li>To predict whether an email is spam (1) or (0)</li>
+<li>Whether the tumor is malignant (1) or not (0)</li>
+</ul>
+
+<p>
+Logistic regression models the probabilities for classification
+problems with two possible outcomes. It's an extension of the linear
+regression model for classification problems
+</p>
+</div>
+</div>
+
+<div id="outline-container-org094d083" class="outline-3">
+<h3 id="org094d083">K-means Clustering</h3>
+<div class="outline-text-3" id="text-org094d083">
+
+<figure id="org47a7714">
+<img src="./static/images/k-means-clustering.png" alt="k-means-clustering.png" width="1200px">
+
+</figure>
+
+<p>
+K-means clustering is one of the simplest and popular unsupervised
+machine learning algorithms.
+</p>
+
+<p>
+The objective of K-means is simple: group similar data points together
+and discover underlying patterns. To achieve this objective, K-means
+looks for a fixed number (k) of clusters in a dataset.
+</p>
+
+<p>
+A cluster refers to a collection of data points aggregated together
+because of certain similarities.
+</p>
+
+<p>
+You’ll define a target number k, which refers to the number of centroids you need in the dataset. A centroid is the imaginary or real location representing the center of the cluster.
+</p>
+
+<p>
+Every data point is allocated to each of the clusters through reducing
+the in-cluster sum of squares? Hm?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org990fb9e" class="outline-3">
+<h3 id="org990fb9e">k-fold Cross-Validation</h3>
+<div class="outline-text-3" id="text-org990fb9e">
+
+<figure id="orgc47c294">
+<img src="./static/images/k-fold-cross-validation.png" alt="k-fold-cross-validation.png" width="1200px">
+
+</figure>
+
+<p>
+Lots of k's here
+</p>
+
+<p>
+Cross-validation is a statistical method used to estimate the skill of
+machine learning models.
+</p>
+
+<p>
+It is commonly used in applied machine learning to compare and select
+a model for a given predictive modeling problem because it is easy to
+understand, easy to implement, and results in skill estimates that
+generally have a lower bias than other methods.
+</p>
+
+<p>
+Oh, so there are even methods to compare and select a model?!? Why do
+you even need humans for then? Let the machine face a problem, it will
+select the method to solve it and then solve it. Uh, even data
+scientists might become unecessary soon. Overexaggerating of course,
+but damn.
+</p>
+</div>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-16-black-box-machine-learning.html</link>
+  <guid>https://arvydasg.github.io/2021-03-16-black-box-machine-learning.html</guid>
+  <pubDate>Tue, 16 Mar 2021 10:58:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Vim Html]]></title>
+  <description><![CDATA[
+
+<figure id="org01274ea">
+<img src="./static/images/vim-html.png" alt="vim-html.png" width="1200px">
+
+</figure>
+
+<p>
+Some random vim - okay I can not Not share <a href="https://www.youtube.com/watch?v=c68MkeMBjhE">this</a>. During my long
+pomodoro break I found this vim shortcut tutorial. Learned a bunch.
+You can use numbers in the commands? Mindblown.
+</p>
+
+<p>
+I think I will also install some plugins for my vim. Been using it raw
+since I first installed it. Making these pages is quite slow when you
+constantly have to add paragraphs, make lists, make the text bald and
+etc, so I think emmet-vim is a good first pluging for me. Later I
+would like something that would autocorrect my text lol since I am
+still getting used to homerow key typing and making some mistakes from
+time to time (although surprisingly no mistakes in the last sentence
+:o). Aaand what else. It would be nice to browse throuhgt my system in
+vim, to acces files quickly, hm ah yeah, this thing called syntax
+highlighting would also be nice. That might be in one of the plugins
+that the guy above in the picture has.
+</p>
+
+<p>
+You don't imagine how often I think about just using sublime or some
+other code editor environment where everything looks so nice and
+colorful. But then I remember all those hardcore dudes on youtube that
+tell you to use vim, since after climbing that steep learning curve
+it's all smooth sailing from there. I wouldn't want to believe them
+blindly, but when I am using octave for example or some other program,
+can't remember which, AND I get to use the same keybinds like in vim
+or in linux in general, I get shocked! If I learn vim and linux I can
+pretty much do and edit stuff anywhere, the workflow will be so
+smooth! So yeah, sticking with vim for now, will try to get some
+plugins, maybe it will make my experience more enjoyable :)
+</p>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-15-vim-html.html</link>
+  <guid>https://arvydasg.github.io/2021-03-15-vim-html.html</guid>
+  <pubDate>Mon, 15 Mar 2021 18:18:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Black Box Method]]></title>
+  <description><![CDATA[
+
+<figure id="org2bfd6ee">
+<img src="./static/images/squirrel.png" alt="squirrel.png" width="1200px">
+
+</figure>
+
+<p>
+Main inspiration - <a href="https://www.youtube.com/watch?v=RDzsrmMl48I&amp;t=604s">this guy</a>.
+</p>
+
+<p>
+A guy that explained this concept to me is competing in coding
+competitions. It's the first time I hear about those, but I imagine
+you have to know a lot of different methods for solving problems,
+because when the contest comes, you don’t know what problem you are
+going to get.
+</p>
+
+<p>
+Recently, when I started to think about effective ways of learning a
+new subject, I came up to people saying to learn things broadly, to
+just scratch the surface of the new subjects instead of what I used to
+always do - learn as much as I can (like a squirrel with cheeks full
+of nuts) about a topic. According to them, after having general
+knowledge of the field/s you can take up a project and deepen the
+knowledge along the way.
+</p>
+
+<p>
+So let's say there is a field that I want to get into. Conveniently I
+have such a field - Data science. Data science includes many topics:
+</p>
+
+<ul class="org-ul">
+<li>Mathematics</li>
+<li>Statistics</li>
+<li>Programming languages (Python, R)</li>
+<li>Data cleanign and visualization - (Pandas, NumPy, Matplotlib, Seaborn)</li>
+<li>Exploring the data (SQL)?</li>
+<li>Machine learnign algorithms</li>
+<li>Deep learning (all about neural networks)</li>
+<li>SQL &amp; MongoDb (working with databases)</li>
+<li>BI tools (creating interactive visualizations)</li>
+</ul>
+
+<p>
+and so on…
+</p>
+
+<p>
+So, If I want to get into the field AND I am learning by myself from
+scratch, creating my own small project and working on it. Would it be
+smart for me to start with and dive very very deep in mathematics?
+Know the ins and outs of it needed for data science?
+</p>
+
+<p>
+As I came to see it, it is worth investing some time to explore ALL
+those major fields BEFORE you actually proceed to learn one specific
+topic in depth.
+</p>
+
+<p>
+Why is that?
+</p>
+
+<p>
+Well, If for example I get a piece of data from somewhere (I am still
+working on that.. Not sure how, what kind and from where to get it)
+and I am only focusing on mathematics, I won’t know what else exactly
+is there I can do with that piece of data. Can I create a
+visualization, can I make a dashboard or reports, can I get some
+insights from it? I lack a lot of general knowledge, all I know is
+math.
+</p>
+
+
+<figure id="org802e4f9">
+<img src="./static/images/black-box1.png" alt="black-box1.png" width="1200px">
+
+</figure>
+
+<p>
+I learn concept-1 (mathematics), but the rest of the topics are
+unknown to me.
+</p>
+
+<p>
+Would it be smart if I take concept-2 and concept-3 from the unknown
+row and only then proceed with learning one topic in depth. In that
+case, I have knowledge of all of the topics, broad knowledge (I am
+going to learn it in depth anyway, so it's only good that I started to
+learn it already) so if sa project or a difficulty appears, I know
+about the possible tools I have in my reach that I can use to solve
+the problem. Yes, I don’t have an in depth knowledge of concept-2 and
+concept-3, but it is better than not having ANY knowledge.
+</p>
+
+<p>
+So, okay.
+</p>
+
+<p>
+This is what I am going to do. I will spend the next few days getting
+an understanding of those fields I mentioned above, so when I am
+solving a particular problem related with data, I will have an idea
+what else is there that is possible to achieve with the data that I
+have.
+</p>
+
+<p>
+It's an easy gap to cross versus understanding the whole thing. Black
+box all the concepts before starting to fully learn them. It is not a
+substitute for learning them, just for the start.
+</p>
+
+<p>
+It is an intermediate step, except it has no drawbacks, you are going
+to learn this stuff anyway. So it is only going to benefit you.
+</p>
+
+<p>
+<b>Advantages</b>
+</p>
+
+<ul class="org-ul">
+<li>Works quickly - information required to USE something is much less
+than the information required to fully understand something.</li>
+
+<li>Keeps the learning focused - you know what everything is “doing”,
+you know what purpose of it is. All you are doing when you are
+transitioning from having something black boxed to learning it
+norma+lly - you are just figuring out how it works. You already know
+what it does, you already know everything required to use it, you
+are just understanding the internal mechanisms of it.</li>
+
+<li>Keeps the learning focused - you know what everything is “doing”,
+you know what purpose of it is. All you are doing when you are
+transitioning from having something black boxed to learning it
+norma+lly - you are just figuring out how it works. You already know
+what it does, you already know everything required to use it, you
+are just understanding the internal mechanisms of it</li>
+
+<li>Makes learning less scary - when you understand the underlying
+purpose of something it makes it a lot less scary to learn it for
+real, because you know the end result already, it is just figuring
+out how it gets there.</li>
+</ul>
+
+<p>
+I would like to believe that by doing so I am learning from my
+mistakes that I made when trying to cram all the knowledge about one
+field in my head (machine learning algorithms when doing the coursera
+course. It would have been beneficial to know somy python so I could
+graph the gradient descent and play with it, have some actual data to
+work with and so on.. Instead of just staring at one algorithm).
+</p>
+
+<div id="outline-container-orga6c9773" class="outline-2">
+<h2 id="orga6c9773">To sum up</h2>
+<div class="outline-text-2" id="text-orga6c9773">
+
+<figure id="orgdd523e6">
+<img src="./static/images/black-box2.png" alt="black-box2.png" width="1200px">
+
+</figure>
+
+<p>
+Whether you choose to use it or not is up to you, but it can’t hurt,
+for sure. It takes a really short time, like mere minutes for a single
+topic. It involves information that you would eventually have to learn
+anyway and it also gives you a brief but sufficient (sufficient for
+using it) introduction to topics, allowing you to use them much
+quicker than you would be able to if you decide to learn them all
+fully in sequence.
+</p>
+
+<p>
+p.s. damn it takes a lot of time to write this html document in a
+proper way. I sometimes miss Word document, but sometimes I don't. Vim
+has it's own advantages, but I am new with it so I am a little bit
+slow. Learned how to yank, paste a word or a whole line today.
+</p>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-15-black-box-method.html</link>
+  <guid>https://arvydasg.github.io/2021-03-15-black-box-method.html</guid>
+  <pubDate>Mon, 15 Mar 2021 16:55:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Thoughts on Achieving Goals]]></title>
+  <description><![CDATA[
+<p>
+How good is it to work 24/7 on one particular thing? Might Look like a
+great idea, you will get accoomplished a lot, right? But only in one
+area. F.x. Programming. But what about your health, the body that
+actually allows you to be learning this stuff. Who will take care of
+it? Diet, exercise, mobility, simply movement. Who will take care of
+all the other things in your life And all of this is CRUCIAL for being
+productive, really. You can not have NO food and be productive. You
+can not have breaks where you exercise because you wont clear you
+head, find new ideas and at the same time train your mind. You must do
+those. Damn balance is very very important. Have to have everything in
+your life in order to be good at one particular thing, no? But hm
+there are examples of people who are super super good at one subject
+and suck at others. Like programmers f.x, they dont rally care about
+their bodies right? But its probably the battle you choose.. I
+personally think its important for me to take care of my body first
+and ONLY and WHEN I do that I will be productive and find time for
+other things. Just like at 12th grade, remember? You had so many
+things on your to do list and managed to do all of them. The more busy
+you are the more you can accomplish. Books, guitar, exercise, cold
+showers, food, programming, shop, relatives, friends, etc etc are all
+possible and should be tried to be managed. Like in todays video -
+streching video Says the more you strech per day doesnt increse the
+benefits, but that frequency of 6 days a week and 5 minutes total for
+that week is what's important. 6 days a week 5 minutes total = yield
+best streching results, more is simply not necessary. This shocked me
+a little, simply because I agree on it and I was acting completely
+different the entire last month. I would think that I am working just
+because I am spending a lot of time on it, but I was simply staying in
+place in terms of my progress.
+</p>
+
+<p>
+Look at yourself now. Today, its 11am, you ate, you have already found
+time to learn about calculus and feel good about the direction you are
+going to. You did run for 10 or so mins, you did 4x10 squats with 10kg
+on your back, you wanted to go to the shop but didnt take your mask
+with you, you came back and took a cold shower, got into fresh clothes
+and went back to study and now you are even doing stuff with your
+website. All of this would not have been possible if I would have
+stayed with the previous or Lex Fridman mindset to focus on one thing
+only. Not Lex, its mostly mine, because I have been like this my whole
+life. It is either ALL or NOTHING. But maybe the middle path is the
+right choice, right, Candy?
+</p>
+
+<div id="outline-container-orgbc543ea" class="outline-2">
+<h2 id="orgbc543ea">Parkinson's Law</h2>
+<div class="outline-text-2" id="text-orgbc543ea">
+<p>
+Parkinson's Law is the old adage that work expands to fill the time
+allotted. Put simply, the amount of work required adjusts to the time
+available for its completion.
+</p>
+
+<p>
+It also illustrates very well what I was expriencing. The more time I
+have, the more work will appear. But as we have seen from the
+streching example - more work does not necessarily bring better
+results.
+</p>
+</div>
+
+<div id="outline-container-org15352c4" class="outline-3">
+<h3 id="org15352c4">But does it then mean</h3>
+<div class="outline-text-3" id="text-org15352c4">
+<p>
+That in order to have a productive DAY you also have to balance out
+the work and relaxation? 50% 50%?;)
+</p>
+</div>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-15-thoughts-on-achieving-goals.html</link>
+  <guid>https://arvydasg.github.io/2021-03-15-thoughts-on-achieving-goals.html</guid>
+  <pubDate>Mon, 15 Mar 2021 16:49:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Addict]]></title>
+  <description><![CDATA[
+<p>
+When I am learning without a plan or an idea of what I am doing, I get
+in this mode of constant kind of anxiety, feeling that I can ONLY
+spend my time of the things I am trying to learn, that god forbid I
+will waste some time by washing clothes or getting a shave or
+something - all that seems like a waste of time.
+</p>
+
+<p>
+But now, since I am more relaxed, following the pomodoro technique,
+ticking off things from my sunday to-do list, it is only 11:30 and I
+have already done a lot of things that help to keep my days(life) in
+balance. AND at the same time I still have loads of time to do HOURS
+of learning. Productive time, with calm mind, because other things are
+sorted and not at the back of my mind.
+</p>
+
+<p>
+I used to be this person that gets into an "addiction" kind of mode
+trying to complete and perfect a task (Revit in Denmark, Garden in
+Nepal, linux and other things now). Nothing else is important, only me
+and the task. I am forced to believe that this is a bad trait and I am
+kind of relieved thinking about it as a bad trait, because I don't get
+as much work done by taking care other things in my life, but what I
+realized, that the “addiction” type of work mode didn't actually get
+me a lot of work done. I was just staring at the material without
+understanding what it was about. So most of my effort went into the
+task and only small amount of it was actually productive.
+</p>
+
+<p>
+Really, for the next 6 months I will be doing this passive learning.
+Now it sounds good, I like it, I got structure, I have a path, I have
+the reasons “why”, now all I have to do is follow that path. It's all
+on me now.
+</p>
+
+<p>
+5mins to write this and its so good. Just dumped it out.
+</p>
+
+<p>
+p.s. Okay, I have re-read this after some hours and I see it doesn't
+really make much sence if you are not ME. I think I won't always try
+to make my "brain dump" material clearly understandable by others. For
+now, all of this is purely for me. To practice working on a keyboard,
+to practice using vim, to practice building website pages from time
+to time. So yeah :)
+</p>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-14-addict.html</link>
+  <guid>https://arvydasg.github.io/2021-03-14-addict.html</guid>
+  <pubDate>Sun, 14 Mar 2021 17:00:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Focused and Difused learning]]></title>
+  <description><![CDATA[
+
+<figure id="orgfbcf22d">
+<img src="./static/images/focused-diffuse.png" alt="focused-diffuse.png" width="1200px">
+
+</figure>
+
+<p>
+The diffuse mode could be thought of as a flashlight set so that it
+casts its light very broadly, but not very strongly in any one area.
+(As opposed to the focused mode, which would have its light cast very
+strongly in a single area, but very weakly everywhere else). Focused -
+The type of thinking you need to do when you are trying to understand
+something new.
+</p>
+
+
+<figure id="orge005bd3">
+<img src="./static/images/learning-flashlight.jpeg" alt="learning-flashlight.jpeg" width="1200px">
+
+</figure>
+
+<div id="outline-container-orga6d8ab8" class="outline-2">
+<h2 id="orga6d8ab8">Focused mode</h2>
+<div class="outline-text-2" id="text-orga6d8ab8">
+<p>
+<b>Focused mode</b> - like paintball. Think of something, the thought goes
+from one neuron to the other. As it is bouncing on the bumpers, you
+are able to solve a problem of something you are rather familiar with.
+Thought moves smoothly along the already existing neural pathway -
+moving on a familiar, nicely paved road.
+</p>
+
+<p>
+Trying to do a multiplication problem or looking for a certain word in
+your mind - probably stepping along the familiar pathways of the
+focused mode.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org824207e" class="outline-2">
+<h2 id="org824207e">Diffuse mode</h2>
+<div class="outline-text-2" id="text-org824207e">
+<p>
+<b>Diffused thinking</b> - relaxed. You haven't thought before - you don't
+know where the pattern\path is. All the other neurons are blocking the
+patterns. New neural pathways have a way to appear, because you don't
+bump into anything. (diffused mode).
+</p>
+
+<p>
+If you are trying to solve a new problem it often cries out for the
+more broad ranging perspectives of the diffuse mode.
+</p>
+
+<ul class="org-ul">
+<li><b>Dancing</b> in a relaxed and free form manner, without concentrating on anything</li>
+
+<li>arouse the diffuse(rather than focused) mode.</li>
+
+<li>Tag along in the passenger seaet of a car, looking absently out the window while someone else is driving.</li>
+
+<li>Arouse the diffuse(rather than focused) mode.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2fd0390" class="outline-2">
+<h2 id="org2fd0390">Can't have both</h2>
+<div class="outline-text-2" id="text-org2fd0390">
+<p>
+When we find ourselves stuck on a problem, or even if we’re unsure of
+a situation, the course of living our daily life. It's often a good
+idea once you’ve focused directly on the situation to let things
+settle back and take a bit more time. That way more neural processing
+can take place, often below conscious awareness in the diffuse mode.
+</p>
+
+<p>
+One mode limits the access to the other type of mode. Either one or
+the other side of the coin, can not have both, same with thinking
+modes. Either one or the other type of thinking.
+</p>
+
+
+<figure id="org4c6143a">
+<img src="./static/images/salvador-sleep.jpg" alt="salvador-sleep.jpg" width="1200px">
+
+</figure>
+
+<p>
+<b>Salvador Dali</b> - Relaxing in the chair, vaguely thinking what he was
+previously focusing on, holding keys, falling asleep, then when the
+keys fall down, he wakes up and then goes to paint with the new
+connections that he has just made while in the diffuse mode.
+</p>
+
+<p>
+He suggests that the elements of creativity process are Preparation–
+know your domain, Concentration– intense focus, Incubation– relax and
+do something the polar opposite, Illumination– breakthrough on the
+ideas and Verification– test the idea.
+</p>
+
+<p>
+Salvador Dali also wrote a book called the ‘Fifty secrets of Magic
+Craftsmanship'(1948)
+</p>
+
+
+<figure id="org06ca10e">
+<img src="./static/images/thomas-edison.png" alt="thomas-edison.png" width="1200px">
+
+</figure>
+
+<p>
+<b>Thomas Edison</b> did something similar.
+</p>
+
+<p>
+During his day, Edison would take time out by himself and relax in a
+chair or on a sofa. Invariably he would be working on a new invention
+and seeking creative solutions to the problem he was dealing with. He
+knew that if her could get into that "twilight state" between being
+awake and being asleep, he could access the pure creative genius of
+his subconscious mind.
+</p>
+
+<p>
+To prevent himself from crossing all the way over the "genius gap"
+into deep sleep, he would nap with his hand propped up on his elbow
+while he clutched a handful of ball-bearings. Then he would just drift
+off to sleep, knowing that his subconscious mind would take up the
+challenge of his problem and provide a solution. As soon as he went
+into too deep a sleep, his hand would drop and the ball-bearings would
+spill noisily on the floor, waking him up again. He'd then write down
+whatever was in his mind.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc5cf830" class="outline-2">
+<h2 id="orgc5cf830">Sum up</h2>
+<div class="outline-text-2" id="text-orgc5cf830">
+<p>
+Mind needs to go from one to the other mode to learn effectively.
+</p>
+
+<p>
+Learning something difficult takes time. Brain needs to alternate its
+ways of learning as it grapples with and assimilates the new material.
+</p>
+
+<p>
+To gain muscles you need to work everyday. Little work everyday,
+gradually allow yourself to grow. A LITTLE BIT EVERYDAY!!! Thank you
+lady for making me change my mind about learning and being productive.
+</p>
+
+
+<figure id="orgb2582ed">
+<img src="./static/images/focused-diffuse1.png" alt="focused-diffuse1.png" width="1200px">
+
+</figure>
+
+
+<figure id="org9fd297f">
+<img src="./static/images/learn-quiz.png" alt="learn-quiz.png" width="1200px">
+
+</figure>
+
+<p>
+What a brilliant quiz.
+</p>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/2021-03-13-focused-and-difused-learning.html</link>
+  <guid>https://arvydasg.github.io/2021-03-13-focused-and-difused-learning.html</guid>
+  <pubDate>Sat, 13 Mar 2021 17:05:00 +0200</pubDate>
 </item>
 </channel>
 </rss>
