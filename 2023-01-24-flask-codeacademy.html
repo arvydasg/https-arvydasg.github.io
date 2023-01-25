@@ -27,28 +27,33 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga32336c">1. <span class="todo TODO">TODO</span> what is jinja templates</a></li>
-<li><a href="#orgc244db9">2. 2023.01.24</a>
+<li><a href="#orge54eeab">1. 2023.01.24</a>
 <ul>
-<li><a href="#org6e116dd">2.1. Kaip puslapyje atvaizduoti įvestą kintamąjį:</a></li>
-<li><a href="#orgd59adbe">2.2. Kaip sukurti ir panaudoti HTML šabloną:</a></li>
-<li><a href="#orga2046c2">2.3. Kaip kintamuosius perkelti į šabloną:</a></li>
-<li><a href="#org3cc2357">2.4. Kaip perduoti duomenis iš svetainės į programą:</a></li>
-<li><a href="#orgf9d2426">2.5. Naudojame base.html šabloną:</a></li>
-<li><a href="#org1c12d40">2.6. Stiliui panaudojame "Bootstrap":</a></li>
+<li><a href="#org4f2822e">1.1. Kaip sukurti minimalią svetainę:</a></li>
+<li><a href="#orgeeaeadc">1.2. Kaip puslapyje atvaizduoti įvestą kintamąjį:</a></li>
+<li><a href="#org5d71bf3">1.3. Kaip sukurti ir panaudoti HTML šabloną:</a></li>
+<li><a href="#orgef6d303">1.4. Kaip kintamuosius perkelti į šabloną:</a></li>
+<li><a href="#org442d920">1.5. Kaip perduoti duomenis iš svetainės į programą:</a></li>
+<li><a href="#org22822e8">1.6. Naudojame base.html šabloną:</a></li>
+<li><a href="#org7124c5e">1.7. Stiliui panaudojame "Bootstrap":</a></li>
+<li><a href="#orgf84ad98">1.8. Uzduotys</a>
+<ul>
+<li><a href="#orgbdc11a9">1.8.1. 1 užduotis</a></li>
+<li><a href="#org80adaef">1.8.2. 2 užduotis</a></li>
+<li><a href="#orgf96a216">1.8.3. 3 užduotis</a></li>
+<li><a href="#orga45d98c">1.8.4. 4 užduotis</a></li>
+<li><a href="#org08b55d8">1.8.5. 5 užduotis (papildomai)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orga32336c" class="outline-2">
-<h2 id="orga32336c"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> what is jinja templates</h2>
-</div>
-
-<div id="outline-container-orgc244db9" class="outline-2">
-<h2 id="orgc244db9"><span class="section-number-2">2.</span> 2023.01.24</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orge54eeab" class="outline-2">
+<h2 id="orge54eeab"><span class="section-number-2">1.</span> 2023.01.24</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 "Flask yra populiariausias Python microframework. Jeigu projektas nėra
 labai didelis, arba tiesiog norime pasidaryti kažkokį GUI per
@@ -74,19 +79,42 @@ paskaita bus greita įžanga, kitose nagrinėsime išsamiau."
 </p>
 
 <p>
-<code>render_template</code> - import this to use template from templates folder
+<code>template_folder</code> = "render" - import this to use template from other
+templates folder, prie <span class="underline"><span class="underline">name</span></span>
 </p>
 
 <p>
 if you want to change templates folder name - don't forget to add
 "default<sub>templates</sub>" to app = in main.
 </p>
+
+<p>
+<a href="https://jinja.palletsprojects.com/en/3.1.x/">Jinja templates</a>
+</p>
 </div>
 
+<div id="outline-container-org4f2822e" class="outline-3">
+<h3 id="org4f2822e"><span class="section-number-3">1.1.</span> Kaip sukurti minimalią svetainę:</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fb4934;">from</span> flask <span style="color: #fb4934;">import</span> Flask
 
-<div id="outline-container-org6e116dd" class="outline-3">
-<h3 id="org6e116dd"><span class="section-number-3">2.1.</span> Kaip puslapyje atvaizduoti įvestą kintamąjį:</h3>
-<div class="outline-text-3" id="text-2-1">
+<span style="color: #83a598;">app</span> = Flask<span style="color: #fe8019;">(</span><span style="color: #fe8019;">__name__</span><span style="color: #fe8019;">)</span>
+
+<span style="color: #fabd2f;">@app.route</span><span style="color: #fe8019;">(</span><span style="color: #b8bb26;">"/"</span><span style="color: #fe8019;">)</span>
+<span style="color: #fb4934;">def</span> <span style="color: #b8bb26;">home</span><span style="color: #fe8019;">()</span>:
+    <span style="color: #fb4934;">return</span> <span style="color: #b8bb26;">"&lt;h1&gt;&#268;ia mano naujas puslapis&lt;/h1&gt;"</span>
+
+<span style="color: #fb4934;">if</span> <span style="color: #fe8019;">__name__</span> == <span style="color: #b8bb26;">"__main__"</span>:
+    app.run<span style="color: #fe8019;">(</span>debug=<span style="color: #d3869b;">True</span><span style="color: #fe8019;">)</span>:
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeeaeadc" class="outline-3">
+<h3 id="orgeeaeadc"><span class="section-number-3">1.2.</span> Kaip puslapyje atvaizduoti įvestą kintamąjį:</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 main.py faile:
 </p>
@@ -107,9 +135,9 @@ main.py faile:
 </div>
 </div>
 
-<div id="outline-container-orgd59adbe" class="outline-3">
-<h3 id="orgd59adbe"><span class="section-number-3">2.2.</span> Kaip sukurti ir panaudoti HTML šabloną:</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-org5d71bf3" class="outline-3">
+<h3 id="org5d71bf3"><span class="section-number-3">1.3.</span> Kaip sukurti ir panaudoti HTML šabloną:</h3>
+<div class="outline-text-3" id="text-1-3">
 <p>
 main.py faile:
 </p>
@@ -171,9 +199,9 @@ templates/index.html faile:
 </div>
 </div>
 
-<div id="outline-container-orga2046c2" class="outline-3">
-<h3 id="orga2046c2"><span class="section-number-3">2.3.</span> Kaip kintamuosius perkelti į šabloną:</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-orgef6d303" class="outline-3">
+<h3 id="orgef6d303"><span class="section-number-3">1.4.</span> Kaip kintamuosius perkelti į šabloną:</h3>
+<div class="outline-text-3" id="text-1-4">
 <p>
 main.py faile:
 </p>
@@ -216,9 +244,9 @@ templates/index.html faile:
 </div>
 </div>
 
-<div id="outline-container-org3cc2357" class="outline-3">
-<h3 id="org3cc2357"><span class="section-number-3">2.4.</span> Kaip perduoti duomenis iš svetainės į programą:</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-org442d920" class="outline-3">
+<h3 id="org442d920"><span class="section-number-3">1.5.</span> Kaip perduoti duomenis iš svetainės į programą:</h3>
+<div class="outline-text-3" id="text-1-5">
 <p>
 app.py faile:
 </p>
@@ -283,9 +311,9 @@ templates/greetings.html faile:
 </div>
 </div>
 
-<div id="outline-container-orgf9d2426" class="outline-3">
-<h3 id="orgf9d2426"><span class="section-number-3">2.5.</span> Naudojame base.html šabloną:</h3>
-<div class="outline-text-3" id="text-2-5">
+<div id="outline-container-org22822e8" class="outline-3">
+<h3 id="org22822e8"><span class="section-number-3">1.6.</span> Naudojame base.html šabloną:</h3>
+<div class="outline-text-3" id="text-1-6">
 <p>
 Failas templates/base.html:
 </p>
@@ -339,9 +367,9 @@ Failas templates/greetings.html:
 </div>
 </div>
 
-<div id="outline-container-org1c12d40" class="outline-3">
-<h3 id="org1c12d40"><span class="section-number-3">2.6.</span> Stiliui panaudojame "Bootstrap":</h3>
-<div class="outline-text-3" id="text-2-6">
+<div id="outline-container-org7124c5e" class="outline-3">
+<h3 id="org7124c5e"><span class="section-number-3">1.7.</span> Stiliui panaudojame "Bootstrap":</h3>
+<div class="outline-text-3" id="text-1-7">
 <p>
 Faile base.html:
 </p>
@@ -398,16 +426,122 @@ Faile base.html:
 </p>
 
 
-<figure id="orgf55402a">
+<figure id="orgb068ed2">
 <img src="./static/images/2023-01-24_1.png" alt="2023-01-24_1.png" width="1200px">
 
 </figure>
 
 
-<figure id="org3a8a8fd">
+<figure id="org90e8b0f">
 <img src="./static/images/2023-01-24_2.png" alt="2023-01-24_2.png" width="1200px">
 
 </figure>
+</div>
+</div>
+
+<div id="outline-container-orgf84ad98" class="outline-3">
+<h3 id="orgf84ad98"><span class="section-number-3">1.8.</span> Uzduotys</h3>
+<div class="outline-text-3" id="text-1-8">
+</div>
+<div id="outline-container-orgbdc11a9" class="outline-4">
+<h4 id="orgbdc11a9"><span class="section-number-4">1.8.1.</span> 1 užduotis</h4>
+<div class="outline-text-4" id="text-1-8-1">
+<p>
+<a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/1_uzduotis">Link to github</a>
+</p>
+
+<p>
+Sukurti programą, kuri turėtų statinį puslapį, pvz. localhost:5000 su
+norimu tekstu (rekomenduojama naudoti šablonus)
+</p>
+
+
+<figure id="org9d535ce">
+<img src="./static/images/2023-01-24_3.png" alt="2023-01-24_3.png" width="1200px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org80adaef" class="outline-4">
+<h4 id="org80adaef"><span class="section-number-4">1.8.2.</span> 2 užduotis</h4>
+<div class="outline-text-4" id="text-1-8-2">
+<p>
+<a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/2_uzduotis">Link to github</a>
+</p>
+
+<p>
+Sukurti programą, kuri įvedus norimą žodį adreso eilutėje (po /
+simbolio) ir paspaudus ENTER, atspausdintų jį penkis kartus.
+p
+</p>
+
+<figure id="orgfd43717">
+<img src="./static/images/2023-01-24_4.png" alt="2023-01-24_4.png" width="1200px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-orgf96a216" class="outline-4">
+<h4 id="orgf96a216"><span class="section-number-4">1.8.3.</span> 3 užduotis</h4>
+<div class="outline-text-4" id="text-1-8-3">
+<p>
+<a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/3_uzduotis">Link to github</a>
+</p>
+
+<p>
+Sukurti programą, kuri puslapyje localhost:5000/keliamieji parodytų
+visus keliamuosius metus nuo 1900 iki 2100 metų.
+</p>
+
+
+<figure id="orgbf172f2">
+<img src="./static/images/2023-01-24_5.png" alt="2023-01-24_5.png" width="1200px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-orga45d98c" class="outline-4">
+<h4 id="orga45d98c"><span class="section-number-4">1.8.4.</span> 4 užduotis</h4>
+<div class="outline-text-4" id="text-1-8-4">
+<p>
+<a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/4_uzduotis">Link to github</a>
+</p>
+
+<p>
+Sukurti programą, kuri leistų įvesti metus ir paspaudus patvirtinimo
+mygtuką parodytų, ar jie yra keliamieji.
+</p>
+
+
+<figure id="org94c20a7">
+<img src="./static/images/2023-01-24_6.png" alt="2023-01-24_6.png" width="1200px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org08b55d8" class="outline-4">
+<h4 id="org08b55d8"><span class="section-number-4">1.8.5.</span> 5 užduotis (papildomai)</h4>
+<div class="outline-text-4" id="text-1-8-5">
+<p>
+<a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/5_uzduotis">Link to github</a>
+</p>
+
+<p>
+Patobulinti anksčiau kurtą biudžeto programą, panaudojant Flask
+(bendravimui su vartotoju) ir SQLAlchemy (darbui su duomenų baze,
+kurioje bus saugomi pajamų ir išlaidų įrašai).
+</p>
+
+
+<figure id="org93ce332">
+<img src="./static/images/2023-01-24_7.png" alt="2023-01-24_7.png" width="1200px">
+
+</figure>
+</div>
 </div>
 </div>
 </div>
