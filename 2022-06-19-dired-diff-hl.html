@@ -15,23 +15,27 @@
 <script src="static/auto-render.min.js"></script>
 <link rel="icon" href="static/ag.ico"></head>
 <body>
-<div id="preamble" class="status"><div class="header">
-  <a href="https://arvydasg.github.io/">Arvydas Scratchpad on the Internet</a>
+<div id="preamble" class="status">
+<div id="nav-content">
+<div class="header">
+   <a href="https://arvydasg.github.io/">Arvydas Scratchpad on the Internet</a>
   <div class="sitelinks">
-    <a href="https://github.com/arvydasg">Github</a> | <a href="https://arvydasg.github.io/projects.html">Projects</a> | <a href="https://arvydasg.github.io/uses.html">Uses</a> | <a href="https://arvydasg.github.io/about.html">About</a>
+    <a href="https://arvydasg.github.io/about.html">About</a> | <a href="https://arvydasg.github.io/freelancing.html">Freelancing</a> | <a href="https://arvydasg.github.io/tag-project.html">Projects</a> | <a href="https://arvydasg.github.io/archive.html">Blog</a> | <a href="https://arvydasg.github.io/uses.html">Uses</a>
+  </div>
+<hr>
   </div>
 </div></div>
 <div id="content">
 <div class="post-date">19 Jun 2022</div><h1 class="post-title"><a href="https://arvydasg.github.io/2022-06-19-dired-diff-hl.html">Dired diff-hl</a></h1>
 
-<figure id="org1a8dfe5">
+<figure id="org3bbb8bf">
 <img src="./static/images/dired-diff-hl.png" alt="dired-diff-hl.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgea78d6e" class="outline-2">
-<h2 id="orgea78d6e">Introduction</h2>
-<div class="outline-text-2" id="text-orgea78d6e">
+<div id="outline-container-org449e390" class="outline-2">
+<h2 id="org449e390">Introduction</h2>
+<div class="outline-text-2" id="text-org449e390">
 <p>
 So, everything started when I have discovered ‘diff-hl’ package. It
 had an option to show differences in dired buffer. I thought okay,
@@ -40,9 +44,9 @@ cool option, lets not use neotree anymore and use dired instead.
 </div>
 </div>
 
-<div id="outline-container-orgad4b45b" class="outline-2">
-<h2 id="orgad4b45b">Body</h2>
-<div class="outline-text-2" id="text-orgad4b45b">
+<div id="outline-container-org31c707b" class="outline-2">
+<h2 id="org31c707b">Body</h2>
+<div class="outline-text-2" id="text-org31c707b">
 <p>
 I added a few lines to ‘diff-hl’ config to make the file changes
 visible in dired buffer.
@@ -112,9 +116,9 @@ more convenient to cycle with and I am all set!
 </div>
 </div>
 
-<div id="outline-container-org398a324" class="outline-2">
-<h2 id="org398a324">The final config</h2>
-<div class="outline-text-2" id="text-org398a324">
+<div id="outline-container-org3181d40" class="outline-2">
+<h2 id="org3181d40">The final config</h2>
+<div class="outline-text-2" id="text-org3181d40">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"> <span style="color: #fe8019;">(</span><span style="color: #fb4934;">use-package</span> <span style="color: #d3869b;">dired</span>
     <span style="color: #fe8019;">:ensure</span> nil                         <span style="color: #928374;">;</span><span style="color: #928374;">no need for t, because dired is built in</span>
@@ -156,7 +160,7 @@ found ‘dired-find-alternate-file’ :)
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-emacs.html">Emacs</a> </div></div>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-emacs.html">emacs</a> </div></div>
 <div id="postamble" class="status"><div id="archive">
   <a href="./archive.html">Other posts</a>
 </div></div>

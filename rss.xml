@@ -4,47 +4,335 @@
 <title><![CDATA[arvydasg.github.io]]></title>
 <description><![CDATA[arvydasg.github.io]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Wed, 25 Jan 2023 21:45:23 +0200</lastBuildDate>
+<lastBuildDate>Sat, 28 Jan 2023 14:07:08 +0200</lastBuildDate>
 <item>
-  <title><![CDATA[Flask CodeAcademy]]></title>
+  <title><![CDATA[Labor market overview]]></title>
   <description><![CDATA[
 <nav id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge54eeab">1. 2023.01.24</a>
-<ul>
-<li><a href="#org4f2822e">1.1. Kaip sukurti minimalią svetainę:</a></li>
-<li><a href="#orgeeaeadc">1.2. Kaip puslapyje atvaizduoti įvestą kintamąjį:</a></li>
-<li><a href="#org5d71bf3">1.3. Kaip sukurti ir panaudoti HTML šabloną:</a></li>
-<li><a href="#orgef6d303">1.4. Kaip kintamuosius perkelti į šabloną:</a></li>
-<li><a href="#org442d920">1.5. Kaip perduoti duomenis iš svetainės į programą:</a></li>
-<li><a href="#org22822e8">1.6. Naudojame base.html šabloną:</a></li>
-<li><a href="#org7124c5e">1.7. Stiliui panaudojame "Bootstrap":</a></li>
-<li><a href="#orgf84ad98">1.8. Uzduotys</a>
-<ul>
-<li><a href="#orgbdc11a9">1.8.1. 1 užduotis</a></li>
-<li><a href="#org80adaef">1.8.2. 2 užduotis</a></li>
-<li><a href="#orgf96a216">1.8.3. 3 užduotis</a></li>
-<li><a href="#orga45d98c">1.8.4. 4 užduotis</a></li>
-<li><a href="#org08b55d8">1.8.5. 5 užduotis (papildomai)</a></li>
+<li><a href="#org0c86731">Intro</a></li>
+<li><a href="#org1cf1a33">Python in Lithuania</a></li>
+<li><a href="#org09bc82e">Job search</a></li>
 </ul>
-</li>
+</div>
+</nav>
+
+<div id="outline-container-org0c86731" class="outline-2">
+<h2 id="org0c86731">Intro</h2>
+<div class="outline-text-2" id="text-org0c86731">
+<p>
+Had a meeting with Laura from CodeAcademy. It is finally time to get
+for my dream job, I am ready!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1cf1a33" class="outline-2">
+<h2 id="org1cf1a33">Python in Lithuania</h2>
+<div class="outline-text-2" id="text-org1cf1a33">
+<p>
+Python in Lithuania is not that widely used, perhaps in Big Data or
+Automation.
+</p>
+</div>
+
+<div id="outline-container-org734d3b8" class="outline-3">
+<h3 id="org734d3b8">Positions after this course for me could be as:</h3>
+<div class="outline-text-3" id="text-org734d3b8">
+<ul class="org-ul">
+<li>Data Engineer/Scientist</li>
+<li>Automation Specialist</li>
+<li>Robotics Process Automation / RPA Specialist</li>
+<li>Testing/QA</li>
+<li><code>DEVOPS ENGINEER</code> (junior/entry level). (I think this would suite
+me best, since I have experience as IT technician where I was
+involved with deploying and managing various solutions. I could be
+a better candidate instead of anyone from the street with no IT
+experience. Automatization, making systems work, that's what I do
+on a daily basis and this is what I enjoy)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3727ccd" class="outline-3">
+<h3 id="org3727ccd">Biggest Python companies in Lithuania</h3>
+<div class="outline-text-3" id="text-org3727ccd">
+<p>
+Here is a list of biggest python companies in Lithuania. Should not
+forget to introduce myself to each and every one of them :)
+</p>
+
+
+<figure id="org4dd45c4">
+<img src="./static/images/labor-market-overview/companies.png" alt="companies.png" width="600px">
+
+</figure>
+
+
+<figure id="org4977a79">
+<img src="./static/images/labor-market-overview/possibilities.png" alt="possibilities.png" width="600px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org305028b" class="outline-3">
+<h3 id="org305028b">Salary expectations for Junior python developers</h3>
+<div class="outline-text-3" id="text-org305028b">
+
+<figure id="org4a2f52d">
+<img src="./static/images/labor-market-overview/salaries.png" alt="salaries.png" width="1200px">
+
+</figure>
+
+<p>
+According to Laura, biggest salaries with python come from Big
+Data(should look into in in the future, but first, let's get a foot
+inside programming role).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org09bc82e" class="outline-2">
+<h2 id="org09bc82e">Job search</h2>
+<div class="outline-text-2" id="text-org09bc82e">
+<p>
+There options are endless.
+</p>
+</div>
+
+<div id="outline-container-orgcf7aeb8" class="outline-3">
+<h3 id="orgcf7aeb8">What is junior anyway?</h3>
+<div class="outline-text-3" id="text-orgcf7aeb8">
+<p>
+Hire people with a lot of potential, that will be and grow with you in
+a long run and not just take someone Super Senior, burn them out in 6
+months and get another one.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbda1f98" class="outline-3">
+<h3 id="orgbda1f98">I should first of all mention, that I am self taught</h3>
+<div class="outline-text-3" id="text-orgbda1f98">
+<p>
+I got an advice from a friend to mention that I am a self taught
+developer first. It will show that I have initiative, discipline,
+motivation, that I am curious about learning new things, I can work
+without anyone forcing.
+</p>
+
+<p>
+And only then mention that I took CodeAcademy courses to deepen my
+knowledge and fill all the knowledge gaps that I might have missed
+while learning programming by myself.
+</p>
+
+<p>
+o apie mokyklą kai pasakosi, rodys, kad išsamiai įsigilinai į Python,
+tikriausiai nebus spragų žiniose ir t.t.
+</p>
+
+<p>
+Paziurek cv karinos
+Paziurek skelbimus karinos
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb43dcb2" class="outline-3">
+<h3 id="orgb43dcb2">Don't get scared if you see something unfamiliar in a job ad</h3>
+<div class="outline-text-3" id="text-orgb43dcb2">
+<p>
+IMPORTANT: Apply to jobs that you aren’t qualified for!
+</p>
+
+<p>
+When a hiring manager creates a job listing, they put down everything
+under the sun that they can think of that would be a “nice to have”.
+In fact, companies are rarely EVER able to find a candidate that has
+all the requirements.
+</p>
+
+<p>
+But it is a good idea nevertheless to at least google the technologies
+listed so you are aware why/where/for what purpose they are used.
+</p>
+
+<p>
+Believe it or not it is a very bad idea for you to take a job that you
+are fully qualified for because there will be no room for growth.
+Hiring managers know this as well.
+</p>
+
+<p>
+You will be hired based on if you match most or some of the job
+requirements and how well you do in the interview as far as
+friendliness, punctuality, enthusiasm, confidence, communication
+skills, and ability to convince them that you are a good fit for the
+team.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdc3020c" class="outline-3">
+<h3 id="orgdc3020c">Instead of new job - agree with current workplace</h3>
+<div class="outline-text-3" id="text-orgdc3020c">
+<p>
+One option that CodeAcademy agrees upon is for me to work
+as an IT Technician for 50% of the time and the rest 50% of the time
+as a programmer. But that also has to be agreed upon with my
+workplace.
+</p>
+
+<p>
+Not sure if the workplace would agree, since I was strictly told there
+is no "Programming" position.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9464062" class="outline-3">
+<h3 id="org9464062">LinkedIn</h3>
+<div class="outline-text-3" id="text-org9464062">
+<p>
+Use LinkedIn well and after a while you won't be looking for jobs but
+jobs will be looking for you :)
+</p>
+
+
+<figure id="orga0e3085">
+<img src="./static/images/labor-market-overview/linkedin.png" alt="linkedin.png" width="600px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org5f74f8c" class="outline-3">
+<h3 id="org5f74f8c">Hackathons</h3>
+<div class="outline-text-3" id="text-org5f74f8c">
+<p>
+Hackathons - business problem, programmer teams, creating solutions. A
+good way to network and test your knowledge over a weekend in Vilnius.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org824a4a3" class="outline-3">
+<h3 id="org824a4a3">Freelancing</h3>
+<div class="outline-text-3" id="text-org824a4a3">
+<p>
+Could freelance.. I thought about it, yes, even tried in the past, but
+this area seemed so THICK and full of competition(in my WordPress
+times). Can be a good introduction to programming jobs or keep this
+extra source of income and interesting jobs in the future as well.
+Kind of best way if I want freedom in my life.
+</p>
+
+
+<figure id="org0241ccb">
+<img src="./static/images/labor-market-overview/freelance.png" alt="freelance.png" width="600px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org28ddf90" class="outline-3">
+<h3 id="org28ddf90">Responding to job ads</h3>
+<div class="outline-text-3" id="text-org28ddf90">
+<p>
+A few main things I took is:
+</p>
+<ul class="org-ul">
+<li>if there is a job ad on job ad site - it's already too late, the
+company desperately needs a person.</li>
+<li>It is better to send the CV/Introduction/get in touch with HR BEFORE
+they create any jobs ads. They will get a chance to LOOK at your CV,
+and that is huge. If you are one in 50 candidates, your cv more
+often than not will not be viewed at all.</li>
+<li>HR knows about current positions and FUTURE positions, so if you
+present yourself in advance, they might not need you now, but might
+remember you in the future.. and they will already know you :)
+Instead of doing all the dirty job of creating a job ad - looking
+for candidates and so on - they might ping you on LinkedIn.</li>
+<li>Try to contact the manager of the department. If I was a manager and
+someone would write to me personally wanting to fill a position, I
+would gladly read this person's CV.</li>
+<li>Write to HR recruiters - "Hello, I want to change a sphere I am
+working on, perhaps you got something for me?". Tell a bit about
+yourself also.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf9f1fe8" class="outline-3">
+<h3 id="orgf9f1fe8">Agencies</h3>
+<div class="outline-text-3" id="text-orgf9f1fe8">
+
+<figure id="orgc04488f">
+<img src="./static/images/labor-market-overview/linkedin.png" alt="linkedin.png" width="600px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org0398196" class="outline-3">
+<h3 id="org0398196">Github hygiene</h3>
+<div class="outline-text-3" id="text-org0398196">
+<p>
+I should definitely clean up my Github account:
+</p>
+
+<ul class="org-ul">
+<li>Remove smaller projects</li>
+<li>Check comments/readmes for inappropriate words, etc.</li>
+<li>Half lithuanian, half english? - no good.</li>
+<li>Overall "hygiene" of the profile?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-personal.html">personal</a> <a href="https://arvydasg.github.io/tag-codeacademy.html">codeacademy</a> </div>]]></description>
+  <category><![CDATA[personal]]></category>
+  <category><![CDATA[codeacademy]]></category>
+  <link>https://arvydasg.github.io/2023-01-28-labor-market-overview.html</link>
+  <guid>https://arvydasg.github.io/2023-01-28-labor-market-overview.html</guid>
+  <pubDate>Sat, 28 Jan 2023 05:41:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Flask CodeAcademy(LT)]]></title>
+  <description><![CDATA[
+<nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgaba5130">1. 2023-01-24 Introduction to flask(LT)</a>
+<ul>
+<li><a href="#org2c6179e">1.1. Kaip sukurti minimalią svetainę:</a></li>
+<li><a href="#org7bba54f">1.2. Kaip puslapyje atvaizduoti įvestą kintamąjį:</a></li>
+<li><a href="#orge2d58b4">1.3. Kaip sukurti ir panaudoti HTML šabloną:</a></li>
+<li><a href="#orgbe77b6d">1.4. Kaip kintamuosius perkelti į šabloną:</a></li>
+<li><a href="#orgd1415f7">1.5. Kaip perduoti duomenis iš svetainės į programą:</a></li>
+<li><a href="#org2b0a910">1.6. Naudojame base.html šabloną:</a></li>
+<li><a href="#orgb7e2bcb">1.7. Stiliui panaudojame "Bootstrap":</a></li>
+<li><a href="#orgca72ce8">1.8. Uzduotys</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orge54eeab" class="outline-2">
-<h2 id="orge54eeab"><span class="section-number-2">1.</span> 2023.01.24</h2>
+<div id="outline-container-orgaba5130" class="outline-2">
+<h2 id="orgaba5130"><span class="section-number-2">1.</span> 2023-01-24 Introduction to flask(LT)</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-"Flask yra populiariausias Python microframework. Jeigu projektas nėra
+Flask yra populiariausias Python microframework. Jeigu projektas nėra
 labai didelis, arba tiesiog norime pasidaryti kažkokį GUI per
 naršyklę, kažką greitai prototipuoti, Flask yra labai geras
-pasirinkimas. Su flask yra pakankamai paprasta kurti API's. Ši
-paskaita bus greita įžanga, kitose nagrinėsime išsamiau."
+pasirinkimas. Su flask yra pakankamai paprasta kurti API's.
 </p>
 
 <p>
@@ -78,8 +366,8 @@ if you want to change templates folder name - don't forget to add
 </p>
 </div>
 
-<div id="outline-container-org4f2822e" class="outline-3">
-<h3 id="org4f2822e"><span class="section-number-3">1.1.</span> Kaip sukurti minimalią svetainę:</h3>
+<div id="outline-container-org2c6179e" class="outline-3">
+<h3 id="org2c6179e"><span class="section-number-3">1.1.</span> Kaip sukurti minimalią svetainę:</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #fb4934;">from</span> flask <span style="color: #fb4934;">import</span> Flask
@@ -91,14 +379,14 @@ if you want to change templates folder name - don't forget to add
     <span style="color: #fb4934;">return</span> <span style="color: #b8bb26;">"&lt;h1&gt;&#268;ia mano naujas puslapis&lt;/h1&gt;"</span>
 
 <span style="color: #fb4934;">if</span> <span style="color: #fe8019;">__name__</span> == <span style="color: #b8bb26;">"__main__"</span>:
-    app.run<span style="color: #fe8019;">(</span>debug=<span style="color: #d3869b;">True</span><span style="color: #fe8019;">)</span>:
+    app.run<span style="color: #fe8019;">(</span>debug=<span style="color: #d3869b;">True</span><span style="color: #fe8019;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgeeaeadc" class="outline-3">
-<h3 id="orgeeaeadc"><span class="section-number-3">1.2.</span> Kaip puslapyje atvaizduoti įvestą kintamąjį:</h3>
+<div id="outline-container-org7bba54f" class="outline-3">
+<h3 id="org7bba54f"><span class="section-number-3">1.2.</span> Kaip puslapyje atvaizduoti įvestą kintamąjį:</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 main.py faile:
@@ -120,8 +408,8 @@ main.py faile:
 </div>
 </div>
 
-<div id="outline-container-org5d71bf3" class="outline-3">
-<h3 id="org5d71bf3"><span class="section-number-3">1.3.</span> Kaip sukurti ir panaudoti HTML šabloną:</h3>
+<div id="outline-container-orge2d58b4" class="outline-3">
+<h3 id="orge2d58b4"><span class="section-number-3">1.3.</span> Kaip sukurti ir panaudoti HTML šabloną:</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 main.py faile:
@@ -184,8 +472,8 @@ templates/index.html faile:
 </div>
 </div>
 
-<div id="outline-container-orgef6d303" class="outline-3">
-<h3 id="orgef6d303"><span class="section-number-3">1.4.</span> Kaip kintamuosius perkelti į šabloną:</h3>
+<div id="outline-container-orgbe77b6d" class="outline-3">
+<h3 id="orgbe77b6d"><span class="section-number-3">1.4.</span> Kaip kintamuosius perkelti į šabloną:</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 main.py faile:
@@ -229,8 +517,8 @@ templates/index.html faile:
 </div>
 </div>
 
-<div id="outline-container-org442d920" class="outline-3">
-<h3 id="org442d920"><span class="section-number-3">1.5.</span> Kaip perduoti duomenis iš svetainės į programą:</h3>
+<div id="outline-container-orgd1415f7" class="outline-3">
+<h3 id="orgd1415f7"><span class="section-number-3">1.5.</span> Kaip perduoti duomenis iš svetainės į programą:</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 app.py faile:
@@ -296,8 +584,8 @@ templates/greetings.html faile:
 </div>
 </div>
 
-<div id="outline-container-org22822e8" class="outline-3">
-<h3 id="org22822e8"><span class="section-number-3">1.6.</span> Naudojame base.html šabloną:</h3>
+<div id="outline-container-org2b0a910" class="outline-3">
+<h3 id="org2b0a910"><span class="section-number-3">1.6.</span> Naudojame base.html šabloną:</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 Failas templates/base.html:
@@ -352,8 +640,8 @@ Failas templates/greetings.html:
 </div>
 </div>
 
-<div id="outline-container-org7124c5e" class="outline-3">
-<h3 id="org7124c5e"><span class="section-number-3">1.7.</span> Stiliui panaudojame "Bootstrap":</h3>
+<div id="outline-container-orgb7e2bcb" class="outline-3">
+<h3 id="orgb7e2bcb"><span class="section-number-3">1.7.</span> Stiliui panaudojame "Bootstrap":</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 Faile base.html:
@@ -411,25 +699,25 @@ Faile base.html:
 </p>
 
 
-<figure id="orgb068ed2">
+<figure id="org2e62e72">
 <img src="./static/images/2023-01-24_1.png" alt="2023-01-24_1.png" width="1200px">
 
 </figure>
 
 
-<figure id="org90e8b0f">
+<figure id="org454ffe0">
 <img src="./static/images/2023-01-24_2.png" alt="2023-01-24_2.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgf84ad98" class="outline-3">
-<h3 id="orgf84ad98"><span class="section-number-3">1.8.</span> Uzduotys</h3>
+<div id="outline-container-orgca72ce8" class="outline-3">
+<h3 id="orgca72ce8"><span class="section-number-3">1.8.</span> Uzduotys</h3>
 <div class="outline-text-3" id="text-1-8">
 </div>
-<div id="outline-container-orgbdc11a9" class="outline-4">
-<h4 id="orgbdc11a9"><span class="section-number-4">1.8.1.</span> 1 užduotis</h4>
+<div id="outline-container-orgc948990" class="outline-4">
+<h4 id="orgc948990"><span class="section-number-4">1.8.1.</span> 1 užduotis</h4>
 <div class="outline-text-4" id="text-1-8-1">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/1_uzduotis">Link to github</a>
@@ -437,19 +725,23 @@ Faile base.html:
 
 <p>
 Sukurti programą, kuri turėtų statinį puslapį, pvz. localhost:5000 su
-norimu tekstu (rekomenduojama naudoti šablonus)
+norimu tekstu (rekomenduojama naudoti šablonus).
+</p>
+
+<p>
+The most basic task there can be.
 </p>
 
 
-<figure id="org9d535ce">
+<figure id="org0e5ea31">
 <img src="./static/images/2023-01-24_3.png" alt="2023-01-24_3.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org80adaef" class="outline-4">
-<h4 id="org80adaef"><span class="section-number-4">1.8.2.</span> 2 užduotis</h4>
+<div id="outline-container-org69dfcea" class="outline-4">
+<h4 id="org69dfcea"><span class="section-number-4">1.8.2.</span> 2 užduotis</h4>
 <div class="outline-text-4" id="text-1-8-2">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/2_uzduotis">Link to github</a>
@@ -458,18 +750,18 @@ norimu tekstu (rekomenduojama naudoti šablonus)
 <p>
 Sukurti programą, kuri įvedus norimą žodį adreso eilutėje (po /
 simbolio) ir paspaudus ENTER, atspausdintų jį penkis kartus.
-p
 </p>
 
-<figure id="orgfd43717">
+
+<figure id="orgc6fe2bf">
 <img src="./static/images/2023-01-24_4.png" alt="2023-01-24_4.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgf96a216" class="outline-4">
-<h4 id="orgf96a216"><span class="section-number-4">1.8.3.</span> 3 užduotis</h4>
+<div id="outline-container-org71505e0" class="outline-4">
+<h4 id="org71505e0"><span class="section-number-4">1.8.3.</span> 3 užduotis</h4>
 <div class="outline-text-4" id="text-1-8-3">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/3_uzduotis">Link to github</a>
@@ -481,15 +773,15 @@ visus keliamuosius metus nuo 1900 iki 2100 metų.
 </p>
 
 
-<figure id="orgbf172f2">
+<figure id="org58ad550">
 <img src="./static/images/2023-01-24_5.png" alt="2023-01-24_5.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orga45d98c" class="outline-4">
-<h4 id="orga45d98c"><span class="section-number-4">1.8.4.</span> 4 užduotis</h4>
+<div id="outline-container-orgfd9217d" class="outline-4">
+<h4 id="orgfd9217d"><span class="section-number-4">1.8.4.</span> 4 užduotis</h4>
 <div class="outline-text-4" id="text-1-8-4">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/4_uzduotis">Link to github</a>
@@ -501,15 +793,15 @@ mygtuką parodytų, ar jie yra keliamieji.
 </p>
 
 
-<figure id="org94c20a7">
+<figure id="orgeb4d593">
 <img src="./static/images/2023-01-24_6.png" alt="2023-01-24_6.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org08b55d8" class="outline-4">
-<h4 id="org08b55d8"><span class="section-number-4">1.8.5.</span> 5 užduotis (papildomai)</h4>
+<div id="outline-container-orgc3180f4" class="outline-4">
+<h4 id="orgc3180f4"><span class="section-number-4">1.8.5.</span> 5 užduotis (papildomai)</h4>
 <div class="outline-text-4" id="text-1-8-5">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/5_uzduotis">Link to github</a>
@@ -522,7 +814,7 @@ kurioje bus saugomi pajamų ir išlaidų įrašai).
 </p>
 
 
-<figure id="org93ce332">
+<figure id="orga3770a3">
 <img src="./static/images/2023-01-24_7.png" alt="2023-01-24_7.png" width="1200px">
 
 </figure>
@@ -530,7 +822,10 @@ kurioje bus saugomi pajamų ir išlaidų įrašai).
 </div>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-codeacademy.html">codeacademy</a> <a href="https://arvydasg.github.io/tag-python.html">python</a> <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[codeacademy]]></category>
+  <category><![CDATA[python]]></category>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2023-01-24-flask-codeacademy.html</link>
   <guid>https://arvydasg.github.io/2023-01-24-flask-codeacademy.html</guid>
   <pubDate>Tue, 24 Jan 2023 19:43:00 +0200</pubDate>
@@ -539,27 +834,29 @@ kurioje bus saugomi pajamų ir išlaidų įrašai).
   <title><![CDATA[Inventorization Power App]]></title>
   <description><![CDATA[
 
-<figure id="org2f9c012">
+<figure id="orgae49215">
 <img src="./static/images/powerapp.png" alt="powerapp.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org7b5c3bd" class="outline-2">
-<h2 id="org7b5c3bd">The problem</h2>
-<div class="outline-text-2" id="text-org7b5c3bd">
+<div id="outline-container-orgcf66621" class="outline-2">
+<h2 id="orgcf66621">Intro</h2>
+<div class="outline-text-2" id="text-orgcf66621">
 <p>
-Many odd, but necessary jobs appear in PKC on a daily basis. This
-Saturday I have worked on Inventorization solution for PKC. Since I
-got the responsibility to manage invoices of purchased IT items, I
-also noticed that there is no system whatsoever of where/when/how many
-things arrive to our IT office or how many we hand out to users or
-production or how many are being sent to other sites.
+I noticed that there is no system whatsoever of where/when/how
+many things arrive to our IT office or how many we hand out to users
+or production or how many are being sent to other sites. So I created one.
 </p>
+</div>
+</div>
 
+<div id="outline-container-orga255e06" class="outline-2">
+<h2 id="orga255e06">The problem</h2>
+<div class="outline-text-2" id="text-orga255e06">
 <p>
-And then once in a while someone from Finances asks me: Who this
-computer belongs to? What inv.nr sticker does it have? Who has this
-phone, what are the phone numbers that PKC uses and SO ON.
+Once in a while someone from Finances asks me: Who this computer
+belongs to? What inv.nr sticker does it have? Who has this phone, what
+are the phone numbers that PKC uses and SO ON.
 </p>
 
 <p>
@@ -575,13 +872,13 @@ over 5 or so years.
 </div>
 </div>
 
-<div id="outline-container-org176d038" class="outline-2">
-<h2 id="org176d038">The solution</h2>
-<div class="outline-text-2" id="text-org176d038">
+<div id="outline-container-org65e71a0" class="outline-2">
+<h2 id="org65e71a0">The solution</h2>
+<div class="outline-text-2" id="text-org65e71a0">
 </div>
-<div id="outline-container-org04e5bad" class="outline-3">
-<h3 id="org04e5bad">First attempt</h3>
-<div class="outline-text-3" id="text-org04e5bad">
+<div id="outline-container-orga71f067" class="outline-3">
+<h3 id="orga71f067">First attempt</h3>
+<div class="outline-text-3" id="text-orga71f067">
 <p>
 I have been looking for a solution for almost a week. My first attempt
 was this - <a href="https://www.youtube.com/watch?v=0PtnVvrVTCY&amp;ab_channel=TheMobileSalesEngineer">Check in / out Google Sheets</a>, it worked quite well, I was
@@ -592,9 +889,9 @@ clumpsy to use.
 </div>
 </div>
 
-<div id="outline-container-orga0aacba" class="outline-3">
-<h3 id="orga0aacba">Second attempt</h3>
-<div class="outline-text-3" id="text-orga0aacba">
+<div id="outline-container-org33fa06e" class="outline-3">
+<h3 id="org33fa06e">Second attempt</h3>
+<div class="outline-text-3" id="text-org33fa06e">
 <p>
 Okay, now I thought I found what I need. This excelent example that
 uses forms - <a href="https://www.youtube.com/watch?v=cdqEB78cHpw&amp;ab_channel=RandyBennett">Google QR Inventory</a> I was sure will solve my problem, I
@@ -606,13 +903,13 @@ this could work.. I need another solution.
 </div>
 </div>
 
-<div id="outline-container-orgc80d5e2" class="outline-3">
-<h3 id="orgc80d5e2">Third and Final attempt</h3>
-<div class="outline-text-3" id="text-orgc80d5e2">
+<div id="outline-container-orgbfe0b1a" class="outline-3">
+<h3 id="orgbfe0b1a">Third and Final attempt</h3>
+<div class="outline-text-3" id="text-orgbfe0b1a">
 </div>
-<div id="outline-container-orgc3249d5" class="outline-4">
-<h4 id="orgc3249d5">License</h4>
-<div class="outline-text-4" id="text-orgc3249d5">
+<div id="outline-container-org007e621" class="outline-4">
+<h4 id="org007e621">License</h4>
+<div class="outline-text-4" id="text-org007e621">
 <p>
 I am glad I did not give up after all this work. I was obsessed with a
 solution, no matter where I went I was googling about this
@@ -625,9 +922,9 @@ playing with Power apps.
 </div>
 </div>
 
-<div id="outline-container-org7b285ab" class="outline-4">
-<h4 id="org7b285ab">Extremely Intuitive</h4>
-<div class="outline-text-4" id="text-org7b285ab">
+<div id="outline-container-org519e6d5" class="outline-4">
+<h4 id="org519e6d5">Extremely Intuitive</h4>
+<div class="outline-text-4" id="text-org519e6d5">
 <p>
 I was shocked that one can create web and phone apps with Wordpress
 like interface. Many videos on YouTube of how it can be done… I have
@@ -652,9 +949,9 @@ manager needs to review anything - they will be able to comfortably.</li>
 </div>
 </div>
 
-<div id="outline-container-orga483d94" class="outline-2">
-<h2 id="orga483d94">Conclusion</h2>
-<div class="outline-text-2" id="text-orga483d94">
+<div id="outline-container-org0782b48" class="outline-2">
+<h2 id="org0782b48">Conclusion</h2>
+<div class="outline-text-2" id="text-org0782b48">
 <p>
 At first I wasn’t so happy doing “IT warehouse worker” job… after all
 I am here to get IT experience, now warehouse experience… BUT I found
@@ -665,56 +962,23 @@ app that I have made. :)
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">Pkc</a> </div>]]></description>
-  <category><![CDATA[Pkc]]></category>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">pkc</a> <a href="https://arvydasg.github.io/tag-project.html">project</a> </div>]]></description>
+  <category><![CDATA[pkc]]></category>
+  <category><![CDATA[project]]></category>
   <link>https://arvydasg.github.io/2022-08-27-inventorization-power-app.html</link>
   <guid>https://arvydasg.github.io/2022-08-27-inventorization-power-app.html</guid>
   <pubDate>Mon, 23 Jan 2023 19:56:00 +0200</pubDate>
 </item>
 <item>
-  <title><![CDATA[Uses]]></title>
-  <description><![CDATA[
-<p>
-Stuff that I use. Laptop, text editor, languages etc.
-</p>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-emacs.html">Emacs</a> </div>]]></description>
-  <category><![CDATA[Emacs]]></category>
-  <link>https://arvydasg.github.io/uses.html</link>
-  <guid>https://arvydasg.github.io/uses.html</guid>
-  <pubDate>Sun, 22 Jan 2023 18:21:00 +0200</pubDate>
-</item>
-<item>
-  <title><![CDATA[Projects]]></title>
-  <description><![CDATA[
-<p>
-Some of my projects here with github links.
-</p>
-<div class="taglist"></div>]]></description>
-  <link>https://arvydasg.github.io/projects.html</link>
-  <guid>https://arvydasg.github.io/projects.html</guid>
-  <pubDate>Sun, 22 Jan 2023 18:21:00 +0200</pubDate>
-</item>
-<item>
-  <title><![CDATA[About]]></title>
-  <description><![CDATA[
-<p>
-Add CV's here both in English and Lithuanian. Encrypt?
-</p>
-<div class="taglist"></div>]]></description>
-  <link>https://arvydasg.github.io/about.html</link>
-  <guid>https://arvydasg.github.io/about.html</guid>
-  <pubDate>Sun, 22 Jan 2023 18:21:00 +0200</pubDate>
-</item>
-<item>
   <title><![CDATA[Create a Blog with Emacs]]></title>
   <description><![CDATA[
 
-<div id="outline-container-orgc0ad2a0" class="outline-2">
-<h2 id="orgc0ad2a0">Intro</h2>
-<div class="outline-text-2" id="text-orgc0ad2a0">
+<div id="outline-container-org536d886" class="outline-2">
+<h2 id="org536d886">Intro</h2>
+<div class="outline-text-2" id="text-org536d886">
 <p>
-If you are using Emacs and org mode as much as me, you must have come up to
-<code>org-publish</code> feature that allows you to convert org files to html.
+If you are using Emacs and org mode as much as me, you must have come
+up to org-publish feature that allows you to convert org files to html files.
 </p>
 
 <p>
@@ -725,17 +989,17 @@ static website ;)
 </div>
 </div>
 
-<div id="outline-container-org957c27b" class="outline-2">
-<h2 id="org957c27b">Create Emacs blog the "System Crafters" way</h2>
-<div class="outline-text-2" id="text-org957c27b">
+<div id="outline-container-org2a174c7" class="outline-2">
+<h2 id="org2a174c7">Create Emacs blog the "System Crafters" way</h2>
+<div class="outline-text-2" id="text-org2a174c7">
 <p>
 Best description in a video format is <a href="https://www.youtube.com/watch?v=AfkrzFodoNw&amp;t=1612s&amp;ab_channel=SystemCrafters">here</a>. To later publish it
 automaticall,y video <a href="https://www.youtube.com/watch?v=za99DwdZEyg&amp;t=996s&amp;ab_channel=SystemCrafters">here</a>.
 </p>
 </div>
-<div id="outline-container-org4ab8f8f" class="outline-3">
-<h3 id="org4ab8f8f">Choose a directory</h3>
-<div class="outline-text-3" id="text-org4ab8f8f">
+<div id="outline-container-orga01b172" class="outline-3">
+<h3 id="orga01b172">Choose a directory</h3>
+<div class="outline-text-3" id="text-orga01b172">
 <p>
 You will place your org files inside content/ directory.
 </p>
@@ -747,13 +1011,13 @@ You will place your org files inside content/ directory.
 </div>
 </div>
 
-<div id="outline-container-org37ab428" class="outline-3">
-<h3 id="org37ab428">Creating the build script</h3>
-<div class="outline-text-3" id="text-org37ab428">
+<div id="outline-container-org87a352d" class="outline-3">
+<h3 id="org87a352d">Creating the build script</h3>
+<div class="outline-text-3" id="text-org87a352d">
 </div>
-<div id="outline-container-orgd3962a5" class="outline-4">
-<h4 id="orgd3962a5">build-site.el</h4>
-<div class="outline-text-4" id="text-orgd3962a5">
+<div id="outline-container-org5b552fe" class="outline-4">
+<h4 id="org5b552fe">build-site.el</h4>
+<div class="outline-text-4" id="text-org5b552fe">
 <p>
 Inside of this directory:
 </p>
@@ -795,9 +1059,9 @@ variable using M-x describe-variable for a lot more information!
 </div>
 </div>
 
-<div id="outline-container-orga1972b9" class="outline-4">
-<h4 id="orga1972b9">build.sh</h4>
-<div class="outline-text-4" id="text-orga1972b9">
+<div id="outline-container-orgc47dc3c" class="outline-4">
+<h4 id="orgc47dc3c">build.sh</h4>
+<div class="outline-text-4" id="text-orgc47dc3c">
 <p>
 We also need a shell script that can run our Emacs Lisp script. We'll call that build.sh:
 </p>
@@ -832,9 +1096,9 @@ html in public folder, open it in the browser.
 </div>
 </div>
 
-<div id="outline-container-orgca689c0" class="outline-3">
-<h3 id="orgca689c0">Improving the HTML output</h3>
-<div class="outline-text-3" id="text-orgca689c0">
+<div id="outline-container-org0ce60f2" class="outline-3">
+<h3 id="org0ce60f2">Improving the HTML output</h3>
+<div class="outline-text-3" id="text-org0ce60f2">
 <p>
 There are a few things about the page we just looked at that I'd like
 to change to make the output look a bit cleaner:
@@ -871,9 +1135,9 @@ better result.
 </div>
 </div>
 </div>
-<div id="outline-container-orgb59105c" class="outline-3">
-<h3 id="orgb59105c">Improving the page styling</h3>
-<div class="outline-text-3" id="text-orgb59105c">
+<div id="outline-container-org6fa3e98" class="outline-3">
+<h3 id="org6fa3e98">Improving the page styling</h3>
+<div class="outline-text-3" id="text-org6fa3e98">
 <p>
 At this point have a decent basic output for our website, but what if we want to make it look a little bit nicer?
 </p>
@@ -894,9 +1158,9 @@ By setting a few more variables, we can use a nice stylesheet to give our site a
 </div>
 </div>
 </div>
-<div id="outline-container-orge27f288" class="outline-3">
-<h3 id="orge27f288">Generating pages with code blocks</h3>
-<div class="outline-text-3" id="text-orge27f288">
+<div id="outline-container-orge43f93e" class="outline-3">
+<h3 id="orge43f93e">Generating pages with code blocks</h3>
+<div class="outline-text-3" id="text-orge43f93e">
 <p>
 So far we've been looking at a very simple example page that doesn't really have much on it. What happens when we try to generate a more elaborate Org file containing code blocks?
 </p>
@@ -950,9 +1214,9 @@ In a future video I'll show you how to convert your Emacs color theme to a CSS f
 </div>
 </div>
 
-<div id="outline-container-orgff92bdb" class="outline-3">
-<h3 id="orgff92bdb">Linking between pages</h3>
-<div class="outline-text-3" id="text-orgff92bdb">
+<div id="outline-container-org223d2ac" class="outline-3">
+<h3 id="org223d2ac">Linking between pages</h3>
+<div class="outline-text-3" id="text-org223d2ac">
 <p>
 One last thing I want to show you is how you can create links between
 pages on your site. Let's open up index.org and create a link to the
@@ -983,9 +1247,9 @@ It will also complain when a linked file can't be found!
 </div>
 </div>
 
-<div id="outline-container-org68e9283" class="outline-3">
-<h3 id="org68e9283">The final build script</h3>
-<div class="outline-text-3" id="text-org68e9283">
+<div id="outline-container-orgcf93c39" class="outline-3">
+<h3 id="orgcf93c39">The final build script</h3>
+<div class="outline-text-3" id="text-orgcf93c39">
 <p>
 Here is the final form of our <code>build-site.el</code> script:
 </p>
@@ -1041,9 +1305,9 @@ Here is the final form of our <code>build-site.el</code> script:
 </div>
 </div>
 
-<div id="outline-container-org6a01b17" class="outline-2">
-<h2 id="org6a01b17">Create Emacs blog with "org-static-blog" package</h2>
-<div class="outline-text-2" id="text-org6a01b17">
+<div id="outline-container-org1b05b01" class="outline-2">
+<h2 id="org1b05b01">Create Emacs blog with "org-static-blog" package</h2>
+<div class="outline-text-2" id="text-org1b05b01">
 <p>
 "<a href="https://github.com/bastibe/org-static-blog">org-static-blog</a>" is a package written by <a href="https://github.com/bastibe">Bastian Bechtold</a> is a static site
 generator. I believe it started <a href="https://bastibe.de/2013-11-13-blogging-with-emacs.html">here</a>.
@@ -1087,7 +1351,7 @@ If you would like to add an image to your org file, try this:
 </div>
 
 
-<figure id="org0a518ca">
+<figure id="org73e3230">
 <img src="./static/images/org-static-blog.png" alt="org-static-blog.png" width="1200px">
 
 </figure>
@@ -1099,9 +1363,9 @@ the image.
 </div>
 </div>
 
-<div id="outline-container-org04de4a2" class="outline-2">
-<h2 id="org04de4a2">Conclusion</h2>
-<div class="outline-text-2" id="text-org04de4a2">
+<div id="outline-container-org8106cf9" class="outline-2">
+<h2 id="org8106cf9">Conclusion</h2>
+<div class="outline-text-2" id="text-org8106cf9">
 <p>
 Now the only thing is left - I have to blog. :) I am thinking why
 don't I whenever learning a new thing write such little summary about
@@ -1110,8 +1374,8 @@ learn it is to teach it" they say.
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-emacs.html">Emacs</a> </div>]]></description>
-  <category><![CDATA[Emacs]]></category>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-emacs.html">emacs</a> </div>]]></description>
+  <category><![CDATA[emacs]]></category>
   <link>https://arvydasg.github.io/2023-01-21-create-emacs-blog.html</link>
   <guid>https://arvydasg.github.io/2023-01-21-create-emacs-blog.html</guid>
   <pubDate>Sat, 21 Jan 2023 12:40:00 +0200</pubDate>
@@ -1120,18 +1384,18 @@ learn it is to teach it" they say.
   <title><![CDATA[Skelbiu.lt Clone with GET POST DELETE]]></title>
   <description><![CDATA[
 
-<figure id="org4e3ab56">
+<figure id="orgae9a1a3">
 <img src="./static/images/clone-skelbiu.png" alt="clone-skelbiu.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org9ea80ab" class="outline-2">
-<h2 id="org9ea80ab">Introduction</h2>
-<div class="outline-text-2" id="text-org9ea80ab">
+<div id="outline-container-orgd3dca10" class="outline-2">
+<h2 id="orgd3dca10">Introduction</h2>
+<div class="outline-text-2" id="text-orgd3dca10">
 <p>
-2022-10-13 I had a final front-end part Codeacademy task. I was asked
+Today I had a final front-end part Codeacademy task. I was asked
 to use GET, POST and DELETE requests while taking design and layout
-inspirations from <a href="https://www.skelbiu.lt/">skelbiu.lt</a>.
+inspirations from skelbiu.lt.
 </p>
 
 <p>
@@ -1146,9 +1410,9 @@ Here is a live codeacademy task itself - <a href="./static/images/Baigiamoji_uzd
 </div>
 </div>
 
-<div id="outline-container-orgf0495a0" class="outline-2">
-<h2 id="orgf0495a0">The Process</h2>
-<div class="outline-text-2" id="text-orgf0495a0">
+<div id="outline-container-orge76a20a" class="outline-2">
+<h2 id="orge76a20a">The Process</h2>
+<div class="outline-text-2" id="text-orge76a20a">
 <ul class="org-ul">
 <li>I have started with researching the skelbiu.lt page, figuring out
 how much of the cloning I can do from it.</li>
@@ -1163,12 +1427,16 @@ are displayed in the browser.</li>
 </div>
 </div>
 
-<div id="outline-container-orgdf963f7" class="outline-2">
-<h2 id="orgdf963f7">Conclusion</h2>
-<div class="outline-text-2" id="text-orgdf963f7">
+<div id="outline-container-org5e32ec7" class="outline-2">
+<h2 id="org5e32ec7">Conclusion</h2>
+<div class="outline-text-2" id="text-org5e32ec7">
 <p>
 Here is a link to my <a href="https://arvydas.dev/codeacademy/javascript/skelbiult/index.html">Skelbiu.lt clone</a>(give it a few seconds to load,
 this api service can sometimes be slow :) ).
+</p>
+
+<p>
+Here is a link to the actual <a href="https://www.skelbiu.lt/">skelbiu.lt</a> page.
 </p>
 
 <p>
@@ -1190,14 +1458,14 @@ wish I had more time to play with these :)
   <title><![CDATA[VBA barcode checker]]></title>
   <description><![CDATA[
 
-<figure id="orgbc68336">
+<figure id="orgb4c3d0f">
 <img src="./static/images/vba-barcode-checker.png" alt="vba-barcode-checker.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org4c6d43d" class="outline-2">
-<h2 id="org4c6d43d">A Complaint</h2>
-<div class="outline-text-2" id="text-org4c6d43d">
+<div id="outline-container-orgf1c35bb" class="outline-2">
+<h2 id="orgf1c35bb">A Complaint</h2>
+<div class="outline-text-2" id="text-orgf1c35bb">
 <p>
 PKC group has received a complaint regarding one process due to which
 nonconformity appeared in some products.
@@ -1210,9 +1478,9 @@ process does not repeat.
 </div>
 </div>
 
-<div id="outline-container-org5f45f11" class="outline-2">
-<h2 id="org5f45f11">Estonian Code</h2>
-<div class="outline-text-2" id="text-org5f45f11">
+<div id="outline-container-org28f4423" class="outline-2">
+<h2 id="org28f4423">Estonian Code</h2>
+<div class="outline-text-2" id="text-org28f4423">
 <p>
 I ended up looking through 12 years old <a href="https://learn.microsoft.com/en-us/dotnet/visual-basic/">VBA</a> code which had no
 documentation, most of the code was in Estonian and it’s the developer
@@ -1227,9 +1495,9 @@ desired outcome. I have added a few barcodes to necessary places.
 </div>
 </div>
 
-<div id="outline-container-orgc40536e" class="outline-2">
-<h2 id="orgc40536e">Created a whole app with a language I have never worked before</h2>
-<div class="outline-text-2" id="text-orgc40536e">
+<div id="outline-container-org0e8a46c" class="outline-2">
+<h2 id="org0e8a46c">Created a whole app with a language I have never worked before</h2>
+<div class="outline-text-2" id="text-org0e8a46c">
 <p>
 I then created a VBA app to scan those barcodes with and instructed
 the shift leaders as well as other employers to use the app.
@@ -1249,9 +1517,9 @@ location on the server so it can be accesssed.
 </div>
 </div>
 
-<div id="outline-container-orge8f4345" class="outline-2">
-<h2 id="orge8f4345">Conclusion</h2>
-<div class="outline-text-2" id="text-orge8f4345">
+<div id="outline-container-org18e1de1" class="outline-2">
+<h2 id="org18e1de1">Conclusion</h2>
+<div class="outline-text-2" id="text-org18e1de1">
 <p>
 During this project I went from not knowing anything about VBA to
 coding a fully functional app wiht it that is now used on a daily
@@ -1260,8 +1528,9 @@ packing departments all around PKC.
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">pkc</a> </div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">pkc</a> <a href="https://arvydasg.github.io/tag-project.html">project</a> </div>]]></description>
   <category><![CDATA[pkc]]></category>
+  <category><![CDATA[project]]></category>
   <link>https://arvydasg.github.io/2022-10-03-vba-barcode-checker.html</link>
   <guid>https://arvydasg.github.io/2022-10-03-vba-barcode-checker.html</guid>
   <pubDate>Mon, 03 Oct 2022 18:18:00 +0300</pubDate>
@@ -1270,14 +1539,14 @@ packing departments all around PKC.
   <title><![CDATA[First JavaScript test]]></title>
   <description><![CDATA[
 
-<figure id="org9fdd673">
+<figure id="org9340860">
 <img src="./static/images/first-javascript-test.png" alt="first-javascript-test.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org2110de8" class="outline-2">
-<h2 id="org2110de8">2022-09-19</h2>
-<div class="outline-text-2" id="text-org2110de8">
+<div id="outline-container-orgfbf3aeb" class="outline-2">
+<h2 id="orgfbf3aeb">2022-09-19</h2>
+<div class="outline-text-2" id="text-orgfbf3aeb">
 <p>
 Today, our codeacademy group has received our first TASK.
 </p>
@@ -1289,16 +1558,16 @@ JavaScipt.
 </p>
 
 
-<figure id="orgd33d3f3">
+<figure id="org38d6990">
 <img src="./static/images/first-javascript-test2.png" alt="first-javascript-test2.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org0798c4b" class="outline-2">
-<h2 id="org0798c4b">Looking up EVERYTHING</h2>
-<div class="outline-text-2" id="text-org0798c4b">
+<div id="outline-container-orgc902ec6" class="outline-2">
+<h2 id="orgc902ec6">Looking up EVERYTHING</h2>
+<div class="outline-text-2" id="text-orgc902ec6">
 <p>
 Honestly, I had to google/look for examples from my own <a href="https://arvydas.dev/codeacademy/javascript/index.html">sources</a> for
 each and every task. I managed to complete 95% of those, BUT it didn’t
@@ -1326,9 +1595,9 @@ seemed quite simple.
 </div>
 </div>
 
-<div id="outline-container-org3969f56" class="outline-2">
-<h2 id="org3969f56">Link to the tasks and my solutions</h2>
-<div class="outline-text-2" id="text-org3969f56">
+<div id="outline-container-org7b5777f" class="outline-2">
+<h2 id="org7b5777f">Link to the tasks and my solutions</h2>
+<div class="outline-text-2" id="text-org7b5777f">
 <p>
 If you would like to see those tasks and my solutions, please head
 <a href="https://arvydas.dev/codeacademy/javascript/index.html#27">here</a> and find “Example numero 27” after pressing Ctrl+F.
@@ -1336,9 +1605,9 @@ If you would like to see those tasks and my solutions, please head
 </div>
 </div>
 
-<div id="outline-container-orgc064f02" class="outline-2">
-<h2 id="orgc064f02">Moral of the story</h2>
-<div class="outline-text-2" id="text-orgc064f02">
+<div id="outline-container-org21a6510" class="outline-2">
+<h2 id="org21a6510">Moral of the story</h2>
+<div class="outline-text-2" id="text-org21a6510">
 <p>
 The language that you are learning… use it not only during the
 classes, but also to build your personal projects in your free time to
@@ -1346,7 +1615,8 @@ ingrain all the syntax and language’s possibilities in your brain.
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-codeacademy.html">codeacademy</a> </div>]]></description>
+  <category><![CDATA[codeacademy]]></category>
   <link>https://arvydasg.github.io/2022-09-20-first-javascript-test.html</link>
   <guid>https://arvydasg.github.io/2022-09-20-first-javascript-test.html</guid>
   <pubDate>Tue, 20 Sep 2022 20:29:00 +0300</pubDate>
@@ -1355,7 +1625,7 @@ ingrain all the syntax and language’s possibilities in your brain.
   <title><![CDATA[CodeAcademy tasks and examples]]></title>
   <description><![CDATA[
 
-<figure id="org16925c9">
+<figure id="orgfbaa531">
 <img src="./static/images/codeacademyhtmlcss.png" alt="codeacademyhtmlcss.png" width="1200px">
 
 </figure>
@@ -1381,17 +1651,17 @@ during this course. Most of the tasks, most of the examples, most of
 my own experiments during the course.
 </p>
 
-<div id="outline-container-orgf76c9de" class="outline-2">
-<h2 id="orgf76c9de">JavaScript part 2022-11 - now</h2>
-<div class="outline-text-2" id="text-orgf76c9de">
+<div id="outline-container-org1830883" class="outline-2">
+<h2 id="org1830883">JavaScript part 2022-11 - now</h2>
+<div class="outline-text-2" id="text-org1830883">
 <p>
 Python, SQL, Flask
 </p>
 </div>
 </div>
-<div id="outline-container-orgac8b954" class="outline-2">
-<h2 id="orgac8b954">JavaScript part 2022-09 - 2022-11</h2>
-<div class="outline-text-2" id="text-orgac8b954">
+<div id="outline-container-org6fb8cfb" class="outline-2">
+<h2 id="org6fb8cfb">JavaScript part 2022-09 - 2022-11</h2>
+<div class="outline-text-2" id="text-org6fb8cfb">
 <p>
 All of the stuff from that part(with code) can be accessed and
 inspected Here. Github repo, if needed, is Here.
@@ -1402,16 +1672,17 @@ Hope I managed to present my work in a easy to read manner.
 </p>
 </div>
 </div>
-<div id="outline-container-org4f07dfc" class="outline-2">
-<h2 id="org4f07dfc">HTML/CSS part 2022-07 - 2022-09</h2>
-<div class="outline-text-2" id="text-org4f07dfc">
+<div id="outline-container-org00d4215" class="outline-2">
+<h2 id="org00d4215">HTML/CSS part 2022-07 - 2022-09</h2>
+<div class="outline-text-2" id="text-org00d4215">
 <p>
 All of the stuff from that part can be accessed and inspected <a href="https://arvydas.dev/codeacademy/">Here</a>.
 Github repo, if needed, is <a href="https://github.com/arvydasg/codeacademy">Here</a>.
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-codeacademy.html">codeacademy</a> </div>]]></description>
+  <category><![CDATA[codeacademy]]></category>
   <link>https://arvydasg.github.io/2022-08-28-codeacademy-tasks-and-examples.html</link>
   <guid>https://arvydasg.github.io/2022-08-28-codeacademy-tasks-and-examples.html</guid>
   <pubDate>Sun, 28 Aug 2022 20:21:00 +0300</pubDate>
@@ -1420,14 +1691,25 @@ Github repo, if needed, is <a href="https://github.com/arvydasg/codeacademy">Her
   <title><![CDATA[Python data cleaner with Python]]></title>
   <description><![CDATA[
 
-<figure id="orgc5ea3e2">
+<figure id="orgdf2ad6f">
 <img src="./static/images/phats.png" alt="phats.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgc1b657b" class="outline-2">
-<h2 id="orgc1b657b">What is it for</h2>
-<div class="outline-text-2" id="text-orgc1b657b">
+<div id="outline-container-orgb7b782a" class="outline-2">
+<h2 id="orgb7b782a">Intro</h2>
+<div class="outline-text-2" id="text-orgb7b782a">
+<p>
+Clean up exported excel document up and properly format it so it can
+then be exported to a .txt file that can later be used with PHATS
+software.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga22eb04" class="outline-2">
+<h2 id="orga22eb04">What is it for</h2>
+<div class="outline-text-2" id="text-orga22eb04">
 <ul class="org-ul">
 <li>A program called Wise exports an excel document with lots of part numbers.</li>
 <li>My script takes this excel document, removes unnecessary part
@@ -1442,8 +1724,26 @@ operators to use this script(double click it and go).
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">Pkc</a> </div>]]></description>
-  <category><![CDATA[Pkc]]></category>
+
+<div id="outline-container-org924a718" class="outline-2">
+<h2 id="org924a718">Libraries used</h2>
+<div class="outline-text-2" id="text-org924a718">
+<ul class="org-ul">
+<li>openpyxl</li>
+<li>pandas</li>
+<li>tkinter</li>
+<li>os</li>
+</ul>
+
+<p>
+<a href="https://github.com/arvydasg/phats">Link to github.</a>
+</p>
+</div>
+</div>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">pkc</a> <a href="https://arvydasg.github.io/tag-project.html">project</a> <a href="https://arvydasg.github.io/tag-python.html">python</a> </div>]]></description>
+  <category><![CDATA[pkc]]></category>
+  <category><![CDATA[project]]></category>
+  <category><![CDATA[python]]></category>
   <link>https://arvydasg.github.io/2022-07-31-python-data-cleaner-with-python.html</link>
   <guid>https://arvydasg.github.io/2022-07-31-python-data-cleaner-with-python.html</guid>
   <pubDate>Sun, 31 Jul 2022 19:32:00 +0300</pubDate>
@@ -1452,14 +1752,14 @@ operators to use this script(double click it and go).
   <title><![CDATA[My IT journey]]></title>
   <description><![CDATA[
 
-<figure id="orga67e44d">
+<figure id="org67c9f65">
 <img src="./static/images/bali.png" alt="bali.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org9ee9dd0" class="outline-2">
-<h2 id="org9ee9dd0">June 23rd 2022 - Promotion</h2>
-<div class="outline-text-2" id="text-org9ee9dd0">
+<div id="outline-container-org1fa29e5" class="outline-2">
+<h2 id="org1fa29e5">June 23rd 2022 - Promotion</h2>
+<div class="outline-text-2" id="text-org1fa29e5">
 <p>
 Offered to be promoted to IT Engineer, manager agreed. Exactly a month
 later was told that that’s not going to happen.
@@ -1467,9 +1767,9 @@ later was told that that’s not going to happen.
 </div>
 </div>
 
-<div id="outline-container-orgc5f0a6a" class="outline-2">
-<h2 id="orgc5f0a6a">June 19th 2022 - Want to code</h2>
-<div class="outline-text-2" id="text-orgc5f0a6a">
+<div id="outline-container-org470620e" class="outline-2">
+<h2 id="org470620e">June 19th 2022 - Want to code</h2>
+<div class="outline-text-2" id="text-org470620e">
 <p>
 Tired of running though the factory fixing printers - want to program
 again.
@@ -1477,9 +1777,9 @@ again.
 </div>
 </div>
 
-<div id="outline-container-org3caa65b" class="outline-2">
-<h2 id="org3caa65b">April 11th 2022 - First IT job</h2>
-<div class="outline-text-2" id="text-org3caa65b">
+<div id="outline-container-orgcb5cd02" class="outline-2">
+<h2 id="orgcb5cd02">April 11th 2022 - First IT job</h2>
+<div class="outline-text-2" id="text-orgcb5cd02">
 <p>
 Starting my first IT job ever as an IT Technician in my home town
 Panevezys.
@@ -1487,9 +1787,9 @@ Panevezys.
 </div>
 </div>
 
-<div id="outline-container-org94515d3" class="outline-2">
-<h2 id="org94515d3">Sep 2021 - Self employed web dev</h2>
-<div class="outline-text-2" id="text-org94515d3">
+<div id="outline-container-org668a78d" class="outline-2">
+<h2 id="org668a78d">Sep 2021 - Self employed web dev</h2>
+<div class="outline-text-2" id="text-org668a78d">
 <p>
 Making wordpress sites for clients. Initially with Elementor, then
 oxygen builder, but at the end realizing that all those builders are
@@ -1505,9 +1805,9 @@ tool, my note taking app, my second brain, my website… and so on.
 </div>
 </div>
 
-<div id="outline-container-org09e993b" class="outline-2">
-<h2 id="org09e993b">January 2021 - Going all in</h2>
-<div class="outline-text-2" id="text-org09e993b">
+<div id="outline-container-orgb2d072b" class="outline-2">
+<h2 id="orgb2d072b">January 2021 - Going all in</h2>
+<div class="outline-text-2" id="text-orgb2d072b">
 <p>
 Starting to learn programming with Machine learning course on
 Coursera. Trying to find the best code editor.. trying out VIM and
@@ -1528,9 +1828,9 @@ Ubuntu.
 </div>
 </div>
 
-<div id="outline-container-org370f50a" class="outline-2">
-<h2 id="org370f50a">April 2020 - The idea to program</h2>
-<div class="outline-text-2" id="text-org370f50a">
+<div id="outline-container-org165847e" class="outline-2">
+<h2 id="org165847e">April 2020 - The idea to program</h2>
+<div class="outline-text-2" id="text-org165847e">
 <p>
 Quarantine in Bali. Lying in bed. Realizing that I would like to have
 a job I can do remotely. I was a computer guy my whole life, playing
@@ -1539,7 +1839,9 @@ fix something - always doing it myself.
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-personal.html">personal</a> <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[personal]]></category>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2022-07-22-my-it-journey.html</link>
   <guid>https://arvydasg.github.io/2022-07-22-my-it-journey.html</guid>
   <pubDate>Fri, 22 Jul 2022 20:17:00 +0300</pubDate>
@@ -1548,14 +1850,14 @@ fix something - always doing it myself.
   <title><![CDATA[Magicmirror]]></title>
   <description><![CDATA[
 
-<figure id="orgaf9f5a8">
+<figure id="org629e6ce">
 <img src="./static/images/magicmirror.png" alt="magicmirror.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org6150fa6" class="outline-2">
-<h2 id="org6150fa6">The idea</h2>
-<div class="outline-text-2" id="text-org6150fa6">
+<div id="outline-container-org62b5a5f" class="outline-2">
+<h2 id="org62b5a5f">The idea</h2>
+<div class="outline-text-2" id="text-org62b5a5f">
 <p>
 Found an unused raspberry pi at work. Was wondering what it would be
 like to use it for something useful… One of the projects I liked was
@@ -1594,11 +1896,11 @@ on it.
 </div>
 </div>
 
-<div id="outline-container-org824f4d0" class="outline-2">
-<h2 id="org824f4d0">Current setup</h2>
-<div class="outline-text-2" id="text-org824f4d0">
+<div id="outline-container-org0b061ec" class="outline-2">
+<h2 id="org0b061ec">Current setup</h2>
+<div class="outline-text-2" id="text-org0b061ec">
 
-<figure id="org35e1932">
+<figure id="orgfe0f0f1">
 <img src="./static/images/magicmirror-calendar.png" alt="magicmirror-calendar.png" width="1200px">
 
 </figure>
@@ -1611,9 +1913,9 @@ my family members so we are all up to date with the upcoming events.
 </div>
 </div>
 
-<div id="outline-container-org28ccbfc" class="outline-2">
-<h2 id="org28ccbfc">Future Ideas</h2>
-<div class="outline-text-2" id="text-org28ccbfc">
+<div id="outline-container-orgdf9642c" class="outline-2">
+<h2 id="orgdf9642c">Future Ideas</h2>
+<div class="outline-text-2" id="text-orgdf9642c">
 <p>
 One day I want to learn how to work with API’s so I can pull my weight
 data from “Google Fit” and display in MagicMirror.
@@ -1629,7 +1931,8 @@ I have many ideas like such :)
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2022-07-12-magicmirror.html</link>
   <guid>https://arvydasg.github.io/2022-07-12-magicmirror.html</guid>
   <pubDate>Tue, 12 Jul 2022 19:46:00 +0300</pubDate>
@@ -1638,24 +1941,28 @@ I have many ideas like such :)
   <title><![CDATA[First month as IT Technician]]></title>
   <description><![CDATA[
 
-<figure id="orgd37a108">
+<figure id="org13bf8c0">
 <img src="./static/images/pkc-technician.png" alt="pkc-technician.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org427d42d" class="outline-2">
-<h2 id="org427d42d">Intro</h2>
-<div class="outline-text-2" id="text-org427d42d">
+<div id="outline-container-org9d78ad0" class="outline-2">
+<h2 id="org9d78ad0">Intro</h2>
+<div class="outline-text-2" id="text-org9d78ad0">
 <p>
-Hello,
+So this is supposed to be a post about my first time as IT technician,
+but almost 2 months have passed and I still haven’t found the time to
+write it. But here it is, let’s get straight into it.
 </p>
 
 <p>
-So this is supposed to be a post about my first time as IT technician, but almost 2 months have passed and I still haven’t found the time to write it. But here it is, let’s get straight into it.
-</p>
-
-<p>
-My first IT job experience. Got accepted to do two other jobs in this company, but I firmly stated that I want to be in IT field, even if it meant that I will be fixing printers. You know, I think it would be easier for me to list down some points about these months, like braindump and whenever someone wants to know more about it - I will share more info. I can write a huge paper about those months, but it would take just too much of my precious time. Let’s go:
+My first IT job experience. Got accepted to do two other jobs in this
+company, but I firmly stated that I want to be in IT field, even if it
+meant that I will be fixing printers. You know, I think it would be
+easier for me to list down some points about these months, like
+braindump and whenever someone wants to know more about it - I will
+share more info. I can write a huge paper about those months, but it
+would take just too much of my precious time. Let’s go:
 </p>
 
 <ul class="org-ul">
@@ -1711,8 +2018,9 @@ Happy I wrote this. Going to watch some news with my bb :)
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">Pkc</a> </div>]]></description>
-  <category><![CDATA[Pkc]]></category>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-personal.html">personal</a> <a href="https://arvydasg.github.io/tag-pkc.html">pkc</a> </div>]]></description>
+  <category><![CDATA[personal]]></category>
+  <category><![CDATA[pkc]]></category>
   <link>https://arvydasg.github.io/2022-07-03-first-month-as-it-technician.html</link>
   <guid>https://arvydasg.github.io/2022-07-03-first-month-as-it-technician.html</guid>
   <pubDate>Sun, 03 Jul 2022 19:18:00 +0300</pubDate>
@@ -1721,14 +2029,14 @@ Happy I wrote this. Going to watch some news with my bb :)
   <title><![CDATA[Django Tags]]></title>
   <description><![CDATA[
 
-<figure id="org36499d9">
+<figure id="org78e0921">
 <img src="./static/images/django_tags.png" alt="django_tags.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org251dfb6" class="outline-2">
-<h2 id="org251dfb6">Intro</h2>
-<div class="outline-text-2" id="text-org251dfb6">
+<div id="outline-container-orgc3aa691" class="outline-2">
+<h2 id="orgc3aa691">Intro</h2>
+<div class="outline-text-2" id="text-orgc3aa691">
 <p>
 Alright, I will just write all the thoughts in my head for now. I am
 too excited that I managed tags to work on this site!
@@ -1750,9 +2058,9 @@ to create this functionality by django itself.
 </div>
 </div>
 
-<div id="outline-container-org88e566e" class="outline-2">
-<h2 id="org88e566e">Body</h2>
-<div class="outline-text-2" id="text-org88e566e">
+<div id="outline-container-orgb09c178" class="outline-2">
+<h2 id="orgb09c178">Body</h2>
+<div class="outline-text-2" id="text-orgb09c178">
 <p>
 I am not even sure what part of code I should share here.. I want to
 share all the steps that took me to reach the result, but that would
@@ -1808,9 +2116,9 @@ inside that tags page. AMAZING!!
 </div>
 </div>
 
-<div id="outline-container-orgd3e09b5" class="outline-2">
-<h2 id="orgd3e09b5">Final config</h2>
-<div class="outline-text-2" id="text-orgd3e09b5">
+<div id="outline-container-orgb10010b" class="outline-2">
+<h2 id="orgb10010b">Final config</h2>
+<div class="outline-text-2" id="text-orgb10010b">
 <p>
 I then had to step back and think how to make a link to that specific
 blog post. This worked.
@@ -1834,7 +2142,9 @@ AMAZING!! I am done and I can not believe I did it. Link to Github project.
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-django.html">django</a> <a href="https://arvydasg.github.io/tag-python.html">python</a> </div>]]></description>
+  <category><![CDATA[django]]></category>
+  <category><![CDATA[python]]></category>
   <link>https://arvydasg.github.io/2022-06-19-django-tags.html</link>
   <guid>https://arvydasg.github.io/2022-06-19-django-tags.html</guid>
   <pubDate>Sun, 19 Jun 2022 20:26:00 +0300</pubDate>
@@ -1843,22 +2153,22 @@ AMAZING!! I am done and I can not believe I did it. Link to Github project.
   <title><![CDATA[Attempts to Blog]]></title>
   <description><![CDATA[
 
-<figure id="org78497b7">
+<figure id="orgf0812aa">
 <img src="./static/images/emacsblog.png" alt="emacsblog.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgeccf2ae" class="outline-2">
-<h2 id="orgeccf2ae">Intro</h2>
+<div id="outline-container-org109f327" class="outline-2">
+<h2 id="org109f327">Intro</h2>
 </div>
 
-<div id="outline-container-org33aded0" class="outline-2">
-<h2 id="org33aded0">Body</h2>
-<div class="outline-text-2" id="text-org33aded0">
+<div id="outline-container-orgd4064eb" class="outline-2">
+<h2 id="orgd4064eb">Body</h2>
+<div class="outline-text-2" id="text-orgd4064eb">
 </div>
-<div id="outline-container-orgd4ec4de" class="outline-3">
-<h3 id="orgd4ec4de">First attempts</h3>
-<div class="outline-text-3" id="text-orgd4ec4de">
+<div id="outline-container-org77a9e40" class="outline-3">
+<h3 id="org77a9e40">First attempts</h3>
+<div class="outline-text-3" id="text-org77a9e40">
 <p>
 I was trying to do the same with my journey to programming. It started
 a bit more than a year ago and since them I was trying to create
@@ -1874,9 +2184,9 @@ personal blog/website.
 </div>
 </div>
 
-<div id="outline-container-orgdbc93dd" class="outline-2">
-<h2 id="orgdbc93dd">Current setup</h2>
-<div class="outline-text-2" id="text-orgdbc93dd">
+<div id="outline-container-orga4d1d7b" class="outline-2">
+<h2 id="orga4d1d7b">Current setup</h2>
+<div class="outline-text-2" id="text-orga4d1d7b">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2022-04-17 Sun] </span></span> I discovered a way to make a website with emacs.
 <a href="https://systemcrafters.net/publishing-websites-with-org-mode/">Systemcrafters channel</a> has a lot of great material covering just that.
@@ -1888,15 +2198,18 @@ I knew that this is the right way for me to blog, because:
 
 <ul class="org-ul">
 <li>I can use my emacs shortcuts to write and edit</li>
-<li>I don’t need to reformat text to make it readable for something like CKEditor in python <a href="https://github.com/arvydasg/emacs_blog">django</a>. I can just straight up use emacs source blocks, headings, text blocks and so on and everything just works,</li>
-<li>I can publish my blog just as easily wit <a href="https://magit.vc/">Magit</a>, push straight to Github and the changes will be visible immediately in my website,</li>
+<li>I don’t need to reformat text to make it readable for something like
+CKEditor in python <a href="https://github.com/arvydasg/emacs_blog">django</a>. I can just straight up use emacs source
+blocks, headings, text blocks and so on and everything just works,</li>
+<li>I can publish my blog just as easily wit <a href="https://magit.vc/">Magit</a>, push straight to
+Github and the changes will be visible immediately in my website,</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8759b35" class="outline-2">
-<h2 id="org8759b35">Summary</h2>
-<div class="outline-text-2" id="text-org8759b35">
+<div id="outline-container-org64e037d" class="outline-2">
+<h2 id="org64e037d">Summary</h2>
+<div class="outline-text-2" id="text-org64e037d">
 <p>
 For me, this is the fastest way to blog. I will be using it in the
 future and hopefully improve my workflow as I go along.
@@ -1908,8 +2221,9 @@ P.S. Update 2022-08-29. I am creating a hugo blog - AGAIN. Read why -
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-emacs.html">Emacs</a> </div>]]></description>
-  <category><![CDATA[Emacs]]></category>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-emacs.html">emacs</a> <a href="https://arvydasg.github.io/tag-python.html">python</a> </div>]]></description>
+  <category><![CDATA[emacs]]></category>
+  <category><![CDATA[python]]></category>
   <link>https://arvydasg.github.io/2022-06-19-attempts-to-blog.html</link>
   <guid>https://arvydasg.github.io/2022-06-19-attempts-to-blog.html</guid>
   <pubDate>Sun, 19 Jun 2022 20:04:00 +0300</pubDate>
@@ -1918,14 +2232,14 @@ P.S. Update 2022-08-29. I am creating a hugo blog - AGAIN. Read why -
   <title><![CDATA[Dired diff-hl]]></title>
   <description><![CDATA[
 
-<figure id="org1a8dfe5">
+<figure id="org3bbb8bf">
 <img src="./static/images/dired-diff-hl.png" alt="dired-diff-hl.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgea78d6e" class="outline-2">
-<h2 id="orgea78d6e">Introduction</h2>
-<div class="outline-text-2" id="text-orgea78d6e">
+<div id="outline-container-org449e390" class="outline-2">
+<h2 id="org449e390">Introduction</h2>
+<div class="outline-text-2" id="text-org449e390">
 <p>
 So, everything started when I have discovered ‘diff-hl’ package. It
 had an option to show differences in dired buffer. I thought okay,
@@ -1934,9 +2248,9 @@ cool option, lets not use neotree anymore and use dired instead.
 </div>
 </div>
 
-<div id="outline-container-orgad4b45b" class="outline-2">
-<h2 id="orgad4b45b">Body</h2>
-<div class="outline-text-2" id="text-orgad4b45b">
+<div id="outline-container-org31c707b" class="outline-2">
+<h2 id="org31c707b">Body</h2>
+<div class="outline-text-2" id="text-org31c707b">
 <p>
 I added a few lines to ‘diff-hl’ config to make the file changes
 visible in dired buffer.
@@ -2006,9 +2320,9 @@ more convenient to cycle with and I am all set!
 </div>
 </div>
 
-<div id="outline-container-org398a324" class="outline-2">
-<h2 id="org398a324">The final config</h2>
-<div class="outline-text-2" id="text-org398a324">
+<div id="outline-container-org3181d40" class="outline-2">
+<h2 id="org3181d40">The final config</h2>
+<div class="outline-text-2" id="text-org3181d40">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"> <span style="color: #fe8019;">(</span><span style="color: #fb4934;">use-package</span> <span style="color: #d3869b;">dired</span>
     <span style="color: #fe8019;">:ensure</span> nil                         <span style="color: #928374;">;</span><span style="color: #928374;">no need for t, because dired is built in</span>
@@ -2050,8 +2364,8 @@ found ‘dired-find-alternate-file’ :)
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-emacs.html">Emacs</a> </div>]]></description>
-  <category><![CDATA[Emacs]]></category>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-emacs.html">emacs</a> </div>]]></description>
+  <category><![CDATA[emacs]]></category>
   <link>https://arvydasg.github.io/2022-06-19-dired-diff-hl.html</link>
   <guid>https://arvydasg.github.io/2022-06-19-dired-diff-hl.html</guid>
   <pubDate>Sun, 19 Jun 2022 18:37:00 +0300</pubDate>
@@ -2060,14 +2374,14 @@ found ‘dired-find-alternate-file’ :)
   <title><![CDATA[PKC company Wiki]]></title>
   <description><![CDATA[
 
-<figure id="orgbc99f5d">
+<figure id="orgf87d7b9">
 <img src="./static/images/pkcwiki.png" alt="pkcwiki.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org126e5db" class="outline-2">
-<h2 id="org126e5db">What is it for</h2>
-<div class="outline-text-2" id="text-org126e5db">
+<div id="outline-container-orgfb9e38f" class="outline-2">
+<h2 id="orgfb9e38f">What is it for</h2>
+<div class="outline-text-2" id="text-orgfb9e38f">
 <p>
 When I came to PKC - there was very little documentation about IT
 processes. It had to be documented.
@@ -2089,8 +2403,9 @@ This project was mainly focused to my future colleagues.
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">Pkc</a> </div>]]></description>
-  <category><![CDATA[Pkc]]></category>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">pkc</a> <a href="https://arvydasg.github.io/tag-project.html">project</a> </div>]]></description>
+  <category><![CDATA[pkc]]></category>
+  <category><![CDATA[project]]></category>
   <link>https://arvydasg.github.io/2022-05-24-pkc-company-wiki.html</link>
   <guid>https://arvydasg.github.io/2022-05-24-pkc-company-wiki.html</guid>
   <pubDate>Tue, 24 May 2022 19:27:00 +0300</pubDate>
@@ -2099,18 +2414,22 @@ This project was mainly focused to my future colleagues.
   <title><![CDATA[Automated backups with Python and Selenium]]></title>
   <description><![CDATA[
 
-<figure id="org09aee3b">
+<figure id="orgf4f9ed9">
 <img src="./static/images/ivbackups.png" alt="ivbackups.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org136e5cf" class="outline-2">
-<h2 id="org136e5cf">About the project</h2>
-<div class="outline-text-2" id="text-org136e5cf">
+<div id="outline-container-org44d354d" class="outline-2">
+<h2 id="org44d354d">About the project</h2>
+<div class="outline-text-2" id="text-org44d354d">
 <p>
-Since I don’t trust/understand automated backups of websites and I
-would rather backup things myself, know where they are stored and what
-is actually “backuped”, I create backups for my client sites manually.
+Since I don’t trust/understand automated backups of websites (in iv.lt
+for example) and I would rather backup things myself, know where they
+are stored and what is actually “backuped”, I create backups for my
+client sites manually.
+</p>
+
+<p>
 The procedure is:
 </p>
 
@@ -2137,9 +2456,9 @@ backups more often. Same 10 click procedure every time…
 </div>
 </div>
 
-<div id="outline-container-org9558a12" class="outline-2">
-<h2 id="org9558a12">My idea</h2>
-<div class="outline-text-2" id="text-org9558a12">
+<div id="outline-container-org67a9a33" class="outline-2">
+<h2 id="org67a9a33">My idea</h2>
+<div class="outline-text-2" id="text-org67a9a33">
 <p>
 Since I have decided I want to slowly move away from Wordpress sites
 (the work itself is meh, drag and drop interfaces, have to learn php
@@ -2153,9 +2472,9 @@ website building.
 </div>
 </div>
 
-<div id="outline-container-orgf11c3a9" class="outline-2">
-<h2 id="orgf11c3a9">Solution</h2>
-<div class="outline-text-2" id="text-orgf11c3a9">
+<div id="outline-container-org5ae8e0a" class="outline-2">
+<h2 id="org5ae8e0a">Solution</h2>
+<div class="outline-text-2" id="text-org5ae8e0a">
 <p>
 For a while now I have been thinking how cool it would be to automate
 some tasks. A year ago that is why I started to learn coding, so I can
@@ -2204,9 +2523,9 @@ Any deprecation errors were fixed by this -
 </div>
 </div>
 
-<div id="outline-container-orgbcfeafb" class="outline-2">
-<h2 id="orgbcfeafb">What I learned</h2>
-<div class="outline-text-2" id="text-orgbcfeafb">
+<div id="outline-container-orgebfcc46" class="outline-2">
+<h2 id="orgebfcc46">What I learned</h2>
+<div class="outline-text-2" id="text-orgebfcc46">
 <ul class="org-ul">
 <li>What is a webdriver</li>
 <li>How to open a webpage with Selenium</li>
@@ -2222,17 +2541,20 @@ Any deprecation errors were fixed by this -
 </div>
 </div>
 
-<div id="outline-container-orgc44f7a9" class="outline-2">
-<h2 id="orgc44f7a9">Known bugs</h2>
-<div class="outline-text-2" id="text-orgc44f7a9">
+<div id="outline-container-org7e9af85" class="outline-2">
+<h2 id="org7e9af85">Known bugs</h2>
+<div class="outline-text-2" id="text-org7e9af85">
 <p>
 Doesn’t close browser windows after each script runs (not a biggie,
 everything still works, might fix later)
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">Pkc</a> </div>]]></description>
-  <category><![CDATA[Pkc]]></category>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-pkc.html">pkc</a> <a href="https://arvydasg.github.io/tag-freelancing.html">freelancing</a> <a href="https://arvydasg.github.io/tag-project.html">project</a> <a href="https://arvydasg.github.io/tag-python.html">python</a> </div>]]></description>
+  <category><![CDATA[pkc]]></category>
+  <category><![CDATA[freelancing]]></category>
+  <category><![CDATA[project]]></category>
+  <category><![CDATA[python]]></category>
   <link>https://arvydasg.github.io/2022-04-10-automated-backups-with-python-and-selenium.html</link>
   <guid>https://arvydasg.github.io/2022-04-10-automated-backups-with-python-and-selenium.html</guid>
   <pubDate>Sun, 10 Apr 2022 20:01:00 +0300</pubDate>
@@ -2241,31 +2563,42 @@ everything still works, might fix later)
   <title><![CDATA[CRUD Django app for DPD]]></title>
   <description><![CDATA[
 
-<figure id="org168da44">
+<figure id="org2b49f3a">
 <img src="./static/images/dpd.png" alt="dpd.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgde72e87" class="outline-2">
-<h2 id="orgde72e87">What is it for</h2>
-<div class="outline-text-2" id="text-orgde72e87">
+<div id="outline-container-orgd150e93" class="outline-2">
+<h2 id="orgd150e93">Intro</h2>
+<div class="outline-text-2" id="text-orgd150e93">
 <p>
-This project was created by me for me, with an idea to share it with
-my colleagues at <a href="https://www.dpd.com/lt/lt">https://www.dpd.com/lt/lt</a> The couriers are not happy
-with their salaries, they are not sure if they are calculated properly
-according to many factors that DPD tells about. This leads to couriers
-writing down numbers of packages they have delivered, collected,
-kilometers they have driven and so on.. Every day, after each shift.
-And all this additional work and accounting because they can not trust
-their employers. I thought I will create this app so it can be used by
-couriers to track their data easier and in one place.
+This Django app was created for me and my colleagues at <a href="https://www.dpd.com/lt/lt">DPD</a>. Instead
+of writing delivered packages/stops/pickups on a piece of paper - do
+it inside this app. A perfect way to compare your salary slip to the
+actual work that you have done.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org044488a" class="outline-2">
-<h2 id="org044488a">How it works</h2>
-<div class="outline-text-2" id="text-org044488a">
+<div id="outline-container-org34ea53b" class="outline-2">
+<h2 id="org34ea53b">What is it for</h2>
+<div class="outline-text-2" id="text-org34ea53b">
+<p>
+The couriers are not happy with their salaries, they are not sure if
+they are calculated properly according to many factors that DPD tells
+about. This leads to couriers writing down numbers of packages they
+have delivered, collected, kilometers they have driven and so on..
+Every day, after each shift. And all this additional work and
+accounting because they can not trust their employers. I thought I
+will create this app so it can be used by couriers to track their data
+easier and in one place.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0a5f775" class="outline-2">
+<h2 id="org0a5f775">How it works</h2>
+<div class="outline-text-2" id="text-org0a5f775">
 <p>
 A user logs in, gets a posibility to add a daily record with all the
 needed options for a courier. When he is done, a record is saved. It
@@ -2279,9 +2612,9 @@ This is a django app that is hosted on github and heroku.
 </div>
 </div>
 
-<div id="outline-container-org0a0637d" class="outline-2">
-<h2 id="org0a0637d">Docs</h2>
-<div class="outline-text-2" id="text-org0a0637d">
+<div id="outline-container-org0307255" class="outline-2">
+<h2 id="org0307255">Docs</h2>
+<div class="outline-text-2" id="text-org0307255">
 <p>
 Learned a lot during this tutorial - <a href="https://www.youtube.com/watch?v=llbtoQTt4qw">https://www.youtube.com/watch?v=llbtoQTt4qw</a>
 </p>
@@ -2308,9 +2641,9 @@ Applied this tutorial for my own project.
 </div>
 </div>
 
-<div id="outline-container-org08062ac" class="outline-2">
-<h2 id="org08062ac">Deploy</h2>
-<div class="outline-text-2" id="text-org08062ac">
+<div id="outline-container-org65f1169" class="outline-2">
+<h2 id="org65f1169">Deploy</h2>
+<div class="outline-text-2" id="text-org65f1169">
 <p>
 Excellent explanation of how to deploy django app with Heroku -
 <a href="https://www.youtube.com/watch?v=6DI_7Zja8Zc">https://www.youtube.com/watch?v=6DI_7Zja8Zc</a>
@@ -2322,15 +2655,18 @@ Live website - <a href="https://dpd2022.herokuapp.com">https://dpd2022.herokuapp
 </div>
 </div>
 
-<div id="outline-container-org847cdd7" class="outline-2">
-<h2 id="org847cdd7">Summary</h2>
-<div class="outline-text-2" id="text-org847cdd7">
+<div id="outline-container-orgb4a680a" class="outline-2">
+<h2 id="orgb4a680a">Summary</h2>
+<div class="outline-text-2" id="text-orgb4a680a">
 <p>
 Nice and useful little app. Would still be using it if I was working in DPD still.
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-freelancing.html">freelancing</a> <a href="https://arvydasg.github.io/tag-project.html">project</a> <a href="https://arvydasg.github.io/tag-python.html">python</a> </div>]]></description>
+  <category><![CDATA[freelancing]]></category>
+  <category><![CDATA[project]]></category>
+  <category><![CDATA[python]]></category>
   <link>https://arvydasg.github.io/2022-02-08-crud-django-app-for-dpd.html</link>
   <guid>https://arvydasg.github.io/2022-02-08-crud-django-app-for-dpd.html</guid>
   <pubDate>Tue, 08 Feb 2022 18:41:00 +0200</pubDate>
@@ -2339,14 +2675,24 @@ Nice and useful little app. Would still be using it if I was working in DPD stil
   <title><![CDATA[Facebook automation with Django]]></title>
   <description><![CDATA[
 
-<figure id="orga216031">
+<figure id="org8bafd42">
 <img src="./static/images/facebook-django.gif" alt="facebook-django.gif" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgc7f61ff" class="outline-2">
-<h2 id="orgc7f61ff">What is it for</h2>
-<div class="outline-text-2" id="text-orgc7f61ff">
+<div id="outline-container-orga76e9a1" class="outline-2">
+<h2 id="orga76e9a1">Intro</h2>
+<div class="outline-text-2" id="text-orga76e9a1">
+<p>
+A Django web app that posts your desired content to the chosen
+Facebook groups for you!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd6194df" class="outline-2">
+<h2 id="orgd6194df">What is it for</h2>
+<div class="outline-text-2" id="text-orgd6194df">
 <p>
 A recently started smoothie drink powder business that is testing
 itself out in the field. Instead of purchasing ads on facebook, the
@@ -2365,9 +2711,9 @@ see if I can create something like it myself.
 </div>
 </div>
 
-<div id="outline-container-orgd558af0" class="outline-2">
-<h2 id="orgd558af0">How it works</h2>
-<div class="outline-text-2" id="text-orgd558af0">
+<div id="outline-container-orga26006d" class="outline-2">
+<h2 id="orga26006d">How it works</h2>
+<div class="outline-text-2" id="text-orga26006d">
 <p>
 All the user need is a link to the facebook post and a call to action
 message. He then needs to input these two into the browser window and
@@ -2380,9 +2726,9 @@ windows - see how many successful group posts this app has done.
 </div>
 </div>
 
-<div id="outline-container-org5fb01b2" class="outline-2">
-<h2 id="org5fb01b2">Cons</h2>
-<div class="outline-text-2" id="text-org5fb01b2">
+<div id="outline-container-org4012362" class="outline-2">
+<h2 id="org4012362">Cons</h2>
+<div class="outline-text-2" id="text-org4012362">
 <p>
 There are a few cons of using this script.
 </p>
@@ -2401,9 +2747,9 @@ one sitting) and you are risking to get a temporary ban by facebook.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb175681" class="outline-2">
-<h2 id="orgb175681">What to fix</h2>
-<div class="outline-text-2" id="text-orgb175681">
+<div id="outline-container-org166f482" class="outline-2">
+<h2 id="org166f482">What to fix</h2>
+<div class="outline-text-2" id="text-org166f482">
 <ul class="org-ul">
 <li>if the script breaks - take a screenshot of the whole screen (easier to debug what happened)</li>
 <li>when the script finishes posting to one group - take a screenshot (easier to track the activity)</li>
@@ -2412,8 +2758,11 @@ one sitting) and you are risking to get a temporary ban by facebook.</li>
 </ul>
 </div>
 </div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-django.html">Django</a> </div>]]></description>
-  <category><![CDATA[Django]]></category>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-django.html">django</a> <a href="https://arvydasg.github.io/tag-freelancing.html">freelancing</a> <a href="https://arvydasg.github.io/tag-project.html">project</a> <a href="https://arvydasg.github.io/tag-python.html">python</a> </div>]]></description>
+  <category><![CDATA[django]]></category>
+  <category><![CDATA[freelancing]]></category>
+  <category><![CDATA[project]]></category>
+  <category><![CDATA[python]]></category>
   <link>https://arvydasg.github.io/2022-02-05-facebook-automation-with-django.html</link>
   <guid>https://arvydasg.github.io/2022-02-05-facebook-automation-with-django.html</guid>
   <pubDate>Sat, 05 Feb 2022 19:14:00 +0200</pubDate>
@@ -2422,25 +2771,41 @@ one sitting) and you are risking to get a temporary ban by facebook.</li>
   <title><![CDATA[SmutiFruti E-shop]]></title>
   <description><![CDATA[
 
-<figure id="org12610fb">
+<figure id="orgd60f976">
 <img src="./static/images/smutifruti.png" alt="smutifruti.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org6f267b1" class="outline-2">
-<h2 id="org6f267b1">Powdered smoothies E-shop</h2>
-<div class="outline-text-2" id="text-org6f267b1">
+<div id="outline-container-org11dcb67" class="outline-2">
+<h2 id="org11dcb67">Powdered smoothies E-shop</h2>
+<div class="outline-text-2" id="text-org11dcb67">
 <p>
-E-shop build with <a href="https://wordpress.com/">Wordpress</a> and <a href="https://oxygenbuilder.com/">Oxygen Builder</a>.
+E-shop for powdered smoothies. A client wanted a quick/cheap and
+easily maintainable solution, therefore Wordpress together with Oxygen
+builder.
 </p>
 
 <p>
-Link to e-shop - Smutifruti.lt
+Done by me:
+</p>
+<ul class="org-ul">
+<li>Communication with the client</li>
+<li>Site design</li>
+<li>Building the site from scratch according to the needs</li>
+<li>Setting up the payment solution</li>
+<li>Hosting the site to the live environment</li>
+<li>Maintaining the site on a monthly basis</li>
+</ul>
+
+<p>
+Link to e-shop - <a href="https://smutifruti.lt/">Smutifruti.lt</a>
 </p>
 </div>
 </div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-wordpress.html">Wordpress</a> </div>]]></description>
-  <category><![CDATA[Wordpress]]></category>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-freelancing.html">freelancing</a> <a href="https://arvydasg.github.io/tag-wordpress.html">wordpress</a> <a href="https://arvydasg.github.io/tag-project.html">project</a> </div>]]></description>
+  <category><![CDATA[freelancing]]></category>
+  <category><![CDATA[wordpress]]></category>
+  <category><![CDATA[project]]></category>
   <link>https://arvydasg.github.io/2021-11-08-smutifruti-e-shop.html</link>
   <guid>https://arvydasg.github.io/2021-11-08-smutifruti-e-shop.html</guid>
   <pubDate>Mon, 08 Nov 2021 19:23:00 +0200</pubDate>
@@ -2449,21 +2814,37 @@ Link to e-shop - Smutifruti.lt
   <title><![CDATA[Julija Consulting]]></title>
   <description><![CDATA[
 
-<figure id="org84c24a6">
+<figure id="orge415a57">
 <img src="./static/images/julijaconsulting.gif" alt="julijaconsulting.gif" width="1200px">
 
 </figure>
 
+
 <p>
-A custom webpage build for a food production consultancy firm. Used
-Wordpress and Oxygen Builder.
+A custom webpage build for a food production consultancy firm. A
+client wanted a quick/cheap and easily maintainable solution,
+therefore Wordpress together with Oxygen builder.
 </p>
+
+<p>
+Done by me:
+</p>
+<ul class="org-ul">
+<li>Communication with the client</li>
+<li>Site design</li>
+<li>Building the site from scratch according to the needs</li>
+<li>Setting up the payment solution</li>
+<li>Hosting the site to the live environment</li>
+<li>Maintaining the site on a monthly basis</li>
+</ul>
 
 <p>
 Link to site - <a href="https://julija.consulting/">https://julija.consulting/</a>
 </p>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-wordpress.html">Wordpress</a> </div>]]></description>
-  <category><![CDATA[Wordpress]]></category>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-freelancing.html">freelancing</a> <a href="https://arvydasg.github.io/tag-wordpress.html">wordpress</a> <a href="https://arvydasg.github.io/tag-project.html">project</a> </div>]]></description>
+  <category><![CDATA[freelancing]]></category>
+  <category><![CDATA[wordpress]]></category>
+  <category><![CDATA[project]]></category>
   <link>https://arvydasg.github.io/2021-08-05-julija-consulting.html</link>
   <guid>https://arvydasg.github.io/2021-08-05-julija-consulting.html</guid>
   <pubDate>Thu, 05 Aug 2021 19:53:00 +0300</pubDate>
@@ -2518,9 +2899,9 @@ test&#x2026; it has been a while on my shelf, but probably wasn't the good
 time to read it yet, didnt get much of it.
 </p>
 
-<div id="outline-container-org229236d" class="outline-2">
-<h2 id="org229236d">Thoughts of week without 24/7 internet</h2>
-<div class="outline-text-2" id="text-org229236d">
+<div id="outline-container-org63b2af5" class="outline-2">
+<h2 id="org63b2af5">Thoughts of week without 24/7 internet</h2>
+<div class="outline-text-2" id="text-org63b2af5">
 <p>
 I loved not being able to take picture of whateve moment I was in, I
 was able to just be in it
@@ -2598,7 +2979,8 @@ more mindful. 21:49
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-personal.html">personal</a> </div>]]></description>
+  <category><![CDATA[personal]]></category>
   <link>https://arvydasg.github.io/2021-06-04-sim-card-back.html</link>
   <guid>https://arvydasg.github.io/2021-06-04-sim-card-back.html</guid>
   <pubDate>Fri, 04 Jun 2021 20:38:00 +0300</pubDate>
@@ -2634,24 +3016,28 @@ going all in and then burning out.
 <p>
 Little bit of Js, php, spaninsh, kali, python and etc daily&#x2026;
 </p>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-personal.html">personal</a> </div>]]></description>
+  <category><![CDATA[personal]]></category>
   <link>https://arvydasg.github.io/2021-06-04-little-by-little.html</link>
   <guid>https://arvydasg.github.io/2021-06-04-little-by-little.html</guid>
   <pubDate>Fri, 04 Jun 2021 11:30:00 +0300</pubDate>
 </item>
 <item>
-  <title><![CDATA[Modifying Wordpress PHP]]></title>
+  <title><![CDATA[Modifying Wordpress source PHP]]></title>
   <description><![CDATA[
 <p>
 Since I MUST know what is underneath the hood when learning something
-new, the time has come to see under the Wordpress hood. There is lots
-of linked php files, lots of functions, variables and so on. I want to
-understand how they relate to each other and how to modify the files
-to my liking. Yesterday after doing a little bit of digging I have
-managed to change for some reason not transated woocommerce checkout
-field text, hopefully today I will manage to find how to translate the
-"view card" button. Then my site will be fully translated to
-Lithuanian
+new, the time has come to see under the Wordpress hood.
+</p>
+
+<p>
+There is lots of linked php files, lots of functions, variables and so
+on. I want to understand how they relate to each other and how to
+modify the files to my liking. Yesterday after doing a little bit of
+digging I have managed to change for some reason not transacted
+woocommerce checkout field text, hopefully today I will manage to find
+how to translate the "view card" button. Then my site will be fully
+translated to Lithuanian
 </p>
 
 <p>
@@ -2718,9 +3104,9 @@ remove<sub>action</sub> (then copy the whole line with priorities and stuff you
 want to remove). Wow, this is exactly what I wanted.
 </p>
 
-<div id="outline-container-org67ca844" class="outline-2">
-<h2 id="org67ca844">Second tutorial</h2>
-<div class="outline-text-2" id="text-org67ca844">
+<div id="outline-container-org146c358" class="outline-2">
+<h2 id="org146c358">Second tutorial</h2>
+<div class="outline-text-2" id="text-org146c358">
 <p>
 Name of it - Wordpress produtct catalog - how to create a custom
 wordpress catalogue.
@@ -2775,9 +3161,10 @@ the changes remained or not.
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
-  <link>https://arvydasg.github.io/2021-06-03-modifying-wordpress-php.html</link>
-  <guid>https://arvydasg.github.io/2021-06-03-modifying-wordpress-php.html</guid>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-wordpress.html">wordpress</a> </div>]]></description>
+  <category><![CDATA[wordpress]]></category>
+  <link>https://arvydasg.github.io/2021-06-03-modifying-wordpress-source-php.html</link>
+  <guid>https://arvydasg.github.io/2021-06-03-modifying-wordpress-source-php.html</guid>
   <pubDate>Thu, 03 Jun 2021 08:22:00 +0300</pubDate>
 </item>
 <item>
@@ -2788,9 +3175,9 @@ Hey look at me, once again typing in vim on Linux without any plugins.
 Writing all the html tags by hand.
 </p>
 
-<div id="outline-container-org265b214" class="outline-2">
-<h2 id="org265b214">Confused</h2>
-<div class="outline-text-2" id="text-org265b214">
+<div id="outline-container-orgcbb4d8a" class="outline-2">
+<h2 id="orgcbb4d8a">Confused</h2>
+<div class="outline-text-2" id="text-orgcbb4d8a">
 <p>
 So, my current interests are: Kali, js, php, vim, linux shell, python.
 </p>
@@ -2810,9 +3197,9 @@ now..
 </div>
 </div>
 
-<div id="outline-container-org1b9e290" class="outline-2">
-<h2 id="org1b9e290">Internet</h2>
-<div class="outline-text-2" id="text-org1b9e290">
+<div id="outline-container-org0a83429" class="outline-2">
+<h2 id="org0a83429">Internet</h2>
+<div class="outline-text-2" id="text-org0a83429">
 <p>
 Today its evening of Wednesday. Since monday I have been without
 internet on my phone, meaning - no internet at home as well. But I
@@ -2840,9 +3227,9 @@ to use it more mindfully.
 </div>
 </div>
 
-<div id="outline-container-orgbb0276d" class="outline-2">
-<h2 id="orgbb0276d">Linux</h2>
-<div class="outline-text-2" id="text-orgbb0276d">
+<div id="outline-container-org7c7bcbb" class="outline-2">
+<h2 id="org7c7bcbb">Linux</h2>
+<div class="outline-text-2" id="text-org7c7bcbb">
 <p>
 Again I got this feeling of my computer being dirty with all the dual
 boot windows and ubuntu, so I decided to install Linux solo and maybe
@@ -2860,7 +3247,8 @@ want to undo something and my whole document is gone, gg :)
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-personal.html">personal</a> </div>]]></description>
+  <category><![CDATA[personal]]></category>
   <link>https://arvydasg.github.io/2021-06-02-confused-internet-linux.html</link>
   <guid>https://arvydasg.github.io/2021-06-02-confused-internet-linux.html</guid>
   <pubDate>Wed, 02 Jun 2021 20:31:00 +0300</pubDate>
@@ -2873,9 +3261,9 @@ Okay, so as the title indicates, I will talk about 3 things.
 JavaScript, Crypto and Busyness(being busy).
 </p>
 
-<div id="outline-container-orgacbb7f0" class="outline-2">
-<h2 id="orgacbb7f0">Javascript</h2>
-<div class="outline-text-2" id="text-orgacbb7f0">
+<div id="outline-container-org6b56b4e" class="outline-2">
+<h2 id="org6b56b4e">Javascript</h2>
+<div class="outline-text-2" id="text-org6b56b4e">
 <p>
 Today is the day I decided to start looking into JavaScript
 programming language. I feel a certain aversion towards it, I imagine
@@ -2923,9 +3311,9 @@ Choo choo&#x2026; on to the next topic.
 </div>
 </div>
 
-<div id="outline-container-orgb83cadc" class="outline-2">
-<h2 id="orgb83cadc">Crypto</h2>
-<div class="outline-text-2" id="text-orgb83cadc">
+<div id="outline-container-org9a17cbf" class="outline-2">
+<h2 id="org9a17cbf">Crypto</h2>
+<div class="outline-text-2" id="text-org9a17cbf">
 <p>
 So, today Julyte decided to buy crypto currencty, I thought about it
 as well, it might be an intersting thing to get involved, overlooking
@@ -2951,9 +3339,9 @@ notebooks and stuff.
 </div>
 </div>
 
-<div id="outline-container-org735bf14" class="outline-2">
-<h2 id="org735bf14">Busyness</h2>
-<div class="outline-text-2" id="text-org735bf14">
+<div id="outline-container-orga8f3803" class="outline-2">
+<h2 id="orga8f3803">Busyness</h2>
+<div class="outline-text-2" id="text-orga8f3803">
 <p>
 Quite a strange title, I know. It is just a direct translation from
 Lithuanian. Uzimtumas means Busyness. There is a goverment institution
@@ -2977,7 +3365,8 @@ cool to see yourself progress.
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-personal.html">personal</a> </div>]]></description>
+  <category><![CDATA[personal]]></category>
   <link>https://arvydasg.github.io/2021-05-25-javascript-crypto-busyness.html</link>
   <guid>https://arvydasg.github.io/2021-05-25-javascript-crypto-busyness.html</guid>
   <pubDate>Tue, 25 May 2021 15:47:00 +0300</pubDate>
@@ -2996,7 +3385,8 @@ freedom to travel.
 <p>
 This is great, my first simple, but useful task completed :)
 </p>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-python.html">python</a> </div>]]></description>
+  <category><![CDATA[python]]></category>
   <link>https://arvydasg.github.io/2021-05-21-renaming-files-with-python.html</link>
   <guid>https://arvydasg.github.io/2021-05-21-renaming-files-with-python.html</guid>
   <pubDate>Fri, 21 May 2021 20:19:00 +0300</pubDate>
@@ -3040,7 +3430,7 @@ execute.
 </p>
 
 
-<figure id="orgaa5d09e">
+<figure id="org5e994fb">
 <img src="./static/images/pythonexecute.png" alt="pythonexecute.png" width="1200px">
 
 </figure>
@@ -3093,8 +3483,8 @@ methods tht I found to host and use my scripts online. By that time I
 will probably have some coool scripts :p Looking forward to that.
 Okay, bye for now. Going to do some web dev stuff :)
 </p>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-python.html">Python</a> </div>]]></description>
-  <category><![CDATA[Python]]></category>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-python.html">python</a> </div>]]></description>
+  <category><![CDATA[python]]></category>
   <link>https://arvydasg.github.io/2021-05-17-python-in-browser.html</link>
   <guid>https://arvydasg.github.io/2021-05-17-python-in-browser.html</guid>
   <pubDate>Mon, 17 May 2021 07:11:00 +0300</pubDate>
@@ -3252,7 +3642,8 @@ someone else solving them form me.
 <p>
 Tutorial hell is real.
 </p>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-personal.html">personal</a> </div>]]></description>
+  <category><![CDATA[personal]]></category>
   <link>https://arvydasg.github.io/2021-05-16-focus-on-what's-important.html</link>
   <guid>https://arvydasg.github.io/2021-05-16-focus-on-what's-important.html</guid>
   <pubDate>Sun, 16 May 2021 15:16:00 +0300</pubDate>
@@ -3339,7 +3730,8 @@ various parts of the site (head, nav, footer, single page etc).
 What I would like to know: how to edit php files and find a way to
 show only what I want. Make website faster as well.
 </p>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-personal.html">personal</a> </div>]]></description>
+  <category><![CDATA[personal]]></category>
   <link>https://arvydasg.github.io/2021-05-11-report-05-11.html</link>
   <guid>https://arvydasg.github.io/2021-05-11-report-05-11.html</guid>
   <pubDate>Tue, 11 May 2021 07:07:00 +0300</pubDate>
@@ -3348,24 +3740,40 @@ show only what I want. Make website faster as well.
   <title><![CDATA[Obelsdumas E-shop]]></title>
   <description><![CDATA[
 
-<figure id="org2d048d4">
+<figure id="orgeda4836">
 <img src="./static/images/obelsdumas.png" alt="obelsdumas.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org65b92b0" class="outline-2">
-<h2 id="org65b92b0">Home made meat product e-shop</h2>
-<div class="outline-text-2" id="text-org65b92b0">
 <p>
-My first Webev client project. Build with Wordpress.
+E-shop for home-made Lithuanian meat products in Birzai. A client
+wanted a quick/cheap and easily maintainable solution, therefore
+Wordpress was chosen for this job.
 </p>
 
 <p>
-<a href="https://obelsdumas.lt/">https://obelsdumas.lt/</a>
+Done by me:
 </p>
-</div>
-</div>
-<div class="taglist"></div>]]></description>
+<ul class="org-ul">
+<li>Communication with the client</li>
+<li>Site design</li>
+<li>Building the site from scratch according to the needs</li>
+<li>Setting up the payment solution</li>
+<li>Hosting the site to the live environment</li>
+<li>Maintaining the site on a monthly basis</li>
+</ul>
+
+<p>
+Link to e-shop - <a href="https://obelsdumas.lt/">https://obelsdumas.lt/</a>
+</p>
+
+<p>
+My very first client.
+</p>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-freelancing.html">freelancing</a> <a href="https://arvydasg.github.io/tag-wordpress.html">wordpress</a> <a href="https://arvydasg.github.io/tag-project.html">project</a> </div>]]></description>
+  <category><![CDATA[freelancing]]></category>
+  <category><![CDATA[wordpress]]></category>
+  <category><![CDATA[project]]></category>
   <link>https://arvydasg.github.io/2021-04-14-obelsdumas-e-shop.html</link>
   <guid>https://arvydasg.github.io/2021-04-14-obelsdumas-e-shop.html</guid>
   <pubDate>Wed, 14 Apr 2021 19:35:00 +0300</pubDate>
@@ -3396,7 +3804,7 @@ most often is the mode. Two modes - bimodal. Grouping is useful also.
 </p>
 
 
-<figure id="orgd79130c">
+<figure id="org0bc6808">
 <img src="./static/images/variance.png" alt="variance.png" width="1200px">
 
 </figure>
@@ -3448,7 +3856,7 @@ html skils at the same time.
 </p>
 
 
-<figure id="org5ea13fa">
+<figure id="org68d1369">
 <img src="./static/images/skewerdtoleft.png" alt="skewerdtoleft.png" width="1200px">
 
 </figure>
@@ -3473,7 +3881,7 @@ the left.
 </p>
 
 
-<figure id="org95706e0">
+<figure id="orge6878af">
 <img src="./static/images/interquartile.png" alt="interquartile.png" width="1200px">
 
 </figure>
@@ -3489,23 +3897,24 @@ well. Just wannah have those here.
 </p>
 
 
-<figure id="org14736ca">
+<figure id="org6dc6349">
 <img src="./static/images/variance1.png" alt="variance1.png" width="1200px">
 
 </figure>
 
 
-<figure id="org7a31989">
+<figure id="org4e6d98b">
 <img src="./static/images/variance2.png" alt="variance2.png" width="1200px">
 
 </figure>
 
 
-<figure id="org48c8318">
+<figure id="orgb47c19b">
 <img src="./static/images/variance3.png" alt="variance3.png" width="1200px">
 
 </figure>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2021-03-30-black-box-statistics.html</link>
   <guid>https://arvydasg.github.io/2021-03-30-black-box-statistics.html</guid>
   <pubDate>Tue, 30 Mar 2021 07:13:00 +0300</pubDate>
@@ -3514,9 +3923,9 @@ well. Just wannah have those here.
   <title><![CDATA[Illusions of Competence]]></title>
   <description><![CDATA[
 
-<div id="outline-container-orgd899ef9" class="outline-2">
-<h2 id="orgd899ef9">Chunking</h2>
-<div class="outline-text-2" id="text-orgd899ef9">
+<div id="outline-container-orgdf0d59f" class="outline-2">
+<h2 id="orgdf0d59f">Chunking</h2>
+<div class="outline-text-2" id="text-orgdf0d59f">
 <p>
 What is a chunk?
 </p>
@@ -3535,7 +3944,7 @@ piece to help you fit it to other pieces.
 </p>
 
 
-<figure id="orgd251fb2">
+<figure id="orgc361713">
 <img src="./static/images/octupus-of-attention.png" alt="octupus-of-attention.png" width="1200px">
 
 </figure>
@@ -3574,7 +3983,7 @@ using up some of the limited slots in your working memory.
 </p>
 
 
-<figure id="org85afb07">
+<figure id="org2ad6e18">
 <img src="./static/images/tentacles.png" alt="tentacles.png" width="1200px">
 
 </figure>
@@ -3641,22 +4050,22 @@ big picture.
 </blockquote>
 
 
-<figure id="org73fcbbd">
+<figure id="org06c0f31">
 <img src="./static/images/fill-in-the-details.png" alt="fill-in-the-details.png" width="1200px">
 
 </figure>
 
 
-<figure id="org941966c">
+<figure id="orgfe9b981">
 <img src="./static/images/lol-question.png" alt="lol-question.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org69ef71d" class="outline-2">
-<h2 id="org69ef71d">Illusions of Competence</h2>
-<div class="outline-text-2" id="text-org69ef71d">
+<div id="outline-container-org7a05149" class="outline-2">
+<h2 id="org7a05149">Illusions of Competence</h2>
+<div class="outline-text-2" id="text-org7a05149">
 <p>
 One of the most common approaches for trying to learn material from a
 book or from notes is simply to reread it. But psychologist, Jeffrey
@@ -3683,7 +4092,7 @@ connections between the four slots of working memory.
 </p>
 
 
-<figure id="org937ed59">
+<figure id="orgca5bcb6">
 <img src="./static/images/mad-connections1.png" alt="mad-connections1.png" width="1200px">
 
 </figure>
@@ -3694,7 +4103,7 @@ easily and smoothly in your mind.
 </p>
 
 
-<figure id="orgf5aa911">
+<figure id="orge495956">
 <img src="./static/images/mad-connections2.png" alt="mad-connections2.png" width="1200px">
 
 </figure>
@@ -3710,7 +4119,7 @@ that's been connected to a great big web page.
 </p>
 
 
-<figure id="org95f8999">
+<figure id="org53f6b3c">
 <img src="./static/images/mad-connections3.png" alt="mad-connections3.png" width="1200px">
 
 </figure>
@@ -3734,9 +4143,9 @@ that in mind.
 </p>
 </div>
 
-<div id="outline-container-orga7b3e59" class="outline-3">
-<h3 id="orga7b3e59"><b>Labai gold info below</b></h3>
-<div class="outline-text-3" id="text-orga7b3e59">
+<div id="outline-container-org4d77975" class="outline-3">
+<h3 id="org4d77975"><b>Labai gold info below</b></h3>
+<div class="outline-text-3" id="text-org4d77975">
 <p>
 The reason students like to keep rereading their notes or a textbook,
 is that when they have the book or Google open right in front of them,
@@ -3792,7 +4201,8 @@ a few days to get to that level of excitement, but I got there)."
 </div>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2021-03-28-illusions-of-competence.html</link>
   <guid>https://arvydasg.github.io/2021-03-28-illusions-of-competence.html</guid>
   <pubDate>Sun, 28 Mar 2021 15:50:00 +0300</pubDate>
@@ -3801,7 +4211,7 @@ a few days to get to that level of excitement, but I got there)."
   <title><![CDATA[Fan WoW Excel]]></title>
   <description><![CDATA[
 
-<figure id="orgb820c35">
+<figure id="orgad3ded1">
 <img src="./static/images/fan.png" alt="fan.png" width="1200px">
 
 </figure>
@@ -3863,13 +4273,13 @@ clean install.
 </p>
 
 
-<figure id="orgddd66ea">
+<figure id="orge674243">
 <img src="./static/images/htop.png" alt="htop.png" width="1200px">
 
 </figure>
 
 
-<figure id="orga58669b">
+<figure id="org870554c">
 <img src="./static/images/sensors.png" alt="sensors.png" width="1200px">
 
 </figure>
@@ -3911,7 +4321,8 @@ this home row typing now, but sometimes a mistake slips in I guess.
 Sorry about that, I'll do somethig about it.
 </p>
 </blockquote>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-personal.html">personal</a> </div>]]></description>
+  <category><![CDATA[personal]]></category>
   <link>https://arvydasg.github.io/2021-03-25-fan-wow-excel.html</link>
   <guid>https://arvydasg.github.io/2021-03-25-fan-wow-excel.html</guid>
   <pubDate>Thu, 25 Mar 2021 15:08:00 +0200</pubDate>
@@ -3924,7 +4335,7 @@ Sorry about that, I'll do somethig about it.
 </p>
 
 
-<figure id="org54d15bb">
+<figure id="org7583d0c">
 <img src="./static/images/it-all-makes-sense.png" alt="it-all-makes-sense.png" width="1200px">
 
 </figure>
@@ -4110,7 +4521,7 @@ Can be..
 </p>
 
 
-<figure id="orge686e96">
+<figure id="orga6bc4ab">
 <img src="./static/images/lady-luck.png" alt="lady-luck.png" width="1200px">
 
 </figure>
@@ -4141,9 +4552,9 @@ To know HOW is not enough. Knowing WHEN to use a technique, algorithm
 or a word is as much if not even more important.
 </p>
 
-<div id="outline-container-orgf52fc75" class="outline-2">
-<h2 id="orgf52fc75">Programming is a team sport</h2>
-<div class="outline-text-2" id="text-orgf52fc75">
+<div id="outline-container-org94436d1" class="outline-2">
+<h2 id="org94436d1">Programming is a team sport</h2>
+<div class="outline-text-2" id="text-org94436d1">
 <blockquote>
 <p>
 Must find your team as quickly as possible and make sure that the
@@ -4162,9 +4573,9 @@ all know what guilty pleasure I will be having during my breaks.
 </div>
 </div>
 
-<div id="outline-container-orga83887f" class="outline-2">
-<h2 id="orga83887f">Study groups</h2>
-<div class="outline-text-2" id="text-orga83887f">
+<div id="outline-container-orgb115d03" class="outline-2">
+<h2 id="orgb115d03">Study groups</h2>
+<div class="outline-text-2" id="text-orgb115d03">
 <p>
 Challenge each other. TEACHING is one of the best ways to learn!!!
 Imagine trying to explain a subject to someone just to find out you
@@ -4183,9 +4594,9 @@ subject and this is exactly what you need to be working on.
 </div>
 </div>
 
-<div id="outline-container-org028eb08" class="outline-2">
-<h2 id="org028eb08">Wrong as quikcly as possible</h2>
-<div class="outline-text-2" id="text-org028eb08">
+<div id="outline-container-org6bc66d0" class="outline-2">
+<h2 id="org6bc66d0">Wrong as quikcly as possible</h2>
+<div class="outline-text-2" id="text-org6bc66d0">
 <p>
 Try to dive in the position where you can be wrong as quickly as
 possible.
@@ -4209,9 +4620,9 @@ Stuff piles up and it ONLY GETS EASIER.
 </div>
 </div>
 
-<div id="outline-container-orgd06d353" class="outline-2">
-<h2 id="orgd06d353">Concrete exciting projects</h2>
-<div class="outline-text-2" id="text-orgd06d353">
+<div id="outline-container-org93c0114" class="outline-2">
+<h2 id="org93c0114">Concrete exciting projects</h2>
+<div class="outline-text-2" id="text-org93c0114">
 <p>
 Always have a mission. 3 months for example. No concrete goals - ah I
 will just learn it.." there is no specific motivation. It tapers off
@@ -4222,7 +4633,8 @@ and so on, is able to speak the chosen language.
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2021-03-24-learn-summary-mod-2.html</link>
   <guid>https://arvydasg.github.io/2021-03-24-learn-summary-mod-2.html</guid>
   <pubDate>Wed, 24 Mar 2021 16:39:00 +0200</pubDate>
@@ -4231,11 +4643,11 @@ and so on, is able to speak the chosen language.
   <title><![CDATA[Sleep and Exercise]]></title>
   <description><![CDATA[
 
-<div id="outline-container-org903d756" class="outline-2">
-<h2 id="org903d756">Sleep</h2>
-<div class="outline-text-2" id="text-org903d756">
+<div id="outline-container-org4e14eef" class="outline-2">
+<h2 id="org4e14eef">Sleep</h2>
+<div class="outline-text-2" id="text-org4e14eef">
 
-<figure id="orgc97e51c">
+<figure id="org31f4b52">
 <img src="./static/images/brain-cleanse.png" alt="brain-cleanse.png" width="1200px">
 
 </figure>
@@ -4273,11 +4685,11 @@ to think with POISON on the brain. NOOOOOO.
 </div>
 </div>
 
-<div id="outline-container-org21d14bc" class="outline-2">
-<h2 id="org21d14bc">Exercise</h2>
-<div class="outline-text-2" id="text-org21d14bc">
+<div id="outline-container-orgd749228" class="outline-2">
+<h2 id="orgd749228">Exercise</h2>
+<div class="outline-text-2" id="text-orgd749228">
 
-<figure id="org3a1ae88">
+<figure id="org6a75d6c">
 <img src="./static/images/exercise.png" alt="exercise.png" width="1200px">
 
 </figure>
@@ -4310,7 +4722,7 @@ well).
 </p>
 
 
-<figure id="org63f48a8">
+<figure id="orgdff0143">
 <img src="./static/images/learn-isolating.png" alt="learn-isolating.png" width="1200px">
 
 </figure>
@@ -4330,9 +4742,9 @@ for introverts.
 </p>
 </div>
 
-<div id="outline-container-orgc07c2e6" class="outline-3">
-<h3 id="orgc07c2e6">Interview with Dr. Terrence Sejnowski dude</h3>
-<div class="outline-text-3" id="text-orgc07c2e6">
+<div id="outline-container-org88f6469" class="outline-3">
+<h3 id="org88f6469">Interview with Dr. Terrence Sejnowski dude</h3>
+<div class="outline-text-3" id="text-org88f6469">
 <p>
 2 things at once - not productive. Switching from one to the other is
 possible apparently. But not as productive.
@@ -4359,7 +4771,8 @@ come later. Make it a dance.
 </div>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2021-03-24-sleep-and-exercise.html</link>
   <guid>https://arvydasg.github.io/2021-03-24-sleep-and-exercise.html</guid>
   <pubDate>Wed, 24 Mar 2021 16:20:00 +0200</pubDate>
@@ -4369,11 +4782,11 @@ come later. Make it a dance.
   <description><![CDATA[
 
 
-<div id="outline-container-org77e2a95" class="outline-2">
-<h2 id="org77e2a95">A Procrastination Preview</h2>
-<div class="outline-text-2" id="text-org77e2a95">
+<div id="outline-container-org13124a8" class="outline-2">
+<h2 id="org13124a8">A Procrastination Preview</h2>
+<div class="outline-text-2" id="text-org13124a8">
 
-<figure id="org545e6bc">
+<figure id="org637dbc0">
 <img src="./static/images/lebowski.png" alt="lebowski.png" width="1200px">
 
 </figure>
@@ -4407,7 +4820,7 @@ relaxation.
 </p>
 
 
-<figure id="org10e8a8a">
+<figure id="org9d445c4">
 <img src="./static/images/learn-pomodoro.png" alt="learn-pomodoro.png" width="1200px">
 
 </figure>
@@ -4419,9 +4832,9 @@ Arvydas default option, all the time - 3. Building mental stamina&#x2026;
 </div>
 </div>
 
-<div id="outline-container-org96e3e96" class="outline-2">
-<h2 id="org96e3e96">Practice Makes Permanent</h2>
-<div class="outline-text-2" id="text-org96e3e96">
+<div id="outline-container-orgff82e0c" class="outline-2">
+<h2 id="orgff82e0c">Practice Makes Permanent</h2>
+<div class="outline-text-2" id="text-orgff82e0c">
 <p>
 Girl hated math her whole young life through school - now she is an
 engineering professor. Started studying math at 26 when he got out of
@@ -4447,7 +4860,7 @@ build (neurons) are real.
 </p>
 
 
-<figure id="org45adce0">
+<figure id="org321778f">
 <img src="./static/images/neural-structure.png" alt="neural-structure.png" width="1200px">
 
 </figure>
@@ -4485,11 +4898,11 @@ ended. Very important.
 </div>
 </div>
 
-<div id="outline-container-org5f1f426" class="outline-2">
-<h2 id="org5f1f426">Introduction to Memory</h2>
-<div class="outline-text-2" id="text-org5f1f426">
+<div id="outline-container-org326e80a" class="outline-2">
+<h2 id="org326e80a">Introduction to Memory</h2>
+<div class="outline-text-2" id="text-org326e80a">
 
-<figure id="orgf2261da">
+<figure id="orgd5864f1">
 <img src="./static/images/neural-paths.png" alt="neural-paths.png" width="1200px">
 
 </figure>
@@ -4543,11 +4956,11 @@ processes &#x2013; don't suck the memories away.
 </div>
 </div>
 
-<div id="outline-container-orge56b8a9" class="outline-2">
-<h2 id="orge56b8a9">Time for the mortar to dry</h2>
-<div class="outline-text-2" id="text-orge56b8a9">
+<div id="outline-container-orgf40200f" class="outline-2">
+<h2 id="orgf40200f">Time for the mortar to dry</h2>
+<div class="outline-text-2" id="text-orgf40200f">
 
-<figure id="orgd9516f7">
+<figure id="org3a6bfe7">
 <img src="./static/images/mortar.png" alt="mortar.png" width="1200px">
 
 </figure>
@@ -4557,13 +4970,14 @@ Option 2 used to be the default all these years.
 </p>
 
 
-<figure id="orgbda83e2">
+<figure id="org54a648e">
 <img src="./static/images/learn-switch.png" alt="learn-switch.png" width="1200px">
 
 </figure>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2021-03-24-take-it-slow.html</link>
   <guid>https://arvydasg.github.io/2021-03-24-take-it-slow.html</guid>
   <pubDate>Wed, 24 Mar 2021 16:09:00 +0200</pubDate>
@@ -4572,9 +4986,9 @@ Option 2 used to be the default all these years.
   <title><![CDATA[Black Box Machine Learning]]></title>
   <description><![CDATA[
 
-<div id="outline-container-orgc3b5df5" class="outline-2">
-<h2 id="orgc3b5df5">Classification algorithms</h2>
-<div class="outline-text-2" id="text-orgc3b5df5">
+<div id="outline-container-org0ee6592" class="outline-2">
+<h2 id="org0ee6592">Classification algorithms</h2>
+<div class="outline-text-2" id="text-org0ee6592">
 <p>
 There is a lot of classification algorithms available now but it is
 not possible to conclude which one is superior to other. It depends on
@@ -4585,11 +4999,11 @@ models and vice versa.
 </p>
 </div>
 
-<div id="outline-container-org606cf25" class="outline-3">
-<h3 id="org606cf25">Decision Tree</h3>
-<div class="outline-text-3" id="text-org606cf25">
+<div id="outline-container-orge297e37" class="outline-3">
+<h3 id="orge297e37">Decision Tree</h3>
+<div class="outline-text-3" id="text-orge297e37">
 
-<figure id="orgc8b7d59">
+<figure id="org79ea8bb">
 <img src="./static/images/decision-tree.png" alt="decision-tree.png" width="1200px">
 
 </figure>
@@ -4626,9 +5040,9 @@ What?
 </div>
 </div>
 
-<div id="outline-container-orgfb1f456" class="outline-3">
-<h3 id="orgfb1f456">Naive Bayes</h3>
-<div class="outline-text-3" id="text-orgfb1f456">
+<div id="outline-container-orga4cb195" class="outline-3">
+<h3 id="orga4cb195">Naive Bayes</h3>
+<div class="outline-text-3" id="text-orga4cb195">
 <p>
 Naive Bayes is a probabilistic classifier inspired by the Bayes
 theorem under a simple assumption which is the attributes are
@@ -4636,7 +5050,7 @@ conditionally independent.
 </p>
 
 
-<figure id="org02514cf">
+<figure id="org4893a3b">
 <img src="./static/images/naive-bayes-formula.png" alt="naive-bayes-formula.png" width="1200px">
 
 </figure>
@@ -4657,9 +5071,9 @@ explicitly using a Laplacian estimator?.
 </div>
 </div>
 
-<div id="outline-container-org1de49ec" class="outline-3">
-<h3 id="org1de49ec">Artificial Neuraul Networks</h3>
-<div class="outline-text-3" id="text-org1de49ec">
+<div id="outline-container-org2371d03" class="outline-3">
+<h3 id="org2371d03">Artificial Neuraul Networks</h3>
+<div class="outline-text-3" id="text-org2371d03">
 <p>
 Artificial Neural Network is a set of connected input/output units
 where each connection has a weight associated. During the learning
@@ -4708,11 +5122,11 @@ prediction later.
 </div>
 </div>
 
-<div id="outline-container-org86d8abf" class="outline-3">
-<h3 id="org86d8abf">k-Nearest Neighbor (KNN)</h3>
-<div class="outline-text-3" id="text-org86d8abf">
+<div id="outline-container-orgcb26e99" class="outline-3">
+<h3 id="orgcb26e99">k-Nearest Neighbor (KNN)</h3>
+<div class="outline-text-3" id="text-orgcb26e99">
 
-<figure id="org3024376">
+<figure id="orgc67aa0e">
 <img src="./static/images/k-nearest-neighbors.png" alt="k-nearest-neighbors.png" width="1200px">
 
 </figure>
@@ -4731,7 +5145,7 @@ nice
 </p>
 
 
-<figure id="org705ba97">
+<figure id="orgaa11ca3">
 <img src="./static/images/k-nearest-formula.png" alt="k-nearest-formula.png" width="1200px">
 
 </figure>
@@ -4739,18 +5153,18 @@ nice
 </div>
 </div>
 
-<div id="outline-container-org4cc1833" class="outline-2">
-<h2 id="org4cc1833">Evaluating a classifier</h2>
-<div class="outline-text-2" id="text-org4cc1833">
+<div id="outline-container-org8ee1cc0" class="outline-2">
+<h2 id="org8ee1cc0">Evaluating a classifier</h2>
+<div class="outline-text-2" id="text-org8ee1cc0">
 <p>
 After training the model the most important part is to evaluate the
 classifier to verify its applicability
 </p>
 </div>
 
-<div id="outline-container-orgf253c7e" class="outline-3">
-<h3 id="orgf253c7e">Holdout method</h3>
-<div class="outline-text-3" id="text-orgf253c7e">
+<div id="outline-container-orgf7eed00" class="outline-3">
+<h3 id="orgf7eed00">Holdout method</h3>
+<div class="outline-text-3" id="text-orgf7eed00">
 <p>
 There are several methods exists and the most common method is the
 holdout method. In this method, the given data set is divided into 2
@@ -4761,9 +5175,9 @@ data, I see now) will be used to test its predictive power.
 </div>
 </div>
 
-<div id="outline-container-org15bdbe0" class="outline-3">
-<h3 id="org15bdbe0">Cross-validation</h3>
-<div class="outline-text-3" id="text-org15bdbe0">
+<div id="outline-container-orgf01774b" class="outline-3">
+<h3 id="orgf01774b">Cross-validation</h3>
+<div class="outline-text-3" id="text-orgf01774b">
 <p>
 Over-fitting is a common problem in machine learning which can occur
 in most models. k-fold cross-validation can be conducted to verify
@@ -4776,9 +5190,9 @@ folds.Sorry what?
 </div>
 </div>
 
-<div id="outline-container-orgd61efa1" class="outline-3">
-<h3 id="orgd61efa1">Precision and Recall</h3>
-<div class="outline-text-3" id="text-orgd61efa1">
+<div id="outline-container-org76d1834" class="outline-3">
+<h3 id="org76d1834">Precision and Recall</h3>
+<div class="outline-text-3" id="text-org76d1834">
 <p>
 Precision is the fraction of relevant instances among the retrieved
 instances, while recall is the fraction of relevant instances that
@@ -4789,11 +5203,11 @@ relevance.Hmmm&#x2026;
 </div>
 </div>
 
-<div id="outline-container-org049820e" class="outline-3">
-<h3 id="org049820e">ROC curve Receiver Operatning Characteristics</h3>
-<div class="outline-text-3" id="text-org049820e">
+<div id="outline-container-org664f267" class="outline-3">
+<h3 id="org664f267">ROC curve Receiver Operatning Characteristics</h3>
+<div class="outline-text-3" id="text-org664f267">
 
-<figure id="org4b013d7">
+<figure id="orga3bfe1a">
 <img src="./static/images/roc-curve.png" alt="roc-curve.png" width="1200px">
 
 </figure>
@@ -4815,9 +5229,9 @@ familiar with in my curriculum.
 </div>
 </div>
 
-<div id="outline-container-orge348f4a" class="outline-2">
-<h2 id="orge348f4a">SVM (Support Vector Machine)</h2>
-<div class="outline-text-2" id="text-orge348f4a">
+<div id="outline-container-org224a004" class="outline-2">
+<h2 id="org224a004">SVM (Support Vector Machine)</h2>
+<div class="outline-text-2" id="text-org224a004">
 <p>
 <a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47">Link</a>
 </p>
@@ -4836,13 +5250,13 @@ distinctly classifies the data points.
 </p>
 
 
-<figure id="org58bdce2">
+<figure id="orgdcaa92f">
 <img src="./static/images/hyperplanes.png" alt="hyperplanes.png" width="1200px">
 
 </figure>
 
 
-<figure id="orge663030">
+<figure id="orgb292d2a">
 <img src="./static/images/hyperplanes2.png" alt="hyperplanes2.png" width="1200px">
 
 </figure>
@@ -4857,11 +5271,11 @@ confidence.
 </p>
 </div>
 
-<div id="outline-container-orga7754fa" class="outline-3">
-<h3 id="orga7754fa">Hyperplanes and Support Vectors</h3>
-<div class="outline-text-3" id="text-orga7754fa">
+<div id="outline-container-org943f54e" class="outline-3">
+<h3 id="org943f54e">Hyperplanes and Support Vectors</h3>
+<div class="outline-text-3" id="text-org943f54e">
 
-<figure id="orgc5e17cb">
+<figure id="org0d81415">
 <img src="./static/images/hyperplane3d.png" alt="hyperplane3d.png" width="1200px">
 
 </figure>
@@ -4877,7 +5291,7 @@ becomes difficult to imagine when the number of features exceeds 3.
 </p>
 
 
-<figure id="org4c4b91a">
+<figure id="org3898332">
 <img src="./static/images/support-vectors.png" alt="support-vectors.png" width="1200px">
 
 </figure>
@@ -4891,7 +5305,7 @@ are the points that help us build our SVM.
 </p>
 
 
-<figure id="org5eca45d">
+<figure id="orgc553844">
 <img src="./static/images/batman-thinking.gif" alt="batman-thinking.gif" width="1200px">
 
 </figure>
@@ -4903,11 +5317,11 @@ image, cool. Don't really use them, but why not, I might start to
 </div>
 </div>
 
-<div id="outline-container-orgb6f0384" class="outline-3">
-<h3 id="orgb6f0384">Logistic Regression</h3>
-<div class="outline-text-3" id="text-orgb6f0384">
+<div id="outline-container-org85e4b6a" class="outline-3">
+<h3 id="org85e4b6a">Logistic Regression</h3>
+<div class="outline-text-3" id="text-org85e4b6a">
 
-<figure id="org608b80e">
+<figure id="org599baa2">
 <img src="./static/images/logistic-regression.png" alt="logistic-regression.png" width="1200px">
 
 </figure>
@@ -4932,11 +5346,11 @@ regression model for classification problems
 </div>
 </div>
 
-<div id="outline-container-org094d083" class="outline-3">
-<h3 id="org094d083">K-means Clustering</h3>
-<div class="outline-text-3" id="text-org094d083">
+<div id="outline-container-org5229895" class="outline-3">
+<h3 id="org5229895">K-means Clustering</h3>
+<div class="outline-text-3" id="text-org5229895">
 
-<figure id="org47a7714">
+<figure id="org205f4e9">
 <img src="./static/images/k-means-clustering.png" alt="k-means-clustering.png" width="1200px">
 
 </figure>
@@ -4968,11 +5382,11 @@ the in-cluster sum of squares? Hm?
 </div>
 </div>
 
-<div id="outline-container-org990fb9e" class="outline-3">
-<h3 id="org990fb9e">k-fold Cross-Validation</h3>
-<div class="outline-text-3" id="text-org990fb9e">
+<div id="outline-container-orgf020117" class="outline-3">
+<h3 id="orgf020117">k-fold Cross-Validation</h3>
+<div class="outline-text-3" id="text-orgf020117">
 
-<figure id="orgc47c294">
+<figure id="org5561532">
 <img src="./static/images/k-fold-cross-validation.png" alt="k-fold-cross-validation.png" width="1200px">
 
 </figure>
@@ -5003,7 +5417,8 @@ but damn.
 </div>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2021-03-16-black-box-machine-learning.html</link>
   <guid>https://arvydasg.github.io/2021-03-16-black-box-machine-learning.html</guid>
   <pubDate>Tue, 16 Mar 2021 10:58:00 +0200</pubDate>
@@ -5012,7 +5427,7 @@ but damn.
   <title><![CDATA[Vim Html]]></title>
   <description><![CDATA[
 
-<figure id="org01274ea">
+<figure id="org277996b">
 <img src="./static/images/vim-html.png" alt="vim-html.png" width="1200px">
 
 </figure>
@@ -5050,7 +5465,8 @@ pretty much do and edit stuff anywhere, the workflow will be so
 smooth! So yeah, sticking with vim for now, will try to get some
 plugins, maybe it will make my experience more enjoyable :)
 </p>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2021-03-15-vim-html.html</link>
   <guid>https://arvydasg.github.io/2021-03-15-vim-html.html</guid>
   <pubDate>Mon, 15 Mar 2021 18:18:00 +0200</pubDate>
@@ -5059,7 +5475,7 @@ plugins, maybe it will make my experience more enjoyable :)
   <title><![CDATA[Black Box Method]]></title>
   <description><![CDATA[
 
-<figure id="org2bfd6ee">
+<figure id="orgb11d3ee">
 <img src="./static/images/squirrel.png" alt="squirrel.png" width="1200px">
 
 </figure>
@@ -5135,7 +5551,7 @@ math.
 </p>
 
 
-<figure id="org802e4f9">
+<figure id="orgd7ca41c">
 <img src="./static/images/black-box1.png" alt="black-box1.png" width="1200px">
 
 </figure>
@@ -5216,11 +5632,11 @@ graph the gradient descent and play with it, have some actual data to
 work with and so on.. Instead of just staring at one algorithm).
 </p>
 
-<div id="outline-container-orga6c9773" class="outline-2">
-<h2 id="orga6c9773">To sum up</h2>
-<div class="outline-text-2" id="text-orga6c9773">
+<div id="outline-container-org5a15a40" class="outline-2">
+<h2 id="org5a15a40">To sum up</h2>
+<div class="outline-text-2" id="text-org5a15a40">
 
-<figure id="orgdd523e6">
+<figure id="orgc9c2b04">
 <img src="./static/images/black-box2.png" alt="black-box2.png" width="1200px">
 
 </figure>
@@ -5243,7 +5659,8 @@ slow. Learned how to yank, paste a word or a whole line today.
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2021-03-15-black-box-method.html</link>
   <guid>https://arvydasg.github.io/2021-03-15-black-box-method.html</guid>
   <pubDate>Mon, 15 Mar 2021 16:55:00 +0200</pubDate>
@@ -5252,7 +5669,7 @@ slow. Learned how to yank, paste a word or a whole line today.
   <title><![CDATA[Excel Stuff]]></title>
   <description><![CDATA[
 
-<figure id="org17fe89d">
+<figure id="orgfd515eb">
 <img src="./static/images/excel-fun.png" alt="excel-fun.png" width="1200px">
 
 </figure>
@@ -5315,7 +5732,7 @@ Been seeing median here and there, so here is a refresher:
 </p>
 
 
-<figure id="org9a3b6ac">
+<figure id="org97f7a99">
 <img src="./static/images/median-math-is-fun.png" alt="median-math-is-fun.png" width="1200px">
 
 </figure>
@@ -5348,7 +5765,7 @@ an image rly quick (more vim and html practice on top of that).
 </p>
 
 
-<figure id="org888b411">
+<figure id="orgb932202">
 <img src="./static/images/vlookup.png" alt="vlookup.png" width="1200px">
 
 </figure>
@@ -5369,7 +5786,8 @@ proper way. I sometimes miss Word document, but sometimes I don't. Vim
 has it's own advantages, but I am new with it so I am a little bit
 slow. Learned how to yank, paste a word or a whole line today.
 </p>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2021-03-15-excel-stuff.html</link>
   <guid>https://arvydasg.github.io/2021-03-15-excel-stuff.html</guid>
   <pubDate>Mon, 15 Mar 2021 16:51:00 +0200</pubDate>
@@ -5378,35 +5796,38 @@ slow. Learned how to yank, paste a word or a whole line today.
   <title><![CDATA[Thoughts on Achieving Goals]]></title>
   <description><![CDATA[
 <p>
-How good is it to work 24/7 on one particular thing? Might Look like a
-great idea, you will get accoomplished a lot, right? But only in one
-area. F.x. Programming. But what about your health, the body that
-actually allows you to be learning this stuff. Who will take care of
-it? Diet, exercise, mobility, simply movement. Who will take care of
-all the other things in your life And all of this is CRUCIAL for being
-productive, really. You can not have NO food and be productive. You
-can not have breaks where you exercise because you wont clear you
-head, find new ideas and at the same time train your mind. You must do
-those. Damn balance is very very important. Have to have everything in
-your life in order to be good at one particular thing, no? But hm
-there are examples of people who are super super good at one subject
-and suck at others. Like programmers f.x, they dont rally care about
-their bodies right? But its probably the battle you choose.. I
-personally think its important for me to take care of my body first
-and ONLY and WHEN I do that I will be productive and find time for
-other things. Just like at 12th grade, remember? You had so many
-things on your to do list and managed to do all of them. The more busy
-you are the more you can accomplish. Books, guitar, exercise, cold
-showers, food, programming, shop, relatives, friends, etc etc are all
-possible and should be tried to be managed. Like in todays video -
-streching video Says the more you strech per day doesnt increse the
-benefits, but that frequency of 6 days a week and 5 minutes total for
-that week is what's important. 6 days a week 5 minutes total = yield
-best streching results, more is simply not necessary. This shocked me
-a little, simply because I agree on it and I was acting completely
-different the entire last month. I would think that I am working just
-because I am spending a lot of time on it, but I was simply staying in
-place in terms of my progress.
+How good is it to work 24/7 on one particular thing?
+</p>
+
+<p>
+Might Look like a great idea, you will get accoomplished a lot, right?
+But only in one area. F.x. Programming. But what about your health,
+the body that actually allows you to be learning this stuff. Who will
+take care of it? Diet, exercise, mobility, simply movement. Who will
+take care of all the other things in your life And all of this is
+CRUCIAL for being productive, really. You can not have NO food and be
+productive. You can not have breaks where you exercise because you
+wont clear you head, find new ideas and at the same time train your
+mind. You must do those. Damn balance is very very important. Have to
+have everything in your life in order to be good at one particular
+thing, no? But hm there are examples of people who are super super
+good at one subject and suck at others. Like programmers f.x, they
+dont rally care about their bodies right? But its probably the battle
+you choose.. I personally think its important for me to take care of
+my body first and ONLY and WHEN I do that I will be productive and
+find time for other things. Just like at 12th grade, remember? You had
+so many things on your to do list and managed to do all of them. The
+more busy you are the more you can accomplish. Books, guitar,
+exercise, cold showers, food, programming, shop, relatives, friends,
+etc etc are all possible and should be tried to be managed. Like in
+todays video - streching video Says the more you strech per day doesn't
+increse the benefits, but that frequency of 6 days a week and 5
+minutes total for that week is what's important. 6 days a week 5
+minutes total = yield best streching results, more is simply not
+necessary. This shocked me a little, simply because I agree on it and
+I was acting completely different the entire last month. I would think
+that I am working just because I am spending a lot of time on it, but
+I was simply staying in place in terms of my progress.
 </p>
 
 <p>
@@ -5423,9 +5844,9 @@ life. It is either ALL or NOTHING. But maybe the middle path is the
 right choice, right, Candy?
 </p>
 
-<div id="outline-container-orgbc543ea" class="outline-2">
-<h2 id="orgbc543ea">Parkinson's Law</h2>
-<div class="outline-text-2" id="text-orgbc543ea">
+<div id="outline-container-org759a3b6" class="outline-2">
+<h2 id="org759a3b6">Parkinson's Law</h2>
+<div class="outline-text-2" id="text-org759a3b6">
 <p>
 Parkinson's Law is the old adage that work expands to fill the time
 allotted. Put simply, the amount of work required adjusts to the time
@@ -5440,9 +5861,9 @@ results.
 </p>
 </div>
 
-<div id="outline-container-org15352c4" class="outline-3">
-<h3 id="org15352c4">But does it then mean</h3>
-<div class="outline-text-3" id="text-org15352c4">
+<div id="outline-container-org5d3d85b" class="outline-3">
+<h3 id="org5d3d85b">But does it then mean</h3>
+<div class="outline-text-3" id="text-org5d3d85b">
 <p>
 That in order to have a productive DAY you also have to balance out
 the work and relaxation? 50% 50%?;)
@@ -5450,7 +5871,8 @@ the work and relaxation? 50% 50%?;)
 </div>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-personal.html">personal</a> </div>]]></description>
+  <category><![CDATA[personal]]></category>
   <link>https://arvydasg.github.io/2021-03-15-thoughts-on-achieving-goals.html</link>
   <guid>https://arvydasg.github.io/2021-03-15-thoughts-on-achieving-goals.html</guid>
   <pubDate>Mon, 15 Mar 2021 16:49:00 +0200</pubDate>
@@ -5507,7 +5929,8 @@ now, all of this is purely for me. To practice working on a keyboard,
 to practice using vim, to practice building website pages from time
 to time. So yeah :)
 </p>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-personal.html">personal</a> </div>]]></description>
+  <category><![CDATA[personal]]></category>
   <link>https://arvydasg.github.io/2021-03-14-addict.html</link>
   <guid>https://arvydasg.github.io/2021-03-14-addict.html</guid>
   <pubDate>Sun, 14 Mar 2021 17:00:00 +0200</pubDate>
@@ -5516,7 +5939,7 @@ to time. So yeah :)
   <title><![CDATA[Focused and Difused learning]]></title>
   <description><![CDATA[
 
-<figure id="orgfbcf22d">
+<figure id="org7415f9b">
 <img src="./static/images/focused-diffuse.png" alt="focused-diffuse.png" width="1200px">
 
 </figure>
@@ -5531,14 +5954,14 @@ something new.
 </p>
 
 
-<figure id="orge005bd3">
+<figure id="org9e1dc34">
 <img src="./static/images/learning-flashlight.jpeg" alt="learning-flashlight.jpeg" width="1200px">
 
 </figure>
 
-<div id="outline-container-orga6d8ab8" class="outline-2">
-<h2 id="orga6d8ab8">Focused mode</h2>
-<div class="outline-text-2" id="text-orga6d8ab8">
+<div id="outline-container-org60fd595" class="outline-2">
+<h2 id="org60fd595">Focused mode</h2>
+<div class="outline-text-2" id="text-org60fd595">
 <p>
 <b>Focused mode</b> - like paintball. Think of something, the thought goes
 from one neuron to the other. As it is bouncing on the bumpers, you
@@ -5555,9 +5978,9 @@ focused mode.
 </div>
 </div>
 
-<div id="outline-container-org824207e" class="outline-2">
-<h2 id="org824207e">Diffuse mode</h2>
-<div class="outline-text-2" id="text-org824207e">
+<div id="outline-container-org48034ac" class="outline-2">
+<h2 id="org48034ac">Diffuse mode</h2>
+<div class="outline-text-2" id="text-org48034ac">
 <p>
 <b>Diffused thinking</b> - relaxed. You haven't thought before - you don't
 know where the pattern\path is. All the other neurons are blocking the
@@ -5582,9 +6005,9 @@ more broad ranging perspectives of the diffuse mode.
 </div>
 </div>
 
-<div id="outline-container-org2fd0390" class="outline-2">
-<h2 id="org2fd0390">Can't have both</h2>
-<div class="outline-text-2" id="text-org2fd0390">
+<div id="outline-container-org4c4ea42" class="outline-2">
+<h2 id="org4c4ea42">Can't have both</h2>
+<div class="outline-text-2" id="text-org4c4ea42">
 <p>
 When we find ourselves stuck on a problem, or even if we’re unsure of
 a situation, the course of living our daily life. It's often a good
@@ -5600,7 +6023,7 @@ modes. Either one or the other type of thinking.
 </p>
 
 
-<figure id="org4c6143a">
+<figure id="org079d2ff">
 <img src="./static/images/salvador-sleep.jpg" alt="salvador-sleep.jpg" width="1200px">
 
 </figure>
@@ -5625,7 +6048,7 @@ Craftsmanship'(1948)
 </p>
 
 
-<figure id="org06ca10e">
+<figure id="org17697f2">
 <img src="./static/images/thomas-edison.png" alt="thomas-edison.png" width="1200px">
 
 </figure>
@@ -5656,9 +6079,9 @@ whatever was in his mind.
 </div>
 </div>
 
-<div id="outline-container-orgc5cf830" class="outline-2">
-<h2 id="orgc5cf830">Sum up</h2>
-<div class="outline-text-2" id="text-orgc5cf830">
+<div id="outline-container-org49a08f7" class="outline-2">
+<h2 id="org49a08f7">Sum up</h2>
+<div class="outline-text-2" id="text-org49a08f7">
 <p>
 Mind needs to go from one to the other mode to learn effectively.
 </p>
@@ -5675,13 +6098,13 @@ lady for making me change my mind about learning and being productive.
 </p>
 
 
-<figure id="orgb2582ed">
+<figure id="org4a4df48">
 <img src="./static/images/focused-diffuse1.png" alt="focused-diffuse1.png" width="1200px">
 
 </figure>
 
 
-<figure id="org9fd297f">
+<figure id="org50d81cb">
 <img src="./static/images/learn-quiz.png" alt="learn-quiz.png" width="1200px">
 
 </figure>
@@ -5691,10 +6114,216 @@ What a brilliant quiz.
 </p>
 </div>
 </div>
-<div class="taglist"></div>]]></description>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
   <link>https://arvydasg.github.io/2021-03-13-focused-and-difused-learning.html</link>
   <guid>https://arvydasg.github.io/2021-03-13-focused-and-difused-learning.html</guid>
   <pubDate>Sat, 13 Mar 2021 17:05:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Uses]]></title>
+  <description><![CDATA[
+<p>
+This page is an overview of tools I like to use, and technologies I
+enjoy.
+</p>
+
+<div id="outline-container-org80873df" class="outline-2">
+<h2 id="org80873df">Core Technologies</h2>
+<div class="outline-text-2" id="text-org80873df">
+<ul class="org-ul">
+<li><p>
+<b>Personal Operating System: Ubuntu Linux</b>
+</p>
+
+<p>
+I use Windows daily at work, and know it intimately, and have used
+macOS in the past. They all work; they all break. But Linux gives me
+a fighting chance to fix the most annoying problems myself, which is
+why it is my operating system of choice at the moment (but these
+things tend to change frequently).
+</p></li>
+
+<li><p>
+<b>Browser: Chrome</b>
+</p>
+
+<p>
+At this point, mostly my choice out of inertia, due to a number of
+extensions I like and use.
+</p></li>
+
+<li><p>
+<b>Code Editor: Emacs</b>
+</p>
+
+<p>
+I do most of my work in a text editor. My emacs is my own, it is a
+custom-built tool for my particular way of working, mostly
+keyboard-driven. I am under no illusions that this way of working is
+“more efficient” than other ways, but it sure gives me joy. I like
+the soothing simplicity of this.
+</p></li>
+
+<li><p>
+<b>Image Editor: Lightroom</b>
+</p>
+
+<p>
+I photograph less and less these days, but when I do, I need to
+retouch the images - I find a windows machine and do image editing
+on it with Lightroom. Been using it for many years. Helped other use
+it as well.
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgeb341a9" class="outline-2">
+<h2 id="orgeb341a9">Programming</h2>
+<div class="outline-text-2" id="text-orgeb341a9">
+<p>
+Less stuff in a program is usually better.
+</p>
+
+<ul class="org-ul">
+<li><p>
+<b>Python</b>
+</p>
+
+<p>
+When I need to automate or script, or when I want to explore, Python
+is a pragmatic choice. Fast enough for most tasks, with libraries
+for everything imaginable.
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0949d4a" class="outline-2">
+<h2 id="org0949d4a">Blogging</h2>
+<div class="outline-text-2" id="text-org0949d4a">
+<ul class="org-ul">
+<li><p>
+<b>Org-Static-Blog</b>
+</p>
+
+<p>
+It serves the purpose, I can blog without leaving Emacs.
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6364765" class="outline-2">
+<h2 id="org6364765">Hardware</h2>
+<div class="outline-text-2" id="text-org6364765">
+<ul class="org-ul">
+<li><b>Camera: Nikon and Mamiya and FED</b>
+
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=oV1CLlgVGCM&amp;ab_channel=ArvydasGasparaviciusPhotography">Nikon D3300</a> - my first and only digital camera. Did most of my
+work on it. Especially like to photograph landscapes and
+nighscapes with it. Currently borrowed to a friend.</li>
+<li><a href="https://www.youtube.com/watch?v=yvhoMG8ZVbs&amp;t=781s&amp;ab_channel=ArvydasGasparaviciusPhotography">Mamiya RB67</a> - my first medium format film camera.</li>
+<li><a href="https://www.google.com/search?q=fed+5b&amp;oq=fed+5b&amp;aqs=chrome..69i57j0i512l4j0i22i30l5.1082j0j7&amp;sourceid=chrome&amp;ie=UTF-8">FED 5</a> - my fathers 35mm camera. Perfect to take with you when out
+and about.</li>
+</ul></li>
+
+<li><p>
+<b>Laptop</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo dmidecode | grep Version
+</pre>
+</div>
+
+<p>
+<a href="https://www.acer.com/ph-en/support?filter=productdetails&amp;search=NXM7REL012311035927200;NX.M7REL.012;V3-771G">Acer Aspire V3-771</a>. Bought it in 12th grade for my studies in Denmark.
+10 years ago. Still using it today. Well invested weekend/summer jobs
+money.
+</p></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+<b>Smartphone: Android</b>
+</p>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/OnePlus_5">OnePlus 5</a>. Bought it in 2017 years ago. Still works great.
+</p></li>
+</ul>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/uses.html</link>
+  <guid>https://arvydasg.github.io/uses.html</guid>
+  <pubDate>Wed, 01 Jan 2020 01:01:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Projects]]></title>
+  <description><![CDATA[
+<p>
+Some of my projects here with github links.
+</p>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/projects.html</link>
+  <guid>https://arvydasg.github.io/projects.html</guid>
+  <pubDate>Wed, 01 Jan 2020 01:01:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Freelancing]]></title>
+  <description><![CDATA[
+<p>
+Over the past few years I've worked as a freelance software developer.
+I've worked with individuals, small businesses and larger companies.
+</p>
+
+<p>
+My tech stack is usually Python, Django, HTML/CSS, JavaScript,
+sometimes WordPress.
+</p>
+
+<div id="outline-container-org7217234" class="outline-2">
+<h2 id="org7217234">Why hire me?</h2>
+<div class="outline-text-2" id="text-org7217234">
+<p>
+I have many great relationships with all of my clients. I prioritise
+maintaining open and clear communication, and offer not only technical
+expertise but also a business oriented mindset. Every decision is made
+through a lens of achieving results that impact the business.
+</p>
+
+<p>
+If you'd like to work with me, please get in touch.
+</p>
+</div>
+</div>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/freelancing.html</link>
+  <guid>https://arvydasg.github.io/freelancing.html</guid>
+  <pubDate>Wed, 01 Jan 2020 01:01:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[About]]></title>
+  <description><![CDATA[
+<ul class="org-ul">
+<li>Graduated with a Bachelor degree in Architectural Technology
+Construction Management(ATCM) in a university in northern Denmark
+in 2017.</li>
+<li>Did <a href="https://www.youtube.com/@arvydasgasparaviciusphotog7250">landscape photography</a> in my free time.</li>
+<li>I didn't find ATCM occupation exciting anymore so I <a href="https://www.instagram.com/this46383/">travelled the
+world</a> for 2 years out of my savings.</li>
+<li>Coronavirus and empty pockets got me back to my home country
+Lithuania in 2021.</li>
+<li>Started to learn programming so I could work remotely.</li>
+</ul>
+<div class="taglist"></div>]]></description>
+  <link>https://arvydasg.github.io/about.html</link>
+  <guid>https://arvydasg.github.io/about.html</guid>
+  <pubDate>Wed, 01 Jan 2020 01:01:00 +0200</pubDate>
 </item>
 </channel>
 </rss>

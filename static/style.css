@@ -8,6 +8,16 @@
   padding-right: 10px;
 }
 
+#nav-content {
+  background: #red;
+  padding-top: 1em;
+  max-width: 600px;
+  position: relative;
+  margin: 5px auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 #header {
   float: right;
   margin-left: 1em;
@@ -31,22 +41,29 @@
 #disqus_thread {
   margin-top: 1em;
 }
+
+.taglist a {
+  color: grey;
+  text-decoration: none;
+}
+
 .taglist {
-  margin-top: 0;
-  font-size: 16px;
+  margin-top: 10px;
+  font-size: 12px;
 }
 .date {
   font-style: italic;
 }
 .post-date {
   margin-top: 2em;
-  color: #888;
+  color: grey;
 }
 .article-meta {
   margin-left: 2.2em;
   margin-right: 2.2em;
   margin-bottom: 2.2em;
 }
+
 .archive-title {
   font-size: 1em;
 }
@@ -91,26 +108,44 @@
   font-size: 24px;
   line-height: 40px;
   font-weight: 200;
-  box-shadow: 0px 2px 2px grey;
-  background: #2e435e;
-  background: linear-gradient(to top, #2e435e, #172e50);
-  color: #eee;
-  border: solid 3px transparent;
-  border-bottom-color: #aaa;
+  /* box-shadow: 0px 2px 2px grey; */
+  /* /\* background: #2e435e; *\/ */
+  /* background: #6264f0; */
+  /* background: linear-gradient(to top, #6264f0, #3b3c90); */
+  /* color: #eee; */
+  /* border: solid 3px transparent; */
+  /* border-bottom-color: #aaa; */
   text-align: center;
 }
+/* .header a { */
+/*   color: #eee; */
+/*   text-decoration: none; */
+/* } */
 .header a {
-  color: #eee;
+  /* color: #eee; */
+  color: #6264f0;
+  text-decoration: none;
 }
 .header a:hover {
-  color: #fff;
+  color: #6264f0;
+  text-decoration: none;
 }
+
 .sitelinks,
 .sitelinks a {
   font-size: 12pt;
   line-height: 30px;
-  color: #999;
+  color: #333333;
+  font-weight: 800;
 }
+
+/* .sitelinks, */
+/* .sitelinks a { */
+/*   font-size: 12pt; */
+/*   line-height: 30px; */
+/*   color: #999; */
+/* } */
+
 a.title {
   color: #eee;
 }
@@ -156,6 +191,7 @@ a:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 a:hover,
 a:active {
   outline: 0;
@@ -220,10 +256,13 @@ textarea {
 }
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
+  /* font-family: "Raleway", sans-serif; */
+  font-family: "Inter var", sans-serif;
   font-size: 13px;
   line-height: 18px;
-  color: #333333;
+  /* color: #333333; */
+  color: #374151;
   background-color: #ffffff;
   overflow-x: hidden;
   text-align: justify;
@@ -232,12 +271,49 @@ body {
   -webkit-hyphens: auto;
 }
 a {
-  color: #30557c;
+  color: #374151;
+  color: #6264f0;
+  /* text-decoration: none; */
+}
+
+a:hover {
+  /* color: #22374a; */
+  /* color: #a590f2; */
+}
+
+.post-title a {
+  color: #1f2937;
   text-decoration: none;
 }
-a:hover {
-  color: #395b7c;
+
+.post-title a:hover {
+  color: #6264f0;
+  /* color: #a590f2; */
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
 }
+
+.taglist a:hover {
+  color: #6264f0;
+  /* color: #a590f2; */
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+.read-more {
+  color: #6264f0;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.read-more:hover {
+  color: #4546a8;
+  /* color: #a590f2; */
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
 a.article-title {
   margin: 0;
   font-weight: bold;
@@ -260,9 +336,12 @@ a.article-title {
 }
 p {
   margin: 12px 0 9px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  font-family: "Inter var", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
+  /* font-family: "Raleway", sans-serif; */
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.75;
 }
 p small {
   font-size: 11px;
@@ -451,19 +530,19 @@ cite {
 }
 code {
   background: #fcfcfc;
-  color: #444;
-  font-family: "Iosevka", monospace;
+  color: #6264f0;
+  font-family: "Inter var", sans-serif;
   font-size: 15px;
   line-height: 18px;
   padding: 2px;
 }
 pre {
-  background: #fcfcfc;
+  background: #f4f5f7;
   color: #444;
   font-family: "Iosevka", monospace;
-  padding: 4px;
-  padding-left: 6px;
+  padding: 10px;
   overflow: auto;
+  border-style: groove;
 }
 .code {
   color: #586e75;
@@ -541,8 +620,7 @@ figure.lightbox {
 figure.lightbox img.lightbox {
   position: absolute;
 }
-
-figure.lightbox figcaption {
+a figure.lightbox figcaption {
   max-width: 90%;
   position: absolute;
   left: 50%;
@@ -550,4 +628,15 @@ figure.lightbox figcaption {
   bottom: 5px;
   color: white;
   text-shadow: black 0 0 10px;
+}
+
+.read-more a:hover {
+  color: #6264f0;
+  /* color: #a590f2; */
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+.no-link {
+  color: #374151;
 }
