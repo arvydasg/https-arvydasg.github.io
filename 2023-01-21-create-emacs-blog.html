@@ -19,7 +19,7 @@
 <div id="preamble" class="status">
 <div id="nav-content">
 <div class="header">
-   <a href="https://arvydasg.github.io/">Arvydas Scratchpad on the Internet</a>
+   <a href="https://arvydasg.github.io/">Arvydas.dev</a>
   <div class="sitelinks">
     <a href="https://arvydasg.github.io/about.html">About</a> | <a href="https://arvydasg.github.io/freelancing.html">Freelancing</a> | <a href="https://arvydasg.github.io/tag-project.html">Projects</a> | <a href="https://arvydasg.github.io/archive.html">Blog</a> | <a href="https://arvydasg.github.io/uses.html">Uses</a>
   </div>
@@ -29,9 +29,9 @@
 <div id="content">
 <div class="post-date">21 Jan 2023</div><h1 class="post-title"><a href="https://arvydasg.github.io/2023-01-21-create-emacs-blog.html">Create a Blog with Emacs</a></h1>
 
-<div id="outline-container-org536d886" class="outline-2">
-<h2 id="org536d886">Intro</h2>
-<div class="outline-text-2" id="text-org536d886">
+<div id="outline-container-org96e0068" class="outline-2">
+<h2 id="org96e0068">Intro</h2>
+<div class="outline-text-2" id="text-org96e0068">
 <p>
 If you are using Emacs and org mode as much as me, you must have come
 up to org-publish feature that allows you to convert org files to html files.
@@ -45,17 +45,17 @@ static website ;)
 </div>
 </div>
 
-<div id="outline-container-org2a174c7" class="outline-2">
-<h2 id="org2a174c7">Create Emacs blog the "System Crafters" way</h2>
-<div class="outline-text-2" id="text-org2a174c7">
+<div id="outline-container-orgd3392be" class="outline-2">
+<h2 id="orgd3392be">Create Emacs blog the "System Crafters" way</h2>
+<div class="outline-text-2" id="text-orgd3392be">
 <p>
 Best description in a video format is <a href="https://www.youtube.com/watch?v=AfkrzFodoNw&amp;t=1612s&amp;ab_channel=SystemCrafters">here</a>. To later publish it
 automaticall,y video <a href="https://www.youtube.com/watch?v=za99DwdZEyg&amp;t=996s&amp;ab_channel=SystemCrafters">here</a>.
 </p>
 </div>
-<div id="outline-container-orga01b172" class="outline-3">
-<h3 id="orga01b172">Choose a directory</h3>
-<div class="outline-text-3" id="text-orga01b172">
+<div id="outline-container-org6c737b9" class="outline-3">
+<h3 id="org6c737b9">Choose a directory</h3>
+<div class="outline-text-3" id="text-org6c737b9">
 <p>
 You will place your org files inside content/ directory.
 </p>
@@ -67,13 +67,13 @@ You will place your org files inside content/ directory.
 </div>
 </div>
 
-<div id="outline-container-org87a352d" class="outline-3">
-<h3 id="org87a352d">Creating the build script</h3>
-<div class="outline-text-3" id="text-org87a352d">
+<div id="outline-container-orgb57d036" class="outline-3">
+<h3 id="orgb57d036">Creating the build script</h3>
+<div class="outline-text-3" id="text-orgb57d036">
 </div>
-<div id="outline-container-org5b552fe" class="outline-4">
-<h4 id="org5b552fe">build-site.el</h4>
-<div class="outline-text-4" id="text-org5b552fe">
+<div id="outline-container-org9a611e9" class="outline-4">
+<h4 id="org9a611e9">build-site.el</h4>
+<div class="outline-text-4" id="text-org9a611e9">
 <p>
 Inside of this directory:
 </p>
@@ -115,9 +115,9 @@ variable using M-x describe-variable for a lot more information!
 </div>
 </div>
 
-<div id="outline-container-orgc47dc3c" class="outline-4">
-<h4 id="orgc47dc3c">build.sh</h4>
-<div class="outline-text-4" id="text-orgc47dc3c">
+<div id="outline-container-org25b0de7" class="outline-4">
+<h4 id="org25b0de7">build.sh</h4>
+<div class="outline-text-4" id="text-org25b0de7">
 <p>
 We also need a shell script that can run our Emacs Lisp script. We'll call that build.sh:
 </p>
@@ -152,9 +152,9 @@ html in public folder, open it in the browser.
 </div>
 </div>
 
-<div id="outline-container-org0ce60f2" class="outline-3">
-<h3 id="org0ce60f2">Improving the HTML output</h3>
-<div class="outline-text-3" id="text-org0ce60f2">
+<div id="outline-container-orgac74387" class="outline-3">
+<h3 id="orgac74387">Improving the HTML output</h3>
+<div class="outline-text-3" id="text-orgac74387">
 <p>
 There are a few things about the page we just looked at that I'd like
 to change to make the output look a bit cleaner:
@@ -191,9 +191,9 @@ better result.
 </div>
 </div>
 </div>
-<div id="outline-container-org6fa3e98" class="outline-3">
-<h3 id="org6fa3e98">Improving the page styling</h3>
-<div class="outline-text-3" id="text-org6fa3e98">
+<div id="outline-container-orgb53e505" class="outline-3">
+<h3 id="orgb53e505">Improving the page styling</h3>
+<div class="outline-text-3" id="text-orgb53e505">
 <p>
 At this point have a decent basic output for our website, but what if we want to make it look a little bit nicer?
 </p>
@@ -214,9 +214,9 @@ By setting a few more variables, we can use a nice stylesheet to give our site a
 </div>
 </div>
 </div>
-<div id="outline-container-orge43f93e" class="outline-3">
-<h3 id="orge43f93e">Generating pages with code blocks</h3>
-<div class="outline-text-3" id="text-orge43f93e">
+<div id="outline-container-orgc389182" class="outline-3">
+<h3 id="orgc389182">Generating pages with code blocks</h3>
+<div class="outline-text-3" id="text-orgc389182">
 <p>
 So far we've been looking at a very simple example page that doesn't really have much on it. What happens when we try to generate a more elaborate Org file containing code blocks?
 </p>
@@ -270,9 +270,9 @@ In a future video I'll show you how to convert your Emacs color theme to a CSS f
 </div>
 </div>
 
-<div id="outline-container-org223d2ac" class="outline-3">
-<h3 id="org223d2ac">Linking between pages</h3>
-<div class="outline-text-3" id="text-org223d2ac">
+<div id="outline-container-orgd220585" class="outline-3">
+<h3 id="orgd220585">Linking between pages</h3>
+<div class="outline-text-3" id="text-orgd220585">
 <p>
 One last thing I want to show you is how you can create links between
 pages on your site. Let's open up index.org and create a link to the
@@ -303,9 +303,9 @@ It will also complain when a linked file can't be found!
 </div>
 </div>
 
-<div id="outline-container-orgcf93c39" class="outline-3">
-<h3 id="orgcf93c39">The final build script</h3>
-<div class="outline-text-3" id="text-orgcf93c39">
+<div id="outline-container-orgd422637" class="outline-3">
+<h3 id="orgd422637">The final build script</h3>
+<div class="outline-text-3" id="text-orgd422637">
 <p>
 Here is the final form of our <code>build-site.el</code> script:
 </p>
@@ -361,9 +361,9 @@ Here is the final form of our <code>build-site.el</code> script:
 </div>
 </div>
 
-<div id="outline-container-org1b05b01" class="outline-2">
-<h2 id="org1b05b01">Create Emacs blog with "org-static-blog" package</h2>
-<div class="outline-text-2" id="text-org1b05b01">
+<div id="outline-container-orga46bbc7" class="outline-2">
+<h2 id="orga46bbc7">Create Emacs blog with "org-static-blog" package</h2>
+<div class="outline-text-2" id="text-orga46bbc7">
 <p>
 "<a href="https://github.com/bastibe/org-static-blog">org-static-blog</a>" is a package written by <a href="https://github.com/bastibe">Bastian Bechtold</a> is a static site
 generator. I believe it started <a href="https://bastibe.de/2013-11-13-blogging-with-emacs.html">here</a>.
@@ -407,7 +407,7 @@ If you would like to add an image to your org file, try this:
 </div>
 
 
-<figure id="org73e3230">
+<figure id="org9e1ee61">
 <img src="./static/images/org-static-blog.png" alt="org-static-blog.png" width="1200px">
 
 </figure>
@@ -419,9 +419,9 @@ the image.
 </div>
 </div>
 
-<div id="outline-container-org8106cf9" class="outline-2">
-<h2 id="org8106cf9">Conclusion</h2>
-<div class="outline-text-2" id="text-org8106cf9">
+<div id="outline-container-orge24093c" class="outline-2">
+<h2 id="orge24093c">Conclusion</h2>
+<div class="outline-text-2" id="text-orge24093c">
 <p>
 Now the only thing is left - I have to blog. :) I am thinking why
 don't I whenever learning a new thing write such little summary about
@@ -431,8 +431,9 @@ learn it is to teach it" they say.
 </div>
 </div>
 <div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-emacs.html">emacs</a> </div></div>
-<div id="postamble" class="status"><div id="archive">
-  <a href="./archive.html">Other posts</a>
+<div id="postamble" class="status"><div id="footer">
+<hr>
+<p>© 2021-2023 Arvydas Gasparavičius</p>
 </div></div>
 </body>
 </html>
