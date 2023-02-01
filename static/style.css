@@ -644,3 +644,163 @@ a figure.lightbox figcaption {
 .no-link {
   color: #374151;
 }
+
+/* hamburger menu */
+
+/* HEADER */
+
+/* fixed navbar tut with hamburger menu -
+   https://www.youtube.com/watch?v=zuAmsj2EN54&ab_channel=WebDevTutorials
+*/
+
+/* header issisoka per visa width, tuomet su container ir
+   subcontainter pagalba issicentruoja */
+
+.container {
+  /* width: 1600px; */
+  margin: auto;
+  border-bottom: thick double #6264f0;
+  border-bottom: 4mm ridge #6264f0;
+  border-bottom: 4mm ridge rgba(211, 220, 50, 0.6);
+  border-bottom: solid #6264f0;
+  /* background-color: #ededed; */
+}
+
+.subcontainer {
+  width: 90%;
+  /* background-color: darkslategrey; */
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #6264f0;
+  /* color: #a590f2; */
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+.nav {
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+ul.nav-menu {
+  margin: 0px;
+}
+
+.nav-branding {
+  font-size: 1.5rem;
+}
+
+.nav-logo-wrapper p {
+  color: #6264f0;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block; /*aligned in column*/
+  width: 25px;
+  height: 3px;
+  margin: 5px 0; /*top/bottom only*/
+  transition: all 0.3sec ease;
+  background-color: black;
+}
+
+/* header end */
+
+/* MEDIA QUERIES */
+
+/* dont try to be 1600px on all screen sizes, only at 1600px be 100% */
+@media (max-width: 1600px) {
+  .container {
+    width: 100%;
+  }
+
+  .btn {
+    padding: 9px 15px;
+    border-radius: 5px;
+  }
+
+  .nav-branding {
+    font-size: 1rem;
+  }
+}
+
+/* only when the screen is 1024px or smaller, display hamburger menu */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+
+  /* adding active class for these 3 in JS */
+  /*hiding the second bar so its not in a way*/
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  /* rotating this bar to a -45deg on CLICK in js(due to added active class) */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  /* rotating this bar to a -45deg on CLICK in js(due to added active class) */
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav {
+    justify-content: space-between;
+  }
+
+  .nav-menu {
+    position: fixed; /*making it to go together with fixed nav */
+    top: 70px; /*putting it right below fixed nav*/
+    right: -100%;
+    gap: 0;
+    flex-direction: column;
+    background-color: yellow;
+    background-color: rgba(242, 242, 242, 1);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  /* adding active class in JS  */
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+}
