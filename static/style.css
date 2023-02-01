@@ -282,6 +282,7 @@ a {
 a:hover {
   /* color: #22374a; */
   /* color: #a590f2; */
+  color: #3b3c90;
 }
 
 .post-title a {
@@ -803,4 +804,16 @@ ul.nav-menu {
   .nav-item {
     margin: 16px 0;
   }
+}
+
+/* hamburger end */
+
+/* table of contents */
+
+#text-table-of-contents ul li a {
+  color: #6264f0;
+}
+
+#text-table-of-contents ul li a:hover {
+  color: #3b3c90;
 }
