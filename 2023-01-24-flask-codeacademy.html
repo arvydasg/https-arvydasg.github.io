@@ -16,39 +16,70 @@
 <link rel="icon" href="static/ag.ico"></head>
 <body>
 <div id="preamble" class="status">
-<div id="nav-content">
-<div class="header">
-   <a href="https://arvydasg.github.io/">Arvydas.dev</a>
-  <div class="sitelinks">
-    <a href="https://arvydasg.github.io/about.html">About</a> | <a href="https://arvydasg.github.io/freelancing.html">Freelancing</a> | <a href="https://arvydasg.github.io/tag-project.html">Projects</a> | <a href="https://arvydasg.github.io/archive.html">Blog</a> | <a href="https://arvydasg.github.io/uses.html">Uses</a> | <a href="https://arvydas.dev/codeacademy/">CodeAcademy</a>
-  </div>
-<hr>
-  </div>
-</div></div>
+<header>
+    <div class="container">
+        <div class="subcontainer">
+            <nav class="nav">
+                <a href="https://arvydasg.github.io/" class="nav-logo-wrapper">
+                    <p class="nav-branding">Arvydas.dev</p>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/tag-project.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/archive.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/tags.html" class="nav-link">Tags</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydas.dev/codeacademy/" class="nav-link">CodeAcademy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/freelancing.html" class="nav-link">Freelancing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/uses.html" class="nav-link">Uses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/about.html" class="nav-link">About</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </header>
+    </div>
 <div id="content">
 <div class="post-date">24 Jan 2023</div><h1 class="post-title"><a href="https://arvydasg.github.io/2023-01-24-flask-codeacademy.html">Flask CodeAcademy(LT)</a></h1>
 <nav id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgddfb6e8">1. 2023-01-24 Introduction to flask(LT)</a>
+<li><a href="#org7c0377d">1. 2023-01-24 Introduction to flask(LT)</a>
 <ul>
-<li><a href="#orgbc96f26">1.1. Kaip sukurti minimalią svetainę:</a></li>
-<li><a href="#org0fdf041">1.2. Kaip puslapyje atvaizduoti įvestą kintamąjį:</a></li>
-<li><a href="#org3ecc2f6">1.3. Kaip sukurti ir panaudoti HTML šabloną:</a></li>
-<li><a href="#org0368cc5">1.4. Kaip kintamuosius perkelti į šabloną:</a></li>
-<li><a href="#org40d97d9">1.5. Kaip perduoti duomenis iš svetainės į programą:</a></li>
-<li><a href="#org988fccc">1.6. Naudojame base.html šabloną:</a></li>
-<li><a href="#org7e330e9">1.7. Stiliui panaudojame "Bootstrap":</a></li>
-<li><a href="#org32fe52a">1.8. Uzduotys</a></li>
+<li><a href="#org5f0c29b">1.1. Kaip sukurti minimalią svetainę:</a></li>
+<li><a href="#org46d2644">1.2. Kaip puslapyje atvaizduoti įvestą kintamąjį:</a></li>
+<li><a href="#orgbd1d916">1.3. Kaip sukurti ir panaudoti HTML šabloną:</a></li>
+<li><a href="#org0227c03">1.4. Kaip kintamuosius perkelti į šabloną:</a></li>
+<li><a href="#org58bdb92">1.5. Kaip perduoti duomenis iš svetainės į programą:</a></li>
+<li><a href="#orgb462fac">1.6. Naudojame base.html šabloną:</a></li>
+<li><a href="#org17134a8">1.7. Stiliui panaudojame "Bootstrap":</a></li>
+<li><a href="#org2ace163">1.8. Uzduotys</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgddfb6e8" class="outline-2">
-<h2 id="orgddfb6e8"><span class="section-number-2">1.</span> 2023-01-24 Introduction to flask(LT)</h2>
+<div id="outline-container-org7c0377d" class="outline-2">
+<h2 id="org7c0377d"><span class="section-number-2">1.</span> 2023-01-24 Introduction to flask(LT)</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Flask yra populiariausias Python microframework. Jeigu projektas nėra
@@ -88,8 +119,8 @@ if you want to change templates folder name - don't forget to add
 </p>
 </div>
 
-<div id="outline-container-orgbc96f26" class="outline-3">
-<h3 id="orgbc96f26"><span class="section-number-3">1.1.</span> Kaip sukurti minimalią svetainę:</h3>
+<div id="outline-container-org5f0c29b" class="outline-3">
+<h3 id="org5f0c29b"><span class="section-number-3">1.1.</span> Kaip sukurti minimalią svetainę:</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #fb4934;">from</span> flask <span style="color: #fb4934;">import</span> Flask
@@ -107,8 +138,8 @@ if you want to change templates folder name - don't forget to add
 </div>
 </div>
 
-<div id="outline-container-org0fdf041" class="outline-3">
-<h3 id="org0fdf041"><span class="section-number-3">1.2.</span> Kaip puslapyje atvaizduoti įvestą kintamąjį:</h3>
+<div id="outline-container-org46d2644" class="outline-3">
+<h3 id="org46d2644"><span class="section-number-3">1.2.</span> Kaip puslapyje atvaizduoti įvestą kintamąjį:</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 main.py faile:
@@ -130,8 +161,8 @@ main.py faile:
 </div>
 </div>
 
-<div id="outline-container-org3ecc2f6" class="outline-3">
-<h3 id="org3ecc2f6"><span class="section-number-3">1.3.</span> Kaip sukurti ir panaudoti HTML šabloną:</h3>
+<div id="outline-container-orgbd1d916" class="outline-3">
+<h3 id="orgbd1d916"><span class="section-number-3">1.3.</span> Kaip sukurti ir panaudoti HTML šabloną:</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 main.py faile:
@@ -194,8 +225,8 @@ templates/index.html faile:
 </div>
 </div>
 
-<div id="outline-container-org0368cc5" class="outline-3">
-<h3 id="org0368cc5"><span class="section-number-3">1.4.</span> Kaip kintamuosius perkelti į šabloną:</h3>
+<div id="outline-container-org0227c03" class="outline-3">
+<h3 id="org0227c03"><span class="section-number-3">1.4.</span> Kaip kintamuosius perkelti į šabloną:</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 main.py faile:
@@ -239,8 +270,8 @@ templates/index.html faile:
 </div>
 </div>
 
-<div id="outline-container-org40d97d9" class="outline-3">
-<h3 id="org40d97d9"><span class="section-number-3">1.5.</span> Kaip perduoti duomenis iš svetainės į programą:</h3>
+<div id="outline-container-org58bdb92" class="outline-3">
+<h3 id="org58bdb92"><span class="section-number-3">1.5.</span> Kaip perduoti duomenis iš svetainės į programą:</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 app.py faile:
@@ -306,8 +337,8 @@ templates/greetings.html faile:
 </div>
 </div>
 
-<div id="outline-container-org988fccc" class="outline-3">
-<h3 id="org988fccc"><span class="section-number-3">1.6.</span> Naudojame base.html šabloną:</h3>
+<div id="outline-container-orgb462fac" class="outline-3">
+<h3 id="orgb462fac"><span class="section-number-3">1.6.</span> Naudojame base.html šabloną:</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 Failas templates/base.html:
@@ -362,8 +393,8 @@ Failas templates/greetings.html:
 </div>
 </div>
 
-<div id="outline-container-org7e330e9" class="outline-3">
-<h3 id="org7e330e9"><span class="section-number-3">1.7.</span> Stiliui panaudojame "Bootstrap":</h3>
+<div id="outline-container-org17134a8" class="outline-3">
+<h3 id="org17134a8"><span class="section-number-3">1.7.</span> Stiliui panaudojame "Bootstrap":</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 Faile base.html:
@@ -421,25 +452,25 @@ Faile base.html:
 </p>
 
 
-<figure id="org67893de">
+<figure id="org1176632">
 <img src="./static/images/2023-01-24_1.png" alt="2023-01-24_1.png" width="1200px">
 
 </figure>
 
 
-<figure id="orgb9f52c2">
+<figure id="orga8e13e4">
 <img src="./static/images/2023-01-24_2.png" alt="2023-01-24_2.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org32fe52a" class="outline-3">
-<h3 id="org32fe52a"><span class="section-number-3">1.8.</span> Uzduotys</h3>
+<div id="outline-container-org2ace163" class="outline-3">
+<h3 id="org2ace163"><span class="section-number-3">1.8.</span> Uzduotys</h3>
 <div class="outline-text-3" id="text-1-8">
 </div>
-<div id="outline-container-org840dc65" class="outline-4">
-<h4 id="org840dc65"><span class="section-number-4">1.8.1.</span> 1 užduotis</h4>
+<div id="outline-container-orgd5a5e59" class="outline-4">
+<h4 id="orgd5a5e59"><span class="section-number-4">1.8.1.</span> 1 užduotis</h4>
 <div class="outline-text-4" id="text-1-8-1">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/1_uzduotis">Link to github</a>
@@ -455,15 +486,15 @@ The most basic task there can be.
 </p>
 
 
-<figure id="org900f322">
+<figure id="orgaffb9ca">
 <img src="./static/images/2023-01-24_3.png" alt="2023-01-24_3.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgf1e73bf" class="outline-4">
-<h4 id="orgf1e73bf"><span class="section-number-4">1.8.2.</span> 2 užduotis</h4>
+<div id="outline-container-org08d3e1c" class="outline-4">
+<h4 id="org08d3e1c"><span class="section-number-4">1.8.2.</span> 2 užduotis</h4>
 <div class="outline-text-4" id="text-1-8-2">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/2_uzduotis">Link to github</a>
@@ -475,15 +506,15 @@ simbolio) ir paspaudus ENTER, atspausdintų jį penkis kartus.
 </p>
 
 
-<figure id="orge30b124">
+<figure id="org03c2ce1">
 <img src="./static/images/2023-01-24_4.png" alt="2023-01-24_4.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org838c00b" class="outline-4">
-<h4 id="org838c00b"><span class="section-number-4">1.8.3.</span> 3 užduotis</h4>
+<div id="outline-container-org1f854a7" class="outline-4">
+<h4 id="org1f854a7"><span class="section-number-4">1.8.3.</span> 3 užduotis</h4>
 <div class="outline-text-4" id="text-1-8-3">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/3_uzduotis">Link to github</a>
@@ -495,15 +526,15 @@ visus keliamuosius metus nuo 1900 iki 2100 metų.
 </p>
 
 
-<figure id="org32b85b9">
+<figure id="org75b1d84">
 <img src="./static/images/2023-01-24_5.png" alt="2023-01-24_5.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org413f279" class="outline-4">
-<h4 id="org413f279"><span class="section-number-4">1.8.4.</span> 4 užduotis</h4>
+<div id="outline-container-orgd50fd93" class="outline-4">
+<h4 id="orgd50fd93"><span class="section-number-4">1.8.4.</span> 4 užduotis</h4>
 <div class="outline-text-4" id="text-1-8-4">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/4_uzduotis">Link to github</a>
@@ -515,15 +546,15 @@ mygtuką parodytų, ar jie yra keliamieji.
 </p>
 
 
-<figure id="orgc8cbda2">
+<figure id="org0600d2a">
 <img src="./static/images/2023-01-24_6.png" alt="2023-01-24_6.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org139b407" class="outline-4">
-<h4 id="org139b407"><span class="section-number-4">1.8.5.</span> 5 užduotis (papildomai)</h4>
+<div id="outline-container-org25ada82" class="outline-4">
+<h4 id="org25ada82"><span class="section-number-4">1.8.5.</span> 5 užduotis (papildomai)</h4>
 <div class="outline-text-4" id="text-1-8-5">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/5_uzduotis">Link to github</a>
@@ -536,7 +567,7 @@ kurioje bus saugomi pajamų ir išlaidų įrašai).
 </p>
 
 
-<figure id="orge9036fe">
+<figure id="org0d6f761">
 <img src="./static/images/2023-01-24_7.png" alt="2023-01-24_7.png" width="1200px">
 
 </figure>
@@ -548,6 +579,7 @@ kurioje bus saugomi pajamų ir išlaidų įrašai).
 <div id="postamble" class="status"><div id="footer">
 <hr>
 <p>© 2021-2023 Arvydas Gasparavičius</p>
+  <script src="static/script.js"></script>
 </div></div>
 </body>
 </html>

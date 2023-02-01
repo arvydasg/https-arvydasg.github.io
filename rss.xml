@@ -4,7 +4,7 @@
 <title><![CDATA[arvydasg.github.io]]></title>
 <description><![CDATA[arvydasg.github.io]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Tue, 31 Jan 2023 20:49:14 +0200</lastBuildDate>
+<lastBuildDate>Wed, 01 Feb 2023 06:41:51 +0200</lastBuildDate>
 <item>
   <title><![CDATA[What is Docker?]]></title>
   <description><![CDATA[
@@ -19,9 +19,9 @@ efficient and easy way to deploy Django applications.
 So, let's learn about it.
 </p>
 
-<div id="outline-container-org104cd80" class="outline-2">
-<h2 id="org104cd80">In the beginning</h2>
-<div class="outline-text-2" id="text-org104cd80">
+<div id="outline-container-org618d937" class="outline-2">
+<h2 id="org618d937">In the beginning</h2>
+<div class="outline-text-2" id="text-org618d937">
 <p>
 If you wanted a server to store your applications onto, it had to be a
 physical server in a data center. It could run ONE operating
@@ -31,9 +31,9 @@ physical center! Quite inefficient and most likely expensive.
 </div>
 </div>
 
-<div id="outline-container-orgfe14a5d" class="outline-2">
-<h2 id="orgfe14a5d">Then came the virtual machines.</h2>
-<div class="outline-text-2" id="text-orgfe14a5d">
+<div id="outline-container-orgb30ce8e" class="outline-2">
+<h2 id="orgb30ce8e">Then came the virtual machines.</h2>
+<div class="outline-text-2" id="text-orgb30ce8e">
 <ul class="org-ul">
 <li>you would have a server hardware</li>
 <li>then on the server hardware you install a hypervisor(vmware esxi)</li>
@@ -49,9 +49,9 @@ Already way more efficient than the first option.
 </div>
 </div>
 
-<div id="outline-container-org217d8ac" class="outline-2">
-<h2 id="org217d8ac">Now what is the docker about?</h2>
-<div class="outline-text-2" id="text-org217d8ac">
+<div id="outline-container-orgdbb2ec9" class="outline-2">
+<h2 id="orgdbb2ec9">Now what is the docker about?</h2>
+<div class="outline-text-2" id="text-orgdbb2ec9">
 <p>
 You still have the hardware, but on top of that you install one OS.
 Ubuntu for example.
@@ -81,9 +81,9 @@ metal servers.
 </div>
 </div>
 
-<div id="outline-container-org551d268" class="outline-2">
-<h2 id="org551d268">Benefits of Docker</h2>
-<div class="outline-text-2" id="text-org551d268">
+<div id="outline-container-org2b28fd6" class="outline-2">
+<h2 id="org2b28fd6">Benefits of Docker</h2>
+<div class="outline-text-2" id="text-org2b28fd6">
 <p>
 Why is Docker so fast?
 </p>
@@ -116,9 +116,9 @@ os or kernel.
 </div>
 </div>
 
-<div id="outline-container-org6fe2c4a" class="outline-2">
-<h2 id="org6fe2c4a">Why docker?</h2>
-<div class="outline-text-2" id="text-org6fe2c4a">
+<div id="outline-container-org697f51b" class="outline-2">
+<h2 id="org697f51b">Why docker?</h2>
+<div class="outline-text-2" id="text-org697f51b">
 <p>
 As developers - we write our app - it works great on our machines.
 Then we want to either deploy it or run on other machines or give it
@@ -138,9 +138,9 @@ the app needs is contained in the container, it's isolated.
 </p>
 </div>
 
-<div id="outline-container-org7c74074" class="outline-3">
-<h3 id="org7c74074">Microservices</h3>
-<div class="outline-text-3" id="text-org7c74074">
+<div id="outline-container-orgb57b2ad" class="outline-3">
+<h3 id="orgb57b2ad">Microservices</h3>
+<div class="outline-text-3" id="text-orgb57b2ad">
 <p>
 Usually you deploy the WHOLE app inside one container or a VM. For
 example WordPress. You install WordPress server and MySQL database on
@@ -149,6 +149,7 @@ server on one container and mysql database on another. So whenever you
 want to update wordpress server - you update only just that. Nothing
 is in a way, nothing is conflicting, mysql database remains untouched.
 Sounds good, I must try experiment with that.
+fatal: not a git repository (or any of the parent directories): .git
 </p>
 </div>
 </div>
@@ -168,16 +169,16 @@ Sounds good, I must try experiment with that.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgdc17cd5">Intro</a></li>
-<li><a href="#orgd72d7c5">Python in Lithuania</a></li>
-<li><a href="#orge91907d">Job search</a></li>
+<li><a href="#org87da845">Intro</a></li>
+<li><a href="#org317c599">Python in Lithuania</a></li>
+<li><a href="#orgaa4cdbe">Job search</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgdc17cd5" class="outline-2">
-<h2 id="orgdc17cd5">Intro</h2>
-<div class="outline-text-2" id="text-orgdc17cd5">
+<div id="outline-container-org87da845" class="outline-2">
+<h2 id="org87da845">Intro</h2>
+<div class="outline-text-2" id="text-org87da845">
 <p>
 Had a meeting with Laura from CodeAcademy. It is finally time to get
 for my dream job, I am ready!
@@ -185,18 +186,18 @@ for my dream job, I am ready!
 </div>
 </div>
 
-<div id="outline-container-orgd72d7c5" class="outline-2">
-<h2 id="orgd72d7c5">Python in Lithuania</h2>
-<div class="outline-text-2" id="text-orgd72d7c5">
+<div id="outline-container-org317c599" class="outline-2">
+<h2 id="org317c599">Python in Lithuania</h2>
+<div class="outline-text-2" id="text-org317c599">
 <p>
 Python in Lithuania is not that widely used, perhaps in Big Data or
 Automation.
 </p>
 </div>
 
-<div id="outline-container-org612f04b" class="outline-3">
-<h3 id="org612f04b">Positions after this course for me could be as:</h3>
-<div class="outline-text-3" id="text-org612f04b">
+<div id="outline-container-org82763d0" class="outline-3">
+<h3 id="org82763d0">Positions after this course for me could be as:</h3>
+<div class="outline-text-3" id="text-org82763d0">
 <ul class="org-ul">
 <li>Data Engineer/Scientist</li>
 <li>Automation Specialist</li>
@@ -212,33 +213,33 @@ on a daily basis and this is what I enjoy)</li>
 </div>
 </div>
 
-<div id="outline-container-org5ee0a56" class="outline-3">
-<h3 id="org5ee0a56">Biggest Python companies in Lithuania</h3>
-<div class="outline-text-3" id="text-org5ee0a56">
+<div id="outline-container-org828e15a" class="outline-3">
+<h3 id="org828e15a">Biggest Python companies in Lithuania</h3>
+<div class="outline-text-3" id="text-org828e15a">
 <p>
 Here is a list of biggest python companies in Lithuania. Should not
 forget to introduce myself to each and every one of them :)
 </p>
 
 
-<figure id="org0a0dfa7">
+<figure id="orgb1fc606">
 <img src="./static/images/labor-market-overview/companies.png" alt="companies.png" width="600px">
 
 </figure>
 
 
-<figure id="org0b085c1">
+<figure id="orgb024a11">
 <img src="./static/images/labor-market-overview/possibilities.png" alt="possibilities.png" width="600px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org1ad8411" class="outline-3">
-<h3 id="org1ad8411">Salary expectations for Junior python developers</h3>
-<div class="outline-text-3" id="text-org1ad8411">
+<div id="outline-container-org05d9411" class="outline-3">
+<h3 id="org05d9411">Salary expectations for Junior python developers</h3>
+<div class="outline-text-3" id="text-org05d9411">
 
-<figure id="org7fd09d0">
+<figure id="org3bf81a0">
 <img src="./static/images/labor-market-overview/salaries.png" alt="salaries.png" width="1200px">
 
 </figure>
@@ -252,17 +253,17 @@ inside programming role).
 </div>
 </div>
 
-<div id="outline-container-orge91907d" class="outline-2">
-<h2 id="orge91907d">Job search</h2>
-<div class="outline-text-2" id="text-orge91907d">
+<div id="outline-container-orgaa4cdbe" class="outline-2">
+<h2 id="orgaa4cdbe">Job search</h2>
+<div class="outline-text-2" id="text-orgaa4cdbe">
 <p>
 There options are endless.
 </p>
 </div>
 
-<div id="outline-container-orgfd13021" class="outline-3">
-<h3 id="orgfd13021">What is junior anyway?</h3>
-<div class="outline-text-3" id="text-orgfd13021">
+<div id="outline-container-orgb9d515f" class="outline-3">
+<h3 id="orgb9d515f">What is junior anyway?</h3>
+<div class="outline-text-3" id="text-orgb9d515f">
 <p>
 Hire people with a lot of potential, that will be and grow with you in
 a long run and not just take someone Super Senior, burn them out in 6
@@ -271,9 +272,9 @@ months and get another one.
 </div>
 </div>
 
-<div id="outline-container-orgab2c7e1" class="outline-3">
-<h3 id="orgab2c7e1">I should first of all mention, that I am self taught</h3>
-<div class="outline-text-3" id="text-orgab2c7e1">
+<div id="outline-container-orge7549ed" class="outline-3">
+<h3 id="orge7549ed">I should first of all mention, that I am self taught</h3>
+<div class="outline-text-3" id="text-orge7549ed">
 <p>
 I got an advice from a friend to mention that I am a self taught
 developer first. It will show that I have initiative, discipline,
@@ -299,9 +300,9 @@ Paziurek skelbimus karinos
 </div>
 </div>
 
-<div id="outline-container-org2bc088e" class="outline-3">
-<h3 id="org2bc088e">Don't get scared if you see something unfamiliar in a job ad</h3>
-<div class="outline-text-3" id="text-org2bc088e">
+<div id="outline-container-org0d9780a" class="outline-3">
+<h3 id="org0d9780a">Don't get scared if you see something unfamiliar in a job ad</h3>
+<div class="outline-text-3" id="text-org0d9780a">
 <p>
 IMPORTANT: Apply to jobs that you aren’t qualified for!
 </p>
@@ -334,9 +335,9 @@ team.
 </div>
 </div>
 
-<div id="outline-container-org5b95ca7" class="outline-3">
-<h3 id="org5b95ca7">Instead of new job - agree with current workplace</h3>
-<div class="outline-text-3" id="text-org5b95ca7">
+<div id="outline-container-org074621a" class="outline-3">
+<h3 id="org074621a">Instead of new job - agree with current workplace</h3>
+<div class="outline-text-3" id="text-org074621a">
 <p>
 One option that CodeAcademy agrees upon is for me to work
 as an IT Technician for 50% of the time and the rest 50% of the time
@@ -351,25 +352,25 @@ is no "Programming" position.
 </div>
 </div>
 
-<div id="outline-container-orgf834934" class="outline-3">
-<h3 id="orgf834934">LinkedIn</h3>
-<div class="outline-text-3" id="text-orgf834934">
+<div id="outline-container-orga545818" class="outline-3">
+<h3 id="orga545818">LinkedIn</h3>
+<div class="outline-text-3" id="text-orga545818">
 <p>
 Use LinkedIn well and after a while you won't be looking for jobs but
 jobs will be looking for you :)
 </p>
 
 
-<figure id="org20e431e">
+<figure id="orgf81ff93">
 <img src="./static/images/labor-market-overview/linkedin.png" alt="linkedin.png" width="600px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org59d9427" class="outline-3">
-<h3 id="org59d9427">Hackathons</h3>
-<div class="outline-text-3" id="text-org59d9427">
+<div id="outline-container-org86775fa" class="outline-3">
+<h3 id="org86775fa">Hackathons</h3>
+<div class="outline-text-3" id="text-org86775fa">
 <p>
 Hackathons - business problem, programmer teams, creating solutions. A
 good way to network and test your knowledge over a weekend in Vilnius.
@@ -377,9 +378,9 @@ good way to network and test your knowledge over a weekend in Vilnius.
 </div>
 </div>
 
-<div id="outline-container-org9871a01" class="outline-3">
-<h3 id="org9871a01">Freelancing</h3>
-<div class="outline-text-3" id="text-org9871a01">
+<div id="outline-container-org056632a" class="outline-3">
+<h3 id="org056632a">Freelancing</h3>
+<div class="outline-text-3" id="text-org056632a">
 <p>
 Could freelance.. I thought about it, yes, even tried in the past, but
 this area seemed so THICK and full of competition(in my WordPress
@@ -389,16 +390,16 @@ Kind of best way if I want freedom in my life.
 </p>
 
 
-<figure id="org7f6bde3">
+<figure id="org7283ae1">
 <img src="./static/images/labor-market-overview/freelance.png" alt="freelance.png" width="600px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orge1adfa0" class="outline-3">
-<h3 id="orge1adfa0">Responding to job ads</h3>
-<div class="outline-text-3" id="text-orge1adfa0">
+<div id="outline-container-org39fe638" class="outline-3">
+<h3 id="org39fe638">Responding to job ads</h3>
+<div class="outline-text-3" id="text-org39fe638">
 <p>
 A few main things I took is:
 </p>
@@ -424,20 +425,20 @@ yourself also.</li>
 </div>
 </div>
 
-<div id="outline-container-org8ae05c3" class="outline-3">
-<h3 id="org8ae05c3">Agencies</h3>
-<div class="outline-text-3" id="text-org8ae05c3">
+<div id="outline-container-org316a8b5" class="outline-3">
+<h3 id="org316a8b5">Agencies</h3>
+<div class="outline-text-3" id="text-org316a8b5">
 
-<figure id="org0c717f9">
+<figure id="orgc568a3f">
 <img src="./static/images/labor-market-overview/linkedin.png" alt="linkedin.png" width="600px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org4c0037b" class="outline-3">
-<h3 id="org4c0037b">Github hygiene</h3>
-<div class="outline-text-3" id="text-org4c0037b">
+<div id="outline-container-orge6541e4" class="outline-3">
+<h3 id="orge6541e4">Github hygiene</h3>
+<div class="outline-text-3" id="text-orge6541e4">
 <p>
 I should definitely clean up my Github account:
 </p>
@@ -465,24 +466,24 @@ I should definitely clean up my Github account:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgddfb6e8">1. 2023-01-24 Introduction to flask(LT)</a>
+<li><a href="#org7c0377d">1. 2023-01-24 Introduction to flask(LT)</a>
 <ul>
-<li><a href="#orgbc96f26">1.1. Kaip sukurti minimalią svetainę:</a></li>
-<li><a href="#org0fdf041">1.2. Kaip puslapyje atvaizduoti įvestą kintamąjį:</a></li>
-<li><a href="#org3ecc2f6">1.3. Kaip sukurti ir panaudoti HTML šabloną:</a></li>
-<li><a href="#org0368cc5">1.4. Kaip kintamuosius perkelti į šabloną:</a></li>
-<li><a href="#org40d97d9">1.5. Kaip perduoti duomenis iš svetainės į programą:</a></li>
-<li><a href="#org988fccc">1.6. Naudojame base.html šabloną:</a></li>
-<li><a href="#org7e330e9">1.7. Stiliui panaudojame "Bootstrap":</a></li>
-<li><a href="#org32fe52a">1.8. Uzduotys</a></li>
+<li><a href="#org5f0c29b">1.1. Kaip sukurti minimalią svetainę:</a></li>
+<li><a href="#org46d2644">1.2. Kaip puslapyje atvaizduoti įvestą kintamąjį:</a></li>
+<li><a href="#orgbd1d916">1.3. Kaip sukurti ir panaudoti HTML šabloną:</a></li>
+<li><a href="#org0227c03">1.4. Kaip kintamuosius perkelti į šabloną:</a></li>
+<li><a href="#org58bdb92">1.5. Kaip perduoti duomenis iš svetainės į programą:</a></li>
+<li><a href="#orgb462fac">1.6. Naudojame base.html šabloną:</a></li>
+<li><a href="#org17134a8">1.7. Stiliui panaudojame "Bootstrap":</a></li>
+<li><a href="#org2ace163">1.8. Uzduotys</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgddfb6e8" class="outline-2">
-<h2 id="orgddfb6e8"><span class="section-number-2">1.</span> 2023-01-24 Introduction to flask(LT)</h2>
+<div id="outline-container-org7c0377d" class="outline-2">
+<h2 id="org7c0377d"><span class="section-number-2">1.</span> 2023-01-24 Introduction to flask(LT)</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Flask yra populiariausias Python microframework. Jeigu projektas nėra
@@ -522,8 +523,8 @@ if you want to change templates folder name - don't forget to add
 </p>
 </div>
 
-<div id="outline-container-orgbc96f26" class="outline-3">
-<h3 id="orgbc96f26"><span class="section-number-3">1.1.</span> Kaip sukurti minimalią svetainę:</h3>
+<div id="outline-container-org5f0c29b" class="outline-3">
+<h3 id="org5f0c29b"><span class="section-number-3">1.1.</span> Kaip sukurti minimalią svetainę:</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #fb4934;">from</span> flask <span style="color: #fb4934;">import</span> Flask
@@ -541,8 +542,8 @@ if you want to change templates folder name - don't forget to add
 </div>
 </div>
 
-<div id="outline-container-org0fdf041" class="outline-3">
-<h3 id="org0fdf041"><span class="section-number-3">1.2.</span> Kaip puslapyje atvaizduoti įvestą kintamąjį:</h3>
+<div id="outline-container-org46d2644" class="outline-3">
+<h3 id="org46d2644"><span class="section-number-3">1.2.</span> Kaip puslapyje atvaizduoti įvestą kintamąjį:</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 main.py faile:
@@ -564,8 +565,8 @@ main.py faile:
 </div>
 </div>
 
-<div id="outline-container-org3ecc2f6" class="outline-3">
-<h3 id="org3ecc2f6"><span class="section-number-3">1.3.</span> Kaip sukurti ir panaudoti HTML šabloną:</h3>
+<div id="outline-container-orgbd1d916" class="outline-3">
+<h3 id="orgbd1d916"><span class="section-number-3">1.3.</span> Kaip sukurti ir panaudoti HTML šabloną:</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 main.py faile:
@@ -628,8 +629,8 @@ templates/index.html faile:
 </div>
 </div>
 
-<div id="outline-container-org0368cc5" class="outline-3">
-<h3 id="org0368cc5"><span class="section-number-3">1.4.</span> Kaip kintamuosius perkelti į šabloną:</h3>
+<div id="outline-container-org0227c03" class="outline-3">
+<h3 id="org0227c03"><span class="section-number-3">1.4.</span> Kaip kintamuosius perkelti į šabloną:</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 main.py faile:
@@ -673,8 +674,8 @@ templates/index.html faile:
 </div>
 </div>
 
-<div id="outline-container-org40d97d9" class="outline-3">
-<h3 id="org40d97d9"><span class="section-number-3">1.5.</span> Kaip perduoti duomenis iš svetainės į programą:</h3>
+<div id="outline-container-org58bdb92" class="outline-3">
+<h3 id="org58bdb92"><span class="section-number-3">1.5.</span> Kaip perduoti duomenis iš svetainės į programą:</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 app.py faile:
@@ -740,8 +741,8 @@ templates/greetings.html faile:
 </div>
 </div>
 
-<div id="outline-container-org988fccc" class="outline-3">
-<h3 id="org988fccc"><span class="section-number-3">1.6.</span> Naudojame base.html šabloną:</h3>
+<div id="outline-container-orgb462fac" class="outline-3">
+<h3 id="orgb462fac"><span class="section-number-3">1.6.</span> Naudojame base.html šabloną:</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 Failas templates/base.html:
@@ -796,8 +797,8 @@ Failas templates/greetings.html:
 </div>
 </div>
 
-<div id="outline-container-org7e330e9" class="outline-3">
-<h3 id="org7e330e9"><span class="section-number-3">1.7.</span> Stiliui panaudojame "Bootstrap":</h3>
+<div id="outline-container-org17134a8" class="outline-3">
+<h3 id="org17134a8"><span class="section-number-3">1.7.</span> Stiliui panaudojame "Bootstrap":</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 Faile base.html:
@@ -855,25 +856,25 @@ Faile base.html:
 </p>
 
 
-<figure id="org67893de">
+<figure id="org1176632">
 <img src="./static/images/2023-01-24_1.png" alt="2023-01-24_1.png" width="1200px">
 
 </figure>
 
 
-<figure id="orgb9f52c2">
+<figure id="orga8e13e4">
 <img src="./static/images/2023-01-24_2.png" alt="2023-01-24_2.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org32fe52a" class="outline-3">
-<h3 id="org32fe52a"><span class="section-number-3">1.8.</span> Uzduotys</h3>
+<div id="outline-container-org2ace163" class="outline-3">
+<h3 id="org2ace163"><span class="section-number-3">1.8.</span> Uzduotys</h3>
 <div class="outline-text-3" id="text-1-8">
 </div>
-<div id="outline-container-org840dc65" class="outline-4">
-<h4 id="org840dc65"><span class="section-number-4">1.8.1.</span> 1 užduotis</h4>
+<div id="outline-container-orgd5a5e59" class="outline-4">
+<h4 id="orgd5a5e59"><span class="section-number-4">1.8.1.</span> 1 užduotis</h4>
 <div class="outline-text-4" id="text-1-8-1">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/1_uzduotis">Link to github</a>
@@ -889,15 +890,15 @@ The most basic task there can be.
 </p>
 
 
-<figure id="org900f322">
+<figure id="orgaffb9ca">
 <img src="./static/images/2023-01-24_3.png" alt="2023-01-24_3.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgf1e73bf" class="outline-4">
-<h4 id="orgf1e73bf"><span class="section-number-4">1.8.2.</span> 2 užduotis</h4>
+<div id="outline-container-org08d3e1c" class="outline-4">
+<h4 id="org08d3e1c"><span class="section-number-4">1.8.2.</span> 2 užduotis</h4>
 <div class="outline-text-4" id="text-1-8-2">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/2_uzduotis">Link to github</a>
@@ -909,15 +910,15 @@ simbolio) ir paspaudus ENTER, atspausdintų jį penkis kartus.
 </p>
 
 
-<figure id="orge30b124">
+<figure id="org03c2ce1">
 <img src="./static/images/2023-01-24_4.png" alt="2023-01-24_4.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org838c00b" class="outline-4">
-<h4 id="org838c00b"><span class="section-number-4">1.8.3.</span> 3 užduotis</h4>
+<div id="outline-container-org1f854a7" class="outline-4">
+<h4 id="org1f854a7"><span class="section-number-4">1.8.3.</span> 3 užduotis</h4>
 <div class="outline-text-4" id="text-1-8-3">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/3_uzduotis">Link to github</a>
@@ -929,15 +930,15 @@ visus keliamuosius metus nuo 1900 iki 2100 metų.
 </p>
 
 
-<figure id="org32b85b9">
+<figure id="org75b1d84">
 <img src="./static/images/2023-01-24_5.png" alt="2023-01-24_5.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org413f279" class="outline-4">
-<h4 id="org413f279"><span class="section-number-4">1.8.4.</span> 4 užduotis</h4>
+<div id="outline-container-orgd50fd93" class="outline-4">
+<h4 id="orgd50fd93"><span class="section-number-4">1.8.4.</span> 4 užduotis</h4>
 <div class="outline-text-4" id="text-1-8-4">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/4_uzduotis">Link to github</a>
@@ -949,15 +950,15 @@ mygtuką parodytų, ar jie yra keliamieji.
 </p>
 
 
-<figure id="orgc8cbda2">
+<figure id="org0600d2a">
 <img src="./static/images/2023-01-24_6.png" alt="2023-01-24_6.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org139b407" class="outline-4">
-<h4 id="org139b407"><span class="section-number-4">1.8.5.</span> 5 užduotis (papildomai)</h4>
+<div id="outline-container-org25ada82" class="outline-4">
+<h4 id="org25ada82"><span class="section-number-4">1.8.5.</span> 5 užduotis (papildomai)</h4>
 <div class="outline-text-4" id="text-1-8-5">
 <p>
 <a href="https://github.com/arvydasg/Flask-CodeAcademy/tree/master/2023-01-24_izanga_i_flask/5_uzduotis">Link to github</a>
@@ -970,7 +971,7 @@ kurioje bus saugomi pajamų ir išlaidų įrašai).
 </p>
 
 
-<figure id="orge9036fe">
+<figure id="org0d6f761">
 <img src="./static/images/2023-01-24_7.png" alt="2023-01-24_7.png" width="1200px">
 
 </figure>
@@ -990,9 +991,9 @@ kurioje bus saugomi pajamų ir išlaidų įrašai).
   <title><![CDATA[Create a Blog with Emacs]]></title>
   <description><![CDATA[
 
-<div id="outline-container-org57230c8" class="outline-2">
-<h2 id="org57230c8">Intro</h2>
-<div class="outline-text-2" id="text-org57230c8">
+<div id="outline-container-org1b18a36" class="outline-2">
+<h2 id="org1b18a36">Intro</h2>
+<div class="outline-text-2" id="text-org1b18a36">
 <p>
 If you are using Emacs and org mode as much as me, you must have come
 up to org-publish feature that allows you to convert org files to html files.
@@ -1006,17 +1007,17 @@ static website ;)
 </div>
 </div>
 
-<div id="outline-container-org483565c" class="outline-2">
-<h2 id="org483565c">Create Emacs blog the "System Crafters" way</h2>
-<div class="outline-text-2" id="text-org483565c">
+<div id="outline-container-org4348292" class="outline-2">
+<h2 id="org4348292">Create Emacs blog the "System Crafters" way</h2>
+<div class="outline-text-2" id="text-org4348292">
 <p>
 Best description in a video format is <a href="https://www.youtube.com/watch?v=AfkrzFodoNw&amp;t=1612s&amp;ab_channel=SystemCrafters">here</a>. To later publish it
 automaticall,y video <a href="https://www.youtube.com/watch?v=za99DwdZEyg&amp;t=996s&amp;ab_channel=SystemCrafters">here</a>.
 </p>
 </div>
-<div id="outline-container-org317b30a" class="outline-3">
-<h3 id="org317b30a">Choose a directory</h3>
-<div class="outline-text-3" id="text-org317b30a">
+<div id="outline-container-org50638c4" class="outline-3">
+<h3 id="org50638c4">Choose a directory</h3>
+<div class="outline-text-3" id="text-org50638c4">
 <p>
 You will place your org files inside content/ directory.
 </p>
@@ -1028,13 +1029,13 @@ You will place your org files inside content/ directory.
 </div>
 </div>
 
-<div id="outline-container-orgc441225" class="outline-3">
-<h3 id="orgc441225">Creating the build script</h3>
-<div class="outline-text-3" id="text-orgc441225">
+<div id="outline-container-org6095ffa" class="outline-3">
+<h3 id="org6095ffa">Creating the build script</h3>
+<div class="outline-text-3" id="text-org6095ffa">
 </div>
-<div id="outline-container-org6ee6a8a" class="outline-4">
-<h4 id="org6ee6a8a">build-site.el</h4>
-<div class="outline-text-4" id="text-org6ee6a8a">
+<div id="outline-container-orgb43be34" class="outline-4">
+<h4 id="orgb43be34">build-site.el</h4>
+<div class="outline-text-4" id="text-orgb43be34">
 <p>
 Inside of this directory:
 </p>
@@ -1076,9 +1077,9 @@ variable using M-x describe-variable for a lot more information!
 </div>
 </div>
 
-<div id="outline-container-orgdd2778a" class="outline-4">
-<h4 id="orgdd2778a">build.sh</h4>
-<div class="outline-text-4" id="text-orgdd2778a">
+<div id="outline-container-org406b82f" class="outline-4">
+<h4 id="org406b82f">build.sh</h4>
+<div class="outline-text-4" id="text-org406b82f">
 <p>
 We also need a shell script that can run our Emacs Lisp script. We'll call that build.sh:
 </p>
@@ -1113,9 +1114,9 @@ html in public folder, open it in the browser.
 </div>
 </div>
 
-<div id="outline-container-org2a3480a" class="outline-3">
-<h3 id="org2a3480a">Improving the HTML output</h3>
-<div class="outline-text-3" id="text-org2a3480a">
+<div id="outline-container-org2677e06" class="outline-3">
+<h3 id="org2677e06">Improving the HTML output</h3>
+<div class="outline-text-3" id="text-org2677e06">
 <p>
 There are a few things about the page we just looked at that I'd like
 to change to make the output look a bit cleaner:
@@ -1152,9 +1153,9 @@ better result.
 </div>
 </div>
 </div>
-<div id="outline-container-org81e7885" class="outline-3">
-<h3 id="org81e7885">Improving the page styling</h3>
-<div class="outline-text-3" id="text-org81e7885">
+<div id="outline-container-orga0cdae2" class="outline-3">
+<h3 id="orga0cdae2">Improving the page styling</h3>
+<div class="outline-text-3" id="text-orga0cdae2">
 <p>
 At this point have a decent basic output for our website, but what if we want to make it look a little bit nicer?
 </p>
@@ -1175,9 +1176,9 @@ By setting a few more variables, we can use a nice stylesheet to give our site a
 </div>
 </div>
 </div>
-<div id="outline-container-org5c53cab" class="outline-3">
-<h3 id="org5c53cab">Generating pages with code blocks</h3>
-<div class="outline-text-3" id="text-org5c53cab">
+<div id="outline-container-orgc6f33ed" class="outline-3">
+<h3 id="orgc6f33ed">Generating pages with code blocks</h3>
+<div class="outline-text-3" id="text-orgc6f33ed">
 <p>
 So far we've been looking at a very simple example page that doesn't really have much on it. What happens when we try to generate a more elaborate Org file containing code blocks?
 </p>
@@ -1231,9 +1232,9 @@ In a future video I'll show you how to convert your Emacs color theme to a CSS f
 </div>
 </div>
 
-<div id="outline-container-orgdbe0f71" class="outline-3">
-<h3 id="orgdbe0f71">Linking between pages</h3>
-<div class="outline-text-3" id="text-orgdbe0f71">
+<div id="outline-container-org7d799cf" class="outline-3">
+<h3 id="org7d799cf">Linking between pages</h3>
+<div class="outline-text-3" id="text-org7d799cf">
 <p>
 One last thing I want to show you is how you can create links between
 pages on your site. Let's open up index.org and create a link to the
@@ -1264,9 +1265,9 @@ It will also complain when a linked file can't be found!
 </div>
 </div>
 
-<div id="outline-container-org2e4a587" class="outline-3">
-<h3 id="org2e4a587">The final build script</h3>
-<div class="outline-text-3" id="text-org2e4a587">
+<div id="outline-container-orgf47574d" class="outline-3">
+<h3 id="orgf47574d">The final build script</h3>
+<div class="outline-text-3" id="text-orgf47574d">
 <p>
 Here is the final form of our <code>build-site.el</code> script:
 </p>
@@ -1322,9 +1323,9 @@ Here is the final form of our <code>build-site.el</code> script:
 </div>
 </div>
 
-<div id="outline-container-org9932abe" class="outline-2">
-<h2 id="org9932abe">Create Emacs blog with "org-static-blog" package</h2>
-<div class="outline-text-2" id="text-org9932abe">
+<div id="outline-container-org4336fc7" class="outline-2">
+<h2 id="org4336fc7">Create Emacs blog with "org-static-blog" package</h2>
+<div class="outline-text-2" id="text-org4336fc7">
 <p>
 "<a href="https://github.com/bastibe/org-static-blog">org-static-blog</a>" is a package written by <a href="https://github.com/bastibe">Bastian Bechtold</a> is a static site
 generator. I believe it started <a href="https://bastibe.de/2013-11-13-blogging-with-emacs.html">here</a>.
@@ -1368,7 +1369,7 @@ If you would like to add an image to your org file, try this:
 </div>
 
 
-<figure id="orga24c848">
+<figure id="orga22fd10">
 <img src="./static/images/org-static-blog.png" alt="org-static-blog.png" width="1200px">
 
 </figure>
@@ -1380,9 +1381,9 @@ the image.
 </div>
 </div>
 
-<div id="outline-container-org6c7cb5e" class="outline-2">
-<h2 id="org6c7cb5e">Conclusion</h2>
-<div class="outline-text-2" id="text-org6c7cb5e">
+<div id="outline-container-org9856cd8" class="outline-2">
+<h2 id="org9856cd8">Conclusion</h2>
+<div class="outline-text-2" id="text-org9856cd8">
 <p>
 Now the only thing is left - I have to blog. :) I am thinking why
 don't I whenever learning a new thing write such little summary about
@@ -1401,14 +1402,14 @@ learn it is to teach it" they say.
   <title><![CDATA[Skelbiu.lt Clone with GET POST DELETE]]></title>
   <description><![CDATA[
 
-<figure id="org9cfa982">
+<figure id="orgc11f84d">
 <img src="./static/images/clone-skelbiu.png" alt="clone-skelbiu.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org61be122" class="outline-2">
-<h2 id="org61be122">Introduction</h2>
-<div class="outline-text-2" id="text-org61be122">
+<div id="outline-container-org2212106" class="outline-2">
+<h2 id="org2212106">Introduction</h2>
+<div class="outline-text-2" id="text-org2212106">
 <p>
 Today I had a final front-end part Codeacademy task. I was asked
 to use GET, POST and DELETE requests while taking design and layout
@@ -1427,9 +1428,9 @@ Here is a live codeacademy task itself - <a href="./static/images/Baigiamoji_uzd
 </div>
 </div>
 
-<div id="outline-container-orgf92846c" class="outline-2">
-<h2 id="orgf92846c">The Process</h2>
-<div class="outline-text-2" id="text-orgf92846c">
+<div id="outline-container-orgc3e990c" class="outline-2">
+<h2 id="orgc3e990c">The Process</h2>
+<div class="outline-text-2" id="text-orgc3e990c">
 <ul class="org-ul">
 <li>I have started with researching the skelbiu.lt page, figuring out
 how much of the cloning I can do from it.</li>
@@ -1444,9 +1445,9 @@ are displayed in the browser.</li>
 </div>
 </div>
 
-<div id="outline-container-org2d111b7" class="outline-2">
-<h2 id="org2d111b7">Conclusion</h2>
-<div class="outline-text-2" id="text-org2d111b7">
+<div id="outline-container-orge71f742" class="outline-2">
+<h2 id="orge71f742">Conclusion</h2>
+<div class="outline-text-2" id="text-orge71f742">
 <p>
 Here is a link to my <a href="https://arvydas.dev/codeacademy/javascript/skelbiult/index.html">Skelbiu.lt clone</a>(give it a few seconds to load,
 this api service can sometimes be slow :) ).
@@ -1475,14 +1476,14 @@ wish I had more time to play with these :)
   <title><![CDATA[VBA barcode checker]]></title>
   <description><![CDATA[
 
-<figure id="orgb6b1746">
+<figure id="org07b4b02">
 <img src="./static/images/vba-barcode-checker.png" alt="vba-barcode-checker.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org582ea55" class="outline-2">
-<h2 id="org582ea55">A Complaint</h2>
-<div class="outline-text-2" id="text-org582ea55">
+<div id="outline-container-orgdcf408a" class="outline-2">
+<h2 id="orgdcf408a">A Complaint</h2>
+<div class="outline-text-2" id="text-orgdcf408a">
 <p>
 PKC group has received a complaint regarding one process due to which
 nonconformity appeared in some products.
@@ -1495,9 +1496,9 @@ process does not repeat.
 </div>
 </div>
 
-<div id="outline-container-org753177d" class="outline-2">
-<h2 id="org753177d">Estonian Code</h2>
-<div class="outline-text-2" id="text-org753177d">
+<div id="outline-container-orgda949af" class="outline-2">
+<h2 id="orgda949af">Estonian Code</h2>
+<div class="outline-text-2" id="text-orgda949af">
 <p>
 I ended up looking through 12 years old <a href="https://learn.microsoft.com/en-us/dotnet/visual-basic/">VBA</a> code which had no
 documentation, most of the code was in Estonian and it’s the developer
@@ -1512,9 +1513,9 @@ desired outcome. I have added a few barcodes to necessary places.
 </div>
 </div>
 
-<div id="outline-container-org0b63a4e" class="outline-2">
-<h2 id="org0b63a4e">Created a whole app with a language I have never worked before</h2>
-<div class="outline-text-2" id="text-org0b63a4e">
+<div id="outline-container-orga61b675" class="outline-2">
+<h2 id="orga61b675">Created a whole app with a language I have never worked before</h2>
+<div class="outline-text-2" id="text-orga61b675">
 <p>
 I then created a VBA app to scan those barcodes with and instructed
 the shift leaders as well as other employers to use the app.
@@ -1534,9 +1535,9 @@ location on the server so it can be accesssed.
 </div>
 </div>
 
-<div id="outline-container-org640c0cf" class="outline-2">
-<h2 id="org640c0cf">Conclusion</h2>
-<div class="outline-text-2" id="text-org640c0cf">
+<div id="outline-container-org91cc256" class="outline-2">
+<h2 id="org91cc256">Conclusion</h2>
+<div class="outline-text-2" id="text-org91cc256">
 <p>
 During this project I went from not knowing anything about VBA to
 coding a fully functional app wiht it that is now used on a daily
@@ -1556,14 +1557,14 @@ packing departments all around PKC.
   <title><![CDATA[First JavaScript test]]></title>
   <description><![CDATA[
 
-<figure id="org4d9d4c9">
+<figure id="org254418b">
 <img src="./static/images/first-javascript-test.png" alt="first-javascript-test.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org123a751" class="outline-2">
-<h2 id="org123a751">2022-09-19</h2>
-<div class="outline-text-2" id="text-org123a751">
+<div id="outline-container-org91e3431" class="outline-2">
+<h2 id="org91e3431">2022-09-19</h2>
+<div class="outline-text-2" id="text-org91e3431">
 <p>
 Today, our codeacademy group has received our first TASK.
 </p>
@@ -1575,16 +1576,16 @@ JavaScipt.
 </p>
 
 
-<figure id="org4abc045">
+<figure id="org599233d">
 <img src="./static/images/first-javascript-test2.png" alt="first-javascript-test2.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org45f9286" class="outline-2">
-<h2 id="org45f9286">Looking up EVERYTHING</h2>
-<div class="outline-text-2" id="text-org45f9286">
+<div id="outline-container-orgf65c02a" class="outline-2">
+<h2 id="orgf65c02a">Looking up EVERYTHING</h2>
+<div class="outline-text-2" id="text-orgf65c02a">
 <p>
 Honestly, I had to google/look for examples from my own <a href="https://arvydas.dev/codeacademy/javascript/index.html">sources</a> for
 each and every task. I managed to complete 95% of those, BUT it didn’t
@@ -1612,9 +1613,9 @@ seemed quite simple.
 </div>
 </div>
 
-<div id="outline-container-org39378c5" class="outline-2">
-<h2 id="org39378c5">Link to the tasks and my solutions</h2>
-<div class="outline-text-2" id="text-org39378c5">
+<div id="outline-container-org2b352e8" class="outline-2">
+<h2 id="org2b352e8">Link to the tasks and my solutions</h2>
+<div class="outline-text-2" id="text-org2b352e8">
 <p>
 If you would like to see those tasks and my solutions, please head
 <a href="https://arvydas.dev/codeacademy/javascript/index.html#27">here</a> and find “Example numero 27” after pressing Ctrl+F.
@@ -1622,9 +1623,9 @@ If you would like to see those tasks and my solutions, please head
 </div>
 </div>
 
-<div id="outline-container-orgd7545c6" class="outline-2">
-<h2 id="orgd7545c6">Moral of the story</h2>
-<div class="outline-text-2" id="text-orgd7545c6">
+<div id="outline-container-orge89485b" class="outline-2">
+<h2 id="orge89485b">Moral of the story</h2>
+<div class="outline-text-2" id="text-orge89485b">
 <p>
 The language that you are learning… use it not only during the
 classes, but also to build your personal projects in your free time to
@@ -1642,7 +1643,7 @@ ingrain all the syntax and language’s possibilities in your brain.
   <title><![CDATA[CodeAcademy tasks and examples]]></title>
   <description><![CDATA[
 
-<figure id="orge9bbb94">
+<figure id="orge7d9a47">
 <img src="./static/images/codeacademyhtmlcss.png" alt="codeacademyhtmlcss.png" width="1200px">
 
 </figure>
@@ -1668,17 +1669,17 @@ during this course. Most of the tasks, most of the examples, most of
 my own experiments during the course.
 </p>
 
-<div id="outline-container-org5efa347" class="outline-2">
-<h2 id="org5efa347">JavaScript part 2022-11 - now</h2>
-<div class="outline-text-2" id="text-org5efa347">
+<div id="outline-container-org094bdfd" class="outline-2">
+<h2 id="org094bdfd">JavaScript part 2022-11 - now</h2>
+<div class="outline-text-2" id="text-org094bdfd">
 <p>
 Python, SQL, Flask
 </p>
 </div>
 </div>
-<div id="outline-container-orge513d77" class="outline-2">
-<h2 id="orge513d77">JavaScript part 2022-09 - 2022-11</h2>
-<div class="outline-text-2" id="text-orge513d77">
+<div id="outline-container-orgdfdb38a" class="outline-2">
+<h2 id="orgdfdb38a">JavaScript part 2022-09 - 2022-11</h2>
+<div class="outline-text-2" id="text-orgdfdb38a">
 <p>
 All of the stuff from that part(with code) can be accessed and
 inspected Here. Github repo, if needed, is Here.
@@ -1689,9 +1690,9 @@ Hope I managed to present my work in a easy to read manner.
 </p>
 </div>
 </div>
-<div id="outline-container-org9ef8d94" class="outline-2">
-<h2 id="org9ef8d94">HTML/CSS part 2022-07 - 2022-09</h2>
-<div class="outline-text-2" id="text-org9ef8d94">
+<div id="outline-container-org7dcfa42" class="outline-2">
+<h2 id="org7dcfa42">HTML/CSS part 2022-07 - 2022-09</h2>
+<div class="outline-text-2" id="text-org7dcfa42">
 <p>
 All of the stuff from that part can be accessed and inspected <a href="https://arvydas.dev/codeacademy/">Here</a>.
 Github repo, if needed, is <a href="https://github.com/arvydasg/codeacademy">Here</a>.
@@ -1708,14 +1709,14 @@ Github repo, if needed, is <a href="https://github.com/arvydasg/codeacademy">Her
   <title><![CDATA[Inventorization Power App]]></title>
   <description><![CDATA[
 
-<figure id="org2cc508e">
+<figure id="orgd0b3295">
 <img src="./static/images/powerapp.png" alt="powerapp.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org56bc2f4" class="outline-2">
-<h2 id="org56bc2f4">Intro</h2>
-<div class="outline-text-2" id="text-org56bc2f4">
+<div id="outline-container-orgd5351f9" class="outline-2">
+<h2 id="orgd5351f9">Intro</h2>
+<div class="outline-text-2" id="text-orgd5351f9">
 <p>
 I noticed that there is no system whatsoever of where/when/how
 many things arrive to our IT office or how many we hand out to users
@@ -1724,9 +1725,9 @@ or production or how many are being sent to other sites. So I created one.
 </div>
 </div>
 
-<div id="outline-container-org414a733" class="outline-2">
-<h2 id="org414a733">The problem</h2>
-<div class="outline-text-2" id="text-org414a733">
+<div id="outline-container-org5f370c1" class="outline-2">
+<h2 id="org5f370c1">The problem</h2>
+<div class="outline-text-2" id="text-org5f370c1">
 <p>
 Once in a while someone from Finances asks me: Who this computer
 belongs to? What inv.nr sticker does it have? Who has this phone, what
@@ -1746,13 +1747,13 @@ over 5 or so years.
 </div>
 </div>
 
-<div id="outline-container-org984bf66" class="outline-2">
-<h2 id="org984bf66">The solution</h2>
-<div class="outline-text-2" id="text-org984bf66">
+<div id="outline-container-orgf1154ea" class="outline-2">
+<h2 id="orgf1154ea">The solution</h2>
+<div class="outline-text-2" id="text-orgf1154ea">
 </div>
-<div id="outline-container-org23afb99" class="outline-3">
-<h3 id="org23afb99">First attempt</h3>
-<div class="outline-text-3" id="text-org23afb99">
+<div id="outline-container-org8e4c383" class="outline-3">
+<h3 id="org8e4c383">First attempt</h3>
+<div class="outline-text-3" id="text-org8e4c383">
 <p>
 I have been looking for a solution for almost a week. My first attempt
 was this - <a href="https://www.youtube.com/watch?v=0PtnVvrVTCY&amp;ab_channel=TheMobileSalesEngineer">Check in / out Google Sheets</a>, it worked quite well, I was
@@ -1763,9 +1764,9 @@ clumpsy to use.
 </div>
 </div>
 
-<div id="outline-container-orgd0f97b3" class="outline-3">
-<h3 id="orgd0f97b3">Second attempt</h3>
-<div class="outline-text-3" id="text-orgd0f97b3">
+<div id="outline-container-orgfa5705b" class="outline-3">
+<h3 id="orgfa5705b">Second attempt</h3>
+<div class="outline-text-3" id="text-orgfa5705b">
 <p>
 Okay, now I thought I found what I need. This excelent example that
 uses forms - <a href="https://www.youtube.com/watch?v=cdqEB78cHpw&amp;ab_channel=RandyBennett">Google QR Inventory</a> I was sure will solve my problem, I
@@ -1777,13 +1778,13 @@ this could work.. I need another solution.
 </div>
 </div>
 
-<div id="outline-container-orgf79c54d" class="outline-3">
-<h3 id="orgf79c54d">Third and Final attempt</h3>
-<div class="outline-text-3" id="text-orgf79c54d">
+<div id="outline-container-orgb36fda7" class="outline-3">
+<h3 id="orgb36fda7">Third and Final attempt</h3>
+<div class="outline-text-3" id="text-orgb36fda7">
 </div>
-<div id="outline-container-org9aa5c47" class="outline-4">
-<h4 id="org9aa5c47">License</h4>
-<div class="outline-text-4" id="text-org9aa5c47">
+<div id="outline-container-org74792ef" class="outline-4">
+<h4 id="org74792ef">License</h4>
+<div class="outline-text-4" id="text-org74792ef">
 <p>
 I am glad I did not give up after all this work. I was obsessed with a
 solution, no matter where I went I was googling about this
@@ -1796,9 +1797,9 @@ playing with Power apps.
 </div>
 </div>
 
-<div id="outline-container-org1cc3566" class="outline-4">
-<h4 id="org1cc3566">Extremely Intuitive</h4>
-<div class="outline-text-4" id="text-org1cc3566">
+<div id="outline-container-org77c453d" class="outline-4">
+<h4 id="org77c453d">Extremely Intuitive</h4>
+<div class="outline-text-4" id="text-org77c453d">
 <p>
 I was shocked that one can create web and phone apps with Wordpress
 like interface. Many videos on YouTube of how it can be done… I have
@@ -1823,9 +1824,9 @@ manager needs to review anything - they will be able to comfortably.</li>
 </div>
 </div>
 
-<div id="outline-container-orgca8143e" class="outline-2">
-<h2 id="orgca8143e">Conclusion</h2>
-<div class="outline-text-2" id="text-orgca8143e">
+<div id="outline-container-orgcc60fc0" class="outline-2">
+<h2 id="orgcc60fc0">Conclusion</h2>
+<div class="outline-text-2" id="text-orgcc60fc0">
 <p>
 At first I wasn’t so happy doing “IT warehouse worker” job… after all
 I am here to get IT experience, now warehouse experience… BUT I found
@@ -1847,14 +1848,14 @@ app that I have made. :)
   <title><![CDATA[Python data cleaner with Python]]></title>
   <description><![CDATA[
 
-<figure id="org26bb9a2">
+<figure id="org717bf69">
 <img src="./static/images/phats.png" alt="phats.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org982c68e" class="outline-2">
-<h2 id="org982c68e">Intro</h2>
-<div class="outline-text-2" id="text-org982c68e">
+<div id="outline-container-org71ed2a0" class="outline-2">
+<h2 id="org71ed2a0">Intro</h2>
+<div class="outline-text-2" id="text-org71ed2a0">
 <p>
 Clean up exported excel document up and properly format it so it can
 then be exported to a .txt file that can later be used with PHATS
@@ -1863,9 +1864,9 @@ software.
 </div>
 </div>
 
-<div id="outline-container-orgedc76df" class="outline-2">
-<h2 id="orgedc76df">What is it for</h2>
-<div class="outline-text-2" id="text-orgedc76df">
+<div id="outline-container-org3c35285" class="outline-2">
+<h2 id="org3c35285">What is it for</h2>
+<div class="outline-text-2" id="text-org3c35285">
 <ul class="org-ul">
 <li>A program called Wise exports an excel document with lots of part numbers.</li>
 <li>My script takes this excel document, removes unnecessary part
@@ -1881,9 +1882,9 @@ operators to use this script(double click it and go).
 </div>
 </div>
 
-<div id="outline-container-orga76470a" class="outline-2">
-<h2 id="orga76470a">Libraries used</h2>
-<div class="outline-text-2" id="text-orga76470a">
+<div id="outline-container-orgc40b816" class="outline-2">
+<h2 id="orgc40b816">Libraries used</h2>
+<div class="outline-text-2" id="text-orgc40b816">
 <ul class="org-ul">
 <li>openpyxl</li>
 <li>pandas</li>
@@ -1908,14 +1909,14 @@ operators to use this script(double click it and go).
   <title><![CDATA[My IT journey]]></title>
   <description><![CDATA[
 
-<figure id="orgb0e2349">
+<figure id="org687c842">
 <img src="./static/images/bali.png" alt="bali.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org350ab4d" class="outline-2">
-<h2 id="org350ab4d">June 23rd 2022 - Promotion</h2>
-<div class="outline-text-2" id="text-org350ab4d">
+<div id="outline-container-orga7e9cc2" class="outline-2">
+<h2 id="orga7e9cc2">June 23rd 2022 - Promotion</h2>
+<div class="outline-text-2" id="text-orga7e9cc2">
 <p>
 Offered to be promoted to IT Engineer, manager agreed. Exactly a month
 later was told that that’s not going to happen.
@@ -1923,9 +1924,9 @@ later was told that that’s not going to happen.
 </div>
 </div>
 
-<div id="outline-container-org6b2d2c8" class="outline-2">
-<h2 id="org6b2d2c8">June 19th 2022 - Want to code</h2>
-<div class="outline-text-2" id="text-org6b2d2c8">
+<div id="outline-container-org8f9d992" class="outline-2">
+<h2 id="org8f9d992">June 19th 2022 - Want to code</h2>
+<div class="outline-text-2" id="text-org8f9d992">
 <p>
 Tired of running though the factory fixing printers - want to program
 again.
@@ -1933,9 +1934,9 @@ again.
 </div>
 </div>
 
-<div id="outline-container-orgdd28ee3" class="outline-2">
-<h2 id="orgdd28ee3">April 11th 2022 - First IT job</h2>
-<div class="outline-text-2" id="text-orgdd28ee3">
+<div id="outline-container-orge751a27" class="outline-2">
+<h2 id="orge751a27">April 11th 2022 - First IT job</h2>
+<div class="outline-text-2" id="text-orge751a27">
 <p>
 Starting my first IT job ever as an IT Technician in my home town
 Panevezys.
@@ -1943,9 +1944,9 @@ Panevezys.
 </div>
 </div>
 
-<div id="outline-container-orgd86751e" class="outline-2">
-<h2 id="orgd86751e">Sep 2021 - Self employed web dev</h2>
-<div class="outline-text-2" id="text-orgd86751e">
+<div id="outline-container-org95146ea" class="outline-2">
+<h2 id="org95146ea">Sep 2021 - Self employed web dev</h2>
+<div class="outline-text-2" id="text-org95146ea">
 <p>
 Making wordpress sites for clients. Initially with Elementor, then
 oxygen builder, but at the end realizing that all those builders are
@@ -1961,9 +1962,9 @@ tool, my note taking app, my second brain, my website… and so on.
 </div>
 </div>
 
-<div id="outline-container-orgd1bcd7f" class="outline-2">
-<h2 id="orgd1bcd7f">January 2021 - Going all in</h2>
-<div class="outline-text-2" id="text-orgd1bcd7f">
+<div id="outline-container-orge1a4659" class="outline-2">
+<h2 id="orge1a4659">January 2021 - Going all in</h2>
+<div class="outline-text-2" id="text-orge1a4659">
 <p>
 Starting to learn programming with Machine learning course on
 Coursera. Trying to find the best code editor.. trying out VIM and
@@ -1984,9 +1985,9 @@ Ubuntu.
 </div>
 </div>
 
-<div id="outline-container-org9331dd7" class="outline-2">
-<h2 id="org9331dd7">April 2020 - The idea to program</h2>
-<div class="outline-text-2" id="text-org9331dd7">
+<div id="outline-container-orgcaac2be" class="outline-2">
+<h2 id="orgcaac2be">April 2020 - The idea to program</h2>
+<div class="outline-text-2" id="text-orgcaac2be">
 <p>
 Quarantine in Bali. Lying in bed. Realizing that I would like to have
 a job I can do remotely. I was a computer guy my whole life, playing
@@ -2006,14 +2007,14 @@ fix something - always doing it myself.
   <title><![CDATA[Magicmirror]]></title>
   <description><![CDATA[
 
-<figure id="org8673c7b">
+<figure id="org1dc38cb">
 <img src="./static/images/magicmirror.png" alt="magicmirror.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org6942409" class="outline-2">
-<h2 id="org6942409">The idea</h2>
-<div class="outline-text-2" id="text-org6942409">
+<div id="outline-container-org37b43e8" class="outline-2">
+<h2 id="org37b43e8">The idea</h2>
+<div class="outline-text-2" id="text-org37b43e8">
 <p>
 Found an unused raspberry pi at work. Was wondering what it would be
 like to use it for something useful… One of the projects I liked was
@@ -2052,11 +2053,11 @@ on it.
 </div>
 </div>
 
-<div id="outline-container-org4ed3f86" class="outline-2">
-<h2 id="org4ed3f86">Current setup</h2>
-<div class="outline-text-2" id="text-org4ed3f86">
+<div id="outline-container-orga11b656" class="outline-2">
+<h2 id="orga11b656">Current setup</h2>
+<div class="outline-text-2" id="text-orga11b656">
 
-<figure id="org8cc03f2">
+<figure id="org28614c8">
 <img src="./static/images/magicmirror-calendar.png" alt="magicmirror-calendar.png" width="1200px">
 
 </figure>
@@ -2069,9 +2070,9 @@ my family members so we are all up to date with the upcoming events.
 </div>
 </div>
 
-<div id="outline-container-org8f510b0" class="outline-2">
-<h2 id="org8f510b0">Future Ideas</h2>
-<div class="outline-text-2" id="text-org8f510b0">
+<div id="outline-container-org8f5bc58" class="outline-2">
+<h2 id="org8f5bc58">Future Ideas</h2>
+<div class="outline-text-2" id="text-org8f5bc58">
 <p>
 One day I want to learn how to work with API’s so I can pull my weight
 data from “Google Fit” and display in MagicMirror.
@@ -2097,14 +2098,14 @@ I have many ideas like such :)
   <title><![CDATA[First month as IT Technician]]></title>
   <description><![CDATA[
 
-<figure id="org4fbcd30">
+<figure id="org430336f">
 <img src="./static/images/pkc-technician.png" alt="pkc-technician.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orge3170ad" class="outline-2">
-<h2 id="orge3170ad">Intro</h2>
-<div class="outline-text-2" id="text-orge3170ad">
+<div id="outline-container-orgd2931f8" class="outline-2">
+<h2 id="orgd2931f8">Intro</h2>
+<div class="outline-text-2" id="text-orgd2931f8">
 <p>
 So this is supposed to be a post about my first time as IT technician,
 but almost 2 months have passed and I still haven’t found the time to
@@ -2185,14 +2186,14 @@ Happy I wrote this. Going to watch some news with my bb :)
   <title><![CDATA[Django Tags]]></title>
   <description><![CDATA[
 
-<figure id="orgf076673">
+<figure id="orgc2e3a38">
 <img src="./static/images/django_tags.png" alt="django_tags.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgaddcb6e" class="outline-2">
-<h2 id="orgaddcb6e">Intro</h2>
-<div class="outline-text-2" id="text-orgaddcb6e">
+<div id="outline-container-org392cfbd" class="outline-2">
+<h2 id="org392cfbd">Intro</h2>
+<div class="outline-text-2" id="text-org392cfbd">
 <p>
 Alright, I will just write all the thoughts in my head for now. I am
 too excited that I managed tags to work on this site!
@@ -2214,9 +2215,9 @@ to create this functionality by django itself.
 </div>
 </div>
 
-<div id="outline-container-org3195ae4" class="outline-2">
-<h2 id="org3195ae4">Body</h2>
-<div class="outline-text-2" id="text-org3195ae4">
+<div id="outline-container-orgf5aa693" class="outline-2">
+<h2 id="orgf5aa693">Body</h2>
+<div class="outline-text-2" id="text-orgf5aa693">
 <p>
 I am not even sure what part of code I should share here.. I want to
 share all the steps that took me to reach the result, but that would
@@ -2272,9 +2273,9 @@ inside that tags page. AMAZING!!
 </div>
 </div>
 
-<div id="outline-container-org2430439" class="outline-2">
-<h2 id="org2430439">Final config</h2>
-<div class="outline-text-2" id="text-org2430439">
+<div id="outline-container-org9565e7f" class="outline-2">
+<h2 id="org9565e7f">Final config</h2>
+<div class="outline-text-2" id="text-org9565e7f">
 <p>
 I then had to step back and think how to make a link to that specific
 blog post. This worked.
@@ -2309,22 +2310,22 @@ AMAZING!! I am done and I can not believe I did it. Link to Github project.
   <title><![CDATA[Attempts to Blog]]></title>
   <description><![CDATA[
 
-<figure id="org8d8f40e">
+<figure id="org0a5088c">
 <img src="./static/images/emacsblog.png" alt="emacsblog.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgd6c89d0" class="outline-2">
-<h2 id="orgd6c89d0">Intro</h2>
+<div id="outline-container-org66f63e3" class="outline-2">
+<h2 id="org66f63e3">Intro</h2>
 </div>
 
-<div id="outline-container-org41de938" class="outline-2">
-<h2 id="org41de938">Body</h2>
-<div class="outline-text-2" id="text-org41de938">
+<div id="outline-container-org556650a" class="outline-2">
+<h2 id="org556650a">Body</h2>
+<div class="outline-text-2" id="text-org556650a">
 </div>
-<div id="outline-container-orgd7eca1d" class="outline-3">
-<h3 id="orgd7eca1d">First attempts</h3>
-<div class="outline-text-3" id="text-orgd7eca1d">
+<div id="outline-container-orgf3e850a" class="outline-3">
+<h3 id="orgf3e850a">First attempts</h3>
+<div class="outline-text-3" id="text-orgf3e850a">
 <p>
 I was trying to do the same with my journey to programming. It started
 a bit more than a year ago and since them I was trying to create
@@ -2340,9 +2341,9 @@ personal blog/website.
 </div>
 </div>
 
-<div id="outline-container-org8801011" class="outline-2">
-<h2 id="org8801011">Current setup</h2>
-<div class="outline-text-2" id="text-org8801011">
+<div id="outline-container-org495fa57" class="outline-2">
+<h2 id="org495fa57">Current setup</h2>
+<div class="outline-text-2" id="text-org495fa57">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2022-04-17 Sun] </span></span> I discovered a way to make a website with emacs.
 <a href="https://systemcrafters.net/publishing-websites-with-org-mode/">Systemcrafters channel</a> has a lot of great material covering just that.
@@ -2363,9 +2364,9 @@ Github and the changes will be visible immediately in my website,</li>
 </div>
 </div>
 
-<div id="outline-container-orgff3ed45" class="outline-2">
-<h2 id="orgff3ed45">Summary</h2>
-<div class="outline-text-2" id="text-orgff3ed45">
+<div id="outline-container-orgff1e69d" class="outline-2">
+<h2 id="orgff1e69d">Summary</h2>
+<div class="outline-text-2" id="text-orgff1e69d">
 <p>
 For me, this is the fastest way to blog. I will be using it in the
 future and hopefully improve my workflow as I go along.
@@ -2388,14 +2389,14 @@ P.S. Update 2022-08-29. I am creating a hugo blog - AGAIN. Read why -
   <title><![CDATA[Dired diff-hl]]></title>
   <description><![CDATA[
 
-<figure id="orgebfde78">
+<figure id="orgbeda4a4">
 <img src="./static/images/dired-diff-hl.png" alt="dired-diff-hl.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org6bf1822" class="outline-2">
-<h2 id="org6bf1822">Introduction</h2>
-<div class="outline-text-2" id="text-org6bf1822">
+<div id="outline-container-orgb2b2a57" class="outline-2">
+<h2 id="orgb2b2a57">Introduction</h2>
+<div class="outline-text-2" id="text-orgb2b2a57">
 <p>
 So, everything started when I have discovered ‘diff-hl’ package. It
 had an option to show differences in dired buffer. I thought okay,
@@ -2404,9 +2405,9 @@ cool option, lets not use neotree anymore and use dired instead.
 </div>
 </div>
 
-<div id="outline-container-orgd51964f" class="outline-2">
-<h2 id="orgd51964f">Body</h2>
-<div class="outline-text-2" id="text-orgd51964f">
+<div id="outline-container-orgf674ceb" class="outline-2">
+<h2 id="orgf674ceb">Body</h2>
+<div class="outline-text-2" id="text-orgf674ceb">
 <p>
 I added a few lines to ‘diff-hl’ config to make the file changes
 visible in dired buffer.
@@ -2476,9 +2477,9 @@ more convenient to cycle with and I am all set!
 </div>
 </div>
 
-<div id="outline-container-orgb666ea9" class="outline-2">
-<h2 id="orgb666ea9">The final config</h2>
-<div class="outline-text-2" id="text-orgb666ea9">
+<div id="outline-container-org5a24a85" class="outline-2">
+<h2 id="org5a24a85">The final config</h2>
+<div class="outline-text-2" id="text-org5a24a85">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"> <span style="color: #fe8019;">(</span><span style="color: #fb4934;">use-package</span> <span style="color: #d3869b;">dired</span>
     <span style="color: #fe8019;">:ensure</span> nil                         <span style="color: #928374;">;</span><span style="color: #928374;">no need for t, because dired is built in</span>
@@ -2530,14 +2531,14 @@ found ‘dired-find-alternate-file’ :)
   <title><![CDATA[PKC company Wiki]]></title>
   <description><![CDATA[
 
-<figure id="org45e7d04">
+<figure id="orgb008b56">
 <img src="./static/images/pkcwiki.png" alt="pkcwiki.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org81b1754" class="outline-2">
-<h2 id="org81b1754">What is it for</h2>
-<div class="outline-text-2" id="text-org81b1754">
+<div id="outline-container-org178d62e" class="outline-2">
+<h2 id="org178d62e">What is it for</h2>
+<div class="outline-text-2" id="text-org178d62e">
 <p>
 When I came to PKC - there was very little documentation about IT
 processes. It had to be documented.
@@ -2570,14 +2571,14 @@ This project was mainly focused to my future colleagues.
   <title><![CDATA[Automated backups with Python and Selenium]]></title>
   <description><![CDATA[
 
-<figure id="org88bc5d6">
+<figure id="org93162f1">
 <img src="./static/images/ivbackups.png" alt="ivbackups.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org2e6d00a" class="outline-2">
-<h2 id="org2e6d00a">About the project</h2>
-<div class="outline-text-2" id="text-org2e6d00a">
+<div id="outline-container-org72dabb6" class="outline-2">
+<h2 id="org72dabb6">About the project</h2>
+<div class="outline-text-2" id="text-org72dabb6">
 <p>
 Since I don’t trust/understand automated backups of websites (in iv.lt
 for example) and I would rather backup things myself, know where they
@@ -2612,9 +2613,9 @@ backups more often. Same 10 click procedure every time…
 </div>
 </div>
 
-<div id="outline-container-org0aceaff" class="outline-2">
-<h2 id="org0aceaff">My idea</h2>
-<div class="outline-text-2" id="text-org0aceaff">
+<div id="outline-container-org89eb34a" class="outline-2">
+<h2 id="org89eb34a">My idea</h2>
+<div class="outline-text-2" id="text-org89eb34a">
 <p>
 Since I have decided I want to slowly move away from Wordpress sites
 (the work itself is meh, drag and drop interfaces, have to learn php
@@ -2628,9 +2629,9 @@ website building.
 </div>
 </div>
 
-<div id="outline-container-org243d090" class="outline-2">
-<h2 id="org243d090">Solution</h2>
-<div class="outline-text-2" id="text-org243d090">
+<div id="outline-container-org8822398" class="outline-2">
+<h2 id="org8822398">Solution</h2>
+<div class="outline-text-2" id="text-org8822398">
 <p>
 For a while now I have been thinking how cool it would be to automate
 some tasks. A year ago that is why I started to learn coding, so I can
@@ -2679,9 +2680,9 @@ Any deprecation errors were fixed by this -
 </div>
 </div>
 
-<div id="outline-container-orgc711529" class="outline-2">
-<h2 id="orgc711529">What I learned</h2>
-<div class="outline-text-2" id="text-orgc711529">
+<div id="outline-container-org117a120" class="outline-2">
+<h2 id="org117a120">What I learned</h2>
+<div class="outline-text-2" id="text-org117a120">
 <ul class="org-ul">
 <li>What is a webdriver</li>
 <li>How to open a webpage with Selenium</li>
@@ -2697,9 +2698,9 @@ Any deprecation errors were fixed by this -
 </div>
 </div>
 
-<div id="outline-container-orged913f4" class="outline-2">
-<h2 id="orged913f4">Known bugs</h2>
-<div class="outline-text-2" id="text-orged913f4">
+<div id="outline-container-org7fe13cd" class="outline-2">
+<h2 id="org7fe13cd">Known bugs</h2>
+<div class="outline-text-2" id="text-org7fe13cd">
 <p>
 Doesn’t close browser windows after each script runs (not a biggie,
 everything still works, might fix later)
@@ -2719,14 +2720,14 @@ everything still works, might fix later)
   <title><![CDATA[CRUD Django app for DPD]]></title>
   <description><![CDATA[
 
-<figure id="orge2ede72">
+<figure id="org1d18f19">
 <img src="./static/images/dpd.png" alt="dpd.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org4bf065d" class="outline-2">
-<h2 id="org4bf065d">Intro</h2>
-<div class="outline-text-2" id="text-org4bf065d">
+<div id="outline-container-org7ca54d5" class="outline-2">
+<h2 id="org7ca54d5">Intro</h2>
+<div class="outline-text-2" id="text-org7ca54d5">
 <p>
 This Django app was created for me and my colleagues at <a href="https://www.dpd.com/lt/lt">DPD</a>. Instead
 of writing delivered packages/stops/pickups on a piece of paper - do
@@ -2736,9 +2737,9 @@ actual work that you have done.
 </div>
 </div>
 
-<div id="outline-container-org9d25981" class="outline-2">
-<h2 id="org9d25981">What is it for</h2>
-<div class="outline-text-2" id="text-org9d25981">
+<div id="outline-container-org88bcd82" class="outline-2">
+<h2 id="org88bcd82">What is it for</h2>
+<div class="outline-text-2" id="text-org88bcd82">
 <p>
 The couriers are not happy with their salaries, they are not sure if
 they are calculated properly according to many factors that DPD tells
@@ -2752,9 +2753,9 @@ easier and in one place.
 </div>
 </div>
 
-<div id="outline-container-orgf01c009" class="outline-2">
-<h2 id="orgf01c009">How it works</h2>
-<div class="outline-text-2" id="text-orgf01c009">
+<div id="outline-container-org9695c44" class="outline-2">
+<h2 id="org9695c44">How it works</h2>
+<div class="outline-text-2" id="text-org9695c44">
 <p>
 A user logs in, gets a posibility to add a daily record with all the
 needed options for a courier. When he is done, a record is saved. It
@@ -2768,9 +2769,9 @@ This is a django app that is hosted on github and heroku.
 </div>
 </div>
 
-<div id="outline-container-org4ab7196" class="outline-2">
-<h2 id="org4ab7196">Docs</h2>
-<div class="outline-text-2" id="text-org4ab7196">
+<div id="outline-container-org7ade08b" class="outline-2">
+<h2 id="org7ade08b">Docs</h2>
+<div class="outline-text-2" id="text-org7ade08b">
 <p>
 Learned a lot during this tutorial - <a href="https://www.youtube.com/watch?v=llbtoQTt4qw">https://www.youtube.com/watch?v=llbtoQTt4qw</a>
 </p>
@@ -2797,9 +2798,9 @@ Applied this tutorial for my own project.
 </div>
 </div>
 
-<div id="outline-container-orgefa3cff" class="outline-2">
-<h2 id="orgefa3cff">Deploy</h2>
-<div class="outline-text-2" id="text-orgefa3cff">
+<div id="outline-container-orgd6b81ef" class="outline-2">
+<h2 id="orgd6b81ef">Deploy</h2>
+<div class="outline-text-2" id="text-orgd6b81ef">
 <p>
 Excellent explanation of how to deploy django app with Heroku -
 <a href="https://www.youtube.com/watch?v=6DI_7Zja8Zc">https://www.youtube.com/watch?v=6DI_7Zja8Zc</a>
@@ -2811,9 +2812,9 @@ Live website - <a href="https://dpd2022.herokuapp.com">https://dpd2022.herokuapp
 </div>
 </div>
 
-<div id="outline-container-org04893b8" class="outline-2">
-<h2 id="org04893b8">Summary</h2>
-<div class="outline-text-2" id="text-org04893b8">
+<div id="outline-container-org6f336ac" class="outline-2">
+<h2 id="org6f336ac">Summary</h2>
+<div class="outline-text-2" id="text-org6f336ac">
 <p>
 Nice and useful little app. Would still be using it if I was working in DPD still.
 </p>
@@ -2831,14 +2832,14 @@ Nice and useful little app. Would still be using it if I was working in DPD stil
   <title><![CDATA[Facebook automation with Django]]></title>
   <description><![CDATA[
 
-<figure id="org3b99671">
+<figure id="org469e61b">
 <img src="./static/images/facebook-django.gif" alt="facebook-django.gif" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgd7b789e" class="outline-2">
-<h2 id="orgd7b789e">Intro</h2>
-<div class="outline-text-2" id="text-orgd7b789e">
+<div id="outline-container-orgdd7b07b" class="outline-2">
+<h2 id="orgdd7b07b">Intro</h2>
+<div class="outline-text-2" id="text-orgdd7b07b">
 <p>
 A Django web app that posts your desired content to the chosen
 Facebook groups for you!
@@ -2846,9 +2847,9 @@ Facebook groups for you!
 </div>
 </div>
 
-<div id="outline-container-org74a286b" class="outline-2">
-<h2 id="org74a286b">What is it for</h2>
-<div class="outline-text-2" id="text-org74a286b">
+<div id="outline-container-org5854a7f" class="outline-2">
+<h2 id="org5854a7f">What is it for</h2>
+<div class="outline-text-2" id="text-org5854a7f">
 <p>
 A recently started smoothie drink powder business that is testing
 itself out in the field. Instead of purchasing ads on facebook, the
@@ -2867,9 +2868,9 @@ see if I can create something like it myself.
 </div>
 </div>
 
-<div id="outline-container-org183f914" class="outline-2">
-<h2 id="org183f914">How it works</h2>
-<div class="outline-text-2" id="text-org183f914">
+<div id="outline-container-org0aab81d" class="outline-2">
+<h2 id="org0aab81d">How it works</h2>
+<div class="outline-text-2" id="text-org0aab81d">
 <p>
 All the user need is a link to the facebook post and a call to action
 message. He then needs to input these two into the browser window and
@@ -2882,9 +2883,9 @@ windows - see how many successful group posts this app has done.
 </div>
 </div>
 
-<div id="outline-container-org5284488" class="outline-2">
-<h2 id="org5284488">Cons</h2>
-<div class="outline-text-2" id="text-org5284488">
+<div id="outline-container-orge8f76e1" class="outline-2">
+<h2 id="orge8f76e1">Cons</h2>
+<div class="outline-text-2" id="text-orge8f76e1">
 <p>
 There are a few cons of using this script.
 </p>
@@ -2903,9 +2904,9 @@ one sitting) and you are risking to get a temporary ban by facebook.</li>
 </div>
 </div>
 
-<div id="outline-container-org43aae08" class="outline-2">
-<h2 id="org43aae08">What to fix</h2>
-<div class="outline-text-2" id="text-org43aae08">
+<div id="outline-container-orga98eece" class="outline-2">
+<h2 id="orga98eece">What to fix</h2>
+<div class="outline-text-2" id="text-orga98eece">
 <ul class="org-ul">
 <li>if the script breaks - take a screenshot of the whole screen (easier to debug what happened)</li>
 <li>when the script finishes posting to one group - take a screenshot (easier to track the activity)</li>
@@ -2927,14 +2928,14 @@ one sitting) and you are risking to get a temporary ban by facebook.</li>
   <title><![CDATA[SmutiFruti E-shop]]></title>
   <description><![CDATA[
 
-<figure id="org966e768">
+<figure id="org62b7b50">
 <img src="./static/images/smutifruti.png" alt="smutifruti.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgccb439b" class="outline-2">
-<h2 id="orgccb439b">Powdered smoothies E-shop</h2>
-<div class="outline-text-2" id="text-orgccb439b">
+<div id="outline-container-orga13de34" class="outline-2">
+<h2 id="orga13de34">Powdered smoothies E-shop</h2>
+<div class="outline-text-2" id="text-orga13de34">
 <p>
 E-shop for powdered smoothies. A client wanted a quick/cheap and
 easily maintainable solution, therefore Wordpress together with Oxygen
@@ -2970,7 +2971,7 @@ Link to e-shop - <a href="https://smutifruti.lt/">Smutifruti.lt</a>
   <title><![CDATA[Julija Consulting]]></title>
   <description><![CDATA[
 
-<figure id="orgcf2a8a3">
+<figure id="org112c816">
 <img src="./static/images/julijaconsulting.gif" alt="julijaconsulting.gif" width="1200px">
 
 </figure>
@@ -3055,9 +3056,9 @@ test&#x2026; it has been a while on my shelf, but probably wasn't the good
 time to read it yet, didnt get much of it.
 </p>
 
-<div id="outline-container-orga050f25" class="outline-2">
-<h2 id="orga050f25">Thoughts of week without 24/7 internet</h2>
-<div class="outline-text-2" id="text-orga050f25">
+<div id="outline-container-org2bfc816" class="outline-2">
+<h2 id="org2bfc816">Thoughts of week without 24/7 internet</h2>
+<div class="outline-text-2" id="text-org2bfc816">
 <p>
 I loved not being able to take picture of whateve moment I was in, I
 was able to just be in it
@@ -3260,9 +3261,9 @@ remove<sub>action</sub> (then copy the whole line with priorities and stuff you
 want to remove). Wow, this is exactly what I wanted.
 </p>
 
-<div id="outline-container-org90b4104" class="outline-2">
-<h2 id="org90b4104">Second tutorial</h2>
-<div class="outline-text-2" id="text-org90b4104">
+<div id="outline-container-org8b186b0" class="outline-2">
+<h2 id="org8b186b0">Second tutorial</h2>
+<div class="outline-text-2" id="text-org8b186b0">
 <p>
 Name of it - Wordpress produtct catalog - how to create a custom
 wordpress catalogue.
@@ -3331,9 +3332,9 @@ Hey look at me, once again typing in vim on Linux without any plugins.
 Writing all the html tags by hand.
 </p>
 
-<div id="outline-container-orgda2f8f6" class="outline-2">
-<h2 id="orgda2f8f6">Confused</h2>
-<div class="outline-text-2" id="text-orgda2f8f6">
+<div id="outline-container-org085a4d2" class="outline-2">
+<h2 id="org085a4d2">Confused</h2>
+<div class="outline-text-2" id="text-org085a4d2">
 <p>
 So, my current interests are: Kali, js, php, vim, linux shell, python.
 </p>
@@ -3353,9 +3354,9 @@ now..
 </div>
 </div>
 
-<div id="outline-container-org05d8559" class="outline-2">
-<h2 id="org05d8559">Internet</h2>
-<div class="outline-text-2" id="text-org05d8559">
+<div id="outline-container-org5b598b9" class="outline-2">
+<h2 id="org5b598b9">Internet</h2>
+<div class="outline-text-2" id="text-org5b598b9">
 <p>
 Today its evening of Wednesday. Since monday I have been without
 internet on my phone, meaning - no internet at home as well. But I
@@ -3383,9 +3384,9 @@ to use it more mindfully.
 </div>
 </div>
 
-<div id="outline-container-orgfc0e6a4" class="outline-2">
-<h2 id="orgfc0e6a4">Linux</h2>
-<div class="outline-text-2" id="text-orgfc0e6a4">
+<div id="outline-container-org19b72eb" class="outline-2">
+<h2 id="org19b72eb">Linux</h2>
+<div class="outline-text-2" id="text-org19b72eb">
 <p>
 Again I got this feeling of my computer being dirty with all the dual
 boot windows and ubuntu, so I decided to install Linux solo and maybe
@@ -3417,9 +3418,9 @@ Okay, so as the title indicates, I will talk about 3 things.
 JavaScript, Crypto and Busyness(being busy).
 </p>
 
-<div id="outline-container-org62609da" class="outline-2">
-<h2 id="org62609da">Javascript</h2>
-<div class="outline-text-2" id="text-org62609da">
+<div id="outline-container-org528fd41" class="outline-2">
+<h2 id="org528fd41">Javascript</h2>
+<div class="outline-text-2" id="text-org528fd41">
 <p>
 Today is the day I decided to start looking into JavaScript
 programming language. I feel a certain aversion towards it, I imagine
@@ -3467,9 +3468,9 @@ Choo choo&#x2026; on to the next topic.
 </div>
 </div>
 
-<div id="outline-container-orge0a91fc" class="outline-2">
-<h2 id="orge0a91fc">Crypto</h2>
-<div class="outline-text-2" id="text-orge0a91fc">
+<div id="outline-container-org1ea14b3" class="outline-2">
+<h2 id="org1ea14b3">Crypto</h2>
+<div class="outline-text-2" id="text-org1ea14b3">
 <p>
 So, today Julyte decided to buy crypto currencty, I thought about it
 as well, it might be an intersting thing to get involved, overlooking
@@ -3495,9 +3496,9 @@ notebooks and stuff.
 </div>
 </div>
 
-<div id="outline-container-org87623df" class="outline-2">
-<h2 id="org87623df">Busyness</h2>
-<div class="outline-text-2" id="text-org87623df">
+<div id="outline-container-org88392aa" class="outline-2">
+<h2 id="org88392aa">Busyness</h2>
+<div class="outline-text-2" id="text-org88392aa">
 <p>
 Quite a strange title, I know. It is just a direct translation from
 Lithuanian. Uzimtumas means Busyness. There is a goverment institution
@@ -3586,7 +3587,7 @@ execute.
 </p>
 
 
-<figure id="org30b455a">
+<figure id="org5ec5928">
 <img src="./static/images/pythonexecute.png" alt="pythonexecute.png" width="1200px">
 
 </figure>
@@ -3896,7 +3897,7 @@ show only what I want. Make website faster as well.
   <title><![CDATA[Obelsdumas E-shop]]></title>
   <description><![CDATA[
 
-<figure id="orgfff84c9">
+<figure id="org613f9ab">
 <img src="./static/images/obelsdumas.png" alt="obelsdumas.png" width="1200px">
 
 </figure>
@@ -3960,7 +3961,7 @@ most often is the mode. Two modes - bimodal. Grouping is useful also.
 </p>
 
 
-<figure id="org6e2d22b">
+<figure id="org3791590">
 <img src="./static/images/variance.png" alt="variance.png" width="1200px">
 
 </figure>
@@ -4012,7 +4013,7 @@ html skils at the same time.
 </p>
 
 
-<figure id="org243b67e">
+<figure id="orgf63728a">
 <img src="./static/images/skewerdtoleft.png" alt="skewerdtoleft.png" width="1200px">
 
 </figure>
@@ -4037,7 +4038,7 @@ the left.
 </p>
 
 
-<figure id="orgcfedf68">
+<figure id="orga0b8038">
 <img src="./static/images/interquartile.png" alt="interquartile.png" width="1200px">
 
 </figure>
@@ -4053,19 +4054,19 @@ well. Just wannah have those here.
 </p>
 
 
-<figure id="org91e792c">
+<figure id="org8d8abf7">
 <img src="./static/images/variance1.png" alt="variance1.png" width="1200px">
 
 </figure>
 
 
-<figure id="orgabfca30">
+<figure id="org0142dc2">
 <img src="./static/images/variance2.png" alt="variance2.png" width="1200px">
 
 </figure>
 
 
-<figure id="org2249424">
+<figure id="orgeb54cbb">
 <img src="./static/images/variance3.png" alt="variance3.png" width="1200px">
 
 </figure>
@@ -4079,9 +4080,9 @@ well. Just wannah have those here.
   <title><![CDATA[Illusions of Competence]]></title>
   <description><![CDATA[
 
-<div id="outline-container-org9867c80" class="outline-2">
-<h2 id="org9867c80">Chunking</h2>
-<div class="outline-text-2" id="text-org9867c80">
+<div id="outline-container-org0353ae6" class="outline-2">
+<h2 id="org0353ae6">Chunking</h2>
+<div class="outline-text-2" id="text-org0353ae6">
 <p>
 What is a chunk?
 </p>
@@ -4100,7 +4101,7 @@ piece to help you fit it to other pieces.
 </p>
 
 
-<figure id="org8c219cf">
+<figure id="org8287976">
 <img src="./static/images/octupus-of-attention.png" alt="octupus-of-attention.png" width="1200px">
 
 </figure>
@@ -4139,7 +4140,7 @@ using up some of the limited slots in your working memory.
 </p>
 
 
-<figure id="org2a41876">
+<figure id="orgb130e08">
 <img src="./static/images/tentacles.png" alt="tentacles.png" width="1200px">
 
 </figure>
@@ -4206,22 +4207,22 @@ big picture.
 </blockquote>
 
 
-<figure id="orge3bc896">
+<figure id="org35b3cdc">
 <img src="./static/images/fill-in-the-details.png" alt="fill-in-the-details.png" width="1200px">
 
 </figure>
 
 
-<figure id="orgc90db02">
+<figure id="org4e046fb">
 <img src="./static/images/lol-question.png" alt="lol-question.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org0f73cda" class="outline-2">
-<h2 id="org0f73cda">Illusions of Competence</h2>
-<div class="outline-text-2" id="text-org0f73cda">
+<div id="outline-container-org793add3" class="outline-2">
+<h2 id="org793add3">Illusions of Competence</h2>
+<div class="outline-text-2" id="text-org793add3">
 <p>
 One of the most common approaches for trying to learn material from a
 book or from notes is simply to reread it. But psychologist, Jeffrey
@@ -4248,7 +4249,7 @@ connections between the four slots of working memory.
 </p>
 
 
-<figure id="org84393fa">
+<figure id="orgb5801bb">
 <img src="./static/images/mad-connections1.png" alt="mad-connections1.png" width="1200px">
 
 </figure>
@@ -4259,7 +4260,7 @@ easily and smoothly in your mind.
 </p>
 
 
-<figure id="org29001b2">
+<figure id="orgd35910e">
 <img src="./static/images/mad-connections2.png" alt="mad-connections2.png" width="1200px">
 
 </figure>
@@ -4275,7 +4276,7 @@ that's been connected to a great big web page.
 </p>
 
 
-<figure id="org71a9ef0">
+<figure id="org6a69d79">
 <img src="./static/images/mad-connections3.png" alt="mad-connections3.png" width="1200px">
 
 </figure>
@@ -4299,9 +4300,9 @@ that in mind.
 </p>
 </div>
 
-<div id="outline-container-org8e5bf33" class="outline-3">
-<h3 id="org8e5bf33"><b>Labai gold info below</b></h3>
-<div class="outline-text-3" id="text-org8e5bf33">
+<div id="outline-container-org16cb8c5" class="outline-3">
+<h3 id="org16cb8c5"><b>Labai gold info below</b></h3>
+<div class="outline-text-3" id="text-org16cb8c5">
 <p>
 The reason students like to keep rereading their notes or a textbook,
 is that when they have the book or Google open right in front of them,
@@ -4367,7 +4368,7 @@ a few days to get to that level of excitement, but I got there)."
   <title><![CDATA[Fan WoW Excel]]></title>
   <description><![CDATA[
 
-<figure id="org37d4453">
+<figure id="orgdbdc8d1">
 <img src="./static/images/fan.png" alt="fan.png" width="1200px">
 
 </figure>
@@ -4429,13 +4430,13 @@ clean install.
 </p>
 
 
-<figure id="org3328503">
+<figure id="orgb29aca3">
 <img src="./static/images/htop.png" alt="htop.png" width="1200px">
 
 </figure>
 
 
-<figure id="org692dcce">
+<figure id="orgc5c66ba">
 <img src="./static/images/sensors.png" alt="sensors.png" width="1200px">
 
 </figure>
@@ -4491,7 +4492,7 @@ Sorry about that, I'll do somethig about it.
 </p>
 
 
-<figure id="org7a95e9d">
+<figure id="org81b20f8">
 <img src="./static/images/it-all-makes-sense.png" alt="it-all-makes-sense.png" width="1200px">
 
 </figure>
@@ -4677,7 +4678,7 @@ Can be..
 </p>
 
 
-<figure id="orgaa1211d">
+<figure id="orgccff1fd">
 <img src="./static/images/lady-luck.png" alt="lady-luck.png" width="1200px">
 
 </figure>
@@ -4708,9 +4709,9 @@ To know HOW is not enough. Knowing WHEN to use a technique, algorithm
 or a word is as much if not even more important.
 </p>
 
-<div id="outline-container-orgccfd2c7" class="outline-2">
-<h2 id="orgccfd2c7">Programming is a team sport</h2>
-<div class="outline-text-2" id="text-orgccfd2c7">
+<div id="outline-container-orga7eb8be" class="outline-2">
+<h2 id="orga7eb8be">Programming is a team sport</h2>
+<div class="outline-text-2" id="text-orga7eb8be">
 <blockquote>
 <p>
 Must find your team as quickly as possible and make sure that the
@@ -4729,9 +4730,9 @@ all know what guilty pleasure I will be having during my breaks.
 </div>
 </div>
 
-<div id="outline-container-orgea2a10a" class="outline-2">
-<h2 id="orgea2a10a">Study groups</h2>
-<div class="outline-text-2" id="text-orgea2a10a">
+<div id="outline-container-org94c2867" class="outline-2">
+<h2 id="org94c2867">Study groups</h2>
+<div class="outline-text-2" id="text-org94c2867">
 <p>
 Challenge each other. TEACHING is one of the best ways to learn!!!
 Imagine trying to explain a subject to someone just to find out you
@@ -4750,9 +4751,9 @@ subject and this is exactly what you need to be working on.
 </div>
 </div>
 
-<div id="outline-container-org512c1a8" class="outline-2">
-<h2 id="org512c1a8">Wrong as quikcly as possible</h2>
-<div class="outline-text-2" id="text-org512c1a8">
+<div id="outline-container-org1043ce7" class="outline-2">
+<h2 id="org1043ce7">Wrong as quikcly as possible</h2>
+<div class="outline-text-2" id="text-org1043ce7">
 <p>
 Try to dive in the position where you can be wrong as quickly as
 possible.
@@ -4776,9 +4777,9 @@ Stuff piles up and it ONLY GETS EASIER.
 </div>
 </div>
 
-<div id="outline-container-orgfdb555e" class="outline-2">
-<h2 id="orgfdb555e">Concrete exciting projects</h2>
-<div class="outline-text-2" id="text-orgfdb555e">
+<div id="outline-container-orgf919b4f" class="outline-2">
+<h2 id="orgf919b4f">Concrete exciting projects</h2>
+<div class="outline-text-2" id="text-orgf919b4f">
 <p>
 Always have a mission. 3 months for example. No concrete goals - ah I
 will just learn it.." there is no specific motivation. It tapers off
@@ -4799,11 +4800,11 @@ and so on, is able to speak the chosen language.
   <title><![CDATA[Sleep and Exercise]]></title>
   <description><![CDATA[
 
-<div id="outline-container-org92e99b3" class="outline-2">
-<h2 id="org92e99b3">Sleep</h2>
-<div class="outline-text-2" id="text-org92e99b3">
+<div id="outline-container-org63ab7cd" class="outline-2">
+<h2 id="org63ab7cd">Sleep</h2>
+<div class="outline-text-2" id="text-org63ab7cd">
 
-<figure id="org56f4019">
+<figure id="orgb40023e">
 <img src="./static/images/brain-cleanse.png" alt="brain-cleanse.png" width="1200px">
 
 </figure>
@@ -4841,11 +4842,11 @@ to think with POISON on the brain. NOOOOOO.
 </div>
 </div>
 
-<div id="outline-container-orgc47cac9" class="outline-2">
-<h2 id="orgc47cac9">Exercise</h2>
-<div class="outline-text-2" id="text-orgc47cac9">
+<div id="outline-container-org183017f" class="outline-2">
+<h2 id="org183017f">Exercise</h2>
+<div class="outline-text-2" id="text-org183017f">
 
-<figure id="orgb92e79a">
+<figure id="orga1b4b50">
 <img src="./static/images/exercise.png" alt="exercise.png" width="1200px">
 
 </figure>
@@ -4878,7 +4879,7 @@ well).
 </p>
 
 
-<figure id="org2897bf0">
+<figure id="orgdb5cded">
 <img src="./static/images/learn-isolating.png" alt="learn-isolating.png" width="1200px">
 
 </figure>
@@ -4898,9 +4899,9 @@ for introverts.
 </p>
 </div>
 
-<div id="outline-container-org40a4a29" class="outline-3">
-<h3 id="org40a4a29">Interview with Dr. Terrence Sejnowski dude</h3>
-<div class="outline-text-3" id="text-org40a4a29">
+<div id="outline-container-orgcda41de" class="outline-3">
+<h3 id="orgcda41de">Interview with Dr. Terrence Sejnowski dude</h3>
+<div class="outline-text-3" id="text-orgcda41de">
 <p>
 2 things at once - not productive. Switching from one to the other is
 possible apparently. But not as productive.
@@ -4938,11 +4939,11 @@ come later. Make it a dance.
   <description><![CDATA[
 
 
-<div id="outline-container-org011524a" class="outline-2">
-<h2 id="org011524a">A Procrastination Preview</h2>
-<div class="outline-text-2" id="text-org011524a">
+<div id="outline-container-orgccc672e" class="outline-2">
+<h2 id="orgccc672e">A Procrastination Preview</h2>
+<div class="outline-text-2" id="text-orgccc672e">
 
-<figure id="org8819f07">
+<figure id="orgd88e83f">
 <img src="./static/images/lebowski.png" alt="lebowski.png" width="1200px">
 
 </figure>
@@ -4976,7 +4977,7 @@ relaxation.
 </p>
 
 
-<figure id="org1e93e5b">
+<figure id="org8f1b282">
 <img src="./static/images/learn-pomodoro.png" alt="learn-pomodoro.png" width="1200px">
 
 </figure>
@@ -4988,9 +4989,9 @@ Arvydas default option, all the time - 3. Building mental stamina&#x2026;
 </div>
 </div>
 
-<div id="outline-container-org855e022" class="outline-2">
-<h2 id="org855e022">Practice Makes Permanent</h2>
-<div class="outline-text-2" id="text-org855e022">
+<div id="outline-container-orgecd575b" class="outline-2">
+<h2 id="orgecd575b">Practice Makes Permanent</h2>
+<div class="outline-text-2" id="text-orgecd575b">
 <p>
 Girl hated math her whole young life through school - now she is an
 engineering professor. Started studying math at 26 when he got out of
@@ -5016,7 +5017,7 @@ build (neurons) are real.
 </p>
 
 
-<figure id="org00c750c">
+<figure id="orgd958005">
 <img src="./static/images/neural-structure.png" alt="neural-structure.png" width="1200px">
 
 </figure>
@@ -5054,11 +5055,11 @@ ended. Very important.
 </div>
 </div>
 
-<div id="outline-container-org3b4db24" class="outline-2">
-<h2 id="org3b4db24">Introduction to Memory</h2>
-<div class="outline-text-2" id="text-org3b4db24">
+<div id="outline-container-orged0f0dc" class="outline-2">
+<h2 id="orged0f0dc">Introduction to Memory</h2>
+<div class="outline-text-2" id="text-orged0f0dc">
 
-<figure id="org4634c88">
+<figure id="orgdd67be7">
 <img src="./static/images/neural-paths.png" alt="neural-paths.png" width="1200px">
 
 </figure>
@@ -5112,11 +5113,11 @@ processes &#x2013; don't suck the memories away.
 </div>
 </div>
 
-<div id="outline-container-org5bc959b" class="outline-2">
-<h2 id="org5bc959b">Time for the mortar to dry</h2>
-<div class="outline-text-2" id="text-org5bc959b">
+<div id="outline-container-org28bad61" class="outline-2">
+<h2 id="org28bad61">Time for the mortar to dry</h2>
+<div class="outline-text-2" id="text-org28bad61">
 
-<figure id="orgfbd370e">
+<figure id="org7d1eef7">
 <img src="./static/images/mortar.png" alt="mortar.png" width="1200px">
 
 </figure>
@@ -5126,7 +5127,7 @@ Option 2 used to be the default all these years.
 </p>
 
 
-<figure id="org6e92d91">
+<figure id="org7c98fd8">
 <img src="./static/images/learn-switch.png" alt="learn-switch.png" width="1200px">
 
 </figure>
@@ -5142,9 +5143,9 @@ Option 2 used to be the default all these years.
   <title><![CDATA[Black Box Machine Learning]]></title>
   <description><![CDATA[
 
-<div id="outline-container-org1b8d9ae" class="outline-2">
-<h2 id="org1b8d9ae">Classification algorithms</h2>
-<div class="outline-text-2" id="text-org1b8d9ae">
+<div id="outline-container-orgd7e2592" class="outline-2">
+<h2 id="orgd7e2592">Classification algorithms</h2>
+<div class="outline-text-2" id="text-orgd7e2592">
 <p>
 There is a lot of classification algorithms available now but it is
 not possible to conclude which one is superior to other. It depends on
@@ -5155,11 +5156,11 @@ models and vice versa.
 </p>
 </div>
 
-<div id="outline-container-orgccd5dce" class="outline-3">
-<h3 id="orgccd5dce">Decision Tree</h3>
-<div class="outline-text-3" id="text-orgccd5dce">
+<div id="outline-container-org4de4dd4" class="outline-3">
+<h3 id="org4de4dd4">Decision Tree</h3>
+<div class="outline-text-3" id="text-org4de4dd4">
 
-<figure id="org7ebbfdc">
+<figure id="org5430e42">
 <img src="./static/images/decision-tree.png" alt="decision-tree.png" width="1200px">
 
 </figure>
@@ -5196,9 +5197,9 @@ What?
 </div>
 </div>
 
-<div id="outline-container-org35fedc3" class="outline-3">
-<h3 id="org35fedc3">Naive Bayes</h3>
-<div class="outline-text-3" id="text-org35fedc3">
+<div id="outline-container-org9998d02" class="outline-3">
+<h3 id="org9998d02">Naive Bayes</h3>
+<div class="outline-text-3" id="text-org9998d02">
 <p>
 Naive Bayes is a probabilistic classifier inspired by the Bayes
 theorem under a simple assumption which is the attributes are
@@ -5206,7 +5207,7 @@ conditionally independent.
 </p>
 
 
-<figure id="org81f45bd">
+<figure id="org27110b0">
 <img src="./static/images/naive-bayes-formula.png" alt="naive-bayes-formula.png" width="1200px">
 
 </figure>
@@ -5227,9 +5228,9 @@ explicitly using a Laplacian estimator?.
 </div>
 </div>
 
-<div id="outline-container-orga5d1f5e" class="outline-3">
-<h3 id="orga5d1f5e">Artificial Neuraul Networks</h3>
-<div class="outline-text-3" id="text-orga5d1f5e">
+<div id="outline-container-org5cee4e6" class="outline-3">
+<h3 id="org5cee4e6">Artificial Neuraul Networks</h3>
+<div class="outline-text-3" id="text-org5cee4e6">
 <p>
 Artificial Neural Network is a set of connected input/output units
 where each connection has a weight associated. During the learning
@@ -5278,11 +5279,11 @@ prediction later.
 </div>
 </div>
 
-<div id="outline-container-org89d4fd9" class="outline-3">
-<h3 id="org89d4fd9">k-Nearest Neighbor (KNN)</h3>
-<div class="outline-text-3" id="text-org89d4fd9">
+<div id="outline-container-org971ded0" class="outline-3">
+<h3 id="org971ded0">k-Nearest Neighbor (KNN)</h3>
+<div class="outline-text-3" id="text-org971ded0">
 
-<figure id="orgc92ab38">
+<figure id="orgc9c9ddc">
 <img src="./static/images/k-nearest-neighbors.png" alt="k-nearest-neighbors.png" width="1200px">
 
 </figure>
@@ -5301,7 +5302,7 @@ nice
 </p>
 
 
-<figure id="org440f3f8">
+<figure id="org45e4575">
 <img src="./static/images/k-nearest-formula.png" alt="k-nearest-formula.png" width="1200px">
 
 </figure>
@@ -5309,18 +5310,18 @@ nice
 </div>
 </div>
 
-<div id="outline-container-orgab68104" class="outline-2">
-<h2 id="orgab68104">Evaluating a classifier</h2>
-<div class="outline-text-2" id="text-orgab68104">
+<div id="outline-container-orgcb35e06" class="outline-2">
+<h2 id="orgcb35e06">Evaluating a classifier</h2>
+<div class="outline-text-2" id="text-orgcb35e06">
 <p>
 After training the model the most important part is to evaluate the
 classifier to verify its applicability
 </p>
 </div>
 
-<div id="outline-container-org07ff4a9" class="outline-3">
-<h3 id="org07ff4a9">Holdout method</h3>
-<div class="outline-text-3" id="text-org07ff4a9">
+<div id="outline-container-org9b91df4" class="outline-3">
+<h3 id="org9b91df4">Holdout method</h3>
+<div class="outline-text-3" id="text-org9b91df4">
 <p>
 There are several methods exists and the most common method is the
 holdout method. In this method, the given data set is divided into 2
@@ -5331,9 +5332,9 @@ data, I see now) will be used to test its predictive power.
 </div>
 </div>
 
-<div id="outline-container-orgfd63a4f" class="outline-3">
-<h3 id="orgfd63a4f">Cross-validation</h3>
-<div class="outline-text-3" id="text-orgfd63a4f">
+<div id="outline-container-orgbbd8c4e" class="outline-3">
+<h3 id="orgbbd8c4e">Cross-validation</h3>
+<div class="outline-text-3" id="text-orgbbd8c4e">
 <p>
 Over-fitting is a common problem in machine learning which can occur
 in most models. k-fold cross-validation can be conducted to verify
@@ -5346,9 +5347,9 @@ folds.Sorry what?
 </div>
 </div>
 
-<div id="outline-container-org40aefa6" class="outline-3">
-<h3 id="org40aefa6">Precision and Recall</h3>
-<div class="outline-text-3" id="text-org40aefa6">
+<div id="outline-container-orgf2b94ba" class="outline-3">
+<h3 id="orgf2b94ba">Precision and Recall</h3>
+<div class="outline-text-3" id="text-orgf2b94ba">
 <p>
 Precision is the fraction of relevant instances among the retrieved
 instances, while recall is the fraction of relevant instances that
@@ -5359,11 +5360,11 @@ relevance.Hmmm&#x2026;
 </div>
 </div>
 
-<div id="outline-container-orgebec053" class="outline-3">
-<h3 id="orgebec053">ROC curve Receiver Operatning Characteristics</h3>
-<div class="outline-text-3" id="text-orgebec053">
+<div id="outline-container-orgb22277e" class="outline-3">
+<h3 id="orgb22277e">ROC curve Receiver Operatning Characteristics</h3>
+<div class="outline-text-3" id="text-orgb22277e">
 
-<figure id="org20b7bff">
+<figure id="org002dd28">
 <img src="./static/images/roc-curve.png" alt="roc-curve.png" width="1200px">
 
 </figure>
@@ -5385,9 +5386,9 @@ familiar with in my curriculum.
 </div>
 </div>
 
-<div id="outline-container-org18f6076" class="outline-2">
-<h2 id="org18f6076">SVM (Support Vector Machine)</h2>
-<div class="outline-text-2" id="text-org18f6076">
+<div id="outline-container-org7f2fa43" class="outline-2">
+<h2 id="org7f2fa43">SVM (Support Vector Machine)</h2>
+<div class="outline-text-2" id="text-org7f2fa43">
 <p>
 <a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47">Link</a>
 </p>
@@ -5406,13 +5407,13 @@ distinctly classifies the data points.
 </p>
 
 
-<figure id="org20a8f0c">
+<figure id="org1275c20">
 <img src="./static/images/hyperplanes.png" alt="hyperplanes.png" width="1200px">
 
 </figure>
 
 
-<figure id="orgb97bfad">
+<figure id="org66afbb1">
 <img src="./static/images/hyperplanes2.png" alt="hyperplanes2.png" width="1200px">
 
 </figure>
@@ -5427,11 +5428,11 @@ confidence.
 </p>
 </div>
 
-<div id="outline-container-org6c3d90d" class="outline-3">
-<h3 id="org6c3d90d">Hyperplanes and Support Vectors</h3>
-<div class="outline-text-3" id="text-org6c3d90d">
+<div id="outline-container-orgbec9558" class="outline-3">
+<h3 id="orgbec9558">Hyperplanes and Support Vectors</h3>
+<div class="outline-text-3" id="text-orgbec9558">
 
-<figure id="org2e1b2d1">
+<figure id="orga8494ea">
 <img src="./static/images/hyperplane3d.png" alt="hyperplane3d.png" width="1200px">
 
 </figure>
@@ -5447,7 +5448,7 @@ becomes difficult to imagine when the number of features exceeds 3.
 </p>
 
 
-<figure id="org8a3ee3f">
+<figure id="org5649ab7">
 <img src="./static/images/support-vectors.png" alt="support-vectors.png" width="1200px">
 
 </figure>
@@ -5461,7 +5462,7 @@ are the points that help us build our SVM.
 </p>
 
 
-<figure id="org2fa8f24">
+<figure id="org1da083d">
 <img src="./static/images/batman-thinking.gif" alt="batman-thinking.gif" width="1200px">
 
 </figure>
@@ -5473,11 +5474,11 @@ image, cool. Don't really use them, but why not, I might start to
 </div>
 </div>
 
-<div id="outline-container-org1937c57" class="outline-3">
-<h3 id="org1937c57">Logistic Regression</h3>
-<div class="outline-text-3" id="text-org1937c57">
+<div id="outline-container-org0291bf8" class="outline-3">
+<h3 id="org0291bf8">Logistic Regression</h3>
+<div class="outline-text-3" id="text-org0291bf8">
 
-<figure id="org1fc302b">
+<figure id="orgfc3f596">
 <img src="./static/images/logistic-regression.png" alt="logistic-regression.png" width="1200px">
 
 </figure>
@@ -5502,11 +5503,11 @@ regression model for classification problems
 </div>
 </div>
 
-<div id="outline-container-org5da038c" class="outline-3">
-<h3 id="org5da038c">K-means Clustering</h3>
-<div class="outline-text-3" id="text-org5da038c">
+<div id="outline-container-orgf314cc4" class="outline-3">
+<h3 id="orgf314cc4">K-means Clustering</h3>
+<div class="outline-text-3" id="text-orgf314cc4">
 
-<figure id="orga9b7aaf">
+<figure id="orge7e352c">
 <img src="./static/images/k-means-clustering.png" alt="k-means-clustering.png" width="1200px">
 
 </figure>
@@ -5538,11 +5539,11 @@ the in-cluster sum of squares? Hm?
 </div>
 </div>
 
-<div id="outline-container-orga92312f" class="outline-3">
-<h3 id="orga92312f">k-fold Cross-Validation</h3>
-<div class="outline-text-3" id="text-orga92312f">
+<div id="outline-container-orge954773" class="outline-3">
+<h3 id="orge954773">k-fold Cross-Validation</h3>
+<div class="outline-text-3" id="text-orge954773">
 
-<figure id="org618da12">
+<figure id="orgdd7b955">
 <img src="./static/images/k-fold-cross-validation.png" alt="k-fold-cross-validation.png" width="1200px">
 
 </figure>
@@ -5583,7 +5584,7 @@ but damn.
   <title><![CDATA[Vim Html]]></title>
   <description><![CDATA[
 
-<figure id="org869e0d5">
+<figure id="org96f8732">
 <img src="./static/images/vim-html.png" alt="vim-html.png" width="1200px">
 
 </figure>
@@ -5631,7 +5632,7 @@ plugins, maybe it will make my experience more enjoyable :)
   <title><![CDATA[Black Box Method]]></title>
   <description><![CDATA[
 
-<figure id="org3acd306">
+<figure id="org19d0bf1">
 <img src="./static/images/squirrel.png" alt="squirrel.png" width="1200px">
 
 </figure>
@@ -5707,7 +5708,7 @@ math.
 </p>
 
 
-<figure id="orgcf0d71d">
+<figure id="org579594d">
 <img src="./static/images/black-box1.png" alt="black-box1.png" width="1200px">
 
 </figure>
@@ -5788,11 +5789,11 @@ graph the gradient descent and play with it, have some actual data to
 work with and so on.. Instead of just staring at one algorithm).
 </p>
 
-<div id="outline-container-orgd3442a8" class="outline-2">
-<h2 id="orgd3442a8">To sum up</h2>
-<div class="outline-text-2" id="text-orgd3442a8">
+<div id="outline-container-org68afe82" class="outline-2">
+<h2 id="org68afe82">To sum up</h2>
+<div class="outline-text-2" id="text-org68afe82">
 
-<figure id="org58a2ca0">
+<figure id="org829611c">
 <img src="./static/images/black-box2.png" alt="black-box2.png" width="1200px">
 
 </figure>
@@ -5825,7 +5826,7 @@ slow. Learned how to yank, paste a word or a whole line today.
   <title><![CDATA[Excel Stuff]]></title>
   <description><![CDATA[
 
-<figure id="orgbfac039">
+<figure id="orgf631374">
 <img src="./static/images/excel-fun.png" alt="excel-fun.png" width="1200px">
 
 </figure>
@@ -5888,7 +5889,7 @@ Been seeing median here and there, so here is a refresher:
 </p>
 
 
-<figure id="orgff5592a">
+<figure id="org7e33868">
 <img src="./static/images/median-math-is-fun.png" alt="median-math-is-fun.png" width="1200px">
 
 </figure>
@@ -5921,7 +5922,7 @@ an image rly quick (more vim and html practice on top of that).
 </p>
 
 
-<figure id="org9abf00b">
+<figure id="org4d428d2">
 <img src="./static/images/vlookup.png" alt="vlookup.png" width="1200px">
 
 </figure>
@@ -6000,9 +6001,9 @@ life. It is either ALL or NOTHING. But maybe the middle path is the
 right choice, right, Candy?
 </p>
 
-<div id="outline-container-org2a146d7" class="outline-2">
-<h2 id="org2a146d7">Parkinson's Law</h2>
-<div class="outline-text-2" id="text-org2a146d7">
+<div id="outline-container-org47aa004" class="outline-2">
+<h2 id="org47aa004">Parkinson's Law</h2>
+<div class="outline-text-2" id="text-org47aa004">
 <p>
 Parkinson's Law is the old adage that work expands to fill the time
 allotted. Put simply, the amount of work required adjusts to the time
@@ -6017,9 +6018,9 @@ results.
 </p>
 </div>
 
-<div id="outline-container-org213c71b" class="outline-3">
-<h3 id="org213c71b">But does it then mean</h3>
-<div class="outline-text-3" id="text-org213c71b">
+<div id="outline-container-orgf896e29" class="outline-3">
+<h3 id="orgf896e29">But does it then mean</h3>
+<div class="outline-text-3" id="text-orgf896e29">
 <p>
 That in order to have a productive DAY you also have to balance out
 the work and relaxation? 50% 50%?;)
@@ -6095,7 +6096,7 @@ to time. So yeah :)
   <title><![CDATA[Focused and Difused learning]]></title>
   <description><![CDATA[
 
-<figure id="orgdea8ed4">
+<figure id="orgd1327e8">
 <img src="./static/images/focused-diffuse.png" alt="focused-diffuse.png" width="1200px">
 
 </figure>
@@ -6110,14 +6111,14 @@ something new.
 </p>
 
 
-<figure id="org351b971">
+<figure id="org57adee3">
 <img src="./static/images/learning-flashlight.jpeg" alt="learning-flashlight.jpeg" width="1200px">
 
 </figure>
 
-<div id="outline-container-org6321b65" class="outline-2">
-<h2 id="org6321b65">Focused mode</h2>
-<div class="outline-text-2" id="text-org6321b65">
+<div id="outline-container-org62b2fd6" class="outline-2">
+<h2 id="org62b2fd6">Focused mode</h2>
+<div class="outline-text-2" id="text-org62b2fd6">
 <p>
 <b>Focused mode</b> - like paintball. Think of something, the thought goes
 from one neuron to the other. As it is bouncing on the bumpers, you
@@ -6134,9 +6135,9 @@ focused mode.
 </div>
 </div>
 
-<div id="outline-container-orgf7d07c1" class="outline-2">
-<h2 id="orgf7d07c1">Diffuse mode</h2>
-<div class="outline-text-2" id="text-orgf7d07c1">
+<div id="outline-container-org3c776b4" class="outline-2">
+<h2 id="org3c776b4">Diffuse mode</h2>
+<div class="outline-text-2" id="text-org3c776b4">
 <p>
 <b>Diffused thinking</b> - relaxed. You haven't thought before - you don't
 know where the pattern\path is. All the other neurons are blocking the
@@ -6161,9 +6162,9 @@ more broad ranging perspectives of the diffuse mode.
 </div>
 </div>
 
-<div id="outline-container-org021cc75" class="outline-2">
-<h2 id="org021cc75">Can't have both</h2>
-<div class="outline-text-2" id="text-org021cc75">
+<div id="outline-container-orgef5af43" class="outline-2">
+<h2 id="orgef5af43">Can't have both</h2>
+<div class="outline-text-2" id="text-orgef5af43">
 <p>
 When we find ourselves stuck on a problem, or even if we’re unsure of
 a situation, the course of living our daily life. It's often a good
@@ -6179,7 +6180,7 @@ modes. Either one or the other type of thinking.
 </p>
 
 
-<figure id="org2ac3d4d">
+<figure id="org7416e52">
 <img src="./static/images/salvador-sleep.jpg" alt="salvador-sleep.jpg" width="1200px">
 
 </figure>
@@ -6204,7 +6205,7 @@ Craftsmanship'(1948)
 </p>
 
 
-<figure id="org3766618">
+<figure id="orgd24bc61">
 <img src="./static/images/thomas-edison.png" alt="thomas-edison.png" width="1200px">
 
 </figure>
@@ -6235,9 +6236,9 @@ whatever was in his mind.
 </div>
 </div>
 
-<div id="outline-container-org7873c26" class="outline-2">
-<h2 id="org7873c26">Sum up</h2>
-<div class="outline-text-2" id="text-org7873c26">
+<div id="outline-container-org5c8f2f2" class="outline-2">
+<h2 id="org5c8f2f2">Sum up</h2>
+<div class="outline-text-2" id="text-org5c8f2f2">
 <p>
 Mind needs to go from one to the other mode to learn effectively.
 </p>
@@ -6254,13 +6255,13 @@ lady for making me change my mind about learning and being productive.
 </p>
 
 
-<figure id="org675a040">
+<figure id="org1de8bcf">
 <img src="./static/images/focused-diffuse1.png" alt="focused-diffuse1.png" width="1200px">
 
 </figure>
 
 
-<figure id="org5f2f3b4">
+<figure id="org51d62c0">
 <img src="./static/images/learn-quiz.png" alt="learn-quiz.png" width="1200px">
 
 </figure>
@@ -6284,9 +6285,9 @@ This page is an overview of tools I like to use, and technologies I
 enjoy.
 </p>
 
-<div id="outline-container-orgaebed9d" class="outline-2">
-<h2 id="orgaebed9d">Core Technologies</h2>
-<div class="outline-text-2" id="text-orgaebed9d">
+<div id="outline-container-org347463c" class="outline-2">
+<h2 id="org347463c">Core Technologies</h2>
+<div class="outline-text-2" id="text-org347463c">
 <ul class="org-ul">
 <li><p>
 <b>Personal Operating System: Ubuntu Linux</b>
@@ -6335,9 +6336,9 @@ it as well.
 </div>
 </div>
 
-<div id="outline-container-orgf790f1b" class="outline-2">
-<h2 id="orgf790f1b">Programming</h2>
-<div class="outline-text-2" id="text-orgf790f1b">
+<div id="outline-container-orgb8859f5" class="outline-2">
+<h2 id="orgb8859f5">Programming</h2>
+<div class="outline-text-2" id="text-orgb8859f5">
 <p>
 Less stuff in a program is usually better.
 </p>
@@ -6356,9 +6357,9 @@ for everything imaginable.
 </div>
 </div>
 
-<div id="outline-container-orgf0a42f8" class="outline-2">
-<h2 id="orgf0a42f8">Blogging</h2>
-<div class="outline-text-2" id="text-orgf0a42f8">
+<div id="outline-container-org05b4596" class="outline-2">
+<h2 id="org05b4596">Blogging</h2>
+<div class="outline-text-2" id="text-org05b4596">
 <ul class="org-ul">
 <li><p>
 <b>Org-Static-Blog</b>
@@ -6371,9 +6372,9 @@ It serves the purpose, I can blog without leaving Emacs.
 </div>
 </div>
 
-<div id="outline-container-org0a60529" class="outline-2">
-<h2 id="org0a60529">Hardware</h2>
-<div class="outline-text-2" id="text-org0a60529">
+<div id="outline-container-org19c05a5" class="outline-2">
+<h2 id="org19c05a5">Hardware</h2>
+<div class="outline-text-2" id="text-org19c05a5">
 <ul class="org-ul">
 <li><b>Camera: Nikon and Mamiya and FED</b>
 
@@ -6450,9 +6451,9 @@ sometimes WordPress.
 <a href="https://github.com/arvydasg">My Github profile</a>.
 </p>
 
-<div id="outline-container-orga984706" class="outline-2">
-<h2 id="orga984706">Why hire me?</h2>
-<div class="outline-text-2" id="text-orga984706">
+<div id="outline-container-org28725e2" class="outline-2">
+<h2 id="org28725e2">Why hire me?</h2>
+<div class="outline-text-2" id="text-org28725e2">
 <p>
 I have many great relationships with all of my clients. I prioritise
 maintaining open and clear communication, and offer not only technical

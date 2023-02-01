@@ -16,26 +16,57 @@
 <link rel="icon" href="static/ag.ico"></head>
 <body>
 <div id="preamble" class="status">
-<div id="nav-content">
-<div class="header">
-   <a href="https://arvydasg.github.io/">Arvydas.dev</a>
-  <div class="sitelinks">
-    <a href="https://arvydasg.github.io/about.html">About</a> | <a href="https://arvydasg.github.io/freelancing.html">Freelancing</a> | <a href="https://arvydasg.github.io/tag-project.html">Projects</a> | <a href="https://arvydasg.github.io/archive.html">Blog</a> | <a href="https://arvydasg.github.io/uses.html">Uses</a> | <a href="https://arvydas.dev/codeacademy/">CodeAcademy</a>
-  </div>
-<hr>
-  </div>
-</div></div>
+<header>
+    <div class="container">
+        <div class="subcontainer">
+            <nav class="nav">
+                <a href="https://arvydasg.github.io/" class="nav-logo-wrapper">
+                    <p class="nav-branding">Arvydas.dev</p>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/tag-project.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/archive.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/tags.html" class="nav-link">Tags</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydas.dev/codeacademy/" class="nav-link">CodeAcademy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/freelancing.html" class="nav-link">Freelancing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/uses.html" class="nav-link">Uses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/about.html" class="nav-link">About</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </header>
+    </div>
 <div id="content">
 <div class="post-date">19 Jun 2022</div><h1 class="post-title"><a href="https://arvydasg.github.io/2022-06-19-dired-diff-hl.html">Dired diff-hl</a></h1>
 
-<figure id="orgebfde78">
+<figure id="orgbeda4a4">
 <img src="./static/images/dired-diff-hl.png" alt="dired-diff-hl.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org6bf1822" class="outline-2">
-<h2 id="org6bf1822">Introduction</h2>
-<div class="outline-text-2" id="text-org6bf1822">
+<div id="outline-container-orgb2b2a57" class="outline-2">
+<h2 id="orgb2b2a57">Introduction</h2>
+<div class="outline-text-2" id="text-orgb2b2a57">
 <p>
 So, everything started when I have discovered ‘diff-hl’ package. It
 had an option to show differences in dired buffer. I thought okay,
@@ -44,9 +75,9 @@ cool option, lets not use neotree anymore and use dired instead.
 </div>
 </div>
 
-<div id="outline-container-orgd51964f" class="outline-2">
-<h2 id="orgd51964f">Body</h2>
-<div class="outline-text-2" id="text-orgd51964f">
+<div id="outline-container-orgf674ceb" class="outline-2">
+<h2 id="orgf674ceb">Body</h2>
+<div class="outline-text-2" id="text-orgf674ceb">
 <p>
 I added a few lines to ‘diff-hl’ config to make the file changes
 visible in dired buffer.
@@ -116,9 +147,9 @@ more convenient to cycle with and I am all set!
 </div>
 </div>
 
-<div id="outline-container-orgb666ea9" class="outline-2">
-<h2 id="orgb666ea9">The final config</h2>
-<div class="outline-text-2" id="text-orgb666ea9">
+<div id="outline-container-org5a24a85" class="outline-2">
+<h2 id="org5a24a85">The final config</h2>
+<div class="outline-text-2" id="text-org5a24a85">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"> <span style="color: #fe8019;">(</span><span style="color: #fb4934;">use-package</span> <span style="color: #d3869b;">dired</span>
     <span style="color: #fe8019;">:ensure</span> nil                         <span style="color: #928374;">;</span><span style="color: #928374;">no need for t, because dired is built in</span>
@@ -164,6 +195,7 @@ found ‘dired-find-alternate-file’ :)
 <div id="postamble" class="status"><div id="footer">
 <hr>
 <p>© 2021-2023 Arvydas Gasparavičius</p>
+  <script src="static/script.js"></script>
 </div></div>
 </body>
 </html>

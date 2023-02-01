@@ -17,15 +17,46 @@
 <link rel="icon" href="static/ag.ico"></head>
 <body>
 <div id="preamble" class="status">
-<div id="nav-content">
-<div class="header">
-   <a href="https://arvydasg.github.io/">Arvydas.dev</a>
-  <div class="sitelinks">
-    <a href="https://arvydasg.github.io/about.html">About</a> | <a href="https://arvydasg.github.io/freelancing.html">Freelancing</a> | <a href="https://arvydasg.github.io/tag-project.html">Projects</a> | <a href="https://arvydasg.github.io/archive.html">Blog</a> | <a href="https://arvydasg.github.io/uses.html">Uses</a> | <a href="https://arvydas.dev/codeacademy/">CodeAcademy</a>
-  </div>
-<hr>
-  </div>
-</div></div>
+<header>
+    <div class="container">
+        <div class="subcontainer">
+            <nav class="nav">
+                <a href="https://arvydasg.github.io/" class="nav-logo-wrapper">
+                    <p class="nav-branding">Arvydas.dev</p>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/tag-project.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/archive.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/tags.html" class="nav-link">Tags</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydas.dev/codeacademy/" class="nav-link">CodeAcademy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/freelancing.html" class="nav-link">Freelancing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/uses.html" class="nav-link">Uses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/about.html" class="nav-link">About</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </header>
+    </div>
 <div id="content">
 <div class="post-date">31 Jan 2023</div><h1 class="post-title"><a href="https://arvydasg.github.io/2023-01-31-what-is-docker.html">What is Docker?</a></h1>
 <p>
@@ -39,9 +70,9 @@ efficient and easy way to deploy Django applications.
 So, let's learn about it.
 </p>
 
-<div id="outline-container-org104cd80" class="outline-2">
-<h2 id="org104cd80">In the beginning</h2>
-<div class="outline-text-2" id="text-org104cd80">
+<div id="outline-container-org618d937" class="outline-2">
+<h2 id="org618d937">In the beginning</h2>
+<div class="outline-text-2" id="text-org618d937">
 <p>
 If you wanted a server to store your applications onto, it had to be a
 physical server in a data center. It could run ONE operating
@@ -51,9 +82,9 @@ physical center! Quite inefficient and most likely expensive.
 </div>
 </div>
 
-<div id="outline-container-orgfe14a5d" class="outline-2">
-<h2 id="orgfe14a5d">Then came the virtual machines.</h2>
-<div class="outline-text-2" id="text-orgfe14a5d">
+<div id="outline-container-orgb30ce8e" class="outline-2">
+<h2 id="orgb30ce8e">Then came the virtual machines.</h2>
+<div class="outline-text-2" id="text-orgb30ce8e">
 <ul class="org-ul">
 <li>you would have a server hardware</li>
 <li>then on the server hardware you install a hypervisor(vmware esxi)</li>
@@ -69,9 +100,9 @@ Already way more efficient than the first option.
 </div>
 </div>
 
-<div id="outline-container-org217d8ac" class="outline-2">
-<h2 id="org217d8ac">Now what is the docker about?</h2>
-<div class="outline-text-2" id="text-org217d8ac">
+<div id="outline-container-orgdbb2ec9" class="outline-2">
+<h2 id="orgdbb2ec9">Now what is the docker about?</h2>
+<div class="outline-text-2" id="text-orgdbb2ec9">
 <p>
 You still have the hardware, but on top of that you install one OS.
 Ubuntu for example.
@@ -101,9 +132,9 @@ metal servers.
 </div>
 </div>
 
-<div id="outline-container-org551d268" class="outline-2">
-<h2 id="org551d268">Benefits of Docker</h2>
-<div class="outline-text-2" id="text-org551d268">
+<div id="outline-container-org2b28fd6" class="outline-2">
+<h2 id="org2b28fd6">Benefits of Docker</h2>
+<div class="outline-text-2" id="text-org2b28fd6">
 <p>
 Why is Docker so fast?
 </p>
@@ -136,9 +167,9 @@ os or kernel.
 </div>
 </div>
 
-<div id="outline-container-org6fe2c4a" class="outline-2">
-<h2 id="org6fe2c4a">Why docker?</h2>
-<div class="outline-text-2" id="text-org6fe2c4a">
+<div id="outline-container-org697f51b" class="outline-2">
+<h2 id="org697f51b">Why docker?</h2>
+<div class="outline-text-2" id="text-org697f51b">
 <p>
 As developers - we write our app - it works great on our machines.
 Then we want to either deploy it or run on other machines or give it
@@ -158,9 +189,9 @@ the app needs is contained in the container, it's isolated.
 </p>
 </div>
 
-<div id="outline-container-org7c74074" class="outline-3">
-<h3 id="org7c74074">Microservices</h3>
-<div class="outline-text-3" id="text-org7c74074">
+<div id="outline-container-orgb57b2ad" class="outline-3">
+<h3 id="orgb57b2ad">Microservices</h3>
+<div class="outline-text-3" id="text-orgb57b2ad">
 <p>
 Usually you deploy the WHOLE app inside one container or a VM. For
 example WordPress. You install WordPress server and MySQL database on
@@ -169,6 +200,7 @@ server on one container and mysql database on another. So whenever you
 want to update wordpress server - you update only just that. Nothing
 is in a way, nothing is conflicting, mysql database remains untouched.
 Sounds good, I must try experiment with that.
+fatal: not a git repository (or any of the parent directories): .git
 </p>
 </div>
 </div>
@@ -177,6 +209,7 @@ Sounds good, I must try experiment with that.
 <div id="postamble" class="status"><div id="footer">
 <hr>
 <p>© 2021-2023 Arvydas Gasparavičius</p>
+  <script src="static/script.js"></script>
 </div></div>
 </body>
 </html>
