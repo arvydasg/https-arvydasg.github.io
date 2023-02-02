@@ -4,7 +4,7 @@
 <title><![CDATA[arvydasg.github.io]]></title>
 <description><![CDATA[arvydasg.github.io]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Wed, 01 Feb 2023 07:21:40 +0200</lastBuildDate>
+<lastBuildDate>Wed, 01 Feb 2023 19:50:59 +0200</lastBuildDate>
 <item>
   <title><![CDATA[What is Docker?]]></title>
   <description><![CDATA[
@@ -186,15 +186,15 @@ fatal: not a git repository (or any of the parent directories): .git
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgfd5d4a9">1. Intro</a></li>
-<li><a href="#org84e01db">2. Python in Lithuania</a></li>
-<li><a href="#org4fb4a31">3. Job search</a></li>
+<li><a href="#org1d3f554">1. Intro</a></li>
+<li><a href="#orgda17d30">2. Python in Lithuania</a></li>
+<li><a href="#org6230a42">3. Job search</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgfd5d4a9" class="outline-2">
-<h2 id="orgfd5d4a9"><span class="section-number-2">1.</span> Intro</h2>
+<div id="outline-container-org1d3f554" class="outline-2">
+<h2 id="org1d3f554"><span class="section-number-2">1.</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Had a meeting with Laura from CodeAcademy. It is finally time to get
@@ -203,8 +203,8 @@ for my dream job, I am ready!
 </div>
 </div>
 
-<div id="outline-container-org84e01db" class="outline-2">
-<h2 id="org84e01db"><span class="section-number-2">2.</span> Python in Lithuania</h2>
+<div id="outline-container-orgda17d30" class="outline-2">
+<h2 id="orgda17d30"><span class="section-number-2">2.</span> Python in Lithuania</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Python in Lithuania is not that widely used, perhaps in Big Data or
@@ -212,8 +212,8 @@ Automation.
 </p>
 </div>
 
-<div id="outline-container-orga2cabee" class="outline-3">
-<h3 id="orga2cabee"><span class="section-number-3">2.1.</span> Positions after this course for me could be as:</h3>
+<div id="outline-container-org2d194f1" class="outline-3">
+<h3 id="org2d194f1"><span class="section-number-3">2.1.</span> Positions after this course for me could be as:</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Data Engineer/Scientist</li>
@@ -230,8 +230,8 @@ on a daily basis and this is what I enjoy)</li>
 </div>
 </div>
 
-<div id="outline-container-orgd34e449" class="outline-3">
-<h3 id="orgd34e449"><span class="section-number-3">2.2.</span> Biggest Python companies in Lithuania</h3>
+<div id="outline-container-orgd8871cc" class="outline-3">
+<h3 id="orgd8871cc"><span class="section-number-3">2.2.</span> Biggest Python companies in Lithuania</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Here is a list of biggest python companies in Lithuania. Should not
@@ -239,24 +239,24 @@ forget to introduce myself to each and every one of them :)
 </p>
 
 
-<figure id="orge57dca6">
+<figure id="org4b7eacc">
 <img src="./static/images/labor-market-overview/companies.png" alt="companies.png" width="600px">
 
 </figure>
 
 
-<figure id="org1419f56">
+<figure id="org6c84962">
 <img src="./static/images/labor-market-overview/possibilities.png" alt="possibilities.png" width="600px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgd691596" class="outline-3">
-<h3 id="orgd691596"><span class="section-number-3">2.3.</span> Salary expectations for Junior python developers</h3>
+<div id="outline-container-org67072c3" class="outline-3">
+<h3 id="org67072c3"><span class="section-number-3">2.3.</span> Salary expectations for Junior python developers</h3>
 <div class="outline-text-3" id="text-2-3">
 
-<figure id="org714a620">
+<figure id="orgeccb55e">
 <img src="./static/images/labor-market-overview/salaries.png" alt="salaries.png" width="1200px">
 
 </figure>
@@ -270,16 +270,16 @@ inside programming role).
 </div>
 </div>
 
-<div id="outline-container-org4fb4a31" class="outline-2">
-<h2 id="org4fb4a31"><span class="section-number-2">3.</span> Job search</h2>
+<div id="outline-container-org6230a42" class="outline-2">
+<h2 id="org6230a42"><span class="section-number-2">3.</span> Job search</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 There options are endless.
 </p>
 </div>
 
-<div id="outline-container-orgd9a5aa5" class="outline-3">
-<h3 id="orgd9a5aa5"><span class="section-number-3">3.1.</span> What is junior anyway?</h3>
+<div id="outline-container-org7f9b499" class="outline-3">
+<h3 id="org7f9b499"><span class="section-number-3">3.1.</span> What is junior anyway?</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Hire people with a lot of potential, that will be and grow with you in
@@ -289,8 +289,8 @@ months and get another one.
 </div>
 </div>
 
-<div id="outline-container-org876823b" class="outline-3">
-<h3 id="org876823b"><span class="section-number-3">3.2.</span> I should first of all mention, that I am self taught</h3>
+<div id="outline-container-orga98f01a" class="outline-3">
+<h3 id="orga98f01a"><span class="section-number-3">3.2.</span> I should first of all mention, that I am self taught</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 I got an advice from a friend to mention that I am a self taught
@@ -317,8 +317,8 @@ Paziurek skelbimus karinos
 </div>
 </div>
 
-<div id="outline-container-orga64f912" class="outline-3">
-<h3 id="orga64f912"><span class="section-number-3">3.3.</span> Don't get scared if you see something unfamiliar in a job ad</h3>
+<div id="outline-container-orgafc758b" class="outline-3">
+<h3 id="orgafc758b"><span class="section-number-3">3.3.</span> Don't get scared if you see something unfamiliar in a job ad</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 IMPORTANT: Apply to jobs that you aren’t qualified for!
@@ -352,8 +352,8 @@ team.
 </div>
 </div>
 
-<div id="outline-container-orgb32c7d7" class="outline-3">
-<h3 id="orgb32c7d7"><span class="section-number-3">3.4.</span> Instead of new job - agree with current workplace</h3>
+<div id="outline-container-org8875868" class="outline-3">
+<h3 id="org8875868"><span class="section-number-3">3.4.</span> Instead of new job - agree with current workplace</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 One option that CodeAcademy agrees upon is for me to work
@@ -369,8 +369,8 @@ is no "Programming" position.
 </div>
 </div>
 
-<div id="outline-container-orge907774" class="outline-3">
-<h3 id="orge907774"><span class="section-number-3">3.5.</span> LinkedIn</h3>
+<div id="outline-container-org17e9e8f" class="outline-3">
+<h3 id="org17e9e8f"><span class="section-number-3">3.5.</span> LinkedIn</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 Use LinkedIn well and after a while you won't be looking for jobs but
@@ -378,15 +378,15 @@ jobs will be looking for you :)
 </p>
 
 
-<figure id="org2637022">
+<figure id="org66f9a15">
 <img src="./static/images/labor-market-overview/linkedin.png" alt="linkedin.png" width="600px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org3ced5ba" class="outline-3">
-<h3 id="org3ced5ba"><span class="section-number-3">3.6.</span> Hackathons</h3>
+<div id="outline-container-org73ebf0b" class="outline-3">
+<h3 id="org73ebf0b"><span class="section-number-3">3.6.</span> Hackathons</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 Hackathons - business problem, programmer teams, creating solutions. A
@@ -395,8 +395,8 @@ good way to network and test your knowledge over a weekend in Vilnius.
 </div>
 </div>
 
-<div id="outline-container-org1279182" class="outline-3">
-<h3 id="org1279182"><span class="section-number-3">3.7.</span> Freelancing</h3>
+<div id="outline-container-org8582678" class="outline-3">
+<h3 id="org8582678"><span class="section-number-3">3.7.</span> Freelancing</h3>
 <div class="outline-text-3" id="text-3-7">
 <p>
 Could freelance.. I thought about it, yes, even tried in the past, but
@@ -407,15 +407,15 @@ Kind of best way if I want freedom in my life.
 </p>
 
 
-<figure id="org2dbe026">
+<figure id="org5701f5e">
 <img src="./static/images/labor-market-overview/freelance.png" alt="freelance.png" width="600px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orge1e0688" class="outline-3">
-<h3 id="orge1e0688"><span class="section-number-3">3.8.</span> Responding to job ads</h3>
+<div id="outline-container-org295e6f5" class="outline-3">
+<h3 id="org295e6f5"><span class="section-number-3">3.8.</span> Responding to job ads</h3>
 <div class="outline-text-3" id="text-3-8">
 <p>
 A few main things I took is:
@@ -442,19 +442,19 @@ yourself also.</li>
 </div>
 </div>
 
-<div id="outline-container-org845724e" class="outline-3">
-<h3 id="org845724e"><span class="section-number-3">3.9.</span> Agencies</h3>
+<div id="outline-container-org224fce1" class="outline-3">
+<h3 id="org224fce1"><span class="section-number-3">3.9.</span> Agencies</h3>
 <div class="outline-text-3" id="text-3-9">
 
-<figure id="orgc209b04">
+<figure id="org5e5aa31">
 <img src="./static/images/labor-market-overview/linkedin.png" alt="linkedin.png" width="600px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org56c0104" class="outline-3">
-<h3 id="org56c0104"><span class="section-number-3">3.10.</span> Github hygiene</h3>
+<div id="outline-container-orgf0ff42a" class="outline-3">
+<h3 id="orgf0ff42a"><span class="section-number-3">3.10.</span> Github hygiene</h3>
 <div class="outline-text-3" id="text-3-10">
 <p>
 I should definitely clean up my Github account:
@@ -2988,7 +2988,7 @@ Link to e-shop - <a href="https://smutifruti.lt/">Smutifruti.lt</a>
   <title><![CDATA[Julija Consulting]]></title>
   <description><![CDATA[
 
-<figure id="org112c816">
+<figure id="orge878626">
 <img src="./static/images/julijaconsulting.gif" alt="julijaconsulting.gif" width="1200px">
 
 </figure>
@@ -3014,6 +3014,10 @@ Done by me:
 
 <p>
 Link to site - <a href="https://julija.consulting/">https://julija.consulting/</a>
+</p>
+
+<p>
+Link to a the first version of the site - <a href="https://arvydas.dev/julija.consulting/">https://arvydas.dev/julija.consulting/</a>
 </p>
 <div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-freelancing.html">freelancing</a> <a href="https://arvydasg.github.io/tag-wordpress.html">wordpress</a> <a href="https://arvydasg.github.io/tag-project.html">project</a> </div>]]></description>
   <category><![CDATA[freelancing]]></category>
