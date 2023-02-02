@@ -71,22 +71,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="content">
 <div class="post-date">02 Feb 2023</div><h1 class="post-title"><a href="https://arvydasg.github.io/2023-02-02-google-tag-manager-and-google-analytics.html">Google Tag Manager and Google Analytics</a></h1>
 
-<div id="outline-container-org0a4c246" class="outline-2">
-<h2 id="org0a4c246">Intro</h2>
-<div class="outline-text-2" id="text-org0a4c246">
+<div id="outline-container-org523a821" class="outline-2">
+<h2 id="org523a821">Intro</h2>
+<div class="outline-text-2" id="text-org523a821">
 <p>
 A year or so ago I had to set up Google Tag Manager and Google
-Analytics to a few of my client websites. I have not documented the
-process then, but will do so now as I am setting it up for this site.
+Analytics to a few of my client websites for marketing purposes. I
+have not documented the process back then, but will do so now as I am
+setting it up for <code>this</code> site. (Yes, I know that you have been here ;) )
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge019408" class="outline-2">
-<h2 id="orge019408">Setup</h2>
-<div class="outline-text-2" id="text-orge019408">
+<div id="outline-container-orgda60f60" class="outline-2">
+<h2 id="orgda60f60">Setup</h2>
+<div class="outline-text-2" id="text-orgda60f60">
 <p>
-Setup GTM(Google Tag Manager). It will act as a place for what?
+<b>Setup GTM(Google Tag Manager).</b>
+</p>
+
+<p>
+It will act as single place where you put all your tags in the future.
+Good for managing and debugging.
 </p>
 
 <ul class="org-ul">
@@ -99,7 +105,7 @@ site and the data flows.</li>
 </ul>
 
 <p>
-Setup GA(Google Analytics)
+<b>Setup GA(Google Analytics)</b>
 </p>
 
 <ul class="org-ul">
@@ -116,7 +122,7 @@ this for the later steps.</li>
 </ul>
 
 <p>
-Back to GTM
+<b>Back to GTM</b>
 </p>
 
 <ul class="org-ul">
@@ -139,8 +145,36 @@ your website on a more granular level.</li>
 <li>You can(or anyone else can) install a "Google Analytics Debugger"
 extension to their browser and when they navigate through your
 page - your debugger view will see those changes.</li>
-<li>Go back to your main admin GTM site - click on "Submit" to save your
-changes to the environment.</li>
+<li><p>
+Go back to your main admin GTM site - click on "Submit" to save your
+changes to the environment. In the "Version field" field enter
+"Installed GA4" for example and click <code>Publish</code>.
+</p>
+
+<p>
+If everything went successfully, you can go to you GA admin page,
+choose Reports -&gt; Real-Time and you should see something like this
+:)
+</p>
+
+<p>
+Congrats!
+</p>
+
+
+<figure id="org9f94aab">
+<img src="./static/images/google-analytics.png" alt="google-analytics.png" width="1200px">
+
+</figure>
+
+<p>
+p.s.
+</p>
+
+<p>
+If you dont see the data just yet, be patient, it should appear
+sooner than later.
+</p></li>
 </ul>
 </div>
 </div>

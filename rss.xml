@@ -4,27 +4,33 @@
 <title><![CDATA[arvydasg.github.io]]></title>
 <description><![CDATA[arvydasg.github.io]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Thu, 02 Feb 2023 05:01:09 +0200</lastBuildDate>
+<lastBuildDate>Thu, 02 Feb 2023 05:15:25 +0200</lastBuildDate>
 <item>
   <title><![CDATA[Google Tag Manager and Google Analytics]]></title>
   <description><![CDATA[
 
-<div id="outline-container-org0a4c246" class="outline-2">
-<h2 id="org0a4c246">Intro</h2>
-<div class="outline-text-2" id="text-org0a4c246">
+<div id="outline-container-org523a821" class="outline-2">
+<h2 id="org523a821">Intro</h2>
+<div class="outline-text-2" id="text-org523a821">
 <p>
 A year or so ago I had to set up Google Tag Manager and Google
-Analytics to a few of my client websites. I have not documented the
-process then, but will do so now as I am setting it up for this site.
+Analytics to a few of my client websites for marketing purposes. I
+have not documented the process back then, but will do so now as I am
+setting it up for <code>this</code> site. (Yes, I know that you have been here ;) )
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge019408" class="outline-2">
-<h2 id="orge019408">Setup</h2>
-<div class="outline-text-2" id="text-orge019408">
+<div id="outline-container-orgda60f60" class="outline-2">
+<h2 id="orgda60f60">Setup</h2>
+<div class="outline-text-2" id="text-orgda60f60">
 <p>
-Setup GTM(Google Tag Manager). It will act as a place for what?
+<b>Setup GTM(Google Tag Manager).</b>
+</p>
+
+<p>
+It will act as single place where you put all your tags in the future.
+Good for managing and debugging.
 </p>
 
 <ul class="org-ul">
@@ -37,7 +43,7 @@ site and the data flows.</li>
 </ul>
 
 <p>
-Setup GA(Google Analytics)
+<b>Setup GA(Google Analytics)</b>
 </p>
 
 <ul class="org-ul">
@@ -54,7 +60,7 @@ this for the later steps.</li>
 </ul>
 
 <p>
-Back to GTM
+<b>Back to GTM</b>
 </p>
 
 <ul class="org-ul">
@@ -77,8 +83,36 @@ your website on a more granular level.</li>
 <li>You can(or anyone else can) install a "Google Analytics Debugger"
 extension to their browser and when they navigate through your
 page - your debugger view will see those changes.</li>
-<li>Go back to your main admin GTM site - click on "Submit" to save your
-changes to the environment.</li>
+<li><p>
+Go back to your main admin GTM site - click on "Submit" to save your
+changes to the environment. In the "Version field" field enter
+"Installed GA4" for example and click <code>Publish</code>.
+</p>
+
+<p>
+If everything went successfully, you can go to you GA admin page,
+choose Reports -&gt; Real-Time and you should see something like this
+:)
+</p>
+
+<p>
+Congrats!
+</p>
+
+
+<figure id="org9f94aab">
+<img src="./static/images/google-analytics.png" alt="google-analytics.png" width="1200px">
+
+</figure>
+
+<p>
+p.s.
+</p>
+
+<p>
+If you dont see the data just yet, be patient, it should appear
+sooner than later.
+</p></li>
 </ul>
 </div>
 </div>
@@ -5043,11 +5077,11 @@ come later. Make it a dance.
   <description><![CDATA[
 
 
-<div id="outline-container-orge7089bd" class="outline-2">
-<h2 id="orge7089bd">A Procrastination Preview</h2>
-<div class="outline-text-2" id="text-orge7089bd">
+<div id="outline-container-org9982610" class="outline-2">
+<h2 id="org9982610">A Procrastination Preview</h2>
+<div class="outline-text-2" id="text-org9982610">
 
-<figure id="org002cfaf">
+<figure id="org2dbedf2">
 <img src="./static/images/lebowski.png" alt="lebowski.png" width="1200px">
 
 </figure>
@@ -5081,7 +5115,7 @@ relaxation.
 </p>
 
 
-<figure id="orgd81b37a">
+<figure id="org1ee2bdc">
 <img src="./static/images/learn-pomodoro.png" alt="learn-pomodoro.png" width="1200px">
 
 </figure>
@@ -5093,9 +5127,9 @@ Arvydas default option, all the time - 3. Building mental stamina&#x2026;
 </div>
 </div>
 
-<div id="outline-container-org255f244" class="outline-2">
-<h2 id="org255f244">Practice Makes Permanent</h2>
-<div class="outline-text-2" id="text-org255f244">
+<div id="outline-container-orgf8bb9ba" class="outline-2">
+<h2 id="orgf8bb9ba">Practice Makes Permanent</h2>
+<div class="outline-text-2" id="text-orgf8bb9ba">
 <p>
 Girl hated math her whole young life through school - now she is an
 engineering professor. Started studying math at 26 when he got out of
@@ -5121,7 +5155,7 @@ build (neurons) are real.
 </p>
 
 
-<figure id="org8111533">
+<figure id="org029cccb">
 <img src="./static/images/neural-structure.png" alt="neural-structure.png" width="1200px">
 
 </figure>
@@ -5159,11 +5193,11 @@ ended. Very important.
 </div>
 </div>
 
-<div id="outline-container-orge2c32b2" class="outline-2">
-<h2 id="orge2c32b2">Introduction to Memory</h2>
-<div class="outline-text-2" id="text-orge2c32b2">
+<div id="outline-container-orgfd656c9" class="outline-2">
+<h2 id="orgfd656c9">Introduction to Memory</h2>
+<div class="outline-text-2" id="text-orgfd656c9">
 
-<figure id="orga70dee5">
+<figure id="orgde1454e">
 <img src="./static/images/neural-paths.png" alt="neural-paths.png" width="1200px">
 
 </figure>
@@ -5217,11 +5251,11 @@ processes &#x2013; don't suck the memories away.
 </div>
 </div>
 
-<div id="outline-container-org4246782" class="outline-2">
-<h2 id="org4246782">Time for the mortar to dry</h2>
-<div class="outline-text-2" id="text-org4246782">
+<div id="outline-container-org2cf43b7" class="outline-2">
+<h2 id="org2cf43b7">Time for the mortar to dry</h2>
+<div class="outline-text-2" id="text-org2cf43b7">
 
-<figure id="org31a24f3">
+<figure id="orga8220be">
 <img src="./static/images/mortar.png" alt="mortar.png" width="1200px">
 
 </figure>
@@ -5231,7 +5265,7 @@ Option 2 used to be the default all these years.
 </p>
 
 
-<figure id="org2afe6d3">
+<figure id="org3130bef">
 <img src="./static/images/learn-switch.png" alt="learn-switch.png" width="1200px">
 
 </figure>
