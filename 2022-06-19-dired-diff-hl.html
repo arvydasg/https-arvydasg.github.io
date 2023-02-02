@@ -7,6 +7,13 @@
       href="https://arvydasg.github.io/rss.xml"
       title="RSS feed for https://arvydasg.github.io/">
 <title>Dired diff-hl</title>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MC4ZQHP');</script>
+<!-- End Google Tag Manager -->
 <meta name="author" content="Arvydas Gasparavicius">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1">
@@ -17,6 +24,10 @@
 <body>
 <div id="preamble" class="status">
 <header>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC4ZQHP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <div class="container">
         <div class="subcontainer">
             <nav class="nav">
@@ -59,14 +70,14 @@
 <div id="content">
 <div class="post-date">19 Jun 2022</div><h1 class="post-title"><a href="https://arvydasg.github.io/2022-06-19-dired-diff-hl.html">Dired diff-hl</a></h1>
 
-<figure id="orgbeda4a4">
+<figure id="org7f499ee">
 <img src="./static/images/dired-diff-hl.png" alt="dired-diff-hl.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgb2b2a57" class="outline-2">
-<h2 id="orgb2b2a57">Introduction</h2>
-<div class="outline-text-2" id="text-orgb2b2a57">
+<div id="outline-container-org4b60fbb" class="outline-2">
+<h2 id="org4b60fbb">Introduction</h2>
+<div class="outline-text-2" id="text-org4b60fbb">
 <p>
 So, everything started when I have discovered ‘diff-hl’ package. It
 had an option to show differences in dired buffer. I thought okay,
@@ -75,9 +86,9 @@ cool option, lets not use neotree anymore and use dired instead.
 </div>
 </div>
 
-<div id="outline-container-orgf674ceb" class="outline-2">
-<h2 id="orgf674ceb">Body</h2>
-<div class="outline-text-2" id="text-orgf674ceb">
+<div id="outline-container-org3989e4e" class="outline-2">
+<h2 id="org3989e4e">Body</h2>
+<div class="outline-text-2" id="text-org3989e4e">
 <p>
 I added a few lines to ‘diff-hl’ config to make the file changes
 visible in dired buffer.
@@ -147,9 +158,9 @@ more convenient to cycle with and I am all set!
 </div>
 </div>
 
-<div id="outline-container-org5a24a85" class="outline-2">
-<h2 id="org5a24a85">The final config</h2>
-<div class="outline-text-2" id="text-org5a24a85">
+<div id="outline-container-org2b369bb" class="outline-2">
+<h2 id="org2b369bb">The final config</h2>
+<div class="outline-text-2" id="text-org2b369bb">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"> <span style="color: #fe8019;">(</span><span style="color: #fb4934;">use-package</span> <span style="color: #d3869b;">dired</span>
     <span style="color: #fe8019;">:ensure</span> nil                         <span style="color: #928374;">;</span><span style="color: #928374;">no need for t, because dired is built in</span>
