@@ -74,30 +74,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org12f5e2c">History</a>
+<li><a href="#org4742c37">History</a>
 <ul>
-<li><a href="#orgae65133">In the beginning</a></li>
-<li><a href="#orga7440a6">Then came the virtual machines.</a></li>
-<li><a href="#org350347d">Now what is the docker about?</a></li>
+<li><a href="#org57807b2">In the beginning</a></li>
+<li><a href="#orgd1ee252">Then came the virtual machines.</a></li>
+<li><a href="#org10b7495">Now what is the docker about?</a></li>
 </ul>
 </li>
-<li><a href="#orgee45807">Docker intro</a>
+<li><a href="#org3b01221">Docker intro</a>
 <ul>
-<li><a href="#org01ed7ed">Benefits of Docker</a></li>
-<li><a href="#org2501d36">Why docker?</a></li>
+<li><a href="#org8cbc221">Benefits of Docker</a></li>
+<li><a href="#org40843b7">Why docker?</a></li>
 </ul>
 </li>
-<li><a href="#org7b3100d">Deploying with Docker</a>
+<li><a href="#org3133dbc">Deploying with Docker</a>
 <ul>
-<li><a href="#org375f916">Creating a platform to work on</a></li>
-<li><a href="#org4c76512">Start pulling the images</a></li>
-<li><a href="#orgee55a73">Run the image</a></li>
-<li><a href="#org5dff1c3">List running containers</a></li>
-<li><a href="#org6976ffc">Access the container</a></li>
-<li><a href="#org2beabb7">Playing around</a></li>
-<li><a href="#orgc89e290">Pull and run someone else's container</a></li>
-<li><a href="#org87e4efc">Stopping the container</a></li>
-<li><a href="#org5dc0678">See the metrics</a></li>
+<li><a href="#orge84c2aa">Creating a platform to work on</a></li>
+<li><a href="#org07bc1e1">Start pulling the images</a></li>
+<li><a href="#org6e32f85">Run the image</a></li>
+<li><a href="#org3f8414b">List running containers</a></li>
+<li><a href="#org9ad9653">Access the container</a></li>
+<li><a href="#orgffab0dd">Playing around</a></li>
+<li><a href="#org6403411">Pull and run someone else's container</a></li>
+<li><a href="#orgd6c736f">Stopping the container</a></li>
+<li><a href="#org9c5f1a5">See the metrics</a></li>
 </ul>
 </li>
 </ul>
@@ -114,13 +114,13 @@ efficient and easy way to deploy Django applications.
 So, let's learn about it.
 </p>
 
-<div id="outline-container-org12f5e2c" class="outline-2">
-<h2 id="org12f5e2c">History</h2>
-<div class="outline-text-2" id="text-org12f5e2c">
+<div id="outline-container-org4742c37" class="outline-2">
+<h2 id="org4742c37">History</h2>
+<div class="outline-text-2" id="text-org4742c37">
 </div>
-<div id="outline-container-orgae65133" class="outline-3">
-<h3 id="orgae65133">In the beginning</h3>
-<div class="outline-text-3" id="text-orgae65133">
+<div id="outline-container-org57807b2" class="outline-3">
+<h3 id="org57807b2">In the beginning</h3>
+<div class="outline-text-3" id="text-org57807b2">
 <p>
 If you wanted a server to store your applications onto, it had to be a
 physical server in a data center. It could run ONE operating
@@ -130,9 +130,9 @@ physical center! Quite inefficient and most likely expensive.
 </div>
 </div>
 
-<div id="outline-container-orga7440a6" class="outline-3">
-<h3 id="orga7440a6">Then came the virtual machines.</h3>
-<div class="outline-text-3" id="text-orga7440a6">
+<div id="outline-container-orgd1ee252" class="outline-3">
+<h3 id="orgd1ee252">Then came the virtual machines.</h3>
+<div class="outline-text-3" id="text-orgd1ee252">
 <ul class="org-ul">
 <li>you would have a server hardware</li>
 <li>then on the server hardware you install a hypervisor(vmware esxi)</li>
@@ -148,9 +148,9 @@ Already way more efficient than the first option.
 </div>
 </div>
 
-<div id="outline-container-org350347d" class="outline-3">
-<h3 id="org350347d">Now what is the docker about?</h3>
-<div class="outline-text-3" id="text-org350347d">
+<div id="outline-container-org10b7495" class="outline-3">
+<h3 id="org10b7495">Now what is the docker about?</h3>
+<div class="outline-text-3" id="text-org10b7495">
 <p>
 You still have the hardware, but on top of that you install one OS.
 Ubuntu for example.
@@ -181,13 +181,13 @@ metal servers.
 </div>
 </div>
 
-<div id="outline-container-orgee45807" class="outline-2">
-<h2 id="orgee45807">Docker intro</h2>
-<div class="outline-text-2" id="text-orgee45807">
+<div id="outline-container-org3b01221" class="outline-2">
+<h2 id="org3b01221">Docker intro</h2>
+<div class="outline-text-2" id="text-org3b01221">
 </div>
-<div id="outline-container-org01ed7ed" class="outline-3">
-<h3 id="org01ed7ed">Benefits of Docker</h3>
-<div class="outline-text-3" id="text-org01ed7ed">
+<div id="outline-container-org8cbc221" class="outline-3">
+<h3 id="org8cbc221">Benefits of Docker</h3>
+<div class="outline-text-3" id="text-org8cbc221">
 <p>
 Why is Docker so fast?
 </p>
@@ -220,9 +220,9 @@ os or kernel.
 </div>
 </div>
 
-<div id="outline-container-org2501d36" class="outline-3">
-<h3 id="org2501d36">Why docker?</h3>
-<div class="outline-text-3" id="text-org2501d36">
+<div id="outline-container-org40843b7" class="outline-3">
+<h3 id="org40843b7">Why docker?</h3>
+<div class="outline-text-3" id="text-org40843b7">
 <p>
 As developers - we write our app - it works great on our machines.
 Then we want to either deploy it or run on other machines or give it
@@ -242,9 +242,9 @@ the app needs is contained in the container, it's isolated.
 </p>
 </div>
 
-<div id="outline-container-org7b45629" class="outline-4">
-<h4 id="org7b45629">Microservices</h4>
-<div class="outline-text-4" id="text-org7b45629">
+<div id="outline-container-orga22aa49" class="outline-4">
+<h4 id="orga22aa49">Microservices</h4>
+<div class="outline-text-4" id="text-orga22aa49">
 <p>
 Usually you deploy the WHOLE app inside one container or a VM. For
 example WordPress. You install WordPress server and MySQL database on
@@ -260,13 +260,13 @@ fatal: not a git repository (or any of the parent directories): .git
 </div>
 </div>
 
-<div id="outline-container-org7b3100d" class="outline-2">
-<h2 id="org7b3100d">Deploying with Docker</h2>
-<div class="outline-text-2" id="text-org7b3100d">
+<div id="outline-container-org3133dbc" class="outline-2">
+<h2 id="org3133dbc">Deploying with Docker</h2>
+<div class="outline-text-2" id="text-org3133dbc">
 </div>
-<div id="outline-container-org375f916" class="outline-3">
-<h3 id="org375f916">Creating a platform to work on</h3>
-<div class="outline-text-3" id="text-org375f916">
+<div id="outline-container-orge84c2aa" class="outline-3">
+<h3 id="orge84c2aa">Creating a platform to work on</h3>
+<div class="outline-text-3" id="text-orge84c2aa">
 <p>
 Create the machine.
 </p>
@@ -286,9 +286,9 @@ Let's create our docker empire!
 </div>
 </div>
 
-<div id="outline-container-org4c76512" class="outline-3">
-<h3 id="org4c76512">Start pulling the images</h3>
-<div class="outline-text-3" id="text-org4c76512">
+<div id="outline-container-org07bc1e1" class="outline-3">
+<h3 id="org07bc1e1">Start pulling the images</h3>
+<div class="outline-text-3" id="text-org07bc1e1">
 <div class="org-src-container">
 <pre class="src src-bash">docker pull centos
 </pre>
@@ -300,7 +300,7 @@ images). These images are what we use to create our containers.
 </p>
 
 
-<figure id="org51d8c31">
+<figure id="org3b58465">
 <img src="./static/images/docker1.png" alt="docker1.png" width="1200px">
 
 </figure>
@@ -318,9 +318,9 @@ sheet</a>.
 </div>
 </div>
 
-<div id="outline-container-orgee55a73" class="outline-3">
-<h3 id="orgee55a73">Run the image</h3>
-<div class="outline-text-3" id="text-orgee55a73">
+<div id="outline-container-org6e32f85" class="outline-3">
+<h3 id="org6e32f85">Run the image</h3>
+<div class="outline-text-3" id="text-org6e32f85">
 <div class="org-src-container">
 <pre class="src src-bash">docker run -d -t --name mycontainer centos
 </pre>
@@ -337,16 +337,16 @@ containers.
 </div>
 </div>
 
-<div id="outline-container-org5dff1c3" class="outline-3">
-<h3 id="org5dff1c3">List running containers</h3>
-<div class="outline-text-3" id="text-org5dff1c3">
+<div id="outline-container-org3f8414b" class="outline-3">
+<h3 id="org3f8414b">List running containers</h3>
+<div class="outline-text-3" id="text-org3f8414b">
 <div class="org-src-container">
 <pre class="src src-bash">docker ps
 </pre>
 </div>
 
 
-<figure id="orgdd437b8">
+<figure id="org6382ba5">
 <img src="./static/images/docker2.png" alt="docker2.png" width="1200px">
 
 </figure>
@@ -362,9 +362,9 @@ network!
 </div>
 </div>
 
-<div id="outline-container-org6976ffc" class="outline-3">
-<h3 id="org6976ffc">Access the container</h3>
-<div class="outline-text-3" id="text-org6976ffc">
+<div id="outline-container-org9ad9653" class="outline-3">
+<h3 id="org9ad9653">Access the container</h3>
+<div class="outline-text-3" id="text-org9ad9653">
 <p>
 Let's visit the centOS container.
 </p>
@@ -375,7 +375,7 @@ Let's visit the centOS container.
 </div>
 
 
-<figure id="orga193672">
+<figure id="org30aff07">
 <img src="./static/images/docker3.png" alt="docker3.png" width="1200px">
 
 </figure>
@@ -390,9 +390,9 @@ To exit, type exit.
 </div>
 </div>
 
-<div id="outline-container-org2beabb7" class="outline-3">
-<h3 id="org2beabb7">Playing around</h3>
-<div class="outline-text-3" id="text-org2beabb7">
+<div id="outline-container-orgffab0dd" class="outline-3">
+<h3 id="orgffab0dd">Playing around</h3>
+<div class="outline-text-3" id="text-orgffab0dd">
 <p>
 Let's try another image. Alpine.
 </p>
@@ -405,7 +405,7 @@ docker ps
 </div>
 
 
-<figure id="org7167679">
+<figure id="org69a4cd4">
 <img src="./static/images/docker4.png" alt="docker4.png" width="1200px">
 
 </figure>
@@ -420,7 +420,7 @@ Now we have two containers running. Let's go into alpine.
 </div>
 
 
-<figure id="orgfc62e2a">
+<figure id="orgf3a1a93">
 <img src="./static/images/docker5.png" alt="docker5.png" width="1200px">
 
 </figure>
@@ -430,16 +430,16 @@ I have installed bunch of other images, can find the ones available <a href="htt
 </p>
 
 
-<figure id="org3d2b1a4">
+<figure id="orgab815f5">
 <img src="./static/images/docker6.png" alt="docker6.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgc89e290" class="outline-3">
-<h3 id="orgc89e290">Pull and run someone else's container</h3>
-<div class="outline-text-3" id="text-orgc89e290">
+<div id="outline-container-org6403411" class="outline-3">
+<h3 id="org6403411">Pull and run someone else's container</h3>
+<div class="outline-text-3" id="text-org6403411">
 <p>
 For example <a href="https://hub.docker.com/r/thenetworkchuck/networkchuckcoffee/tags?page=1&amp;ordering=name">this</a>.
 </p>
@@ -476,7 +476,7 @@ browser.
 </p>
 
 
-<figure id="orgaf4cb8d">
+<figure id="org65c921f">
 <img src="./static/images/docker7.png" alt="docker7.png" width="1200px">
 
 </figure>
@@ -504,11 +504,11 @@ and it's the <code>power of docker</code>.
 </div>
 </div>
 
-<div id="outline-container-org87e4efc" class="outline-3">
-<h3 id="org87e4efc">Stopping the container</h3>
-<div class="outline-text-3" id="text-org87e4efc">
+<div id="outline-container-orgd6c736f" class="outline-3">
+<h3 id="orgd6c736f">Stopping the container</h3>
+<div class="outline-text-3" id="text-orgd6c736f">
 
-<figure id="orgd431496">
+<figure id="org6de7210">
 <img src="./static/images/docker8.png" alt="docker8.png" width="1200px">
 
 </figure>
@@ -537,16 +537,16 @@ It's back up again.
 </div>
 </div>
 
-<div id="outline-container-org5dc0678" class="outline-3">
-<h3 id="org5dc0678">See the metrics</h3>
-<div class="outline-text-3" id="text-org5dc0678">
+<div id="outline-container-org9c5f1a5" class="outline-3">
+<h3 id="org9c5f1a5">See the metrics</h3>
+<div class="outline-text-3" id="text-org9c5f1a5">
 <div class="org-src-container">
 <pre class="src src-bash">docker stats
 </pre>
 </div>
 
 
-<figure id="orgaa53828">
+<figure id="orgd8875cc">
 <img src="./static/images/docker9.png" alt="docker9.png" width="1200px">
 
 </figure>
@@ -557,6 +557,7 @@ It's back up again.
 <div id="postamble" class="status"><div id="footer">
 <hr>
 <p>© 2021-2023 Arvydas Gasparavičius</p>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   <script src="static/script.js"></script>
 </div></div>
 </body>
