@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="A quick guide how to setup Google Tag Manager and Google Analytics">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://arvydasg.github.io/rss.xml"
+      title="RSS feed for https://arvydasg.github.io/">
+<title>Google Tag Manager and Google Analytics</title>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MC4ZQHP');</script>
+<!-- End Google Tag Manager -->
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1">
+<link href= "static/style.css" rel="stylesheet" type="text/css" />
+<script src="static/lightbox.js"></script>
+<script src="static/auto-render.min.js"></script>
+<link rel="icon" href="static/ag.ico"></head>
+<body>
+<div id="preamble" class="status">
+<header>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC4ZQHP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <div class="container">
+        <div class="subcontainer">
+            <nav class="nav">
+                <a href="https://arvydasg.github.io/" class="nav-logo-wrapper">
+                    <p class="nav-branding">Arvydas.dev</p>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/tag-project.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/archive.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/tags.html" class="nav-link">Tags</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydas.dev/codeacademy/" class="nav-link">CodeAcademy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/freelancing.html" class="nav-link">Freelancing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/uses.html" class="nav-link">Uses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/about.html" class="nav-link">About</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </header>
+    </div>
+<div id="content">
+<div class="post-date">02 Feb 2023</div><h1 class="post-title"><a href="https://arvydasg.github.io/2023-02-02-google-tag-manager-and-google-analytics.html">Google Tag Manager and Google Analytics</a></h1>
+
+<div id="outline-container-org0a4c246" class="outline-2">
+<h2 id="org0a4c246">Intro</h2>
+<div class="outline-text-2" id="text-org0a4c246">
+<p>
+A year or so ago I had to set up Google Tag Manager and Google
+Analytics to a few of my client websites. I have not documented the
+process then, but will do so now as I am setting it up for this site.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge019408" class="outline-2">
+<h2 id="orge019408">Setup</h2>
+<div class="outline-text-2" id="text-orge019408">
+<p>
+Setup GTM(Google Tag Manager). It will act as a place for what?
+</p>
+
+<ul class="org-ul">
+<li>Go to <a href="https://tagmanager.google.com">https://tagmanager.google.com</a> page and create an account</li>
+<li>Create a container</li>
+<li>Add the provided tags to your source code <code>head</code> section and at the
+top of <code>body</code> section.</li>
+<li>Make sure when you go to <code>Tag-assistant</code> - you can connect to your
+site and the data flows.</li>
+</ul>
+
+<p>
+Setup GA(Google Analytics)
+</p>
+
+<ul class="org-ul">
+<li>Create an account in <a href="https://analytics.google.com/analytics/web/">https://analytics.google.com/analytics/web/</a></li>
+<li>Create a property for your specific website</li>
+<li>You might get such a message "Universal Analytics properties will
+stop collecting data starting 1 July 2023. It’s recommended that you
+create a Google Analytics 4 property instead." You can ignore it,
+but make sure you are creating Google Analytics 4 property. Remember
+this for the later steps.</li>
+<li>Set up Data Streams to start collecting data</li>
+<li>Get the MEASUREMENT ID, in my case it's something similar to
+<code>G-NYYXE875PQ</code></li>
+</ul>
+
+<p>
+Back to GTM
+</p>
+
+<ul class="org-ul">
+<li>Go to Tags, clink on new, tag configuration</li>
+<li>Select Google Analytics: GA4 Configuration</li>
+<li>Add your MEASUREMENT ID into the provided field</li>
+<li>In the same page - click on trigger field to add a new trigger</li>
+<li>Choose "All Pages"</li>
+<li>Name your tag, for example "GA4 Configuration - G-NYYXE875PQ"</li>
+<li>Save the tag</li>
+<li>Go to the preview mode again, upon your page refresh you now see the
+"debugger active" and next to "Tags Fired" you will see your tag
+name "GA4 Configuration - G-NYYXE875PQ", the data should get
+transmitted. Nice and easy.</li>
+<li>While still in preview mode, go to Google Analytics admin site, find
+"Debug view" in one of the sidebars and open it.</li>
+<li>You will see the data flowing in real time from your preview mode to
+your GA4 tag. Pretty cool. This allows you to debug interactions to
+your website on a more granular level.</li>
+<li>You can(or anyone else can) install a "Google Analytics Debugger"
+extension to their browser and when they navigate through your
+page - your debugger view will see those changes.</li>
+<li>Go back to your main admin GTM site - click on "Submit" to save your
+changes to the environment.</li>
+</ul>
+</div>
+</div>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div></div>
+<div id="postamble" class="status"><div id="footer">
+<hr>
+<p>© 2021-2023 Arvydas Gasparavičius</p>
+  <script src="static/script.js"></script>
+</div></div>
+</body>
+</html>

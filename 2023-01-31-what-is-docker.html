@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Learning about docker">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://arvydasg.github.io/rss.xml"
+      title="RSS feed for https://arvydasg.github.io/">
+<title>What is Docker?</title>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MC4ZQHP');</script>
+<!-- End Google Tag Manager -->
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1">
+<link href= "static/style.css" rel="stylesheet" type="text/css" />
+<script src="static/lightbox.js"></script>
+<script src="static/auto-render.min.js"></script>
+<link rel="icon" href="static/ag.ico"></head>
+<body>
+<div id="preamble" class="status">
+<header>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC4ZQHP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <div class="container">
+        <div class="subcontainer">
+            <nav class="nav">
+                <a href="https://arvydasg.github.io/" class="nav-logo-wrapper">
+                    <p class="nav-branding">Arvydas.dev</p>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/tag-project.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/archive.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/tags.html" class="nav-link">Tags</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydas.dev/codeacademy/" class="nav-link">CodeAcademy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/freelancing.html" class="nav-link">Freelancing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/uses.html" class="nav-link">Uses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://arvydasg.github.io/about.html" class="nav-link">About</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </header>
+    </div>
+<div id="content">
+<div class="post-date">31 Jan 2023</div><h1 class="post-title"><a href="https://arvydasg.github.io/2023-01-31-what-is-docker.html">What is Docker?</a></h1>
+<nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge8a55f6">1. In the beginning</a></li>
+<li><a href="#org7b92c24">2. Then came the virtual machines.</a></li>
+<li><a href="#orgefc975b">3. Now what is the docker about?</a></li>
+<li><a href="#orgb59a8ed">4. Benefits of Docker</a></li>
+<li><a href="#org1cd0d25">5. Why docker?</a></li>
+<li><a href="#org0cd9f0a">6. Deploying with Docker</a></li>
+</ul>
+</div>
+</nav>
+<p>
+In almost every <a href="https://djangochat.com/">Django chat</a> podcast I hear about <a href="https://www.docker.com/">Docker</a>. For me it
+seems like a DevOps'ish kind of tool, but it must be useful to learn
+for a freelance Django developer like myself. It sounds like an
+efficient and easy way to deploy Django applications.
+</p>
+
+<p>
+So, let's learn about it.
+</p>
+
+<div id="outline-container-orge8a55f6" class="outline-2">
+<h2 id="orge8a55f6"><span class="section-number-2">1.</span> In the beginning</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+If you wanted a server to store your applications onto, it had to be a
+physical server in a data center. It could run ONE operating
+system(OS). If you wanted another OS - you had to have another
+physical center! Quite inefficient and most likely expensive.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7b92c24" class="outline-2">
+<h2 id="org7b92c24"><span class="section-number-2">2.</span> Then came the virtual machines.</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>you would have a server hardware</li>
+<li>then on the server hardware you install a hypervisor(vmware esxi)</li>
+<li>inside this hypervisor you then create as many virtual machines as
+you like, assigning CPU, ram, storage by yourself. Can increase all
+of these in the future if you need to.</li>
+</ul>
+
+<p>
+Now you have one physical server and many virtual machines on it.
+Already way more efficient than the first option.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgefc975b" class="outline-2">
+<h2 id="orgefc975b"><span class="section-number-2">3.</span> Now what is the docker about?</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+You still have the hardware, but on top of that you install one OS.
+Ubuntu for example.
+</p>
+
+<p>
+Now you install docker as any other application. It will run as
+daemon. Docker will virtualize portions of our operation system. In
+this case - Ubuntu to create <code>containers</code>. These containers also can run
+a different OS's.
+</p>
+
+<ul class="org-ul">
+<li>own OS</li>
+<li>own CPU</li>
+<li>own memory</li>
+<li>own network</li>
+</ul>
+
+<blockquote>
+<p>
+all of it is isolated - secure. From their(container) point of view -
+they are their own thing. They might as well be installed on bare
+metal servers.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgb59a8ed" class="outline-2">
+<h2 id="orgb59a8ed"><span class="section-number-2">4.</span> Benefits of Docker</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Why is Docker so fast?
+</p>
+
+<p>
+All the OS's, like Ubuntu, Alpine, Arch Linux, CentOS - all of them
+using the SAME Linux kernel JUST LIKE the Ubuntu does ON WHICH you
+have installed Docker daemon.
+</p>
+
+<p>
+And with virtual machines - every time you deploy a virtual machine -
+that is another linux kernel.. it also involves the hypervisor, which
+is kinda heavy, so overall it's just heavy. There are more parts and
+pieces that have to be running.
+</p>
+
+<blockquote>
+<p>
+<code>Container</code> - much more simple, lightweight, fast.
+</p>
+</blockquote>
+
+<p>
+You can not mix and match windows and linux OS containers on one
+machine. If you want to run windows docker machine - you must have an
+underlying windows OS to run it on. Because they share the underlying
+os or kernel.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1cd0d25" class="outline-2">
+<h2 id="org1cd0d25"><span class="section-number-2">5.</span> Why docker?</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+As developers - we write our app - it works great on our machines.
+Then we want to either deploy it or run on other machines or give it
+to a tester - something breaks, does not work.. Having a docker container prevents
+this mess.
+</p>
+
+<blockquote>
+<p>
+Hey, it worked on my machine!
+</p>
+</blockquote>
+
+<p>
+No more of that junk. If you deploy in a docker container - everything
+the app needs is contained in the container, it's isolated.
+</p>
+</div>
+
+<div id="outline-container-orgfa1c64b" class="outline-3">
+<h3 id="orgfa1c64b"><span class="section-number-3">5.1.</span> Microservices</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Usually you deploy the WHOLE app inside one container or a VM. For
+example WordPress. You install WordPress server and MySQL database on
+the same machine. But what you can do with docker is install wordpress
+server on one container and mysql database on another. So whenever you
+want to update wordpress server - you update only just that. Nothing
+is in a way, nothing is conflicting, mysql database remains untouched.
+Sounds good, I must try experiment with that.
+fatal: not a git repository (or any of the parent directories): .git
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0cd9f0a" class="outline-2">
+<h2 id="org0cd9f0a"><span class="section-number-2">6.</span> Deploying with Docker</h2>
+</div>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-django.html">django</a> <a href="https://arvydasg.github.io/tag-deployment.html">deployment</a> <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div></div>
+<div id="postamble" class="status"><div id="footer">
+<hr>
+<p>© 2021-2023 Arvydas Gasparavičius</p>
+  <script src="static/script.js"></script>
+</div></div>
+</body>
+</html>
