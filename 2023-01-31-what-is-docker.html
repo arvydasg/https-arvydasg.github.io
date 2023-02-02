@@ -74,12 +74,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge8a55f6">1. In the beginning</a></li>
-<li><a href="#org7b92c24">2. Then came the virtual machines.</a></li>
-<li><a href="#orgefc975b">3. Now what is the docker about?</a></li>
-<li><a href="#orgb59a8ed">4. Benefits of Docker</a></li>
-<li><a href="#org1cd0d25">5. Why docker?</a></li>
-<li><a href="#org0cd9f0a">6. Deploying with Docker</a></li>
+<li><a href="#org12f5e2c">History</a>
+<ul>
+<li><a href="#orgae65133">In the beginning</a></li>
+<li><a href="#orga7440a6">Then came the virtual machines.</a></li>
+<li><a href="#org350347d">Now what is the docker about?</a></li>
+</ul>
+</li>
+<li><a href="#orgee45807">Docker intro</a>
+<ul>
+<li><a href="#org01ed7ed">Benefits of Docker</a></li>
+<li><a href="#org2501d36">Why docker?</a></li>
+</ul>
+</li>
+<li><a href="#org7b3100d">Deploying with Docker</a>
+<ul>
+<li><a href="#org375f916">Creating a platform to work on</a></li>
+<li><a href="#org4c76512">Start pulling the images</a></li>
+<li><a href="#orgee55a73">Run the image</a></li>
+<li><a href="#org5dff1c3">List running containers</a></li>
+<li><a href="#org6976ffc">Access the container</a></li>
+<li><a href="#org2beabb7">Playing around</a></li>
+<li><a href="#orgc89e290">Pull and run someone else's container</a></li>
+<li><a href="#org87e4efc">Stopping the container</a></li>
+<li><a href="#org5dc0678">See the metrics</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
@@ -94,9 +114,13 @@ efficient and easy way to deploy Django applications.
 So, let's learn about it.
 </p>
 
-<div id="outline-container-orge8a55f6" class="outline-2">
-<h2 id="orge8a55f6"><span class="section-number-2">1.</span> In the beginning</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org12f5e2c" class="outline-2">
+<h2 id="org12f5e2c">History</h2>
+<div class="outline-text-2" id="text-org12f5e2c">
+</div>
+<div id="outline-container-orgae65133" class="outline-3">
+<h3 id="orgae65133">In the beginning</h3>
+<div class="outline-text-3" id="text-orgae65133">
 <p>
 If you wanted a server to store your applications onto, it had to be a
 physical server in a data center. It could run ONE operating
@@ -106,9 +130,9 @@ physical center! Quite inefficient and most likely expensive.
 </div>
 </div>
 
-<div id="outline-container-org7b92c24" class="outline-2">
-<h2 id="org7b92c24"><span class="section-number-2">2.</span> Then came the virtual machines.</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orga7440a6" class="outline-3">
+<h3 id="orga7440a6">Then came the virtual machines.</h3>
+<div class="outline-text-3" id="text-orga7440a6">
 <ul class="org-ul">
 <li>you would have a server hardware</li>
 <li>then on the server hardware you install a hypervisor(vmware esxi)</li>
@@ -124,9 +148,9 @@ Already way more efficient than the first option.
 </div>
 </div>
 
-<div id="outline-container-orgefc975b" class="outline-2">
-<h2 id="orgefc975b"><span class="section-number-2">3.</span> Now what is the docker about?</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org350347d" class="outline-3">
+<h3 id="org350347d">Now what is the docker about?</h3>
+<div class="outline-text-3" id="text-org350347d">
 <p>
 You still have the hardware, but on top of that you install one OS.
 Ubuntu for example.
@@ -155,10 +179,15 @@ metal servers.
 </blockquote>
 </div>
 </div>
+</div>
 
-<div id="outline-container-orgb59a8ed" class="outline-2">
-<h2 id="orgb59a8ed"><span class="section-number-2">4.</span> Benefits of Docker</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgee45807" class="outline-2">
+<h2 id="orgee45807">Docker intro</h2>
+<div class="outline-text-2" id="text-orgee45807">
+</div>
+<div id="outline-container-org01ed7ed" class="outline-3">
+<h3 id="org01ed7ed">Benefits of Docker</h3>
+<div class="outline-text-3" id="text-org01ed7ed">
 <p>
 Why is Docker so fast?
 </p>
@@ -191,9 +220,9 @@ os or kernel.
 </div>
 </div>
 
-<div id="outline-container-org1cd0d25" class="outline-2">
-<h2 id="org1cd0d25"><span class="section-number-2">5.</span> Why docker?</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org2501d36" class="outline-3">
+<h3 id="org2501d36">Why docker?</h3>
+<div class="outline-text-3" id="text-org2501d36">
 <p>
 As developers - we write our app - it works great on our machines.
 Then we want to either deploy it or run on other machines or give it
@@ -213,9 +242,9 @@ the app needs is contained in the container, it's isolated.
 </p>
 </div>
 
-<div id="outline-container-orgfa1c64b" class="outline-3">
-<h3 id="orgfa1c64b"><span class="section-number-3">5.1.</span> Microservices</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-org7b45629" class="outline-4">
+<h4 id="org7b45629">Microservices</h4>
+<div class="outline-text-4" id="text-org7b45629">
 <p>
 Usually you deploy the WHOLE app inside one container or a VM. For
 example WordPress. You install WordPress server and MySQL database on
@@ -229,9 +258,300 @@ fatal: not a git repository (or any of the parent directories): .git
 </div>
 </div>
 </div>
+</div>
 
-<div id="outline-container-org0cd9f0a" class="outline-2">
-<h2 id="org0cd9f0a"><span class="section-number-2">6.</span> Deploying with Docker</h2>
+<div id="outline-container-org7b3100d" class="outline-2">
+<h2 id="org7b3100d">Deploying with Docker</h2>
+<div class="outline-text-2" id="text-org7b3100d">
+</div>
+<div id="outline-container-org375f916" class="outline-3">
+<h3 id="org375f916">Creating a platform to work on</h3>
+<div class="outline-text-3" id="text-org375f916">
+<p>
+Create the machine.
+</p>
+
+<ul class="org-ul">
+<li>Create a simple <a href="https://cloud.linode.com/">Linode</a> node(choosing linode just because I have free
+credits for it, choose any other provider you want). In my case I
+have chosen Linode 2GB plan and a Docker image. ($10/month)</li>
+<li>When your Docker node is running, connect to it through SSH in your
+favorite terminal.</li>
+<li>That's it, you are in.</li>
+</ul>
+
+<p>
+Let's create our docker empire!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4c76512" class="outline-3">
+<h3 id="org4c76512">Start pulling the images</h3>
+<div class="outline-text-3" id="text-org4c76512">
+<div class="org-src-container">
+<pre class="src src-bash">docker pull centos
+</pre>
+</div>
+
+<p>
+What this command does - goes to the docker hub(a registry of docker
+images). These images are what we use to create our containers.
+</p>
+
+
+<figure id="org51d8c31">
+<img src="./static/images/docker1.png" alt="docker1.png" width="1200px">
+
+</figure>
+
+<p>
+A few seconds and we are done.
+</p>
+
+<p>
+Now with this CentOS <code>image</code>, we are going to run our first docker
+<code>container</code>. After &#x2013;name - write your custom name and at the end
+specify the image. <a href="https://docs.docker.com/engine/reference/commandline/run/">More terminal commands</a> for reference. Or a <a href="https://dockerlabs.collabnix.com/docker/cheatsheet/">cheat
+sheet</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgee55a73" class="outline-3">
+<h3 id="orgee55a73">Run the image</h3>
+<div class="outline-text-3" id="text-orgee55a73">
+<div class="org-src-container">
+<pre class="src src-bash">docker run -d -t --name mycontainer centos
+</pre>
+</div>
+
+<p>
+It's running. Crazy how fast it was.
+</p>
+
+<p>
+Is it really running? Let's check by listing all the running
+containers.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5dff1c3" class="outline-3">
+<h3 id="org5dff1c3">List running containers</h3>
+<div class="outline-text-3" id="text-org5dff1c3">
+<div class="org-src-container">
+<pre class="src src-bash">docker ps
+</pre>
+</div>
+
+
+<figure id="orgdd437b8">
+<img src="./static/images/docker2.png" alt="docker2.png" width="1200px">
+
+</figure>
+
+<p>
+Yes it does!
+</p>
+
+<p>
+CenOS is isolated, secure, running with it's own OS, CPU, memory,
+network!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6976ffc" class="outline-3">
+<h3 id="org6976ffc">Access the container</h3>
+<div class="outline-text-3" id="text-org6976ffc">
+<p>
+Let's visit the centOS container.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker exec -it mycontainer bash
+</pre>
+</div>
+
+
+<figure id="orga193672">
+<img src="./static/images/docker3.png" alt="docker3.png" width="1200px">
+
+</figure>
+
+<p>
+It has a complete file system.. it's completely separate..
+</p>
+
+<p>
+To exit, type exit.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2beabb7" class="outline-3">
+<h3 id="org2beabb7">Playing around</h3>
+<div class="outline-text-3" id="text-org2beabb7">
+<p>
+Let's try another image. Alpine.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker pull alpine
+docker run -t -d --name mysecondcontainer alpine
+docker ps
+</pre>
+</div>
+
+
+<figure id="org7167679">
+<img src="./static/images/docker4.png" alt="docker4.png" width="1200px">
+
+</figure>
+
+<p>
+Now we have two containers running. Let's go into alpine.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker exec -it mysecondcontainer sh
+</pre>
+</div>
+
+
+<figure id="orgfc62e2a">
+<img src="./static/images/docker5.png" alt="docker5.png" width="1200px">
+
+</figure>
+
+<p>
+I have installed bunch of other images, can find the ones available <a href="https://hub.docker.com/">here</a>.
+</p>
+
+
+<figure id="org3d2b1a4">
+<img src="./static/images/docker6.png" alt="docker6.png" width="1200px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-orgc89e290" class="outline-3">
+<h3 id="orgc89e290">Pull and run someone else's container</h3>
+<div class="outline-text-3" id="text-orgc89e290">
+<p>
+For example <a href="https://hub.docker.com/r/thenetworkchuck/networkchuckcoffee/tags?page=1&amp;ordering=name">this</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker pull thenetworkchuck/networkchuckcoffee:ncimage
+</pre>
+</div>
+
+<p>
+Adding :ncimage tag at the end. It was specified by the creator <a href="https://hub.docker.com/r/thenetworkchuck/networkchuckcoffee/tags?page=1&amp;ordering=name">here</a>.
+It is basically a version. It's useful to be able to choose a
+different version.
+</p>
+
+<p>
+To run this container(a web app), we do this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker run -t -d -p 80:80 --name nccoffee thenetworkchuck/networkchuckcoffee:ncimage
+</pre>
+</div>
+
+<p>
+We have specified additional switch <code>-p</code> which stands for <code>ports</code>. 80:80.
+The port at the back is the port for docker container and first one is
+for the host. Basically saying match port 80 with port 80.
+</p>
+
+<p>
+Now grab your IP address from your linode dashboard, enter it in the
+browser.
+</p>
+
+
+<figure id="orgaf4cb8d">
+<img src="./static/images/docker7.png" alt="docker7.png" width="1200px">
+
+</figure>
+
+<p>
+I did not set up this website, I did not install any programs or alter
+any settings, but by pulling down that image and running the
+container - we have a website just like the creator intended.
+</p>
+
+<blockquote>
+<p>
+That container not only has all the cpu, memory etc, but also all the
+settings the creator has applied(debian, nginx, website files, etc),
+web configuration, all prerequisites, all dependencies.. packaged
+together in a neat little package. And you can run it on any linux
+machine.
+</p>
+</blockquote>
+
+<p>
+Move it to AWS, to azure, to your computer, my computer, to wherever -
+and it's the <code>power of docker</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org87e4efc" class="outline-3">
+<h3 id="org87e4efc">Stopping the container</h3>
+<div class="outline-text-3" id="text-org87e4efc">
+
+<figure id="orgd431496">
+<img src="./static/images/docker8.png" alt="docker8.png" width="1200px">
+
+</figure>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker stop nccoffee
+</pre>
+</div>
+
+<p>
+The hosted website is immediately now available anymore.
+</p>
+
+<p>
+Let's start it again.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker start nccoffee
+</pre>
+</div>
+
+<p>
+It's back up again.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5dc0678" class="outline-3">
+<h3 id="org5dc0678">See the metrics</h3>
+<div class="outline-text-3" id="text-org5dc0678">
+<div class="org-src-container">
+<pre class="src src-bash">docker stats
+</pre>
+</div>
+
+
+<figure id="orgaa53828">
+<img src="./static/images/docker9.png" alt="docker9.png" width="1200px">
+
+</figure>
+</div>
+</div>
 </div>
 <div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-django.html">django</a> <a href="https://arvydasg.github.io/tag-deployment.html">deployment</a> <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div></div>
 <div id="postamble" class="status"><div id="footer">
