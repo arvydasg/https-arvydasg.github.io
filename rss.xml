@@ -4,7 +4,56 @@
 <title><![CDATA[arvydasg.github.io]]></title>
 <description><![CDATA[arvydasg.github.io]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Thu, 02 Feb 2023 06:41:22 +0200</lastBuildDate>
+<lastBuildDate>Thu, 02 Feb 2023 06:57:44 +0200</lastBuildDate>
+<item>
+  <title><![CDATA[One of the best ways to learn Programming is to Blog]]></title>
+  <description><![CDATA[
+<p>
+I think people don’t want to blog is because they’re worried about
+taking time away from coding. But that's not true! Here are a few
+reasons why blogging is actually a very helpful way to learning
+coding.
+</p>
+
+<ul class="org-ul">
+<li><b>Forces in Depth Research</b> - if you start writing about fundamental
+topics, such as Python’s OOP, it’ll require you to research that
+topic vigorously. This results in you reading multiple blog posts,
+book chapters, and lots of code. I doubt many people will read such
+post, but now I truly understand how to use it and even better I use
+that post as a quick reference when coding.</li>
+
+<li><b>Forces Practice</b> - if you really want to grasp something well enough
+to blog about it, you need to practice using it i.e. you need to
+code.</li>
+
+<li><b>Forces Reflection</b> - For one of my personal projects I blogged about
+each milestone I reached. For instance if I added a Command Line
+Interface to my app I blogged about it. This meant I had to go back
+through my code and reflect on why I wrote it that way. You should
+be doing this anyways but blogging about it forced me to really
+scrutinize my code, highlighted errors, and always left me with
+improved knowledge and skills.</li>
+
+<li><b>Creates References</b> - I already mentioned this in #1 but I think it
+warrants its own spot in this list. Once you’ve written a post on a
+topic you can refer back to it anytime. This reduces time spent
+brushing up on a topic because you know exactly where to find your
+post.</li>
+
+<li><b>Creates a Timeline of Your Progress</b> - by blogging consistently while
+you’re learning to program, you’re chronicling the evolution of your
+skills. Seeing my progress from post to post has been incredibly
+rewarding and keeps me motivated. I’ve also been told that potential
+employers like to see this as well, so if a side effect is it helps
+me/you get a job, SWEET!</li>
+</ul>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
+  <link>https://arvydasg.github.io/2023-02-02-one-of-the-best-ways-to-learn-programming-is-to-blog.html</link>
+  <guid>https://arvydasg.github.io/2023-02-02-one-of-the-best-ways-to-learn-programming-is-to-blog.html</guid>
+  <pubDate>Thu, 02 Feb 2023 06:53:00 +0200</pubDate>
+</item>
 <item>
   <title><![CDATA[Google Tag Manager and Google Analytics]]></title>
   <description><![CDATA[
