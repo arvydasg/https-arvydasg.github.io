@@ -4,7 +4,571 @@
 <title><![CDATA[arvydasg.github.io]]></title>
 <description><![CDATA[arvydasg.github.io]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Thu, 02 Feb 2023 07:25:06 +0200</lastBuildDate>
+<lastBuildDate>Mon, 06 Feb 2023 07:24:31 +0200</lastBuildDate>
+<item>
+  <title><![CDATA[Run Multiple Flask Applications from the same server]]></title>
+  <description><![CDATA[
+<nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org43cadab">1. Why I Wanted to Run Multiple Flask Applications</a></li>
+<li><a href="#orgfad47e9">2. How to Configure Flask Application Dispatching</a></li>
+<li><a href="#org2f44279">3. Set up the Separate Applications</a></li>
+<li><a href="#orgba3434d">4. Combine the Applications</a></li>
+<li><a href="#org23450eb">5. Invoke a Development Server</a></li>
+<li><a href="#org669671e">6. Running both apps</a></li>
+<li><a href="#org172f296">7. Conclusion</a></li>
+</ul>
+</div>
+</nav>
+<p>
+Route to multiple <a href="https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface">WSGI</a>(Web Server Gateway Interface) applications at
+different URL paths.
+</p>
+
+
+<figure id="orgef0460b">
+<img src="./static/images/matrioshka.jpg" alt="matrioshka.jpg" width="600px">
+
+</figure>
+
+<p>
+I had multiple flask applications that I wanted to run from the same
+domain. Also I wanted them to be accessible by using a URL prefix
+instead of by accessing a different port. Application dispatching
+seems to be a solution.
+</p>
+
+<div id="outline-container-org43cadab" class="outline-2">
+<h2 id="org43cadab"><span class="section-number-2">1.</span> Why I Wanted to Run Multiple Flask Applications</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+As a part of my <a href="https://arvydas.dev/codeacademy/">CodeAcademy</a> Python journey I decided to set up a
+portfolio site for my flask projects.
+</p>
+
+<p>
+Since I was developing the applications at separate times in separate
+environments, I wanted to be able to keep them separate in deployment
+instead of cobbling them into the same large application. Several of
+the potential solutions I found just ended up placing the different
+applications on different ports. I wanted a solution that allowed for
+a modular website that could be accessed through paths on the same
+domain.
+</p>
+
+<p>
+<a href="https://flask.palletsprojects.com/en/2.2.x/patterns/appdispatch/">Application dispatching</a>. With this you can combine multiple Flask
+applications at the WSGI level. This also allows you to combine any
+WSGI application. So if you have separate Flask, Django applications
+you can run them in the same interpreter side by side if you want.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfad47e9" class="outline-2">
+<h2 id="orgfad47e9"><span class="section-number-2">2.</span> How to Configure Flask Application Dispatching</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Setting this up is relatively straightforward when you take a modular
+approach.
+</p>
+
+<ul class="org-ul">
+<li>Set up the separate applications</li>
+<li>Combine the applications</li>
+<li>Invoke a development server</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2f44279" class="outline-2">
+<h2 id="org2f44279"><span class="section-number-2">3.</span> Set up the Separate Applications</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Here are 2 Flask applications:
+</p>
+
+<p>
+flask_app_1
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #928374;"># </span><span style="color: #928374;">/flask_1/__init__.py</span>
+<span style="color: #fb4934;">from</span> flask <span style="color: #fb4934;">import</span> Flask
+<span style="color: #83a598;">app</span> = Flask<span style="color: #fe8019;">(</span><span style="color: #fe8019;">__name__</span><span style="color: #fe8019;">)</span>
+app.<span style="color: #83a598;">debug</span> = <span style="color: #d3869b;">True</span>
+<span style="color: #fabd2f;">@app.route</span><span style="color: #fe8019;">(</span><span style="color: #b8bb26;">'/'</span><span style="color: #fe8019;">)</span>
+<span style="color: #fb4934;">def</span> <span style="color: #b8bb26;">hello_world</span><span style="color: #fe8019;">()</span>:
+    <span style="color: #fb4934;">return</span> <span style="color: #b8bb26;">'&lt;h1&gt;Hello, World! I am Flask App 1.&lt;/h1&gt; \</span>
+<span style="color: #b8bb26;">        Please go visit &lt;a href="/flask_app_2"&gt;Flask App 2&lt;/a&gt;'</span>
+</pre>
+</div>
+
+<p>
+flask_app_1
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #928374;"># </span><span style="color: #928374;">/flask_2/__init__.py</span>
+<span style="color: #fb4934;">from</span> flask <span style="color: #fb4934;">import</span> Flask
+<span style="color: #83a598;">app</span> = Flask<span style="color: #fe8019;">(</span><span style="color: #fe8019;">__name__</span><span style="color: #fe8019;">)</span>
+app.<span style="color: #83a598;">debug</span> = <span style="color: #d3869b;">True</span>
+<span style="color: #fabd2f;">@app.route</span><span style="color: #fe8019;">(</span><span style="color: #b8bb26;">'/'</span><span style="color: #fe8019;">)</span>
+<span style="color: #fb4934;">def</span> <span style="color: #b8bb26;">hello_world</span><span style="color: #fe8019;">()</span>:
+    <span style="color: #fb4934;">return</span> <span style="color: #b8bb26;">'&lt;h1&gt;Hello, World! I am Flask App 2.&lt;/h1&gt; \</span>
+<span style="color: #b8bb26;">        Please go visit &lt;a href="/"&gt;Flask App 1&lt;/a&gt;'</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgba3434d" class="outline-2">
+<h2 id="orgba3434d"><span class="section-number-2">4.</span> Combine the Applications</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+You will utilize the Werkzeug <a href="https://werkzeug.palletsprojects.com/en/2.2.x/middleware/dispatcher/">Dispatcher Middleware</a>. flask_app_1 will
+run on “/” and flask_app_2 will run on “/flask_app_2”.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #928374;"># </span><span style="color: #928374;">app.py</span>
+<span style="color: #fb4934;">from</span> werkzeug.middleware.dispatcher <span style="color: #fb4934;">import</span> DispatcherMiddleware <span style="color: #928374;"># </span><span style="color: #928374;">use to combine each Flask app into a larger one that is dispatched based on prefix</span>
+<span style="color: #fb4934;">from</span> flask_1 <span style="color: #fb4934;">import</span> app <span style="color: #fb4934;">as</span> flask_app_1
+<span style="color: #fb4934;">from</span> flask_2 <span style="color: #fb4934;">import</span> app <span style="color: #fb4934;">as</span> flask_app_2
+<span style="color: #83a598;">application</span> = DispatcherMiddleware<span style="color: #fe8019;">(</span>flask_app_1, <span style="color: #cc241d;">{</span>
+    <span style="color: #b8bb26;">'/flask_app_2'</span>: flask_app_2
+<span style="color: #cc241d;">}</span><span style="color: #fe8019;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org23450eb" class="outline-2">
+<h2 id="org23450eb"><span class="section-number-2">5.</span> Invoke a Development Server</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Here is a small file that calls the <a href="https://werkzeug.palletsprojects.com/en/2.2.x/serving/#werkzeug.serving.run_simple">Werkzeug Run Simple</a> server that is
+suitable for development. <code>For deployment</code>, you’ll need to configure a
+<a href="https://flask.palletsprojects.com/en/2.2.x/deploying/#deployment">suitable WSGI server</a> and remove the debug options from the app files.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #928374;"># </span><span style="color: #928374;">run.py</span>
+<span style="color: #fb4934;">from</span> werkzeug.serving <span style="color: #fb4934;">import</span> run_simple <span style="color: #928374;"># </span><span style="color: #928374;">werkzeug development server</span>
+<span style="color: #fb4934;">from</span> app <span style="color: #fb4934;">import</span> application
+<span style="color: #fb4934;">if</span> <span style="color: #fe8019;">__name__</span> == <span style="color: #b8bb26;">'__main__'</span>:
+    run_simple<span style="color: #fe8019;">(</span><span style="color: #b8bb26;">'localhost'</span>, 5000, application, use_reloader=<span style="color: #d3869b;">True</span>, use_debugger=<span style="color: #d3869b;">True</span>, use_evalex=<span style="color: #d3869b;">True</span><span style="color: #fe8019;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org669671e" class="outline-2">
+<h2 id="org669671e"><span class="section-number-2">6.</span> Running both apps</h2>
+<div class="outline-text-2" id="text-6">
+<div class="org-src-container">
+<pre class="src src-python">python3 run.py
+</pre>
+</div>
+
+
+<figure id="org36caac1">
+<img src="./static/images/flask_multiple1.png" alt="flask_multiple1.png" width="1200px">
+
+</figure>
+
+
+<figure id="org340a47d">
+<img src="./static/images/flask_multiple2.png" alt="flask_multiple2.png" width="1200px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org172f296" class="outline-2">
+<h2 id="org172f296"><span class="section-number-2">7.</span> Conclusion</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+As stated before, this is a simple setup that only requires a modular
+approach and a few lines of code. I wanted to figure out how to set up
+this framework first before I built my site and then had to
+restructure files and folders to get it to work.
+</p>
+
+<p>
+You can find the complete code for this on <a href="https://github.com/arvydasg/run_multiple_flask_apps">my github</a>. You’re welcome
+to fork it and clone it to get a working example.
+</p>
+</div>
+</div>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> <a href="https://arvydasg.github.io/tag-flask.html">flask</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
+  <category><![CDATA[flask]]></category>
+  <link>https://arvydasg.github.io/2023-02-06-run-multiple-flask-applications-from-the-same-server.html</link>
+  <guid>https://arvydasg.github.io/2023-02-06-run-multiple-flask-applications-from-the-same-server.html</guid>
+  <pubDate>Mon, 06 Feb 2023 05:39:00 +0200</pubDate>
+</item>
+<item>
+  <title><![CDATA[Dockerizing a Python Django Web Application]]></title>
+  <description><![CDATA[
+<nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgeea6596">1. Create and Dockerize a Django Application</a>
+<ul>
+<li><a href="#org7b2a409">1.1. <code>Install</code> Docker and Docker Desktop</a></li>
+<li><a href="#orgdf62baf">1.2. Create a Django <code>app</code></a></li>
+<li><a href="#org3d7483e">1.3. Create a Docker <code>image</code></a></li>
+<li><a href="#orgb9849ca">1.4. Create a Docker <code>container</code></a></li>
+</ul>
+</li>
+<li><a href="#org359e1c5">2. Upload Docker Image to Docker Hub</a></li>
+<li><a href="#org702a663">3. Deploy with Docker on Linode</a>
+<ul>
+<li><a href="#orgb192643">3.1. Creating a platform to work on</a></li>
+<li><a href="#org846ceef">3.2. Run the container</a></li>
+<li><a href="#org006de6e">3.3. Some other Docker commands</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<p>
+Having many Django applications under my belt, either client or
+personal projects - I would like to publish them to the web to display
+to my future clients or employers. Not a coincidence that I learned
+<a href="https://arvydas.dev/2023-01-31-what-is-docker.html">Docker</a> the other day, it will come in handy.
+</p>
+
+<div id="outline-container-orgeea6596" class="outline-2">
+<h2 id="orgeea6596"><span class="section-number-2">1.</span> Create and Dockerize a Django Application</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org7b2a409" class="outline-3">
+<h3 id="org7b2a409"><span class="section-number-3">1.1.</span> <code>Install</code> Docker and Docker Desktop</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Follow <a href="https://www.youtube.com/watch?v=Vplj9b0L_1Y&amp;ab_channel=Abstractprogrammer">this</a> tutorial or <a href="https://docs.docker.com/get-docker/">the docs</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdf62baf" class="outline-3">
+<h3 id="orgdf62baf"><span class="section-number-3">1.2.</span> Create a Django <code>app</code></h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+If you don't want to setup basic Django app together - clone mine from <a href="https://github.com/arvydasg/django-docker-starter">here</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #fe8019;">cd</span> Documents
+mkdir djangodocker
+<span style="color: #fe8019;">cd</span> djangodocker
+django-admin startproject djangodocker
+<span style="color: #fe8019;">cd</span> djangodocker
+python3 manage.py runserver
+<span style="color: #928374;"># </span><span style="color: #928374;">visit http://127.0.0.1:8000/</span>
+<span style="color: #928374;"># </span><span style="color: #928374;">C-c C-c to kill the running process</span>
+<span style="color: #fe8019;">cd</span> ..
+python3 -m venv venv
+<span style="color: #fe8019;">source</span> env/bin/activate
+<span style="color: #fe8019;">cd</span> djangodocker
+pip list
+pip install django
+pip freeze &gt; requirements.txt
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3d7483e" class="outline-3">
+<h3 id="org3d7483e"><span class="section-number-3">1.3.</span> Create a Docker <code>image</code></h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Create <code>Dockerfile</code> (without any file extensions, and with the D being
+capital) close to your manage.py file. This file will contain commands
+and instructions to assemble our <code>IMAGE</code>.
+</p>
+
+<p>
+Whatever we put in it - docker will run through each of these commands
+and run through each them.
+</p>
+
+<p>
+<code>Result will be an image prepared and ready to be run on a Docker Container.</code>
+</p>
+
+<p>
+Dockerfile contents:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-dockerfile"><span style="color: #928374;"># </span><span style="color: #928374;">remove ALL the comments if you want to use the code below.</span>
+
+<span style="color: #fb4934;">FROM</span> <span style="color: #fabd2f; font-weight: bold;">python:3.8-slim-buster</span>     <span style="color: #928374;"># </span><span style="color: #928374;">OS from docker hub</span>
+
+<span style="color: #fb4934;">WORKDIR</span> /app                    <span style="color: #928374;">#</span><span style="color: #928374;">working directory of the OS created above</span>
+
+<span style="color: #fb4934;">COPY</span> requirements.txt requirements.txt <span style="color: #928374;">#</span><span style="color: #928374;">copy across from our local dir over to the image</span>
+<span style="color: #fb4934;">RUN</span> pip3 install -r requirements.txt
+
+<span style="color: #fb4934;">COPY</span> . .                        <span style="color: #928374;">#</span><span style="color: #928374;">copy everything from current dir to working dir (/app)</span>
+
+<span style="color: #fb4934;">CMD</span> <span style="color: #fe8019;">[</span><span style="color: #b8bb26;">"python3"</span>, <span style="color: #b8bb26;">"manage.py"</span>, <span style="color: #b8bb26;">"runserver"</span>, <span style="color: #b8bb26;">"0.0.0.0:8000"</span><span style="color: #fe8019;">]</span> <span style="color: #928374;">#</span><span style="color: #928374;">m0000 making our app externally visible from outside of the container</span>
+</pre>
+</div>
+
+<p>
+Create <code>.dockerignore</code> file to exclude any folders you want. .venv for
+example.
+</p>
+
+<p>
+.dockerignore contents:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-dockerfile">*/venv
+</pre>
+</div>
+
+<p>
+To build an image, run this command while inside of the folder in
+which manage.py and Dockerfile is present. &#x2013;tag basically give a name
+to the image. Don't forget the . at the end.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker build --tag python-django .
+</pre>
+</div>
+
+<p>
+It will take up to ~30 seconds. The image will be visible in "Docker
+Desktop" app.
+</p>
+
+
+<figure id="org431cc6a">
+<img src="./static/images/docker10.png" alt="docker10.png" width="1200px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-orgb9849ca" class="outline-3">
+<h3 id="orgb9849ca"><span class="section-number-3">1.4.</span> Create a Docker <code>container</code></h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+A single command will do it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker run --publish 8000:8000 python-django
+
+<span style="color: #928374;"># </span><span style="color: #928374;">or to run in detached(run in the background without occupying the terminal) mode</span>
+docker run -d --publish 8000:8000 python-django
+</pre>
+</div>
+
+
+<figure id="org40780f5">
+<img src="./static/images/docker11.png" alt="docker11.png" width="1200px">
+
+</figure>
+
+<p>
+Open up Django Desktop - you will see the container we have just
+created in "Container tab".
+</p>
+
+
+<figure id="orgc06f07c">
+<img src="./static/images/docker12.png" alt="docker12.png" width="1200px">
+
+</figure>
+
+<p>
+So now we are running a django application in a docker container. Go
+to a browser, <code>127.0.0.1:8000</code> to see your django app running.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org359e1c5" class="outline-2">
+<h2 id="org359e1c5"><span class="section-number-2">2.</span> Upload Docker Image to Docker Hub</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Go to <a href="https://hub.docker.com/">Docker hub</a> and create an account there.</li>
+<li>Setup the authentication on your own. Setting up gpg, password store
+manager and etc is the most tricky part for me now. Somehow I made
+it work for myself. Attaching some error messages and useful links.
+<ul class="org-ul">
+<li>Login to docker in your terminal <a href="https://github.com/docker/docker-credential-helpers/issues/102#issuecomment-388974092">like so</a>.</li>
+<li>Then do <a href="https://github.com/docker/docker-credential-helpers/issues/140#issuecomment-1149610603">this</a>.</li>
+<li>fix is this - <a href="https://www.biostars.org/p/9531985/">https://www.biostars.org/p/9531985/</a>
+try logout, delete stuff, generate new gpg key, dont login through
+browser - login in terminal</li>
+</ul></li>
+</ul>
+
+<p>
+Authentication should be ready and you should have cloned my
+django-docker-starter repository
+</p>
+
+<p>
+First, after your login you have to tag your image before pushing:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">docker tag image_name YOUR_DOCKERHUB_NAME/image_name
+</pre>
+</div>
+
+<p>
+Then, you have to push it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker push YOUR_DOCKERHUB_NAME/image_name
+</pre>
+</div>
+
+<p>
+For example:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker tag django-docker-starter arvydasg/django-docker-starter
+docker push arvydasg/django-docker-starter
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org702a663" class="outline-2">
+<h2 id="org702a663"><span class="section-number-2">3.</span> Deploy with Docker on Linode</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgb192643" class="outline-3">
+<h3 id="orgb192643"><span class="section-number-3">3.1.</span> Creating a platform to work on</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Create the machine.
+</p>
+
+<ul class="org-ul">
+<li>Create a simple <a href="https://cloud.linode.com/">Linode</a> node(choosing linode just because I have free
+credits for it, choose any other provider you want). In my case I
+have chosen Linode 2GB plan and a Docker image. ($10/month)</li>
+<li>When your Docker node is running, connect to it through SSH in it.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org846ceef" class="outline-3">
+<h3 id="org846ceef"><span class="section-number-3">3.2.</span> Run the container</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Let's pull the <a href="https://hub.docker.com/r/arvydasg/django-docker-starter/tags">container</a> we have created and pushed to Docker Hub in
+the previous steps.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker pull arvydasg/django-docker-starter:latest
+</pre>
+</div>
+
+<p>
+Adding :latest tag at the end. It is basically a version. It's useful
+to be able to choose a different version.
+</p>
+
+<p>
+To run this container(a web app), we do this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker run -t -d -p 9999:8000 arvydasg/django-docker-starter:latest
+</pre>
+</div>
+
+<p>
+We have specified additional switch <code>-p</code> which stands for <code>ports</code>.
+9999:8000.
+</p>
+
+<ul class="org-ul">
+<li>8000 is the port of the django app (specified in Dockerfile)</li>
+<li>9999 is the port on which we want to reach the</li>
+</ul>
+
+<p>
+Basically saying match port 80 with port 80.
+</p>
+
+<p>
+Now grab your IP address from your linode dashboard, enter it in the
+browser.
+</p>
+
+
+<figure id="orgf79f9f0">
+<img src="./static/images/docker7.png" alt="docker7.png" width="1200px">
+
+</figure>
+
+<blockquote>
+<p>
+That container not only has all the cpu, memory etc, but also all the
+settings the creator has applied(debian, nginx, website files, etc),
+web configuration, all prerequisites, all dependencies.. packaged
+together in a neat little package. And you can run it on any linux
+machine.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org006de6e" class="outline-3">
+<h3 id="org006de6e"><span class="section-number-3">3.3.</span> Some other Docker commands</h3>
+<div class="outline-text-3" id="text-3-3">
+<div class="org-src-container">
+<pre class="src src-bash">docker ps -a
+docker images -a
+docker start &lt;name of the image or the ID&gt;
+docker stop &lt;name of the image or the ID&gt;
+curl localhost:9999 -v
+docker rm -f &lt;name of the image or the ID&gt;
+docker rmi &lt;name of the image&gt;
+docker stats
+docker port &lt;name of the container&gt;
+
+<span style="color: #928374;"># </span><span style="color: #928374;">access the docker container's bash</span>
+docker exec -it mycontainer bash
+
+<span style="color: #928374;"># </span><span style="color: #928374;">delete or remove all docker data like containers, images and volumes</span>
+docker rm --force <span style="color: #ebdbb2; font-weight: bold;">`docker ps -qa`</span>
+docker rmi --force <span style="color: #ebdbb2; font-weight: bold;">`docker images -aq`</span>
+docker volume prune
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-django.html">django</a> <a href="https://arvydasg.github.io/tag-deployment.html">deployment</a> <a href="https://arvydasg.github.io/tag-learning.html">learning</a> <a href="https://arvydasg.github.io/tag-docker.html">docker</a> </div>]]></description>
+  <category><![CDATA[django]]></category>
+  <category><![CDATA[deployment]]></category>
+  <category><![CDATA[learning]]></category>
+  <category><![CDATA[docker]]></category>
+  <link>https://arvydasg.github.io/2023-02-04-dockerizing-a-python-django-web-application.html</link>
+  <guid>https://arvydasg.github.io/2023-02-04-dockerizing-a-python-django-web-application.html</guid>
+  <pubDate>Sat, 04 Feb 2023 17:56:00 +0200</pubDate>
+</item>
 <item>
   <title><![CDATA[One of the best ways to learn Programming is to Blog]]></title>
   <description><![CDATA[
@@ -61,9 +625,9 @@ me/you get a job, SWEET!</li>
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org437cf3b">Setup GTM(Google Tag Manager)</a></li>
-<li><a href="#orgd796678">Setup GA(Google Analytics)</a></li>
-<li><a href="#org78cdc2a">Back to GTM</a></li>
+<li><a href="#org02481eb">Setup GTM(Google Tag Manager)</a></li>
+<li><a href="#orgd9f1c82">Setup GA(Google Analytics)</a></li>
+<li><a href="#org146fd01">Back to GTM</a></li>
 </ul>
 </div>
 </nav>
@@ -74,9 +638,9 @@ have not documented the process back then, but will do so now as I am
 setting it up for <code>this</code> site. (Yes, I know that you have been here ;) )
 </p>
 
-<div id="outline-container-org437cf3b" class="outline-2">
-<h2 id="org437cf3b">Setup GTM(Google Tag Manager)</h2>
-<div class="outline-text-2" id="text-org437cf3b">
+<div id="outline-container-org02481eb" class="outline-2">
+<h2 id="org02481eb">Setup GTM(Google Tag Manager)</h2>
+<div class="outline-text-2" id="text-org02481eb">
 <p>
 It will act as single place where you put all your tags in the future.
 Good for managing and debugging.
@@ -93,9 +657,9 @@ site and the data flows.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd796678" class="outline-2">
-<h2 id="orgd796678">Setup GA(Google Analytics)</h2>
-<div class="outline-text-2" id="text-orgd796678">
+<div id="outline-container-orgd9f1c82" class="outline-2">
+<h2 id="orgd9f1c82">Setup GA(Google Analytics)</h2>
+<div class="outline-text-2" id="text-orgd9f1c82">
 <ul class="org-ul">
 <li>Create an account in <a href="https://analytics.google.com/analytics/web/">https://analytics.google.com/analytics/web/</a></li>
 <li>Create a property for your specific website</li>
@@ -111,9 +675,9 @@ this for the later steps.</li>
 </div>
 </div>
 
-<div id="outline-container-org78cdc2a" class="outline-2">
-<h2 id="org78cdc2a">Back to GTM</h2>
-<div class="outline-text-2" id="text-org78cdc2a">
+<div id="outline-container-org146fd01" class="outline-2">
+<h2 id="org146fd01">Back to GTM</h2>
+<div class="outline-text-2" id="text-org146fd01">
 <ul class="org-ul">
 <li>Go to Tags, clink on new, tag configuration</li>
 <li>Select Google Analytics: GA4 Configuration</li>
@@ -151,7 +715,7 @@ Congrats!
 </p>
 
 
-<figure id="orgea4ee8c">
+<figure id="orgc74c51f">
 <img src="./static/images/google-analytics.png" alt="google-analytics.png" width="1200px">
 
 </figure>
@@ -176,39 +740,6 @@ sooner than later.
 <item>
   <title><![CDATA[What is Docker?]]></title>
   <description><![CDATA[
-<nav id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="#org4742c37">History</a>
-<ul>
-<li><a href="#org57807b2">In the beginning</a></li>
-<li><a href="#orgd1ee252">Then came the virtual machines.</a></li>
-<li><a href="#org10b7495">Now what is the docker about?</a></li>
-</ul>
-</li>
-<li><a href="#org3b01221">Docker intro</a>
-<ul>
-<li><a href="#org8cbc221">Benefits of Docker</a></li>
-<li><a href="#org40843b7">Why docker?</a></li>
-</ul>
-</li>
-<li><a href="#org3133dbc">Deploying with Docker</a>
-<ul>
-<li><a href="#orge84c2aa">Creating a platform to work on</a></li>
-<li><a href="#org07bc1e1">Start pulling the images</a></li>
-<li><a href="#org6e32f85">Run the image</a></li>
-<li><a href="#org3f8414b">List running containers</a></li>
-<li><a href="#org9ad9653">Access the container</a></li>
-<li><a href="#orgffab0dd">Playing around</a></li>
-<li><a href="#org6403411">Pull and run someone else's container</a></li>
-<li><a href="#orgd6c736f">Stopping the container</a></li>
-<li><a href="#org9c5f1a5">See the metrics</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</nav>
 <p>
 In almost every <a href="https://djangochat.com/">Django chat</a> podcast I hear about <a href="https://www.docker.com/">Docker</a>. For me it
 seems like a DevOps'ish kind of tool, but it must be useful to learn
@@ -216,17 +747,9 @@ for a freelance Django developer like myself. It sounds like an
 efficient and easy way to deploy Django applications.
 </p>
 
-<p>
-So, let's learn about it.
-</p>
-
-<div id="outline-container-org4742c37" class="outline-2">
-<h2 id="org4742c37">History</h2>
-<div class="outline-text-2" id="text-org4742c37">
-</div>
-<div id="outline-container-org57807b2" class="outline-3">
-<h3 id="org57807b2">In the beginning</h3>
-<div class="outline-text-3" id="text-org57807b2">
+<div id="outline-container-orgf026e51" class="outline-2">
+<h2 id="orgf026e51">In the beginning</h2>
+<div class="outline-text-2" id="text-orgf026e51">
 <p>
 If you wanted a server to store your applications onto, it had to be a
 physical server in a data center. It could run ONE operating
@@ -236,9 +759,9 @@ physical center! Quite inefficient and most likely expensive.
 </div>
 </div>
 
-<div id="outline-container-orgd1ee252" class="outline-3">
-<h3 id="orgd1ee252">Then came the virtual machines.</h3>
-<div class="outline-text-3" id="text-orgd1ee252">
+<div id="outline-container-org0cb27c1" class="outline-2">
+<h2 id="org0cb27c1">Then came the virtual machines.</h2>
+<div class="outline-text-2" id="text-org0cb27c1">
 <ul class="org-ul">
 <li>you would have a server hardware</li>
 <li>then on the server hardware you install a hypervisor(vmware esxi)</li>
@@ -254,9 +777,9 @@ Already way more efficient than the first option.
 </div>
 </div>
 
-<div id="outline-container-org10b7495" class="outline-3">
-<h3 id="org10b7495">Now what is the docker about?</h3>
-<div class="outline-text-3" id="text-org10b7495">
+<div id="outline-container-org6811be6" class="outline-2">
+<h2 id="org6811be6">Now what is the docker about?</h2>
+<div class="outline-text-2" id="text-org6811be6">
 <p>
 You still have the hardware, but on top of that you install one OS.
 Ubuntu for example.
@@ -285,15 +808,10 @@ metal servers.
 </blockquote>
 </div>
 </div>
-</div>
 
-<div id="outline-container-org3b01221" class="outline-2">
-<h2 id="org3b01221">Docker intro</h2>
-<div class="outline-text-2" id="text-org3b01221">
-</div>
-<div id="outline-container-org8cbc221" class="outline-3">
-<h3 id="org8cbc221">Benefits of Docker</h3>
-<div class="outline-text-3" id="text-org8cbc221">
+<div id="outline-container-org5458e3a" class="outline-2">
+<h2 id="org5458e3a">Benefits of Docker</h2>
+<div class="outline-text-2" id="text-org5458e3a">
 <p>
 Why is Docker so fast?
 </p>
@@ -326,9 +844,9 @@ os or kernel.
 </div>
 </div>
 
-<div id="outline-container-org40843b7" class="outline-3">
-<h3 id="org40843b7">Why docker?</h3>
-<div class="outline-text-3" id="text-org40843b7">
+<div id="outline-container-orgb404cba" class="outline-2">
+<h2 id="orgb404cba">Why docker?</h2>
+<div class="outline-text-2" id="text-orgb404cba">
 <p>
 As developers - we write our app - it works great on our machines.
 Then we want to either deploy it or run on other machines or give it
@@ -348,9 +866,9 @@ the app needs is contained in the container, it's isolated.
 </p>
 </div>
 
-<div id="outline-container-orga22aa49" class="outline-4">
-<h4 id="orga22aa49">Microservices</h4>
-<div class="outline-text-4" id="text-orga22aa49">
+<div id="outline-container-orgdc658d6" class="outline-3">
+<h3 id="orgdc658d6">Microservices</h3>
+<div class="outline-text-3" id="text-orgdc658d6">
 <p>
 Usually you deploy the WHOLE app inside one container or a VM. For
 example WordPress. You install WordPress server and MySQL database on
@@ -359,313 +877,17 @@ server on one container and mysql database on another. So whenever you
 want to update wordpress server - you update only just that. Nothing
 is in a way, nothing is conflicting, mysql database remains untouched.
 Sounds good, I must try experiment with that.
-fatal: not a git repository (or any of the parent directories): .git
 </p>
 </div>
 </div>
 </div>
-</div>
-
-<div id="outline-container-org3133dbc" class="outline-2">
-<h2 id="org3133dbc">Deploying with Docker</h2>
-<div class="outline-text-2" id="text-org3133dbc">
-</div>
-<div id="outline-container-orge84c2aa" class="outline-3">
-<h3 id="orge84c2aa">Creating a platform to work on</h3>
-<div class="outline-text-3" id="text-orge84c2aa">
-<p>
-Create the machine.
-</p>
-
-<ul class="org-ul">
-<li>Create a simple <a href="https://cloud.linode.com/">Linode</a> node(choosing linode just because I have free
-credits for it, choose any other provider you want). In my case I
-have chosen Linode 2GB plan and a Docker image. ($10/month)</li>
-<li>When your Docker node is running, connect to it through SSH in your
-favorite terminal.</li>
-<li>That's it, you are in.</li>
-</ul>
-
-<p>
-Let's create our docker empire!
-</p>
-</div>
-</div>
-
-<div id="outline-container-org07bc1e1" class="outline-3">
-<h3 id="org07bc1e1">Start pulling the images</h3>
-<div class="outline-text-3" id="text-org07bc1e1">
-<div class="org-src-container">
-<pre class="src src-bash">docker pull centos
-</pre>
-</div>
-
-<p>
-What this command does - goes to the docker hub(a registry of docker
-images). These images are what we use to create our containers.
-</p>
-
-
-<figure id="org3b58465">
-<img src="./static/images/docker1.png" alt="docker1.png" width="1200px">
-
-</figure>
-
-<p>
-A few seconds and we are done.
-</p>
-
-<p>
-Now with this CentOS <code>image</code>, we are going to run our first docker
-<code>container</code>. After &#x2013;name - write your custom name and at the end
-specify the image. <a href="https://docs.docker.com/engine/reference/commandline/run/">More terminal commands</a> for reference. Or a <a href="https://dockerlabs.collabnix.com/docker/cheatsheet/">cheat
-sheet</a>.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org6e32f85" class="outline-3">
-<h3 id="org6e32f85">Run the image</h3>
-<div class="outline-text-3" id="text-org6e32f85">
-<div class="org-src-container">
-<pre class="src src-bash">docker run -d -t --name mycontainer centos
-</pre>
-</div>
-
-<p>
-It's running. Crazy how fast it was.
-</p>
-
-<p>
-Is it really running? Let's check by listing all the running
-containers.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org3f8414b" class="outline-3">
-<h3 id="org3f8414b">List running containers</h3>
-<div class="outline-text-3" id="text-org3f8414b">
-<div class="org-src-container">
-<pre class="src src-bash">docker ps
-</pre>
-</div>
-
-
-<figure id="org6382ba5">
-<img src="./static/images/docker2.png" alt="docker2.png" width="1200px">
-
-</figure>
-
-<p>
-Yes it does!
-</p>
-
-<p>
-CenOS is isolated, secure, running with it's own OS, CPU, memory,
-network!
-</p>
-</div>
-</div>
-
-<div id="outline-container-org9ad9653" class="outline-3">
-<h3 id="org9ad9653">Access the container</h3>
-<div class="outline-text-3" id="text-org9ad9653">
-<p>
-Let's visit the centOS container.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">docker exec -it mycontainer bash
-</pre>
-</div>
-
-
-<figure id="org30aff07">
-<img src="./static/images/docker3.png" alt="docker3.png" width="1200px">
-
-</figure>
-
-<p>
-It has a complete file system.. it's completely separate..
-</p>
-
-<p>
-To exit, type exit.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgffab0dd" class="outline-3">
-<h3 id="orgffab0dd">Playing around</h3>
-<div class="outline-text-3" id="text-orgffab0dd">
-<p>
-Let's try another image. Alpine.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">docker pull alpine
-docker run -t -d --name mysecondcontainer alpine
-docker ps
-</pre>
-</div>
-
-
-<figure id="org69a4cd4">
-<img src="./static/images/docker4.png" alt="docker4.png" width="1200px">
-
-</figure>
-
-<p>
-Now we have two containers running. Let's go into alpine.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">docker exec -it mysecondcontainer sh
-</pre>
-</div>
-
-
-<figure id="orgf3a1a93">
-<img src="./static/images/docker5.png" alt="docker5.png" width="1200px">
-
-</figure>
-
-<p>
-I have installed bunch of other images, can find the ones available <a href="https://hub.docker.com/">here</a>.
-</p>
-
-
-<figure id="orgab815f5">
-<img src="./static/images/docker6.png" alt="docker6.png" width="1200px">
-
-</figure>
-</div>
-</div>
-
-<div id="outline-container-org6403411" class="outline-3">
-<h3 id="org6403411">Pull and run someone else's container</h3>
-<div class="outline-text-3" id="text-org6403411">
-<p>
-For example <a href="https://hub.docker.com/r/thenetworkchuck/networkchuckcoffee/tags?page=1&amp;ordering=name">this</a>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">docker pull thenetworkchuck/networkchuckcoffee:ncimage
-</pre>
-</div>
-
-<p>
-Adding :ncimage tag at the end. It was specified by the creator <a href="https://hub.docker.com/r/thenetworkchuck/networkchuckcoffee/tags?page=1&amp;ordering=name">here</a>.
-It is basically a version. It's useful to be able to choose a
-different version.
-</p>
-
-<p>
-To run this container(a web app), we do this.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">docker run -t -d -p 80:80 --name nccoffee thenetworkchuck/networkchuckcoffee:ncimage
-</pre>
-</div>
-
-<p>
-We have specified additional switch <code>-p</code> which stands for <code>ports</code>. 80:80.
-The port at the back is the port for docker container and first one is
-for the host. Basically saying match port 80 with port 80.
-</p>
-
-<p>
-Now grab your IP address from your linode dashboard, enter it in the
-browser.
-</p>
-
-
-<figure id="org65c921f">
-<img src="./static/images/docker7.png" alt="docker7.png" width="1200px">
-
-</figure>
-
-<p>
-I did not set up this website, I did not install any programs or alter
-any settings, but by pulling down that image and running the
-container - we have a website just like the creator intended.
-</p>
-
-<blockquote>
-<p>
-That container not only has all the cpu, memory etc, but also all the
-settings the creator has applied(debian, nginx, website files, etc),
-web configuration, all prerequisites, all dependencies.. packaged
-together in a neat little package. And you can run it on any linux
-machine.
-</p>
-</blockquote>
-
-<p>
-Move it to AWS, to azure, to your computer, my computer, to wherever -
-and it's the <code>power of docker</code>.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgd6c736f" class="outline-3">
-<h3 id="orgd6c736f">Stopping the container</h3>
-<div class="outline-text-3" id="text-orgd6c736f">
-
-<figure id="org6de7210">
-<img src="./static/images/docker8.png" alt="docker8.png" width="1200px">
-
-</figure>
-
-<div class="org-src-container">
-<pre class="src src-bash">docker stop nccoffee
-</pre>
-</div>
-
-<p>
-The hosted website is immediately now available anymore.
-</p>
-
-<p>
-Let's start it again.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">docker start nccoffee
-</pre>
-</div>
-
-<p>
-It's back up again.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org9c5f1a5" class="outline-3">
-<h3 id="org9c5f1a5">See the metrics</h3>
-<div class="outline-text-3" id="text-org9c5f1a5">
-<div class="org-src-container">
-<pre class="src src-bash">docker stats
-</pre>
-</div>
-
-
-<figure id="orgd8875cc">
-<img src="./static/images/docker9.png" alt="docker9.png" width="1200px">
-
-</figure>
-</div>
-</div>
-</div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-django.html">django</a> <a href="https://arvydasg.github.io/tag-deployment.html">deployment</a> <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
-  <category><![CDATA[django]]></category>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-deployment.html">deployment</a> <a href="https://arvydasg.github.io/tag-learning.html">learning</a> <a href="https://arvydasg.github.io/tag-docker.html">docker</a> </div>]]></description>
   <category><![CDATA[deployment]]></category>
   <category><![CDATA[learning]]></category>
+  <category><![CDATA[docker]]></category>
   <link>https://arvydasg.github.io/2023-01-31-what-is-docker.html</link>
   <guid>https://arvydasg.github.io/2023-01-31-what-is-docker.html</guid>
-  <pubDate>Tue, 31 Jan 2023 17:56:00 +0200</pubDate>
+  <pubDate>Tue, 31 Jan 2023 10:00:00 +0200</pubDate>
 </item>
 <item>
   <title><![CDATA[Labor market overview]]></title>
@@ -2148,7 +2370,7 @@ ingrain all the syntax and language’s possibilities in your brain.
   <title><![CDATA[CodeAcademy tasks and examples]]></title>
   <description><![CDATA[
 
-<figure id="org97c33b0">
+<figure id="org14b7252">
 <img src="./static/images/codeacademyhtmlcss.png" alt="codeacademyhtmlcss.png" width="1200px">
 
 </figure>
@@ -2174,17 +2396,17 @@ during this course. Most of the tasks, most of the examples, most of
 my own experiments during the course.
 </p>
 
-<div id="outline-container-orgd7f86af" class="outline-2">
-<h2 id="orgd7f86af">JavaScript part 2022-11 - now</h2>
-<div class="outline-text-2" id="text-orgd7f86af">
+<div id="outline-container-org9f44431" class="outline-2">
+<h2 id="org9f44431">JavaScript part 2022-11 - now</h2>
+<div class="outline-text-2" id="text-org9f44431">
 <p>
 Python, SQL, Flask
 </p>
 </div>
 </div>
-<div id="outline-container-orgfc40b4e" class="outline-2">
-<h2 id="orgfc40b4e">JavaScript part 2022-09 - 2022-11</h2>
-<div class="outline-text-2" id="text-orgfc40b4e">
+<div id="outline-container-org3cd53db" class="outline-2">
+<h2 id="org3cd53db">JavaScript part 2022-09 - 2022-11</h2>
+<div class="outline-text-2" id="text-org3cd53db">
 <p>
 All of the stuff from that part(with code) can be accessed and
 inspected Here. Github repo, if needed, is Here.
@@ -2195,9 +2417,9 @@ Hope I managed to present my work in a easy to read manner.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd71e0f1" class="outline-2">
-<h2 id="orgd71e0f1">HTML/CSS part 2022-07 - 2022-09</h2>
-<div class="outline-text-2" id="text-orgd71e0f1">
+<div id="outline-container-orge9e8c43" class="outline-2">
+<h2 id="orge9e8c43">HTML/CSS part 2022-07 - 2022-09</h2>
+<div class="outline-text-2" id="text-orge9e8c43">
 <p>
 All of the stuff from that part can be accessed and inspected <a href="https://arvydas.dev/codeacademy/">Here</a>.
 Github repo, if needed, is <a href="https://github.com/arvydasg/codeacademy">Here</a>.
