@@ -4,7 +4,40 @@
 <title><![CDATA[arvydasg.github.io]]></title>
 <description><![CDATA[arvydasg.github.io]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Thu, 09 Feb 2023 05:44:24 +0200</lastBuildDate>
+<lastBuildDate>Thu, 09 Feb 2023 05:56:55 +0200</lastBuildDate>
+<item>
+  <title><![CDATA[errors]]></title>
+  <description><![CDATA[
+<nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgd01e5e9">1. KeyError: &lt;weakref at 0x000002E17AFCB880; to 'Flask' at 0x000002E1772F6ED0&gt;</a></li>
+</ul>
+</div>
+</nav>
+<p>
+A list of more serious errors that I have met.
+</p>
+
+<div id="outline-container-orgd01e5e9" class="outline-2">
+<h2 id="orgd01e5e9"><span class="section-number-2">1.</span> KeyError: &lt;weakref at 0x000002E17AFCB880; to 'Flask' at 0x000002E1772F6ED0&gt;</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="https://www.reddit.com/r/flask/comments/zkwabt/keyerror_weakref_at_0x000002e17afcb880_to_flask/">https://www.reddit.com/r/flask/comments/zkwabt/keyerror_weakref_at_0x000002e17afcb880_to_flask/</a>
+</p>
+
+<p>
+flask_sqlalchemy v2.5.1 versija vietoj flask_sqlalchemy v3.0.1
+</p>
+</div>
+</div>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[learning]]></category>
+  <link>https://arvydasg.github.io/2023-02-09-errors.html</link>
+  <guid>https://arvydasg.github.io/2023-02-09-errors.html</guid>
+  <pubDate>Thu, 09 Feb 2023 05:50:00 +0200</pubDate>
+</item>
 <item>
   <title><![CDATA[python discoveries]]></title>
   <description><![CDATA[
@@ -12,10 +45,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgbd4ae2c">1. Scope and that you can assign functions to a variable - qrcode pkc</a></li>
-<li><a href="#org27d1852">2. f"" string &gt; templates - qrcode pkc</a></li>
-<li><a href="#org9a3eadf">3. flask dispachermiddleware module and imports - running multiple flask apps</a></li>
-<li><a href="#orgc255928">4. Python set()</a></li>
+<li><a href="#org718997c">1. Scope and that you can assign functions to a variable - qrcode pkc</a></li>
+<li><a href="#org3b6f81b">2. f"" string &gt; templates - qrcode pkc</a></li>
+<li><a href="#orgc3698c3">3. flask dispachermiddleware module and imports - running multiple flask apps</a></li>
+<li><a href="#orgce8a18e">4. Python set()</a></li>
 </ul>
 </div>
 </nav>
@@ -34,8 +67,8 @@ First of all I don't want to forget about these functions, second of
 all - I would like to share them with you.
 </p>
 
-<div id="outline-container-orgbd4ae2c" class="outline-2">
-<h2 id="orgbd4ae2c"><span class="section-number-2">1.</span> Scope and that you can assign functions to a variable - qrcode pkc</h2>
+<div id="outline-container-org718997c" class="outline-2">
+<h2 id="org718997c"><span class="section-number-2">1.</span> Scope and that you can assign functions to a variable - qrcode pkc</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 I was returning a value from function, wanted to use it another
@@ -48,8 +81,8 @@ Thanks to Karina
 </p>
 </div>
 </div>
-<div id="outline-container-org27d1852" class="outline-2">
-<h2 id="org27d1852"><span class="section-number-2">2.</span> f"" string &gt; templates - qrcode pkc</h2>
+<div id="outline-container-org3b6f81b" class="outline-2">
+<h2 id="org3b6f81b"><span class="section-number-2">2.</span> f"" string &gt; templates - qrcode pkc</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 I had to recreate a QR code template that is created with batch to a
@@ -71,21 +104,21 @@ it for this project.
 </div>
 </div>
 
-<div id="outline-container-org9a3eadf" class="outline-2">
-<h2 id="org9a3eadf"><span class="section-number-2">3.</span> flask dispachermiddleware module and imports - running multiple flask apps</h2>
+<div id="outline-container-orgc3698c3" class="outline-2">
+<h2 id="orgc3698c3"><span class="section-number-2">3.</span> flask dispachermiddleware module and imports - running multiple flask apps</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 For <a href="https://arvydas.dev/2023-02-06-run-multiple-flask-applications-from-the-same-server.html">this</a> project <a href="https://github.com/arvydasg/flask_projects/tree/master/II">here</a>.
 </p>
 
 
-<figure id="org698b3e5">
+<figure id="org83a676b">
 <img src="./static/images/discoveries1.png" alt="discoveries1.png" width="800px">
 
 </figure>
 
 
-<figure id="orgb075558">
+<figure id="org9b6b3b4">
 <img src="./static/images/discoveries2.png" alt="discoveries2.png" width="600px">
 
 </figure>
@@ -98,8 +131,8 @@ import data</code>. This was strange.
 </div>
 </div>
 
-<div id="outline-container-orgc255928" class="outline-2">
-<h2 id="orgc255928"><span class="section-number-2">4.</span> Python set()</h2>
+<div id="outline-container-orgce8a18e" class="outline-2">
+<h2 id="orgce8a18e"><span class="section-number-2">4.</span> Python set()</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 The set() function creates a set. No repeating values.
@@ -124,7 +157,7 @@ Amazing, thanks to Karina.
 </p>
 
 
-<figure id="org5e89d75">
+<figure id="orgbb1fb6a">
 <img src="./static/images/discoveries3.png" alt="discoveries3.png" width="800px">
 
 </figure>
@@ -136,40 +169,6 @@ Amazing, thanks to Karina.
   <link>https://arvydasg.github.io/2023-02-09-python-discoveries.html</link>
   <guid>https://arvydasg.github.io/2023-02-09-python-discoveries.html</guid>
   <pubDate>Thu, 09 Feb 2023 05:09:00 +0200</pubDate>
-</item>
-<item>
-  <title><![CDATA[Kubernetes]]></title>
-  <description><![CDATA[
-<nav id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="#orge2ffcdf">What why</a></li>
-</ul>
-</div>
-</nav>
-<p>
-networkchuck video
-</p>
-
-<div id="outline-container-orge2ffcdf" class="outline-2">
-<h2 id="orge2ffcdf">What why</h2>
-<div class="outline-text-2" id="text-orge2ffcdf">
-<ul class="org-ul">
-<li>mostly useful when websites are scaling and you need to replicate servers!</li>
-<li>if +75% CPU - instead in our pods - scale out. Go from 10 to 20. The
-master can monitor the metrics of your cluster</li>
-<li>expose the website to the public through service or "load-balancer",
-distribute so it runs 99% of the time. service.yaml</li>
-</ul>
-</div>
-</div>
-<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-learning.html">learning</a> <a href="https://arvydasg.github.io/tag-kubernetes.html">kubernetes</a> </div>]]></description>
-  <category><![CDATA[learning]]></category>
-  <category><![CDATA[kubernetes]]></category>
-  <link>https://arvydasg.github.io/drafts/2023-02-07-kubernetes.html</link>
-  <guid>https://arvydasg.github.io/drafts/2023-02-07-kubernetes.html</guid>
-  <pubDate>Tue, 07 Feb 2023 19:01:00 +0200</pubDate>
 </item>
 <item>
   <title><![CDATA[Run Multiple Flask Applications from the same server]]></title>
