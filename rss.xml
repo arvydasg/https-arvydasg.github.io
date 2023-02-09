@@ -4,7 +4,139 @@
 <title><![CDATA[arvydasg.github.io]]></title>
 <description><![CDATA[arvydasg.github.io]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Wed, 08 Feb 2023 15:16:58 +0200</lastBuildDate>
+<lastBuildDate>Thu, 09 Feb 2023 05:44:24 +0200</lastBuildDate>
+<item>
+  <title><![CDATA[python discoveries]]></title>
+  <description><![CDATA[
+<nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgbd4ae2c">1. Scope and that you can assign functions to a variable - qrcode pkc</a></li>
+<li><a href="#org27d1852">2. f"" string &gt; templates - qrcode pkc</a></li>
+<li><a href="#org9a3eadf">3. flask dispachermiddleware module and imports - running multiple flask apps</a></li>
+<li><a href="#orgc255928">4. Python set()</a></li>
+</ul>
+</div>
+</nav>
+<p>
+Here, whenever I will remember, I will be writing what I have
+discovered about Python when creating one project or the other.
+</p>
+
+<p>
+Functionalities that took me a long time to discover and when I
+finally did - it helped me a lot.
+</p>
+
+<p>
+First of all I don't want to forget about these functions, second of
+all - I would like to share them with you.
+</p>
+
+<div id="outline-container-orgbd4ae2c" class="outline-2">
+<h2 id="orgbd4ae2c"><span class="section-number-2">1.</span> Scope and that you can assign functions to a variable - qrcode pkc</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+I was returning a value from function, wanted to use it another
+function. I had to assign the returned value to a function first and
+only then I could use it. SCOPE is the important word here.
+</p>
+
+<p>
+Thanks to Karina
+</p>
+</div>
+</div>
+<div id="outline-container-org27d1852" class="outline-2">
+<h2 id="org27d1852"><span class="section-number-2">2.</span> f"" string &gt; templates - qrcode pkc</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+I had to recreate a QR code template that is created with batch to a
+program in python(more controls, better gui, etc).
+</p>
+
+<p>
+So I have chosen something like <a href="https://docs.python.org/2/library/string.html?highlight=safe_substitute#string.Template.safe_substitute">this</a> for this task. Had a massive
+template with certain strings that had to be replaced. All is good,
+managed to make it work, but whenever I would have a: <code>9999$A99999</code> my
+delimiter and value that $A surrounded with other symbols - the
+delimiter would not be replaced with what I have described.
+</p>
+
+<p>
+<code>f"99999{A}99999"</code> has no problem doing that, this is why I have chosen
+it for this project.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9a3eadf" class="outline-2">
+<h2 id="org9a3eadf"><span class="section-number-2">3.</span> flask dispachermiddleware module and imports - running multiple flask apps</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+For <a href="https://arvydas.dev/2023-02-06-run-multiple-flask-applications-from-the-same-server.html">this</a> project <a href="https://github.com/arvydasg/flask_projects/tree/master/II">here</a>.
+</p>
+
+
+<figure id="org698b3e5">
+<img src="./static/images/discoveries1.png" alt="discoveries1.png" width="800px">
+
+</figure>
+
+
+<figure id="orgb075558">
+<img src="./static/images/discoveries2.png" alt="discoveries2.png" width="600px">
+
+</figure>
+
+<p>
+even though the data.py is in basically the same location as main.py -
+I still had to import all the modules from root.. <code>from II.web_app.data
+import data</code>. This was strange.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc255928" class="outline-2">
+<h2 id="orgc255928"><span class="section-number-2">4.</span> Python set()</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+The set() function creates a set. No repeating values.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #83a598;">list_numbers</span> = <span style="color: #fe8019;">[</span>1,2,3,4,2,5,5,1<span style="color: #fe8019;">]</span>
+
+<span style="color: #928374;"># </span><span style="color: #928374;">create set from list</span>
+<span style="color: #83a598;">numbers_set</span> = <span style="color: #fe8019;">set</span><span style="color: #fe8019;">(</span>list_numbers<span style="color: #fe8019;">)</span>
+
+<span style="color: #fe8019;">print</span><span style="color: #fe8019;">(</span>numbers_set<span style="color: #fe8019;">)</span>
+</pre>
+</div>
+
+<p>
+Useful when I wanted to extract all authors in a list ONCE.
+</p>
+
+<p>
+Amazing, thanks to Karina.
+</p>
+
+
+<figure id="org5e89d75">
+<img src="./static/images/discoveries3.png" alt="discoveries3.png" width="800px">
+
+</figure>
+</div>
+</div>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-python.html">python</a> <a href="https://arvydasg.github.io/tag-learning.html">learning</a> </div>]]></description>
+  <category><![CDATA[python]]></category>
+  <category><![CDATA[learning]]></category>
+  <link>https://arvydasg.github.io/2023-02-09-python-discoveries.html</link>
+  <guid>https://arvydasg.github.io/2023-02-09-python-discoveries.html</guid>
+  <pubDate>Thu, 09 Feb 2023 05:09:00 +0200</pubDate>
+</item>
 <item>
   <title><![CDATA[Kubernetes]]></title>
   <description><![CDATA[
