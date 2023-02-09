@@ -4,15 +4,15 @@
 <title><![CDATA[arvydasg.github.io]]></title>
 <description><![CDATA[arvydasg.github.io]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Thu, 09 Feb 2023 05:56:55 +0200</lastBuildDate>
+<lastBuildDate>Thu, 09 Feb 2023 05:58:12 +0200</lastBuildDate>
 <item>
-  <title><![CDATA[errors]]></title>
+  <title><![CDATA[Errors]]></title>
   <description><![CDATA[
 <nav id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd01e5e9">1. KeyError: &lt;weakref at 0x000002E17AFCB880; to 'Flask' at 0x000002E1772F6ED0&gt;</a></li>
+<li><a href="#orgf0b4735">1. KeyError: &lt;weakref at 0x000002E17AFCB880; to 'Flask' at 0x000002E1772F6ED0&gt;</a></li>
 </ul>
 </div>
 </nav>
@@ -20,8 +20,8 @@
 A list of more serious errors that I have met.
 </p>
 
-<div id="outline-container-orgd01e5e9" class="outline-2">
-<h2 id="orgd01e5e9"><span class="section-number-2">1.</span> KeyError: &lt;weakref at 0x000002E17AFCB880; to 'Flask' at 0x000002E1772F6ED0&gt;</h2>
+<div id="outline-container-orgf0b4735" class="outline-2">
+<h2 id="orgf0b4735"><span class="section-number-2">1.</span> KeyError: &lt;weakref at 0x000002E17AFCB880; to 'Flask' at 0x000002E1772F6ED0&gt;</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="https://www.reddit.com/r/flask/comments/zkwabt/keyerror_weakref_at_0x000002e17afcb880_to_flask/">https://www.reddit.com/r/flask/comments/zkwabt/keyerror_weakref_at_0x000002e17afcb880_to_flask/</a>
@@ -39,16 +39,16 @@ flask_sqlalchemy v2.5.1 versija vietoj flask_sqlalchemy v3.0.1
   <pubDate>Thu, 09 Feb 2023 05:50:00 +0200</pubDate>
 </item>
 <item>
-  <title><![CDATA[python discoveries]]></title>
+  <title><![CDATA[Python Discoveries]]></title>
   <description><![CDATA[
 <nav id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org718997c">1. Scope and that you can assign functions to a variable - qrcode pkc</a></li>
-<li><a href="#org3b6f81b">2. f"" string &gt; templates - qrcode pkc</a></li>
-<li><a href="#orgc3698c3">3. flask dispachermiddleware module and imports - running multiple flask apps</a></li>
-<li><a href="#orgce8a18e">4. Python set()</a></li>
+<li><a href="#org0cba59c">1. Scope and that you can assign functions to a variable - qrcode pkc</a></li>
+<li><a href="#orgf57c685">2. f"" string &gt; templates - qrcode pkc</a></li>
+<li><a href="#org8cff201">3. flask dispachermiddleware module and imports - running multiple flask apps</a></li>
+<li><a href="#org549077d">4. Python set()</a></li>
 </ul>
 </div>
 </nav>
@@ -67,8 +67,8 @@ First of all I don't want to forget about these functions, second of
 all - I would like to share them with you.
 </p>
 
-<div id="outline-container-org718997c" class="outline-2">
-<h2 id="org718997c"><span class="section-number-2">1.</span> Scope and that you can assign functions to a variable - qrcode pkc</h2>
+<div id="outline-container-org0cba59c" class="outline-2">
+<h2 id="org0cba59c"><span class="section-number-2">1.</span> Scope and that you can assign functions to a variable - qrcode pkc</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 I was returning a value from function, wanted to use it another
@@ -81,8 +81,8 @@ Thanks to Karina
 </p>
 </div>
 </div>
-<div id="outline-container-org3b6f81b" class="outline-2">
-<h2 id="org3b6f81b"><span class="section-number-2">2.</span> f"" string &gt; templates - qrcode pkc</h2>
+<div id="outline-container-orgf57c685" class="outline-2">
+<h2 id="orgf57c685"><span class="section-number-2">2.</span> f"" string &gt; templates - qrcode pkc</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 I had to recreate a QR code template that is created with batch to a
@@ -104,21 +104,21 @@ it for this project.
 </div>
 </div>
 
-<div id="outline-container-orgc3698c3" class="outline-2">
-<h2 id="orgc3698c3"><span class="section-number-2">3.</span> flask dispachermiddleware module and imports - running multiple flask apps</h2>
+<div id="outline-container-org8cff201" class="outline-2">
+<h2 id="org8cff201"><span class="section-number-2">3.</span> flask dispachermiddleware module and imports - running multiple flask apps</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 For <a href="https://arvydas.dev/2023-02-06-run-multiple-flask-applications-from-the-same-server.html">this</a> project <a href="https://github.com/arvydasg/flask_projects/tree/master/II">here</a>.
 </p>
 
 
-<figure id="org83a676b">
+<figure id="orgc8cbfa1">
 <img src="./static/images/discoveries1.png" alt="discoveries1.png" width="800px">
 
 </figure>
 
 
-<figure id="org9b6b3b4">
+<figure id="org04a8ce2">
 <img src="./static/images/discoveries2.png" alt="discoveries2.png" width="600px">
 
 </figure>
@@ -131,8 +131,8 @@ import data</code>. This was strange.
 </div>
 </div>
 
-<div id="outline-container-orgce8a18e" class="outline-2">
-<h2 id="orgce8a18e"><span class="section-number-2">4.</span> Python set()</h2>
+<div id="outline-container-org549077d" class="outline-2">
+<h2 id="org549077d"><span class="section-number-2">4.</span> Python set()</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 The set() function creates a set. No repeating values.
@@ -157,7 +157,7 @@ Amazing, thanks to Karina.
 </p>
 
 
-<figure id="orgbb1fb6a">
+<figure id="org685bf68">
 <img src="./static/images/discoveries3.png" alt="discoveries3.png" width="800px">
 
 </figure>
