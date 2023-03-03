@@ -70,14 +70,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="content">
 <div class="post-date">19 Jun 2022</div><h1 class="post-title"><a href="https://arvydasg.github.io/2022-06-19-dired-diff-hl.html">Dired diff-hl</a></h1>
 
-<figure id="org1949477">
+<figure id="orgc02d12c">
 <img src="./static/images/dired-diff-hl.png" alt="dired-diff-hl.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org0ab3d4a" class="outline-2">
-<h2 id="org0ab3d4a">Introduction</h2>
-<div class="outline-text-2" id="text-org0ab3d4a">
+<div id="outline-container-orgb2f8a1f" class="outline-2">
+<h2 id="orgb2f8a1f">Introduction</h2>
+<div class="outline-text-2" id="text-orgb2f8a1f">
 <p>
 So, everything started when I have discovered ‘diff-hl’ package. It
 had an option to show differences in dired buffer. I thought okay,
@@ -86,9 +86,9 @@ cool option, lets not use neotree anymore and use dired instead.
 </div>
 </div>
 
-<div id="outline-container-org269befd" class="outline-2">
-<h2 id="org269befd">Body</h2>
-<div class="outline-text-2" id="text-org269befd">
+<div id="outline-container-org26ba2b1" class="outline-2">
+<h2 id="org26ba2b1">Body</h2>
+<div class="outline-text-2" id="text-org26ba2b1">
 <p>
 I added a few lines to ‘diff-hl’ config to make the file changes
 visible in dired buffer.
@@ -96,12 +96,12 @@ visible in dired buffer.
 
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #fe8019;">(</span><span style="color: #fb4934;">use-package</span> <span style="color: #d3869b;">diff-hl</span>
-  <span style="color: #fe8019;">:ensure</span> t
-  <span style="color: #fe8019;">:init</span> <span style="color: #cc241d;">(</span>add-hook 'prog-mode-hook #'diff-hl-mode<span style="color: #cc241d;">)</span>
-  <span style="color: #cc241d;">(</span>add-hook 'org-mode-hook #'diff-hl-mode<span style="color: #cc241d;">)</span>
-  <span style="color: #cc241d;">(</span>add-hook 'dired-mode-hook 'diff-hl-dired-mode<span style="color: #cc241d;">)</span>
-  <span style="color: #cc241d;">(</span>add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh<span style="color: #cc241d;">)</span>
-  <span style="color: #cc241d;">(</span>add-hook 'magit-pre-refresh-hook 'diff-hl-magit-post-refresh<span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">:ensure</span> t
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">:init</span> <span style="color: #cc241d;">(</span>add-hook 'prog-mode-hook #'diff-hl-mode<span style="color: #cc241d;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>add-hook 'org-mode-hook #'diff-hl-mode<span style="color: #cc241d;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>add-hook 'dired-mode-hook 'diff-hl-dired-mode<span style="color: #cc241d;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh<span style="color: #cc241d;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>add-hook 'magit-pre-refresh-hook 'diff-hl-magit-post-refresh<span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 </pre>
 </div>
 
@@ -158,40 +158,40 @@ more convenient to cycle with and I am all set!
 </div>
 </div>
 
-<div id="outline-container-org79580e2" class="outline-2">
-<h2 id="org79580e2">The final config</h2>
-<div class="outline-text-2" id="text-org79580e2">
+<div id="outline-container-orgda7b0a9" class="outline-2">
+<h2 id="orgda7b0a9">The final config</h2>
+<div class="outline-text-2" id="text-orgda7b0a9">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"> <span style="color: #fe8019;">(</span><span style="color: #fb4934;">use-package</span> <span style="color: #d3869b;">dired</span>
-    <span style="color: #fe8019;">:ensure</span> nil                         <span style="color: #928374;">;</span><span style="color: #928374;">no need for t, because dired is built in</span>
-    <span style="color: #fe8019;">:custom</span> <span style="color: #cc241d;">(</span><span style="color: #b8bb26;">(</span>dired-listing-switches <span style="color: #b8bb26;">"-agho --group-directories-first"</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span> <span style="color: #928374;">;</span><span style="color: #928374;">sort directories first</span>
-  <span style="color: #fe8019;">(</span>global-set-key <span style="color: #cc241d;">(</span>kbd <span style="color: #b8bb26;">"C-x C-d"</span><span style="color: #cc241d;">)</span> 'dired-jump<span style="color: #fe8019;">)</span> <span style="color: #928374;">;</span><span style="color: #928374;">open dired buffer in current location</span>
-  <span style="color: #fe8019;">(</span>define-key dired-mode-map <span style="color: #cc241d;">(</span>kbd <span style="color: #b8bb26;">"f"</span><span style="color: #cc241d;">)</span> 'dired-find-alternate-file<span style="color: #fe8019;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">(</span><span style="color: #fb4934;">use-package</span> <span style="color: #d3869b;">dired</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #fe8019;">:ensure</span> nil                         <span style="color: #928374;">;</span><span style="color: #928374;">no need for t, because dired is built in</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #fe8019;">:custom</span> <span style="color: #cc241d;">(</span><span style="color: #b8bb26;">(</span>dired-listing-switches <span style="color: #b8bb26;">"-agho --group-directories-first"</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span> <span style="color: #928374;">;</span><span style="color: #928374;">sort directories first</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">(</span>global-set-key <span style="color: #cc241d;">(</span>kbd <span style="color: #b8bb26;">"C-x C-d"</span><span style="color: #cc241d;">)</span> 'dired-jump<span style="color: #fe8019;">)</span> <span style="color: #928374;">;</span><span style="color: #928374;">open dired buffer in current location</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">(</span>define-key dired-mode-map <span style="color: #cc241d;">(</span>kbd <span style="color: #b8bb26;">"f"</span><span style="color: #cc241d;">)</span> 'dired-find-alternate-file<span style="color: #fe8019;">)</span>
 <span style="color: #928374;">;; </span><span style="color: #928374;">(global-set-key (kbd "C-x d") 'dired)</span>
 
-  <span style="color: #928374;">;; </span><span style="color: #928374;">a function to kill dired buffers. Kind of works. Or you can use "a"</span>
-  <span style="color: #928374;">;; </span><span style="color: #928374;">to cycle through dired and it leaves no buffers opened</span>
-  <span style="color: #928374;">;; </span><span style="color: #928374;">DiredReuseDirectoryBuffer - https://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer</span>
-  <span style="color: #928374;">;; </span><span style="color: #928374;">KillingBuffers - https://www.emacswiki.org/emacs/KillingBuffers</span>
-  <span style="color: #fe8019;">(</span><span style="color: #fb4934;">defun</span> <span style="color: #b8bb26;">kill-dired-buffers</span> <span style="color: #cc241d;">()</span>
-    <span style="color: #cc241d;">(</span><span style="color: #fb4934;">interactive</span><span style="color: #cc241d;">)</span>
-    <span style="color: #cc241d;">(</span>mapc <span style="color: #b8bb26;">(</span><span style="color: #fb4934;">lambda</span> <span style="color: #83a598;">(</span>buffer<span style="color: #83a598;">)</span>
-            <span style="color: #83a598;">(</span><span style="color: #fb4934;">when</span> <span style="color: #8ec07c;">(</span>eq 'dired-mode <span style="color: #83a598;">(</span>buffer-local-value 'major-mode buffer<span style="color: #83a598;">)</span><span style="color: #8ec07c;">)</span>
-              <span style="color: #8ec07c;">(</span>kill-buffer buffer<span style="color: #8ec07c;">)</span><span style="color: #83a598;">)</span><span style="color: #b8bb26;">)</span>
-          <span style="color: #b8bb26;">(</span>buffer-list<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #928374;">;; </span><span style="color: #928374;">a function to kill dired buffers. Kind of works. Or you can use "a"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #928374;">;; </span><span style="color: #928374;">to cycle through dired and it leaves no buffers opened</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #928374;">;; </span><span style="color: #928374;">DiredReuseDirectoryBuffer - https://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #928374;">;; </span><span style="color: #928374;">KillingBuffers - https://www.emacswiki.org/emacs/KillingBuffers</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">(</span><span style="color: #fb4934;">defun</span> <span style="color: #b8bb26;">kill-dired-buffers</span> <span style="color: #cc241d;">()</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cc241d;">(</span><span style="color: #fb4934;">interactive</span><span style="color: #cc241d;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cc241d;">(</span>mapc <span style="color: #b8bb26;">(</span><span style="color: #fb4934;">lambda</span> <span style="color: #83a598;">(</span>buffer<span style="color: #83a598;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #83a598;">(</span><span style="color: #fb4934;">when</span> <span style="color: #8ec07c;">(</span>eq 'dired-mode <span style="color: #83a598;">(</span>buffer-local-value 'major-mode buffer<span style="color: #83a598;">)</span><span style="color: #8ec07c;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #8ec07c;">(</span>kill-buffer buffer<span style="color: #8ec07c;">)</span><span style="color: #83a598;">)</span><span style="color: #b8bb26;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #b8bb26;">(</span>buffer-list<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 
-  <span style="color: #928374;">;; </span><span style="color: #928374;">can easily check how many buffers got opened</span>
-  <span style="color: #fe8019;">(</span><span style="color: #fb4934;">defun</span> <span style="color: #b8bb26;">kill-all-dired-buffers</span> <span style="color: #cc241d;">()</span>
-    <span style="color: #dfd2b8;">"Kill all dired buffers."</span>
-    <span style="color: #cc241d;">(</span><span style="color: #fb4934;">interactive</span><span style="color: #cc241d;">)</span>
-    <span style="color: #cc241d;">(</span><span style="color: #fb4934;">save-excursion</span>
-      <span style="color: #b8bb26;">(</span><span style="color: #fb4934;">let</span> <span style="color: #83a598;">(</span><span style="color: #8ec07c;">(</span>count 0<span style="color: #8ec07c;">)</span><span style="color: #83a598;">)</span>
-        <span style="color: #83a598;">(</span><span style="color: #fb4934;">dolist</span> <span style="color: #8ec07c;">(</span>buffer <span style="color: #83a598;">(</span>buffer-list<span style="color: #83a598;">)</span><span style="color: #8ec07c;">)</span>
-          <span style="color: #8ec07c;">(</span>set-buffer buffer<span style="color: #8ec07c;">)</span>
-          <span style="color: #8ec07c;">(</span><span style="color: #fb4934;">when</span> <span style="color: #83a598;">(</span>equal major-mode 'dired-mode<span style="color: #83a598;">)</span>
-            <span style="color: #83a598;">(</span><span style="color: #fb4934;">setq</span> count <span style="color: #cc241d;">(</span>1+ count<span style="color: #cc241d;">)</span><span style="color: #83a598;">)</span>
-            <span style="color: #83a598;">(</span>kill-buffer buffer<span style="color: #83a598;">)</span><span style="color: #8ec07c;">)</span><span style="color: #83a598;">)</span>
-        <span style="color: #83a598;">(</span>message <span style="color: #b8bb26;">"Killed %i dired buffer(s)."</span> count<span style="color: #83a598;">)</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #928374;">;; </span><span style="color: #928374;">can easily check how many buffers got opened</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">(</span><span style="color: #fb4934;">defun</span> <span style="color: #b8bb26;">kill-all-dired-buffers</span> <span style="color: #cc241d;">()</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #dfd2b8;">"Kill all dired buffers."</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cc241d;">(</span><span style="color: #fb4934;">interactive</span><span style="color: #cc241d;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cc241d;">(</span><span style="color: #fb4934;">save-excursion</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #b8bb26;">(</span><span style="color: #fb4934;">let</span> <span style="color: #83a598;">(</span><span style="color: #8ec07c;">(</span>count 0<span style="color: #8ec07c;">)</span><span style="color: #83a598;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #83a598;">(</span><span style="color: #fb4934;">dolist</span> <span style="color: #8ec07c;">(</span>buffer <span style="color: #83a598;">(</span>buffer-list<span style="color: #83a598;">)</span><span style="color: #8ec07c;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #8ec07c;">(</span>set-buffer buffer<span style="color: #8ec07c;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #8ec07c;">(</span><span style="color: #fb4934;">when</span> <span style="color: #83a598;">(</span>equal major-mode 'dired-mode<span style="color: #83a598;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #83a598;">(</span><span style="color: #fb4934;">setq</span> count <span style="color: #cc241d;">(</span>1+ count<span style="color: #cc241d;">)</span><span style="color: #83a598;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #83a598;">(</span>kill-buffer buffer<span style="color: #83a598;">)</span><span style="color: #8ec07c;">)</span><span style="color: #83a598;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #83a598;">(</span>message <span style="color: #b8bb26;">"Killed %i dired buffer(s)."</span> count<span style="color: #83a598;">)</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 </pre>
 </div>
 

@@ -4,7 +4,21 @@
 <title><![CDATA[arvydasg.github.io]]></title>
 <description><![CDATA[arvydasg.github.io]]></description>
 <link>https://arvydasg.github.io/</link>
-<lastBuildDate>Sun, 12 Feb 2023 08:18:26 +0200</lastBuildDate>
+<lastBuildDate>Fri, 03 Mar 2023 16:45:54 +0200</lastBuildDate>
+<item>
+  <title><![CDATA[Deploying Flask Application on Ubuntu VPS using Nginx]]></title>
+  <description><![CDATA[
+<p>
+Hi.
+</p>
+<div class="taglist"><a href="https://arvydasg.github.io/tags.html">Tags</a>: <a href="https://arvydasg.github.io/tag-python.html">python</a> <a href="https://arvydasg.github.io/tag-flask.html">flask</a> <a href="https://arvydasg.github.io/tag-deployment.html">deployment</a> </div>]]></description>
+  <category><![CDATA[python]]></category>
+  <category><![CDATA[flask]]></category>
+  <category><![CDATA[deployment]]></category>
+  <link>https://arvydasg.github.io/2023-03-03-deploying-flask-application-on-ubuntu-vps-using-nginx.html</link>
+  <guid>https://arvydasg.github.io/2023-03-03-deploying-flask-application-on-ubuntu-vps-using-nginx.html</guid>
+  <pubDate>Fri, 03 Mar 2023 16:40:00 +0200</pubDate>
+</item>
 <item>
   <title><![CDATA[Errors]]></title>
   <description><![CDATA[
@@ -12,7 +26,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf0b4735">1. KeyError: &lt;weakref at 0x000002E17AFCB880; to 'Flask' at 0x000002E1772F6ED0&gt;</a></li>
+<li><a href="#org11a5535">1. KeyError: &lt;weakref at 0x000002E17AFCB880; to 'Flask' at 0x000002E1772F6ED0&gt;</a></li>
 </ul>
 </div>
 </nav>
@@ -20,8 +34,8 @@
 A list of more serious errors that I have met.
 </p>
 
-<div id="outline-container-orgf0b4735" class="outline-2">
-<h2 id="orgf0b4735"><span class="section-number-2">1.</span> KeyError: &lt;weakref at 0x000002E17AFCB880; to 'Flask' at 0x000002E1772F6ED0&gt;</h2>
+<div id="outline-container-org11a5535" class="outline-2">
+<h2 id="org11a5535"><span class="section-number-2">1.</span> KeyError: &lt;weakref at 0x000002E17AFCB880; to 'Flask' at 0x000002E1772F6ED0&gt;</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="https://www.reddit.com/r/flask/comments/zkwabt/keyerror_weakref_at_0x000002e17afcb880_to_flask/">https://www.reddit.com/r/flask/comments/zkwabt/keyerror_weakref_at_0x000002e17afcb880_to_flask/</a>
@@ -45,11 +59,11 @@ flask_sqlalchemy v2.5.1 versija vietoj flask_sqlalchemy v3.0.1
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgcc44ca1">1. Scope</a></li>
-<li><a href="#orgc973d70">2. f"" string &gt; templates</a></li>
-<li><a href="#orgd729a76">3. flask dispachermiddleware</a></li>
-<li><a href="#orgb56f04b">4. Python set()</a></li>
-<li><a href="#org9cb3da2">5. listdir vs chdir</a></li>
+<li><a href="#orgb48eab0">1. Scope</a></li>
+<li><a href="#org0eacf1f">2. f"" string &gt; templates</a></li>
+<li><a href="#org3a514e6">3. flask dispachermiddleware</a></li>
+<li><a href="#orgefd282f">4. Python set()</a></li>
+<li><a href="#orgf846d06">5. listdir vs chdir</a></li>
 </ul>
 </div>
 </nav>
@@ -68,8 +82,8 @@ First of all I don't want to forget about these functions, second of
 all - I would like to share them with you.
 </p>
 
-<div id="outline-container-orgcc44ca1" class="outline-2">
-<h2 id="orgcc44ca1"><span class="section-number-2">1.</span> Scope</h2>
+<div id="outline-container-orgb48eab0" class="outline-2">
+<h2 id="orgb48eab0"><span class="section-number-2">1.</span> Scope</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 You can assign a returned value from functions to a variable
@@ -86,8 +100,8 @@ Thanks to Karina
 </p>
 </div>
 </div>
-<div id="outline-container-orgc973d70" class="outline-2">
-<h2 id="orgc973d70"><span class="section-number-2">2.</span> f"" string &gt; templates</h2>
+<div id="outline-container-org0eacf1f" class="outline-2">
+<h2 id="org0eacf1f"><span class="section-number-2">2.</span> f"" string &gt; templates</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Qrcode pkc
@@ -113,8 +127,8 @@ it for this project.
 </div>
 </div>
 
-<div id="outline-container-orgd729a76" class="outline-2">
-<h2 id="orgd729a76"><span class="section-number-2">3.</span> flask dispachermiddleware</h2>
+<div id="outline-container-org3a514e6" class="outline-2">
+<h2 id="org3a514e6"><span class="section-number-2">3.</span> flask dispachermiddleware</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Module and imports. Running multiple flask apps
@@ -125,13 +139,13 @@ For <a href="https://arvydas.dev/2023-02-06-run-multiple-flask-applications-from
 </p>
 
 
-<figure id="org7c770b7">
+<figure id="orgb7ff3f4">
 <img src="./static/images/discoveries1.png" alt="discoveries1.png" width="800px">
 
 </figure>
 
 
-<figure id="org973e7ce">
+<figure id="org5d30142">
 <img src="./static/images/discoveries2.png" alt="discoveries2.png" width="600px">
 
 </figure>
@@ -144,8 +158,8 @@ import data</code>. This was strange.
 </div>
 </div>
 
-<div id="outline-container-orgb56f04b" class="outline-2">
-<h2 id="orgb56f04b"><span class="section-number-2">4.</span> Python set()</h2>
+<div id="outline-container-orgefd282f" class="outline-2">
+<h2 id="orgefd282f"><span class="section-number-2">4.</span> Python set()</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 The set() function creates a set. No repeating values.
@@ -170,15 +184,15 @@ Amazing, thanks to Karina.
 </p>
 
 
-<figure id="orgc4d787d">
+<figure id="orgebb98d5">
 <img src="./static/images/discoveries3.png" alt="discoveries3.png" width="800px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org9cb3da2" class="outline-2">
-<h2 id="org9cb3da2"><span class="section-number-2">5.</span> listdir vs chdir</h2>
+<div id="outline-container-orgf846d06" class="outline-2">
+<h2 id="orgf846d06"><span class="section-number-2">5.</span> listdir vs chdir</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 This one confused me. I ran a for loop similar to this:
@@ -229,13 +243,13 @@ something similar to this:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org43cadab">1. Why I Wanted to Run Multiple Flask Applications</a></li>
-<li><a href="#orgfad47e9">2. How to Configure Flask Application Dispatching</a></li>
-<li><a href="#org2f44279">3. Set up the Separate Applications</a></li>
-<li><a href="#orgba3434d">4. Combine the Applications</a></li>
-<li><a href="#org23450eb">5. Invoke a Development Server</a></li>
-<li><a href="#org669671e">6. Running both apps</a></li>
-<li><a href="#org172f296">7. Conclusion</a></li>
+<li><a href="#org8d22b82">1. Why I Wanted to Run Multiple Flask Applications</a></li>
+<li><a href="#org14f1f1f">2. How to Configure Flask Application Dispatching</a></li>
+<li><a href="#orgcbe5300">3. Set up the Separate Applications</a></li>
+<li><a href="#org766bdf3">4. Combine the Applications</a></li>
+<li><a href="#org46ad8c8">5. Invoke a Development Server</a></li>
+<li><a href="#orgf856d91">6. Running both apps</a></li>
+<li><a href="#orgc2dd1b8">7. Conclusion</a></li>
 </ul>
 </div>
 </nav>
@@ -245,7 +259,7 @@ different URL paths.
 </p>
 
 
-<figure id="orgef0460b">
+<figure id="org5f7e7e3">
 <img src="./static/images/matrioshka.jpg" alt="matrioshka.jpg" width="600px">
 
 </figure>
@@ -257,8 +271,8 @@ instead of by accessing a different port. Application dispatching
 seems to be a solution.
 </p>
 
-<div id="outline-container-org43cadab" class="outline-2">
-<h2 id="org43cadab"><span class="section-number-2">1.</span> Why I Wanted to Run Multiple Flask Applications</h2>
+<div id="outline-container-org8d22b82" class="outline-2">
+<h2 id="org8d22b82"><span class="section-number-2">1.</span> Why I Wanted to Run Multiple Flask Applications</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 As a part of my <a href="https://arvydas.dev/codeacademy/">CodeAcademy</a> Python journey I decided to set up a
@@ -284,8 +298,8 @@ you can run them in the same interpreter side by side if you want.
 </div>
 </div>
 
-<div id="outline-container-orgfad47e9" class="outline-2">
-<h2 id="orgfad47e9"><span class="section-number-2">2.</span> How to Configure Flask Application Dispatching</h2>
+<div id="outline-container-org14f1f1f" class="outline-2">
+<h2 id="org14f1f1f"><span class="section-number-2">2.</span> How to Configure Flask Application Dispatching</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Setting this up is relatively straightforward when you take a modular
@@ -300,8 +314,8 @@ approach.
 </div>
 </div>
 
-<div id="outline-container-org2f44279" class="outline-2">
-<h2 id="org2f44279"><span class="section-number-2">3.</span> Set up the Separate Applications</h2>
+<div id="outline-container-orgcbe5300" class="outline-2">
+<h2 id="orgcbe5300"><span class="section-number-2">3.</span> Set up the Separate Applications</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Here are 2 Flask applications:
@@ -341,8 +355,8 @@ app.<span style="color: #83a598;">debug</span> = <span style="color: #d3869b;">T
 </div>
 </div>
 
-<div id="outline-container-orgba3434d" class="outline-2">
-<h2 id="orgba3434d"><span class="section-number-2">4.</span> Combine the Applications</h2>
+<div id="outline-container-org766bdf3" class="outline-2">
+<h2 id="org766bdf3"><span class="section-number-2">4.</span> Combine the Applications</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 You will utilize the Werkzeug <a href="https://werkzeug.palletsprojects.com/en/2.2.x/middleware/dispatcher/">Dispatcher Middleware</a>. flask_app_1 will
@@ -362,8 +376,8 @@ run on “/” and flask_app_2 will run on “/flask_app_2”.
 </div>
 </div>
 
-<div id="outline-container-org23450eb" class="outline-2">
-<h2 id="org23450eb"><span class="section-number-2">5.</span> Invoke a Development Server</h2>
+<div id="outline-container-org46ad8c8" class="outline-2">
+<h2 id="org46ad8c8"><span class="section-number-2">5.</span> Invoke a Development Server</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Here is a small file that calls the <a href="https://werkzeug.palletsprojects.com/en/2.2.x/serving/#werkzeug.serving.run_simple">Werkzeug Run Simple</a> server that is
@@ -382,8 +396,8 @@ suitable for development. <code>For deployment</code>, you’ll need to configur
 </div>
 </div>
 
-<div id="outline-container-org669671e" class="outline-2">
-<h2 id="org669671e"><span class="section-number-2">6.</span> Running both apps</h2>
+<div id="outline-container-orgf856d91" class="outline-2">
+<h2 id="orgf856d91"><span class="section-number-2">6.</span> Running both apps</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-python">python3 run.py
@@ -391,21 +405,21 @@ suitable for development. <code>For deployment</code>, you’ll need to configur
 </div>
 
 
-<figure id="org36caac1">
+<figure id="orgbb46500">
 <img src="./static/images/flask_multiple1.png" alt="flask_multiple1.png" width="1200px">
 
 </figure>
 
 
-<figure id="org340a47d">
+<figure id="org92e221d">
 <img src="./static/images/flask_multiple2.png" alt="flask_multiple2.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org172f296" class="outline-2">
-<h2 id="org172f296"><span class="section-number-2">7.</span> Conclusion</h2>
+<div id="outline-container-orgc2dd1b8" class="outline-2">
+<h2 id="orgc2dd1b8"><span class="section-number-2">7.</span> Conclusion</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 As stated before, this is a simple setup that only requires a modular
@@ -434,20 +448,20 @@ to fork it and clone it to get a working example.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgeea6596">1. Create and Dockerize a Django Application</a>
+<li><a href="#orge9e356a">1. Create and Dockerize a Django Application</a>
 <ul>
-<li><a href="#org7b2a409">1.1. <code>Install</code> Docker and Docker Desktop</a></li>
-<li><a href="#orgdf62baf">1.2. Create a Django <code>app</code></a></li>
-<li><a href="#org3d7483e">1.3. Create a Docker <code>image</code></a></li>
-<li><a href="#orgb9849ca">1.4. Create a Docker <code>container</code></a></li>
+<li><a href="#org2f9f9a8">1.1. <code>Install</code> Docker and Docker Desktop</a></li>
+<li><a href="#org6a2aa3d">1.2. Create a Django <code>app</code></a></li>
+<li><a href="#org12d0824">1.3. Create a Docker <code>image</code></a></li>
+<li><a href="#org18c2fb4">1.4. Create a Docker <code>container</code></a></li>
 </ul>
 </li>
-<li><a href="#org359e1c5">2. Upload Docker Image to Docker Hub</a></li>
-<li><a href="#org702a663">3. Deploy with Docker on Linode</a>
+<li><a href="#orgd0debd4">2. Upload Docker Image to Docker Hub</a></li>
+<li><a href="#orgcf4463b">3. Deploy with Docker on Linode</a>
 <ul>
-<li><a href="#orgb192643">3.1. Creating a platform to work on</a></li>
-<li><a href="#org846ceef">3.2. Run the container</a></li>
-<li><a href="#org006de6e">3.3. Some other Docker commands</a></li>
+<li><a href="#org6027f7e">3.1. Creating a platform to work on</a></li>
+<li><a href="#orgd3b5fe0">3.2. Run the container</a></li>
+<li><a href="#org104b256">3.3. Some other Docker commands</a></li>
 </ul>
 </li>
 </ul>
@@ -460,12 +474,12 @@ to my future clients or employers. Not a coincidence that I learned
 <a href="https://arvydas.dev/2023-01-31-what-is-docker.html">Docker</a> the other day, it will come in handy.
 </p>
 
-<div id="outline-container-orgeea6596" class="outline-2">
-<h2 id="orgeea6596"><span class="section-number-2">1.</span> Create and Dockerize a Django Application</h2>
+<div id="outline-container-orge9e356a" class="outline-2">
+<h2 id="orge9e356a"><span class="section-number-2">1.</span> Create and Dockerize a Django Application</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org7b2a409" class="outline-3">
-<h3 id="org7b2a409"><span class="section-number-3">1.1.</span> <code>Install</code> Docker and Docker Desktop</h3>
+<div id="outline-container-org2f9f9a8" class="outline-3">
+<h3 id="org2f9f9a8"><span class="section-number-3">1.1.</span> <code>Install</code> Docker and Docker Desktop</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Follow <a href="https://www.youtube.com/watch?v=Vplj9b0L_1Y&amp;ab_channel=Abstractprogrammer">this</a> tutorial or <a href="https://docs.docker.com/get-docker/">the docs</a>.
@@ -473,8 +487,8 @@ Follow <a href="https://www.youtube.com/watch?v=Vplj9b0L_1Y&amp;ab_channel=Abstr
 </div>
 </div>
 
-<div id="outline-container-orgdf62baf" class="outline-3">
-<h3 id="orgdf62baf"><span class="section-number-3">1.2.</span> Create a Django <code>app</code></h3>
+<div id="outline-container-org6a2aa3d" class="outline-3">
+<h3 id="org6a2aa3d"><span class="section-number-3">1.2.</span> Create a Django <code>app</code></h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 If you don't want to setup basic Django app together - clone mine from <a href="https://github.com/arvydasg/django-docker-starter">here</a>.
@@ -501,8 +515,8 @@ pip freeze &gt; requirements.txt
 </div>
 </div>
 
-<div id="outline-container-org3d7483e" class="outline-3">
-<h3 id="org3d7483e"><span class="section-number-3">1.3.</span> Create a Docker <code>image</code></h3>
+<div id="outline-container-org12d0824" class="outline-3">
+<h3 id="org12d0824"><span class="section-number-3">1.3.</span> Create a Docker <code>image</code></h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Create <code>Dockerfile</code> (without any file extensions, and with the D being
@@ -570,15 +584,15 @@ Desktop" app.
 </p>
 
 
-<figure id="org431cc6a">
+<figure id="org89d5870">
 <img src="./static/images/docker10.png" alt="docker10.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgb9849ca" class="outline-3">
-<h3 id="orgb9849ca"><span class="section-number-3">1.4.</span> Create a Docker <code>container</code></h3>
+<div id="outline-container-org18c2fb4" class="outline-3">
+<h3 id="org18c2fb4"><span class="section-number-3">1.4.</span> Create a Docker <code>container</code></h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 A single command will do it.
@@ -593,7 +607,7 @@ docker run -d --publish 8000:8000 python-django
 </div>
 
 
-<figure id="org40780f5">
+<figure id="org22feac8">
 <img src="./static/images/docker11.png" alt="docker11.png" width="1200px">
 
 </figure>
@@ -604,7 +618,7 @@ created in "Container tab".
 </p>
 
 
-<figure id="orgc06f07c">
+<figure id="org203bf36">
 <img src="./static/images/docker12.png" alt="docker12.png" width="1200px">
 
 </figure>
@@ -616,8 +630,8 @@ to a browser, <code>127.0.0.1:8000</code> to see your django app running.
 </div>
 </div>
 </div>
-<div id="outline-container-org359e1c5" class="outline-2">
-<h2 id="org359e1c5"><span class="section-number-2">2.</span> Upload Docker Image to Docker Hub</h2>
+<div id="outline-container-orgd0debd4" class="outline-2">
+<h2 id="orgd0debd4"><span class="section-number-2">2.</span> Upload Docker Image to Docker Hub</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Go to <a href="https://hub.docker.com/">Docker hub</a> and create an account there.</li>
@@ -667,12 +681,12 @@ docker push arvydasg/django-docker-starter
 </div>
 </div>
 
-<div id="outline-container-org702a663" class="outline-2">
-<h2 id="org702a663"><span class="section-number-2">3.</span> Deploy with Docker on Linode</h2>
+<div id="outline-container-orgcf4463b" class="outline-2">
+<h2 id="orgcf4463b"><span class="section-number-2">3.</span> Deploy with Docker on Linode</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgb192643" class="outline-3">
-<h3 id="orgb192643"><span class="section-number-3">3.1.</span> Creating a platform to work on</h3>
+<div id="outline-container-org6027f7e" class="outline-3">
+<h3 id="org6027f7e"><span class="section-number-3">3.1.</span> Creating a platform to work on</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Create the machine.
@@ -687,8 +701,8 @@ have chosen Linode 2GB plan and a Docker image. ($10/month)</li>
 </div>
 </div>
 
-<div id="outline-container-org846ceef" class="outline-3">
-<h3 id="org846ceef"><span class="section-number-3">3.2.</span> Run the container</h3>
+<div id="outline-container-orgd3b5fe0" class="outline-3">
+<h3 id="orgd3b5fe0"><span class="section-number-3">3.2.</span> Run the container</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Let's pull the <a href="https://hub.docker.com/r/arvydasg/django-docker-starter/tags">container</a> we have created and pushed to Docker Hub in
@@ -734,7 +748,7 @@ browser.
 </p>
 
 
-<figure id="orgf79f9f0">
+<figure id="orgd425dcb">
 <img src="./static/images/docker7.png" alt="docker7.png" width="1200px">
 
 </figure>
@@ -751,8 +765,8 @@ machine.
 </div>
 </div>
 
-<div id="outline-container-org006de6e" class="outline-3">
-<h3 id="org006de6e"><span class="section-number-3">3.3.</span> Some other Docker commands</h3>
+<div id="outline-container-org104b256" class="outline-3">
+<h3 id="org104b256"><span class="section-number-3">3.3.</span> Some other Docker commands</h3>
 <div class="outline-text-3" id="text-3-3">
 <div class="org-src-container">
 <pre class="src src-bash">docker ps -a
@@ -842,9 +856,9 @@ me/you get a job, SWEET!</li>
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org02481eb">Setup GTM(Google Tag Manager)</a></li>
-<li><a href="#orgd9f1c82">Setup GA(Google Analytics)</a></li>
-<li><a href="#org146fd01">Back to GTM</a></li>
+<li><a href="#org5732881">Setup GTM(Google Tag Manager)</a></li>
+<li><a href="#org96bb7de">Setup GA(Google Analytics)</a></li>
+<li><a href="#org67915e2">Back to GTM</a></li>
 </ul>
 </div>
 </nav>
@@ -855,9 +869,9 @@ have not documented the process back then, but will do so now as I am
 setting it up for <code>this</code> site. (Yes, I know that you have been here ;) )
 </p>
 
-<div id="outline-container-org02481eb" class="outline-2">
-<h2 id="org02481eb">Setup GTM(Google Tag Manager)</h2>
-<div class="outline-text-2" id="text-org02481eb">
+<div id="outline-container-org5732881" class="outline-2">
+<h2 id="org5732881">Setup GTM(Google Tag Manager)</h2>
+<div class="outline-text-2" id="text-org5732881">
 <p>
 It will act as single place where you put all your tags in the future.
 Good for managing and debugging.
@@ -874,9 +888,9 @@ site and the data flows.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd9f1c82" class="outline-2">
-<h2 id="orgd9f1c82">Setup GA(Google Analytics)</h2>
-<div class="outline-text-2" id="text-orgd9f1c82">
+<div id="outline-container-org96bb7de" class="outline-2">
+<h2 id="org96bb7de">Setup GA(Google Analytics)</h2>
+<div class="outline-text-2" id="text-org96bb7de">
 <ul class="org-ul">
 <li>Create an account in <a href="https://analytics.google.com/analytics/web/">https://analytics.google.com/analytics/web/</a></li>
 <li>Create a property for your specific website</li>
@@ -892,9 +906,9 @@ this for the later steps.</li>
 </div>
 </div>
 
-<div id="outline-container-org146fd01" class="outline-2">
-<h2 id="org146fd01">Back to GTM</h2>
-<div class="outline-text-2" id="text-org146fd01">
+<div id="outline-container-org67915e2" class="outline-2">
+<h2 id="org67915e2">Back to GTM</h2>
+<div class="outline-text-2" id="text-org67915e2">
 <ul class="org-ul">
 <li>Go to Tags, clink on new, tag configuration</li>
 <li>Select Google Analytics: GA4 Configuration</li>
@@ -932,7 +946,7 @@ Congrats!
 </p>
 
 
-<figure id="orgc74c51f">
+<figure id="org0874ab4">
 <img src="./static/images/google-analytics.png" alt="google-analytics.png" width="1200px">
 
 </figure>
@@ -964,9 +978,9 @@ for a freelance Django developer like myself. It sounds like an
 efficient and easy way to deploy Django applications.
 </p>
 
-<div id="outline-container-org2ac4aa4" class="outline-2">
-<h2 id="org2ac4aa4">In the beginning</h2>
-<div class="outline-text-2" id="text-org2ac4aa4">
+<div id="outline-container-org42da29b" class="outline-2">
+<h2 id="org42da29b">In the beginning</h2>
+<div class="outline-text-2" id="text-org42da29b">
 <p>
 If you wanted a server to store your applications onto, it had to be a
 physical server in a data center. It could run ONE operating
@@ -976,9 +990,9 @@ physical center! Quite inefficient and most likely expensive.
 </div>
 </div>
 
-<div id="outline-container-org28465d7" class="outline-2">
-<h2 id="org28465d7">Then came the virtual machines.</h2>
-<div class="outline-text-2" id="text-org28465d7">
+<div id="outline-container-orgd5e3a56" class="outline-2">
+<h2 id="orgd5e3a56">Then came the virtual machines.</h2>
+<div class="outline-text-2" id="text-orgd5e3a56">
 <ul class="org-ul">
 <li>you would have a server hardware</li>
 <li>then on the server hardware you install a hypervisor(vmware esxi)</li>
@@ -994,9 +1008,9 @@ Already way more efficient than the first option.
 </div>
 </div>
 
-<div id="outline-container-org7ce9fe7" class="outline-2">
-<h2 id="org7ce9fe7">Now what is the docker about?</h2>
-<div class="outline-text-2" id="text-org7ce9fe7">
+<div id="outline-container-org74293c0" class="outline-2">
+<h2 id="org74293c0">Now what is the docker about?</h2>
+<div class="outline-text-2" id="text-org74293c0">
 <p>
 You still have the hardware, but on top of that you install one OS.
 Ubuntu for example.
@@ -1026,9 +1040,9 @@ metal servers.
 </div>
 </div>
 
-<div id="outline-container-orgc454188" class="outline-2">
-<h2 id="orgc454188">Benefits of Docker</h2>
-<div class="outline-text-2" id="text-orgc454188">
+<div id="outline-container-org08991fe" class="outline-2">
+<h2 id="org08991fe">Benefits of Docker</h2>
+<div class="outline-text-2" id="text-org08991fe">
 <p>
 Why is Docker so fast?
 </p>
@@ -1061,9 +1075,9 @@ os or kernel.
 </div>
 </div>
 
-<div id="outline-container-org7718499" class="outline-2">
-<h2 id="org7718499">Why docker?</h2>
-<div class="outline-text-2" id="text-org7718499">
+<div id="outline-container-orgd61ccc2" class="outline-2">
+<h2 id="orgd61ccc2">Why docker?</h2>
+<div class="outline-text-2" id="text-orgd61ccc2">
 <p>
 As developers - we write our app - it works great on our machines.
 Then we want to either deploy it or run on other machines or give it
@@ -1083,9 +1097,9 @@ the app needs is contained in the container, it's isolated.
 </p>
 </div>
 
-<div id="outline-container-orgb1a5fa8" class="outline-3">
-<h3 id="orgb1a5fa8">Microservices</h3>
-<div class="outline-text-3" id="text-orgb1a5fa8">
+<div id="outline-container-org0195130" class="outline-3">
+<h3 id="org0195130">Microservices</h3>
+<div class="outline-text-3" id="text-org0195130">
 <p>
 Usually you deploy the WHOLE app inside one container or a VM. For
 example WordPress. You install WordPress server and MySQL database on
@@ -1113,15 +1127,15 @@ Sounds good, I must try experiment with that.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9791acd">1. Intro</a></li>
-<li><a href="#orga953eaf">2. Python in Lithuania</a></li>
-<li><a href="#org4ed4b6b">3. Job search</a></li>
+<li><a href="#org10092a9">1. Intro</a></li>
+<li><a href="#org75613c6">2. Python in Lithuania</a></li>
+<li><a href="#org50305a3">3. Job search</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org9791acd" class="outline-2">
-<h2 id="org9791acd"><span class="section-number-2">1.</span> Intro</h2>
+<div id="outline-container-org10092a9" class="outline-2">
+<h2 id="org10092a9"><span class="section-number-2">1.</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Had a meeting with Laura from CodeAcademy. It is finally time to get
@@ -1130,8 +1144,8 @@ for my dream job, I am ready!
 </div>
 </div>
 
-<div id="outline-container-orga953eaf" class="outline-2">
-<h2 id="orga953eaf"><span class="section-number-2">2.</span> Python in Lithuania</h2>
+<div id="outline-container-org75613c6" class="outline-2">
+<h2 id="org75613c6"><span class="section-number-2">2.</span> Python in Lithuania</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Python in Lithuania is not that widely used, perhaps in Big Data or
@@ -1139,8 +1153,8 @@ Automation.
 </p>
 </div>
 
-<div id="outline-container-org74d57e9" class="outline-3">
-<h3 id="org74d57e9"><span class="section-number-3">2.1.</span> Positions after this course for me could be as:</h3>
+<div id="outline-container-orge0d1e52" class="outline-3">
+<h3 id="orge0d1e52"><span class="section-number-3">2.1.</span> Positions after this course for me could be as:</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Data Engineer/Scientist</li>
@@ -1157,8 +1171,8 @@ on a daily basis and this is what I enjoy)</li>
 </div>
 </div>
 
-<div id="outline-container-orgf5008d6" class="outline-3">
-<h3 id="orgf5008d6"><span class="section-number-3">2.2.</span> Biggest Python companies in Lithuania</h3>
+<div id="outline-container-org0a3850c" class="outline-3">
+<h3 id="org0a3850c"><span class="section-number-3">2.2.</span> Biggest Python companies in Lithuania</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Here is a list of biggest python companies in Lithuania. Should not
@@ -1166,24 +1180,24 @@ forget to introduce myself to each and every one of them :)
 </p>
 
 
-<figure id="org17e29cc">
+<figure id="org0a14ffe">
 <img src="./static/images/labor-market-overview/companies.png" alt="companies.png" width="600px">
 
 </figure>
 
 
-<figure id="orgbd4af74">
+<figure id="orgd426080">
 <img src="./static/images/labor-market-overview/possibilities.png" alt="possibilities.png" width="600px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgce2ac29" class="outline-3">
-<h3 id="orgce2ac29"><span class="section-number-3">2.3.</span> Salary expectations for Junior python developers</h3>
+<div id="outline-container-orgc40fdc1" class="outline-3">
+<h3 id="orgc40fdc1"><span class="section-number-3">2.3.</span> Salary expectations for Junior python developers</h3>
 <div class="outline-text-3" id="text-2-3">
 
-<figure id="org7dc3f1d">
+<figure id="org62a9b6b">
 <img src="./static/images/labor-market-overview/salaries.png" alt="salaries.png" width="1200px">
 
 </figure>
@@ -1197,16 +1211,16 @@ inside programming role).
 </div>
 </div>
 
-<div id="outline-container-org4ed4b6b" class="outline-2">
-<h2 id="org4ed4b6b"><span class="section-number-2">3.</span> Job search</h2>
+<div id="outline-container-org50305a3" class="outline-2">
+<h2 id="org50305a3"><span class="section-number-2">3.</span> Job search</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 There options are endless.
 </p>
 </div>
 
-<div id="outline-container-orge15cb7e" class="outline-3">
-<h3 id="orge15cb7e"><span class="section-number-3">3.1.</span> What is junior anyway?</h3>
+<div id="outline-container-org51101e0" class="outline-3">
+<h3 id="org51101e0"><span class="section-number-3">3.1.</span> What is junior anyway?</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Hire people with a lot of potential, that will be and grow with you in
@@ -1216,8 +1230,8 @@ months and get another one.
 </div>
 </div>
 
-<div id="outline-container-orgb2afdea" class="outline-3">
-<h3 id="orgb2afdea"><span class="section-number-3">3.2.</span> I should first of all mention, that I am self taught</h3>
+<div id="outline-container-orgab9287e" class="outline-3">
+<h3 id="orgab9287e"><span class="section-number-3">3.2.</span> I should first of all mention, that I am self taught</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 I got an advice from a friend to mention that I am a self taught
@@ -1244,8 +1258,8 @@ Paziurek skelbimus karinos
 </div>
 </div>
 
-<div id="outline-container-org34ab60f" class="outline-3">
-<h3 id="org34ab60f"><span class="section-number-3">3.3.</span> Don't get scared if you see something unfamiliar in a job ad</h3>
+<div id="outline-container-org46451dd" class="outline-3">
+<h3 id="org46451dd"><span class="section-number-3">3.3.</span> Don't get scared if you see something unfamiliar in a job ad</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 IMPORTANT: Apply to jobs that you aren’t qualified for!
@@ -1279,8 +1293,8 @@ team.
 </div>
 </div>
 
-<div id="outline-container-org87fd236" class="outline-3">
-<h3 id="org87fd236"><span class="section-number-3">3.4.</span> Instead of new job - agree with current workplace</h3>
+<div id="outline-container-orgd34d549" class="outline-3">
+<h3 id="orgd34d549"><span class="section-number-3">3.4.</span> Instead of new job - agree with current workplace</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 One option that CodeAcademy agrees upon is for me to work
@@ -1296,8 +1310,8 @@ is no "Programming" position.
 </div>
 </div>
 
-<div id="outline-container-org5ef644f" class="outline-3">
-<h3 id="org5ef644f"><span class="section-number-3">3.5.</span> LinkedIn</h3>
+<div id="outline-container-org00c4a28" class="outline-3">
+<h3 id="org00c4a28"><span class="section-number-3">3.5.</span> LinkedIn</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 Use LinkedIn well and after a while you won't be looking for jobs but
@@ -1305,15 +1319,15 @@ jobs will be looking for you :)
 </p>
 
 
-<figure id="org88eeebe">
+<figure id="org0d1e9ec">
 <img src="./static/images/labor-market-overview/linkedin.png" alt="linkedin.png" width="600px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org0d02a30" class="outline-3">
-<h3 id="org0d02a30"><span class="section-number-3">3.6.</span> Hackathons</h3>
+<div id="outline-container-org046aa24" class="outline-3">
+<h3 id="org046aa24"><span class="section-number-3">3.6.</span> Hackathons</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 Hackathons - business problem, programmer teams, creating solutions. A
@@ -1322,8 +1336,8 @@ good way to network and test your knowledge over a weekend in Vilnius.
 </div>
 </div>
 
-<div id="outline-container-org8c2e589" class="outline-3">
-<h3 id="org8c2e589"><span class="section-number-3">3.7.</span> Freelancing</h3>
+<div id="outline-container-orgde9b464" class="outline-3">
+<h3 id="orgde9b464"><span class="section-number-3">3.7.</span> Freelancing</h3>
 <div class="outline-text-3" id="text-3-7">
 <p>
 Could freelance.. I thought about it, yes, even tried in the past, but
@@ -1334,15 +1348,15 @@ Kind of best way if I want freedom in my life.
 </p>
 
 
-<figure id="org0653462">
+<figure id="org2cacfe8">
 <img src="./static/images/labor-market-overview/freelance.png" alt="freelance.png" width="600px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orge7216f9" class="outline-3">
-<h3 id="orge7216f9"><span class="section-number-3">3.8.</span> Responding to job ads</h3>
+<div id="outline-container-org459debf" class="outline-3">
+<h3 id="org459debf"><span class="section-number-3">3.8.</span> Responding to job ads</h3>
 <div class="outline-text-3" id="text-3-8">
 <p>
 A few main things I took is:
@@ -1369,19 +1383,19 @@ yourself also.</li>
 </div>
 </div>
 
-<div id="outline-container-orgcb83b57" class="outline-3">
-<h3 id="orgcb83b57"><span class="section-number-3">3.9.</span> Agencies</h3>
+<div id="outline-container-orgc24fa36" class="outline-3">
+<h3 id="orgc24fa36"><span class="section-number-3">3.9.</span> Agencies</h3>
 <div class="outline-text-3" id="text-3-9">
 
-<figure id="org7aa7a90">
+<figure id="org0550766">
 <img src="./static/images/labor-market-overview/linkedin.png" alt="linkedin.png" width="600px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgfa81a4c" class="outline-3">
-<h3 id="orgfa81a4c"><span class="section-number-3">3.10.</span> Github hygiene</h3>
+<div id="outline-container-org69730a1" class="outline-3">
+<h3 id="org69730a1"><span class="section-number-3">3.10.</span> Github hygiene</h3>
 <div class="outline-text-3" id="text-3-10">
 <p>
 I should definitely clean up my Github account:
@@ -1407,9 +1421,9 @@ I should definitely clean up my Github account:
   <title><![CDATA[Create a Blog with Emacs]]></title>
   <description><![CDATA[
 
-<div id="outline-container-org3cdbd0d" class="outline-2">
-<h2 id="org3cdbd0d">Intro</h2>
-<div class="outline-text-2" id="text-org3cdbd0d">
+<div id="outline-container-orgd69dfba" class="outline-2">
+<h2 id="orgd69dfba">Intro</h2>
+<div class="outline-text-2" id="text-orgd69dfba">
 <p>
 If you are using Emacs and org mode as much as me, you must have come
 up to org-publish feature that allows you to convert org files to html files.
@@ -1423,17 +1437,17 @@ static website ;)
 </div>
 </div>
 
-<div id="outline-container-org5878487" class="outline-2">
-<h2 id="org5878487">Create Emacs blog the "System Crafters" way</h2>
-<div class="outline-text-2" id="text-org5878487">
+<div id="outline-container-org03e8a3f" class="outline-2">
+<h2 id="org03e8a3f">Create Emacs blog the "System Crafters" way</h2>
+<div class="outline-text-2" id="text-org03e8a3f">
 <p>
 Best description in a video format is <a href="https://www.youtube.com/watch?v=AfkrzFodoNw&amp;t=1612s&amp;ab_channel=SystemCrafters">here</a>. To later publish it
 automaticall,y video <a href="https://www.youtube.com/watch?v=za99DwdZEyg&amp;t=996s&amp;ab_channel=SystemCrafters">here</a>.
 </p>
 </div>
-<div id="outline-container-org8100569" class="outline-3">
-<h3 id="org8100569">Choose a directory</h3>
-<div class="outline-text-3" id="text-org8100569">
+<div id="outline-container-org7b2f62d" class="outline-3">
+<h3 id="org7b2f62d">Choose a directory</h3>
+<div class="outline-text-3" id="text-org7b2f62d">
 <p>
 You will place your org files inside content/ directory.
 </p>
@@ -1445,13 +1459,13 @@ You will place your org files inside content/ directory.
 </div>
 </div>
 
-<div id="outline-container-org6e381a7" class="outline-3">
-<h3 id="org6e381a7">Creating the build script</h3>
-<div class="outline-text-3" id="text-org6e381a7">
+<div id="outline-container-orgb49334d" class="outline-3">
+<h3 id="orgb49334d">Creating the build script</h3>
+<div class="outline-text-3" id="text-orgb49334d">
 </div>
-<div id="outline-container-org5e66258" class="outline-4">
-<h4 id="org5e66258">build-site.el</h4>
-<div class="outline-text-4" id="text-org5e66258">
+<div id="outline-container-org7c9cd7f" class="outline-4">
+<h4 id="org7c9cd7f">build-site.el</h4>
+<div class="outline-text-4" id="text-org7c9cd7f">
 <p>
 Inside of this directory:
 </p>
@@ -1473,12 +1487,12 @@ Create a file called <code>build-site.el</code> with this inside of it.
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Define the publishing project</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> org-publish-project-alist
-      <span style="color: #cc241d;">(</span>list
-       <span style="color: #b8bb26;">(</span>list <span style="color: #b8bb26;">"my-org-site"</span>
-             <span style="color: #fe8019;">:recursive</span> t
-             <span style="color: #fe8019;">:base-directory</span> <span style="color: #b8bb26;">"./content"</span>
-             <span style="color: #fe8019;">:publishing-directory</span> <span style="color: #b8bb26;">"./public"</span>
-             <span style="color: #fe8019;">:publishing-function</span> 'org-html-publish-to-html<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>list
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>  <span style="color: #b8bb26;">(</span>list <span style="color: #b8bb26;">"my-org-site"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:recursive</span> t
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:base-directory</span> <span style="color: #b8bb26;">"./content"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:publishing-directory</span> <span style="color: #b8bb26;">"./public"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:publishing-function</span> 'org-html-publish-to-html<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Generate the site output</span>
 <span style="color: #fe8019;">(</span>org-publish-all t<span style="color: #fe8019;">)</span>
@@ -1493,9 +1507,9 @@ variable using M-x describe-variable for a lot more information!
 </div>
 </div>
 
-<div id="outline-container-org259354f" class="outline-4">
-<h4 id="org259354f">build.sh</h4>
-<div class="outline-text-4" id="text-org259354f">
+<div id="outline-container-orga7d759f" class="outline-4">
+<h4 id="orga7d759f">build.sh</h4>
+<div class="outline-text-4" id="text-orga7d759f">
 <p>
 We also need a shell script that can run our Emacs Lisp script. We'll call that build.sh:
 </p>
@@ -1530,9 +1544,9 @@ html in public folder, open it in the browser.
 </div>
 </div>
 
-<div id="outline-container-org1fac108" class="outline-3">
-<h3 id="org1fac108">Improving the HTML output</h3>
-<div class="outline-text-3" id="text-org1fac108">
+<div id="outline-container-org44265cd" class="outline-3">
+<h3 id="org44265cd">Improving the HTML output</h3>
+<div class="outline-text-3" id="text-org44265cd">
 <p>
 There are a few things about the page we just looked at that I'd like
 to change to make the output look a bit cleaner:
@@ -1554,24 +1568,24 @@ better result.
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #928374;">;; </span><span style="color: #928374;">Define the publishing project</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> org-publish-project-alist
-      <span style="color: #cc241d;">(</span>list
-       <span style="color: #b8bb26;">(</span>list <span style="color: #b8bb26;">"org-site:main"</span>
-             <span style="color: #fe8019;">:recursive</span> t
-             <span style="color: #fe8019;">:base-directory</span> <span style="color: #b8bb26;">"./content"</span>
-             <span style="color: #fe8019;">:publishing-function</span> 'org-html-publish-to-html
-             <span style="color: #fe8019;">:publishing-directory</span> <span style="color: #b8bb26;">"./public"</span>
-             <span style="color: #fe8019;">:with-author</span> nil           <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include author name</span>
-             <span style="color: #fe8019;">:with-creator</span> t            <span style="color: #928374;">;; </span><span style="color: #928374;">Include Emacs and Org versions in footer</span>
-             <span style="color: #fe8019;">:with-toc</span> t                <span style="color: #928374;">;; </span><span style="color: #928374;">Include a table of contents</span>
-             <span style="color: #fe8019;">:section-numbers</span> nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include section numbers</span>
-             <span style="color: #fe8019;">:time-stamp-file</span> nil<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>    <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include time stamp in file</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>list
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>  <span style="color: #b8bb26;">(</span>list <span style="color: #b8bb26;">"org-site:main"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:recursive</span> t
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:base-directory</span> <span style="color: #b8bb26;">"./content"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:publishing-function</span> 'org-html-publish-to-html
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:publishing-directory</span> <span style="color: #b8bb26;">"./public"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:with-author</span> nil           <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include author name</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:with-creator</span> t            <span style="color: #928374;">;; </span><span style="color: #928374;">Include Emacs and Org versions in footer</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:with-toc</span> t                <span style="color: #928374;">;; </span><span style="color: #928374;">Include a table of contents</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:section-numbers</span> nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include section numbers</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:time-stamp-file</span> nil<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>    <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include time stamp in file</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4567ced" class="outline-3">
-<h3 id="org4567ced">Improving the page styling</h3>
-<div class="outline-text-3" id="text-org4567ced">
+<div id="outline-container-org0f0729e" class="outline-3">
+<h3 id="org0f0729e">Improving the page styling</h3>
+<div class="outline-text-3" id="text-org0f0729e">
 <p>
 At this point have a decent basic output for our website, but what if we want to make it look a little bit nicer?
 </p>
@@ -1583,18 +1597,18 @@ By setting a few more variables, we can use a nice stylesheet to give our site a
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #928374;">;; </span><span style="color: #928374;">Customize the HTML output</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> org-html-validation-link nil            <span style="color: #928374;">;; </span><span style="color: #928374;">Don't show validation link</span>
-      org-html-head-include-scripts nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own scripts</span>
-      org-html-head-include-default-style nil <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own styles</span>
-      org-html-head <span style="color: #b8bb26;">"&lt;link rel=\"stylesheet\" href=\"simple.min.css\" /&gt;"</span> <span style="color: #928374;">;</span><span style="color: #928374;">place your own stylesheet in public folder</span>
-      org-html-head <span style="color: #b8bb26;">"&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;"</span> <span style="color: #928374;">;</span><span style="color: #928374;">use cdn stylesheet</span>
-      <span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head-include-scripts nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own scripts</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head-include-default-style nil <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own styles</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head <span style="color: #b8bb26;">"&lt;link rel=\"stylesheet\" href=\"simple.min.css\" /&gt;"</span> <span style="color: #928374;">;</span><span style="color: #928374;">place your own stylesheet in public folder</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head <span style="color: #b8bb26;">"&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;"</span> <span style="color: #928374;">;</span><span style="color: #928374;">use cdn stylesheet</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">)</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orge02efd6" class="outline-3">
-<h3 id="orge02efd6">Generating pages with code blocks</h3>
-<div class="outline-text-3" id="text-orge02efd6">
+<div id="outline-container-org4123bed" class="outline-3">
+<h3 id="org4123bed">Generating pages with code blocks</h3>
+<div class="outline-text-3" id="text-org4123bed">
 <p>
 So far we've been looking at a very simple example page that doesn't really have much on it. What happens when we try to generate a more elaborate Org file containing code blocks?
 </p>
@@ -1622,12 +1636,12 @@ To resolve this issue, you will need to install the htmlize package from MELPA. 
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">require</span> '<span style="color: #d3869b;">package</span><span style="color: #fe8019;">)</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> package-user-dir <span style="color: #cc241d;">(</span>expand-file-name <span style="color: #b8bb26;">"./.packages"</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> package-archives '<span style="color: #cc241d;">(</span><span style="color: #b8bb26;">(</span><span style="color: #b8bb26;">"melpa"</span> . <span style="color: #b8bb26;">"https://melpa.org/packages/"</span><span style="color: #b8bb26;">)</span>
-                         <span style="color: #b8bb26;">(</span><span style="color: #b8bb26;">"elpa"</span> . <span style="color: #b8bb26;">"https://elpa.gnu.org/packages/"</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #b8bb26;">(</span><span style="color: #b8bb26;">"elpa"</span> . <span style="color: #b8bb26;">"https://elpa.gnu.org/packages/"</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Initialize the package system</span>
 <span style="color: #fe8019;">(</span>package-initialize<span style="color: #fe8019;">)</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">unless</span> package-archive-contents
-  <span style="color: #cc241d;">(</span>package-refresh-contents<span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>package-refresh-contents<span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Install dependencies</span>
 <span style="color: #fe8019;">(</span>package-install 'htmlize<span style="color: #fe8019;">)</span>
@@ -1648,9 +1662,9 @@ In a future video I'll show you how to convert your Emacs color theme to a CSS f
 </div>
 </div>
 
-<div id="outline-container-orgb29d78b" class="outline-3">
-<h3 id="orgb29d78b">Linking between pages</h3>
-<div class="outline-text-3" id="text-orgb29d78b">
+<div id="outline-container-orgbe6f2e7" class="outline-3">
+<h3 id="orgbe6f2e7">Linking between pages</h3>
+<div class="outline-text-3" id="text-orgbe6f2e7">
 <p>
 One last thing I want to show you is how you can create links between
 pages on your site. Let's open up index.org and create a link to the
@@ -1681,9 +1695,9 @@ It will also complain when a linked file can't be found!
 </div>
 </div>
 
-<div id="outline-container-orgdda3a3e" class="outline-3">
-<h3 id="orgdda3a3e">The final build script</h3>
-<div class="outline-text-3" id="text-orgdda3a3e">
+<div id="outline-container-orgc97488c" class="outline-3">
+<h3 id="orgc97488c">The final build script</h3>
+<div class="outline-text-3" id="text-orgc97488c">
 <p>
 Here is the final form of our <code>build-site.el</code> script:
 </p>
@@ -1695,12 +1709,12 @@ Here is the final form of our <code>build-site.el</code> script:
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">require</span> '<span style="color: #d3869b;">package</span><span style="color: #fe8019;">)</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> package-user-dir <span style="color: #cc241d;">(</span>expand-file-name <span style="color: #b8bb26;">"./.packages"</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> package-archives '<span style="color: #cc241d;">(</span><span style="color: #b8bb26;">(</span><span style="color: #b8bb26;">"melpa"</span> . <span style="color: #b8bb26;">"https://melpa.org/packages/"</span><span style="color: #b8bb26;">)</span>
-                         <span style="color: #b8bb26;">(</span><span style="color: #b8bb26;">"elpa"</span> . <span style="color: #b8bb26;">"https://elpa.gnu.org/packages/"</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #b8bb26;">(</span><span style="color: #b8bb26;">"elpa"</span> . <span style="color: #b8bb26;">"https://elpa.gnu.org/packages/"</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Initialize the package system</span>
 <span style="color: #fe8019;">(</span>package-initialize<span style="color: #fe8019;">)</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">unless</span> package-archive-contents
-  <span style="color: #cc241d;">(</span>package-refresh-contents<span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>package-refresh-contents<span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Install dependencies</span>
 <span style="color: #fe8019;">(</span>package-install 'htmlize<span style="color: #fe8019;">)</span>
@@ -1710,23 +1724,23 @@ Here is the final form of our <code>build-site.el</code> script:
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Customize the HTML output</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> org-html-validation-link nil            <span style="color: #928374;">;; </span><span style="color: #928374;">Don't show validation link</span>
-      org-html-head-include-scripts nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own scripts</span>
-      org-html-head-include-default-style nil <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own styles</span>
-      org-html-head <span style="color: #b8bb26;">"&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;"</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head-include-scripts nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own scripts</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head-include-default-style nil <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own styles</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head <span style="color: #b8bb26;">"&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;"</span><span style="color: #fe8019;">)</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Define the publishing project</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> org-publish-project-alist
-      <span style="color: #cc241d;">(</span>list
-       <span style="color: #b8bb26;">(</span>list <span style="color: #b8bb26;">"org-site:main"</span>
-             <span style="color: #fe8019;">:recursive</span> t
-             <span style="color: #fe8019;">:base-directory</span> <span style="color: #b8bb26;">"./content"</span>
-             <span style="color: #fe8019;">:publishing-function</span> 'org-html-publish-to-html
-             <span style="color: #fe8019;">:publishing-directory</span> <span style="color: #b8bb26;">"./public"</span>
-             <span style="color: #fe8019;">:with-author</span> nil           <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include author name</span>
-             <span style="color: #fe8019;">:with-creator</span> t            <span style="color: #928374;">;; </span><span style="color: #928374;">Include Emacs and Org versions in footer</span>
-             <span style="color: #fe8019;">:with-toc</span> t                <span style="color: #928374;">;; </span><span style="color: #928374;">Include a table of contents</span>
-             <span style="color: #fe8019;">:section-numbers</span> nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include section numbers</span>
-             <span style="color: #fe8019;">:time-stamp-file</span> nil<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>    <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include time stamp in file</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>list
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>  <span style="color: #b8bb26;">(</span>list <span style="color: #b8bb26;">"org-site:main"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:recursive</span> t
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:base-directory</span> <span style="color: #b8bb26;">"./content"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:publishing-function</span> 'org-html-publish-to-html
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:publishing-directory</span> <span style="color: #b8bb26;">"./public"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:with-author</span> nil           <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include author name</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:with-creator</span> t            <span style="color: #928374;">;; </span><span style="color: #928374;">Include Emacs and Org versions in footer</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:with-toc</span> t                <span style="color: #928374;">;; </span><span style="color: #928374;">Include a table of contents</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:section-numbers</span> nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include section numbers</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:time-stamp-file</span> nil<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>    <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include time stamp in file</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Generate the site output</span>
 <span style="color: #fe8019;">(</span>org-publish-all t<span style="color: #fe8019;">)</span>
@@ -1739,9 +1753,9 @@ Here is the final form of our <code>build-site.el</code> script:
 </div>
 </div>
 
-<div id="outline-container-org1a69273" class="outline-2">
-<h2 id="org1a69273">Create Emacs blog with "org-static-blog" package</h2>
-<div class="outline-text-2" id="text-org1a69273">
+<div id="outline-container-org7264802" class="outline-2">
+<h2 id="org7264802">Create Emacs blog with "org-static-blog" package</h2>
+<div class="outline-text-2" id="text-org7264802">
 <p>
 "<a href="https://github.com/bastibe/org-static-blog">org-static-blog</a>" is a package written by <a href="https://github.com/bastibe">Bastian Bechtold</a> is a static site
 generator. I believe it started <a href="https://bastibe.de/2013-11-13-blogging-with-emacs.html">here</a>.
@@ -1785,7 +1799,7 @@ If you would like to add an image to your org file, try this:
 </div>
 
 
-<figure id="orgf38b242">
+<figure id="org1809011">
 <img src="./static/images/org-static-blog.png" alt="org-static-blog.png" width="1200px">
 
 </figure>
@@ -1797,9 +1811,9 @@ the image.
 </div>
 </div>
 
-<div id="outline-container-orga4b789a" class="outline-2">
-<h2 id="orga4b789a">Conclusion</h2>
-<div class="outline-text-2" id="text-orga4b789a">
+<div id="outline-container-org00674e9" class="outline-2">
+<h2 id="org00674e9">Conclusion</h2>
+<div class="outline-text-2" id="text-org00674e9">
 <p>
 Now the only thing is left - I have to blog. :) I am thinking why
 don't I whenever learning a new thing write such little summary about
@@ -1818,14 +1832,14 @@ learn it is to teach it" they say.
   <title><![CDATA[Skelbiu.lt Clone with GET POST DELETE]]></title>
   <description><![CDATA[
 
-<figure id="org0ba683b">
+<figure id="org5587e9c">
 <img src="./static/images/clone-skelbiu.png" alt="clone-skelbiu.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org73adf18" class="outline-2">
-<h2 id="org73adf18">Introduction</h2>
-<div class="outline-text-2" id="text-org73adf18">
+<div id="outline-container-org6daec87" class="outline-2">
+<h2 id="org6daec87">Introduction</h2>
+<div class="outline-text-2" id="text-org6daec87">
 <p>
 Today I had a final front-end part Codeacademy task. I was asked
 to use GET, POST and DELETE requests while taking design and layout
@@ -1844,9 +1858,9 @@ Here is a live codeacademy task itself - <a href="./static/images/Baigiamoji_uzd
 </div>
 </div>
 
-<div id="outline-container-org1f7cf65" class="outline-2">
-<h2 id="org1f7cf65">The Process</h2>
-<div class="outline-text-2" id="text-org1f7cf65">
+<div id="outline-container-org58bfa96" class="outline-2">
+<h2 id="org58bfa96">The Process</h2>
+<div class="outline-text-2" id="text-org58bfa96">
 <ul class="org-ul">
 <li>I have started with researching the skelbiu.lt page, figuring out
 how much of the cloning I can do from it.</li>
@@ -1861,9 +1875,9 @@ are displayed in the browser.</li>
 </div>
 </div>
 
-<div id="outline-container-org6049bc0" class="outline-2">
-<h2 id="org6049bc0">Conclusion</h2>
-<div class="outline-text-2" id="text-org6049bc0">
+<div id="outline-container-org2acbc34" class="outline-2">
+<h2 id="org2acbc34">Conclusion</h2>
+<div class="outline-text-2" id="text-org2acbc34">
 <p>
 Here is a link to my <a href="https://arvydas.dev/codeacademy/javascript/skelbiult/index.html">Skelbiu.lt clone</a>(give it a few seconds to load,
 this api service can sometimes be slow :) ).
@@ -1892,14 +1906,14 @@ wish I had more time to play with these :)
   <title><![CDATA[VBA barcode checker]]></title>
   <description><![CDATA[
 
-<figure id="org34e5a5f">
+<figure id="org3a5394d">
 <img src="./static/images/vba-barcode-checker.png" alt="vba-barcode-checker.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org14bc57b" class="outline-2">
-<h2 id="org14bc57b">A Complaint</h2>
-<div class="outline-text-2" id="text-org14bc57b">
+<div id="outline-container-org9496c07" class="outline-2">
+<h2 id="org9496c07">A Complaint</h2>
+<div class="outline-text-2" id="text-org9496c07">
 <p>
 PKC group has received a complaint regarding one process due to which
 nonconformity appeared in some products.
@@ -1912,9 +1926,9 @@ process does not repeat.
 </div>
 </div>
 
-<div id="outline-container-org67fe0ae" class="outline-2">
-<h2 id="org67fe0ae">Estonian Code</h2>
-<div class="outline-text-2" id="text-org67fe0ae">
+<div id="outline-container-org7e7bb4f" class="outline-2">
+<h2 id="org7e7bb4f">Estonian Code</h2>
+<div class="outline-text-2" id="text-org7e7bb4f">
 <p>
 I ended up looking through 12 years old <a href="https://learn.microsoft.com/en-us/dotnet/visual-basic/">VBA</a> code which had no
 documentation, most of the code was in Estonian and it’s the developer
@@ -1929,9 +1943,9 @@ desired outcome. I have added a few barcodes to necessary places.
 </div>
 </div>
 
-<div id="outline-container-org37d04c4" class="outline-2">
-<h2 id="org37d04c4">Created a whole app with a language I have never worked before</h2>
-<div class="outline-text-2" id="text-org37d04c4">
+<div id="outline-container-org07b00a6" class="outline-2">
+<h2 id="org07b00a6">Created a whole app with a language I have never worked before</h2>
+<div class="outline-text-2" id="text-org07b00a6">
 <p>
 I then created a VBA app to scan those barcodes with and instructed
 the shift leaders as well as other employers to use the app.
@@ -1951,9 +1965,9 @@ location on the server so it can be accesssed.
 </div>
 </div>
 
-<div id="outline-container-org337eba5" class="outline-2">
-<h2 id="org337eba5">Conclusion</h2>
-<div class="outline-text-2" id="text-org337eba5">
+<div id="outline-container-org04f2402" class="outline-2">
+<h2 id="org04f2402">Conclusion</h2>
+<div class="outline-text-2" id="text-org04f2402">
 <p>
 During this project I went from not knowing anything about VBA to
 coding a fully functional app wiht it that is now used on a daily
@@ -1973,14 +1987,14 @@ packing departments all around PKC.
   <title><![CDATA[First JavaScript test]]></title>
   <description><![CDATA[
 
-<figure id="orgeee0e69">
+<figure id="orgca76a0c">
 <img src="./static/images/first-javascript-test.png" alt="first-javascript-test.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgc93c35a" class="outline-2">
-<h2 id="orgc93c35a">2022-09-19</h2>
-<div class="outline-text-2" id="text-orgc93c35a">
+<div id="outline-container-org48fbe19" class="outline-2">
+<h2 id="org48fbe19">2022-09-19</h2>
+<div class="outline-text-2" id="text-org48fbe19">
 <p>
 Today, our codeacademy group has received our first TASK.
 </p>
@@ -1992,16 +2006,16 @@ JavaScipt.
 </p>
 
 
-<figure id="orgdfd1211">
+<figure id="org44e3739">
 <img src="./static/images/first-javascript-test2.png" alt="first-javascript-test2.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org34d15cf" class="outline-2">
-<h2 id="org34d15cf">Looking up EVERYTHING</h2>
-<div class="outline-text-2" id="text-org34d15cf">
+<div id="outline-container-org8c434e4" class="outline-2">
+<h2 id="org8c434e4">Looking up EVERYTHING</h2>
+<div class="outline-text-2" id="text-org8c434e4">
 <p>
 Honestly, I had to google/look for examples from my own <a href="https://arvydas.dev/codeacademy/javascript/index.html">sources</a> for
 each and every task. I managed to complete 95% of those, BUT it didn’t
@@ -2029,9 +2043,9 @@ seemed quite simple.
 </div>
 </div>
 
-<div id="outline-container-orgd314033" class="outline-2">
-<h2 id="orgd314033">Link to the tasks and my solutions</h2>
-<div class="outline-text-2" id="text-orgd314033">
+<div id="outline-container-org8244bd7" class="outline-2">
+<h2 id="org8244bd7">Link to the tasks and my solutions</h2>
+<div class="outline-text-2" id="text-org8244bd7">
 <p>
 If you would like to see those tasks and my solutions, please head
 <a href="https://arvydas.dev/codeacademy/javascript/index.html#27">here</a> and find “Example numero 27” after pressing Ctrl+F.
@@ -2039,9 +2053,9 @@ If you would like to see those tasks and my solutions, please head
 </div>
 </div>
 
-<div id="outline-container-org21b0ab7" class="outline-2">
-<h2 id="org21b0ab7">Moral of the story</h2>
-<div class="outline-text-2" id="text-org21b0ab7">
+<div id="outline-container-orgcd9897a" class="outline-2">
+<h2 id="orgcd9897a">Moral of the story</h2>
+<div class="outline-text-2" id="text-orgcd9897a">
 <p>
 The language that you are learning… use it not only during the
 classes, but also to build your personal projects in your free time to
@@ -2059,14 +2073,14 @@ ingrain all the syntax and language’s possibilities in your brain.
   <title><![CDATA[Inventorization Power App]]></title>
   <description><![CDATA[
 
-<figure id="org53b427f">
+<figure id="org2531a40">
 <img src="./static/images/powerapp.png" alt="powerapp.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org16d59ae" class="outline-2">
-<h2 id="org16d59ae">Intro</h2>
-<div class="outline-text-2" id="text-org16d59ae">
+<div id="outline-container-org6e7307f" class="outline-2">
+<h2 id="org6e7307f">Intro</h2>
+<div class="outline-text-2" id="text-org6e7307f">
 <p>
 I noticed that there is no system whatsoever of where/when/how
 many things arrive to our IT office or how many we hand out to users
@@ -2075,9 +2089,9 @@ or production or how many are being sent to other sites. So I created one.
 </div>
 </div>
 
-<div id="outline-container-org69944f0" class="outline-2">
-<h2 id="org69944f0">The problem</h2>
-<div class="outline-text-2" id="text-org69944f0">
+<div id="outline-container-orgcb9781e" class="outline-2">
+<h2 id="orgcb9781e">The problem</h2>
+<div class="outline-text-2" id="text-orgcb9781e">
 <p>
 Once in a while someone from Finances asks me: Who this computer
 belongs to? What inv.nr sticker does it have? Who has this phone, what
@@ -2097,13 +2111,13 @@ over 5 or so years.
 </div>
 </div>
 
-<div id="outline-container-org7046cd6" class="outline-2">
-<h2 id="org7046cd6">The solution</h2>
-<div class="outline-text-2" id="text-org7046cd6">
+<div id="outline-container-org45e126e" class="outline-2">
+<h2 id="org45e126e">The solution</h2>
+<div class="outline-text-2" id="text-org45e126e">
 </div>
-<div id="outline-container-org1e3b5d5" class="outline-3">
-<h3 id="org1e3b5d5">First attempt</h3>
-<div class="outline-text-3" id="text-org1e3b5d5">
+<div id="outline-container-org879ba0a" class="outline-3">
+<h3 id="org879ba0a">First attempt</h3>
+<div class="outline-text-3" id="text-org879ba0a">
 <p>
 I have been looking for a solution for almost a week. My first attempt
 was this - <a href="https://www.youtube.com/watch?v=0PtnVvrVTCY&amp;ab_channel=TheMobileSalesEngineer">Check in / out Google Sheets</a>, it worked quite well, I was
@@ -2114,9 +2128,9 @@ clumpsy to use.
 </div>
 </div>
 
-<div id="outline-container-org173e09b" class="outline-3">
-<h3 id="org173e09b">Second attempt</h3>
-<div class="outline-text-3" id="text-org173e09b">
+<div id="outline-container-org45414ac" class="outline-3">
+<h3 id="org45414ac">Second attempt</h3>
+<div class="outline-text-3" id="text-org45414ac">
 <p>
 Okay, now I thought I found what I need. This excelent example that
 uses forms - <a href="https://www.youtube.com/watch?v=cdqEB78cHpw&amp;ab_channel=RandyBennett">Google QR Inventory</a> I was sure will solve my problem, I
@@ -2128,13 +2142,13 @@ this could work.. I need another solution.
 </div>
 </div>
 
-<div id="outline-container-org67617de" class="outline-3">
-<h3 id="org67617de">Third and Final attempt</h3>
-<div class="outline-text-3" id="text-org67617de">
+<div id="outline-container-org4042bee" class="outline-3">
+<h3 id="org4042bee">Third and Final attempt</h3>
+<div class="outline-text-3" id="text-org4042bee">
 </div>
-<div id="outline-container-orga52120c" class="outline-4">
-<h4 id="orga52120c">License</h4>
-<div class="outline-text-4" id="text-orga52120c">
+<div id="outline-container-org545c996" class="outline-4">
+<h4 id="org545c996">License</h4>
+<div class="outline-text-4" id="text-org545c996">
 <p>
 I am glad I did not give up after all this work. I was obsessed with a
 solution, no matter where I went I was googling about this
@@ -2147,9 +2161,9 @@ playing with Power apps.
 </div>
 </div>
 
-<div id="outline-container-orgf134940" class="outline-4">
-<h4 id="orgf134940">Extremely Intuitive</h4>
-<div class="outline-text-4" id="text-orgf134940">
+<div id="outline-container-org4f1fe33" class="outline-4">
+<h4 id="org4f1fe33">Extremely Intuitive</h4>
+<div class="outline-text-4" id="text-org4f1fe33">
 <p>
 I was shocked that one can create web and phone apps with Wordpress
 like interface. Many videos on YouTube of how it can be done… I have
@@ -2174,9 +2188,9 @@ manager needs to review anything - they will be able to comfortably.</li>
 </div>
 </div>
 
-<div id="outline-container-org9e6be6c" class="outline-2">
-<h2 id="org9e6be6c">Conclusion</h2>
-<div class="outline-text-2" id="text-org9e6be6c">
+<div id="outline-container-org7c97e99" class="outline-2">
+<h2 id="org7c97e99">Conclusion</h2>
+<div class="outline-text-2" id="text-org7c97e99">
 <p>
 At first I wasn’t so happy doing “IT warehouse worker” job… after all
 I am here to get IT experience, now warehouse experience… BUT I found
@@ -2198,14 +2212,14 @@ app that I have made. :)
   <title><![CDATA[Python data cleaner with Python]]></title>
   <description><![CDATA[
 
-<figure id="orgeddcdad">
+<figure id="org702e721">
 <img src="./static/images/phats.png" alt="phats.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orge48d9b8" class="outline-2">
-<h2 id="orge48d9b8">Intro</h2>
-<div class="outline-text-2" id="text-orge48d9b8">
+<div id="outline-container-org30f6198" class="outline-2">
+<h2 id="org30f6198">Intro</h2>
+<div class="outline-text-2" id="text-org30f6198">
 <p>
 Clean up exported excel document up and properly format it so it can
 then be exported to a .txt file that can later be used with PHATS
@@ -2214,9 +2228,9 @@ software.
 </div>
 </div>
 
-<div id="outline-container-orgfa499ad" class="outline-2">
-<h2 id="orgfa499ad">What is it for</h2>
-<div class="outline-text-2" id="text-orgfa499ad">
+<div id="outline-container-orgd62403f" class="outline-2">
+<h2 id="orgd62403f">What is it for</h2>
+<div class="outline-text-2" id="text-orgd62403f">
 <ul class="org-ul">
 <li>A program called Wise exports an excel document with lots of part numbers.</li>
 <li>My script takes this excel document, removes unnecessary part
@@ -2232,9 +2246,9 @@ operators to use this script(double click it and go).
 </div>
 </div>
 
-<div id="outline-container-orgfd2fb4d" class="outline-2">
-<h2 id="orgfd2fb4d">Libraries used</h2>
-<div class="outline-text-2" id="text-orgfd2fb4d">
+<div id="outline-container-orgc373044" class="outline-2">
+<h2 id="orgc373044">Libraries used</h2>
+<div class="outline-text-2" id="text-orgc373044">
 <ul class="org-ul">
 <li>openpyxl</li>
 <li>pandas</li>
@@ -2259,14 +2273,14 @@ operators to use this script(double click it and go).
   <title><![CDATA[My IT journey]]></title>
   <description><![CDATA[
 
-<figure id="org973f420">
+<figure id="org56314a0">
 <img src="./static/images/bali.png" alt="bali.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org293fc17" class="outline-2">
-<h2 id="org293fc17">June 23rd 2022 - Promotion</h2>
-<div class="outline-text-2" id="text-org293fc17">
+<div id="outline-container-org749c905" class="outline-2">
+<h2 id="org749c905">June 23rd 2022 - Promotion</h2>
+<div class="outline-text-2" id="text-org749c905">
 <p>
 Offered to be promoted to IT Engineer, manager agreed. Exactly a month
 later was told that that’s not going to happen.
@@ -2274,9 +2288,9 @@ later was told that that’s not going to happen.
 </div>
 </div>
 
-<div id="outline-container-org3c59b56" class="outline-2">
-<h2 id="org3c59b56">June 19th 2022 - Want to code</h2>
-<div class="outline-text-2" id="text-org3c59b56">
+<div id="outline-container-orgcd7ff6f" class="outline-2">
+<h2 id="orgcd7ff6f">June 19th 2022 - Want to code</h2>
+<div class="outline-text-2" id="text-orgcd7ff6f">
 <p>
 Tired of running though the factory fixing printers - want to program
 again.
@@ -2284,9 +2298,9 @@ again.
 </div>
 </div>
 
-<div id="outline-container-org8a868af" class="outline-2">
-<h2 id="org8a868af">April 11th 2022 - First IT job</h2>
-<div class="outline-text-2" id="text-org8a868af">
+<div id="outline-container-orge7eade3" class="outline-2">
+<h2 id="orge7eade3">April 11th 2022 - First IT job</h2>
+<div class="outline-text-2" id="text-orge7eade3">
 <p>
 Starting my first IT job ever as an IT Technician in my home town
 Panevezys.
@@ -2294,9 +2308,9 @@ Panevezys.
 </div>
 </div>
 
-<div id="outline-container-org5d2aed0" class="outline-2">
-<h2 id="org5d2aed0">Sep 2021 - Self employed web dev</h2>
-<div class="outline-text-2" id="text-org5d2aed0">
+<div id="outline-container-org0bd91f1" class="outline-2">
+<h2 id="org0bd91f1">Sep 2021 - Self employed web dev</h2>
+<div class="outline-text-2" id="text-org0bd91f1">
 <p>
 Making wordpress sites for clients. Initially with Elementor, then
 oxygen builder, but at the end realizing that all those builders are
@@ -2312,9 +2326,9 @@ tool, my note taking app, my second brain, my website… and so on.
 </div>
 </div>
 
-<div id="outline-container-org9af0e2d" class="outline-2">
-<h2 id="org9af0e2d">January 2021 - Going all in</h2>
-<div class="outline-text-2" id="text-org9af0e2d">
+<div id="outline-container-org6181fd5" class="outline-2">
+<h2 id="org6181fd5">January 2021 - Going all in</h2>
+<div class="outline-text-2" id="text-org6181fd5">
 <p>
 Starting to learn programming with Machine learning course on
 Coursera. Trying to find the best code editor.. trying out VIM and
@@ -2335,9 +2349,9 @@ Ubuntu.
 </div>
 </div>
 
-<div id="outline-container-org2cc98f5" class="outline-2">
-<h2 id="org2cc98f5">April 2020 - The idea to program</h2>
-<div class="outline-text-2" id="text-org2cc98f5">
+<div id="outline-container-orgc7c1852" class="outline-2">
+<h2 id="orgc7c1852">April 2020 - The idea to program</h2>
+<div class="outline-text-2" id="text-orgc7c1852">
 <p>
 Quarantine in Bali. Lying in bed. Realizing that I would like to have
 a job I can do remotely. I was a computer guy my whole life, playing
@@ -2357,14 +2371,14 @@ fix something - always doing it myself.
   <title><![CDATA[Magicmirror]]></title>
   <description><![CDATA[
 
-<figure id="org53ec42e">
+<figure id="orgd13bfb0">
 <img src="./static/images/magicmirror.png" alt="magicmirror.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org13977fe" class="outline-2">
-<h2 id="org13977fe">The idea</h2>
-<div class="outline-text-2" id="text-org13977fe">
+<div id="outline-container-org3b7fa28" class="outline-2">
+<h2 id="org3b7fa28">The idea</h2>
+<div class="outline-text-2" id="text-org3b7fa28">
 <p>
 Found an unused raspberry pi at work. Was wondering what it would be
 like to use it for something useful… One of the projects I liked was
@@ -2403,11 +2417,11 @@ on it.
 </div>
 </div>
 
-<div id="outline-container-orgcc57065" class="outline-2">
-<h2 id="orgcc57065">Current setup</h2>
-<div class="outline-text-2" id="text-orgcc57065">
+<div id="outline-container-orgfd9bb4a" class="outline-2">
+<h2 id="orgfd9bb4a">Current setup</h2>
+<div class="outline-text-2" id="text-orgfd9bb4a">
 
-<figure id="org88f36ad">
+<figure id="org901962f">
 <img src="./static/images/magicmirror-calendar.png" alt="magicmirror-calendar.png" width="1200px">
 
 </figure>
@@ -2420,9 +2434,9 @@ my family members so we are all up to date with the upcoming events.
 </div>
 </div>
 
-<div id="outline-container-orgec5694e" class="outline-2">
-<h2 id="orgec5694e">Future Ideas</h2>
-<div class="outline-text-2" id="text-orgec5694e">
+<div id="outline-container-org6fd5290" class="outline-2">
+<h2 id="org6fd5290">Future Ideas</h2>
+<div class="outline-text-2" id="text-org6fd5290">
 <p>
 One day I want to learn how to work with API’s so I can pull my weight
 data from “Google Fit” and display in MagicMirror.
@@ -2448,14 +2462,14 @@ I have many ideas like such :)
   <title><![CDATA[First month as IT Technician]]></title>
   <description><![CDATA[
 
-<figure id="orgfb1e5e9">
+<figure id="org402902c">
 <img src="./static/images/pkc-technician.png" alt="pkc-technician.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org4be3f88" class="outline-2">
-<h2 id="org4be3f88">Intro</h2>
-<div class="outline-text-2" id="text-org4be3f88">
+<div id="outline-container-org40dec24" class="outline-2">
+<h2 id="org40dec24">Intro</h2>
+<div class="outline-text-2" id="text-org40dec24">
 <p>
 So this is supposed to be a post about my first time as IT technician,
 but almost 2 months have passed and I still haven’t found the time to
@@ -2536,14 +2550,14 @@ Happy I wrote this. Going to watch some news with my bb :)
   <title><![CDATA[Django Tags]]></title>
   <description><![CDATA[
 
-<figure id="orgc31e92b">
+<figure id="org87b3823">
 <img src="./static/images/django_tags.png" alt="django_tags.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org7386c8d" class="outline-2">
-<h2 id="org7386c8d">Intro</h2>
-<div class="outline-text-2" id="text-org7386c8d">
+<div id="outline-container-org1615b6e" class="outline-2">
+<h2 id="org1615b6e">Intro</h2>
+<div class="outline-text-2" id="text-org1615b6e">
 <p>
 Alright, I will just write all the thoughts in my head for now. I am
 too excited that I managed tags to work on this site!
@@ -2565,9 +2579,9 @@ to create this functionality by django itself.
 </div>
 </div>
 
-<div id="outline-container-orgc0cde9c" class="outline-2">
-<h2 id="orgc0cde9c">Body</h2>
-<div class="outline-text-2" id="text-orgc0cde9c">
+<div id="outline-container-orgd23a684" class="outline-2">
+<h2 id="orgd23a684">Body</h2>
+<div class="outline-text-2" id="text-orgd23a684">
 <p>
 I am not even sure what part of code I should share here.. I want to
 share all the steps that took me to reach the result, but that would
@@ -2623,9 +2637,9 @@ inside that tags page. AMAZING!!
 </div>
 </div>
 
-<div id="outline-container-orgc024701" class="outline-2">
-<h2 id="orgc024701">Final config</h2>
-<div class="outline-text-2" id="text-orgc024701">
+<div id="outline-container-org3bf4d51" class="outline-2">
+<h2 id="org3bf4d51">Final config</h2>
+<div class="outline-text-2" id="text-org3bf4d51">
 <p>
 I then had to step back and think how to make a link to that specific
 blog post. This worked.
@@ -2660,22 +2674,22 @@ AMAZING!! I am done and I can not believe I did it. Link to Github project.
   <title><![CDATA[Attempts to Blog]]></title>
   <description><![CDATA[
 
-<figure id="org2677caa">
+<figure id="orgf7ede43">
 <img src="./static/images/emacsblog.png" alt="emacsblog.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgd71689a" class="outline-2">
-<h2 id="orgd71689a">Intro</h2>
+<div id="outline-container-org4e8c48e" class="outline-2">
+<h2 id="org4e8c48e">Intro</h2>
 </div>
 
-<div id="outline-container-org61681fa" class="outline-2">
-<h2 id="org61681fa">Body</h2>
-<div class="outline-text-2" id="text-org61681fa">
+<div id="outline-container-org17b9e12" class="outline-2">
+<h2 id="org17b9e12">Body</h2>
+<div class="outline-text-2" id="text-org17b9e12">
 </div>
-<div id="outline-container-orgd4af401" class="outline-3">
-<h3 id="orgd4af401">First attempts</h3>
-<div class="outline-text-3" id="text-orgd4af401">
+<div id="outline-container-org0346eb5" class="outline-3">
+<h3 id="org0346eb5">First attempts</h3>
+<div class="outline-text-3" id="text-org0346eb5">
 <p>
 I was trying to do the same with my journey to programming. It started
 a bit more than a year ago and since them I was trying to create
@@ -2691,9 +2705,9 @@ personal blog/website.
 </div>
 </div>
 
-<div id="outline-container-org73f791c" class="outline-2">
-<h2 id="org73f791c">Current setup</h2>
-<div class="outline-text-2" id="text-org73f791c">
+<div id="outline-container-orgd71c4c5" class="outline-2">
+<h2 id="orgd71c4c5">Current setup</h2>
+<div class="outline-text-2" id="text-orgd71c4c5">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2022-04-17 Sun] </span></span> I discovered a way to make a website with emacs.
 <a href="https://systemcrafters.net/publishing-websites-with-org-mode/">Systemcrafters channel</a> has a lot of great material covering just that.
@@ -2714,9 +2728,9 @@ Github and the changes will be visible immediately in my website,</li>
 </div>
 </div>
 
-<div id="outline-container-org4c334f2" class="outline-2">
-<h2 id="org4c334f2">Summary</h2>
-<div class="outline-text-2" id="text-org4c334f2">
+<div id="outline-container-org9ea7200" class="outline-2">
+<h2 id="org9ea7200">Summary</h2>
+<div class="outline-text-2" id="text-org9ea7200">
 <p>
 For me, this is the fastest way to blog. I will be using it in the
 future and hopefully improve my workflow as I go along.
@@ -2739,14 +2753,14 @@ P.S. Update 2022-08-29. I am creating a hugo blog - AGAIN. Read why -
   <title><![CDATA[Dired diff-hl]]></title>
   <description><![CDATA[
 
-<figure id="org1949477">
+<figure id="orgc02d12c">
 <img src="./static/images/dired-diff-hl.png" alt="dired-diff-hl.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org0ab3d4a" class="outline-2">
-<h2 id="org0ab3d4a">Introduction</h2>
-<div class="outline-text-2" id="text-org0ab3d4a">
+<div id="outline-container-orgb2f8a1f" class="outline-2">
+<h2 id="orgb2f8a1f">Introduction</h2>
+<div class="outline-text-2" id="text-orgb2f8a1f">
 <p>
 So, everything started when I have discovered ‘diff-hl’ package. It
 had an option to show differences in dired buffer. I thought okay,
@@ -2755,9 +2769,9 @@ cool option, lets not use neotree anymore and use dired instead.
 </div>
 </div>
 
-<div id="outline-container-org269befd" class="outline-2">
-<h2 id="org269befd">Body</h2>
-<div class="outline-text-2" id="text-org269befd">
+<div id="outline-container-org26ba2b1" class="outline-2">
+<h2 id="org26ba2b1">Body</h2>
+<div class="outline-text-2" id="text-org26ba2b1">
 <p>
 I added a few lines to ‘diff-hl’ config to make the file changes
 visible in dired buffer.
@@ -2765,12 +2779,12 @@ visible in dired buffer.
 
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #fe8019;">(</span><span style="color: #fb4934;">use-package</span> <span style="color: #d3869b;">diff-hl</span>
-  <span style="color: #fe8019;">:ensure</span> t
-  <span style="color: #fe8019;">:init</span> <span style="color: #cc241d;">(</span>add-hook 'prog-mode-hook #'diff-hl-mode<span style="color: #cc241d;">)</span>
-  <span style="color: #cc241d;">(</span>add-hook 'org-mode-hook #'diff-hl-mode<span style="color: #cc241d;">)</span>
-  <span style="color: #cc241d;">(</span>add-hook 'dired-mode-hook 'diff-hl-dired-mode<span style="color: #cc241d;">)</span>
-  <span style="color: #cc241d;">(</span>add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh<span style="color: #cc241d;">)</span>
-  <span style="color: #cc241d;">(</span>add-hook 'magit-pre-refresh-hook 'diff-hl-magit-post-refresh<span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">:ensure</span> t
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">:init</span> <span style="color: #cc241d;">(</span>add-hook 'prog-mode-hook #'diff-hl-mode<span style="color: #cc241d;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>add-hook 'org-mode-hook #'diff-hl-mode<span style="color: #cc241d;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>add-hook 'dired-mode-hook 'diff-hl-dired-mode<span style="color: #cc241d;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh<span style="color: #cc241d;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>add-hook 'magit-pre-refresh-hook 'diff-hl-magit-post-refresh<span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 </pre>
 </div>
 
@@ -2827,40 +2841,40 @@ more convenient to cycle with and I am all set!
 </div>
 </div>
 
-<div id="outline-container-org79580e2" class="outline-2">
-<h2 id="org79580e2">The final config</h2>
-<div class="outline-text-2" id="text-org79580e2">
+<div id="outline-container-orgda7b0a9" class="outline-2">
+<h2 id="orgda7b0a9">The final config</h2>
+<div class="outline-text-2" id="text-orgda7b0a9">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"> <span style="color: #fe8019;">(</span><span style="color: #fb4934;">use-package</span> <span style="color: #d3869b;">dired</span>
-    <span style="color: #fe8019;">:ensure</span> nil                         <span style="color: #928374;">;</span><span style="color: #928374;">no need for t, because dired is built in</span>
-    <span style="color: #fe8019;">:custom</span> <span style="color: #cc241d;">(</span><span style="color: #b8bb26;">(</span>dired-listing-switches <span style="color: #b8bb26;">"-agho --group-directories-first"</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span> <span style="color: #928374;">;</span><span style="color: #928374;">sort directories first</span>
-  <span style="color: #fe8019;">(</span>global-set-key <span style="color: #cc241d;">(</span>kbd <span style="color: #b8bb26;">"C-x C-d"</span><span style="color: #cc241d;">)</span> 'dired-jump<span style="color: #fe8019;">)</span> <span style="color: #928374;">;</span><span style="color: #928374;">open dired buffer in current location</span>
-  <span style="color: #fe8019;">(</span>define-key dired-mode-map <span style="color: #cc241d;">(</span>kbd <span style="color: #b8bb26;">"f"</span><span style="color: #cc241d;">)</span> 'dired-find-alternate-file<span style="color: #fe8019;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">(</span><span style="color: #fb4934;">use-package</span> <span style="color: #d3869b;">dired</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #fe8019;">:ensure</span> nil                         <span style="color: #928374;">;</span><span style="color: #928374;">no need for t, because dired is built in</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #fe8019;">:custom</span> <span style="color: #cc241d;">(</span><span style="color: #b8bb26;">(</span>dired-listing-switches <span style="color: #b8bb26;">"-agho --group-directories-first"</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span> <span style="color: #928374;">;</span><span style="color: #928374;">sort directories first</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">(</span>global-set-key <span style="color: #cc241d;">(</span>kbd <span style="color: #b8bb26;">"C-x C-d"</span><span style="color: #cc241d;">)</span> 'dired-jump<span style="color: #fe8019;">)</span> <span style="color: #928374;">;</span><span style="color: #928374;">open dired buffer in current location</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">(</span>define-key dired-mode-map <span style="color: #cc241d;">(</span>kbd <span style="color: #b8bb26;">"f"</span><span style="color: #cc241d;">)</span> 'dired-find-alternate-file<span style="color: #fe8019;">)</span>
 <span style="color: #928374;">;; </span><span style="color: #928374;">(global-set-key (kbd "C-x d") 'dired)</span>
 
-  <span style="color: #928374;">;; </span><span style="color: #928374;">a function to kill dired buffers. Kind of works. Or you can use "a"</span>
-  <span style="color: #928374;">;; </span><span style="color: #928374;">to cycle through dired and it leaves no buffers opened</span>
-  <span style="color: #928374;">;; </span><span style="color: #928374;">DiredReuseDirectoryBuffer - https://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer</span>
-  <span style="color: #928374;">;; </span><span style="color: #928374;">KillingBuffers - https://www.emacswiki.org/emacs/KillingBuffers</span>
-  <span style="color: #fe8019;">(</span><span style="color: #fb4934;">defun</span> <span style="color: #b8bb26;">kill-dired-buffers</span> <span style="color: #cc241d;">()</span>
-    <span style="color: #cc241d;">(</span><span style="color: #fb4934;">interactive</span><span style="color: #cc241d;">)</span>
-    <span style="color: #cc241d;">(</span>mapc <span style="color: #b8bb26;">(</span><span style="color: #fb4934;">lambda</span> <span style="color: #83a598;">(</span>buffer<span style="color: #83a598;">)</span>
-            <span style="color: #83a598;">(</span><span style="color: #fb4934;">when</span> <span style="color: #8ec07c;">(</span>eq 'dired-mode <span style="color: #83a598;">(</span>buffer-local-value 'major-mode buffer<span style="color: #83a598;">)</span><span style="color: #8ec07c;">)</span>
-              <span style="color: #8ec07c;">(</span>kill-buffer buffer<span style="color: #8ec07c;">)</span><span style="color: #83a598;">)</span><span style="color: #b8bb26;">)</span>
-          <span style="color: #b8bb26;">(</span>buffer-list<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #928374;">;; </span><span style="color: #928374;">a function to kill dired buffers. Kind of works. Or you can use "a"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #928374;">;; </span><span style="color: #928374;">to cycle through dired and it leaves no buffers opened</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #928374;">;; </span><span style="color: #928374;">DiredReuseDirectoryBuffer - https://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #928374;">;; </span><span style="color: #928374;">KillingBuffers - https://www.emacswiki.org/emacs/KillingBuffers</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">(</span><span style="color: #fb4934;">defun</span> <span style="color: #b8bb26;">kill-dired-buffers</span> <span style="color: #cc241d;">()</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cc241d;">(</span><span style="color: #fb4934;">interactive</span><span style="color: #cc241d;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cc241d;">(</span>mapc <span style="color: #b8bb26;">(</span><span style="color: #fb4934;">lambda</span> <span style="color: #83a598;">(</span>buffer<span style="color: #83a598;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #83a598;">(</span><span style="color: #fb4934;">when</span> <span style="color: #8ec07c;">(</span>eq 'dired-mode <span style="color: #83a598;">(</span>buffer-local-value 'major-mode buffer<span style="color: #83a598;">)</span><span style="color: #8ec07c;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #8ec07c;">(</span>kill-buffer buffer<span style="color: #8ec07c;">)</span><span style="color: #83a598;">)</span><span style="color: #b8bb26;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #b8bb26;">(</span>buffer-list<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 
-  <span style="color: #928374;">;; </span><span style="color: #928374;">can easily check how many buffers got opened</span>
-  <span style="color: #fe8019;">(</span><span style="color: #fb4934;">defun</span> <span style="color: #b8bb26;">kill-all-dired-buffers</span> <span style="color: #cc241d;">()</span>
-    <span style="color: #dfd2b8;">"Kill all dired buffers."</span>
-    <span style="color: #cc241d;">(</span><span style="color: #fb4934;">interactive</span><span style="color: #cc241d;">)</span>
-    <span style="color: #cc241d;">(</span><span style="color: #fb4934;">save-excursion</span>
-      <span style="color: #b8bb26;">(</span><span style="color: #fb4934;">let</span> <span style="color: #83a598;">(</span><span style="color: #8ec07c;">(</span>count 0<span style="color: #8ec07c;">)</span><span style="color: #83a598;">)</span>
-        <span style="color: #83a598;">(</span><span style="color: #fb4934;">dolist</span> <span style="color: #8ec07c;">(</span>buffer <span style="color: #83a598;">(</span>buffer-list<span style="color: #83a598;">)</span><span style="color: #8ec07c;">)</span>
-          <span style="color: #8ec07c;">(</span>set-buffer buffer<span style="color: #8ec07c;">)</span>
-          <span style="color: #8ec07c;">(</span><span style="color: #fb4934;">when</span> <span style="color: #83a598;">(</span>equal major-mode 'dired-mode<span style="color: #83a598;">)</span>
-            <span style="color: #83a598;">(</span><span style="color: #fb4934;">setq</span> count <span style="color: #cc241d;">(</span>1+ count<span style="color: #cc241d;">)</span><span style="color: #83a598;">)</span>
-            <span style="color: #83a598;">(</span>kill-buffer buffer<span style="color: #83a598;">)</span><span style="color: #8ec07c;">)</span><span style="color: #83a598;">)</span>
-        <span style="color: #83a598;">(</span>message <span style="color: #b8bb26;">"Killed %i dired buffer(s)."</span> count<span style="color: #83a598;">)</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #928374;">;; </span><span style="color: #928374;">can easily check how many buffers got opened</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">(</span><span style="color: #fb4934;">defun</span> <span style="color: #b8bb26;">kill-all-dired-buffers</span> <span style="color: #cc241d;">()</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #dfd2b8;">"Kill all dired buffers."</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cc241d;">(</span><span style="color: #fb4934;">interactive</span><span style="color: #cc241d;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cc241d;">(</span><span style="color: #fb4934;">save-excursion</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #b8bb26;">(</span><span style="color: #fb4934;">let</span> <span style="color: #83a598;">(</span><span style="color: #8ec07c;">(</span>count 0<span style="color: #8ec07c;">)</span><span style="color: #83a598;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #83a598;">(</span><span style="color: #fb4934;">dolist</span> <span style="color: #8ec07c;">(</span>buffer <span style="color: #83a598;">(</span>buffer-list<span style="color: #83a598;">)</span><span style="color: #8ec07c;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #8ec07c;">(</span>set-buffer buffer<span style="color: #8ec07c;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #8ec07c;">(</span><span style="color: #fb4934;">when</span> <span style="color: #83a598;">(</span>equal major-mode 'dired-mode<span style="color: #83a598;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #83a598;">(</span><span style="color: #fb4934;">setq</span> count <span style="color: #cc241d;">(</span>1+ count<span style="color: #cc241d;">)</span><span style="color: #83a598;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #83a598;">(</span>kill-buffer buffer<span style="color: #83a598;">)</span><span style="color: #8ec07c;">)</span><span style="color: #83a598;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #83a598;">(</span>message <span style="color: #b8bb26;">"Killed %i dired buffer(s)."</span> count<span style="color: #83a598;">)</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 </pre>
 </div>
 
@@ -2881,14 +2895,14 @@ found ‘dired-find-alternate-file’ :)
   <title><![CDATA[PKC company Wiki]]></title>
   <description><![CDATA[
 
-<figure id="org0fccc3d">
+<figure id="orgd12feb1">
 <img src="./static/images/pkcwiki.png" alt="pkcwiki.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org92690db" class="outline-2">
-<h2 id="org92690db">What is it for</h2>
-<div class="outline-text-2" id="text-org92690db">
+<div id="outline-container-org2770fd6" class="outline-2">
+<h2 id="org2770fd6">What is it for</h2>
+<div class="outline-text-2" id="text-org2770fd6">
 <p>
 When I came to PKC - there was very little documentation about IT
 processes. It had to be documented.
@@ -2921,14 +2935,14 @@ This project was mainly focused to my future colleagues.
   <title><![CDATA[Automated backups with Python and Selenium]]></title>
   <description><![CDATA[
 
-<figure id="org93a47b0">
+<figure id="org2b9f3bb">
 <img src="./static/images/ivbackups.png" alt="ivbackups.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orged5802b" class="outline-2">
-<h2 id="orged5802b">About the project</h2>
-<div class="outline-text-2" id="text-orged5802b">
+<div id="outline-container-orgf8589a6" class="outline-2">
+<h2 id="orgf8589a6">About the project</h2>
+<div class="outline-text-2" id="text-orgf8589a6">
 <p>
 Since I don’t trust/understand automated backups of websites (in iv.lt
 for example) and I would rather backup things myself, know where they
@@ -2963,9 +2977,9 @@ backups more often. Same 10 click procedure every time…
 </div>
 </div>
 
-<div id="outline-container-orgd7acf10" class="outline-2">
-<h2 id="orgd7acf10">My idea</h2>
-<div class="outline-text-2" id="text-orgd7acf10">
+<div id="outline-container-org5475f76" class="outline-2">
+<h2 id="org5475f76">My idea</h2>
+<div class="outline-text-2" id="text-org5475f76">
 <p>
 Since I have decided I want to slowly move away from Wordpress sites
 (the work itself is meh, drag and drop interfaces, have to learn php
@@ -2979,9 +2993,9 @@ website building.
 </div>
 </div>
 
-<div id="outline-container-orga25c74a" class="outline-2">
-<h2 id="orga25c74a">Solution</h2>
-<div class="outline-text-2" id="text-orga25c74a">
+<div id="outline-container-org57ec9a4" class="outline-2">
+<h2 id="org57ec9a4">Solution</h2>
+<div class="outline-text-2" id="text-org57ec9a4">
 <p>
 For a while now I have been thinking how cool it would be to automate
 some tasks. A year ago that is why I started to learn coding, so I can
@@ -3030,9 +3044,9 @@ Any deprecation errors were fixed by this -
 </div>
 </div>
 
-<div id="outline-container-orgc0dc52e" class="outline-2">
-<h2 id="orgc0dc52e">What I learned</h2>
-<div class="outline-text-2" id="text-orgc0dc52e">
+<div id="outline-container-org0f496bd" class="outline-2">
+<h2 id="org0f496bd">What I learned</h2>
+<div class="outline-text-2" id="text-org0f496bd">
 <ul class="org-ul">
 <li>What is a webdriver</li>
 <li>How to open a webpage with Selenium</li>
@@ -3048,9 +3062,9 @@ Any deprecation errors were fixed by this -
 </div>
 </div>
 
-<div id="outline-container-org4030b2d" class="outline-2">
-<h2 id="org4030b2d">Known bugs</h2>
-<div class="outline-text-2" id="text-org4030b2d">
+<div id="outline-container-org548f0cb" class="outline-2">
+<h2 id="org548f0cb">Known bugs</h2>
+<div class="outline-text-2" id="text-org548f0cb">
 <p>
 Doesn’t close browser windows after each script runs (not a biggie,
 everything still works, might fix later)
@@ -6639,9 +6653,9 @@ This page is an overview of tools I like to use, and technologies I
 enjoy.
 </p>
 
-<div id="outline-container-org3106b2c" class="outline-2">
-<h2 id="org3106b2c">Core Technologies</h2>
-<div class="outline-text-2" id="text-org3106b2c">
+<div id="outline-container-org8f3b813" class="outline-2">
+<h2 id="org8f3b813">Core Technologies</h2>
+<div class="outline-text-2" id="text-org8f3b813">
 <ul class="org-ul">
 <li><p>
 <b>Personal Operating System: Ubuntu Linux</b>
@@ -6690,9 +6704,9 @@ it as well.
 </div>
 </div>
 
-<div id="outline-container-org31049a5" class="outline-2">
-<h2 id="org31049a5">Programming</h2>
-<div class="outline-text-2" id="text-org31049a5">
+<div id="outline-container-org6723f12" class="outline-2">
+<h2 id="org6723f12">Programming</h2>
+<div class="outline-text-2" id="text-org6723f12">
 <p>
 Less stuff in a program is usually better.
 </p>
@@ -6711,9 +6725,9 @@ for everything imaginable.
 </div>
 </div>
 
-<div id="outline-container-orgde168ec" class="outline-2">
-<h2 id="orgde168ec">Blogging</h2>
-<div class="outline-text-2" id="text-orgde168ec">
+<div id="outline-container-org69a6b04" class="outline-2">
+<h2 id="org69a6b04">Blogging</h2>
+<div class="outline-text-2" id="text-org69a6b04">
 <ul class="org-ul">
 <li><p>
 <b>Org-Static-Blog</b>
@@ -6726,9 +6740,9 @@ It serves the purpose, I can blog without leaving Emacs.
 </div>
 </div>
 
-<div id="outline-container-org20bfd0f" class="outline-2">
-<h2 id="org20bfd0f">Hardware</h2>
-<div class="outline-text-2" id="text-org20bfd0f">
+<div id="outline-container-orgd5ad820" class="outline-2">
+<h2 id="orgd5ad820">Hardware</h2>
+<div class="outline-text-2" id="text-orgd5ad820">
 <ul class="org-ul">
 <li><b>Camera: Nikon and Mamiya and FED</b>
 
@@ -6805,9 +6819,9 @@ sometimes WordPress.
 <a href="https://github.com/arvydasg">My Github profile</a>.
 </p>
 
-<div id="outline-container-org376d4fd" class="outline-2">
-<h2 id="org376d4fd">Why hire me?</h2>
-<div class="outline-text-2" id="text-org376d4fd">
+<div id="outline-container-org5f81ad9" class="outline-2">
+<h2 id="org5f81ad9">Why hire me?</h2>
+<div class="outline-text-2" id="text-org5f81ad9">
 <p>
 I have many great relationships with all of my clients. I prioritise
 maintaining open and clear communication, and offer not only technical

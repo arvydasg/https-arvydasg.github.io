@@ -71,9 +71,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="content">
 <div class="post-date">21 Jan 2023</div><h1 class="post-title"><a href="https://arvydasg.github.io/2023-01-21-create-emacs-blog.html">Create a Blog with Emacs</a></h1>
 
-<div id="outline-container-org3cdbd0d" class="outline-2">
-<h2 id="org3cdbd0d">Intro</h2>
-<div class="outline-text-2" id="text-org3cdbd0d">
+<div id="outline-container-orgd69dfba" class="outline-2">
+<h2 id="orgd69dfba">Intro</h2>
+<div class="outline-text-2" id="text-orgd69dfba">
 <p>
 If you are using Emacs and org mode as much as me, you must have come
 up to org-publish feature that allows you to convert org files to html files.
@@ -87,17 +87,17 @@ static website ;)
 </div>
 </div>
 
-<div id="outline-container-org5878487" class="outline-2">
-<h2 id="org5878487">Create Emacs blog the "System Crafters" way</h2>
-<div class="outline-text-2" id="text-org5878487">
+<div id="outline-container-org03e8a3f" class="outline-2">
+<h2 id="org03e8a3f">Create Emacs blog the "System Crafters" way</h2>
+<div class="outline-text-2" id="text-org03e8a3f">
 <p>
 Best description in a video format is <a href="https://www.youtube.com/watch?v=AfkrzFodoNw&amp;t=1612s&amp;ab_channel=SystemCrafters">here</a>. To later publish it
 automaticall,y video <a href="https://www.youtube.com/watch?v=za99DwdZEyg&amp;t=996s&amp;ab_channel=SystemCrafters">here</a>.
 </p>
 </div>
-<div id="outline-container-org8100569" class="outline-3">
-<h3 id="org8100569">Choose a directory</h3>
-<div class="outline-text-3" id="text-org8100569">
+<div id="outline-container-org7b2f62d" class="outline-3">
+<h3 id="org7b2f62d">Choose a directory</h3>
+<div class="outline-text-3" id="text-org7b2f62d">
 <p>
 You will place your org files inside content/ directory.
 </p>
@@ -109,13 +109,13 @@ You will place your org files inside content/ directory.
 </div>
 </div>
 
-<div id="outline-container-org6e381a7" class="outline-3">
-<h3 id="org6e381a7">Creating the build script</h3>
-<div class="outline-text-3" id="text-org6e381a7">
+<div id="outline-container-orgb49334d" class="outline-3">
+<h3 id="orgb49334d">Creating the build script</h3>
+<div class="outline-text-3" id="text-orgb49334d">
 </div>
-<div id="outline-container-org5e66258" class="outline-4">
-<h4 id="org5e66258">build-site.el</h4>
-<div class="outline-text-4" id="text-org5e66258">
+<div id="outline-container-org7c9cd7f" class="outline-4">
+<h4 id="org7c9cd7f">build-site.el</h4>
+<div class="outline-text-4" id="text-org7c9cd7f">
 <p>
 Inside of this directory:
 </p>
@@ -137,12 +137,12 @@ Create a file called <code>build-site.el</code> with this inside of it.
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Define the publishing project</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> org-publish-project-alist
-      <span style="color: #cc241d;">(</span>list
-       <span style="color: #b8bb26;">(</span>list <span style="color: #b8bb26;">"my-org-site"</span>
-             <span style="color: #fe8019;">:recursive</span> t
-             <span style="color: #fe8019;">:base-directory</span> <span style="color: #b8bb26;">"./content"</span>
-             <span style="color: #fe8019;">:publishing-directory</span> <span style="color: #b8bb26;">"./public"</span>
-             <span style="color: #fe8019;">:publishing-function</span> 'org-html-publish-to-html<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>list
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>  <span style="color: #b8bb26;">(</span>list <span style="color: #b8bb26;">"my-org-site"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:recursive</span> t
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:base-directory</span> <span style="color: #b8bb26;">"./content"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:publishing-directory</span> <span style="color: #b8bb26;">"./public"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:publishing-function</span> 'org-html-publish-to-html<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Generate the site output</span>
 <span style="color: #fe8019;">(</span>org-publish-all t<span style="color: #fe8019;">)</span>
@@ -157,9 +157,9 @@ variable using M-x describe-variable for a lot more information!
 </div>
 </div>
 
-<div id="outline-container-org259354f" class="outline-4">
-<h4 id="org259354f">build.sh</h4>
-<div class="outline-text-4" id="text-org259354f">
+<div id="outline-container-orga7d759f" class="outline-4">
+<h4 id="orga7d759f">build.sh</h4>
+<div class="outline-text-4" id="text-orga7d759f">
 <p>
 We also need a shell script that can run our Emacs Lisp script. We'll call that build.sh:
 </p>
@@ -194,9 +194,9 @@ html in public folder, open it in the browser.
 </div>
 </div>
 
-<div id="outline-container-org1fac108" class="outline-3">
-<h3 id="org1fac108">Improving the HTML output</h3>
-<div class="outline-text-3" id="text-org1fac108">
+<div id="outline-container-org44265cd" class="outline-3">
+<h3 id="org44265cd">Improving the HTML output</h3>
+<div class="outline-text-3" id="text-org44265cd">
 <p>
 There are a few things about the page we just looked at that I'd like
 to change to make the output look a bit cleaner:
@@ -218,24 +218,24 @@ better result.
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #928374;">;; </span><span style="color: #928374;">Define the publishing project</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> org-publish-project-alist
-      <span style="color: #cc241d;">(</span>list
-       <span style="color: #b8bb26;">(</span>list <span style="color: #b8bb26;">"org-site:main"</span>
-             <span style="color: #fe8019;">:recursive</span> t
-             <span style="color: #fe8019;">:base-directory</span> <span style="color: #b8bb26;">"./content"</span>
-             <span style="color: #fe8019;">:publishing-function</span> 'org-html-publish-to-html
-             <span style="color: #fe8019;">:publishing-directory</span> <span style="color: #b8bb26;">"./public"</span>
-             <span style="color: #fe8019;">:with-author</span> nil           <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include author name</span>
-             <span style="color: #fe8019;">:with-creator</span> t            <span style="color: #928374;">;; </span><span style="color: #928374;">Include Emacs and Org versions in footer</span>
-             <span style="color: #fe8019;">:with-toc</span> t                <span style="color: #928374;">;; </span><span style="color: #928374;">Include a table of contents</span>
-             <span style="color: #fe8019;">:section-numbers</span> nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include section numbers</span>
-             <span style="color: #fe8019;">:time-stamp-file</span> nil<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>    <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include time stamp in file</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>list
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>  <span style="color: #b8bb26;">(</span>list <span style="color: #b8bb26;">"org-site:main"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:recursive</span> t
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:base-directory</span> <span style="color: #b8bb26;">"./content"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:publishing-function</span> 'org-html-publish-to-html
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:publishing-directory</span> <span style="color: #b8bb26;">"./public"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:with-author</span> nil           <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include author name</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:with-creator</span> t            <span style="color: #928374;">;; </span><span style="color: #928374;">Include Emacs and Org versions in footer</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:with-toc</span> t                <span style="color: #928374;">;; </span><span style="color: #928374;">Include a table of contents</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:section-numbers</span> nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include section numbers</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:time-stamp-file</span> nil<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>    <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include time stamp in file</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4567ced" class="outline-3">
-<h3 id="org4567ced">Improving the page styling</h3>
-<div class="outline-text-3" id="text-org4567ced">
+<div id="outline-container-org0f0729e" class="outline-3">
+<h3 id="org0f0729e">Improving the page styling</h3>
+<div class="outline-text-3" id="text-org0f0729e">
 <p>
 At this point have a decent basic output for our website, but what if we want to make it look a little bit nicer?
 </p>
@@ -247,18 +247,18 @@ By setting a few more variables, we can use a nice stylesheet to give our site a
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #928374;">;; </span><span style="color: #928374;">Customize the HTML output</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> org-html-validation-link nil            <span style="color: #928374;">;; </span><span style="color: #928374;">Don't show validation link</span>
-      org-html-head-include-scripts nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own scripts</span>
-      org-html-head-include-default-style nil <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own styles</span>
-      org-html-head <span style="color: #b8bb26;">"&lt;link rel=\"stylesheet\" href=\"simple.min.css\" /&gt;"</span> <span style="color: #928374;">;</span><span style="color: #928374;">place your own stylesheet in public folder</span>
-      org-html-head <span style="color: #b8bb26;">"&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;"</span> <span style="color: #928374;">;</span><span style="color: #928374;">use cdn stylesheet</span>
-      <span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head-include-scripts nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own scripts</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head-include-default-style nil <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own styles</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head <span style="color: #b8bb26;">"&lt;link rel=\"stylesheet\" href=\"simple.min.css\" /&gt;"</span> <span style="color: #928374;">;</span><span style="color: #928374;">place your own stylesheet in public folder</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head <span style="color: #b8bb26;">"&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;"</span> <span style="color: #928374;">;</span><span style="color: #928374;">use cdn stylesheet</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #fe8019;">)</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orge02efd6" class="outline-3">
-<h3 id="orge02efd6">Generating pages with code blocks</h3>
-<div class="outline-text-3" id="text-orge02efd6">
+<div id="outline-container-org4123bed" class="outline-3">
+<h3 id="org4123bed">Generating pages with code blocks</h3>
+<div class="outline-text-3" id="text-org4123bed">
 <p>
 So far we've been looking at a very simple example page that doesn't really have much on it. What happens when we try to generate a more elaborate Org file containing code blocks?
 </p>
@@ -286,12 +286,12 @@ To resolve this issue, you will need to install the htmlize package from MELPA. 
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">require</span> '<span style="color: #d3869b;">package</span><span style="color: #fe8019;">)</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> package-user-dir <span style="color: #cc241d;">(</span>expand-file-name <span style="color: #b8bb26;">"./.packages"</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> package-archives '<span style="color: #cc241d;">(</span><span style="color: #b8bb26;">(</span><span style="color: #b8bb26;">"melpa"</span> . <span style="color: #b8bb26;">"https://melpa.org/packages/"</span><span style="color: #b8bb26;">)</span>
-                         <span style="color: #b8bb26;">(</span><span style="color: #b8bb26;">"elpa"</span> . <span style="color: #b8bb26;">"https://elpa.gnu.org/packages/"</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #b8bb26;">(</span><span style="color: #b8bb26;">"elpa"</span> . <span style="color: #b8bb26;">"https://elpa.gnu.org/packages/"</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Initialize the package system</span>
 <span style="color: #fe8019;">(</span>package-initialize<span style="color: #fe8019;">)</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">unless</span> package-archive-contents
-  <span style="color: #cc241d;">(</span>package-refresh-contents<span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>package-refresh-contents<span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Install dependencies</span>
 <span style="color: #fe8019;">(</span>package-install 'htmlize<span style="color: #fe8019;">)</span>
@@ -312,9 +312,9 @@ In a future video I'll show you how to convert your Emacs color theme to a CSS f
 </div>
 </div>
 
-<div id="outline-container-orgb29d78b" class="outline-3">
-<h3 id="orgb29d78b">Linking between pages</h3>
-<div class="outline-text-3" id="text-orgb29d78b">
+<div id="outline-container-orgbe6f2e7" class="outline-3">
+<h3 id="orgbe6f2e7">Linking between pages</h3>
+<div class="outline-text-3" id="text-orgbe6f2e7">
 <p>
 One last thing I want to show you is how you can create links between
 pages on your site. Let's open up index.org and create a link to the
@@ -345,9 +345,9 @@ It will also complain when a linked file can't be found!
 </div>
 </div>
 
-<div id="outline-container-orgdda3a3e" class="outline-3">
-<h3 id="orgdda3a3e">The final build script</h3>
-<div class="outline-text-3" id="text-orgdda3a3e">
+<div id="outline-container-orgc97488c" class="outline-3">
+<h3 id="orgc97488c">The final build script</h3>
+<div class="outline-text-3" id="text-orgc97488c">
 <p>
 Here is the final form of our <code>build-site.el</code> script:
 </p>
@@ -359,12 +359,12 @@ Here is the final form of our <code>build-site.el</code> script:
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">require</span> '<span style="color: #d3869b;">package</span><span style="color: #fe8019;">)</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> package-user-dir <span style="color: #cc241d;">(</span>expand-file-name <span style="color: #b8bb26;">"./.packages"</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> package-archives '<span style="color: #cc241d;">(</span><span style="color: #b8bb26;">(</span><span style="color: #b8bb26;">"melpa"</span> . <span style="color: #b8bb26;">"https://melpa.org/packages/"</span><span style="color: #b8bb26;">)</span>
-                         <span style="color: #b8bb26;">(</span><span style="color: #b8bb26;">"elpa"</span> . <span style="color: #b8bb26;">"https://elpa.gnu.org/packages/"</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #b8bb26;">(</span><span style="color: #b8bb26;">"elpa"</span> . <span style="color: #b8bb26;">"https://elpa.gnu.org/packages/"</span><span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Initialize the package system</span>
 <span style="color: #fe8019;">(</span>package-initialize<span style="color: #fe8019;">)</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">unless</span> package-archive-contents
-  <span style="color: #cc241d;">(</span>package-refresh-contents<span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>package-refresh-contents<span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Install dependencies</span>
 <span style="color: #fe8019;">(</span>package-install 'htmlize<span style="color: #fe8019;">)</span>
@@ -374,23 +374,23 @@ Here is the final form of our <code>build-site.el</code> script:
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Customize the HTML output</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> org-html-validation-link nil            <span style="color: #928374;">;; </span><span style="color: #928374;">Don't show validation link</span>
-      org-html-head-include-scripts nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own scripts</span>
-      org-html-head-include-default-style nil <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own styles</span>
-      org-html-head <span style="color: #b8bb26;">"&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;"</span><span style="color: #fe8019;">)</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head-include-scripts nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own scripts</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head-include-default-style nil <span style="color: #928374;">;; </span><span style="color: #928374;">Use our own styles</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> org-html-head <span style="color: #b8bb26;">"&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;"</span><span style="color: #fe8019;">)</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Define the publishing project</span>
 <span style="color: #fe8019;">(</span><span style="color: #fb4934;">setq</span> org-publish-project-alist
-      <span style="color: #cc241d;">(</span>list
-       <span style="color: #b8bb26;">(</span>list <span style="color: #b8bb26;">"org-site:main"</span>
-             <span style="color: #fe8019;">:recursive</span> t
-             <span style="color: #fe8019;">:base-directory</span> <span style="color: #b8bb26;">"./content"</span>
-             <span style="color: #fe8019;">:publishing-function</span> 'org-html-publish-to-html
-             <span style="color: #fe8019;">:publishing-directory</span> <span style="color: #b8bb26;">"./public"</span>
-             <span style="color: #fe8019;">:with-author</span> nil           <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include author name</span>
-             <span style="color: #fe8019;">:with-creator</span> t            <span style="color: #928374;">;; </span><span style="color: #928374;">Include Emacs and Org versions in footer</span>
-             <span style="color: #fe8019;">:with-toc</span> t                <span style="color: #928374;">;; </span><span style="color: #928374;">Include a table of contents</span>
-             <span style="color: #fe8019;">:section-numbers</span> nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include section numbers</span>
-             <span style="color: #fe8019;">:time-stamp-file</span> nil<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>    <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include time stamp in file</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span> <span style="color: #cc241d;">(</span>list
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>  <span style="color: #b8bb26;">(</span>list <span style="color: #b8bb26;">"org-site:main"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:recursive</span> t
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:base-directory</span> <span style="color: #b8bb26;">"./content"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:publishing-function</span> 'org-html-publish-to-html
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:publishing-directory</span> <span style="color: #b8bb26;">"./public"</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:with-author</span> nil           <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include author name</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:with-creator</span> t            <span style="color: #928374;">;; </span><span style="color: #928374;">Include Emacs and Org versions in footer</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:with-toc</span> t                <span style="color: #928374;">;; </span><span style="color: #928374;">Include a table of contents</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:section-numbers</span> nil       <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include section numbers</span>
+<span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span>   <span style="color: #cd5c5c; background-color: #3c3836;"> </span><span style="color: #fe8019;">:time-stamp-file</span> nil<span style="color: #b8bb26;">)</span><span style="color: #cc241d;">)</span><span style="color: #fe8019;">)</span>    <span style="color: #928374;">;; </span><span style="color: #928374;">Don't include time stamp in file</span>
 
 <span style="color: #928374;">;; </span><span style="color: #928374;">Generate the site output</span>
 <span style="color: #fe8019;">(</span>org-publish-all t<span style="color: #fe8019;">)</span>
@@ -403,9 +403,9 @@ Here is the final form of our <code>build-site.el</code> script:
 </div>
 </div>
 
-<div id="outline-container-org1a69273" class="outline-2">
-<h2 id="org1a69273">Create Emacs blog with "org-static-blog" package</h2>
-<div class="outline-text-2" id="text-org1a69273">
+<div id="outline-container-org7264802" class="outline-2">
+<h2 id="org7264802">Create Emacs blog with "org-static-blog" package</h2>
+<div class="outline-text-2" id="text-org7264802">
 <p>
 "<a href="https://github.com/bastibe/org-static-blog">org-static-blog</a>" is a package written by <a href="https://github.com/bastibe">Bastian Bechtold</a> is a static site
 generator. I believe it started <a href="https://bastibe.de/2013-11-13-blogging-with-emacs.html">here</a>.
@@ -449,7 +449,7 @@ If you would like to add an image to your org file, try this:
 </div>
 
 
-<figure id="orgf38b242">
+<figure id="org1809011">
 <img src="./static/images/org-static-blog.png" alt="org-static-blog.png" width="1200px">
 
 </figure>
@@ -461,9 +461,9 @@ the image.
 </div>
 </div>
 
-<div id="outline-container-orga4b789a" class="outline-2">
-<h2 id="orga4b789a">Conclusion</h2>
-<div class="outline-text-2" id="text-orga4b789a">
+<div id="outline-container-org00674e9" class="outline-2">
+<h2 id="org00674e9">Conclusion</h2>
+<div class="outline-text-2" id="text-org00674e9">
 <p>
 Now the only thing is left - I have to blog. :) I am thinking why
 don't I whenever learning a new thing write such little summary about
