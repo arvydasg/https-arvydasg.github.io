@@ -74,12 +74,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8db1d8b">1. Apache vs nginx</a></li>
-<li><a href="#org7c22e78">2. Get yourself a virtual private server(VPS)</a></li>
-<li><a href="#org4953d55">3. Install nginx</a></li>
-<li><a href="#orge6290ba">4. Let's run project</a></li>
-<li><a href="#org1b7ae3b">5. Gunicorn</a></li>
-<li><a href="#orga80145f">6. Dealing with secret files</a></li>
+<li><a href="#org2764791">1. Apache vs nginx</a></li>
+<li><a href="#orgdd1bb70">2. Get yourself a virtual private server(VPS)</a></li>
+<li><a href="#orgad88a1e">3. Install nginx</a></li>
+<li><a href="#org175d0ba">4. Let's run project</a></li>
+<li><a href="#orgaafcce9">5. Gunicorn</a></li>
+<li><a href="#org2bf9194">6. Dealing with secret files</a></li>
 </ul>
 </div>
 </nav>
@@ -94,8 +94,8 @@ live. For that I need to host it.
 Will share with you how I did it.
 </p>
 
-<div id="outline-container-org8db1d8b" class="outline-2">
-<h2 id="org8db1d8b"><span class="section-number-2">1.</span> Apache vs nginx</h2>
+<div id="outline-container-org2764791" class="outline-2">
+<h2 id="org2764791"><span class="section-number-2">1.</span> Apache vs nginx</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Will just leave it here.
@@ -112,8 +112,8 @@ is not as vulnerable as Apache, and it is also very easy to set up.
 </div>
 </div>
 
-<div id="outline-container-org7c22e78" class="outline-2">
-<h2 id="org7c22e78"><span class="section-number-2">2.</span> Get yourself a virtual private server(VPS)</h2>
+<div id="outline-container-orgdd1bb70" class="outline-2">
+<h2 id="orgdd1bb70"><span class="section-number-2">2.</span> Get yourself a virtual private server(VPS)</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 This time I was using Linode, since I got some free credits with it,
@@ -125,7 +125,7 @@ Create new linode:
 </p>
 
 
-<figure id="org20edbce">
+<figure id="orgd0d6fb8">
 <img src="./static/images/linode.png" alt="linode.png" width="1200px">
 
 </figure>
@@ -155,8 +155,8 @@ have set up for it. And you should now be inside your server!
 </div>
 </div>
 
-<div id="outline-container-org4953d55" class="outline-2">
-<h2 id="org4953d55"><span class="section-number-2">3.</span> Install nginx</h2>
+<div id="outline-container-orgad88a1e" class="outline-2">
+<h2 id="orgad88a1e"><span class="section-number-2">3.</span> Install nginx</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install nginx
@@ -210,8 +210,8 @@ running there. That is why we will user <a href="https://gunicorn.org/#quickstar
 </div>
 </div>
 
-<div id="outline-container-orge6290ba" class="outline-2">
-<h2 id="orge6290ba"><span class="section-number-2">4.</span> Let's run project</h2>
+<div id="outline-container-org175d0ba" class="outline-2">
+<h2 id="org175d0ba"><span class="section-number-2">4.</span> Let's run project</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install python3-pip
@@ -240,8 +240,8 @@ Now it works! Your application is live! Magic!
 </div>
 </div>
 
-<div id="outline-container-org1b7ae3b" class="outline-2">
-<h2 id="org1b7ae3b"><span class="section-number-2">5.</span> Gunicorn</h2>
+<div id="outline-container-orgaafcce9" class="outline-2">
+<h2 id="orgaafcce9"><span class="section-number-2">5.</span> Gunicorn</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 "This is currently a development server and not good for production
@@ -289,12 +289,12 @@ sudo pkill -f gunicorn3
 </div>
 </div>
 
-<div id="outline-container-orga80145f" class="outline-2">
-<h2 id="orga80145f"><span class="section-number-2">6.</span> Dealing with secret files</h2>
+<div id="outline-container-org2bf9194" class="outline-2">
+<h2 id="org2bf9194"><span class="section-number-2">6.</span> Dealing with secret files</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org271241d" class="outline-3">
-<h3 id="org271241d"><span class="section-number-3">6.1.</span> config.json method</h3>
+<div id="outline-container-org9fac4ca" class="outline-3">
+<h3 id="org9fac4ca"><span class="section-number-3">6.1.</span> config.json method</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 We will try to hide the:
@@ -401,16 +401,16 @@ Let's add config.json to our server using SCP(<a href="https://www.google.com/se
 
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #928374;"># </span><span style="color: #928374;">copy files FROM the server</span>
-scp remote_user@remote_host:/path/to/remote/file /path/to/local/file
+scp remote_username@remote_host:/path/to/remote/file /path/to/local/file
 </pre>
 </div>
 
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #928374;"># </span><span style="color: #928374;">copy files TO the server</span>
-scp /path/to/local/file remote_user@remote_host:/path/to/remote/file
+scp /path/to/local/file remote_username@remote_host:/path/to/remote/file
 
 <span style="color: #928374;"># </span><span style="color: #928374;">copy FOLDER's and their content  TO the server</span>
-scp -rp static root@139.144.71.136:/root/citatos_flask/web_site
+scp -rp static remote_username@139.xxx.xx.xxx:/root/citatos_flask/web_site
 </pre>
 </div>
 
