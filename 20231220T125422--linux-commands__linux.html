@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-12-28 Thu 08:19 -->
+<!-- 2023-12-28 Thu 09:15 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>linux commands</title>
@@ -10,11 +10,12 @@
 <meta name="keywords" content="emacs antanas geles" />
 <meta name="generator" content="Org Mode" />
 
-<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -31,28 +32,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2ed9bde">1. LDAP</a></li>
-<li><a href="#orge943117">2. Access management</a></li>
-<li><a href="#org29b1d91">3. Server information</a></li>
-<li><a href="#org23b06fb">4. Search</a></li>
-<li><a href="#org0da64f1">5. File</a></li>
-<li><a href="#orge496ec7">6. Processes</a>
+<li><a href="#org840dbfc">1. LDAP</a></li>
+<li><a href="#org06f9b6c">2. Access management</a></li>
+<li><a href="#org544e288">3. Server information</a></li>
+<li><a href="#org3323cfe">4. Search</a></li>
+<li><a href="#orgaaf1cf3">5. File</a></li>
+<li><a href="#org04876f1">6. Processes</a>
 <ul>
-<li><a href="#org198821a">6.1. htop</a></li>
+<li><a href="#org8f7c060">6.1. htop</a></li>
 </ul>
 </li>
-<li><a href="#orgce1bd70">7. Network</a></li>
-<li><a href="#orgbe3cb6f">8. Logs</a></li>
-<li><a href="#orgff4ea7d">9. Yum</a></li>
-<li><a href="#org1e60f7f">10. zip</a></li>
-<li><a href="#orge0282be">11. NAS</a></li>
-<li><a href="#org88a3b6e">12. odbc</a></li>
+<li><a href="#org26c3de2">7. Network</a></li>
+<li><a href="#org62139b0">8. Logs</a></li>
+<li><a href="#org087f22a">9. Yum</a></li>
+<li><a href="#org142dc77">10. zip</a></li>
+<li><a href="#org9ce320b">11. NAS</a></li>
+<li><a href="#orgab7d627">12. odbc</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org2ed9bde" class="outline-2">
-<h2 id="org2ed9bde"><span class="section-number-2">1.</span> LDAP</h2>
+<div id="outline-container-org840dbfc" class="outline-2">
+<h2 id="org840dbfc"><span class="section-number-2">1.</span> LDAP</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 getent
@@ -84,8 +85,8 @@ getent netgroup servername | grep username
 </div>
 </div>
 
-<div id="outline-container-orge943117" class="outline-2">
-<h2 id="orge943117"><span class="section-number-2">2.</span> Access management</h2>
+<div id="outline-container-org06f9b6c" class="outline-2">
+<h2 id="org06f9b6c"><span class="section-number-2">2.</span> Access management</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 last
@@ -118,8 +119,8 @@ setfacl -Rm g:quant:rwX -m d:g:quant:rwX -m m:rwx /[directory of choice]
 </div>
 </div>
 
-<div id="outline-container-org29b1d91" class="outline-2">
-<h2 id="org29b1d91"><span class="section-number-2">3.</span> Server information</h2>
+<div id="outline-container-org544e288" class="outline-2">
+<h2 id="org544e288"><span class="section-number-2">3.</span> Server information</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 dmesgn
@@ -151,8 +152,8 @@ rpm -qa -last | more
 </div>
 </div>
 
-<div id="outline-container-org23b06fb" class="outline-2">
-<h2 id="org23b06fb"><span class="section-number-2">4.</span> Search</h2>
+<div id="outline-container-org3323cfe" class="outline-2">
+<h2 id="org3323cfe"><span class="section-number-2">4.</span> Search</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 grep -r "mas" .
@@ -164,8 +165,8 @@ find / -type f -name "viya-services-status.yml" 2&gt;/dev/null
 </div>
 </div>
 
-<div id="outline-container-org0da64f1" class="outline-2">
-<h2 id="org0da64f1"><span class="section-number-2">5.</span> File</h2>
+<div id="outline-container-orgaaf1cf3" class="outline-2">
+<h2 id="orgaaf1cf3"><span class="section-number-2">5.</span> File</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 ln -s /opt/app/html html
@@ -221,8 +222,8 @@ du -h /home | sort -rh | head -n 10
 </div>
 </div>
 
-<div id="outline-container-orge496ec7" class="outline-2">
-<h2 id="orge496ec7"><span class="section-number-2">6.</span> Processes</h2>
+<div id="outline-container-org04876f1" class="outline-2">
+<h2 id="org04876f1"><span class="section-number-2">6.</span> Processes</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 fuser -c <i>opt/app</i>
@@ -282,8 +283,8 @@ sudo systemctl stop sas-viya-*
 </p>
 </div>
 
-<div id="outline-container-org198821a" class="outline-3">
-<h3 id="org198821a"><span class="section-number-3">6.1.</span> htop</h3>
+<div id="outline-container-org8f7c060" class="outline-3">
+<h3 id="org8f7c060"><span class="section-number-3">6.1.</span> htop</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 shortcuts - <a href="https://spin.atomicobject.com/2020/02/10/htop-guide/">https://spin.atomicobject.com/2020/02/10/htop-guide/</a>
@@ -312,8 +313,8 @@ loaded into memory once and used by multiple processes.
 </div>
 </div>
 
-<div id="outline-container-orgce1bd70" class="outline-2">
-<h2 id="orgce1bd70"><span class="section-number-2">7.</span> Network</h2>
+<div id="outline-container-org26c3de2" class="outline-2">
+<h2 id="org26c3de2"><span class="section-number-2">7.</span> Network</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 route
@@ -364,8 +365,8 @@ pacias taisykles.
 </div>
 </div>
 
-<div id="outline-container-orgbe3cb6f" class="outline-2">
-<h2 id="orgbe3cb6f"><span class="section-number-2">8.</span> Logs</h2>
+<div id="outline-container-org62139b0" class="outline-2">
+<h2 id="org62139b0"><span class="section-number-2">8.</span> Logs</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 journalctl -u jupyterhub -f
@@ -391,8 +392,8 @@ ansible-playbook site.yml -vvv 2&gt;&amp;1 | tee -a install_20230809_1500.txt
 </div>
 </div>
 
-<div id="outline-container-orgff4ea7d" class="outline-2">
-<h2 id="orgff4ea7d"><span class="section-number-2">9.</span> Yum</h2>
+<div id="outline-container-org087f22a" class="outline-2">
+<h2 id="org087f22a"><span class="section-number-2">9.</span> Yum</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 rpm official repo(yum, RHEL) commands - <a href="https://www.rpmfind.net/linux/RPM/ByName.html">https://www.rpmfind.net/linux/RPM/ByName.html</a>
@@ -429,8 +430,8 @@ sudo yum install 'R-devel' &#x2013;enablerepo=hello_Extra_Packages_for_Enterpris
 </div>
 </div>
 
-<div id="outline-container-org1e60f7f" class="outline-2">
-<h2 id="org1e60f7f"><span class="section-number-2">10.</span> zip</h2>
+<div id="outline-container-org142dc77" class="outline-2">
+<h2 id="org142dc77"><span class="section-number-2">10.</span> zip</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 tar -cvf archive_name.tar files_or_directories_to_archive
@@ -439,8 +440,8 @@ tar -cvf labas.tar .
 </div>
 </div>
 
-<div id="outline-container-orge0282be" class="outline-2">
-<h2 id="orge0282be"><span class="section-number-2">11.</span> NAS</h2>
+<div id="outline-container-org9ce320b" class="outline-2">
+<h2 id="org9ce320b"><span class="section-number-2">11.</span> NAS</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 cat /etc/fstab
@@ -452,8 +453,8 @@ mount -l |grep sas-store
 </div>
 </div>
 
-<div id="outline-container-org88a3b6e" class="outline-2">
-<h2 id="org88a3b6e"><span class="section-number-2">12.</span> odbc</h2>
+<div id="outline-container-orgab7d627" class="outline-2">
+<h2 id="orgab7d627"><span class="section-number-2">12.</span> odbc</h2>
 <div class="outline-text-2" id="text-12">
 <p>
 ODBC
@@ -496,7 +497,7 @@ command: "odbcinst -q -s"
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 09:15</p>
 	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-20 Wed 12:54</p>
 	 <div class="generated">
@@ -504,9 +505,9 @@ command: "odbcinst -q -s"
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-	 <script src="../static/js/generic.js"></script>
-	 <script src="../static/js/scroll-to-top.js"></script>
-	 <script src="../static/js/lightbox.js"></script>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
 </div>
 </body>
 </html>

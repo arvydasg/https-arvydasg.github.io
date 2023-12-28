@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-12-28 Thu 08:19 -->
+<!-- 2023-12-28 Thu 09:15 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Run Multiple Flask Applications from the same server</title>
@@ -10,11 +10,12 @@
 <meta name="keywords" content="emacs antanas geles" />
 <meta name="generator" content="Org Mode" />
 
-<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -31,13 +32,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org936194b">1. Why I Wanted to Run Multiple Flask Applications</a></li>
-<li><a href="#org60ad378">2. How to Configure Flask Application Dispatching</a></li>
-<li><a href="#org5f26838">3. Set up the Separate Applications</a></li>
-<li><a href="#orgf9e127d">4. Combine the Applications</a></li>
-<li><a href="#org1cb2b29">5. Invoke a Development Server</a></li>
-<li><a href="#org77f14a5">6. Running both apps</a></li>
-<li><a href="#org0ee18b3">7. Conclusion</a></li>
+<li><a href="#org55279e3">1. Why I Wanted to Run Multiple Flask Applications</a></li>
+<li><a href="#org1b06f13">2. How to Configure Flask Application Dispatching</a></li>
+<li><a href="#org1b12dd3">3. Set up the Separate Applications</a></li>
+<li><a href="#orgb9d94ad">4. Combine the Applications</a></li>
+<li><a href="#org235cf9a">5. Invoke a Development Server</a></li>
+<li><a href="#orgcbc4a85">6. Running both apps</a></li>
+<li><a href="#org0f02f04">7. Conclusion</a></li>
 </ul>
 </div>
 </nav>
@@ -47,7 +48,7 @@ different URL paths.
 </p>
 
 
-<figure id="org6d97f99">
+<figure id="orgf99e042">
 <img src="./media/matrioshka.jpg" alt="matrioshka.jpg" width="600px">
 
 </figure>
@@ -59,8 +60,8 @@ instead of by accessing a different port. Application dispatching
 seems to be a solution.
 </p>
 
-<div id="outline-container-org936194b" class="outline-2">
-<h2 id="org936194b"><span class="section-number-2">1.</span> Why I Wanted to Run Multiple Flask Applications</h2>
+<div id="outline-container-org55279e3" class="outline-2">
+<h2 id="org55279e3"><span class="section-number-2">1.</span> Why I Wanted to Run Multiple Flask Applications</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 As a part of my <a href="https://arvydas.dev/codeacademy/">CodeAcademy</a> Python journey I decided to set up a
@@ -86,8 +87,8 @@ you can run them in the same interpreter side by side if you want.
 </div>
 </div>
 
-<div id="outline-container-org60ad378" class="outline-2">
-<h2 id="org60ad378"><span class="section-number-2">2.</span> How to Configure Flask Application Dispatching</h2>
+<div id="outline-container-org1b06f13" class="outline-2">
+<h2 id="org1b06f13"><span class="section-number-2">2.</span> How to Configure Flask Application Dispatching</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Setting this up is relatively straightforward when you take a modular
@@ -102,8 +103,8 @@ approach.
 </div>
 </div>
 
-<div id="outline-container-org5f26838" class="outline-2">
-<h2 id="org5f26838"><span class="section-number-2">3.</span> Set up the Separate Applications</h2>
+<div id="outline-container-org1b12dd3" class="outline-2">
+<h2 id="org1b12dd3"><span class="section-number-2">3.</span> Set up the Separate Applications</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Here are 2 Flask applications:
@@ -143,8 +144,8 @@ def hello_world():
 </div>
 </div>
 
-<div id="outline-container-orgf9e127d" class="outline-2">
-<h2 id="orgf9e127d"><span class="section-number-2">4.</span> Combine the Applications</h2>
+<div id="outline-container-orgb9d94ad" class="outline-2">
+<h2 id="orgb9d94ad"><span class="section-number-2">4.</span> Combine the Applications</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 You will utilize the Werkzeug <a href="https://werkzeug.palletsprojects.com/en/2.2.x/middleware/dispatcher/">Dispatcher Middleware</a>. flask_app_1 will
@@ -164,8 +165,8 @@ application = DispatcherMiddleware(flask_app_1, {
 </div>
 </div>
 
-<div id="outline-container-org1cb2b29" class="outline-2">
-<h2 id="org1cb2b29"><span class="section-number-2">5.</span> Invoke a Development Server</h2>
+<div id="outline-container-org235cf9a" class="outline-2">
+<h2 id="org235cf9a"><span class="section-number-2">5.</span> Invoke a Development Server</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Here is a small file that calls the <a href="https://werkzeug.palletsprojects.com/en/2.2.x/serving/#werkzeug.serving.run_simple">Werkzeug Run Simple</a> server that is
@@ -184,8 +185,8 @@ if __name__ == '__main__':
 </div>
 </div>
 
-<div id="outline-container-org77f14a5" class="outline-2">
-<h2 id="org77f14a5"><span class="section-number-2">6.</span> Running both apps</h2>
+<div id="outline-container-orgcbc4a85" class="outline-2">
+<h2 id="orgcbc4a85"><span class="section-number-2">6.</span> Running both apps</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-python">python3 run.py
@@ -193,21 +194,21 @@ if __name__ == '__main__':
 </div>
 
 
-<figure id="org0f117cf">
+<figure id="org73560a1">
 <img src="./media/flask_multiple1.png" alt="flask_multiple1.png" width="1200px">
 
 </figure>
 
 
-<figure id="org3bfcd18">
+<figure id="orgb42783f">
 <img src="./media/flask_multiple2.png" alt="flask_multiple2.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org0ee18b3" class="outline-2">
-<h2 id="org0ee18b3"><span class="section-number-2">7.</span> Conclusion</h2>
+<div id="outline-container-org0f02f04" class="outline-2">
+<h2 id="org0f02f04"><span class="section-number-2">7.</span> Conclusion</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 As stated before, this is a simple setup that only requires a modular approach
@@ -231,7 +232,7 @@ and clone it to get a working example.
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 09:15</p>
 	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 13:45</p>
 	 <p class="date">This org file is <u>created</u>: 2023-02-06 Mon 05:39</p>
 	 <div class="generated">
@@ -239,9 +240,9 @@ and clone it to get a working example.
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-	 <script src="../static/js/generic.js"></script>
-	 <script src="../static/js/scroll-to-top.js"></script>
-	 <script src="../static/js/lightbox.js"></script>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
 </div>
 </body>
 </html>

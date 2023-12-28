@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-12-28 Thu 08:19 -->
+<!-- 2023-12-28 Thu 09:15 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Deploying Flask Application on Ubuntu VPS using Nginx</title>
@@ -10,11 +10,12 @@
 <meta name="keywords" content="emacs antanas geles" />
 <meta name="generator" content="Org Mode" />
 
-<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -31,14 +32,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4e3dfbf">1. Apache vs nginx</a></li>
-<li><a href="#org0b8be7b">2. Get yourself a virtual private server(VPS)</a></li>
-<li><a href="#orgcdf114a">3. Install nginx</a></li>
-<li><a href="#org0ac6bc7">4. Let's run project</a></li>
-<li><a href="#org7e09f53">5. Gunicorn</a></li>
-<li><a href="#org20bdd02">6. Dealing with secret files</a>
+<li><a href="#org390ba3e">1. Apache vs nginx</a></li>
+<li><a href="#org55f89b2">2. Get yourself a virtual private server(VPS)</a></li>
+<li><a href="#orgf0be7b0">3. Install nginx</a></li>
+<li><a href="#org4738789">4. Let's run project</a></li>
+<li><a href="#org35ae1ef">5. Gunicorn</a></li>
+<li><a href="#org518a34c">6. Dealing with secret files</a>
 <ul>
-<li><a href="#orgf354e7f">6.1. config.json method</a></li>
+<li><a href="#org6d50724">6.1. config.json method</a></li>
 </ul>
 </li>
 </ul>
@@ -55,8 +56,8 @@ live. For that I need to host it.
 Will share with you how I did it.
 </p>
 
-<div id="outline-container-org4e3dfbf" class="outline-2">
-<h2 id="org4e3dfbf"><span class="section-number-2">1.</span> Apache vs nginx</h2>
+<div id="outline-container-org390ba3e" class="outline-2">
+<h2 id="org390ba3e"><span class="section-number-2">1.</span> Apache vs nginx</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Will just leave it here.
@@ -73,8 +74,8 @@ is not as vulnerable as Apache, and it is also very easy to set up.
 </div>
 </div>
 
-<div id="outline-container-org0b8be7b" class="outline-2">
-<h2 id="org0b8be7b"><span class="section-number-2">2.</span> Get yourself a virtual private server(VPS)</h2>
+<div id="outline-container-org55f89b2" class="outline-2">
+<h2 id="org55f89b2"><span class="section-number-2">2.</span> Get yourself a virtual private server(VPS)</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 This time I was using Linode, since I got some free credits with it,
@@ -86,7 +87,7 @@ Create new linode:
 </p>
 
 
-<figure id="orgdc770bb">
+<figure id="org0de4df4">
 <img src="./static/images/linode.png" alt="linode.png" width="1200px">
 
 </figure>
@@ -116,8 +117,8 @@ have set up for it. And you should now be inside your server!
 </div>
 </div>
 
-<div id="outline-container-orgcdf114a" class="outline-2">
-<h2 id="orgcdf114a"><span class="section-number-2">3.</span> Install nginx</h2>
+<div id="outline-container-orgf0be7b0" class="outline-2">
+<h2 id="orgf0be7b0"><span class="section-number-2">3.</span> Install nginx</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install nginx
@@ -171,8 +172,8 @@ running there. That is why we will user <a href="https://gunicorn.org/#quickstar
 </div>
 </div>
 
-<div id="outline-container-org0ac6bc7" class="outline-2">
-<h2 id="org0ac6bc7"><span class="section-number-2">4.</span> Let's run project</h2>
+<div id="outline-container-org4738789" class="outline-2">
+<h2 id="org4738789"><span class="section-number-2">4.</span> Let's run project</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install python3-pip
@@ -201,8 +202,8 @@ Now it works! Your application is live! Magic!
 </div>
 </div>
 
-<div id="outline-container-org7e09f53" class="outline-2">
-<h2 id="org7e09f53"><span class="section-number-2">5.</span> Gunicorn</h2>
+<div id="outline-container-org35ae1ef" class="outline-2">
+<h2 id="org35ae1ef"><span class="section-number-2">5.</span> Gunicorn</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 "This is currently a development server and not good for production
@@ -250,12 +251,12 @@ sudo pkill -f gunicorn3
 </div>
 </div>
 
-<div id="outline-container-org20bdd02" class="outline-2">
-<h2 id="org20bdd02"><span class="section-number-2">6.</span> Dealing with secret files</h2>
+<div id="outline-container-org518a34c" class="outline-2">
+<h2 id="org518a34c"><span class="section-number-2">6.</span> Dealing with secret files</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgf354e7f" class="outline-3">
-<h3 id="orgf354e7f"><span class="section-number-3">6.1.</span> config.json method</h3>
+<div id="outline-container-org6d50724" class="outline-3">
+<h3 id="org6d50724"><span class="section-number-3">6.1.</span> config.json method</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 We will try to hide the:
@@ -405,7 +406,7 @@ should find config.json file.
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 09:15</p>
 	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 13:02</p>
 	 <p class="date">This org file is <u>created</u>: 2023-03-03 Fri 16:40</p>
 	 <div class="generated">
@@ -413,9 +414,9 @@ should find config.json file.
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-	 <script src="../static/js/generic.js"></script>
-	 <script src="../static/js/scroll-to-top.js"></script>
-	 <script src="../static/js/lightbox.js"></script>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
 </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-12-28 Thu 08:19 -->
+<!-- 2023-12-28 Thu 09:15 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>first nixos installation</title>
@@ -10,11 +10,12 @@
 <meta name="keywords" content="emacs antanas geles" />
 <meta name="generator" content="Org Mode" />
 
-<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -31,25 +32,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8f94c3b">1. Why NixOS</a></li>
-<li><a href="#org3d8497c">2. Why NixOS by others</a></li>
-<li><a href="#orge08f6e0">3. Documentation</a></li>
-<li><a href="#org728006c">4. Installation on WSL</a>
+<li><a href="#org7e9531a">1. Why NixOS</a></li>
+<li><a href="#org31850da">2. Why NixOS by others</a></li>
+<li><a href="#org86fa20a">3. Documentation</a></li>
+<li><a href="#orgf8444a7">4. Installation on WSL</a>
 <ul>
-<li><a href="#org409e2ad">4.1. Check if NixOS is not already installed</a></li>
-<li><a href="#org5769569">4.2. Install</a></li>
+<li><a href="#orgd419bd7">4.1. Check if NixOS is not already installed</a></li>
+<li><a href="#org0b6f114">4.2. Install</a></li>
 </ul>
 </li>
-<li><a href="#orgc08892b">5. Configure the installation over emacs</a></li>
-<li><a href="#org74124b4">6. Using your own custom nixos configuration file</a></li>
-<li><a href="#org85a7c92">7. Install other packages</a></li>
-<li><a href="#orgf8926fa">8. Setting up git</a></li>
+<li><a href="#org1ca9c7f">5. Configure the installation over emacs</a></li>
+<li><a href="#org97356e9">6. Using your own custom nixos configuration file</a></li>
+<li><a href="#orgcec2492">7. Install other packages</a></li>
+<li><a href="#org74f0104">8. Setting up git</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org8f94c3b" class="outline-2">
-<h2 id="org8f94c3b"><span class="section-number-2">1.</span> Why NixOS</h2>
+<div id="outline-container-org7e9531a" class="outline-2">
+<h2 id="org7e9531a"><span class="section-number-2">1.</span> Why NixOS</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 AFTER you reinstall your machine - to install the DEV environment, all you
@@ -67,8 +68,8 @@ again.
 </div>
 </div>
 
-<div id="outline-container-org3d8497c" class="outline-2">
-<h2 id="org3d8497c"><span class="section-number-2">2.</span> Why NixOS by others</h2>
+<div id="outline-container-org31850da" class="outline-2">
+<h2 id="org31850da"><span class="section-number-2">2.</span> Why NixOS by others</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="https://github.com/hlissner/dotfiles">https://github.com/hlissner/dotfiles</a></li>
@@ -77,8 +78,8 @@ again.
 </div>
 </div>
 
-<div id="outline-container-orge08f6e0" class="outline-2">
-<h2 id="orge08f6e0"><span class="section-number-2">3.</span> Documentation</h2>
+<div id="outline-container-org86fa20a" class="outline-2">
+<h2 id="org86fa20a"><span class="section-number-2">3.</span> Documentation</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>nixos github repo - <a href="https://github.com/nix-community/NixOS-WSL">https://github.com/nix-community/NixOS-WSL</a></li>
@@ -87,8 +88,8 @@ again.
 </div>
 </div>
 
-<div id="outline-container-org728006c" class="outline-2">
-<h2 id="org728006c"><span class="section-number-2">4.</span> Installation on WSL</h2>
+<div id="outline-container-orgf8444a7" class="outline-2">
+<h2 id="orgf8444a7"><span class="section-number-2">4.</span> Installation on WSL</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Steps described here:
@@ -99,8 +100,8 @@ Steps described here:
 </p>
 </div>
 
-<div id="outline-container-org409e2ad" class="outline-3">
-<h3 id="org409e2ad"><span class="section-number-3">4.1.</span> Check if NixOS is not already installed</h3>
+<div id="outline-container-orgd419bd7" class="outline-3">
+<h3 id="orgd419bd7"><span class="section-number-3">4.1.</span> Check if NixOS is not already installed</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-bash">wsl --status
@@ -112,8 +113,8 @@ wsl --list --verbose
 </div>
 </div>
 
-<div id="outline-container-org5769569" class="outline-3">
-<h3 id="org5769569"><span class="section-number-3">4.2.</span> Install</h3>
+<div id="outline-container-org0b6f114" class="outline-3">
+<h3 id="org0b6f114"><span class="section-number-3">4.2.</span> Install</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 If it does not exist, then basically download <code>nixos-wsl.tar.gz</code> into your
@@ -157,8 +158,8 @@ sudo nix-channel --update
 </div>
 </div>
 
-<div id="outline-container-orgc08892b" class="outline-2">
-<h2 id="orgc08892b"><span class="section-number-2">5.</span> Configure the installation over emacs</h2>
+<div id="outline-container-org1ca9c7f" class="outline-2">
+<h2 id="org1ca9c7f"><span class="section-number-2">5.</span> Configure the installation over emacs</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Enter nix-shell to use emacs(it does not get installed on the system, just
@@ -235,8 +236,8 @@ Try to launch emacs for all the packages to be installed.
 </div>
 </div>
 
-<div id="outline-container-org74124b4" class="outline-2">
-<h2 id="org74124b4"><span class="section-number-2">6.</span> Using your own custom nixos configuration file</h2>
+<div id="outline-container-org97356e9" class="outline-2">
+<h2 id="org97356e9"><span class="section-number-2">6.</span> Using your own custom nixos configuration file</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 It suchs to not be able to edit the <code>/etc/nixos/configuration.nix</code> file over
@@ -258,8 +259,8 @@ You are done. Should be able to edit <code>configuration.nix</code> file now.
 </div>
 </div>
 
-<div id="outline-container-org85a7c92" class="outline-2">
-<h2 id="org85a7c92"><span class="section-number-2">7.</span> Install other packages</h2>
+<div id="outline-container-orgcec2492" class="outline-2">
+<h2 id="orgcec2492"><span class="section-number-2">7.</span> Install other packages</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 If you want to install a package called "make" for example and nixos says it
@@ -271,8 +272,8 @@ want to install.
 </div>
 </div>
 
-<div id="outline-container-orgf8926fa" class="outline-2">
-<h2 id="orgf8926fa"><span class="section-number-2">8.</span> Setting up git</h2>
+<div id="outline-container-org74f0104" class="outline-2">
+<h2 id="org74f0104"><span class="section-number-2">8.</span> Setting up git</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 First try <a href="20231211T161252--introduce-yourself-to-git__git.html">this</a>, then one of these:
@@ -294,7 +295,7 @@ First try <a href="20231211T161252--introduce-yourself-to-git__git.html">this</a
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 09:15</p>
 	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-11 Mon 15:14</p>
 	 <div class="generated">
@@ -302,9 +303,9 @@ First try <a href="20231211T161252--introduce-yourself-to-git__git.html">this</a
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-	 <script src="../static/js/generic.js"></script>
-	 <script src="../static/js/scroll-to-top.js"></script>
-	 <script src="../static/js/lightbox.js"></script>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
 </div>
 </body>
 </html>

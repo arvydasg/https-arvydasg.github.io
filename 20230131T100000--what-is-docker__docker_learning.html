@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-12-28 Thu 08:19 -->
+<!-- 2023-12-28 Thu 09:15 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>What is Docker?</title>
@@ -10,11 +10,12 @@
 <meta name="keywords" content="emacs antanas geles" />
 <meta name="generator" content="Org Mode" />
 
-<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -31,13 +32,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0b39565">1. In the beginning</a></li>
-<li><a href="#orgfab1ada">2. Then came the virtual machines.</a></li>
-<li><a href="#org8ddf8c2">3. Now what is the docker about?</a></li>
-<li><a href="#orge3c9e69">4. Benefits of Docker</a></li>
-<li><a href="#orgea0fd9d">5. Why docker?</a>
+<li><a href="#org736fa40">1. In the beginning</a></li>
+<li><a href="#orgf4c3996">2. Then came the virtual machines.</a></li>
+<li><a href="#org3a2e896">3. Now what is the docker about?</a></li>
+<li><a href="#org0071f0f">4. Benefits of Docker</a></li>
+<li><a href="#orga70ea08">5. Why docker?</a>
 <ul>
-<li><a href="#org6c5c0e3">5.1. Microservices</a></li>
+<li><a href="#org97029b0">5.1. Microservices</a></li>
 </ul>
 </li>
 </ul>
@@ -50,8 +51,8 @@ developer like myself. It sounds like an efficient and easy way to deploy
 Django applications.
 </p>
 
-<div id="outline-container-org0b39565" class="outline-2">
-<h2 id="org0b39565"><span class="section-number-2">1.</span> In the beginning</h2>
+<div id="outline-container-org736fa40" class="outline-2">
+<h2 id="org736fa40"><span class="section-number-2">1.</span> In the beginning</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 If you wanted a server to store your applications onto, it had to be a physical
@@ -62,8 +63,8 @@ most likely expensive.
 </div>
 </div>
 
-<div id="outline-container-orgfab1ada" class="outline-2">
-<h2 id="orgfab1ada"><span class="section-number-2">2.</span> Then came the virtual machines.</h2>
+<div id="outline-container-orgf4c3996" class="outline-2">
+<h2 id="orgf4c3996"><span class="section-number-2">2.</span> Then came the virtual machines.</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>you would have a server hardware</li>
@@ -80,8 +81,8 @@ more efficient than the first option.
 </div>
 </div>
 
-<div id="outline-container-org8ddf8c2" class="outline-2">
-<h2 id="org8ddf8c2"><span class="section-number-2">3.</span> Now what is the docker about?</h2>
+<div id="outline-container-org3a2e896" class="outline-2">
+<h2 id="org3a2e896"><span class="section-number-2">3.</span> Now what is the docker about?</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 You still have the hardware, but on top of that you install one OS. Ubuntu for
@@ -110,8 +111,8 @@ their own thing. They might as well be installed on bare metal servers.
 </div>
 </div>
 
-<div id="outline-container-orge3c9e69" class="outline-2">
-<h2 id="orge3c9e69"><span class="section-number-2">4.</span> Benefits of Docker</h2>
+<div id="outline-container-org0071f0f" class="outline-2">
+<h2 id="org0071f0f"><span class="section-number-2">4.</span> Benefits of Docker</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Why is Docker so fast?
@@ -144,8 +145,8 @@ to run it on. Because they share the underlying os or kernel.
 </div>
 </div>
 
-<div id="outline-container-orgea0fd9d" class="outline-2">
-<h2 id="orgea0fd9d"><span class="section-number-2">5.</span> Why docker?</h2>
+<div id="outline-container-orga70ea08" class="outline-2">
+<h2 id="orga70ea08"><span class="section-number-2">5.</span> Why docker?</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 As developers - we write our app - it works great on our machines. Then we want
@@ -165,8 +166,8 @@ needs is contained in the container, it's isolated.
 </p>
 </div>
 
-<div id="outline-container-org6c5c0e3" class="outline-3">
-<h3 id="org6c5c0e3"><span class="section-number-3">5.1.</span> Microservices</h3>
+<div id="outline-container-org97029b0" class="outline-3">
+<h3 id="org97029b0"><span class="section-number-3">5.1.</span> Microservices</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Usually you deploy the WHOLE app inside one container or a VM. For example
@@ -189,7 +190,7 @@ experiment with that.
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 09:15</p>
 	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 12:57</p>
 	 <p class="date">This org file is <u>created</u>: 2023-01-31 Tue 10:00</p>
 	 <div class="generated">
@@ -197,9 +198,9 @@ experiment with that.
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-	 <script src="../static/js/generic.js"></script>
-	 <script src="../static/js/scroll-to-top.js"></script>
-	 <script src="../static/js/lightbox.js"></script>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
 </div>
 </body>
 </html>

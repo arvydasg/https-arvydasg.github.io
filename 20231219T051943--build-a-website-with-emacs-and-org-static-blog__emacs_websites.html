@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-12-28 Thu 08:19 -->
+<!-- 2023-12-28 Thu 09:15 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>build a website with emacs and org-static-blog</title>
@@ -10,11 +10,12 @@
 <meta name="keywords" content="emacs antanas geles" />
 <meta name="generator" content="Org Mode" />
 
-<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
-<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -31,23 +32,23 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge2f2565">1. Docs</a></li>
-<li><a href="#orgec168e0">2. Installation</a></li>
-<li><a href="#orgd5b8aae">3. Try using the minimal config</a></li>
-<li><a href="#org2dba300">4. Decide where to place the configuration</a></li>
-<li><a href="#orgf8205d5">5. My configuration as of <span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span></a></li>
-<li><a href="#orgb45067a">6. CSS</a>
+<li><a href="#org9e902ed">1. Docs</a></li>
+<li><a href="#org60bd127">2. Installation</a></li>
+<li><a href="#org5464ed1">3. Try using the minimal config</a></li>
+<li><a href="#org7475973">4. Decide where to place the configuration</a></li>
+<li><a href="#org54be01d">5. My configuration as of <span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span></a></li>
+<li><a href="#orgee1641d">6. CSS</a>
 <ul>
-<li><a href="#org149f948">6.1. use CSS built in css from ox-html</a></li>
-<li><a href="#org4a7aa09">6.2. org-html-themes</a></li>
+<li><a href="#orgb0a1d20">6.1. use CSS built in css from ox-html</a></li>
+<li><a href="#org48b62d3">6.2. org-html-themes</a></li>
 </ul>
 </li>
-<li><a href="#org7085d47">7. pros/cons</a>
+<li><a href="#org49aa830">7. pros/cons</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orgf906252">7.0.1. PROS</a></li>
-<li><a href="#org9d126f4">7.0.2. CONS</a></li>
+<li><a href="#org729c553">7.0.1. PROS</a></li>
+<li><a href="#org48ee002">7.0.2. CONS</a></li>
 </ul>
 </li>
 </ul>
@@ -56,8 +57,8 @@
 </div>
 </nav>
 
-<div id="outline-container-orge2f2565" class="outline-2">
-<h2 id="orge2f2565"><span class="section-number-2">1.</span> Docs</h2>
+<div id="outline-container-org9e902ed" class="outline-2">
+<h2 id="org9e902ed"><span class="section-number-2">1.</span> Docs</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Official docs - <a href="https://github.com/bastibe/org-static-blog">https://github.com/bastibe/org-static-blog</a>
@@ -65,8 +66,8 @@ Official docs - <a href="https://github.com/bastibe/org-static-blog">https://git
 </div>
 </div>
 
-<div id="outline-container-orgec168e0" class="outline-2">
-<h2 id="orgec168e0"><span class="section-number-2">2.</span> Installation</h2>
+<div id="outline-container-org60bd127" class="outline-2">
+<h2 id="org60bd127"><span class="section-number-2">2.</span> Installation</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package org-static-blog
@@ -76,8 +77,8 @@ Official docs - <a href="https://github.com/bastibe/org-static-blog">https://git
 </div>
 </div>
 
-<div id="outline-container-orgd5b8aae" class="outline-2">
-<h2 id="orgd5b8aae"><span class="section-number-2">3.</span> Try using the minimal config</h2>
+<div id="outline-container-org5464ed1" class="outline-2">
+<h2 id="org5464ed1"><span class="section-number-2">3.</span> Try using the minimal config</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Taken from the docs.
@@ -140,8 +141,8 @@ site not to write repetitive code for each! Great!
 </p>
 </div>
 </div>
-<div id="outline-container-org2dba300" class="outline-2">
-<h2 id="org2dba300"><span class="section-number-2">4.</span> Decide where to place the configuration</h2>
+<div id="outline-container-org7475973" class="outline-2">
+<h2 id="org7475973"><span class="section-number-2">4.</span> Decide where to place the configuration</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Now the configuration above might get large if you start modifying the head,
@@ -268,8 +269,8 @@ the end it will print out "Build complete!"
 </div>
 </div>
 
-<div id="outline-container-orgf8205d5" class="outline-2">
-<h2 id="orgf8205d5"><span class="section-number-2">5.</span> My configuration as of <span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span></h2>
+<div id="outline-container-org54be01d" class="outline-2">
+<h2 id="org54be01d"><span class="section-number-2">5.</span> My configuration as of <span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span></h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Stopped using it before I went to build devnotes site with ox-publish -
@@ -345,12 +346,12 @@ Stopped using it before I went to build devnotes site with ox-publish -
 </div>
 </div>
 </div>
-<div id="outline-container-orgb45067a" class="outline-2">
-<h2 id="orgb45067a"><span class="section-number-2">6.</span> CSS</h2>
+<div id="outline-container-orgee1641d" class="outline-2">
+<h2 id="orgee1641d"><span class="section-number-2">6.</span> CSS</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org149f948" class="outline-3">
-<h3 id="org149f948"><span class="section-number-3">6.1.</span> use CSS built in css from ox-html</h3>
+<div id="outline-container-orgb0a1d20" class="outline-3">
+<h3 id="orgb0a1d20"><span class="section-number-3">6.1.</span> use CSS built in css from ox-html</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 We can customize <code>org-static-blog-page-header</code> and add your custom css
@@ -378,8 +379,8 @@ keep the first option that I have suggested with style.css file.
 </p>
 </div>
 </div>
-<div id="outline-container-org4a7aa09" class="outline-3">
-<h3 id="org4a7aa09"><span class="section-number-3">6.2.</span> org-html-themes</h3>
+<div id="outline-container-org48b62d3" class="outline-3">
+<h3 id="org48b62d3"><span class="section-number-3">6.2.</span> org-html-themes</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 ORRR last thing that you can try when it comes to styling your website, try
@@ -413,12 +414,12 @@ using my own custom stylesheet.
 </div>
 </div>
 
-<div id="outline-container-org7085d47" class="outline-2">
-<h2 id="org7085d47"><span class="section-number-2">7.</span> pros/cons</h2>
+<div id="outline-container-org49aa830" class="outline-2">
+<h2 id="org49aa830"><span class="section-number-2">7.</span> pros/cons</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orgf906252" class="outline-4">
-<h4 id="orgf906252"><span class="section-number-4">7.0.1.</span> PROS</h4>
+<div id="outline-container-org729c553" class="outline-4">
+<h4 id="org729c553"><span class="section-number-4">7.0.1.</span> PROS</h4>
 <div class="outline-text-4" id="text-7-0-1">
 <ul class="org-ul">
 <li>does everything for you</li>
@@ -430,8 +431,8 @@ using my own custom stylesheet.
 </div>
 </div>
 
-<div id="outline-container-org9d126f4" class="outline-4">
-<h4 id="org9d126f4"><span class="section-number-4">7.0.2.</span> CONS</h4>
+<div id="outline-container-org48ee002" class="outline-4">
+<h4 id="org48ee002"><span class="section-number-4">7.0.2.</span> CONS</h4>
 <div class="outline-text-4" id="text-7-0-2">
 <ul class="org-ul">
 <li>big program(installable package, not built in)</li>
@@ -450,7 +451,7 @@ using my own custom stylesheet.
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 09:15</p>
 	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-19 Tue 05:19</p>
 	 <div class="generated">
@@ -458,9 +459,9 @@ using my own custom stylesheet.
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-	 <script src="../static/js/generic.js"></script>
-	 <script src="../static/js/scroll-to-top.js"></script>
-	 <script src="../static/js/lightbox.js"></script>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
 </div>
 </body>
 </html>
