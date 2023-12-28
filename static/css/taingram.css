@@ -1,0 +1,249 @@
+/* https://taingram.org/ styling */
+
+:root {
+    --color-background: white;
+    --color-text: black;
+    --color-secondary: #333;
+    --color-shadow: #eee;
+    --color-link: #0000bb;
+    --color-link-active: #223fbf;
+    --border-width: 2px;
+}
+
+body{
+    font-size: 110%;
+    margin: 0 auto;
+    padding: 0 1em;
+    max-width: 59rem;
+    color: var(--color-text);
+    background: var(--color-background);
+}
+
+#updated {
+    font-size: 90%;
+    font-family: monospace;
+    color: var(--color-secondary);
+    padding: 1.5em 1em 0.75em;
+    border-bottom: 1px dotted var(--color-secondary);
+    float: right;
+}
+
+p {
+    font-family: serif;
+    line-height: 150%;
+}
+
+#content > * {
+    grid-column: 2;
+}
+
+#content {
+    max-width: 54rem;
+    margin: auto;
+    padding-top: 2.8em;
+}
+
+#postamble {
+    max-width: 54rem;
+    margin: auto;
+}
+
+#org-div-home-and-up {
+    max-width: 56rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0px;
+    float: left;
+}
+
+#org-div-home-and-up a {
+    font-family: monospace;
+    font-size: 1.4em;
+    margin: 0 0.5ex;
+    padding: 0.2ex 0.4ex;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: var(--color-background);
+    border: var(--border-width) solid var(--color-text);
+    border-top: 0;
+}
+
+#updated {
+    font-size: 90%;
+    font-family: monospace;
+    color: var(--color-secondary);
+    padding: 1.5em 1em 0.75em;
+    border-bottom: 1px dotted var(--color-secondary);
+    float: right;
+}
+
+nav li {
+    padding: 0.5ex 0;
+}
+
+nav a {
+    padding: 0.2ex 0.4ex;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+}
+
+.title {
+    font-family: monospace;
+    font-size: 2.8em;
+    max-width: 80rem;
+}
+
+a:link, a:visited {
+    color: var(--color-link);
+}
+
+a:hover, a:active {
+    color: var(--color-link-active);
+    text-decoration: none;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* #content img { */
+/*     /\* border: var(--border-width) solid var(--color-text);  *\/ */
+/*     max-width: 95vw; */
+/*     max-height: auto; */
+/* } */
+
+figcaption {
+    font-family: monospace;
+    padding-top: 1ex;
+}
+
+blockquote {
+    border-left-style: solid;
+    padding-left: 1em;
+}
+
+li {
+    padding-bottom: 0.3em;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    border: var(--border-width) solid var(--color-text);
+    box-shadow: 4px 4px 6px var(--color-shadow);
+}
+
+th {
+    color: var(--color-background);
+    background-color: var(--color-text);
+    border: 1px solid var(--color-background);
+    padding: 0.25em;
+}
+
+td {
+    border: 1px solid var(--color-text);
+    padding: 0.25em;
+}
+
+pre {
+    overflow: auto;
+    scrollbar-color: grey lightgrey;
+    scrollbar-width: thin;
+    border: var(--border-width) solid var(--color-text);
+    box-shadow: 4px 4px 6px var(--color-shadow);
+    padding: 1em;
+}
+
+kbd {
+    background-color: var(--color-shadow);
+    border-radius: 3px;
+    border: 1px solid var(--color-secodnary);
+    color: var(--color-text);
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+
+.todo	{ font-family: monospace; color: red; }
+.done	{ font-family: monospace; color: green; }
+
+.tag {
+    background-color: #eee;
+    font-family: monospace;
+    padding: 2px;
+    font-size: 80%;
+    font-weight: normal;
+}
+
+.timestamp {
+    font-family: monospace;
+    color: var(--color-secondary);
+}
+
+/* If timestamp is in heading, then display above */
+h1 .timestamp, h2 .timestamp, h3 .timestamp, h4 .timestamp, h5 .timestamp, h6 .timestamp {
+    display: block;
+}
+
+.published {
+    font-size: 1.3em;
+    font-family: monospace;
+    color: var(--color-secondary);
+}
+
+.footdef {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.footpara {
+    display: inline;
+}
+
+footer {
+    margin: auto;
+    font-size: 80%;
+    line-height: 1.5em;
+}
+
+.copyright-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 0.5ex;
+}
+
+.banner {
+    text-align: center;
+    max-width: 100%;
+    padding: 1ex 0.5ex;
+}
+
+.banner img {
+    max-width: 95vw;
+    max-height: auto;
+}
+
+.generated {
+    font-family: monospace;
+    text-align: center;
+}
+
+/* Index */
+
+@media	(min-width: 43em) {
+    .profile-pic {
+	float: right;
+    }
+}

@@ -1,0 +1,21 @@
+/* need this so the images would not spill out of div */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* add an icon indicating that the user is leaving the site over external link */
+a[href^="mailto"]::after,
+a[href^="http"]::after,
+a[href^="https://"]::after {
+    content: "";
+    color: red;
+    width: 11px;
+    height: 11px;
+    margin-left: 4px;
+    background-image: url("./external-arrow-dark.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+}

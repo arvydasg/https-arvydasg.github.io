@@ -1,0 +1,59 @@
+div.lightbox {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  background-color: black;
+  padding: 1px 5px 1px 5px;
+  box-shadow: 0 0 1px 1px black;
+  scrollbar-color: #444 black;
+  scrollbar-width: none;
+  width: calc(100vw - 10px);
+  margin-left: calc(50% - 50vw + 5px);
+}
+
+div.lightbox img:not(.lightbox) {
+  flex: 0 0 auto;
+  height: calc(100% - 4px);
+  margin: 2px;
+}
+
+div.lightbox figure:not(.lightbox) {
+  flex: 0 0 auto;
+  height: calc(100% - 4px);
+  margin: 2px;
+}
+
+div.lightbox figure:not(.lightbox) img {
+  height: calc(100% - 16pt);
+  margin: 0;
+}
+
+div.lightbox figure:not(.lightbox) figcaption {
+  font-size: 8pt;
+  color: white;
+  text-align: center;
+}
+
+figure.lightbox {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  overflow: hidden;
+}
+
+figure.lightbox img.lightbox {
+  position: absolute;
+}
+a figure.lightbox figcaption {
+  max-width: 90%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 5px;
+  color: white;
+  text-shadow: black 0 0 10px;
+}
