@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-12-28 Thu 09:15 -->
+<!-- 2023-12-28 Thu 09:20 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Create a Blog with Emacs</title>
@@ -32,31 +32,31 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6b7af75">1. Intro</a></li>
-<li><a href="#org272d111">2. Create Emacs blog the "System Crafters" way</a>
+<li><a href="#org13b4504">1. Intro</a></li>
+<li><a href="#orgf5d0244">2. Create Emacs blog the "System Crafters" way</a>
 <ul>
-<li><a href="#org391b282">2.1. Choose a directory</a></li>
-<li><a href="#org00cd355">2.2. Creating the build script</a>
+<li><a href="#orge9e9f51">2.1. Choose a directory</a></li>
+<li><a href="#org673fd2a">2.2. Creating the build script</a>
 <ul>
-<li><a href="#org827abe2">2.2.1. build-site.el</a></li>
-<li><a href="#org1c6bcde">2.2.2. build.sh</a></li>
+<li><a href="#org46ba656">2.2.1. build-site.el</a></li>
+<li><a href="#org3fd8e12">2.2.2. build.sh</a></li>
 </ul>
 </li>
-<li><a href="#org086e8f4">2.3. Improving the HTML output</a></li>
-<li><a href="#org8c9c75b">2.4. Improving the page styling</a></li>
-<li><a href="#orgf8d3eac">2.5. Generating pages with code blocks</a></li>
-<li><a href="#org6bd9a81">2.6. Linking between pages</a></li>
-<li><a href="#orgdf2c927">2.7. The final build script</a></li>
+<li><a href="#orge1e50aa">2.3. Improving the HTML output</a></li>
+<li><a href="#org25f82b8">2.4. Improving the page styling</a></li>
+<li><a href="#org4e9349e">2.5. Generating pages with code blocks</a></li>
+<li><a href="#orgf9b1ab5">2.6. Linking between pages</a></li>
+<li><a href="#org421f387">2.7. The final build script</a></li>
 </ul>
 </li>
-<li><a href="#orga5ca16a">3. Create Emacs blog with "org-static-blog" package</a></li>
-<li><a href="#org4838c7f">4. Conclusion</a></li>
+<li><a href="#org25a2daa">3. Create Emacs blog with "org-static-blog" package</a></li>
+<li><a href="#org594e416">4. Conclusion</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org6b7af75" class="outline-2">
-<h2 id="org6b7af75"><span class="section-number-2">1.</span> Intro</h2>
+<div id="outline-container-org13b4504" class="outline-2">
+<h2 id="org13b4504"><span class="section-number-2">1.</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 If you are using Emacs and org mode as much as me, you must have come
@@ -71,16 +71,16 @@ static website ;)
 </div>
 </div>
 
-<div id="outline-container-org272d111" class="outline-2">
-<h2 id="org272d111"><span class="section-number-2">2.</span> Create Emacs blog the "System Crafters" way</h2>
+<div id="outline-container-orgf5d0244" class="outline-2">
+<h2 id="orgf5d0244"><span class="section-number-2">2.</span> Create Emacs blog the "System Crafters" way</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Best description in a video format is <a href="https://www.youtube.com/watch?v=AfkrzFodoNw&amp;t=1612s&amp;ab_channel=SystemCrafters">here</a>. To later publish it
 automaticall,y video <a href="https://www.youtube.com/watch?v=za99DwdZEyg&amp;t=996s&amp;ab_channel=SystemCrafters">here</a>.
 </p>
 </div>
-<div id="outline-container-org391b282" class="outline-3">
-<h3 id="org391b282"><span class="section-number-3">2.1.</span> Choose a directory</h3>
+<div id="outline-container-orge9e9f51" class="outline-3">
+<h3 id="orge9e9f51"><span class="section-number-3">2.1.</span> Choose a directory</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 You will place your org files inside content/ directory.
@@ -93,12 +93,12 @@ You will place your org files inside content/ directory.
 </div>
 </div>
 
-<div id="outline-container-org00cd355" class="outline-3">
-<h3 id="org00cd355"><span class="section-number-3">2.2.</span> Creating the build script</h3>
+<div id="outline-container-org673fd2a" class="outline-3">
+<h3 id="org673fd2a"><span class="section-number-3">2.2.</span> Creating the build script</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-org827abe2" class="outline-4">
-<h4 id="org827abe2"><span class="section-number-4">2.2.1.</span> build-site.el</h4>
+<div id="outline-container-org46ba656" class="outline-4">
+<h4 id="org46ba656"><span class="section-number-4">2.2.1.</span> build-site.el</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 Inside of this directory:
@@ -141,8 +141,8 @@ variable using M-x describe-variable for a lot more information!
 </div>
 </div>
 
-<div id="outline-container-org1c6bcde" class="outline-4">
-<h4 id="org1c6bcde"><span class="section-number-4">2.2.2.</span> build.sh</h4>
+<div id="outline-container-org3fd8e12" class="outline-4">
+<h4 id="org3fd8e12"><span class="section-number-4">2.2.2.</span> build.sh</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 We also need a shell script that can run our Emacs Lisp script. We'll call that build.sh:
@@ -178,8 +178,8 @@ html in public folder, open it in the browser.
 </div>
 </div>
 
-<div id="outline-container-org086e8f4" class="outline-3">
-<h3 id="org086e8f4"><span class="section-number-3">2.3.</span> Improving the HTML output</h3>
+<div id="outline-container-orge1e50aa" class="outline-3">
+<h3 id="orge1e50aa"><span class="section-number-3">2.3.</span> Improving the HTML output</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 There are a few things about the page we just looked at that I'd like
@@ -217,8 +217,8 @@ better result.
 </div>
 </div>
 </div>
-<div id="outline-container-org8c9c75b" class="outline-3">
-<h3 id="org8c9c75b"><span class="section-number-3">2.4.</span> Improving the page styling</h3>
+<div id="outline-container-org25f82b8" class="outline-3">
+<h3 id="org25f82b8"><span class="section-number-3">2.4.</span> Improving the page styling</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 At this point have a decent basic output for our website, but what if we want to make it look a little bit nicer?
@@ -240,8 +240,8 @@ By setting a few more variables, we can use a nice stylesheet to give our site a
 </div>
 </div>
 </div>
-<div id="outline-container-orgf8d3eac" class="outline-3">
-<h3 id="orgf8d3eac"><span class="section-number-3">2.5.</span> Generating pages with code blocks</h3>
+<div id="outline-container-org4e9349e" class="outline-3">
+<h3 id="org4e9349e"><span class="section-number-3">2.5.</span> Generating pages with code blocks</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 So far we've been looking at a very simple example page that doesn't really have much on it. What happens when we try to generate a more elaborate Org file containing code blocks?
@@ -296,8 +296,8 @@ In a future video I'll show you how to convert your Emacs color theme to a CSS f
 </div>
 </div>
 
-<div id="outline-container-org6bd9a81" class="outline-3">
-<h3 id="org6bd9a81"><span class="section-number-3">2.6.</span> Linking between pages</h3>
+<div id="outline-container-orgf9b1ab5" class="outline-3">
+<h3 id="orgf9b1ab5"><span class="section-number-3">2.6.</span> Linking between pages</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 One last thing I want to show you is how you can create links between
@@ -329,8 +329,8 @@ It will also complain when a linked file can't be found!
 </div>
 </div>
 
-<div id="outline-container-orgdf2c927" class="outline-3">
-<h3 id="orgdf2c927"><span class="section-number-3">2.7.</span> The final build script</h3>
+<div id="outline-container-org421f387" class="outline-3">
+<h3 id="org421f387"><span class="section-number-3">2.7.</span> The final build script</h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
 Here is the final form of our <code>build-site.el</code> script:
@@ -387,8 +387,8 @@ Here is the final form of our <code>build-site.el</code> script:
 </div>
 </div>
 
-<div id="outline-container-orga5ca16a" class="outline-2">
-<h2 id="orga5ca16a"><span class="section-number-2">3.</span> Create Emacs blog with "org-static-blog" package</h2>
+<div id="outline-container-org25a2daa" class="outline-2">
+<h2 id="org25a2daa"><span class="section-number-2">3.</span> Create Emacs blog with "org-static-blog" package</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 "<a href="https://github.com/bastibe/org-static-blog">org-static-blog</a>" is a package written by <a href="https://github.com/bastibe">Bastian Bechtold</a> is a static site
@@ -433,7 +433,7 @@ If you would like to add an image to your org file, try this:
 </div>
 
 
-<figure id="org00c9943">
+<figure id="org331756f">
 <img src="./media/org-static-blog.png" alt="org-static-blog.png" width="1200px">
 
 </figure>
@@ -445,8 +445,8 @@ the image.
 </div>
 </div>
 
-<div id="outline-container-org4838c7f" class="outline-2">
-<h2 id="org4838c7f"><span class="section-number-2">4.</span> Conclusion</h2>
+<div id="outline-container-org594e416" class="outline-2">
+<h2 id="org594e416"><span class="section-number-2">4.</span> Conclusion</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Now the only thing is left - I have to blog. :) I am thinking why
@@ -465,7 +465,7 @@ learn it is to teach it" they say.
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 09:15</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 09:20</p>
 	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 13:45</p>
 	 <p class="date">This org file is <u>created</u>: 2023-01-21 Sat 12:40</p>
 	 <div class="generated">

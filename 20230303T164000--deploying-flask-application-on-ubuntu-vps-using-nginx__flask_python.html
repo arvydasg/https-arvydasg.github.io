@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-12-28 Thu 09:15 -->
+<!-- 2023-12-28 Thu 09:20 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Deploying Flask Application on Ubuntu VPS using Nginx</title>
@@ -32,14 +32,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org390ba3e">1. Apache vs nginx</a></li>
-<li><a href="#org55f89b2">2. Get yourself a virtual private server(VPS)</a></li>
-<li><a href="#orgf0be7b0">3. Install nginx</a></li>
-<li><a href="#org4738789">4. Let's run project</a></li>
-<li><a href="#org35ae1ef">5. Gunicorn</a></li>
-<li><a href="#org518a34c">6. Dealing with secret files</a>
+<li><a href="#org10dbc50">1. Apache vs nginx</a></li>
+<li><a href="#orgb016dcf">2. Get yourself a virtual private server(VPS)</a></li>
+<li><a href="#org87eb98e">3. Install nginx</a></li>
+<li><a href="#org22d561d">4. Let's run project</a></li>
+<li><a href="#org5560588">5. Gunicorn</a></li>
+<li><a href="#org575d5df">6. Dealing with secret files</a>
 <ul>
-<li><a href="#org6d50724">6.1. config.json method</a></li>
+<li><a href="#org01db9f7">6.1. config.json method</a></li>
 </ul>
 </li>
 </ul>
@@ -56,8 +56,8 @@ live. For that I need to host it.
 Will share with you how I did it.
 </p>
 
-<div id="outline-container-org390ba3e" class="outline-2">
-<h2 id="org390ba3e"><span class="section-number-2">1.</span> Apache vs nginx</h2>
+<div id="outline-container-org10dbc50" class="outline-2">
+<h2 id="org10dbc50"><span class="section-number-2">1.</span> Apache vs nginx</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Will just leave it here.
@@ -74,8 +74,8 @@ is not as vulnerable as Apache, and it is also very easy to set up.
 </div>
 </div>
 
-<div id="outline-container-org55f89b2" class="outline-2">
-<h2 id="org55f89b2"><span class="section-number-2">2.</span> Get yourself a virtual private server(VPS)</h2>
+<div id="outline-container-orgb016dcf" class="outline-2">
+<h2 id="orgb016dcf"><span class="section-number-2">2.</span> Get yourself a virtual private server(VPS)</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 This time I was using Linode, since I got some free credits with it,
@@ -87,7 +87,7 @@ Create new linode:
 </p>
 
 
-<figure id="org0de4df4">
+<figure id="orgaf52c5f">
 <img src="./static/images/linode.png" alt="linode.png" width="1200px">
 
 </figure>
@@ -117,8 +117,8 @@ have set up for it. And you should now be inside your server!
 </div>
 </div>
 
-<div id="outline-container-orgf0be7b0" class="outline-2">
-<h2 id="orgf0be7b0"><span class="section-number-2">3.</span> Install nginx</h2>
+<div id="outline-container-org87eb98e" class="outline-2">
+<h2 id="org87eb98e"><span class="section-number-2">3.</span> Install nginx</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install nginx
@@ -172,8 +172,8 @@ running there. That is why we will user <a href="https://gunicorn.org/#quickstar
 </div>
 </div>
 
-<div id="outline-container-org4738789" class="outline-2">
-<h2 id="org4738789"><span class="section-number-2">4.</span> Let's run project</h2>
+<div id="outline-container-org22d561d" class="outline-2">
+<h2 id="org22d561d"><span class="section-number-2">4.</span> Let's run project</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install python3-pip
@@ -202,8 +202,8 @@ Now it works! Your application is live! Magic!
 </div>
 </div>
 
-<div id="outline-container-org35ae1ef" class="outline-2">
-<h2 id="org35ae1ef"><span class="section-number-2">5.</span> Gunicorn</h2>
+<div id="outline-container-org5560588" class="outline-2">
+<h2 id="org5560588"><span class="section-number-2">5.</span> Gunicorn</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 "This is currently a development server and not good for production
@@ -251,12 +251,12 @@ sudo pkill -f gunicorn3
 </div>
 </div>
 
-<div id="outline-container-org518a34c" class="outline-2">
-<h2 id="org518a34c"><span class="section-number-2">6.</span> Dealing with secret files</h2>
+<div id="outline-container-org575d5df" class="outline-2">
+<h2 id="org575d5df"><span class="section-number-2">6.</span> Dealing with secret files</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org6d50724" class="outline-3">
-<h3 id="org6d50724"><span class="section-number-3">6.1.</span> config.json method</h3>
+<div id="outline-container-org01db9f7" class="outline-3">
+<h3 id="org01db9f7"><span class="section-number-3">6.1.</span> config.json method</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 We will try to hide the:
@@ -406,7 +406,7 @@ should find config.json file.
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 09:15</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 09:20</p>
 	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 13:02</p>
 	 <p class="date">This org file is <u>created</u>: 2023-03-03 Fri 16:40</p>
 	 <div class="generated">
