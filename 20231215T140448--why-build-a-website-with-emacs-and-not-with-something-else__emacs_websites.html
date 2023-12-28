@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>why build a website with emacs and not with something else</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">why build a website with emacs and not with something else</h1>
+</header><p>
+I tried creating personal blog/website the following ways:
+</p>
+
+<ul class="org-ul">
+<li>First with php - <a href="https://github.com/arvydasg/gvazdikelis">gvazdikelis</a></li>
+<li>Then with hugo - <a href="https://github.com/arvydasg/arvydas.dev_hugo">arvydas.dev_hugo</a></li>
+<li>Finally with django - <a href="https://github.com/arvydasg/django_blog">django_blog</a></li>
+<li>Emacs blog - <a href="https://github.com/arvydasg/emacs_blog">example</a></li>
+<li>PKC wiki - <a href="https://github.com/arvydasg/pkc_wiki">example</a></li>
+<li>PKC afk - <a href="https://github.com/arvydasg/PKC_AFK/blob/main/AFK/testamentas/afk.html">example</a></li>
+<li>Emacs and built in <a href="https://orgmode.org/manual/HTML-Export.html">HTML exporting feature</a>(export one page at a time) <code>C-c C-e</code></li>
+<li>Emacs and built in <a href="https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/">org-publish-project</a>, <a href="https://github.com/arvydasg/org-publish-project-blog">personal example</a> <code>C-c C-e P p</code>, <a href="https://taingram.org/blog/org-mode-blog.html">good intro tutorial</a></li>
+<li>Emacs and <a href="https://github.com/bastibe/org-static-blog">org-static-blog package</a>, <a href="https://github.com/arvydasg/org-static-blog">personal example</a></li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2023-12-15 Fri] </span></span> Had my <a href="https://github.com/arvydasg/devnotes">devnotes website</a> 90% built(<a href="https://github.com/arvydasg/devnotes/tree/baaee96445935c4d985990561ebc062054d980bf">link to commit</a>) with
+<code>org-static-blog</code>, and then found out about ox-hugo from <a href="https://youtu.be/7s8cQ2cOnl8?si=Msps0EMgyY0cJYba&amp;t=1804">here</a>. Tried to
+create a blog with it, example</li>
+<li>Then found out about <a href="https://gtpedrosa.github.io/blog/using-org-mode-and-ox-hugo-to-replace-markdown-in-hugo-workflow/">Emacs and hugo</a>.. <a href="https://ox-hugo.scripter.co/">ox hugo</a> and <a href="https://github.com/masasam/emacs-easy-hugo">emacs-easy-hugo</a>.</li>
+<li><a href="https://github.com/emacs-love/weblorg">Weblorg</a> - have not tried it</li>
+<li>There is also <a href="https://github.com/novoid/lazyblorg">lazyborg</a>, for writing blogs. But it seems quite complex.</li>
+<li>Also you can <a href="https://github.com/org2blog/org2blog">export your org files to wordpress</a>. Have not tried.</li>
+</ul>
+
+<p>
+Creating personal website/blog with Emacs is the right way for me, because:
+</p>
+
+<ul class="org-ul">
+<li>I can use Emacs shortcuts to write and edit text</li>
+<li>I don’t need to reformat text to make it readable for something like <a href="20231215T055820--add-ckeditor-into-django-app__django.html">CKEditor</a>
+in python <a href="https://github.com/arvydasg/emacs_blog">django</a> I can just straight up use emacs source blocks, headings,
+text blocks and so on and everything just works,</li>
+<li>I can publish my blog just as easily wit <a href="https://magit.vc/">Magit</a>, push straight to Github and
+the changes will be visible live immediately.</li>
+</ul>
+
+<p>
+For me, this is the fastest, most enjoyable, bulletproof, independent way to
+blog. I don't want to depend on Wordpress, packages installs/updates/pricing,
+having to deploy the site somewhere in certain file types.. now its simple
+html/css. Can be hosted anywhere/forever.
+</p>
+
+<p>
+You can find some inspirational websites build with org mode <a href="20231214T150411--inspirational-websites__emacs_websites.html">here</a>.
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-12-15 Fri 14:04</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

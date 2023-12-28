@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>expanding user model</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">expanding user model</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org75cf56b">1. expanding user model</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org75cf56b" class="outline-2">
+<h2 id="org75cf56b"><span class="section-number-2">1.</span> expanding user model</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Inspiration - <a href="https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone">https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone</a>
+</p>
+
+<p>
+There is a good chance that this is what you want. Personally that is the
+method I use for the most part. We will be creating a new Django Model to store
+the <code>extra information</code> that relates to the User Model.
+</p>
+
+<p>
+Bear in mind that using this strategy results in additional queries or joins to
+retrieve the related data. Basically all the time you access an related data,
+Django will fire an additional query. But this can be avoided for the most
+cases. I will get back to that later on.
+</p>
+
+<p>
+I usually name the Django Model as Profile:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">from django.db import models
+from django.contrib.auth.models import User
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(max_length=500, blank=True)
+    location = models.CharField(max_length=30, blank=True)
+    birth_date = models.DateField(null=True, blank=True)
+</pre>
+</div>
+
+<p>
+Now this is where the magic happens: we will now define signals so our Profile
+model will be automatically created/updated when we create/update User
+instances.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(max_length=500, blank=True)
+    location = models.CharField(max_length=30, blank=True)
+    birth_date = models.DateField(null=True, blank=True)
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
+</pre>
+</div>
+
+<p>
+Basically we are hooking the create_user_profile and save_user_profile methods
+to the User model, whenever a save event occurs. This kind of signal is called
+post_save.
+</p>
+
+<p>
+in html:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;h2&gt;{{ user.get_full_name }}&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Username: {{ user.username }}&lt;/li&gt;
+  &lt;li&gt;Location: {{ user.profile.location }}&lt;/li&gt;
+  &lt;li&gt;Birth Date: {{ user.profile.birth_date }}&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+</div>
+
+<p>
+or in view:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">def update_profile(request, user_id):
+    user = User.objects.get(pk=user_id)
+    user.profile.bio = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+    user.save()
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 13:22</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

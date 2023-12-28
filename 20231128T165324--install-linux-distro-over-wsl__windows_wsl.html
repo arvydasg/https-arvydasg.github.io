@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>install linux distro over wsl</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">install linux distro over wsl</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgfebfad8">1. Installation instructions</a></li>
+<li><a href="#orgf78ce31">2. Setup terminal</a></li>
+</ul>
+</div>
+</nav>
+<p>
+Ok so at <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-11-26 Sun&gt; </span></span> I was very much getting to know to wsl and how to
+install it properly.
+</p>
+
+<p>
+First reason - I finally decided to use emacs more so I could <a href="20231125T211812--why-i-use-denote__emacs.html">use denote</a>. For
+that of course I did not want to override my already custom emacs config and
+notes file structure, wanted to create a NEW WSL UBUNTU instance where I could
+experiment.
+</p>
+
+<p>
+Second reason - I was <a href="20231128T164359--wsl-glitches-in-gui-applications__wsl.html">getting gliches in my wsl</a>.
+</p>
+
+<p>
+So while I was trying to solve the first thing, I found out about the second
+thing and that led me to all this documentation below.
+</p>
+
+<div id="outline-container-orgfebfad8" class="outline-2">
+<h2 id="orgfebfad8"><span class="section-number-2">1.</span> Installation instructions</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+After you have <a href="20231214T142532--enable-wsl-on-windows__windows_wsl.html">enabled wsl on windows</a>, you can do these steps:
+</p>
+
+<p>
+in cmd/powershell run:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"># see all repos available
+wsl --list
+# install the default repo(or any other)
+wsl --install ubuntu
+# install a custom repo version(can have multiple different versions installed)
+wsl --install -d Ubuntu-20.04
+</pre>
+</div>
+
+<p>
+After your distro is installed, login to it:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash"># View the list of distros and their current state:
+wsl.exe -l -v
+ # Boot up a specific distro:
+wsl.exe -d &lt;DistroName&gt;
+</pre>
+</div>
+
+<p>
+And confirm the version number:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">lsb_release -a
+</pre>
+</div>
+
+<p>
+Now check "add remove programs" if your wsl instance is listed there.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf78ce31" class="outline-2">
+<h2 id="orgf78ce31"><span class="section-number-2">2.</span> Setup terminal</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Setup terminal to be ubuntu. So when you open cmd you would also see
+the ubuntu terminal.
+</p>
+
+<p>
+After the installation ubuntu wsl make ubuntu profile in cmd -&gt; settings -&gt;
+profiles - &gt; new profile -&gt; duplicate ubuntu profile
+</p>
+
+<p>
+To install emacs now -<a href="20231128T131156--install-emacs-on-linux__emacs_linux.html">install emacs on linux</a>.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 16:53</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>install emacs on windows</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">install emacs on windows</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org20cae9a">1. Installation 1:</a></li>
+<li><a href="#org32071b3">2. Installation 2:</a></li>
+</ul>
+</div>
+</nav>
+<p>
+Not sure if installation 1 or installation 2 is the good one, so when you will
+try to install it once again - summarize the instructions to a proper document.
+</p>
+
+<div id="outline-container-org20cae9a" class="outline-2">
+<h2 id="org20cae9a"><span class="section-number-2">1.</span> Installation 1:</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Great <a href="https://www.youtube.com/watch?v=0OLfdiZ_b0k&amp;ab_channel=LigerLearn">video here</a> showcasing the steps below</li>
+<li class="off"><code>[&#xa0;]</code> install emacs from <a href="http://ftp.gnu.org/gnu/emacs/windows/">here</a></li>
+<li class="off"><code>[&#xa0;]</code> go to C:\Program Files\Emacs, find emacs, take the run icon</li>
+<li class="off"><code>[&#xa0;]</code> launch emacs, press C-x C-f, then press ~/ - shows you the
+directory emacs thinks of as 'HOME'</li>
+<li class="off"><code>[&#xa0;]</code> create init.el file in here, Save-as init.el - then the file is
+with correct file extension and not .txt</li>
+<li class="off"><code>[&#xa0;]</code> <p>
+add basic emacs config, such as:
+press C-c C-, to make the source block
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq inhibit-startup-message t
+      initial-scratch-message "Hello world"
+      cursor-type 'bar) (setq inhibit-startup-message t)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(defalias 'yes-or-no-p 'y-or-n-p)
+</pre>
+</div></li>
+<li class="off"><code>[&#xa0;]</code> Restart emacs and check if it works (it should)</li>
+<li class="off"><code>[&#xa0;]</code> install fonts on windows machine
+<a href="https://github.com/domtronn/all-the-icons.el/tree/master/fonts">https://github.com/domtronn/all-the-icons.el/tree/master/fonts</a> go
+here, download fonts one by one and install</li>
+<li class="off"><code>[&#xa0;]</code> install python on windows
+<a href="https://stackoverflow.com/questions/65348890/python-was-not-found-run-without-arguments-to-install-from-the-microsoft-store">https://stackoverflow.com/questions/65348890/python-was-not-found-run-without-arguments-to-install-from-the-microsoft-store</a></li>
+<li class="off"><code>[&#xa0;]</code> <p>
+windows + linux configas
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(cond ((eq system-type 'windows-nt)
+       (defun display-startup-echo-area-message ()
+         (message "Writing from windows"))
+       )
+      ((eq system-type 'gnu/linux)
+       (defun display-startup-echo-area-message ()
+         (message "Writing from linux"))
+       ))
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org32071b3" class="outline-2">
+<h2 id="org32071b3"><span class="section-number-2">2.</span> Installation 2:</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+some useful stuff
+<a href="https://www.gnu.org/software/emacs/manual/html_mono/efaq-w32.html#Location-of-init-file">https://www.gnu.org/software/emacs/manual/html_mono/efaq-w32.html#Location-of-init-file</a>
+</p>
+
+<p>
+install emacs from here -
+<a href="http://ftp.task.gda.pl/pub/gnu/emacs/windows/emacs-27/">http://ftp.task.gda.pl/pub/gnu/emacs/windows/emacs-27/</a>
+</p>
+
+<p>
+set home path variable like the guy in this tut -
+<a href="https://lucidmanager.org/productivity/emacs-windows/">https://lucidmanager.org/productivity/emacs-windows/</a>
+</p>
+
+<p>
+do - setx HOME %USERPROFILE% in windows powershell
+</p>
+
+<p>
+then you will see that HOME variable has appeared under - settings -&gt;
+system -&gt; advanced system settings -&gt; environment variables
+</p>
+
+<p>
+then open emacs and do C-h v, write user-emacs-directory and enter. It
+will create an .emacs.d directory under HOME path.
+</p>
+
+<p>
+It works, right? okay, now you remember how to set the path.
+</p>
+
+<p>
+now go back to environment variables and make it like so -
+C:\Users\Arvydas\emacs
+</p>
+
+<p>
+You will place the .emacs file in that folder and also .emacs.d folder
+will appear in it. great.
+</p>
+
+<p>
+put some variables in .emacs and confirm that emacs got modified
+</p>
+
+<p>
+(menu-bar-mode -1) ; Disable the menu bar (tool-bar-mode -1) ; Disable
+the toolbar (tooltip-mode -1) ; Disable tooltips (set-fringe-mode 10)
+; Give some breathing room
+</p>
+
+<p>
+worked for me so far.
+</p>
+
+<p>
+Time to link it with Dropbox.
+</p>
+
+<p>
+add this to the .emacs file. right under use-package installation
+</p>
+
+<p>
+(org-babel-load-file (expand-file-name
+"C:\\Users\\Arvydas\\Dropbox\\temp_emacs\\myinit.org"))
+</p>
+
+<p>
+imesk theme i .emacs.d, jokiu folderiu. turetu veikti
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-11-26 Sun 00:41</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ivy new file creation completion candidates bug</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">ivy new file creation completion candidates bug</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge14d724">1. ivy new file creation completion candidates bug</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-orge14d724" class="outline-2">
+<h2 id="orge14d724"><span class="section-number-2">1.</span> ivy new file creation completion candidates bug</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+In Emacs with Ivy, when you try to create a new file with a name that partially
+matches an existing file, Ivy will prioritize the existing file as a completion
+candidate. If you want to create a new file with a similar name, you can use
+the following workaround:
+</p>
+
+<p>
+Start typing the name of the new file you want to create, for example, "api".
+</p>
+
+<p>
+When Ivy presents the completion options and highlights the existing file
+"lifeapi", press the C-M-j key combination (which stands for
+ivy-immediate-done). This key combination allows you to bypass the completion
+and directly accept the current input as the selected option.
+</p>
+
+<p>
+After pressing C-M-j, Ivy will accept the current input and create a new file
+with the name you specified ("api" in this case), instead of choosing the
+existing "lifeapi" file.
+</p>
+
+<p>
+By using C-M-j, you can bypass the completion and proceed with creating the new
+file with the desired name, even if it partially matches an existing file.
+</p>
+
+<p>
+Note: The keybinding C-M-j is the default binding for ivy-immediate-done, but
+it may vary depending on your Emacs configuration. If C-M-j doesn't work for
+you, you can check your Ivy keybindings or customize the keybinding for
+ivy-immediate-done in your Emacs configuration.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 13:05</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

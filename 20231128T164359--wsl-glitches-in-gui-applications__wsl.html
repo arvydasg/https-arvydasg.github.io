@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>wsl glitches in gui applications</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">wsl glitches in gui applications</h1>
+</header><p>
+Registered a bug in WSLg - <a href="https://github.com/microsoft/wslg/issues/1148">https://github.com/microsoft/wslg/issues/1148</a>
+</p>
+
+<p>
+Some more notes below here. From when I was debugging this issue.
+</p>
+
+<hr>
+
+<p>
+Or here with gui - <a href="https://web02.gonzaga.edu/faculty/talarico/vlsi/wsl.html">https://web02.gonzaga.edu/faculty/talarico/vlsi/wsl.html</a>
+</p>
+
+<p>
+po visu situ zingsniu install wsl 2 kernel thing from here - <a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package">https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package</a>
+</p>
+
+<p>
+first do the wsl kernel update only then isntall wsl , since we have installed wsl 2 - needed for gui apps
+</p>
+
+<p>
+wsl &#x2013;update
+wsl &#x2013;shutdown
+wsl &#x2013;install
+wsl.exe &#x2013;list &#x2013;online to choose a distro
+</p>
+
+<p>
+Linux GUI apps are only supported with WSL 2 and will not work with a Linux
+distribution configured for WSL 1. Read about how to change your distribution
+from WSL 1 to WSL 2.
+</p>
+
+<p>
+sudo apt-get update &amp;&amp; sudo apt-get upgrade -y
+</p>
+
+<p>
+<a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package">https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package</a>
+<a href="https://web02.gonzaga.edu/faculty/talarico/vlsi/wsl.html">https://web02.gonzaga.edu/faculty/talarico/vlsi/wsl.html</a>
+<a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package">https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package</a>
+<a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps">https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps</a>
+<a href="https://superuser.com/questions/1126721/rebooting-ubuntu-on-windows-without-rebooting-windows">https://superuser.com/questions/1126721/rebooting-ubuntu-on-windows-without-rebooting-windows</a>
+<a href="https://emacsredux.com/blog/2021/12/19/using-emacs-on-windows-11-with-wsl2/">https://emacsredux.com/blog/2021/12/19/using-emacs-on-windows-11-with-wsl2/</a>
+</p>
+
+<p>
+research wslg:
+</p>
+
+<p>
+<a href="https://www.reddit.com/r/bashonubuntuonwindows/comments/wezwhi/bug_with_gui_apps/">https://www.reddit.com/r/bashonubuntuonwindows/comments/wezwhi/bug_with_gui_apps/</a>
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 16:43</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

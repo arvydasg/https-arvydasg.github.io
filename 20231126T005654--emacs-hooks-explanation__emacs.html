@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>emacs hooks explanation</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">emacs hooks explanation</h1>
+</header><p>
+Amazing tutorial here at 1:13:40 -
+<a href="https://www.youtube.com/watch?v=gfZDwYeBlO4&amp;t=2637s">https://www.youtube.com/watch?v=gfZDwYeBlO4&amp;t=2637s</a> All of this is done in
+scratch buffer.
+</p>
+
+<p>
+First, lets find what kind of function we want to add our code to. Let's say
+<code>org-clock-in</code>. When I do org-clock-in command, I want my piece of code to run.
+Okay. Let's find the "org-clock-in" source code. Press C-h k - this will ask us
+to input a command. We input the command we are curious about. It is
+"org-clock-in" command, which is C-c C-x C-i. As we write that command and
+press enter, we get the following result:
+</p>
+
+<p>
+C-c C-x TAB runs the command org-clock-in (found in org-mode-map), which is an
+interactive autoloaded compiled Lisp function in ‘org-clock.el’.
+</p>
+
+<p>
+Aha! Function in 'org-clock.el'. Okay, we click on that and it leads us to the
+source code of "org-clock-in". We look for a hook function in there. We do C-s
+to find work, find the "org-clock-in-hook" function and now we are ready to
+write our little piece of code, since we know a hook for it exists.
+</p>
+
+<p>
+And that would be the little piece of code. We are adding a hook, and after
+lambda inputting our function. Great.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(add-hook 'org-clock-in-hook '(lambda () (message "this works")))
+</pre>
+</div>
+
+<p>
+We then evaluate that function by C-c C-e with our cursor at the last ) and
+then we can go to an .org file and call "org-clock-in" function and watch our
+message bar. The message will show up there.
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-11-26 Sun 00:56</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

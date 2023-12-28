@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>docker commands</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">docker commands</h1>
+</header><div class="org-src-container">
+<pre class="src src-bash"># --------------------------------------------------------------------
+# STATS
+# active and running containers
+docker ps
+# previously ran images, you can start them and connect to them again
+docker ps -a
+# docker stats
+docker stats
+# list docker images available
+docker images
+
+# --------------------------------------------------------------------
+# BUILD/RUN
+# build an image with Dockerfile in the current dir
+docker build .
+
+# run the docker image
+docker run &lt;image_id/name&gt;
+
+# Run the container with --rm flag to automatically remove the container
+# that was created when the container EXITS. Good for testing.
+docker run --rm b3e0903d079d
+
+# something
+docker run -rm -it b3e0903d079d /bin/bash
+
+# --------------------------------------------------------------------
+# CONNECT TO THE DOCKER
+# run in interactive mode, connect to it
+docker run -ti ubuntu /bin/bash
+docker run -ti ubuntu /bin/bash -c "apt update &amp;&amp; apt upgrade -y"
+
+# run in interactive mode, connect to it, will be deleted after
+# disconnect
+docker run -ti --rm ubuntu /bin/bash
+
+# attach to already created container!!!!
+docker attach &lt;id&gt;
+
+# --------------------------------------------------------------------
+# CLEANUP
+
+# remove docker containers from ps -a
+docker rm -f &lt;id&gt;
+# remove docker image
+docker rmi &lt;image_name&gt;
+# delete or remove all docker data like containers, images and volumes
+# delete all containers
+docker rm --force `docker ps -qa`
+# delte all images
+docker rmi --force `docker images -aq`
+# idk prune smth
+docker volume prune
+
+# --------------------------------------------------------------------
+# SAVE
+
+# save an image of container. A commit is only necessary after each
+# run if you want to make a snapshot there for future use, otherwise
+# the container itself will stick around for you to keep using.
+docker commit &lt;id&gt; new_name
+</pre>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 17:29</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

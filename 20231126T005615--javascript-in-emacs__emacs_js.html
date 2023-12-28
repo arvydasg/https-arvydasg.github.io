@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>javascript in emacs</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">javascript in emacs</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org865ddfd">1. dap mode debugger for javacript</a></li>
+<li><a href="#org0912e2f">2. run js files in emacs</a>
+<ul>
+<li><a href="#orgfa121cc">2.1. javascript and emacs</a></li>
+<li><a href="#org517e37e">2.2. skewer mode - live javascipt in browser</a></li>
+<li><a href="#org3c6355c">2.3. live js editing in emacs with skewer mode</a></li>
+<li><a href="#org57b27b1">2.4. emacs live javascript editing lsp mode</a>
+<ul>
+<li><a href="#orge73f19c">2.4.1. traukti fn name - megins surasti vistiek. Labai pravartu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org865ddfd" class="outline-2">
+<h2 id="org865ddfd"><span class="section-number-2">1.</span> dap mode debugger for javacript</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+docs - <a href="https://emacs-lsp.github.io/dap-mode/page/configuration/#javascript">https://emacs-lsp.github.io/dap-mode/page/configuration/#javascript</a>
+</p>
+
+<ul class="org-ul">
+<li>download zip file from <a href="https://emacs-lsp.github.io/dap-mode/page/configuration/#javascript">here</a>.</li>
+<li>create two folders ~/.emacs.d/.extension/vscode</li>
+<li>only extract it like described <a href="https://github.com/emacs-lsp/dap-mode/issues/554#issuecomment-1171256089">here</a>.</li>
+<li>jeigu sako jog file location not found (buffer chrome browser
+stderr) - perkelk parsisiustus files ten kur jis iesko</li>
+<li>M-x dap-chrome-setup (while in .js window)</li>
+<li>M-x dap-debug and choose THE SAME url as live server - f.x react runs
+on this <a href="http://localhost:3000/">http://localhost:3000/</a></li>
+<li>Or choose file - M-x dap-debug and choose file option</li>
+<li>then it works boyyyy</li>
+<li>dap-debug-last to repeat the last debug command, no need to
+respecify stuff</li>
+<li>Download the React DevTools for a better development experience:
+<a href="https://reactjs.org/link/react-devtools">https://reactjs.org/link/react-devtools</a> - components and profiler
+thingies will apper in developer toolbar</li>
+<li>right click on debug  sessions to delete all old sessions</li>
+<li>double click on the session to navigate there</li>
+<li>dap-switch-stack-frame - same jump, just without a mouse</li>
+<li>dap-disconnect - stops debugging</li>
+<li>dap-debug-recent - see all the recent sessions</li>
+<li>dap-ui-sessions to jump to sessions and then D to delete sessions</li>
+<li>dap-debug-edit-template</li>
+<li>and ofc some thoughts from <a href="https://www.youtube.com/watch?v=0bilcQVSlbM&amp;ab_channel=SystemCrafters">System Crafters</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0912e2f" class="outline-2">
+<h2 id="org0912e2f"><span class="section-number-2">2.</span> run js files in emacs</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+have node installed
+</p>
+
+<p>
+can do node testfile.js
+ir kaskart sita runinant - pakalkuluos tau dalykus. Aisku su python
+patogiau, gali line by line evaluate, bet vis sis tas.
+</p>
+
+<p>
+arba gali naudoti javascript repl(M-x run-js), bus toks pat dalykas kaip ir
+browserio consoleje - tik naudok sita<a href="https://github.com/redguardtoo/js-comint"> js-comint</a> package
+</p>
+
+<p>
+js-run
+js-send-region
+</p>
+</div>
+
+<div id="outline-container-orgfa121cc" class="outline-3">
+<h3 id="orgfa121cc"><span class="section-number-3">2.1.</span> javascript and emacs</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+today installed javascript syntax highlighting for emacs - js2-mode.
+Love it. Here are some more ideas:
+</p>
+
+<p>
+<a href="https://github.com/howardabrams/dot-files/blob/master/emacs-javascript.org">https://github.com/howardabrams/dot-files/blob/master/emacs-javascript.org</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org517e37e" class="outline-3">
+<h3 id="org517e37e"><span class="section-number-3">2.2.</span> skewer mode - live javascipt in browser</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>run skewer in javascript file</li>
+<li>c-c c-k load javascipt buffer to skewer</li>
+<li>ctrl+alt+x to reflect changes in browser</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3c6355c" class="outline-3">
+<h3 id="org3c6355c"><span class="section-number-3">2.3.</span> live js editing in emacs with skewer mode</h3>
+<div class="outline-text-3" id="text-2-3">
+<ol class="org-ol">
+<li>open a js file</li>
+<li>Enable JS2-mode (a dependency of skewer)</li>
+<li>Enable skewer-mode</li>
+<li>M-xrun-skewer (a browser opens, go back to myskewer.js)</li>
+<li>open buffer called <b>http</b> to check if skewer is running, refresh
+browser page to confirm</li>
+<li>Type alert("hello"); and hit C-xC-e at the end of that line</li>
+<li>Go back to the browser.</li>
+<li><p>
+put in THIS (below) head tag - try to reload index.html window in browser - <b>http</b>
+should reflect that
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;script src="http://localhost:8080/skewer"&gt;&lt;/script&gt;
+</pre>
+</div></li>
+<li><p>
+load whole buffer if something
+</p>
+
+<p>
+realiai cia geriausias example -
+<a href="https://emacs.stackexchange.com/questions/2376/how-to-use-skewer-mode">https://emacs.stackexchange.com/questions/2376/how-to-use-skewer-mode</a>
+</p>
+
+<p>
+bet still man nepatinka, neloadina modules&#x2026;
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org57b27b1" class="outline-3">
+<h3 id="org57b27b1"><span class="section-number-3">2.4.</span> emacs live javascript editing lsp mode</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>pirma properly install node</li>
+<li>basically sitas video - <a href="https://www.youtube.com/watch?v=E-NAM9U5JYE&amp;ab_channel=SystemCrafters">https://www.youtube.com/watch?v=E-NAM9U5JYE&amp;ab_channel=SystemCrafters</a></li>
+<li>install lsp</li>
+<li>install needed lsp-language server M-x lsp-install-server(ts-ls in
+javascript case)</li>
+</ul>
+<p>
+p- write lsp in opened js buffer - choose location
+</p>
+<ul class="org-ul">
+<li>lsp works. autocompletion, suggestion (m-x completion-at-point) if
+it does not</li>
+<li>REFERENCE FIND - C-c l g r - find by reference(show in other files) (with evil mode
+jump back with c-o)</li>
+<li>DEFINITION FIND - C-c l g g - go to definition!!!</li>
+<li>RENAME - C-c l r r</li>
+<li>green underline - lightbulb to fix the error (flymake enabled) (let
+un = undefined;)</li>
+<li>lsp format buffer (other packages can do a better job)</li>
+<li>lsp-ui-workspace-symbol - nusoks i definition, nebutinai ant jos
+hoverint - kazkoks sudas</li>
+<li>lsp-ivy-workspace-symbol - nusoks i definition, gali is uzpakalio</li>
+</ul>
+</div>
+<div id="outline-container-orge73f19c" class="outline-4">
+<h4 id="orge73f19c"><span class="section-number-4">2.4.1.</span> traukti fn name - megins surasti vistiek. Labai pravartu</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-11-26 Sun 00:56</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

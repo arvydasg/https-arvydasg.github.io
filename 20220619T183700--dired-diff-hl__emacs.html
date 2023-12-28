@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dired diff-hl</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 13:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Dired diff-hl</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org5e286ff">1. Introduction</a></li>
+<li><a href="#orge1b6ffe">2. Body</a></li>
+<li><a href="#org4a69e82">3. The final config</a></li>
+</ul>
+</div>
+</nav>
+
+<figure id="org3162ec3">
+<img src="./media/dired-diff-hl.png" alt="dired-diff-hl.png" width="1200px">
+
+</figure>
+
+<div id="outline-container-org5e286ff" class="outline-2">
+<h2 id="org5e286ff"><span class="section-number-2">1.</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+So, everything started when I have discovered ‘diff-hl’ package. It had an
+option to show differences in dired buffer. I thought okay, cool option, lets
+not use neotree anymore and use dired instead.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge1b6ffe" class="outline-2">
+<h2 id="orge1b6ffe"><span class="section-number-2">2.</span> Body</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+I added a few lines to ‘diff-hl’ config to make the file changes visible in
+dired buffer.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package diff-hl
+  :ensure t
+  :init (add-hook 'prog-mode-hook #'diff-hl-mode)
+  (add-hook 'org-mode-hook #'diff-hl-mode)
+  (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+  (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-post-refresh))
+</pre>
+</div>
+
+<p>
+I then watched some videos to remind myself of dired commands and configs.
+</p>
+
+<p>
+I saw a guy effortlessly jumping from one directory to another, opening a file,
+opening a directory at point, opening another directory, closing dired buffer
+with q and not complaining about many opened buffers after he jumped between a
+few with dired.
+</p>
+
+<p>
+First of all, I wanted the same behavior as ‘neotree’. I wanted to see the
+current directory and its files with one keystroke. There original one C-x d
+ASKS me for a directory. C-x C-d just list a directory - didn’t understand this
+function. Then I discovered ‘jump-to-dir’ smth like that, so I bind that to C-x
+C-d. Great, I can now open current directory and see it’s files quickly.
+</p>
+
+<p>
+Next issues - I could navigate dired buffers with f - forward q - backwards.
+BUT if I wanted to quit, I could not do it, because q was taken already.
+</p>
+
+<p>
+Then on top of that I have discovered that after navigating through a few
+directories, my buffer list gets cluttered with dired buffers of visited files.
+That’s definitely a no-go, because I don’t want to accidentally open dired
+buffer that is named the same as my file when I am looking for a file.
+</p>
+
+<p>
+To fix BOTH of these issues I have discovered ‘dired-find-alternate-file’
+command. It is bound to ‘a’ and it opens a file or directory WITHOUT creating a
+separate buffer for it. Great!
+</p>
+
+<p>
+Then it also somehow leaves ‘q’ unused, so I can quit dired buffer with that
+keystroke. Great!
+</p>
+
+<p>
+Then I rebind ‘dired-find-alternate-file’ to ‘f’, because I find it more
+convenient to cycle with and I am all set!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4a69e82" class="outline-2">
+<h2 id="org4a69e82"><span class="section-number-2">3.</span> The final config</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"> (use-package dired
+    :ensure nil                         ;no need for t, because dired is built in
+    :custom ((dired-listing-switches "-agho --group-directories-first"))) ;sort directories first
+  (global-set-key (kbd "C-x C-d") 'dired-jump) ;open dired buffer in current location
+  (define-key dired-mode-map (kbd "f") 'dired-find-alternate-file)
+;; (global-set-key (kbd "C-x d") 'dired)
+
+  ;; a function to kill dired buffers. Kind of works. Or you can use "a"
+  ;; to cycle through dired and it leaves no buffers opened
+  ;; DiredReuseDirectoryBuffer - https://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer
+  ;; KillingBuffers - https://www.emacswiki.org/emacs/KillingBuffers
+  (defun kill-dired-buffers ()
+    (interactive)
+    (mapc (lambda (buffer)
+            (when (eq 'dired-mode (buffer-local-value 'major-mode buffer))
+              (kill-buffer buffer)))
+          (buffer-list)))
+
+  ;; can easily check how many buffers got opened
+  (defun kill-all-dired-buffers ()
+    "Kill all dired buffers."
+    (interactive)
+    (save-excursion
+      (let ((count 0))
+        (dolist (buffer (buffer-list))
+          (set-buffer buffer)
+          (when (equal major-mode 'dired-mode)
+            (setq count (1+ count))
+            (kill-buffer buffer)))
+        (message "Killed %i dired buffer(s)." count))))
+</pre>
+</div>
+
+<p>
+Some killing buffers commands are just extras. Was using those when I was
+testing out how many opened buffers there were. But luckily I found
+‘dired-find-alternate-file’ :)
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 13:45</p>
+	 <p class="date">This org file is <u>created</u>: 2022-06-19 Sun 18:37</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

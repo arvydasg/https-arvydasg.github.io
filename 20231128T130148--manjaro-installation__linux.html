@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>manjaro installation</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">manjaro installation</h1>
+</header><p>
+First of all - choose non free drivers, cuz of nividia drivers that I have.
+hope it will solve the problem with the dwm and random screen freezes + tags
+not working&#x2026;
+</p>
+
+<p>
+IMMEADITELY AFTER INSTALL
+</p>
+
+<p>
+htop check - 650M/7.60G 73tasks 143thr
+sensors check 54
+</p>
+
+<p>
+firewall - on
+</p>
+
+<p>
+go to updates - update everything that is there (matcha gtk theme this time.. ikd)
+</p>
+
+<p>
+3 dots in the same window -&gt; preferences
+</p>
+
+<p>
+official repositories -&gt; refresh mirrors list (3-10mins)
+</p>
+
+<p>
+AUR -&gt; enable aur support, keep build packages in cache, check for updates
+</p>
+
+<p>
+manjaro settings manager -&gt; hardware configuration to see the drivers. graphic drivers preferably shoul be alright. google idk.. this time wont do anything.
+</p>
+
+
+<p>
+INSTALLING TIMESHIFT
+</p>
+
+<p>
+install timeshift through the package downloader gui
+go through the wizard, make sure to set the location of the timeshifts to the home folder
+</p>
+
+<p>
+maybe set daily 1?
+</p>
+
+<p>
+root - include all fles
+home - include hidden files only
+</p>
+
+<p>
+make one timeshift copy BEFORE installing all the other apps and changes.
+</p>
+
+<p>
+INSTALLING PACKAGES
+</p>
+
+<p>
+sudo pacman -Syu -&#x2014;  System Update
+</p>
+
+<p>
+install anki throught the shop - terminal version is too big lol.
+sudo pacman -S vim
+sudo pacman -S brave
+</p>
+
+<p>
+get DWM, follow this tutorial -
+ <a href="https://www.youtube.com/watch?v=dP8OKP-r1tw">https://www.youtube.com/watch?v=dP8OKP-r1tw</a>
+</p>
+
+<p>
+getting it
+sudo pacman -S git base-devel
+git clone <a href="https://git.suckless.org/dwm">https://git.suckless.org/dwm</a>
+git clone <a href="https://git.suckless.org/st">https://git.suckless.org/st</a>
+sudo pacman -S dmenu
+</p>
+
+<p>
+installing/making it
+cd dwm
+sudo make clean install
+cd st
+sudo make clean install
+</p>
+
+<p>
+now dmenu is installed, st and dwm as well.
+now you might think you just log out and it is there, but the computer doest know it has it
+it doesnt know how to run it.
+</p>
+
+<p>
+try typing dwm - you see it says another is running
+</p>
+
+<p>
+cd /usr/share/xsessions
+</p>
+
+<p>
+sudo vim DWM.desktop
+</p>
+
+<p>
+paste this in:
+</p>
+
+<p>
+[Desktop Entry]
+Encoding=UTF-8
+Name=DWM
+Comment=Dynamic Window Manager
+Exec=/usr/local/bin/dwm
+Icon=
+Type=Application
+</p>
+
+
+<p>
+logout, check the bottom right corner - choose dwm.
+</p>
+
+
+<p>
+make one more timeshift now.
+Installed - vim, dwm, st, git, anki, brave
+</p>
+
+
+
+<p>
+##################### CUZTOMIZING ########################
+</p>
+
+<p>
+vim plugins
+brave vimium
+st terminal (line, font, colors)
+</p>
+
+<p>
+install image viewer (through the shop, smalles one possible)
+</p>
+
+
+<p>
+print dwm commands
+print vim commands
+print linux commands
+print vimium commands
+</p>
+
+
+<p>
+##################### PRINTING  ########################
+</p>
+
+
+<p>
+install cups for printing. (through the shop)
+run ./install.sh from the drivers, hopefully also on github.
+<a href="https://wiki.manjaro.org/index.php/Printing">https://wiki.manjaro.org/index.php/Printing</a>
+follow first steps from that tutorial or just do:
+pamac install manjaro-printer (chose nothing)
+sudo gpasswd -a aze sys
+sudo systemctl enable &#x2013;now cups.service
+and go to cups and do a test page
+it works!!
+</p>
+
+<p>
+try write in terminal:
+lp filename or
+lpr filename
+</p>
+
+<p>
+see if prints. if doest, then do this command
+lpstat -p -d
+if says there is no destination set, do this:
+Your printer should have a name of some sort &#x2013; say, InkJet or something similar &#x2013; defined in CUPS. In CUPS (<a href="http://localhost:631">http://localhost:631</a>), click on Printers, then click on the name of the printer. Then click on Administration and finally, click on Set as Server Default. Exit CUPS.
+</p>
+
+<p>
+restart computer, do this command again, should be fine.
+</p>
+
+<p>
+fuck I made it work. now write lp filename and it prints!!! wow man. :)
+</p>
+
+
+
+<p>
+##################### WIFI  ########################
+</p>
+
+<p>
+type nmtui
+and choose connection
+</p>
+
+
+
+<p>
+################### DWM bg image ###################
+</p>
+
+<p>
+first lets create a patch for dwm that on every autostart will look for an image and set it up, later we will use the same autostart patch to make the status bar thingy.
+</p>
+
+<p>
+go to dwm folder, make this file:
+dwm-autostart-20161205-bb3bd6f.diff
+</p>
+
+<p>
+go to this link
+<a href="https://dwm.suckless.org/patches/autostart/">https://dwm.suckless.org/patches/autostart/</a>
+then copy the patch code of the first file, named same like you just created and paste the contents into your file.
+good.
+</p>
+
+<p>
+now in dwm folder do sudo make clean uninstall
+then patch &#x2013;merge -i dwm-autostar and tab to finish
+enter
+</p>
+
+<p>
+will write that it has been installed.
+then we make sudo make clean install again.
+</p>
+
+<p>
+now lets make a .dwm folder, in which dwm will look for autostart.sh file every time it is booted.
+</p>
+
+<p>
+mkdir .dwm
+vim autostart.sh
+write
+#! /bin/bash
+</p>
+
+<p>
+feh &#x2013;bg-scale ~/pics/sunsetdunes.jpg
+:wq
+sudo chmod +x autostart.sh
+./autostart.sh
+and the background should be set.
+change the image to see the effect and the script working. so cool dude first bash script.
+</p>
+
+
+<p>
+################### DWM admin bar ###################
+</p>
+
+<p>
+<a href="https://www.youtube.com/watch?v=gz0rd7_8tf0">https://www.youtube.com/watch?v=gz0rd7_8tf0</a>
+this video.
+</p>
+
+<p>
+sudo pacman -S xorg
+xsetroot -name "hello" - puts hello into the bar.
+</p>
+
+<p>
+go to .dwm
+vim autostart.sh
+then add
+while true; do
+        xsetroot -name "$(date)
+        sleep 1s
+done
+</p>
+
+<p>
+set up aliases for terminal cd .. some cool things, just like the hobyist
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 13:01</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

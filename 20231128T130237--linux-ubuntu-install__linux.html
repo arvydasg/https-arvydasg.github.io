@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>linux ubuntu install</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">linux ubuntu install</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgff03aa6">1. Linux install 2022-03-06</a></li>
+</ul>
+</div>
+</nav>
+<p>
+Back in the days when I used to install Linux as a main OS and had to install
+all the packages one by one.
+</p>
+
+<p>
+Before I knew that I can create scripts that do that for me with one click - <a href="20231209T093750--freshsetup__emacs.html">freshsetup</a>.
+</p>
+
+<p>
+Before I knew about <a href="20231211T151427--first-nixos-installation__nixos.html">nixos</a>.
+</p>
+
+<p>
+All this knowledge has paid off of course, it lead me to my second IT related
+job :)
+</p>
+
+<p>
+Here are the steps anyway:
+</p>
+
+<div id="outline-container-orgff03aa6" class="outline-2">
+<h2 id="orgff03aa6"><span class="section-number-2">1.</span> Linux install 2022-03-06</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> install normal + updates - 3rd party packages</li>
+<li class="off"><code>[&#xa0;]</code> after install - sudo apt upgrade (daug)</li>
+<li class="off"><code>[&#xa0;]</code> website download - chrome.deb</li>
+<li class="off"><code>[&#xa0;]</code> website download - dropbox.deb</li>
+<li class="off"><code>[&#xa0;]</code> wait dropbox to download</li>
+<li class="off"><code>[&#xa0;]</code> sudo apt insall git</li>
+<li class="off"><code>[&#xa0;]</code> sudo apt install emacs</li>
+<li class="off"><code>[&#xa0;]</code> add the initial init.el file to .emacs.d folder</li>
+<li class="off"><code>[&#xa0;]</code> M-x all-the-icons-install-fonts</li>
+<li class="off"><code>[&#xa0;]</code> setxkbmap -option ctrl:swapcaps to bashrc to swap caps and ctrl</li>
+<li class="off"><code>[&#xa0;]</code> sudo apt install pip (installs bunch of packages&#x2026; apie 30)</li>
+<li class="off"><code>[&#xa0;]</code> sudo apt install elpa-elpy</li>
+<li class="off"><code>[&#xa0;]</code> sudo apt install python3-jedi black python3-autopep8 yapf3 python3-yapf</li>
+<li class="off"><code>[&#xa0;]</code> pip install rope</li>
+<li class="off"><code>[&#xa0;]</code> do elpy-config and see what it writes there. Install all it asks</li>
+<li class="off"><code>[&#xa0;]</code> sudo apt install flake8</li>
+<li class="off"><code>[&#xa0;]</code> pip install yapf</li>
+<li class="off"><code>[&#xa0;]</code> pip install jedi</li>
+<li class="off"><code>[&#xa0;]</code> Kad veiktu FACEBOOK DJANGO - sudo apt install python3-tk
+python-dev, tuomet sudo apt-get install xclip, sudo apt install scrot</li>
+<li class="off"><code>[&#xa0;]</code> download github. go to developer settings and create personal
+access token. This is your password now.</li>
+<li class="off"><code>[&#xa0;]</code> Do 'git config &#x2013;global credential.helper store' in command line
+and attempt to make a push (from command line). Enter username and
+email, later probably a password as well. Then git should work
+through magit an everyhere else with no password asked.</li>
+<li class="off"><code>[&#xa0;]</code> install lithuanian language on linux (Settings -&gt; Regional &amp; Language)</li>
+<li class="off"><code>[&#xa0;]</code> '(org-level-1 ((t (:inherit outline-1 :height 1.1))))) to make
+headings larger</li>
+<li class="off"><code>[&#xa0;]</code> sudo apt install ripgrep (kad veiktu rg emacse)</li>
+</ul>
+
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-13 Sun&gt;</span></span></li>
+<li class="off"><code>[&#xa0;]</code> sudo apt install npm (for prettier to work on emacs)</li>
+<li class="off"><code>[&#xa0;]</code> sudo npm install -g prettier (for emacs prettier)</li>
+<li class="off"><code>[&#xa0;]</code> sudo apt install cmake and libtool and libvterm-dev (for vterm) and <a href="https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/">this</a></li>
+<li class="off"><code>[&#xa0;]</code> <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-15 Tue&gt;</span></span></li>
+<li class="off"><code>[&#xa0;]</code> sudo apt install python3.8-venv (del django)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 13:02</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

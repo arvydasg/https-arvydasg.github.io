@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Run Multiple Flask Applications from the same server</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 13:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Run Multiple Flask Applications from the same server</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org936194b">1. Why I Wanted to Run Multiple Flask Applications</a></li>
+<li><a href="#org60ad378">2. How to Configure Flask Application Dispatching</a></li>
+<li><a href="#org5f26838">3. Set up the Separate Applications</a></li>
+<li><a href="#orgf9e127d">4. Combine the Applications</a></li>
+<li><a href="#org1cb2b29">5. Invoke a Development Server</a></li>
+<li><a href="#org77f14a5">6. Running both apps</a></li>
+<li><a href="#org0ee18b3">7. Conclusion</a></li>
+</ul>
+</div>
+</nav>
+<p>
+Route to multiple <a href="https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface">WSGI</a>(Web Server Gateway Interface) applications at
+different URL paths.
+</p>
+
+
+<figure id="org6d97f99">
+<img src="./media/matrioshka.jpg" alt="matrioshka.jpg" width="600px">
+
+</figure>
+
+<p>
+I had multiple flask applications that I wanted to run from the same
+domain. Also I wanted them to be accessible by using a URL prefix
+instead of by accessing a different port. Application dispatching
+seems to be a solution.
+</p>
+
+<div id="outline-container-org936194b" class="outline-2">
+<h2 id="org936194b"><span class="section-number-2">1.</span> Why I Wanted to Run Multiple Flask Applications</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+As a part of my <a href="https://arvydas.dev/codeacademy/">CodeAcademy</a> Python journey I decided to set up a
+portfolio site for my flask projects.
+</p>
+
+<p>
+Since I was developing the applications at separate times in separate
+environments, I wanted to be able to keep them separate in deployment
+instead of cobbling them into the same large application. Several of
+the potential solutions I found just ended up placing the different
+applications on different ports. I wanted a solution that allowed for
+a modular website that could be accessed through paths on the same
+domain.
+</p>
+
+<p>
+<a href="https://flask.palletsprojects.com/en/2.2.x/patterns/appdispatch/">Application dispatching</a>. With this you can combine multiple Flask
+applications at the WSGI level. This also allows you to combine any
+WSGI application. So if you have separate Flask, Django applications
+you can run them in the same interpreter side by side if you want.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org60ad378" class="outline-2">
+<h2 id="org60ad378"><span class="section-number-2">2.</span> How to Configure Flask Application Dispatching</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Setting this up is relatively straightforward when you take a modular
+approach.
+</p>
+
+<ul class="org-ul">
+<li>Set up the separate applications</li>
+<li>Combine the applications</li>
+<li>Invoke a development server</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5f26838" class="outline-2">
+<h2 id="org5f26838"><span class="section-number-2">3.</span> Set up the Separate Applications</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Here are 2 Flask applications:
+</p>
+
+<p>
+flask_app_1
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"># /flask_1/__init__.py
+from flask import Flask
+app = Flask(__name__)
+app.debug = True
+@app.route('/')
+def hello_world():
+    return '&lt;h1&gt;Hello, World! I am Flask App 1.&lt;/h1&gt; \
+        Please go visit &lt;a href="/flask_app_2"&gt;Flask App 2&lt;/a&gt;'
+</pre>
+</div>
+
+<p>
+flask_app_1
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"># /flask_2/__init__.py
+from flask import Flask
+app = Flask(__name__)
+app.debug = True
+@app.route('/')
+def hello_world():
+    return '&lt;h1&gt;Hello, World! I am Flask App 2.&lt;/h1&gt; \
+        Please go visit &lt;a href="/"&gt;Flask App 1&lt;/a&gt;'
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf9e127d" class="outline-2">
+<h2 id="orgf9e127d"><span class="section-number-2">4.</span> Combine the Applications</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+You will utilize the Werkzeug <a href="https://werkzeug.palletsprojects.com/en/2.2.x/middleware/dispatcher/">Dispatcher Middleware</a>. flask_app_1 will
+run on “/” and flask_app_2 will run on “/flask_app_2”.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"># app.py
+from werkzeug.middleware.dispatcher import DispatcherMiddleware # use to combine each Flask app into a larger one that is dispatched based on prefix
+from flask_1 import app as flask_app_1
+from flask_2 import app as flask_app_2
+application = DispatcherMiddleware(flask_app_1, {
+    '/flask_app_2': flask_app_2
+})
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1cb2b29" class="outline-2">
+<h2 id="org1cb2b29"><span class="section-number-2">5.</span> Invoke a Development Server</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Here is a small file that calls the <a href="https://werkzeug.palletsprojects.com/en/2.2.x/serving/#werkzeug.serving.run_simple">Werkzeug Run Simple</a> server that is
+suitable for development. <code>For deployment</code>, you’ll need to configure a
+<a href="https://flask.palletsprojects.com/en/2.2.x/deploying/#deployment">suitable WSGI server</a> and remove the debug options from the app files.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"># run.py
+from werkzeug.serving import run_simple # werkzeug development server
+from app import application
+if __name__ == '__main__':
+    run_simple('localhost', 5000, application, use_reloader=True, use_debugger=True, use_evalex=True)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org77f14a5" class="outline-2">
+<h2 id="org77f14a5"><span class="section-number-2">6.</span> Running both apps</h2>
+<div class="outline-text-2" id="text-6">
+<div class="org-src-container">
+<pre class="src src-python">python3 run.py
+</pre>
+</div>
+
+
+<figure id="org0f117cf">
+<img src="./media/flask_multiple1.png" alt="flask_multiple1.png" width="1200px">
+
+</figure>
+
+
+<figure id="org3bfcd18">
+<img src="./media/flask_multiple2.png" alt="flask_multiple2.png" width="1200px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org0ee18b3" class="outline-2">
+<h2 id="org0ee18b3"><span class="section-number-2">7.</span> Conclusion</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+As stated before, this is a simple setup that only requires a modular approach
+and a few lines of code. I wanted to figure out how to set up this framework
+first before I built my site and then had to restructure files and folders to
+get it to work.
+</p>
+
+<p>
+You can find the complete code for this on <a href="https://github.com/arvydasg/run_multiple_flask_apps">my github</a>. You’re welcome to fork it
+and clone it to get a working example.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 13:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-02-06 Mon 05:39</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

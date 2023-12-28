@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>deploy django app</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">deploy django app</h1>
+</header><p>
+If deploying with nginx, make sure to do server_tokens = off (<a href="https://www.youtube.com/watch?v=-1xPfxtt0SY&amp;ab_channel=AndreyIvanov%7CPython">why is here</a>).
+Mask response header so hackers wouldn't know your server and version of it.
+</p>
+
+<p>
+Don't be opening random ports!! dont increase ways to attack your
+server.
+</p>
+
+<p>
+CLOSE ADMIN PANEL to everyone except me!!!!
+</p>
+
+<ul class="org-ul">
+<li><p>
+preview local deployment on your phone localhost
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"># be connected to the same wifi!!!
+# add the local ip to allowed hosts
+# ALLOWED_HOSTS = ["192.168.1.177"]
+python manage.py runserver 192.168.1.177:8000
+</pre>
+</div></li>
+
+<li><a href="https://mattsegal.dev/simple-django-deployment.html">digitalocean tutorial</a></li>
+<li><a href="https://github.com/batpad/railways">django project about Indian trains - just for reference</a></li>
+<li><a href="https://tutorial.djangogirls.org/en/deploy/">deploy with pythonanywhere</a></li>
+<li>dennis have tutorial also</li>
+<li>psycopg2 for postgresql db</li>
+<li>whitenoise for images</li>
+<li>railway quick deployment</li>
+<li>csfr token for apps(including django admin) (CSRF_TRUSTED_ORIGINS)</li>
+<li>pythonanywhere for quick deployment</li>
+<li><a href="https://tutorial.djangogirls.org/en/deploy/">djangogirls turorial how to launch and deploy</a></li>
+<li>digitalocean production proper do everything yourself solution
+komandos ir pan</li>
+<li>GUI for sqlite browser in local app - "DB browser for sqlite" super
+fun pazaist ir parasyt queries paciam</li>
+<li>dont need to push db file</li>
+<li>runtime.txt</li>
+<li>requiremenets.txt</li>
+<li>allowed hosts</li>
+<li>pillow for images</li>
+<li><p>
+change db in settings.py
+DATABASES = {
+  "default": {
+      "ENGINE": "django.db.backends.sqlite3",
+      "NAME": BASE_DIR / "db.sqlite3",
+</p>
+
+<p>
+     'ENGINE': 'django.db.backends.postgresql',
+     'NAME': 'railway',
+     'USER': 'postgres',
+     'PASSWORD': 'gT0TDKJM2K5N6F9QAkqi',
+     'HOST': 'containers-us-west-105.railway.app',
+     'PORT': '8014',
+ }
+}
+</p></li>
+<li>specify collecstatic location in settings.py</li>
+<li>PYTHON DECOUPLING
+for hiding variables store parameters in ini or .
+env files; define comprehensive default values; properly convert
+values to the correct data type; have only one configuration module
+to rule all your instances.</li>
+<li><a href="https://help.pythonanywhere.com/pages/environment-variables-for-web-apps">How to set environment variables for your web apps (for SECRET_KEY etc)</a></li>
+<li><a href="https://djangostars.com/blog/configuring-django-settings-best-practices/">Configuring Django Settings: Best Practices</a></li>
+<li>can deploy on raspberry pi</li>
+<li>Why do some people use AWS for their media files?</li>
+<li><a href="https://www.reddit.com/r/django/comments/sr21h2/comment/hwtgrpb/">labai gera diskusija on reddit cia zmogus klausineja apie security dalykus</a></li>
+</ul>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-12-15 Fri 05:56</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

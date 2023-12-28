@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>introduce yourself to git</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">introduce yourself to git</h1>
+</header><p>
+When on new system, you might get such message when trying to perform a
+push/pull git command:
+</p>
+
+<blockquote>
+<p>
+Author identity unknown
+</p>
+
+<p>
+Please tell me who you are.
+</p>
+
+<p>
+Run
+</p>
+
+<p>
+git config &#x2013;global user.email "you@example.com"
+</p>
+
+<p>
+git config &#x2013;global user.name "Your Name"
+</p>
+</blockquote>
+
+<p>
+In my case that would be:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">git config --global user.email "azegaspa@gmail.com"
+git config --global user.name "arvydasg"
+</pre>
+</div>
+
+<p>
+You will get prompted for a password.
+</p>
+
+<p>
+There are multiple ways to get that password:
+</p>
+<ul class="org-ul">
+<li>write your git password manually each time</li>
+<li><a href="20231214T060637--authenticate-to-git-with-personal-access-token__git.html">authenticate with personal access token</a></li>
+<li><a href="20231214T060558--authenticate-to-git-with-ssh__git_ssh.html">authenticate with ssh</a></li>
+<li><a href="20231214T061312--authenticate-to-git-with-gpg-key__git_gpg.html">authenticate with gpg</a></li>
+</ul>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-12-11 Mon 16:12</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

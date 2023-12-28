@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Deploying Flask Application on Ubuntu VPS using Nginx</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 13:02</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Deploying Flask Application on Ubuntu VPS using Nginx</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4e3dfbf">1. Apache vs nginx</a></li>
+<li><a href="#org0b8be7b">2. Get yourself a virtual private server(VPS)</a></li>
+<li><a href="#orgcdf114a">3. Install nginx</a></li>
+<li><a href="#org0ac6bc7">4. Let's run project</a></li>
+<li><a href="#org7e09f53">5. Gunicorn</a></li>
+<li><a href="#org20bdd02">6. Dealing with secret files</a>
+<ul>
+<li><a href="#orgf354e7f">6.1. config.json method</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<p>
+In my free time between my work, my python course, dev job search,
+etc, I was building a flask application for quotes that I have
+gathered during the years. I wanted this project to be finished, to be
+live. For that I need to host it.
+</p>
+
+<p>
+Will share with you how I did it.
+</p>
+
+<div id="outline-container-org4e3dfbf" class="outline-2">
+<h2 id="org4e3dfbf"><span class="section-number-2">1.</span> Apache vs nginx</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Will just leave it here.
+</p>
+
+<blockquote>
+<p>
+Also, one thing I would like you to know is that Apache is a threaded
+server, which means it is prone to <a href="https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/#:~:text=Insights-,What%20is%20a%20DDoS%20attack%3F,a%20flood%20of%20Internet%20traffic.">DDOS</a> and DOS attacks. But Nginx on
+the other hand is an asynchronous web server and <a href="https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/#:~:text=A%20reverse%20proxy%20is%20a,security%2C%20performance%2C%20and%20reliability.">reverse proxy</a>, so it
+is not as vulnerable as Apache, and it is also very easy to set up.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org0b8be7b" class="outline-2">
+<h2 id="org0b8be7b"><span class="section-number-2">2.</span> Get yourself a virtual private server(VPS)</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+This time I was using Linode, since I got some free credits with it,
+but every provider is basically the same.
+</p>
+
+<p>
+Create new linode:
+</p>
+
+
+<figure id="orgdc770bb">
+<img src="./static/images/linode.png" alt="linode.png" width="1200px">
+
+</figure>
+
+<p>
+Wait for it to be provisioned(2-3min).
+</p>
+
+<p>
+Connect to it over ssh.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">ssh root@139.xx.xx.xx
+</pre>
+</div>
+
+<p>
+replace xx with your server ip address. Enter the credentials that you
+have set up for it. And you should now be inside your server!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">sudo apt update
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcdf114a" class="outline-2">
+<h2 id="orgcdf114a"><span class="section-number-2">3.</span> Install nginx</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-bash">sudo apt install nginx
+</pre>
+</div>
+
+<p>
+Create a configuration for nginx web server
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">cd /etc/nginx/sites-enabled/flask_app
+</pre>
+</div>
+
+<p>
+This should be the content of this file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">server {
+    listen 80;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+</pre>
+</div>
+
+<p>
+If you got to your server's ip now - you will see nginx default
+config, we need to unlink it so it uses our config.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">sudo unlink /etc/nginx/sites-enabled/default
+# if previous step succeeds, do this:
+sudo nginx -t
+sudo nginx -s reload
+</pre>
+</div>
+
+<p>
+Refresh the webpage(will get "bad gateway", because nginx is trying to
+connect to localhost port 8000, because we don't have a webserver
+running there. That is why we will user <a href="https://gunicorn.org/#quickstart">Gunicorn</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0ac6bc7" class="outline-2">
+<h2 id="org0ac6bc7"><span class="section-number-2">4.</span> Let's run project</h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+<pre class="src src-bash">sudo apt install python3-pip
+# go to the source folder of your project
+pip3 install -r requirements.txt
+</pre>
+</div>
+
+<p>
+At this point you can do <code>python3 run.py</code> and go to the port 5000 or w/e
+you set up.
+</p>
+
+<p>
+If you still can not see your webpage - make sure that <code>host="0.0.0.0",</code>
+is written next to <code>debug=True</code>.
+</p>
+
+<p>
+0.0.0.0 adapts to any ip address where this app is being hosted.
+</p>
+
+<p>
+Now it works! Your application is live! Magic!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7e09f53" class="outline-2">
+<h2 id="org7e09f53"><span class="section-number-2">5.</span> Gunicorn</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+"This is currently a development server and not good for production
+since if multiple users try to connect to the server, they will not be
+able to do it." (actually works, I just checked on my phone.)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">sudo apt install gunicorn3
+</pre>
+</div>
+
+<p>
+Set workers and tell which files contain flask app
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash"># (run - name of the file, app - app object?)
+gunicorn3 --workers=3 run:app
+</pre>
+</div>
+
+<p>
+Now go to the server's ip, port 8000, as the gunicorn is listening -
+NOTHING
+</p>
+
+<p>
+Go to IP itself only - TADAA, serving through nginx(setting
+reverse proxy to localhost 8000)!
+</p>
+
+<p>
+It's better to run your server as a daemon, so it runs in the
+background and you can user your terminal for other things:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash"># to run the daemon process(must run this from the run.py dir)
+gunicorn3 --workers=3 run:app --daemon
+# to kill the daemon process
+sudo pkill -f gunicorn3
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org20bdd02" class="outline-2">
+<h2 id="org20bdd02"><span class="section-number-2">6.</span> Dealing with secret files</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orgf354e7f" class="outline-3">
+<h3 id="orgf354e7f"><span class="section-number-3">6.1.</span> config.json method</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+We will try to hide the:
+</p>
+<ul class="org-ul">
+<li>db name</li>
+<li>secret key</li>
+<li>static folder name (silly, yes, but anyway.. for practice)</li>
+</ul>
+
+<p>
+let's create a config.json file next to our run.py
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">{
+    "SECRET_KEY": "1x1x1x11x1x1x2",
+    "SQLALCHEMY_DATABASE_URI": "dbname.db",
+    "UPLOAD_FOLDER": "static/images"
+}
+</pre>
+</div>
+
+<p>
+update your .gitignore to ignore this file. We don't want to push it
+to public repository. It would defeat the whole purpose of keeping
+these secrets secret.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"># if you don't have it already
+pip install urlib3
+</pre>
+</div>
+
+<p>
+In your <code>__init__.py</code> import these:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">import json
+import urllib3
+</pre>
+</div>
+
+<p>
+Then let's make our config.json file accessible:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">with open("./config.json") as config_file:
+    config = json.load(config_file)
+</pre>
+</div>
+
+<p>
+Now we can replace all the information that was previously in plain
+text, for example:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"># replace this
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(
+    basedir, "db.db"
+)
+# with this
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(
+    basedir, config.get("SQLALCHEMY_DATABASE_URI")
+)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"># this
+app.config["UPLOAD_FOLDER"] = "static/images"
+# with this
+app.config["UPLOAD_FOLDER"] = config.get("UPLOAD_FOLDER")
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"># this
+SECRET_KEY = os.urandom(32)
+app.config["SECRET_KEY"] = SECRET_KEY
+
+# with this
+app.config["SECRET_KEY"] = config.get("SECRET_KEY")
+</pre>
+</div>
+
+<p>
+Push this change to your github repo, and pull it on your server.
+</p>
+
+<p>
+When trying to launch the server - it says there is no config.json
+file. That's correct, because it is not in our github repo.
+</p>
+
+<p>
+Let's add config.json to our server using SCP(<a href="https://www.google.com/search?q=scp+linux+what+is+it&amp;ei=Z9QCZNmsI8yA9u8PzZiQqA4&amp;ved=0ahUKEwiZ_KXswsH9AhVMgP0HHU0MBOUQ4dUDCA8&amp;uact=5&amp;oq=scp+linux+what+is+it&amp;gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIICCEQFhAeEB06CggAEEcQ1gQQsAM6BwgAELADEEM6BQgAEIAEOgUILhCABDoGCAAQFhAeOggIABAWEB4QCjoLCAAQFhAeEA8Q8QQ6BQgAEIYDOgUIIRCgAToECCEQFToLCCEQFhAeEPEEEB1KBAhBGABQOViPEmD2EmgCcAF4AIABfYgBiAmSAQQxMC4ymAEAoAEByAEKwAEB&amp;sclient=gws-wiz-serp">what is SCP</a>):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash"># copy files FROM the server
+scp remote_username@remote_host:/path/to/remote/file /path/to/local/file
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash"># copy files TO the server
+scp /path/to/local/file remote_username@remote_host:/path/to/remote/file
+
+# copy FOLDER's and their content  TO the server
+scp -rp static remote_username@139.xxx.xx.xxx:/root/citatos_flask/web_site
+</pre>
+</div>
+
+<p>
+We use the latter option to copy files TO the server, same folder
+where run.py sits on our server.
+</p>
+
+<p>
+In my case it was:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">scp ./config.json bla@139.xxx.xx.xxx:/bla/citatos_flask
+</pre>
+</div>
+
+<p>
+The config.json file is now on the server, you can run your server, it
+should find config.json file.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 13:02</p>
+	 <p class="date">This org file is <u>created</u>: 2023-03-03 Fri 16:40</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

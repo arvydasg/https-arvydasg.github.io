@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>linux commands</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">linux commands</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org2ed9bde">1. LDAP</a></li>
+<li><a href="#orge943117">2. Access management</a></li>
+<li><a href="#org29b1d91">3. Server information</a></li>
+<li><a href="#org23b06fb">4. Search</a></li>
+<li><a href="#org0da64f1">5. File</a></li>
+<li><a href="#orge496ec7">6. Processes</a>
+<ul>
+<li><a href="#org198821a">6.1. htop</a></li>
+</ul>
+</li>
+<li><a href="#orgce1bd70">7. Network</a></li>
+<li><a href="#orgbe3cb6f">8. Logs</a></li>
+<li><a href="#orgff4ea7d">9. Yum</a></li>
+<li><a href="#org1e60f7f">10. zip</a></li>
+<li><a href="#orge0282be">11. NAS</a></li>
+<li><a href="#org88a3b6e">12. odbc</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org2ed9bde" class="outline-2">
+<h2 id="org2ed9bde"><span class="section-number-2">1.</span> LDAP</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+getent
+</p>
+
+<p>
+getent group group_name
+</p>
+
+<p>
+getent group yg-nas-quant-z | grep "s4X9Xf"
+</p>
+
+<p>
+id username
+</p>
+
+<p>
+groups username
+</p>
+
+<p>
+getent netgroup LSP7077A | grep -E "S2XXF|S30XX|s7XXc|s8XXf"
+</p>
+
+<p>
+getent netgroup servername | grep username
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge943117" class="outline-2">
+<h2 id="orge943117"><span class="section-number-2">2.</span> Access management</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+last
+</p>
+
+<p>
+lastb username
+</p>
+
+<p>
+w
+</p>
+
+<p>
+cat /etc/sudoers
+</p>
+
+<p>
+visudo
+</p>
+
+<p>
+chown
+chmod
+</p>
+
+<p>
+setfacl -Rm g:quant:rwX -m d:g:quant:rwX -m m:rwx /[directory of choice]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org29b1d91" class="outline-2">
+<h2 id="org29b1d91"><span class="section-number-2">3.</span> Server information</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+dmesgn
+</p>
+
+<p>
+uptime
+</p>
+
+<p>
+free -g -h -t
+</p>
+
+<p>
+cat /proc/meminfo
+</p>
+
+<p>
+cat /proc/meminfo | grep -E 'MemTotal|MemFree|MemAvailable|Buffers|Cached' | awk '{print $1 ": " $2/1024/1024 " GB"}'
+</p>
+
+<p>
+lscpu
+</p>
+
+<p>
+rpm -qa -last | more
+</p>
+</div>
+</div>
+
+<div id="outline-container-org23b06fb" class="outline-2">
+<h2 id="org23b06fb"><span class="section-number-2">4.</span> Search</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+grep -r "mas" .
+</p>
+
+<p>
+find / -type f -name "viya-services-status.yml" 2&gt;/dev/null
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0da64f1" class="outline-2">
+<h2 id="org0da64f1"><span class="section-number-2">5.</span> File</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+ln -s /opt/app/html html
+</p>
+
+<p>
+du -sh /opt/app/*
+</p>
+
+<p>
+df -h
+</p>
+
+<p>
+du
+</p>
+
+<p>
+du -sh filename/foldername
+</p>
+
+<p>
+stat filename.txt
+</p>
+
+<p>
+du -skh *
+</p>
+
+<p>
+sudo lsof +L1
+</p>
+
+<p>
+rm -rri /opt/app/R/*
+</p>
+
+<p>
+find retail_modelling -type d &gt; test_output.txt
+</p>
+
+<p>
+ls -la | wc -l
+</p>
+
+<p>
+stat /opt/app/retail_modelling/users/s5743b/fi_kort_rc_ttc.tsv
+</p>
+
+<p>
+du -h /home | sort -rh | head -n 10
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge496ec7" class="outline-2">
+<h2 id="orge496ec7"><span class="section-number-2">6.</span> Processes</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+fuser -c <i>opt/app</i>
+</p>
+
+<p>
+ps -ef | grep 2666631
+</p>
+
+<p>
+ps -ef | grep rstudio
+</p>
+
+<p>
+ps aux | grep -i rstudio
+</p>
+
+<p>
+ps aux | grep -i jupyter
+</p>
+
+<p>
+kill -9 &lt;processname form the previous command&gt;
+</p>
+
+<p>
+ps - show running processes
+</p>
+
+<p>
+ps aux | grep SXXXB | grep rstudio
+</p>
+
+<p>
+pkill -u sxxxxxf - NEVEIKIA
+killall -u sxxxxxf rsession - NEVEIKIA
+pkill -9 -u sxxxxxf rsession - SUVEIKE
+</p>
+
+<p>
+kill all rstudio sessions
+sudo killall -9 rserver
+</p>
+
+<p>
+Check if any services remaining
+pgrep rserver
+</p>
+
+<p>
+systemctl list-units &#x2013;type=service | grep sas-viya
+ps aux | grep sas-viya
+</p>
+
+<p>
+sudo systemctl stop sas-viya-*
+</p>
+</div>
+
+<div id="outline-container-org198821a" class="outline-3">
+<h3 id="org198821a"><span class="section-number-3">6.1.</span> htop</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+shortcuts - <a href="https://spin.atomicobject.com/2020/02/10/htop-guide/">https://spin.atomicobject.com/2020/02/10/htop-guide/</a>
+</p>
+
+<p>
+<code>VIRT</code> stands for "Virtual Memory." It represents the total virtual
+memory used by a process. Virtual memory includes both physical RAM
+and swap space on disk.
+</p>
+
+<p>
+<code>RES</code> stands for "Resident Set Size." It represents the portion of a
+process's virtual memory that is currently held in physical RAM. In
+other words, it shows how much actual physical memory a process is
+using.
+</p>
+
+<p>
+<code>SHR</code> stands for "Shared Memory." It represents the portion of the RES
+(resident set size) that is shared among multiple processes. This can
+be a space-saving feature because shared libraries and code can be
+loaded into memory once and used by multiple processes.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgce1bd70" class="outline-2">
+<h2 id="orgce1bd70"><span class="section-number-2">7.</span> Network</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+route
+</p>
+
+<p>
+nslookup &lt;IP address or hostname&gt;
+</p>
+
+<p>
+dig -x &lt;IP address&gt;
+</p>
+
+<p>
+netstat -tlnp
+</p>
+
+<p>
+netstat -tuln | grep :80
+</p>
+
+<p>
+nmap -T4 -Pn -p 1-65535 lxxx123a
+</p>
+
+<p>
+telnet servername 8301
+telnet serername.ad1.net 1433
+</p>
+
+
+<p>
+Labas, cia reiktu pasigilinti i konkreciu serveriu internal firewall nustatymus
+ir esant poreikiui juos persikonfiguruoti. Panasu, kad dauguma portu ant pvz:
+xxxx1, xxxx2 serveriu yra isjungti/uzblokuoti. Is networko puses mes galima
+pagelbet su firewallu taisyklem (srautai tarp skirtingu environmentu,
+potinkliu), bet vidiniu serveriu portu nustatymu nepriziurim. Jei reikalinga
+turet connectiona abi sitos vietos turi buti atidarytos (serveris klauso x
+portu ) + turi buti taisykle firewalle, jei kazkas is 'tolimo' tinklo nori
+connectintis i serveri tuo x portu.
+</p>
+
+<p>
+skirtingi rulsetai ir praleidimai galioja skirtingiems environmentams ir
+enclave'ams, del to prode ir appvery esantys serveriai nebutinai tures tas
+pacias taisykles.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbe3cb6f" class="outline-2">
+<h2 id="orgbe3cb6f"><span class="section-number-2">8.</span> Logs</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+journalctl -u jupyterhub -f
+</p>
+
+<p>
+journalctl -u rstudio-server.service -f
+</p>
+
+<p>
+logs to file
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">ansible-playbook viya-ark-master/playbooks/viya-mmsu/viya-services-status.yml -vvv 2&gt;&amp;1 | tee -a viya_services_status_logs_20230727.txt
+ansible-playbook viya-ark-master/playbooks/viya-mmsu/viya-services-stop.yml -e "enable_stray_cleanup=true" -vvv 2&gt;&amp;1 | tee -a viya_services_stop_logs_20230727.txt
+ansible-playbook viya-ark-master/playbooks/viya-mmsu/viya-services-start.yml -vvv 2&gt;&amp;1 | tee -a viya_services_start_logs_20230727.txt
+
+# sas installation logs to file
+
+ansible-playbook site.yml -vvv 2&gt;&amp;1 | tee -a install_20230809_1500.txt
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgff4ea7d" class="outline-2">
+<h2 id="orgff4ea7d"><span class="section-number-2">9.</span> Yum</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+rpm official repo(yum, RHEL) commands - <a href="https://www.rpmfind.net/linux/RPM/ByName.html">https://www.rpmfind.net/linux/RPM/ByName.html</a>
+</p>
+
+<p>
+yum history
+yum list installed | grep devel
+yum remove &lt;reponame&gt;
+yum erase &lt;reponame&gt;
+yum repolist all
+yum repolist enabled
+yum search 'udunit*' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
+yum search 'R-<b>' &#x2013;disablerepo='</b>' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
+yum info 'R-devel' &#x2013;disablerepo='*' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
+sudo yum install 'udunits2-devel' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8 &#x2013;enablerepo=codeready-builder-for-rhel-8-x86_64-rpms
+</p>
+
+<p>
+yum repolist all
+</p>
+
+<p>
+yum search 'R-<b>' &#x2013;disablerepo='</b>' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
+</p>
+
+<p>
+yum info 'R-devel' &#x2013;disablerepo='*' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
+</p>
+
+<p>
+sudo yum install 'R-devel' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8 &#x2013;enablerepo=codeready-builder-for-rhel-8-x86_64-rpms
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1e60f7f" class="outline-2">
+<h2 id="org1e60f7f"><span class="section-number-2">10.</span> zip</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+tar -cvf archive_name.tar files_or_directories_to_archive
+tar -cvf labas.tar .
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge0282be" class="outline-2">
+<h2 id="orge0282be"><span class="section-number-2">11.</span> NAS</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+cat /etc/fstab
+</p>
+
+<p>
+mount -l |grep sas-store
+</p>
+</div>
+</div>
+
+<div id="outline-container-org88a3b6e" class="outline-2">
+<h2 id="org88a3b6e"><span class="section-number-2">12.</span> odbc</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+ODBC
+</p>
+
+<p>
+For setting up ODBC connection you need temp root user. Add temp root
+user - Model Validation Home - SEB Confluence (sebank.se)
+</p>
+
+<p>
+NOTE. You can determine the location of the configuration files on
+your system by entering the following command into a terminal:
+"odbcinst -j".
+</p>
+
+<p>
+Check what ODBC drivers are installed for required DB in
+"/etc/odbcinst.ini" (or use command "odbcinst -q -d").
+</p>
+
+<p>
+After you have your file you need to create global variable to point
+to that file location for ODBC to pic up needed information. "export
+ODBCINI=/etc/odbc.ini" (only for the first time).
+</p>
+
+<p>
+You can list the data sources on your system with the following
+command: "odbcinst -q -s"
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-12-20 Wed 12:54</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

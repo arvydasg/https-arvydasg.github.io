@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>using org-download package in WSL</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">using org-download package in WSL</h1>
+</header><p>
+<span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span>, when I was setting up <a href="20231215T182523--building-development-notes-website-with-emacs__emacs_websites.html">building development notes website with
+Emacs</a>, I wanted to use <code>org-download</code> package and it's functionalities. I
+later realized, that as long as I am on WSL, this won't work out of the box for
+me.
+</p>
+
+<p>
+Simply documenting what I have found below.
+</p>
+
+<p>
+Package itself - <a href="https://github.com/abo-abo/org-download">https://github.com/abo-abo/org-download</a>
+Great demo by the author of the package -
+<a href="https://www.youtube.com/watch?v=dAojpHR-6Uo&amp;ab_channel=abo-abo">https://www.youtube.com/watch?v=dAojpHR-6Uo&amp;ab_channel=abo-abo</a>
+</p>
+
+<p>
+since I am on wsl and not ubuntu, but nixos, there seems not to be a software
+that can take those screenshots. The tool for that is mentioned in
+<code>org-download-screenshot-method</code>. Will try to install <code>scrot</code>.
+</p>
+
+<p>
+After installing <code>scrot</code> and <code>xclicp</code> on my nixos WSL distro, I still was not
+able to make the package work.
+</p>
+
+<p>
+This could be a potential workaround -
+<a href="https://github.com/abo-abo/org-download/issues/178">https://github.com/abo-abo/org-download/issues/178</a>.
+</p>
+
+<p>
+I think I will live without it.
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-12-19 Tue 09:09</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

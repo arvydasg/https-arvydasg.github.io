@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>perspective and denote conflict</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">perspective and denote conflict</h1>
+</header><p>
+I just figured out <code>perspective-mode</code> and how cool is it, I can have a similar
+behavior like tmux or default window as window management.
+</p>
+
+<p>
+But the problem is when I create perspective frames and in those frames there
+is at least one denote file. That frame does not get saved. Why? Because denote
+purposefully by default renames it's buffers not to contain all the gibberish
+like date when it was created, tag names and so on with this function -
+<code>denote-rename-buffer-mode</code>.
+</p>
+
+<p>
+Instead of such filename:
+</p>
+
+<ul class="org-ul">
+<li>20231209T181842&#x2013;perspective-and-denote-conflict__emacs.org</li>
+</ul>
+
+<p>
+it renames it to(removes the file extension, tags, date):
+</p>
+
+<ul class="org-ul">
+<li>perspective and denote conflict</li>
+</ul>
+
+<p>
+And when you save in perspective the name of the buffer, it gets saved as this
+short version which AFTER we try to open the saved perspective - it does not
+find such filename, because it simply does not exist.
+</p>
+
+<p>
+Nice I am happy that I could figure this out.
+</p>
+
+<p>
+Let's try to change that variable and see if it helps.
+</p>
+
+<p>
+Denote docs - <a href="https://protesilaos.com/emacs/denote#h:3ca4db16-8f26-4d7d-b748-bac48ae32d69">10. Automatically rename Denote buffers</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(denote-rename-buffer-mode -1)
+</pre>
+</div>
+
+<p>
+It did help!!! I am a magician!!
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-12-09 Sat 18:18</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

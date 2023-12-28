@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Create a Blog with Emacs</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 13:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Create a Blog with Emacs</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7d03bc3">1. Intro</a></li>
+<li><a href="#org6f54d9a">2. Create Emacs blog the "System Crafters" way</a>
+<ul>
+<li><a href="#orgc9116ea">2.1. Choose a directory</a></li>
+<li><a href="#orgd23b309">2.2. Creating the build script</a>
+<ul>
+<li><a href="#org677bdb9">2.2.1. build-site.el</a></li>
+<li><a href="#orgeb1ad0b">2.2.2. build.sh</a></li>
+</ul>
+</li>
+<li><a href="#org9f64fb8">2.3. Improving the HTML output</a></li>
+<li><a href="#org4222574">2.4. Improving the page styling</a></li>
+<li><a href="#org4de4cca">2.5. Generating pages with code blocks</a></li>
+<li><a href="#orgb14dca5">2.6. Linking between pages</a></li>
+<li><a href="#orged3d798">2.7. The final build script</a></li>
+</ul>
+</li>
+<li><a href="#org04a5bfa">3. Create Emacs blog with "org-static-blog" package</a></li>
+<li><a href="#org4c67bcc">4. Conclusion</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org7d03bc3" class="outline-2">
+<h2 id="org7d03bc3"><span class="section-number-2">1.</span> Intro</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+If you are using Emacs and org mode as much as me, you must have come
+up to org-publish feature that allows you to convert org files to html files.
+</p>
+
+<p>
+When you have a lot of org files - means you can have a lot of html
+files. When you have a lot of html files - you can have your own
+static website ;)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6f54d9a" class="outline-2">
+<h2 id="org6f54d9a"><span class="section-number-2">2.</span> Create Emacs blog the "System Crafters" way</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Best description in a video format is <a href="https://www.youtube.com/watch?v=AfkrzFodoNw&amp;t=1612s&amp;ab_channel=SystemCrafters">here</a>. To later publish it
+automaticall,y video <a href="https://www.youtube.com/watch?v=za99DwdZEyg&amp;t=996s&amp;ab_channel=SystemCrafters">here</a>.
+</p>
+</div>
+<div id="outline-container-orgc9116ea" class="outline-3">
+<h3 id="orgc9116ea"><span class="section-number-3">2.1.</span> Choose a directory</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+You will place your org files inside content/ directory.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">/home/arvydas/Dropbox/src/sites/my-org-site/content/
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd23b309" class="outline-3">
+<h3 id="orgd23b309"><span class="section-number-3">2.2.</span> Creating the build script</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org677bdb9" class="outline-4">
+<h4 id="org677bdb9"><span class="section-number-4">2.2.1.</span> build-site.el</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+Inside of this directory:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">/home/arvydas/Dropbox/src/sites/my-org-site/
+</pre>
+</div>
+
+<p>
+Create a file called <code>build-site.el</code> with this inside of it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;; Load the publishing system
+(require 'ox-publish)
+
+(message "Build complete!")
+
+;; Define the publishing project
+(setq org-publish-project-alist
+      (list
+       (list "my-org-site"
+             :recursive t
+             :base-directory "./content"
+             :publishing-directory "./public"
+             :publishing-function 'org-html-publish-to-html)))
+
+;; Generate the site output
+(org-publish-all t)
+</pre>
+</div>
+
+<p>
+This configures the <i>org-publish-project-alist</i> variable to define a
+publishing project for our site. Read the documentation of this
+variable using M-x describe-variable for a lot more information!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeb1ad0b" class="outline-4">
+<h4 id="orgeb1ad0b"><span class="section-number-4">2.2.2.</span> build.sh</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+We also need a shell script that can run our Emacs Lisp script. We'll call that build.sh:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">#!/bin/sh
+emacs -Q --script build-site.el
+</pre>
+</div>
+
+<p>
+Don't forget to use <code>chmod +x build.sh</code> to make the script executable!
+</p>
+
+<p>
+NOTE: If you're on Windows, you can create a <code>build.cmd</code> file that
+invokes Emacs the same way.
+</p>
+
+<p>
+The -Q parameter prevents Emacs from loading your own Emacs
+configuration which will help ensure that this same script can be
+executed cleanly on other machines once we get ready to start
+publishing this site.
+</p>
+
+<p>
+Create one org file, in the content dir, run the shell script, see the
+html in public folder, open it in the browser.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9f64fb8" class="outline-3">
+<h3 id="org9f64fb8"><span class="section-number-3">2.3.</span> Improving the HTML output</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+There are a few things about the page we just looked at that I'd like
+to change to make the output look a bit cleaner:
+</p>
+
+<ul class="org-ul">
+<li>Section numbers</li>
+<li>Author name</li>
+<li>Publish timestamp</li>
+<li>Validate link</li>
+</ul>
+
+<p>
+Luckily the publish system is very customizable so I'll show you how
+we can disable a few things in the project configuration to get a
+better result.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;; Define the publishing project
+(setq org-publish-project-alist
+      (list
+       (list "org-site:main"
+             :recursive t
+             :base-directory "./content"
+             :publishing-function 'org-html-publish-to-html
+             :publishing-directory "./public"
+             :with-author nil           ;; Don't include author name
+             :with-creator t            ;; Include Emacs and Org versions in footer
+             :with-toc t                ;; Include a table of contents
+             :section-numbers nil       ;; Don't include section numbers
+             :time-stamp-file nil)))    ;; Don't include time stamp in file
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4222574" class="outline-3">
+<h3 id="org4222574"><span class="section-number-3">2.4.</span> Improving the page styling</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+At this point have a decent basic output for our website, but what if we want to make it look a little bit nicer?
+</p>
+
+<p>
+By setting a few more variables, we can use a nice stylesheet to give our site a more polished look:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;; Customize the HTML output
+(setq org-html-validation-link nil            ;; Don't show validation link
+      org-html-head-include-scripts nil       ;; Use our own scripts
+      org-html-head-include-default-style nil ;; Use our own styles
+      org-html-head "&lt;link rel=\"stylesheet\" href=\"simple.min.css\" /&gt;" ;place your own stylesheet in public folder
+      org-html-head "&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;" ;use cdn stylesheet
+      )
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4de4cca" class="outline-3">
+<h3 id="org4de4cca"><span class="section-number-3">2.5.</span> Generating pages with code blocks</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+So far we've been looking at a very simple example page that doesn't really have much on it. What happens when we try to generate a more elaborate Org file containing code blocks?
+</p>
+
+<p>
+Let's try it out with another file, a version of my literate Emacs configuration called Emacs.org!
+</p>
+
+<p>
+If you're generating a site that features code blocks like a coding blog or a literate Emacs configuration, you'll probably see an error like this when you generate the site:
+</p>
+
+
+<p>
+Cannot fontify source block (htmlize.el &gt;= 1.34 required)
+</p>
+
+<p>
+To resolve this issue, you will need to install the htmlize package from MELPA. We can automate the process of installing this package by adding the following snippet to our build-site.el file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;; Set the package installation directory so that packages aren't stored in the
+;; ~/.emacs.d/elpa path.
+(require 'package)
+(setq package-user-dir (expand-file-name "./.packages"))
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
+
+;; Initialize the package system
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Install dependencies
+(package-install 'htmlize)
+</pre>
+</div>
+
+<p>
+In this snippet, we load Emacs' package manager and configure the package-user-dir to be a sub-directory of our project folder. This allows you to install packages for the script without mixing them up with the packages of your personal Emacs configuration!
+</p>
+
+<p>
+The next thing we do is add MELPA to the package archive list and refresh the package archive so that htmlize can be found. Finally, we call package-install to install it!
+</p>
+
+<p>
+In a future video I'll show you how to convert your Emacs color theme to a CSS file that you can use to colorize source blocks with exactly the same colors used in the theme!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb14dca5" class="outline-3">
+<h3 id="orgb14dca5"><span class="section-number-3">2.6.</span> Linking between pages</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+One last thing I want to show you is how you can create links between
+pages on your site. Let's open up index.org and create a link to the
+Emacs.org file.
+</p>
+
+<p>
+Inside index.org, we can press <code>C-c C-l (org-insert-link)</code>, enter the
+path of the Org file we want to link to (./Emacs.org), press Enter,
+then enter the text for the link ("My Emacs configuration").
+</p>
+
+<p>
+When you generate the site again, you should be able to follow the
+link between pages because Org's publishing system will convert the
+link to the proper output extension.
+</p>
+
+<p>
+It will also complain when a linked file can't be found!
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">Debugger entered--Lisp error: (user-error "Unable to resolve link: \"Emacs2.org\"")
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orged3d798" class="outline-3">
+<h3 id="orged3d798"><span class="section-number-3">2.7.</span> The final build script</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+Here is the final form of our <code>build-site.el</code> script:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;; Set the package installation directory so that packages aren't stored in the
+;; ~/.emacs.d/elpa path.
+(require 'package)
+(setq package-user-dir (expand-file-name "./.packages"))
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
+
+;; Initialize the package system
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Install dependencies
+(package-install 'htmlize)
+
+;; Load the publishing system
+(require 'ox-publish)
+
+;; Customize the HTML output
+(setq org-html-validation-link nil            ;; Don't show validation link
+      org-html-head-include-scripts nil       ;; Use our own scripts
+      org-html-head-include-default-style nil ;; Use our own styles
+      org-html-head "&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;")
+
+;; Define the publishing project
+(setq org-publish-project-alist
+      (list
+       (list "org-site:main"
+             :recursive t
+             :base-directory "./content"
+             :publishing-function 'org-html-publish-to-html
+             :publishing-directory "./public"
+             :with-author nil           ;; Don't include author name
+             :with-creator t            ;; Include Emacs and Org versions in footer
+             :with-toc t                ;; Include a table of contents
+             :section-numbers nil       ;; Don't include section numbers
+             :time-stamp-file nil)))    ;; Don't include time stamp in file
+
+;; Generate the site output
+(org-publish-all t)
+
+(message "Build complete!")
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org04a5bfa" class="outline-2">
+<h2 id="org04a5bfa"><span class="section-number-2">3.</span> Create Emacs blog with "org-static-blog" package</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+"<a href="https://github.com/bastibe/org-static-blog">org-static-blog</a>" is a package written by <a href="https://github.com/bastibe">Bastian Bechtold</a> is a static site
+generator. I believe it started <a href="https://bastibe.de/2013-11-13-blogging-with-emacs.html">here</a>.
+</p>
+
+<p>
+My current Emacs configuration for "<a href="https://github.com/arvydasg/.emacs.d/blob/master/recipes/org-static-blog.el">org-static-blog</a>" is here.
+</p>
+
+<p>
+Install the plugin, you get all it's functions. They are
+clearly documented within the plugin, it's super easy to read the
+instructions and understand what it does. One command
+<code>org-static-blog-create-new-post</code> creates new post, then
+<code>org-static-blog-publish</code> converts all your .org files to html files in
+your chosen location. You push them to github and that's all! Your
+site is live.
+</p>
+
+<p>
+I have just discovered it <span class="timestamp-wrapper"><span class="timestamp">[2023-01-21 Sat]</span></span>, but already like it.
+Mainly because it is a simple program that I am able to wrap my head
+around and I know it will remain simple and I will be able to use for
+a long time in the future, it won't go anywhere. I can also make some
+pull requests to it by adding Lithuanian language and some features.
+It automatically generates archive file where all the posts are
+stored, it also automatically generates tag's file and then in the
+browser I can filter my posts.. It is easy to generate header and
+footer. Yes, I like it more than the first method.
+</p>
+
+<p>
+If you would like to add an image to your org file, try this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">#+attr_html: :width 1200px
+#+ATTR_ORG: :width 600
+[[./media/org-static-blog.png]]
+</pre>
+</div>
+
+
+<figure id="org55987b2">
+<img src="./media/org-static-blog.png" alt="org-static-blog.png" width="1200px">
+
+</figure>
+
+<p>
+lightbox.js that you can see in this page source helps with the lightbox effect that you get when clicking on
+the image.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4c67bcc" class="outline-2">
+<h2 id="org4c67bcc"><span class="section-number-2">4.</span> Conclusion</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Now the only thing is left - I have to blog. :) I am thinking why
+don't I whenever learning a new thing write such little summary about
+it OR imagine that I am teaching someone this topic. "The best way to
+learn it is to teach it" they say.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 13:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-01-21 Sat 12:40</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>use postgres db instead of sqlite</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">use postgres db instead of sqlite</h1>
+</header><p>
+<a href="https://stackpython.medium.com/how-to-start-django-project-with-a-database-postgresql-aaa1d74659d8">Karina's tutorial of how to conenct sqlite to postgresql</a>
+</p>
+
+<p>
+If you use SQLite, you can immediately connect Django with this database after
+migrating process without installing any tools or software because SQLite
+stores data into a single file, no server required.
+</p>
+
+<p>
+But not what I’m looking for, the professional one I need is PostgreSQL “The
+most recommended database for Django”
+</p>
+
+<ul class="org-ul">
+<li><a href="https://www.postgresql.org/download/linux/ubuntu/">install postgresql</a></li>
+<li><a href="https://www.pgadmin.org/download/pgadmin-4-apt/">download and install PGADMIN 4</a></li>
+<li>ls <i>etc/postgresql/15/main</i></li>
+<li>service posgreslq</li>
+<li>service postgresql status</li>
+<li>sudo -i -u postgres</li>
+<li>psql</li>
+<li>\</li>
+<li>\l</li>
+<li>\du</li>
+<li>CREATE database pagalbaGyvunams;</li>
+<li><a href="https://www.youtube.com/watch?v=CaxpuKwOs2w&amp;ab_channel=AnalyzingAlpha">explains users and rights</a></li>
+<li>display your newly created db in pgadmin4 <a href="https://www.youtube.com/watch?v=7tfPKDba1Jo&amp;ab_channel=TechLearning">end of this video</a></li>
+<li>man psql</li>
+</ul>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-12-15 Fri 05:57</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

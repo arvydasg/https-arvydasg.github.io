@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>using emacs together with vscode</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">using emacs together with vscode</h1>
+</header><p>
+Don't remember where it is from, but I quote everything what is written below:
+</p>
+
+<blockquote>
+<p>
+I use Emacs for writing prose and general computing.
+</p>
+
+<p>
+But, with respect to programming, I now use both Emacs and VSCode <b>at the same
+time for the same files/projects</b>. (Although predominantly Emacs).
+</p>
+
+<p>
+Some months ago, I started working professionally on a Typescript/Angular
+project. And my co-workers, of course, use VSCode.
+</p>
+
+<p>
+Initially, I kept using Emacs. After a while, seeing the several ide features
+(go to definition, show documentation, etc.) that my colleagues were using, I
+decided to give VSCode a serious try and I used it to write Typescript/Angular
+for a whole month or so.
+</p>
+
+<p>
+After that, I tried to see whether I could get similar functionalities in
+Emacs. I tried both LSP Mode and Eglot. After some fighting, I had a quite
+usable LSP Mode with the ide features I wanted. Not as polished as VSCode, but
+totally usable. (Eglot was very nice, but I wanted to try ESLint and it looks
+like with Eglot, atm, you cannot have multiple LSP servers running for the same
+buffer.)
+</p>
+
+<p>
+Instead of going back to Emacs 100%, I decided to try a hybrid approach, which
+has been very pleasant so far. I use emacs most of the time, but when I feel
+that VSCode can offer some additional help I turn to it and then go back to
+Emacs. To make the process smooth I wrote some lines of elisp that make VSCode
+open the same file I am currently editing, at the same line and the same
+column. I have it bound to C-Caps (Actually it's C-Escape, because I have
+Escape remapped to Caps systemwise). When I want, then, I hit a key, VSCode
+appears, with the cursor placed exactly where Emacs cursor was, I do what I
+want to do, save if necessary, and switch back to Emacs. I usually keep VSCode
+already open in the same project, to allow things to be faster. Here is the
+elisp:
+</p>
+</blockquote>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun gp/vscode-current-buffer-file-at-point ()
+  (interactive)
+  (start-process-shell-command "code"
+                               nil
+                               (concat "code --goto "
+                                       (buffer-file-name)
+                                       ":"
+                                       (number-to-string (1+ (current-line))) ;; +1 who knows why
+                                       ":"
+                                       (number-to-string (current-column)))))
+
+(define-key global-map (kbd "C-&lt;escape&gt;") 'gp/vscode-current-buffer-file-at-point)
+</pre>
+</div>
+
+<blockquote>
+<p>
+I would also like to able to open Emacs from VSCode, remaining in the same
+file, same line and column, too. Does anyone know how to do that? I couldn't be
+bothered, so far&#x2026;
+</p>
+
+<p>
+Assuming that Emacs is better than VSCode at certain things (say, text-editing,
+keyboard-macros, extensibility on the fly) and VSCode is better than Emacs (at
+least, non-relevantly extended Emacs) at other things (say, code
+navigation/visualization and certain code-completions), using both at the same
+time is, I think, an approach that deserves some thought.
+</p>
+</blockquote>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-12-14 Thu 17:18</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

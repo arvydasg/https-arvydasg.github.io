@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>move models from one app to another</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">move models from one app to another</h1>
+</header><p>
+Inspiration -
+<a href="https://stackoverflow.com/questions/25648393/how-to-move-a-model-between-two-django-apps-django-1-7">https://stackoverflow.com/questions/25648393/how-to-move-a-model-between-two-django-apps-django-1-7</a>
+</p>
+
+<p>
+I had to move the model from one app to another.
+</p>
+
+<p>
+Tried various methods, such as:
+</p>
+<ul class="org-ul">
+<li>adding class Meta: db_table = 'app1_yourmodel',</li>
+<li>migrations.SeparateDatabaseAndState,</li>
+<li>renaming the table name by hand,</li>
+<li>copying the data during the migration process by running raw sql queries with RunSQL,</li>
+<li>etc</li>
+</ul>
+
+<p>
+But after each case I would face some kind of error would occur. I will describe
+a method that I have used and that has worked for me just fine.
+</p>
+
+<p>
+It was very good to practice this in my DEV environment, having copies of
+sqlite3 DB files and to be able to visually see the content of the DB as I was
+doing this.
+</p>
+
+<p>
+But for those that do not have access to sqlite3 DB file or can not preview
+their content in the GUI as I could in VScode or in sqlitebrowser, I will write
+as detailed instructions as I can below. They helped me to execute the same
+commands in my PROD server afterwards(did not have a gui as well).
+</p>
+
+<blockquote>
+<p>
+note: you can ignore the <code>--settings=settings.development</code> everywhere you see
+it, you will not need it, it is just a part of my config, because I have split
+my Django settings.py file into dev and prod. TOOD
+</p>
+</blockquote>
+
+<p>
+If you see a command like such:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py makemigrations base_app --settings=settings.development
+</pre>
+</div>
+
+<p>
+It means that you have to run your command like that(and change the "base_app"
+to your app name):
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py makemigrations base_app
+</pre>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 13:25</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>

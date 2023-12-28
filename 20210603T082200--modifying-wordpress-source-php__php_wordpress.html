@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-12-28 Thu 08:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Modifying Wordpress source PHP</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="../static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="../static/css/scroll-to-top.css" type="text/css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2023-12-27 Wed 12:28</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Modifying Wordpress source PHP</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgc0f56db">1. Second tutorial</a></li>
+</ul>
+</div>
+</nav>
+<p>
+Since I MUST know what is underneath the hood when learning something new, the
+time has come to see under the Wordpress hood.
+</p>
+
+<p>
+There is lots of linked php files, lots of functions, variables and so on. I
+want to understand how they relate to each other and how to modify the files to
+my liking. Yesterday after doing a little bit of digging I have managed to
+change for some reason not transacted woocommerce checkout field text,
+hopefully today I will manage to find how to translate the "view card" button.
+Then my site will be fully translated to Lithuanian
+</p>
+
+<p>
+Yep, to get a better idea of whats happening I will watch a video "How to
+customize WooCommerce with PHP snippets". No internet, so I will have to focus
+on it alone. Let's go.
+</p>
+
+<ul class="org-ul">
+<li>Create a child theme.</li>
+<li>Don't edit your theme and your WC plugin files. Next time a theme or plugin
+update comes in - it will wipe all your updates.</li>
+<li>Don't use WP editor, use FTP. If you forget a comma or smth, the site will
+break and its hard to recover. Use FTP. Create BACKUPS of the files you're
+currently modifying.</li>
+<li>Don't verride tempates. take advantage of do_action. That's the beauty of
+php.</li>
+</ul>
+
+<p>
+Okay so nice, you can add a snippet of code to your funtions.php (which resides
+in the child theme, right? A function for example to see the "UNITS SOLD" of an
+item, or better yet, think of something your really need, you can add. ALL the
+information about he products is already sitting in the database. The fields in
+the DB are already created by the WooCommerce guys. What I am doing as a
+developer is just taking the information and displaying to the screen. Cool
+man&#x2026;
+</p>
+
+<p>
+Nice, so there is a single.php, header.php, footer.php, products.php and so
+on&#x2026; if you make an update to one, the changes will appear to the all of the
+single pages for exmple. And there just soo many files that can be to modify&#x2026;
+not many, relly. So you will always find a way to customize something you want.
+</p>
+
+<p>
+What, where in the page, on witch page.
+</p>
+
+<p>
+Instead of copying the old template and changing the php or the html, you can
+simply HOOK your own function from your functions.php file without having to
+change anything in WC template?
+</p>
+
+<p>
+actions - add, filters - modify existing content.
+</p>
+
+<p>
+ALL the possible hooks you can add on specific pages. Check it out. Super
+helpful, was expecting something like this.
+</p>
+
+<p>
+Priority 1 - above the title, priority - 6, under the title.
+</p>
+
+<p>
+So everything is happening in your functions.php. You can add_action,
+remove_action (then copy the whole line with priorities and stuff you want to
+remove). Wow, this is exactly what I wanted.
+</p>
+
+<div id="outline-container-orgc0f56db" class="outline-2">
+<h2 id="orgc0f56db"><span class="section-number-2">1.</span> Second tutorial</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Name of it - Wordpress produtct catalog - how to create a custom wordpress
+catalogue.
+</p>
+
+<p>
+What is sas? Compiling css code to style.css file? huh?
+</p>
+
+<p>
+Dude using bootstartp, it does all the styling for him when he sets classes to
+items? Interesting.
+</p>
+
+<p>
+Loading js into his theme&#x2026; throught functions.php
+</p>
+
+<p>
+33:34 he is using some bootstarp I will assume again? Changing class of the
+item with "mb-4" which means margin-bottom=4; and it magically, somehow changes
+the css of the file.
+</p>
+
+<p>
+These both, especially the last tutorial was amazing&#x2026; I learned so much, just
+need to practice. Jquery, bootstrap, catalogs, creating custom stuff with php.
+The guy is so confided wiht every action of his. Should look him up and watch
+some more tutorials. This is exactly how I felt when I was doing the Revit
+stuff. And why I was so confident? Because I spend a lot of time on it and was
+breaking a lot of stuff!!! Yes my brother, break stuff.
+</p>
+
+<p>
+Time to get dressed and go to the library fetch some internet, learn some js
+finally with Steph.
+</p>
+
+<p>
+15:51
+</p>
+
+<p>
+So far no js, because I have been optimizing the client's websites SEO (for the
+first time, learned a lot), then now I found some php files that will allow me
+to edit the damn checkout page and some words that did not get translated to
+Lithuanian, I will manually edit the theme files of woocommerce plugin throught
+FTP, then update the woocomerce theme(yes! an update just in time for my
+testing purposes) and see if the changes remained or not.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 08:19</p>
+	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 12:28</p>
+	 <p class="date">This org file is <u>created</u>: 2021-06-03 Thu 08:22</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="../static/js/generic.js"></script>
+	 <script src="../static/js/scroll-to-top.js"></script>
+	 <script src="../static/js/lightbox.js"></script>
+</div>
+</body>
+</html>
