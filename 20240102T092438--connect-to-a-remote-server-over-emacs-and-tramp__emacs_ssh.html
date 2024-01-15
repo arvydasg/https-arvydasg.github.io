@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-01-15 Mon 22:12 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>connect to a remote server over emacs and tramp</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-01-04 Thu 08:59</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">connect to a remote server over emacs and tramp</h1>
+</header><p>
+Official docs - <a href="https://wikemacs.org/wiki/TRAMP">https://wikemacs.org/wiki/TRAMP</a>
+</p>
+
+<p>
+If  you need to edit files as sudo - info how is in the docs above.
+</p>
+
+<p>
+First of all, try to connect to the remote machine over shell, eshell or vterm like so:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">ssh username@remotehost
+</pre>
+</div>
+
+<p>
+You will get prompted for a password. Enter it and you should be able to connect.
+</p>
+
+<p>
+Then open emacs and then let's try to open a file remotely, use the <code>C-x C-f</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">/ssh:username@remotehost:
+# now  you will get prompted for a password (don't forget : at the end of the remotehost name!!)
+</pre>
+</div>
+
+<p>
+<code>.authinfo</code> in your home dir will contain your credentials.
+</p>
+
+<p>
+<code>tramp</code> file in your <code>.emacs.d</code> will contain your connection history.
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-15 Mon 22:12</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-01-04 Thu 08:59</p>
+	 <p class="date">This org file is <u>created</u>: 2024-01-02 Tue 09:24</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>

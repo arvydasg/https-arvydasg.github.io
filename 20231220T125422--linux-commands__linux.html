@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-12-28 Thu 09:20 -->
+<!-- 2024-01-15 Mon 22:12 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>linux commands</title>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+<div id="updated">Updated: 2024-01-11 Thu 21:22</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,29 +32,48 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgcbb133d">1. LDAP</a></li>
-<li><a href="#org7f038d4">2. Access management</a></li>
-<li><a href="#orgadac264">3. Server information</a></li>
-<li><a href="#orgd6bab4f">4. Search</a></li>
-<li><a href="#orga38eceb">5. File</a></li>
-<li><a href="#org28704ef">6. Processes</a>
+<li><a href="#org906bf61">1. Secret management</a></li>
+<li><a href="#orgcf14394">2. LDAP</a></li>
+<li><a href="#orgc21e95b">3. Access management</a></li>
+<li><a href="#orgda341d8">4. Server information</a></li>
+<li><a href="#org0b849f5">5. Search</a></li>
+<li><a href="#orgf62b635">6. File</a></li>
+<li><a href="#org6c8ea73">7. Processes</a>
 <ul>
-<li><a href="#orgdc9230b">6.1. htop</a></li>
+<li><a href="#orgd5dd446">7.1. htop</a></li>
 </ul>
 </li>
-<li><a href="#orga4fe9b0">7. Network</a></li>
-<li><a href="#orga6afaa5">8. Logs</a></li>
-<li><a href="#orgae65ab1">9. Yum</a></li>
-<li><a href="#orgb9574ff">10. zip</a></li>
-<li><a href="#org935cd5e">11. NAS</a></li>
-<li><a href="#org8fcccb1">12. odbc</a></li>
+<li><a href="#org0484a2a">8. Network</a></li>
+<li><a href="#org8548808">9. Logs</a></li>
+<li><a href="#org3efb60b">10. Yum</a></li>
+<li><a href="#org81f074c">11. zip</a></li>
+<li><a href="#org43a5a24">12. NAS</a></li>
+<li><a href="#org12764e3">13. odbc</a></li>
+<li><a href="#org776d56b">14. Credentials</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgcbb133d" class="outline-2">
-<h2 id="orgcbb133d"><span class="section-number-2">1.</span> LDAP</h2>
+<div id="outline-container-org906bf61" class="outline-2">
+<h2 id="org906bf61"><span class="section-number-2">1.</span> Secret management</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+read -s LDAP_USER
+read -s LDAP_PASSWORD
+read -s LDAP_SERVER
+</p>
+
+<p>
+echo "LDAP_USER: $LDAP_USER"
+echo "LDAP_PASSWORD: $LDAP_PASSWORD"
+echo "LDAP_SERVER: $LDAP_SERVER"
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcf14394" class="outline-2">
+<h2 id="orgcf14394"><span class="section-number-2">2.</span> LDAP</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 getent
 </p>
@@ -85,9 +104,9 @@ getent netgroup servername | grep username
 </div>
 </div>
 
-<div id="outline-container-org7f038d4" class="outline-2">
-<h2 id="org7f038d4"><span class="section-number-2">2.</span> Access management</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgc21e95b" class="outline-2">
+<h2 id="orgc21e95b"><span class="section-number-2">3.</span> Access management</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 last
 </p>
@@ -119,9 +138,9 @@ setfacl -Rm g:quant:rwX -m d:g:quant:rwX -m m:rwx /[directory of choice]
 </div>
 </div>
 
-<div id="outline-container-orgadac264" class="outline-2">
-<h2 id="orgadac264"><span class="section-number-2">3.</span> Server information</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgda341d8" class="outline-2">
+<h2 id="orgda341d8"><span class="section-number-2">4.</span> Server information</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 dmesgn
 </p>
@@ -152,9 +171,9 @@ rpm -qa -last | more
 </div>
 </div>
 
-<div id="outline-container-orgd6bab4f" class="outline-2">
-<h2 id="orgd6bab4f"><span class="section-number-2">4.</span> Search</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org0b849f5" class="outline-2">
+<h2 id="org0b849f5"><span class="section-number-2">5.</span> Search</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 grep -r "mas" .
 </p>
@@ -165,9 +184,9 @@ find / -type f -name "viya-services-status.yml" 2&gt;/dev/null
 </div>
 </div>
 
-<div id="outline-container-orga38eceb" class="outline-2">
-<h2 id="orga38eceb"><span class="section-number-2">5.</span> File</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orgf62b635" class="outline-2">
+<h2 id="orgf62b635"><span class="section-number-2">6.</span> File</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 ln -s /opt/app/html html
 </p>
@@ -222,9 +241,9 @@ du -h /home | sort -rh | head -n 10
 </div>
 </div>
 
-<div id="outline-container-org28704ef" class="outline-2">
-<h2 id="org28704ef"><span class="section-number-2">6.</span> Processes</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-org6c8ea73" class="outline-2">
+<h2 id="org6c8ea73"><span class="section-number-2">7.</span> Processes</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 fuser -c <i>opt/app</i>
 </p>
@@ -283,9 +302,9 @@ sudo systemctl stop sas-viya-*
 </p>
 </div>
 
-<div id="outline-container-orgdc9230b" class="outline-3">
-<h3 id="orgdc9230b"><span class="section-number-3">6.1.</span> htop</h3>
-<div class="outline-text-3" id="text-6-1">
+<div id="outline-container-orgd5dd446" class="outline-3">
+<h3 id="orgd5dd446"><span class="section-number-3">7.1.</span> htop</h3>
+<div class="outline-text-3" id="text-7-1">
 <p>
 shortcuts - <a href="https://spin.atomicobject.com/2020/02/10/htop-guide/">https://spin.atomicobject.com/2020/02/10/htop-guide/</a>
 </p>
@@ -313,9 +332,9 @@ loaded into memory once and used by multiple processes.
 </div>
 </div>
 
-<div id="outline-container-orga4fe9b0" class="outline-2">
-<h2 id="orga4fe9b0"><span class="section-number-2">7.</span> Network</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-org0484a2a" class="outline-2">
+<h2 id="org0484a2a"><span class="section-number-2">8.</span> Network</h2>
+<div class="outline-text-2" id="text-8">
 <p>
 route
 </p>
@@ -365,9 +384,9 @@ pacias taisykles.
 </div>
 </div>
 
-<div id="outline-container-orga6afaa5" class="outline-2">
-<h2 id="orga6afaa5"><span class="section-number-2">8.</span> Logs</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-org8548808" class="outline-2">
+<h2 id="org8548808"><span class="section-number-2">9.</span> Logs</h2>
+<div class="outline-text-2" id="text-9">
 <p>
 journalctl -u jupyterhub -f
 </p>
@@ -392,11 +411,23 @@ ansible-playbook site.yml -vvv 2&gt;&amp;1 | tee -a install_20230809_1500.txt
 </div>
 </div>
 
-<div id="outline-container-orgae65ab1" class="outline-2">
-<h2 id="orgae65ab1"><span class="section-number-2">9.</span> Yum</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-org3efb60b" class="outline-2">
+<h2 id="org3efb60b"><span class="section-number-2">10.</span> Yum</h2>
+<div class="outline-text-2" id="text-10">
 <p>
 rpm official repo(yum, RHEL) commands - <a href="https://www.rpmfind.net/linux/RPM/ByName.html">https://www.rpmfind.net/linux/RPM/ByName.html</a>
+</p>
+
+<p>
+yum whatprovides */ldapsearch
+</p>
+
+<p>
+repoquery -lq openldap-clients
+</p>
+
+<p>
+yum install openldap-clients
 </p>
 
 <p>
@@ -430,9 +461,9 @@ sudo yum install 'R-devel' &#x2013;enablerepo=hello_Extra_Packages_for_Enterpris
 </div>
 </div>
 
-<div id="outline-container-orgb9574ff" class="outline-2">
-<h2 id="orgb9574ff"><span class="section-number-2">10.</span> zip</h2>
-<div class="outline-text-2" id="text-10">
+<div id="outline-container-org81f074c" class="outline-2">
+<h2 id="org81f074c"><span class="section-number-2">11.</span> zip</h2>
+<div class="outline-text-2" id="text-11">
 <p>
 tar -cvf archive_name.tar files_or_directories_to_archive
 tar -cvf labas.tar .
@@ -440,9 +471,9 @@ tar -cvf labas.tar .
 </div>
 </div>
 
-<div id="outline-container-org935cd5e" class="outline-2">
-<h2 id="org935cd5e"><span class="section-number-2">11.</span> NAS</h2>
-<div class="outline-text-2" id="text-11">
+<div id="outline-container-org43a5a24" class="outline-2">
+<h2 id="org43a5a24"><span class="section-number-2">12.</span> NAS</h2>
+<div class="outline-text-2" id="text-12">
 <p>
 cat /etc/fstab
 </p>
@@ -453,9 +484,9 @@ mount -l |grep sas-store
 </div>
 </div>
 
-<div id="outline-container-org8fcccb1" class="outline-2">
-<h2 id="org8fcccb1"><span class="section-number-2">12.</span> odbc</h2>
-<div class="outline-text-2" id="text-12">
+<div id="outline-container-org12764e3" class="outline-2">
+<h2 id="org12764e3"><span class="section-number-2">13.</span> odbc</h2>
+<div class="outline-text-2" id="text-13">
 <p>
 ODBC
 </p>
@@ -488,6 +519,22 @@ command: "odbcinst -q -s"
 </p>
 </div>
 </div>
+
+<div id="outline-container-org776d56b" class="outline-2">
+<h2 id="org776d56b"><span class="section-number-2">14.</span> Credentials</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+Temporarily store a password into environment variable, just to not have my
+password in <code>.bash_history</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">read -s PASSWORD
+echo $PASSWORD
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <hr/>
@@ -497,8 +544,8 @@ command: "odbcinst -q -s"
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2023-12-28 Thu 09:20</p>
-	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-15 Mon 22:12</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-01-11 Thu 21:22</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-20 Wed 12:54</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
@@ -508,6 +555,7 @@ command: "odbcinst -q -s"
 	 <script src="./static/js/generic.js"></script>
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
 </div>
 </body>
 </html>

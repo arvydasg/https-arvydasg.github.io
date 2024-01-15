@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-01-15 Mon 22:12 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>connect to a remote server over vscode</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-01-04 Thu 08:59</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">connect to a remote server over vscode</h1>
+</header><p>
+Official docs here - <a href="https://code.visualstudio.com/docs/remote/ssh">https://code.visualstudio.com/docs/remote/ssh</a>
+</p>
+
+<ul class="org-ul">
+<li>get the hostname of the server</li>
+<li>Configure proxy if needed (wss proxy(find which by "echo %http_proxy%" in
+cmd), ssl ticked off, for extensions - off)</li>
+<li>Select <code>Remote-SSH: Connect to Host...</code> from the Command Palette
+<code>(Ctrl+Shift+P)</code> and use your username and hostname/ip <code>user@hostname/ip</code></li>
+<li>choose linux server</li>
+<li>Stuff will get downloaded, might have to enter the password once again</li>
+<li>After all is done, bottom left corner you should see that you are connected
+to the remote server.</li>
+<li>Check terminal to make sure</li>
+<li>Once you select a platform, it will be stored in VS Code settings under the
+<code>remote.SSH.remotePlatform</code> property so you can change it at any time.</li>
+</ul>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-15 Mon 22:12</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-01-04 Thu 08:59</p>
+	 <p class="date">This org file is <u>created</u>: 2024-01-02 Tue 09:05</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>
