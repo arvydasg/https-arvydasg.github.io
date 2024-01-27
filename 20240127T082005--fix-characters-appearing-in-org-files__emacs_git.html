@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-01-27 Sat 11:45 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>fix characters appearing in org files</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-01-27 Sat 08:24</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">fix characters appearing in org files</h1>
+</header><p>
+So I was storing some .org files on windows machine and making a symlink from
+nixos - notes -&gt; <i>mnt/c/Users/arvydas/OneDrive/Documents/GIT/notes</i>.
+</p>
+
+<p>
+So basically stored files on Windows and used them in WSL(nixos). Did all the
+commits to those files from nixos also.
+</p>
+
+<p>
+One day I have opened magi and wanted to check untracked files - there were
+hundreds of them, because each file had ^M character added to them. They were
+invisible in the .org file, but visible in git.
+</p>
+
+<p>
+Researched a bit, saw these:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://stackoverflow.com/questions/1822849/what-are-these-ms-that-keep-showing-up-in-my-files-in-emacs">https://stackoverflow.com/questions/1822849/what-are-these-ms-that-keep-showing-up-in-my-files-in-emacs</a></li>
+<li><a href="https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings">https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings</a></li>
+<li><a href="https://stackoverflow.com/questions/9225599/should-git-change-the-ending-of-line-controlm-or-m-at-the-end-of-the-first-l">https://stackoverflow.com/questions/9225599/should-git-change-the-ending-of-line-controlm-or-m-at-the-end-of-the-first-l</a></li>
+</ul>
+
+<p>
+At first I thought it was an Emacs thing, but apparently it is Git thing. So
+adding this line to my terminal once:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">git config --global core.autocrlf input
+</pre>
+</div>
+
+<p>
+Has fixed the problem. The ^M's are now ignored and I can see the actual
+changes to the files.
+</p>
+
+<p>
+Yay!
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-27 Sat 11:45</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-01-27 Sat 08:24</p>
+	 <p class="date">This org file is <u>created</u>: 2024-01-27 Sat 08:20</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>

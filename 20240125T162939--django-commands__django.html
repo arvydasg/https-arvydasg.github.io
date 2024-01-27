@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-01-27 Sat 11:45 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>django commands</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-01-27 Sat 07:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">django commands</h1>
+</header><p>
+Create django project
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">django-admin startproject mysite
+</pre>
+</div>
+
+<p>
+Create django app
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py startapp appname
+</pre>
+</div>
+
+<p>
+Create superuser
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py createsuperuser
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py makemigrations
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py migrate
+python manage.py migrate appname
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py runserver
+</pre>
+</div>
+
+<p>
+If you have deleted migrations folder or it's content, running makemigrations or migrate will not do anything. First need to run this:
+<a href="https://stackoverflow.com/questions/34548768/no-such-table-exception">https://stackoverflow.com/questions/34548768/no-such-table-exception</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py migrate --run-syncdb
+</pre>
+</div>
+
+<p>
+Django shell.
+</p>
+
+<p>
+This opens up a terminal, but it has the Django settings already imported, so
+it allows you to work directly from the root folder of a Django project.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py shell
+</pre>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-27 Sat 11:45</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-01-27 Sat 07:45</p>
+	 <p class="date">This org file is <u>created</u>: 2024-01-25 Thu 16:29</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>

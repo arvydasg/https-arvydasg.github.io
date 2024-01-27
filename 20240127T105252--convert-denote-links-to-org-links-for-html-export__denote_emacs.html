@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-01-27 Sat 11:45 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>convert denote links to org links for html export</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-01-27 Sat 11:40</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">convert denote links to org links for html export</h1>
+</header><p>
+So when making <a href="20240127T100325--2024-01-first-month-as-developer__statusupdate.html">this status update</a> I have faced a problem and decided to attempt
+to fix it right away.
+</p>
+
+<p>
+I am using <a href="https://github.com/protesilaos/denote">Denote</a> in emacs to take notes, so today, when writing the mentioned
+status update post there was a need for me to list all the notes that were
+created over the past month. So I pressed <code>C-c n I</code> command in emacs
+(denote-add-links) and got a list with links to all of posts that were created
+this month. Great! In emacs, I can click on that link and be directed to the
+note. Great! But I know that if I try to export this .org file(denote note) to
+a .html file (needed for the website you are reading now) - I will get an error
+saying that it can not find a link to file.
+</p>
+
+<p>
+"denote-add-links" as well as "denote-link" commands currently create links
+that look like such:
+</p>
+
+<blockquote>
+<p>
+[[denote:20240102T100605][Reach django project from anywhere] ]
+</p>
+</blockquote>
+
+<p>
+When the regular link made to the same file with built in "org-insert-link"
+gives a link that looks like this:
+</p>
+
+<blockquote>
+<p>
+[[<a href="20240102T100605--reach-django-project-from-anywhere__django.html">20240102T100605--reach-django-project-from-anywhere__django.html</a>][reach-django-project-from-anywhere] ]
+</p>
+</blockquote>
+
+<p>
+Denote way is not understandable for emacs html exporter, but file: link is
+understandable.
+</p>
+
+<p>
+So when I have a list of denote links and I have to manually convert them to
+org links I do this:
+</p>
+
+<p>
+I evaluate this piece of code in my scrach buffer:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun extract-link-text-and-hyphenate ()
+  (interactive)
+  (when (region-active-p)
+    (let ((selected-text (buffer-substring (region-beginning) (region-end))))
+      (if (string-match "\\[\\[.*?\\]\\[\\(.*?\\)\\]\\]" selected-text)
+          (replace-region-contents (hyphenate-link-text (match-string 1 selected-text)))
+        (message "No valid org-mode link found in the selected text")))))
+
+(defun hyphenate-link-text (text)
+  (replace-regexp-in-string " " "-" (downcase text)))
+
+(defun replace-region-contents (new-text)
+  (delete-region (region-beginning) (region-end))
+  (insert new-text))
+</pre>
+</div>
+
+<p>
+Basically what it does is:
+</p>
+<ul class="org-ul">
+<li>takes the currently highlighted text</li>
+<li>removes brackets, etc, everything that is not the title of the denote link</li>
+<li>puts dashes in between each word</li>
+<li>down cases all letters</li>
+</ul>
+
+<p>
+What I then manually do create a macro with F3
+(kmacro-start-macro-or-insert-counter):
+</p>
+
+<ol class="org-ol">
+<li>I mark the denote link, execute <code>extract-link-text-and-hyphenate</code> on it</li>
+<li>I then mark the whole title, now it is with dashes between words</li>
+<li>Then copy the whole title</li>
+<li>do org-insert-link</li>
+<li>file link</li>
+<li>paste the title with dashes</li>
+<li>it finds the link(since all of the denote notes of mine are in the same folder)</li>
+</ol>
+
+<p>
+Close macro with F4(kmacro-end-or-call-macro ARG &amp;optional NO-REPEAT)
+</p>
+
+<p>
+Now press F4 on each denote link and it gets transformed to a regular org link
+that org html exporter can understand.
+</p>
+
+<p>
+A lot of work, but it is what it is. If I knew elisp better, perhaps I could
+find a better workaround :)
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-27 Sat 11:45</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-01-27 Sat 11:40</p>
+	 <p class="date">This org file is <u>created</u>: 2024-01-27 Sat 10:52</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-01-15 Mon 22:29 -->
+<!-- 2024-01-27 Sat 11:45 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>django best practices</title>
@@ -32,12 +32,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9cd49aa">1. Instead of /admin change to smth else URL Django</a></li>
-<li><a href="#orga457fbd">2. Use environment variables</a></li>
-<li><a href="#org45ce5e1">3. Use postgres db</a></li>
-<li><a href="#orgef24762">4. Use two different settings files</a></li>
-<li><a href="#org5f7cd18">5. Expanding user model to store more user information</a></li>
-<li><a href="#org178e777">6. Update django every major version once every 9 months</a></li>
+<li><a href="#orgb9c8e9c">1. Instead of /admin change to smth else URL Django</a></li>
+<li><a href="#orgd16569d">2. Use environment variables</a></li>
+<li><a href="#org6b079f1">3. Use postgres db</a></li>
+<li><a href="#orgfaade1c">4. Use two different settings files</a></li>
+<li><a href="#org6646ef1">5. Expanding user model to store more user information</a></li>
+<li><a href="#org3957156">6. Update django every major version once every 9 months</a></li>
 </ul>
 </div>
 </nav>
@@ -46,8 +46,8 @@ Here I will write the tips that I found and that I use when building a Django
 project.
 </p>
 
-<div id="outline-container-org9cd49aa" class="outline-2">
-<h2 id="org9cd49aa"><span class="section-number-2">1.</span> Instead of /admin change to smth else URL Django</h2>
+<div id="outline-container-orgb9c8e9c" class="outline-2">
+<h2 id="orgb9c8e9c"><span class="section-number-2">1.</span> Instead of /admin change to smth else URL Django</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 For security. Everyone knows that if its a django project, it will have an
@@ -56,8 +56,8 @@ admin page
 </div>
 </div>
 
-<div id="outline-container-orga457fbd" class="outline-2">
-<h2 id="orga457fbd"><span class="section-number-2">2.</span> Use environment variables</h2>
+<div id="outline-container-orgd16569d" class="outline-2">
+<h2 id="orgd16569d"><span class="section-number-2">2.</span> Use environment variables</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>for secret key</li>
@@ -68,8 +68,8 @@ admin page
 </div>
 </div>
 
-<div id="outline-container-org45ce5e1" class="outline-2">
-<h2 id="org45ce5e1"><span class="section-number-2">3.</span> Use postgres db</h2>
+<div id="outline-container-org6b079f1" class="outline-2">
+<h2 id="org6b079f1"><span class="section-number-2">3.</span> Use postgres db</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Kind of default ageed db to use with Django
@@ -77,8 +77,8 @@ Kind of default ageed db to use with Django
 </div>
 </div>
 
-<div id="outline-container-orgef24762" class="outline-2">
-<h2 id="orgef24762"><span class="section-number-2">4.</span> Use two different settings files</h2>
+<div id="outline-container-orgfaade1c" class="outline-2">
+<h2 id="orgfaade1c"><span class="section-number-2">4.</span> Use two different settings files</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 One for prod another for acc(test) environment
@@ -91,8 +91,8 @@ from notes)
 </div>
 </div>
 
-<div id="outline-container-org5f7cd18" class="outline-2">
-<h2 id="org5f7cd18"><span class="section-number-2">5.</span> Expanding user model to store more user information</h2>
+<div id="outline-container-org6646ef1" class="outline-2">
+<h2 id="org6646ef1"><span class="section-number-2">5.</span> Expanding user model to store more user information</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 As described in my other post <a href="20231128T132201--expanding-user-model__django_sql.html">here</a>.
@@ -100,8 +100,8 @@ As described in my other post <a href="20231128T132201--expanding-user-model__dj
 </div>
 </div>
 
-<div id="outline-container-org178e777" class="outline-2">
-<h2 id="org178e777"><span class="section-number-2">6.</span> Update django every major version once every 9 months</h2>
+<div id="outline-container-org3957156" class="outline-2">
+<h2 id="org3957156"><span class="section-number-2">6.</span> Update django every major version once every 9 months</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Python -wd runserver depreciation warnings
@@ -117,7 +117,7 @@ Python -wd runserver depreciation warnings
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-15 Mon 22:29</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-27 Sat 11:45</p>
 	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-07 Thu 20:43</p>
 	 <div class="generated">

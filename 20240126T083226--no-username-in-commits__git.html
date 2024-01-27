@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-01-27 Sat 11:45 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>no username in commits</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-01-27 Sat 07:45</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">no username in commits</h1>
+</header><p>
+On work laptop I am accessing:
+</p>
+<ul class="org-ul">
+<li>repos from work's <code>github.work.com</code></li>
+<li>repos from personal github <code>github.com</code></li>
+</ul>
+
+<p>
+Two different repo "stores". Two different accounts use them. To work repos I
+am authenticating with <a href="20231214T060558--authenticate-to-git-with-ssh__git_ssh.html">ssh key's</a> and to personal repo I have tried to
+authenticate with <a href="20231214T060637--authenticate-to-git-with-personal-access-token__git.html">stored token in credential store</a>.
+</p>
+
+<p>
+I was not sure if I can use two different ssh keys from one machine to
+authenticate to two different github "stores", that is why I am using the two
+methods.
+</p>
+
+<p>
+It was working just fine. I could commit to work repos and I could commit to
+personal repos from my work computer(that was the most important for me).
+</p>
+
+<p>
+But then I noticed that none of my commits to my work repos contain my actual
+username and as a result I am not able to preview the commit history by
+username. It looks like this:
+</p>
+
+<p>
+Instead of s2753g the commits are made as "Arvydas Gasparavicius".
+</p>
+
+
+<figure id="org17a2314">
+<img src="./media/git_commits_no_username.png" alt="git_commits_no_username.png" width="800px">
+
+</figure>
+
+<p>
+I then looked into this issue online, saw this - <a href="https://stackoverflow.com/questions/9419814/why-github-does-not-recognize-my-username-in-my-commits">https://stackoverflow.com/questions/9419814/why-github-does-not-recognize-my-username-in-my-commits</a>
+</p>
+
+<p>
+Then did in my console from which I am making commits:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">git config --global user.email "arvydas.gasparavicius@work.com"
+</pre>
+</div>
+
+<p>
+Then checked if the values has been read:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">git config user.email
+</pre>
+</div>
+
+<p>
+And it was.
+</p>
+
+<p>
+Then when I was making commits, I could see my username, which is s2753g, like
+you can see in the picture, the top commit.
+</p>
+
+<p>
+And then I also tried to make a commit to my personal repo. Yes, I no longer
+make commits as arvydasg, but as Arvydas Gasparavicius, which is fine I
+guess(as long as I can commit to my personal repos from work computer - I don't
+care about the username :) :
+</p>
+
+
+<figure id="org26be617">
+<img src="./media/git_commits_no_username2.png" alt="git_commits_no_username2.png" width="800px">
+
+</figure>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-27 Sat 11:45</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-01-27 Sat 07:45</p>
+	 <p class="date">This org file is <u>created</u>: 2024-01-26 Fri 08:32</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>
