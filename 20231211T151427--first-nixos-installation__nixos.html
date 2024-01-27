@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-01-27 Sat 11:45 -->
+<!-- 2024-01-27 Sat 12:18 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>first nixos installation</title>
@@ -32,26 +32,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org22f5c05">1. Why NixOS</a></li>
-<li><a href="#org3bcffaf">2. Why NixOS by others</a></li>
-<li><a href="#org697d6e3">3. Documentation</a></li>
-<li><a href="#orgf55495b">4. Installation on WSL</a>
+<li><a href="#org9ca896d">1. Why NixOS</a></li>
+<li><a href="#org05b0f46">2. Why NixOS by others</a></li>
+<li><a href="#org83158a5">3. Documentation</a></li>
+<li><a href="#orge96c4e9">4. Installation on WSL</a>
 <ul>
-<li><a href="#orgf70e118">4.1. Check if NixOS is not already installed</a></li>
-<li><a href="#orgb74be40">4.2. Install</a></li>
+<li><a href="#orgaa44181">4.1. Check if NixOS is not already installed</a></li>
+<li><a href="#org59e0830">4.2. Install</a></li>
 </ul>
 </li>
-<li><a href="#orgb159c9d">5. Configure the installation over emacs</a></li>
-<li><a href="#orgd5ebba9">6. Using your own custom nixos configuration file</a></li>
-<li><a href="#org711930f">7. Install other packages</a></li>
-<li><a href="#org8dbd851">8. Setting up git</a></li>
-<li><a href="#org056c458">9. GUI glitch</a></li>
+<li><a href="#orgb3c6992">5. Configure the installation over emacs</a></li>
+<li><a href="#org0c3e149">6. Using your own custom nixos configuration file</a></li>
+<li><a href="#orgf9757b6">7. Install other packages</a></li>
+<li><a href="#orgc52482a">8. Setting up git</a></li>
+<li><a href="#orgad8ac81">9. GUI glitch</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org22f5c05" class="outline-2">
-<h2 id="org22f5c05"><span class="section-number-2">1.</span> Why NixOS</h2>
+<div id="outline-container-org9ca896d" class="outline-2">
+<h2 id="org9ca896d"><span class="section-number-2">1.</span> Why NixOS</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 AFTER you reinstall your machine - to install the DEV environment, all you
@@ -69,8 +69,8 @@ again.
 </div>
 </div>
 
-<div id="outline-container-org3bcffaf" class="outline-2">
-<h2 id="org3bcffaf"><span class="section-number-2">2.</span> Why NixOS by others</h2>
+<div id="outline-container-org05b0f46" class="outline-2">
+<h2 id="org05b0f46"><span class="section-number-2">2.</span> Why NixOS by others</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="https://github.com/hlissner/dotfiles">https://github.com/hlissner/dotfiles</a></li>
@@ -79,8 +79,8 @@ again.
 </div>
 </div>
 
-<div id="outline-container-org697d6e3" class="outline-2">
-<h2 id="org697d6e3"><span class="section-number-2">3.</span> Documentation</h2>
+<div id="outline-container-org83158a5" class="outline-2">
+<h2 id="org83158a5"><span class="section-number-2">3.</span> Documentation</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>nixos github repo - <a href="https://github.com/nix-community/NixOS-WSL">https://github.com/nix-community/NixOS-WSL</a></li>
@@ -89,8 +89,8 @@ again.
 </div>
 </div>
 
-<div id="outline-container-orgf55495b" class="outline-2">
-<h2 id="orgf55495b"><span class="section-number-2">4.</span> Installation on WSL</h2>
+<div id="outline-container-orge96c4e9" class="outline-2">
+<h2 id="orge96c4e9"><span class="section-number-2">4.</span> Installation on WSL</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Steps described here:
@@ -101,8 +101,8 @@ Steps described here:
 </p>
 </div>
 
-<div id="outline-container-orgf70e118" class="outline-3">
-<h3 id="orgf70e118"><span class="section-number-3">4.1.</span> Check if NixOS is not already installed</h3>
+<div id="outline-container-orgaa44181" class="outline-3">
+<h3 id="orgaa44181"><span class="section-number-3">4.1.</span> Check if NixOS is not already installed</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-bash">wsl --status
@@ -114,8 +114,8 @@ wsl --list --verbose
 </div>
 </div>
 
-<div id="outline-container-orgb74be40" class="outline-3">
-<h3 id="orgb74be40"><span class="section-number-3">4.2.</span> Install</h3>
+<div id="outline-container-org59e0830" class="outline-3">
+<h3 id="org59e0830"><span class="section-number-3">4.2.</span> Install</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 If it does not exist, then basically download <code>nixos-wsl.tar.gz</code> into your
@@ -159,8 +159,8 @@ sudo nix-channel --update
 </div>
 </div>
 
-<div id="outline-container-orgb159c9d" class="outline-2">
-<h2 id="orgb159c9d"><span class="section-number-2">5.</span> Configure the installation over emacs</h2>
+<div id="outline-container-orgb3c6992" class="outline-2">
+<h2 id="orgb3c6992"><span class="section-number-2">5.</span> Configure the installation over emacs</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Enter nix-shell to use emacs(it does not get installed on the system, just
@@ -237,8 +237,8 @@ Try to launch emacs for all the packages to be installed.
 </div>
 </div>
 
-<div id="outline-container-orgd5ebba9" class="outline-2">
-<h2 id="orgd5ebba9"><span class="section-number-2">6.</span> Using your own custom nixos configuration file</h2>
+<div id="outline-container-org0c3e149" class="outline-2">
+<h2 id="org0c3e149"><span class="section-number-2">6.</span> Using your own custom nixos configuration file</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 It suchs to not be able to edit the <code>/etc/nixos/configuration.nix</code> file over
@@ -260,8 +260,8 @@ You are done. Should be able to edit <code>configuration.nix</code> file now.
 </div>
 </div>
 
-<div id="outline-container-org711930f" class="outline-2">
-<h2 id="org711930f"><span class="section-number-2">7.</span> Install other packages</h2>
+<div id="outline-container-orgf9757b6" class="outline-2">
+<h2 id="orgf9757b6"><span class="section-number-2">7.</span> Install other packages</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 If you want to install a package called "make" for example and nixos says it
@@ -273,8 +273,8 @@ want to install.
 </div>
 </div>
 
-<div id="outline-container-org8dbd851" class="outline-2">
-<h2 id="org8dbd851"><span class="section-number-2">8.</span> Setting up git</h2>
+<div id="outline-container-orgc52482a" class="outline-2">
+<h2 id="orgc52482a"><span class="section-number-2">8.</span> Setting up git</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 First try <a href="20231211T161252--introduce-yourself-to-git__git.html">this</a>, then one of these:
@@ -291,8 +291,8 @@ First try <a href="20231211T161252--introduce-yourself-to-git__git.html">this</a
 </div>
 </div>
 
-<div id="outline-container-org056c458" class="outline-2">
-<h2 id="org056c458"><span class="section-number-2">9.</span> GUI glitch</h2>
+<div id="outline-container-orgad8ac81" class="outline-2">
+<h2 id="orgad8ac81"><span class="section-number-2">9.</span> GUI glitch</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Reported it here  - <a href="https://github.com/microsoft/wslg/issues/1148">https://github.com/microsoft/wslg/issues/1148</a>
@@ -312,7 +312,7 @@ Possible fix(questionable) .wslgconfig(as explained in the comments of the issue
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-27 Sat 11:45</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-27 Sat 12:18</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-01-27 Sat 07:45</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-11 Mon 15:14</p>
 	 <div class="generated">
