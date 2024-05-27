@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-01-27 Sat 12:18 -->
+<!-- 2024-05-27 Mon 15:47 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>tmux commands</title>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+<div id="updated">Updated: 2024-05-27 Mon 15:00</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,25 +32,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgfd9435d">1. tmux commands</a>
+<li><a href="#org35f171f">1. tmux commands</a>
 <ul>
-<li><a href="#orgf1f06a3">1.1. <span class="priority">[A]</span> List all shortcuts</a></li>
-<li><a href="#orgb87e979">1.2. Sessions</a></li>
-<li><a href="#orgac4986d">1.3. Windows (tabs)</a></li>
-<li><a href="#orga82ed50">1.4. Panes (splits)</a></li>
-<li><a href="#org6004975">1.5. Sync Panes</a></li>
-<li><a href="#org7facb89">1.6. Resizing Panes</a></li>
-<li><a href="#orgde52d6f">1.7. Copy mode:</a></li>
-<li><a href="#org5444af3">1.8. Misc</a></li>
-<li><a href="#org33b1da7">1.9. Configurations Options:</a></li>
+<li><a href="#org17f836f">1.1. <span class="priority">[A]</span> List all shortcuts</a></li>
+<li><a href="#org0571650">1.2. Sessions</a></li>
+<li><a href="#org3863351">1.3. Windows (tabs)</a></li>
+<li><a href="#org666c07b">1.4. Panes (splits)</a></li>
+<li><a href="#org0f4a567">1.5. Sync Panes</a></li>
+<li><a href="#orge49bb51">1.6. Resizing Panes</a></li>
+<li><a href="#orgae4b4ac">1.7. Copy mode:</a></li>
+<li><a href="#org406a0f7">1.8. Misc</a></li>
+<li><a href="#org731feb8">1.9. Configurations Options:</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgfd9435d" class="outline-2">
-<h2 id="orgfd9435d"><span class="section-number-2">1.</span> tmux commands</h2>
+<div id="outline-container-org35f171f" class="outline-2">
+<h2 id="org35f171f"><span class="section-number-2">1.</span> tmux commands</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 scroll in tmux - ctrl+b+[ then emacs bindings up and down
@@ -81,8 +81,8 @@ In tmux, hit the prefix ctrl+b and then:
 </p>
 </div>
 
-<div id="outline-container-orgf1f06a3" class="outline-3">
-<h3 id="orgf1f06a3"><span class="section-number-3">1.1.</span> <span class="priority">[A]</span> List all shortcuts</h3>
+<div id="outline-container-org17f836f" class="outline-3">
+<h3 id="org17f836f"><span class="section-number-3">1.1.</span> <span class="priority">[A]</span> List all shortcuts</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 to see all the shortcuts keys in tmux simply use the bind-key ? in my
@@ -91,8 +91,8 @@ case that would be <code>CTRL-B ?</code>
 </div>
 </div>
 
-<div id="outline-container-orgb87e979" class="outline-3">
-<h3 id="orgb87e979"><span class="section-number-3">1.2.</span> Sessions</h3>
+<div id="outline-container-org0571650" class="outline-3">
+<h3 id="org0571650"><span class="section-number-3">1.2.</span> Sessions</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
 <pre class="src src-bash">:new&lt;CR&gt;  new session
@@ -104,8 +104,8 @@ $  kill session
 </div>
 </div>
 
-<div id="outline-container-orgac4986d" class="outline-3">
-<h3 id="orgac4986d"><span class="section-number-3">1.3.</span> Windows (tabs)</h3>
+<div id="outline-container-org3863351" class="outline-3">
+<h3 id="org3863351"><span class="section-number-3">1.3.</span> Windows (tabs)</h3>
 <div class="outline-text-3" id="text-1-3">
 <div class="org-src-container">
 <pre class="src src-bash">c  create window
@@ -120,8 +120,8 @@ f  find window
 </div>
 </div>
 
-<div id="outline-container-orga82ed50" class="outline-3">
-<h3 id="orga82ed50"><span class="section-number-3">1.4.</span> Panes (splits)</h3>
+<div id="outline-container-org666c07b" class="outline-3">
+<h3 id="org666c07b"><span class="section-number-3">1.4.</span> Panes (splits)</h3>
 <div class="outline-text-3" id="text-1-4">
 <div class="org-src-container">
 <pre class="src src-bash">%  vertical split
@@ -142,8 +142,8 @@ space - toggle between layouts
 </div>
 </div>
 
-<div id="outline-container-org6004975" class="outline-3">
-<h3 id="org6004975"><span class="section-number-3">1.5.</span> Sync Panes</h3>
+<div id="outline-container-org0f4a567" class="outline-3">
+<h3 id="org0f4a567"><span class="section-number-3">1.5.</span> Sync Panes</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 You can do this by switching to the appropriate window, typing your
@@ -166,8 +166,8 @@ command. tip source
 </div>
 </div>
 
-<div id="outline-container-org7facb89" class="outline-3">
-<h3 id="org7facb89"><span class="section-number-3">1.6.</span> Resizing Panes</h3>
+<div id="outline-container-orge49bb51" class="outline-3">
+<h3 id="orge49bb51"><span class="section-number-3">1.6.</span> Resizing Panes</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 You can also resize panes if you don’t like the layout defaults. I
@@ -190,8 +190,8 @@ PREFIX : resize-pane -t 2 -L 20 (Resizes the pane with the id of 2 left by 20 ce
 </div>
 </div>
 
-<div id="outline-container-orgde52d6f" class="outline-3">
-<h3 id="orgde52d6f"><span class="section-number-3">1.7.</span> Copy mode:</h3>
+<div id="outline-container-orgae4b4ac" class="outline-3">
+<h3 id="orgae4b4ac"><span class="section-number-3">1.7.</span> Copy mode:</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 Pressing PREFIX [ places us in Copy mode. We can then use our movement
@@ -263,8 +263,8 @@ Transpose chars                        C-t
 </div>
 </div>
 
-<div id="outline-container-org5444af3" class="outline-3">
-<h3 id="org5444af3"><span class="section-number-3">1.8.</span> Misc</h3>
+<div id="outline-container-org406a0f7" class="outline-3">
+<h3 id="org406a0f7"><span class="section-number-3">1.8.</span> Misc</h3>
 <div class="outline-text-3" id="text-1-8">
 <div class="org-src-container">
 <pre class="src src-bash">d  detach
@@ -276,8 +276,8 @@ t  big clock
 </div>
 </div>
 
-<div id="outline-container-org33b1da7" class="outline-3">
-<h3 id="org33b1da7"><span class="section-number-3">1.9.</span> Configurations Options:</h3>
+<div id="outline-container-org731feb8" class="outline-3">
+<h3 id="org731feb8"><span class="section-number-3">1.9.</span> Configurations Options:</h3>
 <div class="outline-text-3" id="text-1-9">
 <div class="org-src-container">
 <pre class="src src-bash"># Mouse support - set to on if you want to use the mouse
@@ -314,11 +314,11 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-27 Sat 12:18</p>
-	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-20 Wed 13:31</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

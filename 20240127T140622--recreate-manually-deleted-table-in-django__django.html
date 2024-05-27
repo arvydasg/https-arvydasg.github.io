@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-27 Mon 15:47 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>recreate manually deleted table in django</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-27 Mon 15:00</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">recreate manually deleted table in django</h1>
+</header><p>
+I was attempting to <a href="20240127T140708--remove-an-app-from-django-project__django.html">remove an app from django project</a> and I uncommented the
+model file, then ran makemigrations and migrate. So changes in the DB have been
+made, uncommented tables were dropped.
+</p>
+
+<p>
+I then realized I am in a wrong git branch. So I reverted the changes to the
+model file, changed branch and started the server. Database is the same, with
+no tables, but models show that there should be tables. Migration file also
+shows that there should be tables. When I tried to run makemigrations and
+migrate - nothing would happen. I had to find a way to recreate the deleted
+tables.
+</p>
+
+<p>
+For that I found this command:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py migrate --fake app_name zero 
+python manage.py migrate app_name
+</pre>
+</div>
+
+<p>
+So I ran in my case:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">[nixos@nixos:~/GIT/lifeapi]$ python manage.py migrate --settings=settings.development --fake website_fixes_app zero
+Operations to perform:
+  Unapply all migrations: website_fixes_app
+Running migrations:
+  Rendering model states... DONE
+  Unapplying website_fixes_app.0002_websitefix_user... FAKED
+  Unapplying website_fixes_app.0001_initial... FAKED
+</pre>
+</div>
+
+<p>
+So it unapplied the migrations from the two migration files, I then had this
+message when I ran the server:
+</p>
+
+<blockquote>
+<p>
+You have 2 unapplied migration(s). Your project may not work properly until you
+apply the migrations for app(s): website_fixes_app. Run 'python manage.py
+migrate' to apply them.
+</p>
+</blockquote>
+
+<p>
+Okay, great, let's run the migrations:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">[nixos@nixos:~/GIT/lifeapi]$ python manage.py migrate --settings=settings.development
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, members_app, quiz_app, rescuetime_app, sessions, weather_app, website_fixes_app
+Running migrations:
+  Applying website_fixes_app.0001_initial... OK
+  Applying website_fixes_app.0002_websitefix_user... OK
+</pre>
+</div>
+
+<p>
+As you can see, the migrations were applied, so the tables were created in the
+DB!
+</p>
+
+<p>
+Amazing :)
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
+	 <p class="date">This org file is <u>created</u>: 2024-01-27 Sat 14:06</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>

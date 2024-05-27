@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-01-27 Sat 12:18 -->
+<!-- 2024-05-27 Mon 15:47 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker test container</title>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-01-04 Thu 08:59</div>
+<div id="updated">Updated: 2024-05-27 Mon 15:00</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,17 +32,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3038f70">1. Dockerfile</a></li>
-<li><a href="#org1bc0ff4">2. server.py</a></li>
-<li><a href="#org42ee53b">3. helloworld.html</a></li>
-<li><a href="#org4f80b4c">4. build the image</a></li>
-<li><a href="#org3dd2fb4">5. run the image</a></li>
+<li><a href="#org3103822">1. Dockerfile</a></li>
+<li><a href="#org7e96557">2. server.py</a></li>
+<li><a href="#org7054fc5">3. helloworld.html</a></li>
+<li><a href="#org9258c94">4. build the image</a></li>
+<li><a href="#org9181c77">5. run the image</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org3038f70" class="outline-2">
-<h2 id="org3038f70"><span class="section-number-2">1.</span> Dockerfile</h2>
+<div id="outline-container-org3103822" class="outline-2">
+<h2 id="org3103822"><span class="section-number-2">1.</span> Dockerfile</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-bash">FROM python:3.9-slim
@@ -56,8 +56,8 @@ CMD ["python3", "server.py"]
 </div>
 </div>
 
-<div id="outline-container-org1bc0ff4" class="outline-2">
-<h2 id="org1bc0ff4"><span class="section-number-2">2.</span> server.py</h2>
+<div id="outline-container-org7e96557" class="outline-2">
+<h2 id="org7e96557"><span class="section-number-2">2.</span> server.py</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-python">import http.server
@@ -90,8 +90,8 @@ with socketserver.TCPServer(("", PORT), MyRequestHandler) as httpd:
 </div>
 </div>
 
-<div id="outline-container-org42ee53b" class="outline-2">
-<h2 id="org42ee53b"><span class="section-number-2">3.</span> helloworld.html</h2>
+<div id="outline-container-org7054fc5" class="outline-2">
+<h2 id="org7054fc5"><span class="section-number-2">3.</span> helloworld.html</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-html">&lt;!DOCTYPE html&gt;
@@ -108,8 +108,8 @@ with socketserver.TCPServer(("", PORT), MyRequestHandler) as httpd:
 </div>
 </div>
 
-<div id="outline-container-org4f80b4c" class="outline-2">
-<h2 id="org4f80b4c"><span class="section-number-2">4.</span> build the image</h2>
+<div id="outline-container-org9258c94" class="outline-2">
+<h2 id="org9258c94"><span class="section-number-2">4.</span> build the image</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 while in the same directory as the previous 3 files
@@ -126,8 +126,8 @@ Check docker desktop or <code>docker ps</code> to see the newly created image ca
 </div>
 </div>
 
-<div id="outline-container-org3dd2fb4" class="outline-2">
-<h2 id="org3dd2fb4"><span class="section-number-2">5.</span> run the image</h2>
+<div id="outline-container-org9181c77" class="outline-2">
+<h2 id="org9181c77"><span class="section-number-2">5.</span> run the image</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-bash">docker run -it - p 5009:8082 test
@@ -158,11 +158,11 @@ Serving at port 8082
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-27 Sat 12:18</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-01-04 Thu 08:59</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-03 Wed 13:23</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

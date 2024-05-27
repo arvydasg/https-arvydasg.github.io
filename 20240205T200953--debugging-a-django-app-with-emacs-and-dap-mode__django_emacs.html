@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-27 Mon 15:47 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Debugging a Django app with Emacs and dap-mode</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-27 Mon 15:00</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Debugging a Django app with Emacs and dap-mode</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org86c7991">1. Asked in "dape" mode issue log</a>
+<ul>
+<li><a href="#org74b6a43">1.1. <span class="todo TODO">TODO</span> should reply to the dape mode guy</a></li>
+</ul>
+</li>
+<li><a href="#orgb9afbeb">2. Torstein reply</a></li>
+<li><a href="#orgfcd0306">3. Plumber and different tools</a></li>
+<li><a href="#org28a37f6">4. Pycharm - Karina</a></li>
+</ul>
+</div>
+</nav>
+<p>
+Not much information on this topic
+</p>
+
+<p>
+Found this - <a href="https://github.com/emacs-lsp/dap-mode/issues/229">https://github.com/emacs-lsp/dap-mode/issues/229</a>, asked Seanfarly
+in person, replied to me under github ticket
+</p>
+
+<p>
+Wrote a question in reddit, no response -
+<a href="https://www.reddit.com/r/emacs/comments/1agxcb9/debugging_a_django_app_with_dapmode/">https://www.reddit.com/r/emacs/comments/1agxcb9/debugging_a_django_app_with_dapmode/</a>
+</p>
+
+<div id="outline-container-org86c7991" class="outline-2">
+<h2 id="org86c7991"><span class="section-number-2">1.</span> Asked in "dape" mode issue log</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="https://github.com/svaante/dape/issues/62">https://github.com/svaante/dape/issues/62</a> after noticing Torstein mention it here - <a href="https://www.reddit.com/r/emacs/comments/1133gvq/eglot_and_debugging_python/?share_id=snq4RQaJqMQ66DwTl1L_F&amp;utm_content=1&amp;utm_medium=android_app&amp;utm_name=androidcss&amp;utm_source=share&amp;utm_term=1">https://www.reddit.com/r/emacs/comments/1133gvq/eglot_and_debugging_python/?share_id=snq4RQaJqMQ66DwTl1L_F&amp;utm_content=1&amp;utm_medium=android_app&amp;utm_name=androidcss&amp;utm_source=share&amp;utm_term=1</a> and in his video here - <a href="https://www.youtube.com/watch?si=yYFpkMQlMUFpcn_n&amp;v=YKkyfz4cU8g&amp;feature=youtu.be">https://www.youtube.com/watch?si=yYFpkMQlMUFpcn_n&amp;v=YKkyfz4cU8g&amp;feature=youtu.be</a>
+</p>
+</div>
+
+<div id="outline-container-org74b6a43" class="outline-3">
+<h3 id="org74b6a43"><span class="section-number-3">1.1.</span> <span class="todo TODO">TODO</span> should reply to the dape mode guy</h3>
+</div>
+</div>
+
+<div id="outline-container-orgb9afbeb" class="outline-2">
+<h2 id="orgb9afbeb"><span class="section-number-2">2.</span> Torstein reply</h2>
+<div class="outline-text-2" id="text-2">
+<blockquote>
+<p>
+I've never used Django, so I don't know the specifics. The crux is being able
+to launch Django from Emacs. Then you can debug anything. AFAICT from
+<a href="https://docs.djangoproject.com/en/5.0/howto/deployment/">https://docs.djangoproject.com/en/5.0/howto/deployment/</a>, Django can both run
+inside an Apache module and with WISGI and other native Python ways. If you can
+launch your Django app with python3 &lt;something&gt;, then you can debug it with
+dape.
+</p>
+
+<p>
+&gt; How do you find dape mode so far?
+</p>
+
+<p>
+Pretty happy with it so far, it's fairly fast and has some good defaults. I'm
+not doing Python development full time, sadly, I'm constantly juggling products
+and technology stacks. Thus, there can be weeks and even months between each
+time I get to do heavy Python development, in which I need a debugger.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgfcd0306" class="outline-2">
+<h2 id="orgfcd0306"><span class="section-number-2">3.</span> Plumber and different tools</h2>
+<div class="outline-text-2" id="text-3">
+<blockquote>
+<p>
+ever seen a plumber use the same wrench for all the pipes? Different tools for deferent jobs. Multiple IDE's, code editors for different jobs.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org28a37f6" class="outline-2">
+<h2 id="org28a37f6"><span class="section-number-2">4.</span> Pycharm - Karina</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+swears by it
+</p>
+
+<p>
+Pasak jos pycharm visa tai rodo.
+</p>
+
+<blockquote>
+<p>
+Labas, gal turi kokių gudrybių kaip django pasiekti request, context, args,
+kwargs, template tags, etc? Viska, kas vaikšto tarp serverio ir client padarius
+requestus, paspaudus mygtukus admin consoleje ir pan.
+</p>
+
+<p>
+Nežinau net kaip įvardinti, nes nežinau ko tiksliai ieškau 
+</p>
+
+<p>
+Django debug toolbare kažkaip nematau visos visos info
+</p>
+
+<p>
+Aš jaučiu, matant tai ir suprantant tai - būtų kaifas. Skraidyciau.
+</p>
+</blockquote>
+
+<p>
+Kazkur dar skaiau, kad pycharm turi built in Django debugging support. lolz..
+</p>
+
+
+<p>
+maybe give pycharm a try? Ask Karina for help to see how to debug, how to see
+all the variables I need to see. querysets, args, kwargs, request stuff, parameters, etc
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
+	 <p class="date">This org file is <u>created</u>: 2024-02-05 Mon 20:09</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-01-27 Sat 12:18 -->
+<!-- 2024-05-27 Mon 15:47 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>linux commands</title>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-01-27 Sat 07:45</div>
+<div id="updated">Updated: 2024-05-27 Mon 15:00</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,30 +32,30 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7c67aae">1. Secret management</a></li>
-<li><a href="#orgff56cfd">2. LDAP</a></li>
-<li><a href="#orgcf95500">3. Access management</a></li>
-<li><a href="#orgb711f4a">4. Server information</a></li>
-<li><a href="#org7f79806">5. Search</a></li>
-<li><a href="#org9940abe">6. File</a></li>
-<li><a href="#org4678597">7. Processes</a>
+<li><a href="#orgb7bbe8f">1. Secret management</a></li>
+<li><a href="#orgd0d05a9">2. LDAP</a></li>
+<li><a href="#org3b77833">3. Access management</a></li>
+<li><a href="#org76e4e6b">4. Server information</a></li>
+<li><a href="#org2f12614">5. Search</a></li>
+<li><a href="#orgd30eba5">6. File</a></li>
+<li><a href="#orgda0de17">7. Processes</a>
 <ul>
-<li><a href="#org7afac0b">7.1. htop</a></li>
+<li><a href="#org36284fb">7.1. htop</a></li>
 </ul>
 </li>
-<li><a href="#org0475006">8. Network</a></li>
-<li><a href="#orgc86acac">9. Logs</a></li>
-<li><a href="#org11dc7b3">10. Yum</a></li>
-<li><a href="#orgb6103de">11. zip</a></li>
-<li><a href="#orgc8733dd">12. NAS</a></li>
-<li><a href="#org0639518">13. odbc</a></li>
-<li><a href="#org1fae623">14. Credentials</a></li>
+<li><a href="#orgd640a30">8. Network</a></li>
+<li><a href="#org168b0bc">9. Logs</a></li>
+<li><a href="#org635a41f">10. Yum</a></li>
+<li><a href="#orga005b34">11. zip</a></li>
+<li><a href="#org91fe854">12. NAS</a></li>
+<li><a href="#org4491b1a">13. odbc</a></li>
+<li><a href="#org46066c3">14. Credentials</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org7c67aae" class="outline-2">
-<h2 id="org7c67aae"><span class="section-number-2">1.</span> Secret management</h2>
+<div id="outline-container-orgb7bbe8f" class="outline-2">
+<h2 id="orgb7bbe8f"><span class="section-number-2">1.</span> Secret management</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 read -s LDAP_USER
@@ -71,8 +71,8 @@ echo "LDAP_SERVER: $LDAP_SERVER"
 </div>
 </div>
 
-<div id="outline-container-orgff56cfd" class="outline-2">
-<h2 id="orgff56cfd"><span class="section-number-2">2.</span> LDAP</h2>
+<div id="outline-container-orgd0d05a9" class="outline-2">
+<h2 id="orgd0d05a9"><span class="section-number-2">2.</span> LDAP</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 getent
@@ -104,8 +104,8 @@ getent netgroup servername | grep username
 </div>
 </div>
 
-<div id="outline-container-orgcf95500" class="outline-2">
-<h2 id="orgcf95500"><span class="section-number-2">3.</span> Access management</h2>
+<div id="outline-container-org3b77833" class="outline-2">
+<h2 id="org3b77833"><span class="section-number-2">3.</span> Access management</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 last
@@ -138,8 +138,8 @@ setfacl -Rm g:quant:rwX -m d:g:quant:rwX -m m:rwx /[directory of choice]
 </div>
 </div>
 
-<div id="outline-container-orgb711f4a" class="outline-2">
-<h2 id="orgb711f4a"><span class="section-number-2">4.</span> Server information</h2>
+<div id="outline-container-org76e4e6b" class="outline-2">
+<h2 id="org76e4e6b"><span class="section-number-2">4.</span> Server information</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 dmesgn
@@ -171,8 +171,8 @@ rpm -qa -last | more
 </div>
 </div>
 
-<div id="outline-container-org7f79806" class="outline-2">
-<h2 id="org7f79806"><span class="section-number-2">5.</span> Search</h2>
+<div id="outline-container-org2f12614" class="outline-2">
+<h2 id="org2f12614"><span class="section-number-2">5.</span> Search</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 grep -r "mas" .
@@ -184,8 +184,8 @@ find / -type f -name "viya-services-status.yml" 2&gt;/dev/null
 </div>
 </div>
 
-<div id="outline-container-org9940abe" class="outline-2">
-<h2 id="org9940abe"><span class="section-number-2">6.</span> File</h2>
+<div id="outline-container-orgd30eba5" class="outline-2">
+<h2 id="orgd30eba5"><span class="section-number-2">6.</span> File</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 ln -s /opt/app/html html
@@ -241,8 +241,8 @@ du -h /home | sort -rh | head -n 10
 </div>
 </div>
 
-<div id="outline-container-org4678597" class="outline-2">
-<h2 id="org4678597"><span class="section-number-2">7.</span> Processes</h2>
+<div id="outline-container-orgda0de17" class="outline-2">
+<h2 id="orgda0de17"><span class="section-number-2">7.</span> Processes</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 fuser -c <i>opt/app</i>
@@ -302,8 +302,8 @@ sudo systemctl stop sas-viya-*
 </p>
 </div>
 
-<div id="outline-container-org7afac0b" class="outline-3">
-<h3 id="org7afac0b"><span class="section-number-3">7.1.</span> htop</h3>
+<div id="outline-container-org36284fb" class="outline-3">
+<h3 id="org36284fb"><span class="section-number-3">7.1.</span> htop</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 shortcuts - <a href="https://spin.atomicobject.com/2020/02/10/htop-guide/">https://spin.atomicobject.com/2020/02/10/htop-guide/</a>
@@ -332,8 +332,8 @@ loaded into memory once and used by multiple processes.
 </div>
 </div>
 
-<div id="outline-container-org0475006" class="outline-2">
-<h2 id="org0475006"><span class="section-number-2">8.</span> Network</h2>
+<div id="outline-container-orgd640a30" class="outline-2">
+<h2 id="orgd640a30"><span class="section-number-2">8.</span> Network</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 route
@@ -384,8 +384,8 @@ pacias taisykles.
 </div>
 </div>
 
-<div id="outline-container-orgc86acac" class="outline-2">
-<h2 id="orgc86acac"><span class="section-number-2">9.</span> Logs</h2>
+<div id="outline-container-org168b0bc" class="outline-2">
+<h2 id="org168b0bc"><span class="section-number-2">9.</span> Logs</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 journalctl -u jupyterhub -f
@@ -411,8 +411,8 @@ ansible-playbook site.yml -vvv 2&gt;&amp;1 | tee -a install_20230809_1500.txt
 </div>
 </div>
 
-<div id="outline-container-org11dc7b3" class="outline-2">
-<h2 id="org11dc7b3"><span class="section-number-2">10.</span> Yum</h2>
+<div id="outline-container-org635a41f" class="outline-2">
+<h2 id="org635a41f"><span class="section-number-2">10.</span> Yum</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 rpm official repo(yum, RHEL) commands - <a href="https://www.rpmfind.net/linux/RPM/ByName.html">https://www.rpmfind.net/linux/RPM/ByName.html</a>
@@ -461,8 +461,8 @@ sudo yum install 'R-devel' &#x2013;enablerepo=hello_Extra_Packages_for_Enterpris
 </div>
 </div>
 
-<div id="outline-container-orgb6103de" class="outline-2">
-<h2 id="orgb6103de"><span class="section-number-2">11.</span> zip</h2>
+<div id="outline-container-orga005b34" class="outline-2">
+<h2 id="orga005b34"><span class="section-number-2">11.</span> zip</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 tar -cvf archive_name.tar files_or_directories_to_archive
@@ -471,8 +471,8 @@ tar -cvf labas.tar .
 </div>
 </div>
 
-<div id="outline-container-orgc8733dd" class="outline-2">
-<h2 id="orgc8733dd"><span class="section-number-2">12.</span> NAS</h2>
+<div id="outline-container-org91fe854" class="outline-2">
+<h2 id="org91fe854"><span class="section-number-2">12.</span> NAS</h2>
 <div class="outline-text-2" id="text-12">
 <p>
 cat /etc/fstab
@@ -484,8 +484,8 @@ mount -l |grep sas-store
 </div>
 </div>
 
-<div id="outline-container-org0639518" class="outline-2">
-<h2 id="org0639518"><span class="section-number-2">13.</span> odbc</h2>
+<div id="outline-container-org4491b1a" class="outline-2">
+<h2 id="org4491b1a"><span class="section-number-2">13.</span> odbc</h2>
 <div class="outline-text-2" id="text-13">
 <p>
 ODBC
@@ -517,8 +517,8 @@ odbcinst -q -d
 </div>
 </div>
 
-<div id="outline-container-org1fae623" class="outline-2">
-<h2 id="org1fae623"><span class="section-number-2">14.</span> Credentials</h2>
+<div id="outline-container-org46066c3" class="outline-2">
+<h2 id="org46066c3"><span class="section-number-2">14.</span> Credentials</h2>
 <div class="outline-text-2" id="text-14">
 <p>
 Temporarily store a password into environment variable, just to not have my
@@ -541,11 +541,11 @@ echo $PASSWORD
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-27 Sat 12:18</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-01-27 Sat 07:45</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-20 Wed 12:54</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

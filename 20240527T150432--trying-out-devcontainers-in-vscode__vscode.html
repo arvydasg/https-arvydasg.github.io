@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-27 Mon 15:47 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>trying out devcontainers in vscode</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-27 Mon 15:10</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">trying out devcontainers in vscode</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgbfd6f73">1. Devcontainers</a>
+<ul>
+<li><a href="#orge5edc2d">1.1. Notes</a>
+<ul>
+<li><a href="#org3c88dce">1.1.1. Why devcontainers</a></li>
+</ul>
+</li>
+<li><a href="#orgab99993">1.2. The setup</a>
+<ul>
+<li><a href="#org78b66ff">1.2.1. How to set up devcontainers</a></li>
+<li><a href="#org4f9ffb1">1.2.2. .devcontainers folder</a></li>
+<li><a href="#org1b3e26e">1.2.3. Dockerfile</a></li>
+<li><a href="#orgb0201b9">1.2.4. devcontainer.json</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-orgbfd6f73" class="outline-2">
+<h2 id="orgbfd6f73"><span class="section-number-2">1.</span> Devcontainers</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+STOPPED USING IT HERE (due to slowliness) - <a href="https://github.com/azegas/quotes/commit/9477b9062be2e9ac0aa2b7158cfdebabac6a4f54">https://github.com/azegas/quotes/commit/9477b9062be2e9ac0aa2b7158cfdebabac6a4f54</a> 
+</p>
+</div>
+
+<div id="outline-container-orge5edc2d" class="outline-3">
+<h3 id="orge5edc2d"><span class="section-number-3">1.1.</span> Notes</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org3c88dce" class="outline-4">
+<h4 id="org3c88dce"><span class="section-number-4">1.1.1.</span> Why devcontainers</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Kind of nice to have this practice. People use it at work also. Linux environment&#x2026; what could go wrong.
+</p>
+
+<p>
+To run a project on windows, you need to install:
+</p>
+
+<ul class="org-ul">
+<li>python</li>
+<li>have virtual environments</li>
+<li>install packages</li>
+</ul>
+
+<p>
+Then to edit the code, you need to install vscode and it's packages:
+</p>
+
+<ul class="org-ul">
+<li>linting</li>
+<li>black</li>
+</ul>
+
+<p>
+Then to run the program, you again need some packages
+</p>
+
+<ul class="org-ul">
+<li>from the virtual environmnent</li>
+<li>from the vscode</li>
+</ul>
+
+<p>
+Dev containers allow us to have <code>one Dockerfile</code> in which we describe what the
+project needs. Then it also allows us to describe how the developer environment
+should look like, which VSCode packages should be installed for the developer
+that is opening this project and so on (jinja, pylance, w/e else).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgab99993" class="outline-3">
+<h3 id="orgab99993"><span class="section-number-3">1.2.</span> The setup</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org78b66ff" class="outline-4">
+<h4 id="org78b66ff"><span class="section-number-4">1.2.1.</span> How to set up devcontainers</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li><a href="https://github.com/azegas/quotes/issues/47">My own reference task from quotes project</a></li>
+<li><a href="https://www.youtube.com/watch?v=b1RavPr_878&amp;ab_channel=VisualStudioCode">YouTube Totorial</a></li>
+<li><a href="https://code.visualstudio.com/docs/devcontainers/containers">Official DevContainer docs</a></li>
+<li><a href="https://www.youtube.com/watch?v=61M2takIKl8&amp;ab_channel=VisualStudioCode">8 series tutorial to get to know what are dev containers</a></li>
+<li><a href="https://github.com/azegas/quotes/commit/db8585e3aa7b84a33aa1c3b1720cd6691c14a955">example of a working devcontainer for quotes project</a></li>
+</ul>
+
+<p>
+Steps:
+</p>
+
+<ul class="org-ul">
+<li>install `remote-development` extension in VsCode (contains devcontainers)</li>
+<li>Have Docker running</li>
+<li>have `.devcontainer` folder in your project</li>
+<li>Re-open the project in the container with `re-open in container` command</li>
+<li>check if the nice zsh terminal is included.</li>
+</ul>
+
+<p>
+Keep in mind that you don't have to copy any files from one environment to the dev container, like you usually need with Docker images. With Devcontainers, the files are used from your local machine, but opened in a separate VsCode environment, with fresh plate, no extensions, nothing, only what you have specified.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4f9ffb1" class="outline-4">
+<h4 id="org4f9ffb1"><span class="section-number-4">1.2.2.</span> .devcontainers folder</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Create <code>.devcontainers</code> folder in your project's root directory.
+</p>
+</div>
+</div>
+<div id="outline-container-org1b3e26e" class="outline-4">
+<h4 id="org1b3e26e"><span class="section-number-4">1.2.3.</span> Dockerfile</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+Inside of the <code>.devcontainers</code> folder, create a <code>Dockerfile</code> file with the
+content below:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">
+# inspiration taken from here - https://github.com/devcontainers/images/blob/main/src/python/.devcontainer/Dockerfile
+
+FROM mcr.microsoft.com/devcontainers/python:1-3.12
+
+RUN apt-get update \
+    &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        git \
+    &amp;&amp; apt-get clean \
+    &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies from requirements
+COPY requirements.txt ./
+RUN python3 -m pip install --upgrade pip \
+    &amp;&amp; pip3 install -r requirements.txt \
+    &amp;&amp; rm -rf requirements.txt
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb0201b9" class="outline-4">
+<h4 id="orgb0201b9"><span class="section-number-4">1.2.4.</span> devcontainer.json</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<p>
+Alongisde the Dockerfile, create a `devcontainer.json` file with this content:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">// inspiration from here - https://github.com/devcontainers/images/blob/main/src/python/.devcontainer/devcontainer.json
+
+{
+    "name": "Quotes Container",
+
+    // Build configuration
+    "build": {
+        "dockerfile": "./Dockerfile",
+        "context": "." // ".." would allows to reach files outside of the .dockerfile folder
+    },
+
+    // Features to be installed in the container
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2":{
+            "installZsh": "true",
+            "username": "vscode",
+            "userUid": "1000",
+            "userGid": "1000",
+            "upgradePackages": "true"
+        },
+        "ghcr.io/devcontainers/features/python:1": "none",
+        "ghcr.io/devcontainers/features/node:1": "none",
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest",
+            "ppa": "false"
+        }
+    },
+
+  // Customizations for VS Code
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "ms-python.black-formatter",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "ms-python.isort",
+        "ms-python.pylint",
+        "streetsidesoftware.code-spell-checker",
+        "batisteo.vscode-django",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens",
+        "yzhang.markdown-all-in-one",
+        "GitHub.github-vscode-theme"
+      ],
+      // Set *default* container specific settings.json values on container create.
+      "settings": {
+        "workbench.sideBar.location": "right",
+        "workbench.colorTheme": "GitHub Dark Default",
+        "editor.minimap.enabled": false,
+        "editor.smoothScrolling": true,
+        "editor.formatOnType": true,
+        "files.trimTrailingWhitespace": true,
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.formatting.provider":"black",
+        "[python]": {
+          "editor.formatOnSave": true
+        },
+        "emmet.includeLanguages": {
+          "django-html": "html" // allow html tag completion in django html mode https://github.com/vscode-django/vscode-django/issues/125
+        }
+    }
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "python --version",
+
+  // Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "vscode"
+  }}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:10</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-27 Mon 15:04</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>

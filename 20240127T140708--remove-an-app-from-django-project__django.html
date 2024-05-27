@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-27 Mon 15:47 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>remove an app from django project</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-27 Mon 15:00</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">remove an app from django project</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4ba7eac">1. 1. making the app invisible from the UI</a></li>
+<li><a href="#org3d467c2">2. 2. Dealing with the DB table</a></li>
+<li><a href="#org7410745">3. 3. In PROD</a></li>
+<li><a href="#org5f6096d">4. 4. Delete the app folder</a></li>
+</ul>
+</div>
+</nav>
+<p>
+<a href="https://stackoverflow.com/questions/3329773/how-to-completely-uninstall-a-django-app">https://stackoverflow.com/questions/3329773/how-to-completely-uninstall-a-django-app</a>
+</p>
+
+<p>
+Did it once, today, here are the commits:
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/arvydasg/lifeapi/pull/71">https://github.com/arvydasg/lifeapi/pull/71</a></li>
+<li><a href="https://github.com/arvydasg/lifeapi/pull/70">https://github.com/arvydasg/lifeapi/pull/70</a></li>
+</ul>
+
+<p>
+And below are the steps I took:
+</p>
+
+<p>
+Each heading can be a single commit. Do this step by step.
+</p>
+
+<div id="outline-container-org4ba7eac" class="outline-2">
+<h2 id="org4ba7eac"><span class="section-number-2">1.</span> 1. making the app invisible from the UI</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Hiding the links to the app (base.html, etc), removing it from project's
+urls.py file.
+</p>
+
+<p>
+When you navigate in the page - you should not get any errors.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3d467c2" class="outline-2">
+<h2 id="org3d467c2"><span class="section-number-2">2.</span> 2. Dealing with the DB table</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Luckily my app did not have dependencies to other apps at this time. So it's quite simple.
+</p>
+
+<ul class="org-ul">
+<li>comment out <code>models.py</code> file content of the app</li>
+<li>comment out <code>admin.py</code> file content of the app</li>
+</ul>
+
+<p>
+Now you should be able to run the app just fine as well, visit the /admin page
+results in no errors.
+</p>
+
+<p>
+Run <code>makemigrations</code>
+</p>
+
+<p>
+A migration file will appear in that apps's directory.
+</p>
+
+<p>
+Run <code>migrate</code>
+</p>
+
+<p>
+Then changes should be applied. In our case - deletion of the tables in our db
+should be performed.
+</p>
+
+<p>
+Commit those changes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7410745" class="outline-2">
+<h2 id="org7410745"><span class="section-number-2">3.</span> 3. In PROD</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Pull the most recent repo changes, run <code>migrate</code> (since the newest deletion
+migrations file should be there).
+</p>
+
+<p>
+Confirm that the tables were deleted:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py shell --settings=settings.production
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">from django.db import connection
+tables = connection.introspection.table_names()
+print(sorted(tables))
+</pre>
+</div>
+
+<p>
+Tables should no longer be there.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5f6096d" class="outline-2">
+<h2 id="org5f6096d"><span class="section-number-2">4.</span> 4. Delete the app folder</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Delete and commit.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
+	 <p class="date">This org file is <u>created</u>: 2024-01-27 Sat 14:07</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>

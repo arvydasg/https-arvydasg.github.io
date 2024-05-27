@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-27 Mon 15:47 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>optimizing database queries</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-27 Mon 15:00</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">optimizing database queries</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgd97224a">1. Caching</a></li>
+<li><a href="#org339bf99">2. HTMX</a></li>
+<li><a href="#org0b55ea8">3. Others</a></li>
+</ul>
+</div>
+</nav>
+<p>
+This task is particularly important, because when I am using the app, the
+loading times are incredibly long(<a href="20240129T074022--paginating-results-in-django__django_lifeapi.html">like in this post</a>). And the more records I
+add to the database (I add them daily) - the worse the situation will get.
+</p>
+
+<p>
+Some possible solutions to try out:
+</p>
+
+<div id="outline-container-orgd97224a" class="outline-2">
+<h2 id="orgd97224a"><span class="section-number-2">1.</span> Caching</h2>
+<div class="outline-text-2" id="text-1">
+<blockquote>
+<p>
+Consider using Django Middleware like django.middleware.cache.CacheMiddleware
+to cache views and reduce database hits.
+</p>
+</blockquote>
+
+<p>
+It is surprisingly simple to implement, just add
+'django.middleware.cache.CacheMiddleware' after
+'django.contrib.auth.middleware.AuthenticationMiddleware', in <code>settings.py</code> and
+you will already notice the caching behavior.
+</p>
+
+<p>
+First page load might take 300ms, but the second time you will load the same
+page, it will take 0.00ms.
+</p>
+
+<p>
+Kind of amazing, BUT I think it only works if the data HAS NOT CHANGED since
+the last cache. If it has changed - you will have to refetch the whole data and
+that again will take 300ms.
+</p>
+
+<p>
+When I have constantly changing data tables, this will not work for me.
+</p>
+
+<p>
+I am sure there are ways to optimize caching to suite my needs better, but this
+time I just don't feel that this is the solution I should go with.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org339bf99" class="outline-2">
+<h2 id="org339bf99"><span class="section-number-2">2.</span> HTMX</h2>
+</div>
+<div id="outline-container-org0b55ea8" class="outline-2">
+<h2 id="org0b55ea8"><span class="section-number-2">3.</span> Others</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Use Select Related or Prefetch Related: If your models have ForeignKey or
+ManyToMany relationships, using select_related or prefetch_related can help
+reduce the number of database queries when fetching related objects.</li>
+<li>Limit Fields: When querying objects, only select the fields you actually
+need. This can reduce the amount of data retrieved from the database.</li>
+<li>Indexes: Ensure that your database tables have appropriate indexes on columns
+that are frequently used for filtering or searching.</li>
+<li>Caching: Implement caching for data that doesn't change frequently. This can
+significantly reduce database queries for repetitive requests.</li>
+<li>Database Optimization: Depending on your database system, there might be
+database-specific optimizations you can apply.</li>
+<li>Query Optimization: Review your database queries and optimize them for
+efficiency. Tools like Django Debug Toolbar can help identify inefficient
+queries.</li>
+
+<li>Remember that the number of queries can also depend on the specific data and
+relationships in your database, so it's essential to analyze and optimize
+your database queries based on your application's requirements and usage
+patterns.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
+	 <p class="date">This org file is <u>created</u>: 2024-01-29 Mon 08:14</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>

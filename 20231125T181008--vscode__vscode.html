@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-01-27 Sat 12:18 -->
+<!-- 2024-05-27 Mon 15:47 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>vscode</title>
@@ -16,6 +16,38 @@
 <link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
 <link rel="icon" href="./static/ag.ico">
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -23,7 +55,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2023-12-27 Wed 11:45</div>
+<div id="updated">Updated: 2024-05-27 Mon 15:13</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,46 +64,204 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf46ee32">1. vscode</a>
+<li><a href="#org4d834d4">1. vscode</a>
 <ul>
-<li><a href="#orgaa44082">1.1. vscode vs vim vs emacs lex fridman inspired</a></li>
-<li><a href="#org69af8b9">1.2. try out evil mode&#x2026;</a></li>
-<li><a href="#org24d2da0">1.3. vscode shortcuts</a></li>
-<li><a href="#orgb799d1f">1.4. vscode plugins</a></li>
-<li><a href="#org1cc50f2">1.5. VScode github real life examples</a></li>
-<li><a href="#org6f3b5f5">1.6. https://desktop.github.com/</a></li>
-<li><a href="#orgbd0f868">1.7. why vscode</a></li>
-<li><a href="#org83c1de5">1.8. Trying out other editors</a></li>
-<li><a href="#org0008dda">1.9. Reason</a></li>
-<li><a href="#orgb8fde27">1.10. Andrei karpathy emacs lex did it convince him</a></li>
-<li><a href="#orge5ba12f">1.11. automatic formatting with prettier</a></li>
+<li><a href="#org7f47952">1.1. vscode global config</a>
+<ul>
+<li><a href="#orgbe85d4e">1.1.1. settings.json</a></li>
+<li><a href="#orgec4849a">1.1.2. keybindings.json</a></li>
+</ul>
+</li>
+<li><a href="#org722c31a">1.2. vscode local single project config</a>
+<ul>
+<li><a href="#orgb51f1d2">1.2.1. settings.json</a></li>
+<li><a href="#org619396e">1.2.2. launch.json</a></li>
+</ul>
+</li>
+<li><a href="#org6116ee6">1.3. vscode shortcuts</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgf46ee32" class="outline-2">
-<h2 id="orgf46ee32"><span class="section-number-2">1.</span> vscode</h2>
+<div id="outline-container-org4d834d4" class="outline-2">
+<h2 id="org4d834d4"><span class="section-number-2">1.</span> vscode</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgaa44082" class="outline-3">
-<h3 id="orgaa44082"><span class="section-number-3">1.1.</span> vscode vs vim vs emacs lex fridman inspired</h3>
-</div>
-<div id="outline-container-org69af8b9" class="outline-3">
-<h3 id="org69af8b9"><span class="section-number-3">1.2.</span> try out evil mode&#x2026;</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org7f47952" class="outline-3">
+<h3 id="org7f47952"><span class="section-number-3">1.1.</span> vscode global config</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
-it might be more practical to learn to use it instead of emacs bindings. when
-you are in shell or when you are in vscode with vim plugin or when talking to
-other programmers and when you are in a browser with vim extension for example.
+Files that should be placed in C:\Users\&lt;username&gt;\AppData\Roaming\Code\User folder. Overrides Global VsCode settings.
 </p>
+</div>
+
+<div id="outline-container-orgbe85d4e" class="outline-4">
+<h4 id="orgbe85d4e"><span class="section-number-4">1.1.1.</span> settings.json</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<div class="org-src-container">
+<pre class="src src-json">{
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "git.enableSmartCommit": true,
+    "editor.smoothScrolling": true,
+    "explorer.confirmDelete": false,
+    // fix the god damn pasting indentation
+    "editor.formatOnPaste": false,
+
+
+    // https://dev.to/brad_beggs/vs-code-vertical-rulers-for-prettier-code-3gp3
+    "[git-commit]": {"editor.rulers": [50]},
+    "[javascript]": {
+        "editor.rulers": [
+            79
+        ]
+    },
+    "[python]": {
+        "editor.rulers": [
+            79
+        ],
+        // install "Black Formatter" extension for VsCode
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "never"
+        },
+    },
+    "isort.args":["--profile", "black"],
+    "black-formatter.args": ["--line-length", "79"],
+
+    // https://github.com/vscode-django/vscode-django/issues/125
+    // allow html tag completion in django html mode
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.minimap.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "workbench.sideBar.location": "right",
+    "diffEditor.ignoreTrimWhitespace": false,
+}
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org24d2da0" class="outline-3">
-<h3 id="org24d2da0"><span class="section-number-3">1.3.</span> vscode shortcuts</h3>
+<div id="outline-container-orgec4849a" class="outline-4">
+<h4 id="orgec4849a"><span class="section-number-4">1.1.2.</span> keybindings.json</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<div class="org-src-container">
+<pre class="src src-json">[
+    {
+        "key": "alt+x",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "ctrl+shift+p",
+        "command": "-workbench.action.showCommands"
+    }
+]
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org722c31a" class="outline-3">
+<h3 id="org722c31a"><span class="section-number-3">1.2.</span> vscode local single project config</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Files that should be placed in .vscode folder of a project. The changes
+described in those files will be applied only for a particular project.
+</p>
+</div>
+
+<div id="outline-container-orgb51f1d2" class="outline-4">
+<h4 id="orgb51f1d2"><span class="section-number-4">1.2.1.</span> settings.json</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<div class="org-src-container">
+<pre class="src src-json">// vscode settings for this particular project
+
+// https://github.com/azegas/quotes/issues/9
+
+// When launching terminal in a project, it does not activate virtual environment that *I* want (that is dedicated for this project). 
+// You open terminal, write `workon &lt;nameofthevenv&gt;` (previously you have to install mkvirtualenv(if on windows)) and you activate the needed venv. Good. 
+// But then you see that you need another terminal to run some commands.
+// You open another terminal, do `workon &lt;nameofthevenv&gt;` once again. You need another terminal (for django shell for example), you do `workon &lt;nameofthevenv&gt;` again...
+
+// Would it not be cool if vscode would know - "he is inside of this project directory, it is linked to `&lt;nameofthevenv&gt;` virtual environment, 
+// let me activate it in each new terminal instance'.
+
+{
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "terminal.integrated.cwd": "C:\\Users\\Petras\\GIT\\test",
+    "python.defaultInterpreterPath": "C:\\Users\\arvydas\\Envs\\test\\Scripts\\python.exe"
+}
+
+// Now when you launch new terminal now, it will automatically have shipping virtual environment activated.
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org619396e" class="outline-4">
+<h4 id="org619396e"><span class="section-number-4">1.2.2.</span> launch.json</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<div class="org-src-container">
+<pre class="src src-json">// File that must be in .vscode folder of the project, used for Django app debugging.
+
+// Official docs - https://code.visualstudio.com/docs/editor/debugging
+// Followed the docs, choose the debug option, python, django and the launhc.json was created automatically. Then could debug django app.
+
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Django",
+            "type": "debugpy",
+            "request": "launch",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "autoStartBrowser": false,
+            "program": "${workspaceFolder}/manage.py"
+        }
+    ]
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6116ee6" class="outline-3">
+<h3 id="org6116ee6"><span class="section-number-3">1.3.</span> vscode shortcuts</h3>
 <div class="outline-text-3" id="text-1-3">
+<p>
+C:\Users\&lt;username&gt;\AppData\Roaming\Code\User this is where the settings.json
+file lies, your customizations fall down here, can add custom things also.
+</p>
+
+<p>
+You can jump to the definition with Ctrl+Click or open the definition to the side with Ctrl+Alt+Click.
+</p>
+
+<p>
+F2 - rename symbol
+Ctrl+Shift+O - navigate symbols inside a file By typing : the symbols will be grouped by category
+Ctrl+T - jumping to a symbol across files
+ctrl w - close window
+Alt 1 2 3 - jump through files in the opened workplace(like split screen)
+Ctrl 1 2 3 - create/jump to first second or third window
+Ctrl + p - open a file
+Ctrl - o - open dired(explorer) here and now
+Ctrl + b - open/close navbar
+</p>
+
 <ul class="org-ul">
 <li><code>c-k c-t</code> - choose theme</li>
 <li>syncing to other devices with github login in vs code&#x2026;</li>
@@ -100,103 +290,6 @@ other programmers and when you are in a browser with vim extension for example.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb799d1f" class="outline-3">
-<h3 id="orgb799d1f"><span class="section-number-3">1.4.</span> vscode plugins</h3>
-</div>
-<div id="outline-container-org1cc50f2" class="outline-3">
-<h3 id="org1cc50f2"><span class="section-number-3">1.5.</span> VScode github real life examples</h3>
-<div class="outline-text-3" id="text-1-5">
-<p>
-plugin name - IntelliCode API Usage Examples
-</p>
-</div>
-</div>
-<div id="outline-container-org6f3b5f5" class="outline-3">
-<h3 id="org6f3b5f5"><span class="section-number-3">1.6.</span> <a href="https://desktop.github.com/">https://desktop.github.com/</a></h3>
-</div>
-<div id="outline-container-orgbd0f868" class="outline-3">
-<h3 id="orgbd0f868"><span class="section-number-3">1.7.</span> why vscode</h3>
-<div class="outline-text-3" id="text-1-7">
-<p>
-ar mane stabdo emacs?
-</p>
-
-<p>
-pycharm is like an 18 wheeler truck and emacs is like your comfortable
-toyota - Guido
-</p>
-
-<p>
-Vscode is great. Its like a home i can go back to when I'm lost. But
-Emacs is an adventure - Guy on youtube
-</p>
-
-<p>
-<a href="https://www.youtube.com/watch?v=G5mtQhWNezQ&amp;ab_channel=LexClips">sita kalba lex su Guido</a>
-</p>
-
-<ul class="org-ul">
-<li>lex (vscode now 20k hours emacs)</li>
-<li>python create Guide Van Rossum (VSCODE now, 30 years emacs)</li>
-<li>George hotz(vscode + vim)</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org83c1de5" class="outline-3">
-<h3 id="org83c1de5"><span class="section-number-3">1.8.</span> Trying out other editors</h3>
-<div class="outline-text-3" id="text-1-8">
-<p>
-I think it really depends on what someone wants out of Emacs. The
-thread the other day on people who use both had a pretty strong choir
-of people who use Org-mode for note taking and VS Code for dev work,
-which makes perfect sense to me; Emacs guaranteed itself a place in my
-workflow with Org-mode.
-</p>
-
-<p>
-I think if you're satisfied with Emacs for now and you can concretely
-point to packages and functionality in Emacs that you would not know
-how to recreate in VS Code out of the gate, I would say there's not a
-ton of reason to switch to VS Code. I'm largely in the same boat, know
-the basics of some front-end web-dev, occasionally play around with CL
-and elisp, all non-professionally.
-</p>
-
-<p>
-Compatibility with a hypothetical future team will be dependent on
-that team, and at the same time many of the guides/tutorials for Emacs
-I've read encourage learning other editors and how they work in case
-you run into an employment situation that won't work with Emacs for
-whatever reason. Seems like good practice.
-</p>
-</div>
-</div>
-<div id="outline-container-org0008dda" class="outline-3">
-<h3 id="org0008dda"><span class="section-number-3">1.9.</span> Reason</h3>
-<div class="outline-text-3" id="text-1-9">
-<p>
-I think people overvalue this kind of thing. Vscode is going to be
-around for quite a while. If you think it would improve your life, you
-should use it. It might eventually go away in 15 years, but if it
-does, you can spend a weekend switching to something else. That’s
-hardly a reason to use a suboptimal tool until then. Of course, you
-may prefer Emacs, and that’s fine too. Just saying, I think it’s
-unwise to avoid an extremely healthy ecosystem and tool purely on the
-grounds that it might not exist forever.
-</p>
-</div>
-</div>
-<div id="outline-container-orgb8fde27" class="outline-3">
-<h3 id="orgb8fde27"><span class="section-number-3">1.10.</span> Andrei karpathy emacs lex did it convince him</h3>
-</div>
-<div id="outline-container-orge5ba12f" class="outline-3">
-<h3 id="orge5ba12f"><span class="section-number-3">1.11.</span> automatic formatting with prettier</h3>
-<div class="outline-text-3" id="text-1-11">
-<p>
-<a href="https://youtube.com/shorts/dDtueNAFELo?si=EDK6Ospk9N38QY_L">https://youtube.com/shorts/dDtueNAFELo?si=EDK6Ospk9N38QY_L</a>
-</p>
-</div>
-</div>
 </div>
 </div>
 <div id="postamble" class="status">
@@ -207,11 +300,11 @@ grounds that it might not exist forever.
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-27 Sat 12:18</p>
-	 <p class="date">This org file is last <u>modified</u>: 2023-12-27 Wed 11:45</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:13</p>
 	 <p class="date">This org file is <u>created</u>: 2023-11-25 Sat 18:10</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

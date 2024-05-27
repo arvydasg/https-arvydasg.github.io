@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-01-27 Sat 12:18 -->
+<!-- 2024-05-27 Mon 15:47 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>first nixos installation</title>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-01-27 Sat 07:45</div>
+<div id="updated">Updated: 2024-05-27 Mon 15:00</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,26 +32,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9ca896d">1. Why NixOS</a></li>
-<li><a href="#org05b0f46">2. Why NixOS by others</a></li>
-<li><a href="#org83158a5">3. Documentation</a></li>
-<li><a href="#orge96c4e9">4. Installation on WSL</a>
+<li><a href="#org4adfe39">1. Why NixOS</a></li>
+<li><a href="#orgdfef3bf">2. Why NixOS by others</a></li>
+<li><a href="#orgf2e80e4">3. Documentation</a></li>
+<li><a href="#org4c27996">4. Installation on WSL</a>
 <ul>
-<li><a href="#orgaa44181">4.1. Check if NixOS is not already installed</a></li>
-<li><a href="#org59e0830">4.2. Install</a></li>
+<li><a href="#org38b9a1d">4.1. Check if NixOS is not already installed</a></li>
+<li><a href="#org54178e1">4.2. Install</a></li>
 </ul>
 </li>
-<li><a href="#orgb3c6992">5. Configure the installation over emacs</a></li>
-<li><a href="#org0c3e149">6. Using your own custom nixos configuration file</a></li>
-<li><a href="#orgf9757b6">7. Install other packages</a></li>
-<li><a href="#orgc52482a">8. Setting up git</a></li>
-<li><a href="#orgad8ac81">9. GUI glitch</a></li>
+<li><a href="#org7839162">5. Configure NixOS installation over Emacs</a></li>
+<li><a href="#orgd800880">6. Authenticate to git</a></li>
+<li><a href="#org78eae9a">7. Clone the dotfiles repo</a></li>
+<li><a href="#org08675a0">8. Using your own custom nixos configuration file</a></li>
+<li><a href="#org67b19a9">9. Using your own custom Emacs config</a></li>
+<li><a href="#org90dfe08">10. GUI glitch</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org9ca896d" class="outline-2">
-<h2 id="org9ca896d"><span class="section-number-2">1.</span> Why NixOS</h2>
+<div id="outline-container-org4adfe39" class="outline-2">
+<h2 id="org4adfe39"><span class="section-number-2">1.</span> Why NixOS</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 AFTER you reinstall your machine - to install the DEV environment, all you
@@ -69,8 +70,8 @@ again.
 </div>
 </div>
 
-<div id="outline-container-org05b0f46" class="outline-2">
-<h2 id="org05b0f46"><span class="section-number-2">2.</span> Why NixOS by others</h2>
+<div id="outline-container-orgdfef3bf" class="outline-2">
+<h2 id="orgdfef3bf"><span class="section-number-2">2.</span> Why NixOS by others</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="https://github.com/hlissner/dotfiles">https://github.com/hlissner/dotfiles</a></li>
@@ -79,8 +80,8 @@ again.
 </div>
 </div>
 
-<div id="outline-container-org83158a5" class="outline-2">
-<h2 id="org83158a5"><span class="section-number-2">3.</span> Documentation</h2>
+<div id="outline-container-orgf2e80e4" class="outline-2">
+<h2 id="orgf2e80e4"><span class="section-number-2">3.</span> Documentation</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>nixos github repo - <a href="https://github.com/nix-community/NixOS-WSL">https://github.com/nix-community/NixOS-WSL</a></li>
@@ -89,8 +90,8 @@ again.
 </div>
 </div>
 
-<div id="outline-container-orge96c4e9" class="outline-2">
-<h2 id="orge96c4e9"><span class="section-number-2">4.</span> Installation on WSL</h2>
+<div id="outline-container-org4c27996" class="outline-2">
+<h2 id="org4c27996"><span class="section-number-2">4.</span> Installation on WSL</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Steps described here:
@@ -101,9 +102,13 @@ Steps described here:
 </p>
 </div>
 
-<div id="outline-container-orgaa44181" class="outline-3">
-<h3 id="orgaa44181"><span class="section-number-3">4.1.</span> Check if NixOS is not already installed</h3>
+<div id="outline-container-org38b9a1d" class="outline-3">
+<h3 id="org38b9a1d"><span class="section-number-3">4.1.</span> Check if NixOS is not already installed</h3>
 <div class="outline-text-3" id="text-4-1">
+<p>
+Run the commands in windows cmd or powershell.
+</p>
+
 <div class="org-src-container">
 <pre class="src src-bash">wsl --status
 wsl --version
@@ -114,12 +119,13 @@ wsl --list --verbose
 </div>
 </div>
 
-<div id="outline-container-org59e0830" class="outline-3">
-<h3 id="org59e0830"><span class="section-number-3">4.2.</span> Install</h3>
+<div id="outline-container-org54178e1" class="outline-3">
+<h3 id="org54178e1"><span class="section-number-3">4.2.</span> Install</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
-If it does not exist, then basically download <code>nixos-wsl.tar.gz</code> into your
-windows <code>/Downloads</code> folder.
+If it does not exist(<code>wsl --list --verbose</code> does not yield result with nixos ),
+then basically download <code>nixos-wsl.tar.gz</code> into your windows <code>/Downloads</code>
+folder from the <a href="https://github.com/nix-community/NixOS-WSL/releases/tag/2311.5.3">latest release</a>.
 </p>
 
 <p>
@@ -147,8 +153,8 @@ You should see NixOS listed. Now we can run nixos:
 </div>
 
 <p>
-After the initial installation, you need to update your channels once, to be
-able to use <code>nixos-rebuild</code>:
+After the initial installation, you need to update your channels once(while in
+nixos), to be able to use <code>nixos-rebuild</code>:
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">sudo nix-channel --add https://nixos.org/channels/nixos-23.11 nixos
@@ -159,14 +165,15 @@ sudo nix-channel --update
 </div>
 </div>
 
-<div id="outline-container-orgb3c6992" class="outline-2">
-<h2 id="orgb3c6992"><span class="section-number-2">5.</span> Configure the installation over emacs</h2>
+<div id="outline-container-org7839162" class="outline-2">
+<h2 id="org7839162"><span class="section-number-2">5.</span> Configure NixOS installation over Emacs</h2>
 <div class="outline-text-2" id="text-5">
 <p>
-Enter nix-shell to use emacs(it does not get installed on the system, just
-<a href="https://nix.dev/tutorials/first-steps/ad-hoc-shell-environments">TEMPORARILY</a> FROM NIXOS CACHE?). So I can then modify the
+Enter <code>nix-shell</code> to use Emacs(it does not get installed on the system, just
+<a href="https://nix.dev/tutorials/first-steps/ad-hoc-shell-environments">TEMPORARILY</a> FROM NIXOS CACHE?). So I can then modify the configuration
 <code>/etc/nixos/configuration.nix</code> file.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-bash">nix-shell -p emacs29
 </pre>
@@ -175,24 +182,30 @@ Enter nix-shell to use emacs(it does not get installed on the system, just
 <p>
 Then let's run emacs in nix-shell(run with sudo)
 </p>
+
 <div class="org-src-container">
 <pre class="src src-bash">sudo emacs
 </pre>
 </div>
 
 <p>
-Ok now you are in emacs, but in nix-shell. If we turn off nixos now, when we
+Ok now you are in Emacs, but in <code>nix-shell</code>. If we turn off nixos now, when we
 launch it again, emacs will not be available. Only after you run <code>nix-shell -p
-emacs</code>. Let's install emacs permanetely:
+emacs</code>. Let's install emacs permanetely. First open the default NixOS
+configuration file:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-bash">sudo emacs /etc/nixos/configuration.nix
 </pre>
 </div>
 
 <p>
-add these lines:
+Add the following 4 files lines, it will install Emacs globally and permanetely
+inside of NixOS as well as git(we will need it to clone our config repos). We
+Install emacs29 because of <a href="20231125T220943--seq-keep-error-message-in-emacs__emacs_magit.html">seq error message</a> that I have faced before:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-nix">environment.systemPackages = with pkgs; [
   emacs29
@@ -202,31 +215,164 @@ add these lines:
 </div>
 
 <p>
-we Install emacs29 because of <a href="20231125T220943--seq-keep-error-message-in-emacs__emacs_magit.html">seq error message</a>.
+After adding these 4 lines to the config file, <code>C-d</code> to go back to
+nixos@nixos(out of nix-shell) and BUILD the nixos with the new changes(emacs
+and git installation).
 </p>
 
-<p>
-after you do that, <code>C-d</code> to go back to nixos@nixos(out of nix-shell) and BUILD
-the nixos with the new changes(emacs installation).
-</p>
 <div class="org-src-container">
 <pre class="src src-bash">sudo nixos-rebuild switch
 </pre>
 </div>
 
 <p>
-After this runs, you should be able to use Emacs and use git!
+After this finishes running, you should be able to use Emacs and git!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">emacs
+git status
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd800880" class="outline-2">
+<h2 id="orgd800880"><span class="section-number-2">6.</span> Authenticate to git</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Some of our config repos are private, so for that we need to authenticate to
+git first.
 </p>
 
 <p>
-Clone the dotfiles repo:
+First you must do <a href="20231211T161252--introduce-yourself-to-git__git.html">this</a>.
 </p>
+
+<p>
+Then one of these:
+</p>
+
+<ul class="org-ul">
+<li><a href="20231214T060637--authenticate-to-git-with-personal-access-token__git.html">authenticate with personal access token</a></li>
+<li><a href="20231214T060558--authenticate-to-git-with-ssh__git_ssh.html">authenticate with ssh</a>(usually using this at home)</li>
+<li><a href="20231214T061312--authenticate-to-git-with-gpg-key__git_gpg.html">authenticate with gpg</a></li>
+
+<li>On work machine, set up ssh method to work repo.</li>
+<li>On work machine for personal repos - use token method.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org78eae9a" class="outline-2">
+<h2 id="org78eae9a"><span class="section-number-2">7.</span> Clone the dotfiles repo</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+It consists both emacs and nixos config, we will need both in the next steps.
+</p>
+
 <div class="org-src-container">
 <pre class="src src-bash">mkdir ~/GIT
 cd ~/GIT
 git clone https://github.com/arvydasg/dotfiles
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org08675a0" class="outline-2">
+<h2 id="org08675a0"><span class="section-number-2">8.</span> Using your own custom nixos configuration file</h2>
+<div class="outline-text-2" id="text-8">
+<div class="org-src-container">
+<pre class="src src-bash"># delete current nixos directory
+sudo rm -rf /etc/nixos
+# put our config folder instead of the default one
+sudo ln -s ~/GIT/dotfiles/nixos/ /etc/nixos
+</pre>
+</div>
+
+<p>
+Check if the symlink worked:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">ls -la /etc | grep nixos
+</pre>
+</div>
+
+<p>
+You should see <code>nixos -&gt; /home/nixos/GIT/dotfiles/nixos/</code>.
+</p>
+
+<p>
+If so, then you are done.
+</p>
+
+<p>
+We can rebuild NixOS with the settings from our personal configuration in mind.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">sudo nixos-rebuild switch
+</pre>
+</div>
+
+<p>
+After this is done running, our NixOS installation will be current, as the one
+described in the configuration file.
+</p>
+
+<blockquote>
+<p>
+Note on Installing other packages
+</p>
+
+<p>
+If you want to install a package called "make" for example and nixos says it
+can not find it when you attempt to install it, then you can do
+<code>command-not-found make</code>, this command will show each package which exposes
+that command. Quite useful to know all the versions/types of the package you
+want to install.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org67b19a9" class="outline-2">
+<h2 id="org67b19a9"><span class="section-number-2">9.</span> Using your own custom Emacs config</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+After we have all the "OS" dependencies installed, we can install Emacs
+dependencies.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash"># remove .emacs.d dir from ~/ first
+cd ~/GIT
 ln -s GIT/dotfiles/.emacs.d/ ~/.emacs.d
-cd ~/.emacs.d
+</pre>
+</div>
+
+<p>
+Check if symlink got created with(while in ~/ dir):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">ls -la | grep .emacs.d
+</pre>
+</div>
+
+<p>
+Should see something like <code>.emacs.d -&gt; GIT/dotfiles/.emacs.d/</code>.
+</p>
+
+<p>
+Do the following step that is described in the emacs config, tangling part -
+<a href="https://github.com/arvydasg/dotfiles/blob/master/.emacs.d/init.org#tangling">here</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">cd ~/.emacs.d
 git update-index --assume-unchanged init.el
 </pre>
 </div>
@@ -237,63 +383,9 @@ Try to launch emacs for all the packages to be installed.
 </div>
 </div>
 
-<div id="outline-container-org0c3e149" class="outline-2">
-<h2 id="org0c3e149"><span class="section-number-2">6.</span> Using your own custom nixos configuration file</h2>
-<div class="outline-text-2" id="text-6">
-<p>
-It suchs to not be able to edit the <code>/etc/nixos/configuration.nix</code> file over
-emacs as nixos default user. I want this file to not be owned by root, but bu
-nixos user. So what we will do is we will:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash"># delete current nixos directory
-sudo rm -rf /etc/nixos
-# put our config folder instead of the default one
-sudo ln -s ~/GIT/dotfiles/nixos/ /etc/nixos
-</pre>
-</div>
-
-<p>
-You are done. Should be able to edit <code>configuration.nix</code> file now.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgf9757b6" class="outline-2">
-<h2 id="orgf9757b6"><span class="section-number-2">7.</span> Install other packages</h2>
-<div class="outline-text-2" id="text-7">
-<p>
-If you want to install a package called "make" for example and nixos says it
-can not find it when you attempt to install it, then you can do
-<code>command-not-found make</code>, this command will show each package which exposes
-that command. Quite useful to know all the versions/types of the package you
-want to install.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgc52482a" class="outline-2">
-<h2 id="orgc52482a"><span class="section-number-2">8.</span> Setting up git</h2>
-<div class="outline-text-2" id="text-8">
-<p>
-First try <a href="20231211T161252--introduce-yourself-to-git__git.html">this</a>, then one of these:
-</p>
-
-<ul class="org-ul">
-<li><a href="20231214T060637--authenticate-to-git-with-personal-access-token__git.html">authenticate with personal access token</a></li>
-<li><a href="20231214T060558--authenticate-to-git-with-ssh__git_ssh.html">authenticate with ssh</a></li>
-<li><a href="20231214T061312--authenticate-to-git-with-gpg-key__git_gpg.html">authenticate with gpg</a></li>
-
-<li>On work machine, set up ssh method to work repo.</li>
-<li>On work machine for personal repos - use token method.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgad8ac81" class="outline-2">
-<h2 id="orgad8ac81"><span class="section-number-2">9.</span> GUI glitch</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-org90dfe08" class="outline-2">
+<h2 id="org90dfe08"><span class="section-number-2">10.</span> GUI glitch</h2>
+<div class="outline-text-2" id="text-10">
 <p>
 Reported it here  - <a href="https://github.com/microsoft/wslg/issues/1148">https://github.com/microsoft/wslg/issues/1148</a>
 </p>
@@ -312,11 +404,11 @@ Possible fix(questionable) .wslgconfig(as explained in the comments of the issue
 	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-01-27 Sat 12:18</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-01-27 Sat 07:45</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-11 Mon 15:14</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.6) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

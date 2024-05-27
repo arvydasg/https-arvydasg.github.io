@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-27 Mon 15:47 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>paginating results in django</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-27 Mon 15:00</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">paginating results in django</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4c47973">1. With smaller amount of queries, in  1.49ms</a></li>
+<li><a href="#org09058c7">2. This is my current query 250-300ms:</a></li>
+<li><a href="#org73b3941">3. After applying pagination like such:</a></li>
+<li><a href="#org91f7cf3">4. BUT</a></li>
+<li><a href="#org3ca2aeb">5. Probably it's a good idea to look into the database, pagination itself won't help</a></li>
+</ul>
+</div>
+</nav>
+<p>
+<a href="https://docs.djangoproject.com/en/5.0/topics/pagination/">https://docs.djangoproject.com/en/5.0/topics/pagination/</a>
+</p>
+
+<div id="outline-container-org4c47973" class="outline-2">
+<h2 id="org4c47973"><span class="section-number-2">1.</span> With smaller amount of queries, in  1.49ms</h2>
+<div class="outline-text-2" id="text-1">
+
+<figure id="org4bc09de">
+<img src="./media/inefficient_query2.png" alt="inefficient_query2.png" width="800px">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org09058c7" class="outline-2">
+<h2 id="org09058c7"><span class="section-number-2">2.</span> This is my current query 250-300ms:</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-html">$("#data_table").DataTable({
+    paging: true, // Pagination
+    pageLength: 7, // Data per page
+    bInfo: false, // Info on footer
+    searching: true, // Input search
+    bSort: true, // Filter A to Z, Z to A (and numbers)
+    columnDefs: [
+        { targets: [0, 1], orderable: true }, // Define columns to be sortable
+        { targets: "_all", orderable: false }, // Disable sorting for all other columns
+    ],
+    order: [[0, "desc"]], // Set default sorting to the first column (date) in descending order
+});
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">@login_required
+def data_table(request):
+    answers = Answer.objects.filter(created_by=request.user)
+    questions = Question.objects.filter(created_by=request.user)
+    rescuetime_entries = Rescuetime.objects.filter(user=request.user)
+    weather_entries = Weather.objects.all()
+
+    data_to_display = []
+
+    for weather_entry in weather_entries:
+        matching_answers = []
+        productive_hours = None
+        distracting_hours = None
+
+        for question in questions:
+            corresponding_answer = question.answer_set.filter(date_added__date=weather_entry.date).first()
+            if corresponding_answer:
+                matching_answers.append({
+                    'description': question.description,
+                    'answer': corresponding_answer.answer,
+                })
+            else:
+            # If there's no corresponding answer, add an empty answer
+                matching_answers.append({
+                'description': question.description,
+                'answer': '',
+            })
+
+        # Find the matching Rescuetime entry for the weather entry's date
+        for rescuetime_entry in rescuetime_entries:
+            if rescuetime_entry.date == weather_entry.date:
+                productive_hours = rescuetime_entry.productive_hours
+                distracting_hours = rescuetime_entry.distracting_hours
+                break
+
+        if matching_answers:
+            data_to_display.append({
+                'date': weather_entry.date,
+                'temperature': weather_entry.temperature,
+                'answers': matching_answers,
+                'productive_hours': productive_hours,
+                'distracting_hours': distracting_hours,
+
+            })
+
+    context = {
+        'user': request.user,
+        'answers': Answer.objects.filter(created_by=request.user),
+        'data_to_display': data_to_display,
+        'questions': questions,
+    }
+
+    return render(request, 'data_table.html', context)
+</pre>
+</div>
+
+<p>
+This results in such time. Aroun 250-300ms.
+</p>
+
+
+<figure id="org6b8252c">
+<img src="./media/inefficient_query1.png" alt="inefficient_query1.png" width="800px">
+
+</figure>
+
+<p>
+Now I am using data tables - <a href="https://datatables.net/">https://datatables.net/</a>
+</p>
+
+<p>
+But I think Django still makes ALL the possible calls, to fetch 2000 records of
+data as you can see in the screenshot and data tables simply shape the table to
+have 'pagination'.
+</p>
+
+
+<figure id="org7eb4518">
+<img src="./media/inefficient_query3.png" alt="inefficient_query3.png" width="800px"> 
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org73b3941" class="outline-2">
+<h2 id="org73b3941"><span class="section-number-2">3.</span> After applying pagination like such:</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-python">@login_required
+def data_table(request):
+    answers = Answer.objects.filter(created_by=request.user)
+    questions = Question.objects.filter(created_by=request.user)
+    rescuetime_entries = Rescuetime.objects.filter(user=request.user)
+    weather_entries = Weather.objects.all()
+
+    data_to_display = []
+
+    for weather_entry in weather_entries:
+        matching_answers = []
+        productive_hours = None
+        distracting_hours = None
+
+        for question in questions:
+            corresponding_answer = question.answer_set.filter(date_added__date=weather_entry.date).first()
+            if corresponding_answer:
+                matching_answers.append({
+                    'description': question.description,
+                    'answer': corresponding_answer.answer,
+                })
+            else:
+            # If there's no corresponding answer, add an empty answer
+                matching_answers.append({
+                'description': question.description,
+                'answer': '',
+            })
+
+        # Find the matching Rescuetime entry for the weather entry's date
+        for rescuetime_entry in rescuetime_entries:
+            if rescuetime_entry.date == weather_entry.date:
+                productive_hours = rescuetime_entry.productive_hours
+                distracting_hours = rescuetime_entry.distracting_hours
+                break
+
+        if matching_answers:
+            data_to_display.append({
+                'date': weather_entry.date,
+                'temperature': weather_entry.temperature,
+                'answers': matching_answers,
+                'productive_hours': productive_hours,
+                'distracting_hours': distracting_hours,
+
+            })
+
+
+
+    # Pagination START
+
+    from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+    page = request.GET.get('page')
+    paginator = Paginator(data_to_display, 5)  # You can change the number of items per page (e.g., 10)
+
+    try:
+        data_to_display = paginator.page(page)
+    except PageNotAnInteger:
+        data_to_display = paginator.page(1)
+    except EmptyPage:
+        data_to_display = paginator.page(paginator.num_pages)
+
+    # Pagination END          
+
+    context = {
+        'user': request.user,
+        'answers': Answer.objects.filter(created_by=request.user),
+        'data_to_display': data_to_display,
+        'questions': questions,
+    }
+
+    return render(request, 'data_table.html', context)
+</pre>
+</div>
+
+<p>
+Then add this to html and you are done.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;div class="pagination"&gt;
+    &lt;span class="step-links"&gt;
+        {% if data_to_display.has_previous %}
+        &lt;a href="?page=1"&gt;&amp;laquo; first&lt;/a&gt;
+        &lt;a href="?page={{ data_to_display.previous_page_number }}"&gt;previous&lt;/a&gt;
+        {% endif %}
+
+        &lt;span class="current-page"&gt;
+            Page {{ data_to_display.number }} of {{ data_to_display.paginator.num_pages }}.
+        &lt;/span&gt;
+
+        {% if data_to_display.has_next %}
+        &lt;a href="?page={{ data_to_display.next_page_number }}"&gt;next&lt;/a&gt;
+        &lt;a href="?page={{ data_to_display.paginator.num_pages }}"&gt;last &amp;raquo;&lt;/a&gt;
+        {% endif %}
+    &lt;/span&gt;
+&lt;/div&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org91f7cf3" class="outline-2">
+<h2 id="org91f7cf3"><span class="section-number-2">4.</span> BUT</h2>
+<div class="outline-text-2" id="text-4">
+<blockquote>
+<p>
+The pagination itself may not significantly reduce the number of queries, but
+it helps in breaking the results into multiple pages, which can improve the
+user experience by not loading all data at once.
+</p>
+</blockquote>
+
+<p>
+I have noticed that.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3ca2aeb" class="outline-2">
+<h2 id="org3ca2aeb"><span class="section-number-2">5.</span> Probably it's a good idea to look into the database, pagination itself won't help</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Now that I know how pagination works and what it does, let's try to fix this
+problem another way - <a href="20240129T081456--optimizing-database-queries__django_lifeapi.html">optimizing database queries</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
+	 <p class="date">This org file is <u>created</u>: 2024-01-29 Mon 07:40</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>
