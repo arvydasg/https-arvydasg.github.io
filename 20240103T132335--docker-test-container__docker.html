@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-27 Mon 15:47 -->
+<!-- 2024-05-28 Tue 15:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker test container</title>
@@ -32,17 +32,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3103822">1. Dockerfile</a></li>
-<li><a href="#org7e96557">2. server.py</a></li>
-<li><a href="#org7054fc5">3. helloworld.html</a></li>
-<li><a href="#org9258c94">4. build the image</a></li>
-<li><a href="#org9181c77">5. run the image</a></li>
+<li><a href="#org0045049">1. Dockerfile</a></li>
+<li><a href="#orgfa58b03">2. server.py</a></li>
+<li><a href="#orgcfebfc4">3. helloworld.html</a></li>
+<li><a href="#orgde8d0fa">4. build the image</a></li>
+<li><a href="#orgc55ad9f">5. run the image</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org3103822" class="outline-2">
-<h2 id="org3103822"><span class="section-number-2">1.</span> Dockerfile</h2>
+<div id="outline-container-org0045049" class="outline-2">
+<h2 id="org0045049"><span class="section-number-2">1.</span> Dockerfile</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-bash">FROM python:3.9-slim
@@ -56,8 +56,8 @@ CMD ["python3", "server.py"]
 </div>
 </div>
 
-<div id="outline-container-org7e96557" class="outline-2">
-<h2 id="org7e96557"><span class="section-number-2">2.</span> server.py</h2>
+<div id="outline-container-orgfa58b03" class="outline-2">
+<h2 id="orgfa58b03"><span class="section-number-2">2.</span> server.py</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-python">import http.server
@@ -90,8 +90,8 @@ with socketserver.TCPServer(("", PORT), MyRequestHandler) as httpd:
 </div>
 </div>
 
-<div id="outline-container-org7054fc5" class="outline-2">
-<h2 id="org7054fc5"><span class="section-number-2">3.</span> helloworld.html</h2>
+<div id="outline-container-orgcfebfc4" class="outline-2">
+<h2 id="orgcfebfc4"><span class="section-number-2">3.</span> helloworld.html</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-html">&lt;!DOCTYPE html&gt;
@@ -108,8 +108,8 @@ with socketserver.TCPServer(("", PORT), MyRequestHandler) as httpd:
 </div>
 </div>
 
-<div id="outline-container-org9258c94" class="outline-2">
-<h2 id="org9258c94"><span class="section-number-2">4.</span> build the image</h2>
+<div id="outline-container-orgde8d0fa" class="outline-2">
+<h2 id="orgde8d0fa"><span class="section-number-2">4.</span> build the image</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 while in the same directory as the previous 3 files
@@ -126,8 +126,8 @@ Check docker desktop or <code>docker ps</code> to see the newly created image ca
 </div>
 </div>
 
-<div id="outline-container-org9181c77" class="outline-2">
-<h2 id="org9181c77"><span class="section-number-2">5.</span> run the image</h2>
+<div id="outline-container-orgc55ad9f" class="outline-2">
+<h2 id="orgc55ad9f"><span class="section-number-2">5.</span> run the image</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-bash">docker run -it - p 5009:8082 test
@@ -155,10 +155,10 @@ Serving at port 8082
 	 <footer>
 	 <div class="copyright-container">
 	 <div class="copyright">
-	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-28 Tue 15:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-03 Wed 13:23</p>
 	 <div class="generated">

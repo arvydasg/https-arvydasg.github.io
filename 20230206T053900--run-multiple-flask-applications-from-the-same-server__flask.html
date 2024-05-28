@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-27 Mon 15:47 -->
+<!-- 2024-05-28 Tue 15:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Run Multiple Flask Applications from the same server</title>
@@ -32,13 +32,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org11352c3">1. Why I Wanted to Run Multiple Flask Applications</a></li>
-<li><a href="#org2c22575">2. How to Configure Flask Application Dispatching</a></li>
-<li><a href="#org27acf2e">3. Set up the Separate Applications</a></li>
-<li><a href="#org22dc2fc">4. Combine the Applications</a></li>
-<li><a href="#org948d140">5. Invoke a Development Server</a></li>
-<li><a href="#orgdc15516">6. Running both apps</a></li>
-<li><a href="#orgdbb8040">7. Conclusion</a></li>
+<li><a href="#org822a697">1. Why I Wanted to Run Multiple Flask Applications</a></li>
+<li><a href="#org179fe2d">2. How to Configure Flask Application Dispatching</a></li>
+<li><a href="#org9970066">3. Set up the Separate Applications</a></li>
+<li><a href="#org8310f72">4. Combine the Applications</a></li>
+<li><a href="#org9e442e6">5. Invoke a Development Server</a></li>
+<li><a href="#orgf66d178">6. Running both apps</a></li>
+<li><a href="#orge44985b">7. Conclusion</a></li>
 </ul>
 </div>
 </nav>
@@ -48,7 +48,7 @@ different URL paths.
 </p>
 
 
-<figure id="org9c30e46">
+<figure id="orgaf757d3">
 <img src="./media/matrioshka.jpg" alt="matrioshka.jpg" width="600px">
 
 </figure>
@@ -60,8 +60,8 @@ instead of by accessing a different port. Application dispatching
 seems to be a solution.
 </p>
 
-<div id="outline-container-org11352c3" class="outline-2">
-<h2 id="org11352c3"><span class="section-number-2">1.</span> Why I Wanted to Run Multiple Flask Applications</h2>
+<div id="outline-container-org822a697" class="outline-2">
+<h2 id="org822a697"><span class="section-number-2">1.</span> Why I Wanted to Run Multiple Flask Applications</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 As a part of my <a href="https://arvydas.dev/codeacademy/">CodeAcademy</a> Python journey I decided to set up a
@@ -87,8 +87,8 @@ you can run them in the same interpreter side by side if you want.
 </div>
 </div>
 
-<div id="outline-container-org2c22575" class="outline-2">
-<h2 id="org2c22575"><span class="section-number-2">2.</span> How to Configure Flask Application Dispatching</h2>
+<div id="outline-container-org179fe2d" class="outline-2">
+<h2 id="org179fe2d"><span class="section-number-2">2.</span> How to Configure Flask Application Dispatching</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Setting this up is relatively straightforward when you take a modular
@@ -103,8 +103,8 @@ approach.
 </div>
 </div>
 
-<div id="outline-container-org27acf2e" class="outline-2">
-<h2 id="org27acf2e"><span class="section-number-2">3.</span> Set up the Separate Applications</h2>
+<div id="outline-container-org9970066" class="outline-2">
+<h2 id="org9970066"><span class="section-number-2">3.</span> Set up the Separate Applications</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Here are 2 Flask applications:
@@ -144,8 +144,8 @@ def hello_world():
 </div>
 </div>
 
-<div id="outline-container-org22dc2fc" class="outline-2">
-<h2 id="org22dc2fc"><span class="section-number-2">4.</span> Combine the Applications</h2>
+<div id="outline-container-org8310f72" class="outline-2">
+<h2 id="org8310f72"><span class="section-number-2">4.</span> Combine the Applications</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 You will utilize the Werkzeug <a href="https://werkzeug.palletsprojects.com/en/2.2.x/middleware/dispatcher/">Dispatcher Middleware</a>. flask_app_1 will
@@ -165,8 +165,8 @@ application = DispatcherMiddleware(flask_app_1, {
 </div>
 </div>
 
-<div id="outline-container-org948d140" class="outline-2">
-<h2 id="org948d140"><span class="section-number-2">5.</span> Invoke a Development Server</h2>
+<div id="outline-container-org9e442e6" class="outline-2">
+<h2 id="org9e442e6"><span class="section-number-2">5.</span> Invoke a Development Server</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Here is a small file that calls the <a href="https://werkzeug.palletsprojects.com/en/2.2.x/serving/#werkzeug.serving.run_simple">Werkzeug Run Simple</a> server that is
@@ -185,8 +185,8 @@ if __name__ == '__main__':
 </div>
 </div>
 
-<div id="outline-container-orgdc15516" class="outline-2">
-<h2 id="orgdc15516"><span class="section-number-2">6.</span> Running both apps</h2>
+<div id="outline-container-orgf66d178" class="outline-2">
+<h2 id="orgf66d178"><span class="section-number-2">6.</span> Running both apps</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-python">python3 run.py
@@ -194,21 +194,21 @@ if __name__ == '__main__':
 </div>
 
 
-<figure id="org88ededb">
+<figure id="org7ab3835">
 <img src="./media/flask_multiple1.png" alt="flask_multiple1.png" width="1200px">
 
 </figure>
 
 
-<figure id="orgcf0c40f">
+<figure id="org09a0906">
 <img src="./media/flask_multiple2.png" alt="flask_multiple2.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgdbb8040" class="outline-2">
-<h2 id="orgdbb8040"><span class="section-number-2">7.</span> Conclusion</h2>
+<div id="outline-container-orge44985b" class="outline-2">
+<h2 id="orge44985b"><span class="section-number-2">7.</span> Conclusion</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 As stated before, this is a simple setup that only requires a modular approach
@@ -229,10 +229,10 @@ and clone it to get a working example.
 	 <footer>
 	 <div class="copyright-container">
 	 <div class="copyright">
-	 Copyright &copy; 2023-2023 Arvydas Gasparavicius
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-27 Mon 15:47</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-28 Tue 15:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
 	 <p class="date">This org file is <u>created</u>: 2023-02-06 Mon 05:39</p>
 	 <div class="generated">
