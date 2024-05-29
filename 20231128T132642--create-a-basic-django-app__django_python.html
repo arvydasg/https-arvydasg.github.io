@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 07:45 -->
+<!-- 2024-05-29 Wed 08:34 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>create a basic django app</title>
@@ -32,56 +32,56 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3f92061">1. Starting a new Django project</a>
+<li><a href="#org17b6867">1. Starting a new Django project</a>
 <ul>
-<li><a href="#org6e51ef0">1.1. create a git repo on the web (readme + ignore)</a></li>
-<li><a href="#org2ae6997">1.2. git clone the repo</a></li>
-<li><a href="#org764ea73">1.3. open repo in emacs, create virtualenv</a></li>
-<li><a href="#org9b5d5ee">1.4. pip install django</a></li>
-<li><a href="#org0769649">1.5. django-admin startproject &lt;project_name&gt;</a></li>
-<li><a href="#orgaa3b7cf">1.6. enter &lt;project_name&gt;, do django-admin startapp &lt;project_name&gt;</a></li>
-<li><a href="#orgefd9135">1.7. settings.py</a></li>
-<li><a href="#org2ca6363">1.8. github push</a></li>
+<li><a href="#org8340b18">1.1. create a git repo on the web (readme + ignore)</a></li>
+<li><a href="#org932a0ed">1.2. git clone the repo</a></li>
+<li><a href="#orge57f441">1.3. open repo in emacs, create virtualenv</a></li>
+<li><a href="#orgba9db76">1.4. pip install django</a></li>
+<li><a href="#org4087321">1.5. django-admin startproject &lt;project_name&gt;</a></li>
+<li><a href="#org72cd961">1.6. enter &lt;project_name&gt;, do django-admin startapp &lt;project_name&gt;</a></li>
+<li><a href="#orgda7982d">1.7. settings.py</a></li>
+<li><a href="#org57f9b0a">1.8. github push</a></li>
 </ul>
 </li>
-<li><a href="#orgc18c71a">2. Testing views</a>
+<li><a href="#orgd88bc05">2. Testing views</a>
 <ul>
-<li><a href="#org23e45c9">2.1. python manage.py runserver</a></li>
-<li><a href="#org0ca859b">2.2. create HttpResponse views(temporarily)</a></li>
-<li><a href="#org2a38e62">2.3. create urls.py in app folder and put this in</a></li>
-<li><a href="#org292fc2f">2.4. go to &lt;project_name&gt; urls.py and put in this</a></li>
-<li><a href="#orge5b9c5f">2.5. check if responses work by going to the site and trying out urls</a></li>
-<li><a href="#orgc1637a1">2.6. github push</a></li>
+<li><a href="#org77af9b6">2.1. python manage.py runserver</a></li>
+<li><a href="#org3a19683">2.2. create HttpResponse views(temporarily)</a></li>
+<li><a href="#orga93bbce">2.3. create urls.py in app folder and put this in</a></li>
+<li><a href="#orgd9ff725">2.4. go to &lt;project_name&gt; urls.py and put in this</a></li>
+<li><a href="#org10de853">2.5. check if responses work by going to the site and trying out urls</a></li>
+<li><a href="#orga1090e1">2.6. github push</a></li>
 </ul>
 </li>
-<li><a href="#orgf267346">3. Testing templates</a>
+<li><a href="#org8219f1c">3. Testing templates</a>
 <ul>
-<li><a href="#org5169f79">3.1. create 'templates' folder</a></li>
-<li><a href="#org4a6f596">3.2. replace httpresponse with render</a></li>
-<li><a href="#orgb8d2365">3.3. Create main.html and inside of it put this:</a></li>
-<li><a href="#org2234e7c">3.4. Create navbar.html and put navbar in there</a></li>
-<li><a href="#org7639c57">3.5. Inside every template add block content/endblock like so:</a></li>
-<li><a href="#org6f24d7e">3.6. Create a static folder and add style.css</a></li>
-<li><a href="#orgdcc592b">3.7. Images</a></li>
-<li><a href="#org6dfc645">3.8. Images for production</a></li>
-<li><a href="#orga0381df">3.9. If want to link to admin from navbar, use this</a></li>
+<li><a href="#orgee0c97d">3.1. create 'templates' folder</a></li>
+<li><a href="#orgd55a5c5">3.2. replace httpresponse with render</a></li>
+<li><a href="#orgfe6d72a">3.3. Create main.html and inside of it put this:</a></li>
+<li><a href="#org57277f8">3.4. Create navbar.html and put navbar in there</a></li>
+<li><a href="#org63152da">3.5. Inside every template add block content/endblock like so:</a></li>
+<li><a href="#orgb48e018">3.6. Create a static folder and add style.css</a></li>
+<li><a href="#org0faf882">3.7. Images</a></li>
+<li><a href="#org2b98ac6">3.8. Images for production</a></li>
+<li><a href="#orgcaa319b">3.9. If want to link to admin from navbar, use this</a></li>
 </ul>
 </li>
-<li><a href="#orgec95047">4. Models</a>
+<li><a href="#org166f115">4. Models</a>
 <ul>
-<li><a href="#org49c8300">4.1. Little cheat before making models</a></li>
-<li><a href="#org36b079d">4.2. Creating database models</a>
+<li><a href="#org11aa7db">4.1. Little cheat before making models</a></li>
+<li><a href="#org60dc5c3">4.2. Creating database models</a>
 <ul>
-<li><a href="#org1be3dfa">4.2.1. Make migrations/migrate</a></li>
-<li><a href="#orgb35f0e0">4.2.2. Create superuser and add some data</a></li>
-<li><a href="#org8224220">4.2.3. Creating model itself</a></li>
-<li><a href="#orgd24aa02">4.2.4. Make migrations/migrate</a></li>
-<li><a href="#orgc6a0896">4.2.5. Link new model to admin panel in admin.py</a></li>
-<li><a href="#org295a0c1">4.2.6. views.py - replace list of dictionaries with a query</a></li>
-<li><a href="#orga1c0783">4.2.7. update blog.html</a></li>
-<li><a href="#orgbc99d07">4.2.8. catch single posts</a></li>
-<li><a href="#org1e6e6c0">4.2.9. Add line breaks to body model</a></li>
-<li><a href="#org4332e3b">4.2.10. add link from blog to single post</a></li>
+<li><a href="#org29fdd0b">4.2.1. Make migrations/migrate</a></li>
+<li><a href="#org5da3c61">4.2.2. Create superuser and add some data</a></li>
+<li><a href="#orgb71b206">4.2.3. Creating model itself</a></li>
+<li><a href="#orga40db58">4.2.4. Make migrations/migrate</a></li>
+<li><a href="#org81b575e">4.2.5. Link new model to admin panel in admin.py</a></li>
+<li><a href="#org6d059b1">4.2.6. views.py - replace list of dictionaries with a query</a></li>
+<li><a href="#org45b7320">4.2.7. update blog.html</a></li>
+<li><a href="#orgb16eed9">4.2.8. catch single posts</a></li>
+<li><a href="#org3033e05">4.2.9. Add line breaks to body model</a></li>
+<li><a href="#org84379b6">4.2.10. add link from blog to single post</a></li>
 </ul>
 </li>
 </ul>
@@ -90,18 +90,18 @@
 </div>
 </nav>
 
-<div id="outline-container-org3f92061" class="outline-2">
-<h2 id="org3f92061"><span class="section-number-2">1.</span> Starting a new Django project</h2>
+<div id="outline-container-org17b6867" class="outline-2">
+<h2 id="org17b6867"><span class="section-number-2">1.</span> Starting a new Django project</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org6e51ef0" class="outline-3">
-<h3 id="org6e51ef0"><span class="section-number-3">1.1.</span> create a git repo on the web (readme + ignore)</h3>
+<div id="outline-container-org8340b18" class="outline-3">
+<h3 id="org8340b18"><span class="section-number-3">1.1.</span> create a git repo on the web (readme + ignore)</h3>
 </div>
-<div id="outline-container-org2ae6997" class="outline-3">
-<h3 id="org2ae6997"><span class="section-number-3">1.2.</span> git clone the repo</h3>
+<div id="outline-container-org932a0ed" class="outline-3">
+<h3 id="org932a0ed"><span class="section-number-3">1.2.</span> git clone the repo</h3>
 </div>
-<div id="outline-container-org764ea73" class="outline-3">
-<h3 id="org764ea73"><span class="section-number-3">1.3.</span> open repo in emacs, create virtualenv</h3>
+<div id="outline-container-orge57f441" class="outline-3">
+<h3 id="orge57f441"><span class="section-number-3">1.3.</span> open repo in emacs, create virtualenv</h3>
 <div class="outline-text-3" id="text-1-3">
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt install python3.8-venv
@@ -112,17 +112,17 @@ pip list
 </div>
 </div>
 
-<div id="outline-container-org9b5d5ee" class="outline-3">
-<h3 id="org9b5d5ee"><span class="section-number-3">1.4.</span> pip install django</h3>
+<div id="outline-container-orgba9db76" class="outline-3">
+<h3 id="orgba9db76"><span class="section-number-3">1.4.</span> pip install django</h3>
 </div>
-<div id="outline-container-org0769649" class="outline-3">
-<h3 id="org0769649"><span class="section-number-3">1.5.</span> django-admin startproject &lt;project_name&gt;</h3>
+<div id="outline-container-org4087321" class="outline-3">
+<h3 id="org4087321"><span class="section-number-3">1.5.</span> django-admin startproject &lt;project_name&gt;</h3>
 </div>
-<div id="outline-container-orgaa3b7cf" class="outline-3">
-<h3 id="orgaa3b7cf"><span class="section-number-3">1.6.</span> enter &lt;project_name&gt;, do django-admin startapp &lt;project_name&gt;</h3>
+<div id="outline-container-org72cd961" class="outline-3">
+<h3 id="org72cd961"><span class="section-number-3">1.6.</span> enter &lt;project_name&gt;, do django-admin startapp &lt;project_name&gt;</h3>
 </div>
-<div id="outline-container-orgefd9135" class="outline-3">
-<h3 id="orgefd9135"><span class="section-number-3">1.7.</span> settings.py</h3>
+<div id="outline-container-orgda7982d" class="outline-3">
+<h3 id="orgda7982d"><span class="section-number-3">1.7.</span> settings.py</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 &lt;app name&gt; - apps.py take out name of the app and put in settings.py installed
@@ -131,24 +131,24 @@ apps like so - 'base.apps.BaseConfig',
 </div>
 </div>
 
-<div id="outline-container-org2ca6363" class="outline-3">
-<h3 id="org2ca6363"><span class="section-number-3">1.8.</span> github push</h3>
+<div id="outline-container-org57f9b0a" class="outline-3">
+<h3 id="org57f9b0a"><span class="section-number-3">1.8.</span> github push</h3>
 </div>
 </div>
 
-<div id="outline-container-orgc18c71a" class="outline-2">
-<h2 id="orgc18c71a"><span class="section-number-2">2.</span> Testing views</h2>
+<div id="outline-container-orgd88bc05" class="outline-2">
+<h2 id="orgd88bc05"><span class="section-number-2">2.</span> Testing views</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Just making sure everything works with HttpResponse
 </p>
 </div>
 
-<div id="outline-container-org23e45c9" class="outline-3">
-<h3 id="org23e45c9"><span class="section-number-3">2.1.</span> python manage.py runserver</h3>
+<div id="outline-container-org77af9b6" class="outline-3">
+<h3 id="org77af9b6"><span class="section-number-3">2.1.</span> python manage.py runserver</h3>
 </div>
-<div id="outline-container-org0ca859b" class="outline-3">
-<h3 id="org0ca859b"><span class="section-number-3">2.2.</span> create HttpResponse views(temporarily)</h3>
+<div id="outline-container-org3a19683" class="outline-3">
+<h3 id="org3a19683"><span class="section-number-3">2.2.</span> create HttpResponse views(temporarily)</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-python">from django.shortcuts import render
@@ -172,8 +172,8 @@ def post(request):
 </div>
 </div>
 
-<div id="outline-container-org2a38e62" class="outline-3">
-<h3 id="org2a38e62"><span class="section-number-3">2.3.</span> create urls.py in app folder and put this in</h3>
+<div id="outline-container-orga93bbce" class="outline-3">
+<h3 id="orga93bbce"><span class="section-number-3">2.3.</span> create urls.py in app folder and put this in</h3>
 <div class="outline-text-3" id="text-2-3">
 <div class="org-src-container">
 <pre class="src src-python">from django.urls import path
@@ -189,8 +189,8 @@ urlpatterns = [
 </div>
 </div>
 
-<div id="outline-container-org292fc2f" class="outline-3">
-<h3 id="org292fc2f"><span class="section-number-3">2.4.</span> go to &lt;project_name&gt; urls.py and put in this</h3>
+<div id="outline-container-orgd9ff725" class="outline-3">
+<h3 id="orgd9ff725"><span class="section-number-3">2.4.</span> go to &lt;project_name&gt; urls.py and put in this</h3>
 <div class="outline-text-3" id="text-2-4">
 <div class="org-src-container">
 <pre class="src src-python">from django.urls import path, include  # include is important!
@@ -204,24 +204,24 @@ urlpatterns = [
 </div>
 </div>
 
-<div id="outline-container-orge5b9c5f" class="outline-3">
-<h3 id="orge5b9c5f"><span class="section-number-3">2.5.</span> check if responses work by going to the site and trying out urls</h3>
+<div id="outline-container-org10de853" class="outline-3">
+<h3 id="org10de853"><span class="section-number-3">2.5.</span> check if responses work by going to the site and trying out urls</h3>
 </div>
-<div id="outline-container-orgc1637a1" class="outline-3">
-<h3 id="orgc1637a1"><span class="section-number-3">2.6.</span> github push</h3>
+<div id="outline-container-orga1090e1" class="outline-3">
+<h3 id="orga1090e1"><span class="section-number-3">2.6.</span> github push</h3>
 </div>
 </div>
 
-<div id="outline-container-orgf267346" class="outline-2">
-<h2 id="orgf267346"><span class="section-number-2">3.</span> Testing templates</h2>
+<div id="outline-container-org8219f1c" class="outline-2">
+<h2 id="org8219f1c"><span class="section-number-2">3.</span> Testing templates</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Need views to return back a template.
 </p>
 </div>
 
-<div id="outline-container-org5169f79" class="outline-3">
-<h3 id="org5169f79"><span class="section-number-3">3.1.</span> create 'templates' folder</h3>
+<div id="outline-container-orgee0c97d" class="outline-3">
+<h3 id="orgee0c97d"><span class="section-number-3">3.1.</span> create 'templates' folder</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Inside app folder, create 'templates' folder and &lt;app name&gt; folder
@@ -231,8 +231,8 @@ etc.html
 </div>
 </div>
 
-<div id="outline-container-org4a6f596" class="outline-3">
-<h3 id="org4a6f596"><span class="section-number-3">3.2.</span> replace httpresponse with render</h3>
+<div id="outline-container-orgd55a5c5" class="outline-3">
+<h3 id="orgd55a5c5"><span class="section-number-3">3.2.</span> replace httpresponse with render</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Go to views.py and replace HttpResponse with render and template, like
@@ -251,8 +251,8 @@ def home(request):
 </div>
 </div>
 
-<div id="outline-container-orgb8d2365" class="outline-3">
-<h3 id="orgb8d2365"><span class="section-number-3">3.3.</span> Create main.html and inside of it put this:</h3>
+<div id="outline-container-orgfe6d72a" class="outline-3">
+<h3 id="orgfe6d72a"><span class="section-number-3">3.3.</span> Create main.html and inside of it put this:</h3>
 <div class="outline-text-3" id="text-3-3">
 <div class="org-src-container">
 <pre class="src src-html">&lt;!doctype html&gt;
@@ -276,8 +276,8 @@ def home(request):
 </div>
 </div>
 
-<div id="outline-container-org2234e7c" class="outline-3">
-<h3 id="org2234e7c"><span class="section-number-3">3.4.</span> Create navbar.html and put navbar in there</h3>
+<div id="outline-container-org57277f8" class="outline-3">
+<h3 id="org57277f8"><span class="section-number-3">3.4.</span> Create navbar.html and put navbar in there</h3>
 <div class="outline-text-3" id="text-3-4">
 <div class="org-src-container">
 <pre class="src src-html">&lt;h2&gt;Navbar placeholder&lt;/h2&gt;
@@ -287,8 +287,8 @@ def home(request):
 </div>
 </div>
 
-<div id="outline-container-org7639c57" class="outline-3">
-<h3 id="org7639c57"><span class="section-number-3">3.5.</span> Inside every template add block content/endblock like so:</h3>
+<div id="outline-container-org63152da" class="outline-3">
+<h3 id="org63152da"><span class="section-number-3">3.5.</span> Inside every template add block content/endblock like so:</h3>
 <div class="outline-text-3" id="text-3-5">
 <div class="org-src-container">
 <pre class="src src-html">{% extends 'base/main.html' %}
@@ -301,8 +301,8 @@ def home(request):
 </div>
 </div>
 
-<div id="outline-container-org6f24d7e" class="outline-3">
-<h3 id="org6f24d7e"><span class="section-number-3">3.6.</span> Create a static folder and add style.css</h3>
+<div id="outline-container-orgb48e018" class="outline-3">
+<h3 id="orgb48e018"><span class="section-number-3">3.6.</span> Create a static folder and add style.css</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 same place as 'templates' folder. then inside &lt;name of the app&gt;
@@ -317,8 +317,8 @@ folder and inside of it - style.css. Then add this in main.html
 </div>
 </div>
 
-<div id="outline-container-orgdcc592b" class="outline-3">
-<h3 id="orgdcc592b"><span class="section-number-3">3.7.</span> Images</h3>
+<div id="outline-container-org0faf882" class="outline-3">
+<h3 id="org0faf882"><span class="section-number-3">3.7.</span> Images</h3>
 <div class="outline-text-3" id="text-3-7">
 <p>
 If you simply want to serve an image in an html template, such as
@@ -345,8 +345,8 @@ place images there. They WILL be rendered in your html template
 </div>
 </div>
 
-<div id="outline-container-org6dfc645" class="outline-3">
-<h3 id="org6dfc645"><span class="section-number-3">3.8.</span> Images for production</h3>
+<div id="outline-container-org2b98ac6" class="outline-3">
+<h3 id="org2b98ac6"><span class="section-number-3">3.8.</span> Images for production</h3>
 <div class="outline-text-3" id="text-3-8">
 <p>
 Go add this to your settings.py and when it's done run:
@@ -403,8 +403,8 @@ Add it to requirements.txt and follow <a href="http://whitenoise.evans.io/en/sta
 </div>
 </div>
 
-<div id="outline-container-orga0381df" class="outline-3">
-<h3 id="orga0381df"><span class="section-number-3">3.9.</span> If want to link to admin from navbar, use this</h3>
+<div id="outline-container-orgcaa319b" class="outline-3">
+<h3 id="orgcaa319b"><span class="section-number-3">3.9.</span> If want to link to admin from navbar, use this</h3>
 <div class="outline-text-3" id="text-3-9">
 <div class="org-src-container">
 <pre class="src src-html">&lt;li&gt;&lt;a href="{% url 'admin:index' %}"&gt;link to admin panel&lt;/a&gt;&lt;/li&gt;
@@ -414,12 +414,12 @@ Add it to requirements.txt and follow <a href="http://whitenoise.evans.io/en/sta
 </div>
 </div>
 
-<div id="outline-container-orgec95047" class="outline-2">
-<h2 id="orgec95047"><span class="section-number-2">4.</span> Models</h2>
+<div id="outline-container-org166f115" class="outline-2">
+<h2 id="org166f115"><span class="section-number-2">4.</span> Models</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org49c8300" class="outline-3">
-<h3 id="org49c8300"><span class="section-number-3">4.1.</span> Little cheat before making models</h3>
+<div id="outline-container-org11aa7db" class="outline-3">
+<h3 id="org11aa7db"><span class="section-number-3">4.1.</span> Little cheat before making models</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 So what we can do is create a fake list with data, right, then output the
@@ -472,12 +472,12 @@ info above. Great! So now I know the looping works.
 </div>
 </div>
 
-<div id="outline-container-org36b079d" class="outline-3">
-<h3 id="org36b079d"><span class="section-number-3">4.2.</span> Creating database models</h3>
+<div id="outline-container-org60dc5c3" class="outline-3">
+<h3 id="org60dc5c3"><span class="section-number-3">4.2.</span> Creating database models</h3>
 <div class="outline-text-3" id="text-4-2">
 </div>
-<div id="outline-container-org1be3dfa" class="outline-4">
-<h4 id="org1be3dfa"><span class="section-number-4">4.2.1.</span> Make migrations/migrate</h4>
+<div id="outline-container-org29fdd0b" class="outline-4">
+<h4 id="org29fdd0b"><span class="section-number-4">4.2.1.</span> Make migrations/migrate</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <div class="org-src-container">
 <pre class="src src-bash">python manage.py makemigrations
@@ -489,8 +489,8 @@ python manage.py inspectdb
 </div>
 </div>
 
-<div id="outline-container-orgb35f0e0" class="outline-4">
-<h4 id="orgb35f0e0"><span class="section-number-4">4.2.2.</span> Create superuser and add some data</h4>
+<div id="outline-container-org5da3c61" class="outline-4">
+<h4 id="org5da3c61"><span class="section-number-4">4.2.2.</span> Create superuser and add some data</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <div class="org-src-container">
 <pre class="src src-bash">python manage.py createsuperuser
@@ -500,8 +500,8 @@ python manage.py runserver
 </div>
 </div>
 
-<div id="outline-container-org8224220" class="outline-4">
-<h4 id="org8224220"><span class="section-number-4">4.2.3.</span> Creating model itself</h4>
+<div id="outline-container-orgb71b206" class="outline-4">
+<h4 id="orgb71b206"><span class="section-number-4">4.2.3.</span> Creating model itself</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <div class="org-src-container">
 <pre class="src src-python">from django.db import models
@@ -522,8 +522,8 @@ class Blog_post(models.Model):
 </div>
 </div>
 
-<div id="outline-container-orgd24aa02" class="outline-4">
-<h4 id="orgd24aa02"><span class="section-number-4">4.2.4.</span> Make migrations/migrate</h4>
+<div id="outline-container-orga40db58" class="outline-4">
+<h4 id="orga40db58"><span class="section-number-4">4.2.4.</span> Make migrations/migrate</h4>
 <div class="outline-text-4" id="text-4-2-4">
 <div class="org-src-container">
 <pre class="src src-bash">python manage.py makemigrations
@@ -535,8 +535,8 @@ python manage.py inspectdb
 </div>
 </div>
 
-<div id="outline-container-orgc6a0896" class="outline-4">
-<h4 id="orgc6a0896"><span class="section-number-4">4.2.5.</span> Link new model to admin panel in admin.py</h4>
+<div id="outline-container-org81b575e" class="outline-4">
+<h4 id="org81b575e"><span class="section-number-4">4.2.5.</span> Link new model to admin panel in admin.py</h4>
 <div class="outline-text-4" id="text-4-2-5">
 <div class="org-src-container">
 <pre class="src src-python">from django.contrib import admin
@@ -551,8 +551,8 @@ admin.site.register(Blog_post)
 </div>
 </div>
 
-<div id="outline-container-org295a0c1" class="outline-4">
-<h4 id="org295a0c1"><span class="section-number-4">4.2.6.</span> views.py - replace list of dictionaries with a query</h4>
+<div id="outline-container-org6d059b1" class="outline-4">
+<h4 id="org6d059b1"><span class="section-number-4">4.2.6.</span> views.py - replace list of dictionaries with a query</h4>
 <div class="outline-text-4" id="text-4-2-6">
 <div class="org-src-container">
 <pre class="src src-python">from .models import Blog_post
@@ -569,8 +569,8 @@ admin.site.register(Blog_post)
 </div>
 </div>
 
-<div id="outline-container-orga1c0783" class="outline-4">
-<h4 id="orga1c0783"><span class="section-number-4">4.2.7.</span> update blog.html</h4>
+<div id="outline-container-org45b7320" class="outline-4">
+<h4 id="org45b7320"><span class="section-number-4">4.2.7.</span> update blog.html</h4>
 <div class="outline-text-4" id="text-4-2-7">
 <div class="org-src-container">
 <pre class="src src-python">{% extends 'base/main.html' %}
@@ -588,8 +588,8 @@ admin.site.register(Blog_post)
 </div>
 </div>
 
-<div id="outline-container-orgbc99d07" class="outline-4">
-<h4 id="orgbc99d07"><span class="section-number-4">4.2.8.</span> catch single posts</h4>
+<div id="outline-container-orgb16eed9" class="outline-4">
+<h4 id="orgb16eed9"><span class="section-number-4">4.2.8.</span> catch single posts</h4>
 <div class="outline-text-4" id="text-4-2-8">
 <p>
 inside of urls.py add str:pk like so
@@ -622,8 +622,8 @@ replace all the dynamic data with {{post.headline}} etc, and go to
 </div>
 </div>
 
-<div id="outline-container-org1e6e6c0" class="outline-4">
-<h4 id="org1e6e6c0"><span class="section-number-4">4.2.9.</span> Add line breaks to body model</h4>
+<div id="outline-container-org3033e05" class="outline-4">
+<h4 id="org3033e05"><span class="section-number-4">4.2.9.</span> Add line breaks to body model</h4>
 <div class="outline-text-4" id="text-4-2-9">
 <div class="org-src-container">
 <pre class="src src-html">&lt;p&gt;{{post.content|linebreaks}}&lt;/p&gt;
@@ -632,8 +632,8 @@ replace all the dynamic data with {{post.headline}} etc, and go to
 </div>
 </div>
 
-<div id="outline-container-org4332e3b" class="outline-4">
-<h4 id="org4332e3b"><span class="section-number-4">4.2.10.</span> add link from blog to single post</h4>
+<div id="outline-container-org84379b6" class="outline-4">
+<h4 id="org84379b6"><span class="section-number-4">4.2.10.</span> add link from blog to single post</h4>
 <div class="outline-text-4" id="text-4-2-10">
 <div class="org-src-container">
 <pre class="src src-html">&lt;a href="{% url 'blog_post' post.id %}"&gt;Read more&lt;/a&gt;
@@ -652,7 +652,7 @@ replace all the dynamic data with {{post.headline}} etc, and go to
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 07:45</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 08:34</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
 	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 13:26</p>
 	 <div class="generated">

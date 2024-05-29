@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 07:45 -->
+<!-- 2024-05-29 Wed 08:34 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Building a development notes blog with denote and org-publish Notes</title>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 07:45</div>
+<div id="updated">Updated: 2024-05-29 Wed 08:22</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,92 +32,92 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0a02cd6">1. QUICK: Generate/update the blog step by step</a></li>
-<li><a href="#org13efb94">2. Research</a>
+<li><a href="#orga8528c1">1. QUICK: Generate/update the blog step by step</a></li>
+<li><a href="#orgb364c6f">2. Research</a>
 <ul>
-<li><a href="#orgecc75db">2.1. Why build a website for development notes anyway</a></li>
-<li><a href="#org21c3294">2.2. Why use emacs for it</a></li>
-<li><a href="#org68be87c">2.3. Choosing an Emacs tool to build such website</a></li>
-<li><a href="#orgc6ce6aa">2.4. ox-publish VS org-static-blog</a></li>
+<li><a href="#orgbce0d53">2.1. Why build a website for development notes anyway</a></li>
+<li><a href="#orgeb15a46">2.2. Why use emacs for it</a></li>
+<li><a href="#orgbd9ab93">2.3. Choosing an Emacs tool to build such website</a></li>
+<li><a href="#orge07c460">2.4. ox-publish VS org-static-blog</a></li>
 </ul>
 </li>
-<li><a href="#orga681f1a">3. What is <code>ox-publish</code>, folder structure, build code, running build</a>
+<li><a href="#org4cee87c">3. What is <code>ox-publish</code>, folder structure, build code, running build</a>
 <ul>
-<li><a href="#org591944c">3.1. Get to know to <code>ox-publish</code></a></li>
-<li><a href="#org361f60c">3.2. Installation of <code>ox-publish</code></a>
+<li><a href="#orge649fc7">3.1. Get to know to <code>ox-publish</code></a></li>
+<li><a href="#orgd1d60d3">3.2. Installation of <code>ox-publish</code></a>
 <ul>
-<li><a href="#org5024d43">3.2.1. Install the package</a></li>
-<li><a href="#org4bd3c3d">3.2.2. Decide where to place the configuration</a></li>
+<li><a href="#org241d74a">3.2.1. Install the package</a></li>
+<li><a href="#org6f9f513">3.2.2. Decide where to place the configuration</a></li>
 </ul>
 </li>
-<li><a href="#org8b6b890">3.3. Creating .org files to be rendered</a>
+<li><a href="#org59eb7f8">3.3. Creating .org files to be rendered</a>
 <ul>
-<li><a href="#orgfcec087">3.3.1. Separate repositories</a></li>
-<li><a href="#orgfbdfe6a">3.3.2. Folder structure of source dir</a></li>
-<li><a href="#org51671b4">3.3.3. Creating new notes with Denote</a></li>
+<li><a href="#orga1626d4">3.3.1. Separate repositories</a></li>
+<li><a href="#org9813d63">3.3.2. Folder structure of source dir</a></li>
+<li><a href="#orgd1b54c8">3.3.3. Creating new notes with Denote</a></li>
 </ul>
 </li>
-<li><a href="#orgfcb7d45">3.4. <code>ox-publish</code> config file itself</a></li>
-<li><a href="#org7b60c4e">3.5. Running the build (generating the .html files from .org files)</a></li>
-<li><a href="#org4979ac0">3.6. Previewing the generated site</a>
+<li><a href="#org6199fe1">3.4. <code>ox-publish</code> config file itself</a></li>
+<li><a href="#org50fc714">3.5. Running the build (generating the .html files from .org files)</a></li>
+<li><a href="#org076b386">3.6. Previewing the generated site</a>
 <ul>
-<li><a href="#orgf170fcc">3.6.1. Preview the html file in the browser</a></li>
-<li><a href="#org3dabd44">3.6.2. Preview with simple-httpd</a></li>
+<li><a href="#orgd34a226">3.6.1. Preview the html file in the browser</a></li>
+<li><a href="#org5594457">3.6.2. Preview with simple-httpd</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org6cbf026">4. Publishing the site to the world</a>
+<li><a href="#org363cf45">4. Publishing the site to the world</a>
 <ul>
 <li>
 <ul>
-<li><a href="#org1a96224">4.0.1. Free method with github</a></li>
-<li><a href="#org85b83b7">4.0.2. Possibly non-free with a server(have not tried)</a></li>
-<li><a href="#org7709828">4.0.3. Automatically publish your pages?(have not tried)</a></li>
+<li><a href="#orgbafecbb">4.0.1. Free method with github</a></li>
+<li><a href="#org976719a">4.0.2. Possibly non-free with a server(have not tried)</a></li>
+<li><a href="#orgd63fc29">4.0.3. Automatically publish your pages?(have not tried)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org9971022">5. Nice to haves</a>
+<li><a href="#orgc937cf7">5. Nice to haves</a>
 <ul>
-<li><a href="#org3e54ea5">5.1. Individual files customization options</a></li>
-<li><a href="#org48b4377">5.2. Important information about linking between .org files</a></li>
-<li><a href="#org7272b07">5.3. CSS support in HTML export</a>
+<li><a href="#orgcd385ee">5.1. Individual files customization options</a></li>
+<li><a href="#org278d7e2">5.2. Important information about linking between .org files</a></li>
+<li><a href="#orgb883c39">5.3. CSS support in HTML export</a>
 <ul>
-<li><a href="#orge583596">5.3.1. Use the default styles from ox-html</a></li>
-<li><a href="#orge7b6e33">5.3.2. Add custom classes to blocks of text/code</a></li>
-<li><a href="#org71efc4a">5.3.3. import custom css</a></li>
-<li><a href="#orga55a1bd">5.3.4. org-html-themes</a></li>
-<li><a href="#org7089752">5.3.5. Note to self</a></li>
+<li><a href="#orgdd555d2">5.3.1. Use the default styles from ox-html</a></li>
+<li><a href="#org7d9c4d1">5.3.2. Add custom classes to blocks of text/code</a></li>
+<li><a href="#org548020a">5.3.3. import custom css</a></li>
+<li><a href="#orgf719874">5.3.4. org-html-themes</a></li>
+<li><a href="#orga99fa0a">5.3.5. Note to self</a></li>
 </ul>
 </li>
-<li><a href="#org3f6ab70">5.4. Javascript support in HTML export</a></li>
-<li><a href="#orgab1d4bb">5.5. Images in HTML export</a>
+<li><a href="#org93deaf3">5.4. Javascript support in HTML export</a></li>
+<li><a href="#org579cb5e">5.5. Images in HTML export</a>
 <ul>
-<li><a href="#org75bfbe4">5.5.1. Display images</a></li>
-<li><a href="#org6d58933">5.5.2. One option is to add images as plain html</a></li>
-<li><a href="#org37db1ac">5.5.3. Another option is to include a link to a file(the usual way)</a></li>
-<li><a href="#orgb9452d7">5.5.4. Org download package for inserting images in org files</a></li>
-<li><a href="#orgb080d52">5.5.5. Add a lightbox effect on the images</a></li>
+<li><a href="#org2275c02">5.5.1. Display images</a></li>
+<li><a href="#orgd63237e">5.5.2. One option is to add images as plain html</a></li>
+<li><a href="#org753f08f">5.5.3. Another option is to include a link to a file(the usual way)</a></li>
+<li><a href="#org45d330f">5.5.4. Org download package for inserting images in org files</a></li>
+<li><a href="#orgba955fa">5.5.5. Add a lightbox effect on the images</a></li>
 </ul>
 </li>
-<li><a href="#org9678888">5.6. Preamble(nav) and postamble(footer)</a></li>
-<li><a href="#orgcd1ff8d">5.7. Extra's</a>
+<li><a href="#orgff760f1">5.6. Preamble(nav) and postamble(footer)</a></li>
+<li><a href="#org1363c9a">5.7. Extra's</a>
 <ul>
-<li><a href="#org30c461f">5.7.1. You can also include other content from other files!</a></li>
-<li><a href="#org428f9de">5.7.2. Creating a HTML page with my .emacs configuration</a></li>
-<li><a href="#org8cce23a">5.7.3. Adding a date to post title in sitemap</a></li>
-<li><a href="#org5cdd5db">5.7.4. <span class="todo TODO">TODO</span> Linking HTML pages and their org mode sources</a></li>
-<li><a href="#orgae37ce2">5.7.5. Add scroll to top button</a></li>
-<li><a href="#org6779661">5.7.6. <span class="todo TODO">TODO</span> Adding analytics</a></li>
-<li><a href="#org20a9cc2">5.7.7. Table of contents at the side - inspiration</a></li>
-<li><a href="#org17b8fbe">5.7.8. short and clean links like here</a></li>
-<li><a href="#org273862f">5.7.9. Print out proper underscore</a></li>
-<li><a href="#org594dc7b">5.7.10. Tables in HTML export</a></li>
-<li><a href="#org9e2c382">5.7.11. Create editable text areas</a></li>
-<li><a href="#orgb8af62a">5.7.12. Tags solution</a></li>
-<li><a href="#orgfecf54e">5.7.13. presentation mode?</a></li>
-<li><a href="#org75ef629">5.7.14. search function with agolia like Bozhidar</a></li>
+<li><a href="#orgbde60eb">5.7.1. You can also include other content from other files!</a></li>
+<li><a href="#org5c96520">5.7.2. Creating a HTML page with my .emacs configuration</a></li>
+<li><a href="#org616b3cd">5.7.3. Adding a date to post title in sitemap</a></li>
+<li><a href="#orgcc53b60">5.7.4. <span class="todo TODO">TODO</span> Linking HTML pages and their org mode sources</a></li>
+<li><a href="#org121be11">5.7.5. Add scroll to top button</a></li>
+<li><a href="#org5af5fd9">5.7.6. <span class="todo TODO">TODO</span> Adding analytics</a></li>
+<li><a href="#org9c6c2e9">5.7.7. Table of contents at the side - inspiration</a></li>
+<li><a href="#org2d800c8">5.7.8. short and clean links like here</a></li>
+<li><a href="#org8c6e855">5.7.9. Print out proper underscore</a></li>
+<li><a href="#org32634e3">5.7.10. Tables in HTML export</a></li>
+<li><a href="#org39bf425">5.7.11. Create editable text areas</a></li>
+<li><a href="#org8d4f056">5.7.12. Tags solution</a></li>
+<li><a href="#orgfa38992">5.7.13. presentation mode?</a></li>
+<li><a href="#org7c8c771">5.7.14. search function with agolia like Bozhidar</a></li>
 </ul>
 </li>
 </ul>
@@ -127,8 +127,8 @@
 </nav>
 
 
-<div id="outline-container-org0a02cd6" class="outline-2">
-<h2 id="org0a02cd6"><span class="section-number-2">1.</span> QUICK: Generate/update the blog step by step</h2>
+<div id="outline-container-orga8528c1" class="outline-2">
+<h2 id="orga8528c1"><span class="section-number-2">1.</span> QUICK: Generate/update the blog step by step</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This section basically is a reminder of the steps needed.
@@ -150,12 +150,12 @@ Please check the in-depth view of how the blog is built
 </div>
 </div>
 
-<div id="outline-container-org13efb94" class="outline-2">
-<h2 id="org13efb94"><span class="section-number-2">2.</span> Research</h2>
+<div id="outline-container-orgb364c6f" class="outline-2">
+<h2 id="orgb364c6f"><span class="section-number-2">2.</span> Research</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgecc75db" class="outline-3">
-<h3 id="orgecc75db"><span class="section-number-3">2.1.</span> Why build a website for development notes anyway</h3>
+<div id="outline-container-orgbce0d53" class="outline-3">
+<h3 id="orgbce0d53"><span class="section-number-3">2.1.</span> Why build a website for development notes anyway</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 I have a lot of notes. Over a few systems(at home, at work, under descriptions
@@ -191,8 +191,8 @@ readable html format in a form of a blog). I am in.
 </div>
 </div>
 
-<div id="outline-container-org21c3294" class="outline-3">
-<h3 id="org21c3294"><span class="section-number-3">2.2.</span> Why use emacs for it</h3>
+<div id="outline-container-orgeb15a46" class="outline-3">
+<h3 id="orgeb15a46"><span class="section-number-3">2.2.</span> Why use emacs for it</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 <a href="20231215T140448--why-build-a-website-with-emacs-and-not-with-something-else__emacs_websites.html">Why build a website with emacs and not with something else</a>
@@ -200,8 +200,8 @@ readable html format in a form of a blog). I am in.
 </div>
 </div>
 
-<div id="outline-container-org68be87c" class="outline-3">
-<h3 id="org68be87c"><span class="section-number-3">2.3.</span> Choosing an Emacs tool to build such website</h3>
+<div id="outline-container-orgbd9ab93" class="outline-3">
+<h3 id="orgbd9ab93"><span class="section-number-3">2.3.</span> Choosing an Emacs tool to build such website</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Emacs has both built in and external packages that help you to generate .html
@@ -223,8 +223,8 @@ Some of them are:
 </div>
 </div>
 
-<div id="outline-container-orgc6ce6aa" class="outline-3">
-<h3 id="orgc6ce6aa"><span class="section-number-3">2.4.</span> ox-publish VS org-static-blog</h3>
+<div id="outline-container-orge07c460" class="outline-3">
+<h3 id="orge07c460"><span class="section-number-3">2.4.</span> ox-publish VS org-static-blog</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 At first(<span class="timestamp-wrapper"><span class="timestamp">[2023-12-15 Fri]</span></span>) I was thinking to write the website with
@@ -415,12 +415,12 @@ easy to do that on the web - so be it. I will work on that later.
 </div>
 </div>
 
-<div id="outline-container-orga681f1a" class="outline-2">
-<h2 id="orga681f1a"><span class="section-number-2">3.</span> What is <code>ox-publish</code>, folder structure, build code, running build</h2>
+<div id="outline-container-org4cee87c" class="outline-2">
+<h2 id="org4cee87c"><span class="section-number-2">3.</span> What is <code>ox-publish</code>, folder structure, build code, running build</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org591944c" class="outline-3">
-<h3 id="org591944c"><span class="section-number-3">3.1.</span> Get to know to <code>ox-publish</code></h3>
+<div id="outline-container-orge649fc7" class="outline-3">
+<h3 id="orge649fc7"><span class="section-number-3">3.1.</span> Get to know to <code>ox-publish</code></h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 First things first of course:
@@ -445,12 +445,12 @@ I recommend to get to know to the source code if you like:
 </div>
 </div>
 
-<div id="outline-container-org361f60c" class="outline-3">
-<h3 id="org361f60c"><span class="section-number-3">3.2.</span> Installation of <code>ox-publish</code></h3>
+<div id="outline-container-orgd1d60d3" class="outline-3">
+<h3 id="orgd1d60d3"><span class="section-number-3">3.2.</span> Installation of <code>ox-publish</code></h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org5024d43" class="outline-4">
-<h4 id="org5024d43"><span class="section-number-4">3.2.1.</span> Install the package</h4>
+<div id="outline-container-org241d74a" class="outline-4">
+<h4 id="org241d74a"><span class="section-number-4">3.2.1.</span> Install the package</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 It is already installed with Emacs by default.
@@ -458,8 +458,8 @@ It is already installed with Emacs by default.
 </div>
 </div>
 
-<div id="outline-container-org4bd3c3d" class="outline-4">
-<h4 id="org4bd3c3d"><span class="section-number-4">3.2.2.</span> Decide where to place the configuration</h4>
+<div id="outline-container-org6f9f513" class="outline-4">
+<h4 id="org6f9f513"><span class="section-number-4">3.2.2.</span> Decide where to place the configuration</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 Ox-publish configuration might get large if you start modifying the head,
@@ -510,12 +510,12 @@ complete!"
 </div>
 </div>
 
-<div id="outline-container-org8b6b890" class="outline-3">
-<h3 id="org8b6b890"><span class="section-number-3">3.3.</span> Creating .org files to be rendered</h3>
+<div id="outline-container-org59eb7f8" class="outline-3">
+<h3 id="org59eb7f8"><span class="section-number-3">3.3.</span> Creating .org files to be rendered</h3>
 <div class="outline-text-3" id="text-3-3">
 </div>
-<div id="outline-container-orgfcec087" class="outline-4">
-<h4 id="orgfcec087"><span class="section-number-4">3.3.1.</span> Separate repositories</h4>
+<div id="outline-container-orga1626d4" class="outline-4">
+<h4 id="orga1626d4"><span class="section-number-4">3.3.1.</span> Separate repositories</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <p>
 We have one dir/repo for source files, another for exported html files. Having
@@ -536,8 +536,8 @@ drwxr-xr-x 6 nixos users  20480 May 28 15:30 devnotes # source .org (could be ot
 </div>
 </div>
 
-<div id="outline-container-orgfbdfe6a" class="outline-4">
-<h4 id="orgfbdfe6a"><span class="section-number-4">3.3.2.</span> Folder structure of source dir</h4>
+<div id="outline-container-org9813d63" class="outline-4">
+<h4 id="org9813d63"><span class="section-number-4">3.3.2.</span> Folder structure of source dir</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <p>
 When we have at least one .org file in the source directory, we can think about
@@ -574,8 +574,8 @@ drwxr-xr-x 4 nixos users  4096 May 27 15:00 static # css/js/ico folder
 </div>
 </div>
 
-<div id="outline-container-org51671b4" class="outline-4">
-<h4 id="org51671b4"><span class="section-number-4">3.3.3.</span> Creating new notes with Denote</h4>
+<div id="outline-container-orgd1b54c8" class="outline-4">
+<h4 id="orgd1b54c8"><span class="section-number-4">3.3.3.</span> Creating new notes with Denote</h4>
 <div class="outline-text-4" id="text-3-3-3">
 <p>
 I am using Denote package, so I can use it's functionality to create a new
@@ -590,8 +590,8 @@ development note taking. Win win.
 </div>
 </div>
 
-<div id="outline-container-orgfcb7d45" class="outline-3">
-<h3 id="orgfcb7d45"><span class="section-number-3">3.4.</span> <code>ox-publish</code> config file itself</h3>
+<div id="outline-container-org6199fe1" class="outline-3">
+<h3 id="org6199fe1"><span class="section-number-3">3.4.</span> <code>ox-publish</code> config file itself</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 Now since we have this list of files and folders, we are ready to export them to .html.
@@ -856,8 +856,8 @@ images and css/js files, etc&#x2026;.
 </div>
 </div>
 
-<div id="outline-container-org7b60c4e" class="outline-3">
-<h3 id="org7b60c4e"><span class="section-number-3">3.5.</span> Running the build (generating the .html files from .org files)</h3>
+<div id="outline-container-org50fc714" class="outline-3">
+<h3 id="org50fc714"><span class="section-number-3">3.5.</span> Running the build (generating the .html files from .org files)</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 After you have studied the config file and you understand what's happening, we
@@ -884,8 +884,8 @@ modify the build script if not happy.
 </div>
 </div>
 
-<div id="outline-container-org4979ac0" class="outline-3">
-<h3 id="org4979ac0"><span class="section-number-3">3.6.</span> Previewing the generated site</h3>
+<div id="outline-container-org076b386" class="outline-3">
+<h3 id="org076b386"><span class="section-number-3">3.6.</span> Previewing the generated site</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 Now that we have a few .org file notes in our directory and we have exported
@@ -894,8 +894,8 @@ the browser.
 </p>
 </div>
 
-<div id="outline-container-orgf170fcc" class="outline-4">
-<h4 id="orgf170fcc"><span class="section-number-4">3.6.1.</span> Preview the html file in the browser</h4>
+<div id="outline-container-orgd34a226" class="outline-4">
+<h4 id="orgd34a226"><span class="section-number-4">3.6.1.</span> Preview the html file in the browser</h4>
 <div class="outline-text-4" id="text-3-6-1">
 <p>
 If the file on my wsl lies here:
@@ -916,8 +916,8 @@ how to implement - here
 </div>
 </div>
 
-<div id="outline-container-org3dabd44" class="outline-4">
-<h4 id="org3dabd44"><span class="section-number-4">3.6.2.</span> Preview with simple-httpd</h4>
+<div id="outline-container-org5594457" class="outline-4">
+<h4 id="org5594457"><span class="section-number-4">3.6.2.</span> Preview with simple-httpd</h4>
 <div class="outline-text-4" id="text-3-6-2">
 <p>
 Or you can use <code>simple-httpd</code>. It's a package that can host your files as a
@@ -958,12 +958,12 @@ opening in the browser&#x2026;). That's why I don't bother with simple-httpd.
 </div>
 </div>
 
-<div id="outline-container-org6cbf026" class="outline-2">
-<h2 id="org6cbf026"><span class="section-number-2">4.</span> Publishing the site to the world</h2>
+<div id="outline-container-org363cf45" class="outline-2">
+<h2 id="org363cf45"><span class="section-number-2">4.</span> Publishing the site to the world</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org1a96224" class="outline-4">
-<h4 id="org1a96224"><span class="section-number-4">4.0.1.</span> Free method with github</h4>
+<div id="outline-container-orgbafecbb" class="outline-4">
+<h4 id="orgbafecbb"><span class="section-number-4">4.0.1.</span> Free method with github</h4>
 <div class="outline-text-4" id="text-4-0-1">
 <p>
 First, Github pages - <a href="20231212T123552--deploy-a-static-website-with-github-pages__git_websites.html">deploy a static website with github pages</a>
@@ -975,8 +975,8 @@ Second, custom domain name - <a href="20231214T094426--setup-custom-domain-for-g
 </div>
 </div>
 
-<div id="outline-container-org85b83b7" class="outline-4">
-<h4 id="org85b83b7"><span class="section-number-4">4.0.2.</span> Possibly non-free with a server(have not tried)</h4>
+<div id="outline-container-org976719a" class="outline-4">
+<h4 id="org976719a"><span class="section-number-4">4.0.2.</span> Possibly non-free with a server(have not tried)</h4>
 <div class="outline-text-4" id="text-4-0-2">
 <p>
 Also possible to server your html files over apache. And then simply push your
@@ -985,8 +985,8 @@ them over tramp with rsync - <a href="https://taingram.org/blog/org-mode-blog.ht
 </div>
 </div>
 
-<div id="outline-container-org7709828" class="outline-4">
-<h4 id="org7709828"><span class="section-number-4">4.0.3.</span> Automatically publish your pages?(have not tried)</h4>
+<div id="outline-container-orgd63fc29" class="outline-4">
+<h4 id="orgd63fc29"><span class="section-number-4">4.0.3.</span> Automatically publish your pages?(have not tried)</h4>
 <div class="outline-text-4" id="text-4-0-3">
 <p>
 Automatically like so - <a href="https://ravi.pro/blog/blogging-with-emacs-org-mode.html">https://ravi.pro/blog/blogging-with-emacs-org-mode.html</a>
@@ -999,12 +999,12 @@ Or like so - <a href="https://systemcrafters.net/publishing-websites-with-org-mo
 </div>
 </div>
 
-<div id="outline-container-org9971022" class="outline-2">
-<h2 id="org9971022"><span class="section-number-2">5.</span> Nice to haves</h2>
+<div id="outline-container-orgc937cf7" class="outline-2">
+<h2 id="orgc937cf7"><span class="section-number-2">5.</span> Nice to haves</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org3e54ea5" class="outline-3">
-<h3 id="org3e54ea5"><span class="section-number-3">5.1.</span> Individual files customization options</h3>
+<div id="outline-container-orgcd385ee" class="outline-3">
+<h3 id="orgcd385ee"><span class="section-number-3">5.1.</span> Individual files customization options</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 We are specifying all the configuration in the <code>build-site.el</code> file, however,
@@ -1027,8 +1027,8 @@ Here are the things you can modify:
 </div>
 </div>
 
-<div id="outline-container-org48b4377" class="outline-3">
-<h3 id="org48b4377"><span class="section-number-3">5.2.</span> Important information about linking between .org files</h3>
+<div id="outline-container-org278d7e2" class="outline-3">
+<h3 id="org278d7e2"><span class="section-number-3">5.2.</span> Important information about linking between .org files</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Github link to issue - <a href="https://github.com/protesilaos/denote/issues/369">https://github.com/protesilaos/denote/issues/369</a> 
@@ -1076,8 +1076,8 @@ Example taken from here - <a href="https://orgmode.org/manual/Links-in-HTML-expo
 </div>
 </div>
 
-<div id="outline-container-org7272b07" class="outline-3">
-<h3 id="org7272b07"><span class="section-number-3">5.3.</span> CSS support in HTML export</h3>
+<div id="outline-container-orgb883c39" class="outline-3">
+<h3 id="orgb883c39"><span class="section-number-3">5.3.</span> CSS support in HTML export</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 Official docs for css support in HTML export - <a href="https://orgmode.org/manual/CSS-support.html">https://orgmode.org/manual/CSS-support.html</a>
@@ -1089,8 +1089,8 @@ with Emacs.
 </p>
 </div>
 
-<div id="outline-container-orge583596" class="outline-4">
-<h4 id="orge583596"><span class="section-number-4">5.3.1.</span> Use the default styles from ox-html</h4>
+<div id="outline-container-orgdd555d2" class="outline-4">
+<h4 id="orgdd555d2"><span class="section-number-4">5.3.1.</span> Use the default styles from ox-html</h4>
 <div class="outline-text-4" id="text-5-3-1">
 <p>
 You have to do nothing, <code>ox-html</code> - <code>org-html-style-default</code> got you covered.
@@ -1110,8 +1110,8 @@ than somewhere deep in the emacs docs.
 </div>
 </div>
 
-<div id="outline-container-orge7b6e33" class="outline-4">
-<h4 id="orge7b6e33"><span class="section-number-4">5.3.2.</span> Add custom classes to blocks of text/code</h4>
+<div id="outline-container-org7d9c4d1" class="outline-4">
+<h4 id="org7d9c4d1"><span class="section-number-4">5.3.2.</span> Add custom classes to blocks of text/code</h4>
 <div class="outline-text-4" id="text-5-3-2">
 <p>
 <a href="https://orgmode.org/manual/HTML-doctypes.html">https://orgmode.org/manual/HTML-doctypes.html</a>
@@ -1119,8 +1119,8 @@ than somewhere deep in the emacs docs.
 </div>
 </div>
 
-<div id="outline-container-org71efc4a" class="outline-4">
-<h4 id="org71efc4a"><span class="section-number-4">5.3.3.</span> import custom css</h4>
+<div id="outline-container-org548020a" class="outline-4">
+<h4 id="org548020a"><span class="section-number-4">5.3.3.</span> import custom css</h4>
 <div class="outline-text-4" id="text-5-3-3">
 <p>
 Default html export engine already has us covered with basic css, you can
@@ -1160,8 +1160,8 @@ Use your own config from another website/blog for example:
 </div>
 </div>
 
-<div id="outline-container-orga55a1bd" class="outline-4">
-<h4 id="orga55a1bd"><span class="section-number-4">5.3.4.</span> org-html-themes</h4>
+<div id="outline-container-orgf719874" class="outline-4">
+<h4 id="orgf719874"><span class="section-number-4">5.3.4.</span> org-html-themes</h4>
 <div class="outline-text-4" id="text-5-3-4">
 <p>
 ORRR last thing that you can try when it comes to styling your website, try
@@ -1194,8 +1194,8 @@ using my own custom stylesheet.
 </div>
 </div>
 
-<div id="outline-container-org7089752" class="outline-4">
-<h4 id="org7089752"><span class="section-number-4">5.3.5.</span> Note to self</h4>
+<div id="outline-container-orga99fa0a" class="outline-4">
+<h4 id="orga99fa0a"><span class="section-number-4">5.3.5.</span> Note to self</h4>
 <div class="outline-text-4" id="text-5-3-5">
 <p>
 Some css examples here(built with ox-publish though) -
@@ -1204,8 +1204,8 @@ Some css examples here(built with ox-publish though) -
 </div>
 </div>
 </div>
-<div id="outline-container-org3f6ab70" class="outline-3">
-<h3 id="org3f6ab70"><span class="section-number-3">5.4.</span> Javascript support in HTML export</h3>
+<div id="outline-container-org93deaf3" class="outline-3">
+<h3 id="org93deaf3"><span class="section-number-3">5.4.</span> Javascript support in HTML export</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 Official docs - <a href="https://orgmode.org/manual/JavaScript-support.html">https://orgmode.org/manual/JavaScript-support.html</a>
@@ -1217,13 +1217,18 @@ Add the .js files the same way as you would add .css file.
 </div>
 </div>
 
-<div id="outline-container-orgab1d4bb" class="outline-3">
-<h3 id="orgab1d4bb"><span class="section-number-3">5.5.</span> Images in HTML export</h3>
+<div id="outline-container-org579cb5e" class="outline-3">
+<h3 id="org579cb5e"><span class="section-number-3">5.5.</span> Images in HTML export</h3>
 <div class="outline-text-3" id="text-5-5">
 </div>
-<div id="outline-container-org75bfbe4" class="outline-4">
-<h4 id="org75bfbe4"><span class="section-number-4">5.5.1.</span> Display images</h4>
+<div id="outline-container-org2275c02" class="outline-4">
+<h4 id="org2275c02"><span class="section-number-4">5.5.1.</span> Display images</h4>
 <div class="outline-text-4" id="text-5-5-1">
+<p>
+NOTE: gif's are not rendered in github pages for some reason (julijaconsulting
+and facebook project gif's)
+</p>
+
 <p>
 Official docs - <a href="https://orgmode.org/manual/Images-in-HTML-export.html">https://orgmode.org/manual/Images-in-HTML-export.html</a>
 My docs - <a href="20231126T003746--images-in-org-files__emacs.html">images in org files</a>
@@ -1231,8 +1236,8 @@ My docs - <a href="20231126T003746--images-in-org-files__emacs.html">images in o
 </div>
 </div>
 
-<div id="outline-container-org6d58933" class="outline-4">
-<h4 id="org6d58933"><span class="section-number-4">5.5.2.</span> One option is to add images as plain html</h4>
+<div id="outline-container-orgd63237e" class="outline-4">
+<h4 id="orgd63237e"><span class="section-number-4">5.5.2.</span> One option is to add images as plain html</h4>
 <div class="outline-text-4" id="text-5-5-2">
 <p>
 But then you can not change the size of it in lightbox.
@@ -1244,15 +1249,15 @@ But then you can not change the size of it in lightbox.
 </div>
 </div>
 
-<div id="outline-container-org37db1ac" class="outline-4">
-<h4 id="org37db1ac"><span class="section-number-4">5.5.3.</span> Another option is to include a link to a file(the usual way)</h4>
+<div id="outline-container-org753f08f" class="outline-4">
+<h4 id="org753f08f"><span class="section-number-4">5.5.3.</span> Another option is to include a link to a file(the usual way)</h4>
 <div class="outline-text-4" id="text-5-5-3">
 <p>
 To toggle the images(show/hide), use <code>org-toggle-inline-images</code>.
 </p>
 
 
-<figure id="orgcab7b57">
+<figure id="org98b4639">
 <img src="./media/water.jpg" alt="water.jpg" width="1200px">
 
 </figure>
@@ -1264,8 +1269,8 @@ bound to <code>img</code>) and then I can drop images wherever.
 </div>
 </div>
 
-<div id="outline-container-orgb9452d7" class="outline-4">
-<h4 id="orgb9452d7"><span class="section-number-4">5.5.4.</span> Org download package for inserting images in org files</h4>
+<div id="outline-container-org45d330f" class="outline-4">
+<h4 id="org45d330f"><span class="section-number-4">5.5.4.</span> Org download package for inserting images in org files</h4>
 <div class="outline-text-4" id="text-5-5-4">
 <p>
 Optional, does not really work if in WSL - <a href="20231219T090909--using-org-download-package-in-wsl__emacs_windows_wsl.html">using org download package in WSL</a>
@@ -1273,8 +1278,8 @@ Optional, does not really work if in WSL - <a href="20231219T090909--using-org-d
 </div>
 </div>
 
-<div id="outline-container-orgb080d52" class="outline-4">
-<h4 id="orgb080d52"><span class="section-number-4">5.5.5.</span> Add a lightbox effect on the images</h4>
+<div id="outline-container-orgba955fa" class="outline-4">
+<h4 id="orgba955fa"><span class="section-number-4">5.5.5.</span> Add a lightbox effect on the images</h4>
 <div class="outline-text-4" id="text-5-5-5">
 <p>
 Follow - <a href="20231219T091704--add-a-lightbox-effect-for-images-in-html__javascript_websites.html">add a lightbox effect for images in html</a>
@@ -1283,8 +1288,8 @@ Follow - <a href="20231219T091704--add-a-lightbox-effect-for-images-in-html__jav
 </div>
 </div>
 
-<div id="outline-container-org9678888" class="outline-3">
-<h3 id="org9678888"><span class="section-number-3">5.6.</span> Preamble(nav) and postamble(footer)</h3>
+<div id="outline-container-orgff760f1" class="outline-3">
+<h3 id="orgff760f1"><span class="section-number-3">5.6.</span> Preamble(nav) and postamble(footer)</h3>
 <div class="outline-text-3" id="text-5-6">
 <p>
 Docs about them -  <a href="https://orgmode.org/manual/HTML-preamble-and-postamble.html">https://orgmode.org/manual/HTML-preamble-and-postamble.html</a>
@@ -1307,16 +1312,16 @@ Then simply modify - :html-preamble and :html-postamble in your config.
 </div>
 </div>
 
-<div id="outline-container-orgcd1ff8d" class="outline-3">
-<h3 id="orgcd1ff8d"><span class="section-number-3">5.7.</span> Extra's</h3>
+<div id="outline-container-org1363c9a" class="outline-3">
+<h3 id="org1363c9a"><span class="section-number-3">5.7.</span> Extra's</h3>
 <div class="outline-text-3" id="text-5-7">
 <p>
 Extra tips:
 </p>
 </div>
 
-<div id="outline-container-org30c461f" class="outline-4">
-<h4 id="org30c461f"><span class="section-number-4">5.7.1.</span> You can also include other content from other files!</h4>
+<div id="outline-container-orgbde60eb" class="outline-4">
+<h4 id="orgbde60eb"><span class="section-number-4">5.7.1.</span> You can also include other content from other files!</h4>
 <div class="outline-text-4" id="text-5-7-1">
 <p>
 Like such - <a href="https://orgmode.org/manual/Include-Files.html">https://orgmode.org/manual/Include-Files.html</a>
@@ -1328,8 +1333,8 @@ I have done this to include recent posts into index.org page.
 </div>
 </div>
 
-<div id="outline-container-org428f9de" class="outline-4">
-<h4 id="org428f9de"><span class="section-number-4">5.7.2.</span> Creating a HTML page with my .emacs configuration</h4>
+<div id="outline-container-org5c96520" class="outline-4">
+<h4 id="org5c96520"><span class="section-number-4">5.7.2.</span> Creating a HTML page with my .emacs configuration</h4>
 <div class="outline-text-4" id="text-5-7-2">
 <p>
 Simply made a symlink to my .org configuration file and it renders it together
@@ -1359,8 +1364,8 @@ this site on another platform - I might try this workaround again.
 </div>
 </div>
 
-<div id="outline-container-org8cce23a" class="outline-4">
-<h4 id="org8cce23a"><span class="section-number-4">5.7.3.</span> Adding a date to post title in sitemap</h4>
+<div id="outline-container-org616b3cd" class="outline-4">
+<h4 id="org616b3cd"><span class="section-number-4">5.7.3.</span> Adding a date to post title in sitemap</h4>
 <div class="outline-text-4" id="text-5-7-3">
 <p>
 Inspiration here - <a href="https://taingram.org/blog/org-mode-blog.html">https://taingram.org/blog/org-mode-blog.html</a>
@@ -1415,15 +1420,15 @@ done as a macro as otherwise Org escapes the HTML tags. The results are:
 </p>
 
 <ul class="org-ul">
+<li><span class="timestamp">[2024-05-29]</span> <a href="20240529T080712--2024-05-something-is-missing__statusupdate.html">2024-05 something is missing</a></li>
 <li><span class="timestamp">[2024-05-27]</span> <a href="20240527T150432--trying-out-devcontainers-in-vscode__vscode.html">trying out devcontainers in vscode</a></li>
 <li><span class="timestamp">[2024-02-24]</span> <a href="20240224T095911--2024-02-fighting-with-django-admin__statusupdate.html">2024 02 fighting with django admin</a></li>
-<li><span class="timestamp">[2024-02-05]</span> <a href="20240205T200953--debugging-a-django-app-with-emacs-and-dap-mode__django_emacs.html">Debugging a Django app with Emacs and dap-mode</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5cdd5db" class="outline-4">
-<h4 id="org5cdd5db"><span class="section-number-4">5.7.4.</span> <span class="todo TODO">TODO</span> Linking HTML pages and their org mode sources</h4>
+<div id="outline-container-orgcc53b60" class="outline-4">
+<h4 id="orgcc53b60"><span class="section-number-4">5.7.4.</span> <span class="todo TODO">TODO</span> Linking HTML pages and their org mode sources</h4>
 <div class="outline-text-4" id="text-5-7-4">
 <p>
 Inspiration - <a href="https://ict4g.net/adolfo/notes/emacs/linking-my-html-pages-to-source-code.html">https://ict4g.net/adolfo/notes/emacs/linking-my-html-pages-to-source-code.html</a>
@@ -1431,8 +1436,8 @@ Inspiration - <a href="https://ict4g.net/adolfo/notes/emacs/linking-my-html-page
 </div>
 </div>
 
-<div id="outline-container-orgae37ce2" class="outline-4">
-<h4 id="orgae37ce2"><span class="section-number-4">5.7.5.</span> Add scroll to top button</h4>
+<div id="outline-container-org121be11" class="outline-4">
+<h4 id="org121be11"><span class="section-number-4">5.7.5.</span> Add scroll to top button</h4>
 <div class="outline-text-4" id="text-5-7-5">
 <p>
 Follow - <a href="20231219T172622--scroll-to-top-button__javascript_websites.html">scroll to top button</a>
@@ -1440,12 +1445,12 @@ Follow - <a href="20231219T172622--scroll-to-top-button__javascript_websites.htm
 </div>
 </div>
 
-<div id="outline-container-org6779661" class="outline-4">
-<h4 id="org6779661"><span class="section-number-4">5.7.6.</span> <span class="todo TODO">TODO</span> Adding analytics</h4>
+<div id="outline-container-org5af5fd9" class="outline-4">
+<h4 id="org5af5fd9"><span class="section-number-4">5.7.6.</span> <span class="todo TODO">TODO</span> Adding analytics</h4>
 <div class="outline-text-4" id="text-5-7-6">
 </div>
 <ol class="org-ol">
-<li><a id="org3f55b27"></a>Plausible<br>
+<li><a id="orgbca4ad1"></a>Plausible<br>
 <div class="outline-text-5" id="text-5-7-6-1">
 <p>
 Follow - <a href="20231219T153629--add-website-analytics-with-plausible__websites.html">add website analytics with plausible</a>
@@ -1453,7 +1458,7 @@ Follow - <a href="20231219T153629--add-website-analytics-with-plausible__website
 </div>
 </li>
 
-<li><a id="org044c767"></a>Google tag analytics<br>
+<li><a id="org9a52108"></a>Google tag analytics<br>
 <div class="outline-text-5" id="text-5-7-6-2">
 <p>
 Follow - <a href="20231219T153712--add-website-analytics-with-google-tag-manager__websites.html">add website analytics with google tag manager</a>
@@ -1463,8 +1468,8 @@ Follow - <a href="20231219T153712--add-website-analytics-with-google-tag-manager
 </ol>
 </div>
 
-<div id="outline-container-org20a9cc2" class="outline-4">
-<h4 id="org20a9cc2"><span class="section-number-4">5.7.7.</span> Table of contents at the side - inspiration</h4>
+<div id="outline-container-org9c6c2e9" class="outline-4">
+<h4 id="org9c6c2e9"><span class="section-number-4">5.7.7.</span> Table of contents at the side - inspiration</h4>
 <div class="outline-text-4" id="text-5-7-7">
 <p>
 <a href="https://ckeditor.com/docs/ckeditor4/latest/features/codesnippet.html#hooking-a-custom-syntax-highlighter">https://ckeditor.com/docs/ckeditor4/latest/features/codesnippet.html#hooking-a-custom-syntax-highlighter</a>
@@ -1472,8 +1477,8 @@ Follow - <a href="20231219T153712--add-website-analytics-with-google-tag-manager
 </div>
 </div>
 
-<div id="outline-container-org17b8fbe" class="outline-4">
-<h4 id="org17b8fbe"><span class="section-number-4">5.7.8.</span> short and clean links like here</h4>
+<div id="outline-container-org2d800c8" class="outline-4">
+<h4 id="org2d800c8"><span class="section-number-4">5.7.8.</span> short and clean links like here</h4>
 <div class="outline-text-4" id="text-5-7-8">
 <p>
 <a href="https://diego.codes/post/blogging-with-org/">https://diego.codes/post/blogging-with-org/</a>
@@ -1481,8 +1486,8 @@ Follow - <a href="20231219T153712--add-website-analytics-with-google-tag-manager
 </div>
 </div>
 
-<div id="outline-container-org273862f" class="outline-4">
-<h4 id="org273862f"><span class="section-number-4">5.7.9.</span> Print out proper underscore</h4>
+<div id="outline-container-org8c6e855" class="outline-4">
+<h4 id="org8c6e855"><span class="section-number-4">5.7.9.</span> Print out proper underscore</h4>
 <div class="outline-text-4" id="text-5-7-9">
 <p>
 add #+OPTIONS: ^:nil to all files
@@ -1497,16 +1502,16 @@ and write a post about it how it looks wiht and without
 </p>
 </div>
 </div>
-<div id="outline-container-org594dc7b" class="outline-4">
-<h4 id="org594dc7b"><span class="section-number-4">5.7.10.</span> Tables in HTML export</h4>
+<div id="outline-container-org32634e3" class="outline-4">
+<h4 id="org32634e3"><span class="section-number-4">5.7.10.</span> Tables in HTML export</h4>
 <div class="outline-text-4" id="text-5-7-10">
 <p>
 <a href="https://orgmode.org/manual/Tables-in-HTML-export.html">https://orgmode.org/manual/Tables-in-HTML-export.html</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org9e2c382" class="outline-4">
-<h4 id="org9e2c382"><span class="section-number-4">5.7.11.</span> Create editable text areas</h4>
+<div id="outline-container-org39bf425" class="outline-4">
+<h4 id="org39bf425"><span class="section-number-4">5.7.11.</span> Create editable text areas</h4>
 <div class="outline-text-4" id="text-5-7-11">
 <p>
 Docs - <a href="https://orgmode.org/manual/Text-areas-in-HTML-export.html">https://orgmode.org/manual/Text-areas-in-HTML-export.html</a>
@@ -1525,12 +1530,12 @@ If you ever want to try using this feature, here is an example:
 </div>
 </div>
 
-<div id="outline-container-orgb8af62a" class="outline-4">
-<h4 id="orgb8af62a"><span class="section-number-4">5.7.12.</span> Tags solution</h4>
+<div id="outline-container-org8d4f056" class="outline-4">
+<h4 id="org8d4f056"><span class="section-number-4">5.7.12.</span> Tags solution</h4>
 <div class="outline-text-4" id="text-5-7-12">
 </div>
 <ol class="org-ol">
-<li><a id="orgd40d0d8"></a>tags in the sidebar with JS<br>
+<li><a id="orge460d85"></a>tags in the sidebar with JS<br>
 <div class="outline-text-5" id="text-5-7-12-1">
 <p>
 <a href="https://manateelazycat.github.io/tags.html">https://manateelazycat.github.io/tags.html</a>
@@ -1550,7 +1555,7 @@ use some js? Mobile content atrodo labai nice taip pat.
 </div>
 </li>
 
-<li><a id="orgdbf8022"></a>create this functionality<br>
+<li><a id="org7a7c711"></a>create this functionality<br>
 <div class="outline-text-5" id="text-5-7-12-2">
 <p>
 build a tagging functionality like in org static blog(inspiration from it's
@@ -1561,8 +1566,8 @@ source code)
 </ol>
 </div>
 
-<div id="outline-container-orgfecf54e" class="outline-4">
-<h4 id="orgfecf54e"><span class="section-number-4">5.7.13.</span> presentation mode?</h4>
+<div id="outline-container-orgfa38992" class="outline-4">
+<h4 id="orgfa38992"><span class="section-number-4">5.7.13.</span> presentation mode?</h4>
 <div class="outline-text-4" id="text-5-7-13">
 <p>
 <a href="https://orgmode.org/worg/code/org-info-js/index.html#undefined">https://orgmode.org/worg/code/org-info-js/index.html#undefined</a>
@@ -1580,8 +1585,8 @@ org projects:"
 </div>
 </div>
 
-<div id="outline-container-org75ef629" class="outline-4">
-<h4 id="org75ef629"><span class="section-number-4">5.7.14.</span> search function with agolia like Bozhidar</h4>
+<div id="outline-container-org7c8c771" class="outline-4">
+<h4 id="org7c8c771"><span class="section-number-4">5.7.14.</span> search function with agolia like Bozhidar</h4>
 <div class="outline-text-4" id="text-5-7-14">
 <p>
 <a href="https://docs.projectile.mx/projectile/installation.html">https://docs.projectile.mx/projectile/installation.html</a>
@@ -1599,8 +1604,8 @@ org projects:"
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 07:45</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 07:45</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 08:34</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 08:22</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-15 Fri 18:25</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
