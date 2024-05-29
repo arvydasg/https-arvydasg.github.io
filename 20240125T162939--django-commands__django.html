@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:17 -->
+<!-- 2024-05-29 Wed 10:35 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>django commands</title>
+<title>&lrm;</title>
 <meta name="author" content="Arvydas Gasparavicius" />
 <meta name="description" content="welcome to my site" />
 <meta name="keywords" content="emacs antanas geles" />
@@ -23,108 +23,9 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-27 Mon 15:00</div>
+<div id="updated">Updated: 2024-05-29 Wed 10:25</div>
 </div>
 <div id="content" class="content">
-<header>
-<h1 class="title">django commands</h1>
-</header><p>
-Create django project
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">django-admin startproject mysite
-</pre>
-</div>
-
-<p>
-Create django app
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">python manage.py startapp appname
-</pre>
-</div>
-
-<p>
-Create superuser
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">python manage.py createsuperuser
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-bash">python manage.py makemigrations
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-bash">python manage.py migrate
-python manage.py migrate appname
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-bash">python manage.py runserver
-</pre>
-</div>
-
-<p>
-If you have deleted migrations folder or it's content, running makemigrations or migrate will not do anything. First need to run this:
-<a href="https://stackoverflow.com/questions/34548768/no-such-table-exception">https://stackoverflow.com/questions/34548768/no-such-table-exception</a>
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">python manage.py migrate --run-syncdb
-</pre>
-</div>
-
-<p>
-Django shell.
-</p>
-
-<p>
-This opens up a terminal, but it has the Django settings already imported, so
-it allows you to work directly from the root folder of a Django project.
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">python manage.py shell
-</pre>
-</div>
-
-<p>
-Fetch opt values. Write this in the template
-</p>
-<div class="org-src-container">
-<pre class="src src-html">&lt;script&gt;
- console.log("Model name: {{ opts.model_name }}");
-&lt;/script&gt;
-</pre>
-</div>
-
-<p>
-Move the admin fields over js example(shipping):
-</p>
-<div class="org-src-container">
-<pre class="src src-js">const manual_ship_type_field = document.querySelector('div.field-manual_ship_type');
-const whole_manual_mapping_block = manual_ship_type_field.parentElement.parentElement;
-const forecasted_values_block = document.getElementById('vessel_vessel_forecasted_value-group');
-whole_manual_mapping_block.insertAdjacentElement('afterend', forecasted_values_block);
-</pre>
-</div>
-
-<p>
-Modify a record in the db with python in django shell:
-</p>
-
-<p>
-more on it here - <a href="20231128T132351--modify-a-record-in-db-with-python__django_sql.html">20231128T132351--modify-a-record-in-db-with-python__django_sql.html</a>
-</p>
-<div class="org-src-container">
-<pre class="src src-python">from vessel.models import Vessel
-x = Vessel.objects.get(vessel_code="1234567")
-x
-x.delete()
-</pre>
-</div>
 </div>
 <div id="postamble" class="status">
 <hr/>
@@ -134,9 +35,9 @@ x.delete()
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:17</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
-	 <p class="date">This org file is <u>created</u>: 2024-01-25 Thu 16:29</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:35</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:25</p>
+	 <p class="date">This org file is <u>created</u>: </p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>

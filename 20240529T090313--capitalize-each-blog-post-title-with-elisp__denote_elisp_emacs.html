@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 10:35 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalize each blog post title with elisp</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 10:34</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Capitalize each blog post title with elisp</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org394584a">1. The problem</a></li>
+<li><a href="#org4cf6b77">2. Possible solution</a></li>
+<li><a href="#org76f0d83">3. The solution</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org394584a" class="outline-2">
+<h2 id="org394584a"><span class="section-number-2">1.</span> The problem</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+When I found out about denote, I have moved bunch of my notes from elsewhere to
+.org files (to be used in denote).
+</p>
+
+<p>
+The problem is that when I was creating those notes, I did not capitalize the
+titles. Now when I link to the note, it does not start with a capitalized word
+and looks 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4cf6b77" class="outline-2">
+<h2 id="org4cf6b77"><span class="section-number-2">2.</span> Possible solution</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+After playing with elisp a little bit already when <a href="20240529T090108--attempt-to-modify-denote-links-to-suite-ox-publish__denote_elisp_emacs.html">trying to modify denote
+links</a>, I realized the power of elisp  and realized that everything you can do
+in  emacs, you  can actually  use to  your advantage,  all the  code is  there,
+functions are  there, use them! There  is already a built  in <code>capitalize-word</code>
+function,  so I  just need  to  make a  for loop  over  my files  and use  that
+function. Let's do it!
+</p>
+
+<p>
+A second attempt for me to try and use elisp to solve the problem!
+</p>
+
+<p>
+So I want to:
+</p>
+
+<ul class="org-ul">
+<li>take the denote notes directory,</li>
+<li>create a loop that loops all the files,
+<ul class="org-ul">
+<li>then takes their title</li>
+<li>capitalizes it (IF NOT capitalized already)</li>
+<li>saves the file</li>
+<li>goes onto the next one</li>
+</ul></li>
+<li>When done, print how many files have been modified</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org76f0d83" class="outline-2">
+<h2 id="org76f0d83"><span class="section-number-2">3.</span> The solution</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+This code does it:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun iterate-org-files-and-modify-titles (directory)
+  "Iterate over each .org file in DIRECTORY, print its title in uppercase if it starts with a lowercase letter, and save the change."
+  (dolist (file (directory-files directory t))
+    (when (and (file-regular-p file)
+               (string-suffix-p ".org" file))
+      (with-temp-buffer
+        (insert-file-contents file)
+        (goto-char (point-min))
+        (if (re-search-forward "^#\\+title: *\\(.*\\)$" nil t)
+            (let* ((title (match-string 1))
+                   (first-char (substring title 0 1))
+                   (rest-title (substring title 1))
+                   (new-title (if (and (string-match-p "[a-z]" first-char))
+                                  (concat (upcase first-char) rest-title)
+                                title)))
+              (when (not (string= title new-title))
+                (goto-char (match-beginning 1))
+                (delete-region (match-beginning 1) (match-end 1))
+                (insert new-title)
+                ;; Write the entire buffer back to the file
+                (write-region (point-min) (point-max) file))
+              (message "Title: %s" new-title))
+          (message "No title found in file: %s" file))))))
+
+;; Usage example
+(iterate-org-files-and-modify-titles "~/GIT/devnotes")
+</pre>
+</div>
+
+<p>
+Of course, if it was my first time writing elisp myself, it would have taken me
+a while to create such piece. ChatGPT has helped a lot. I will now study this
+to understand the basic principles of how elisp works.
+</p>
+
+<p>
+Btw, the code above did work, I modified about ~100 files this way, saved me
+some time.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:35</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:34</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 09:03</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 10:35 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>attempt to modify denote links to suite ox-publish</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 10:34</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">attempt to modify denote links to suite ox-publish</h1>
+</header><p>
+NOTE: still in progress
+</p>
+
+
+<p>
+This - <a href="https://github.com/protesilaos/denote/issues/369">https://github.com/protesilaos/denote/issues/369</a>
+</p>
+
+<p>
+First time doing such debugging.
+</p>
+
+<ul class="org-ul">
+<li>Learned that <code>scrach</code> buffer is quite nice for debugging</li>
+<li>Learned that you run single functions</li>
+<li>Learned that you can print stuff with elisp</li>
+<li>Learned how to declare variables</li>
+<li>Learned that you can use <code>messages</code> buffer to see the output of your script</li>
+</ul>
+
+<p>
+Elisp code examples:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;; only journal
+(let ((table (denote-retrieve-filename-title "~/GIT/devnotes/20240217T103305--journal__personal.org")))
+  (message "Title: %s" table))
+
+;; full name
+(let ((table (ag-denote-retrieve-filename-identifier "~/GIT/devnotes/20240217T103305--journal__personal.org")))
+  (message "Title: %s" table))
+
+;; full name
+(let ((table (denote--link-get-description "~/GIT/devnotes/20240217T103305--journal__personal.org")))
+  (message "Title: %s" table))
+
+;; ----------------------------------------------------------------
+
+(defun ag-denote-link (file file-type description &amp;optional id-only)
+  "Create link to FILE note in variable `denote-directory' with DESCRIPTION.
+
+When called interactively, prompt for FILE using completion.  In
+this case, derive FILE-TYPE from the current buffer.
+
+The DESCRIPTION is returned by the function specified in variable
+`denote-link-description-function'.  If the region is active, its
+content is deleted and can be used as the description of the
+link.  The default value of `denote-link-description-function'
+returns the content of the active region, if any, else the title
+of the linked file is used as the description.  The title comes
+either from the front matter or the file name.  Note that if you
+change the default value of `denote-link-description-function',
+make sure to use the `region-text' parameter.  Regardless of the
+value of this user option, `denote-link' will always replace the
+content of the active region.
+
+With optional ID-ONLY as a non-nil argument, such as with a
+universal prefix (\\[universal-argument]), insert links with just
+the identifier and no further description.  In this case, the
+link format is always [[denote:IDENTIFIER]].  If the DESCRIPTION
+is empty, the link is also as if ID-ONLY were non-nil.  The
+default value of `denote-link-description-function' returns an
+empty string when the region is empty.  Thus, the link will have
+no description in this case.
+
+When called from Lisp, FILE is a string representing a full file
+system path.  FILE-TYPE is a symbol as described in
+`denote-file-type'.  DESCRIPTION is a string.  Whether the caller
+treats the active region specially, is up to it."
+  (interactive
+   (let* ((file (denote-file-prompt nil "Link to FILE"))
+          (file-type (denote-filetype-heuristics buffer-file-name))
+          (description (when (file-exists-p file)
+                         (denote--link-get-description file))))
+       (list file file-type description current-prefix-arg)))
+  (unless (or (denote--file-type-org-capture-p)
+              (and buffer-file-name (denote-file-has-supported-extension-p buffer-file-name)))
+    (user-error "The current file type is not recognized by Denote"))
+  (unless (file-exists-p file)
+    (user-error "The linked file does not exist"))
+  (let* ((beg (point)))
+    (denote--delete-active-region-content)
+    (insert (ag-denote-format-link file description file-type id-only))
+    (unless (derived-mode-p 'org-mode)
+      (make-button beg (point) 'type 'denote-link-button))))
+
+
+(defun ag-denote-format-link (file description file-type id-only)
+  "Prepare link to FILE using DESCRIPTION.
+
+FILE-TYPE and ID-ONLY are used to get the format of the link.
+See the `:link' property of `denote-file-types'."
+  ;; Print the arguments to the message buffer
+  (message "File: %s" file)
+  (message "Description: %s" description)
+  (message "File type: %s" file-type)
+  (message "ID only: %s" id-only)
+  (format
+   (if
+       (or id-only (null description) (string-empty-p description)) ;; If any of these 3 conditions are true, the overall condition will be true
+       denote-id-only-link-format ;; if true do this
+     (denote--link-format file-type) ;; if false do this
+     ) 
+   (denote-retrieve-filename-identifier file) ;cia yra tai, kas matosi pirmuose skliaustuose po denote
+
+   description 				;cia yra tai, kas matosi antruose skliaustuose
+
+   ))
+
+
+(defun test ()
+  (let* ((file "~/GIT/devnotes/20240217T103305--journal__personal.org")
+         ;; (file-type (denote-filetype-heuristics file))
+         (file-type 'org)
+         (description nil)
+         (id-only nil))
+    ;; (message "File type: %s" file-type)
+    (message (denote-format-link file description file-type id-only))
+    ))
+
+(test)
+
+
+(defun my-test-insert-denote-link ()
+  "Test inserting a Denote link with specific arguments."
+  (let* ((file "~/GIT/devnotes/20240217T103305--journal__personal.org")
+         ;; (file-type (denote-filetype-heuristics file))
+         (file-type 'org)
+         (description nil)
+         (id-only nil))
+    ;; (message "File type: %s" file-type)
+    (message (denote-format-link file description file-type id-only))
+    ))
+
+(my-test-insert-denote-link)
+
+(global-set-key (kbd "C-c n a") 'ag-denote-link)
+
+</pre>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:35</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:34</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 09:01</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+</div>
+</body>
+</html>
