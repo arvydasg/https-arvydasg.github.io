@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 17:28 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Renaming django project</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 17:21</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Renaming django project</h1>
+</header><p>
+From Lifeapi to Lifeapi_project according to these instructions:
+</p>
+
+<p>
+Used ctrl+shift+f to find all occurances or lifeapi and change to
+lifeapi_project.
+</p>
+
+<p>
+In Django, renaming a project involves a few steps, but it can be done
+relatively easily. Here's a high-level overview of the process:
+</p>
+
+<p>
+Rename the project directory: Rename the root directory of your Django project
+to the new desired name.
+</p>
+
+<p>
+Update the manage.py file: Open the manage.py file in the root directory and
+update the DJANGO_SETTINGS_MODULE variable to point to the new project name.
+</p>
+
+<p>
+Update the WSGI file (if applicable): If you're using a WSGI server like Apache
+or Nginx, update the WSGI file to reflect the new project name.
+</p>
+
+<p>
+Update the project's configuration files:
+</p>
+
+<p>
+Rename the main project package folder: Inside the renamed project directory,
+rename the main package folder (the one containing settings.py, urls.py, etc.)
+to the new project name.
+</p>
+
+<p>
+Update the ROOT_URLCONF setting: In the settings.py file, update the
+ROOT_URLCONF variable to point to the new project name.
+</p>
+
+<p>
+Update references in code and configuration files:
+</p>
+
+<p>
+Search for any references to the old project name in your codebase and update
+them to use the new project name.
+</p>
+
+<p>
+Update any file paths or URLs that reference the old project name.
+</p>
+
+<p>
+Test and validate: After making the above changes, test your project to ensure
+it runs correctly. Run migrations, start the development server, and navigate
+through your application to verify that everything functions as expected.
+</p>
+
+<p>
+It's important to note that renaming a project can have implications for
+version control systems, deployment configurations, and other related tools.
+Make sure to update any relevant configurations or scripts that reference the
+old project name.
+</p>
+
+<p>
+While Django does not provide an automated way to rename a project, following
+the steps outlined above should allow you to rename your project successfully.
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:28</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 17:21</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 17:21</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

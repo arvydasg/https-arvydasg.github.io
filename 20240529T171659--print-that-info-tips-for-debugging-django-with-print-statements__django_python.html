@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 17:28 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Print that info, tips for debugging django with print statements</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 17:17</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Print that info, tips for debugging django with print statements</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge50eb36">1. Print that info</a>
+<ul>
+<li><a href="#orgcbdec7c">1.1. Check out debug-toolbar package.</a></li>
+<li><a href="#org3a688cc">1.2. Print attributes through <code>__init__</code></a></li>
+<li><a href="#orga9dc466">1.3. Print <code>attrs, values, ojb, request</code> through <code>get_fields</code></a></li>
+<li><a href="#orgd6c8947">1.4. See the <code>query</code> that django is executing</a></li>
+<li><a href="#org0be72e8">1.5. Fetch <code>opt</code> values. Write this in the template</a></li>
+<li><a href="#orgdf64adc">1.6. <code>opts</code> again</a></li>
+<li><a href="#org843df7c">1.7. Print the current object</a></li>
+<li><a href="#org7097af7">1.8. Introspection!! Create an instance of a class and print out its attributes/methods</a></li>
+<li><a href="#org7ed91be">1.9. Built in <code>dir</code> and <code>locals</code> methods</a></li>
+<li><a href="#org32b364c">1.10. Print <code>request</code> info on each page with <code>context_processor</code></a></li>
+<li><a href="#orgabba95f">1.11. Print out ALL the CONTEXT variables</a></li>
+<li><a href="#org4bb0f52">1.12. Print out ALL info about the object</a></li>
+<li><a href="#org73b574f">1.13. Add a custom variable to object list</a></li>
+<li><a href="#orgf36d3b4">1.14. _meta !!!!!!!!!!!</a></li>
+<li><a href="#orgafbc0b4">1.15. Create a debugging decorator! Printerino</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-orge50eb36" class="outline-2">
+<h2 id="orge50eb36"><span class="section-number-2">1.</span> Print that info</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgcbdec7c" class="outline-3">
+<h3 id="orgcbdec7c"><span class="section-number-3">1.1.</span> Check out <a href="https://django-debug-toolbar.readthedocs.io/en/latest/installation.html">debug-toolbar</a> package.</h3>
+</div>
+<div id="outline-container-org3a688cc" class="outline-3">
+<h3 id="org3a688cc"><span class="section-number-3">1.2.</span> Print attributes through <code>__init__</code></h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+In Django, when you define methods or attributes directly within a class body
+(outside of any method), they are executed only once when the class is defined,
+not every time an instance of the class is created or used.
+</p>
+
+<p>
+In your case, the lol method is defined directly within the CollateralInline
+class body. Therefore, it's executed only once when the CollateralInline class
+is defined, typically when the server starts or when the admin module is
+loaded.
+</p>
+
+<p>
+If you want lol to be executed every time a page is loaded or refreshed in the
+Django admin interface, you should call it from within a method that gets
+executed during the page rendering process, such as get_formset, get_fields, or
+__init__.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> admin
+<span style="font-weight: bold;">from</span> .models <span style="font-weight: bold;">import</span> *
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">CollateralInline</span>(admin.TabularInline):
+    <span style="font-weight: bold; font-style: italic;">model</span> = Collateral
+    <span style="font-weight: bold; font-style: italic;">extra</span> = 1
+    <span style="font-weight: bold; font-style: italic;">readonly_fields</span> = (<span style="font-style: italic;">'status'</span>,)
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">ON EACH PAGE REFRESH KAZKAIP KAZKODEL</span>
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, *args, **kwargs):
+            <span style="font-weight: bold;">super</span>().__init__(*args, **kwargs)
+            <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">self</span>.readonly_fields)
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"lol"</span>)
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Call the lol method when an instance of CollateralInline is created</span>
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">lol</span>(<span style="font-weight: bold;">self</span>):
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"lolziesssssssssssss"</span>)
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">DealAdmin</span>(admin.ModelAdmin):
+    <span style="font-weight: bold; font-style: italic;">inlines</span> = [CollateralInline]
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">VIENA KARTA TIK KAI INITIATING</span>
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, *args, **kwargs):
+        <span style="font-weight: bold;">super</span>().__init__(*args, **kwargs)
+        CollateralInline.lol(<span style="font-weight: bold;">self</span>) <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Call the lol method when an instance of DealAdmin is created</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga9dc466" class="outline-3">
+<h3 id="orga9dc466"><span class="section-number-3">1.3.</span> Print <code>attrs, values, ojb, request</code> through <code>get_fields</code></h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> admin
+<span style="font-weight: bold;">from</span> .models <span style="font-weight: bold;">import</span> *
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">CollateralInline</span>(admin.TabularInline):
+    <span style="font-weight: bold; font-style: italic;">model</span> = Collateral
+    <span style="font-weight: bold; font-style: italic;">extra</span> = 1
+    <span style="font-weight: bold; font-style: italic;">readonly_fields</span> = (<span style="font-style: italic;">'status'</span>,)
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">ON EACH PAGE REFRESH </span>
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, *args, **kwargs):
+            <span style="font-weight: bold;">super</span>().__init__(*args, **kwargs)
+            <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">self</span>.extra)
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">why I can only do it from already defined methods?</span>
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">get_fields</span>(<span style="font-weight: bold;">self</span>, request, obj=<span style="font-weight: bold; text-decoration: underline;">None</span>):
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">print(obj.register_date)</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'REQUEST INFO BELOW==================================='</span>)
+        <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">dir</span>(request))
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'REQUEST HEADERS BELOW==================================='</span>)
+        <span style="font-weight: bold;">print</span>(request.headers)
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'SELF DICT BELOW==================================='</span>)
+        <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">self</span>.<span style="font-weight: bold;">__dict__</span>)
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'SELF STUFF BELOW==================================='</span>)
+        <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">self</span>.verbose_name)
+        <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">self</span>.opts)
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'OBJ BELOW==================================='</span>)
+        <span style="font-weight: bold;">print</span>(obj)
+        <span style="font-weight: bold;">print</span>(obj.<span style="font-weight: bold;">__dict__</span>)
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'FIELDS==================================='</span>)
+        <span style="font-weight: bold; font-style: italic;">z</span> = <span style="font-weight: bold;">super</span>().get_fields(request, obj)
+        z.sort()
+        <span style="font-weight: bold;">print</span>(z)
+        <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">dir</span>(z))
+        <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">type</span>(z))
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the values of each field</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'FIELD VALUES==================================='</span>)
+        <span style="font-weight: bold;">for</span> field <span style="font-weight: bold;">in</span> z:
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Get the field value from the obj instance</span>
+            <span style="font-weight: bold;">print</span>(f<span style="font-style: italic;">'</span>{field}<span style="font-style: italic;">'</span>)
+
+        <span style="font-weight: bold;">for</span> obj <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">self</span>.get_queryset(request):
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print a separator between rows</span>
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'--------------------------'</span>)
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the values of each field for the current row</span>
+            <span style="font-weight: bold;">for</span> field <span style="font-weight: bold;">in</span> z:
+                <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Get the field value from the obj instance</span>
+                <span style="font-weight: bold; font-style: italic;">field_value</span> = <span style="font-weight: bold;">getattr</span>(obj, field)  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Use field directly</span>
+                <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the field name and its corresponding value</span>
+                <span style="font-weight: bold;">print</span>(f<span style="font-style: italic;">'</span>{field}<span style="font-style: italic;">: </span>{field_value}<span style="font-style: italic;">'</span>)
+
+        <span style="font-weight: bold;">return</span> z
+
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">DealAdmin</span>(admin.ModelAdmin):
+    <span style="font-weight: bold; font-style: italic;">inlines</span> = [CollateralInline]
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;"># Once only, when initiating</span>
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">def __init__(self, *args, **kwargs):</span>
+    <span style="font-weight: bold; font-style: italic;">#     </span><span style="font-weight: bold; font-style: italic;">super().__init__(*args, **kwargs)</span>
+
+admin.site.register(Deal, DealAdmin)
+admin.site.register(Vessel)
+admin.site.register(Collateral)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd6c8947" class="outline-3">
+<h3 id="orgd6c8947"><span class="section-number-3">1.4.</span> See the <code>query</code> that django is executing</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Multiple ways to SEE the SQL that Django executes: 8 different ways -
+<a href="https://b0uh.github.io/django-show-me-the-sql.html">https://b0uh.github.io/django-show-me-the-sql.html</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">lol</span> = <span style="font-weight: bold;">str</span>(Quote.objects.<span style="font-weight: bold;">filter</span>(text__icontains=<span style="font-style: italic;">"niuk"</span>).query)
+<span style="font-weight: bold;">print</span>(lol)
+</pre>
+</div>
+
+<p>
+result of that above is:
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold;">SELECT</span> "quotes_quote"."id", "quotes_quote"."text", "quotes_quote"."author_id", "quotes_quote"."active", "quotes_quote"."date_created" <span style="font-weight: bold;">FROM</span> "quotes_quote" <span style="font-weight: bold;">WHERE</span> "quotes_quote"."text" <span style="font-weight: bold;">LIKE</span> %niuk% <span style="font-weight: bold;">ESCAPE</span> <span style="font-style: italic;">'\'</span>
+</pre>
+</div>
+
+<p>
+Print the queries that django is executing
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> connection
+<span style="font-weight: bold;">print</span>(connection.queries)
+</pre>
+</div>
+
+<p>
+See queries with django extensions and shell_plus. Do <code>pip install
+django-extensions</code>. Add to installed apps!!!! - <code>'django_extensions',</code>. After
+installation can do: <code>python manage.py shell_plus --print-sql</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0be72e8" class="outline-3">
+<h3 id="org0be72e8"><span class="section-number-3">1.5.</span> Fetch <code>opt</code> values. Write this in the template</h3>
+<div class="outline-text-3" id="text-1-5">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">script</span>&gt;
+ console.log("Model name: {{ opts.model_name }}");
+&lt;/<span style="font-weight: bold;">script</span>&gt;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">{% <span style="font-weight: bold;">if</span> opts.model_name == <span style="font-style: italic;">'deal'</span> %}
+&lt;script src=<span style="font-style: italic;">"{% static 'js/deal.js' %}"</span>&gt;&lt;/script&gt;
+{% <span style="font-weight: bold;">elif</span> opts.model_name == <span style="font-style: italic;">'vessel'</span> %}
+&lt;script src=<span style="font-style: italic;">"{% static 'js/vessel.js' %}"</span>&gt;&lt;/script&gt;
+{% endif %}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdf64adc" class="outline-3">
+<h3 id="orgdf64adc"><span class="section-number-3">1.6.</span> <code>opts</code> again</h3>
+<div class="outline-text-3" id="text-1-6">
+<div class="org-src-container">
+<pre class="src src-html">{% extends "admin/change_form.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block admin_change_form_document_ready %}
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"{% static 'js/vessel.js' %}"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+
+{% endblock %}
+
+{% if opts.model_name == 'deal' %} 
+
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"{% static 'js/deal.js' %}"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt; 
+
+{% elif opts.model_name == 'vessel' %} 
+
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"{% static 'js/vessel.js' %}"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt; 
+
+{% endif %} 
+</pre>
+</div>
+
+<p>
+Fetch opt values. Write this in the template
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">script</span>&gt;
+console.log("Model name: {{ opts.model_name }}");
+&lt;/<span style="font-weight: bold;">script</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org843df7c" class="outline-3">
+<h3 id="org843df7c"><span class="section-number-3">1.7.</span> Print the current object</h3>
+<div class="outline-text-3" id="text-1-7">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">QuoteUpdateView</span>(UpdateView):
+    <span style="font-weight: bold; font-style: italic;">model</span> = Quote
+    <span style="font-weight: bold; font-style: italic;">fields</span> = <span style="font-style: italic;">"__all__"</span>
+    <span style="font-weight: bold; font-style: italic;">success_url</span> = reverse_lazy(<span style="font-style: italic;">'quote-list'</span>)
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">get_object</span>(<span style="font-weight: bold;">self</span>, queryset=<span style="font-weight: bold; text-decoration: underline;">None</span>):
+        <span style="font-style: italic;">"""</span>
+<span style="font-style: italic;">        Return the object the view is displaying.</span>
+<span style="font-style: italic;">        """</span>
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Call the superclass method to get the object</span>
+        <span style="font-weight: bold; font-style: italic;">obj</span> = <span style="font-weight: bold;">super</span>().get_object(queryset=queryset)
+        <span style="font-weight: bold;">print</span>(obj)
+        <span style="font-weight: bold;">return</span> obj
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">form_valid</span>(<span style="font-weight: bold;">self</span>, form):
+        <span style="font-style: italic;">"""</span>
+<span style="font-style: italic;">        Return the object the view is saving.</span>
+<span style="font-style: italic;">        """</span>
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the instance that's going to be updated</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">self</span>.<span style="font-weight: bold;">object</span>)
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Call the superclass form_valid method to continue the update process</span>
+        <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">super</span>().form_valid(form)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7097af7" class="outline-3">
+<h3 id="org7097af7"><span class="section-number-3">1.8.</span> Introspection!! Create an instance of a class and print out its attributes/methods</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+Was trying to find out the csss that is being used for autocomplete widget. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> dal <span style="font-weight: bold;">import</span> autocomplete
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Assuming you have an instance of ModelSelect2</span>
+<span style="font-weight: bold; font-style: italic;">widget_instance</span> = autocomplete.ModelSelect2()
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print all attributes and methods of the widget instance</span>
+<span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">dir</span>(widget_instance))
+</pre>
+</div>
+
+<p>
+Printed it out, then saw bunch of attributes/methods:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">[<span style="font-style: italic;">'__class__'</span>, <span style="font-style: italic;">'__deepcopy__'</span>, <span style="font-style: italic;">'__delattr__'</span>, <span style="font-style: italic;">'__dict__'</span>, <span style="font-style: italic;">'__dir__'</span>, <span style="font-style: italic;">'__doc__'</span>, <span style="font-style: italic;">'__eq__'</span>, <span style="font-style: italic;">'__format__'</span>, <span style="font-style: italic;">'__ge__'</span>, <span style="font-style: italic;">'__getattribute__'</span>, <span style="font-style: italic;">'__gt__'</span>, <span style="font-style: italic;">'__hash__'</span>, <span style="font-style: italic;">'__init__'</span>, <span style="font-style: italic;">'__init_subclass__'</span>, <span style="font-style: italic;">'__le__'</span>, <span style="font-style: italic;">'__lt__'</span>, <span style="font-style: italic;">'__module__'</span>, <span style="font-style: italic;">'__ne__'</span>, <span style="font-style: italic;">'__new__'</span>, <span style="font-style: italic;">'__reduce__'</span>, <span style="font-style: italic;">'__reduce_ex__'</span>, <span style="font-style: italic;">'__repr__'</span>, <span style="font-style: italic;">'__setattr__'</span>, <span style="font-style: italic;">'__sizeof__'</span>, <span style="font-style: italic;">'__slotnames__'</span>, <span style="font-style: italic;">'__str__'</span>, <span style="font-style: italic;">'__subclasshook__'</span>, <span style="font-style: italic;">'__weakref__'</span>, <span style="font-style: italic;">'_choice_has_empty_value'</span>, <span style="font-style: italic;">'_get_language_code'</span>, <span style="font-style: italic;">'_get_url'</span>, <span style="font-style: italic;">'_make_forward_dict'</span>, <span style="font-style: italic;">'_render'</span>, <span style="font-style: italic;">'_set_url'</span>, <span style="font-style: italic;">'_url'</span>, <span style="font-style: italic;">'add_id_index'</span>, <span style="font-style: italic;">'allow_multiple_selected'</span>, <span style="font-style: italic;">'attrs'</span>, <span style="font-style: italic;">'autocomplete_function'</span>, <span style="font-style: italic;">'build_attrs'</span>, <span style="font-style: italic;">'checked_attribute'</span>, <span style="font-style: italic;">'choices'</span>, <span style="font-style: italic;">'create_option'</span>, <span style="font-style: italic;">'filter_choices_to_render'</span>, <span style="font-style: italic;">'format_value'</span>, <span style="font-style: italic;">'forward'</span>, <span style="font-style: italic;">'get_context'</span>, <span style="font-style: italic;">'id_for_label'</span>, <span style="font-style: italic;">'input_type'</span>, <span style="font-style: italic;">'is_hidden'</span>, <span style="font-style: italic;">'is_localized'</span>, <span style="font-style: italic;">'is_required'</span>, <span style="font-style: italic;">'media'</span>, <span style="font-style: italic;">'needs_multipart_form'</span>, <span style="font-style: italic;">'optgroups'</span>, <span style="font-style: italic;">'option_inherits_attrs'</span>, <span style="font-style: italic;">'option_template_name'</span>, <span style="font-style: italic;">'options'</span>, <span style="font-style: italic;">'placeholder'</span>, <span style="font-style: italic;">'render'</span>, <span style="font-style: italic;">'render_forward_conf'</span>, <span style="font-style: italic;">'render_options'</span>, <span style="font-style: italic;">'subwidgets'</span>, <span style="font-style: italic;">'supports_microseconds'</span>, <span style="font-style: italic;">'template_name'</span>, <span style="font-style: italic;">'url'</span>, <span style="font-style: italic;">'use_fieldset'</span>, <span style="font-style: italic;">'use_required_attribute'</span>, <span style="font-style: italic;">'value_from_datadict'</span>, <span style="font-style: italic;">'value_omitted_from_data'</span>]
+</pre>
+</div>
+
+<p>
+Saw "media" inside of it. So I printed out the media
+<code>print(widget_instance.media)</code>, got all the media files. Now I know exactly
+where the stylesheets are, can override them.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">&lt;link <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"/static/static/admin/css/vendor/select2/select2.css"</span> <span style="font-weight: bold; font-style: italic;">media</span>=<span style="font-style: italic;">"screen"</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span>&gt;
+&lt;link <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"/static/static/admin/css/autocomplete.css"</span> <span style="font-weight: bold; font-style: italic;">media</span>=<span style="font-style: italic;">"screen"</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span>&gt;
+&lt;link <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"/static/static/autocomplete_light/select2.css"</span> <span style="font-weight: bold; font-style: italic;">media</span>=<span style="font-style: italic;">"screen"</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span>&gt;
+&lt;script <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"/static/static/admin/js/vendor/select2/select2.full.js"</span>&gt;&lt;/script&gt;
+&lt;script <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"/static/static/autocomplete_light/autocomplete_light.js"</span>&gt;&lt;/script&gt;
+&lt;script <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"/static/static/autocomplete_light/select2.js"</span>&gt;&lt;/script&gt;
+&lt;script <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"/static/static/autocomplete_light/i18n/en.js"</span>&gt;&lt;/script&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7ed91be" class="outline-3">
+<h3 id="org7ed91be"><span class="section-number-3">1.9.</span> Built in <code>dir</code> and <code>locals</code> methods</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+See current local scope
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">dir</span>()
+Locals()
+<span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">dir</span>(VesselInline))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org32b364c" class="outline-3">
+<h3 id="org32b364c"><span class="section-number-3">1.10.</span> Print <code>request</code> info on each page with <code>context_processor</code></h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+Can probably do it in the shell or views.py, but another way, to do it for
+<b><b>each page</b></b> is to use <code>context_processor</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">def</span> <span style="font-weight: bold;">request_info</span>(request):
+    <span style="font-weight: bold; font-style: italic;">request_info</span> = <span style="font-weight: bold;">dir</span>(request)
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"request:"</span>, request_info)
+
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"User:"</span>, <span style="font-weight: bold;">getattr</span>(request, <span style="font-style: italic;">'user'</span>, <span style="font-weight: bold; text-decoration: underline;">None</span>))
+    <span style="font-weight: bold;">return</span> {<span style="font-style: italic;">"request_info"</span>: request_info}
+</pre>
+</div>
+
+<p>
+In <code>settings.py</code> add context_processor:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-style: italic;">'context_processors.request_info'</span>,
+</pre>
+</div>
+
+<p>
+Then in template:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">p</span>&gt;Request info - {{request_info}}&lt;/<span style="font-weight: bold;">p</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgabba95f" class="outline-3">
+<h3 id="orgabba95f"><span class="section-number-3">1.11.</span> Print out ALL the CONTEXT variables</h3>
+<div class="outline-text-3" id="text-1-11">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">OneListView</span>(generic.ListView):
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">model = One is shorthand for saying queryset = One.objects.all()</span>
+    <span style="font-weight: bold; font-style: italic;">model</span> = One
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">get_context_data</span>(<span style="font-weight: bold;">self</span>, **kwargs):
+        <span style="font-weight: bold; font-style: italic;">context</span> = <span style="font-weight: bold;">super</span>().get_context_data(**kwargs)
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Add the model name to the context</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">dir</span>(<span style="font-weight: bold;">self</span>.model._meta))
+        <span style="font-weight: bold; font-style: italic;">context</span>[<span style="font-style: italic;">'model_name'</span>] = <span style="font-weight: bold;">self</span>.model._meta.verbose_name_plural
+        <span style="font-weight: bold;">return</span> context
+</pre>
+</div>
+
+<p>
+Result:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">[<span style="font-style: italic;">'FORWARD_PROPERTIES'</span>, <span style="font-style: italic;">'REVERSE_PROPERTIES'</span>, <span style="font-style: italic;">'__class__'</span>, <span style="font-style: italic;">'__delattr__'</span>, <span style="font-style: italic;">'__dict__'</span>, <span style="font-style: italic;">'__dir__'</span>, <span style="font-style: italic;">'__doc__'</span>, <span style="font-style: italic;">'__eq__'</span>, <span style="font-style: italic;">'__format__'</span>, <span style="font-style: italic;">'__ge__'</span>, <span style="font-style: italic;">'__getattribute__'</span>, <span style="font-style: italic;">'__gt__'</span>, <span style="font-style: italic;">'__hash__'</span>, <span style="font-style: italic;">'__init__'</span>, <span style="font-style: italic;">'__init_subclass__'</span>, <span style="font-style: italic;">'__le__'</span>, <span style="font-style: italic;">'__lt__'</span>, <span style="font-style: italic;">'__module__'</span>, <span style="font-style: italic;">'__ne__'</span>, <span style="font-style: italic;">'__new__'</span>, <span style="font-style: italic;">'__reduce__'</span>, <span style="font-style: italic;">'__reduce_ex__'</span>, <span style="font-style: italic;">'__repr__'</span>, <span style="font-style: italic;">'__setattr__'</span>, <span style="font-style: italic;">'__sizeof__'</span>, <span style="font-style: italic;">'__str__'</span>, <span style="font-style: italic;">'__subclasshook__'</span>, <span style="font-style: italic;">'__weakref__'</span>, <span style="font-style: italic;">'_expire_cache'</span>, <span style="font-style: italic;">'_format_names_with_class'</span>, <span style="font-style: italic;">'_forward_fields_map'</span>, <span style="font-style: italic;">'_get_default_pk_class'</span>, <span style="font-style: italic;">'_get_fields'</span>, <span style="font-style: italic;">'_get_fields_cache'</span>, <span style="font-style: italic;">'_non_pk_concrete_field_names'</span>, <span style="font-style: italic;">'_ordering_clash'</span>, <span style="font-style: italic;">'_populate_directed_relation_graph'</span>, <span style="font-style: italic;">'_prepare'</span>, <span style="font-style: italic;">'_property_names'</span>, <span style="font-style: italic;">'_relation_tree'</span>, <span style="font-style: italic;">'abstract'</span>, <span style="font-style: italic;">'add_field'</span>, <span style="font-style: italic;">'add_manager'</span>, <span style="font-style: italic;">'app_config'</span>, <span style="font-style: italic;">'app_label'</span>, <span style="font-style: italic;">'apps'</span>, <span style="font-style: italic;">'auto_created'</span>, <span style="font-style: italic;">'auto_field'</span>, <span style="font-style: italic;">'base_manager'</span>, <span style="font-style: italic;">'base_manager_name'</span>, <span style="font-style: italic;">'can_migrate'</span>, <span style="font-style: italic;">'concrete_fields'</span>, <span style="font-style: italic;">'concrete_model'</span>, <span style="font-style: italic;">'constraints'</span>, <span style="font-style: italic;">'contribute_to_class'</span>, <span style="font-style: italic;">'db_returning_fields'</span>, <span style="font-style: italic;">'db_table'</span>, <span style="font-style: italic;">'db_table_comment'</span>, <span style="font-style: italic;">'db_tablespace'</span>, <span style="font-style: italic;">'default_apps'</span>, <span style="font-style: italic;">'default_manager'</span>, <span style="font-style: italic;">'default_manager_name'</span>, <span style="font-style: italic;">'default_permissions'</span>, <span style="font-style: italic;">'default_related_name'</span>, <span style="font-style: italic;">'fields'</span>, <span style="font-style: italic;">'fields_map'</span>, <span style="font-style: italic;">'get_ancestor_link'</span>, <span style="font-style: italic;">'get_base_chain'</span>, <span style="font-style: italic;">'get_field'</span>, <span style="font-style: italic;">'get_fields'</span>, <span style="font-style: italic;">'get_latest_by'</span>, <span style="font-style: italic;">'get_parent_list'</span>, <span style="font-style: italic;">'get_path_from_parent'</span>, <span style="font-style: italic;">'get_path_to_parent'</span>, <span style="font-style: italic;">'index_together'</span>, <span style="font-style: italic;">'indexes'</span>, <span style="font-style: italic;">'label'</span>, <span style="font-style: italic;">'label_lower'</span>, <span style="font-style: italic;">'local_concrete_fields'</span>, <span style="font-style: italic;">'local_fields'</span>, <span style="font-style: italic;">'local_managers'</span>, <span style="font-style: italic;">'local_many_to_many'</span>, <span style="font-style: italic;">'managed'</span>, <span style="font-style: italic;">'managers'</span>, <span style="font-style: italic;">'managers_map'</span>, <span style="font-style: italic;">'many_to_many'</span>, <span style="font-style: italic;">'model'</span>, <span style="font-style: italic;">'model_name'</span>, <span style="font-style: italic;">'object_name'</span>, <span style="font-style: italic;">'order_with_respect_to'</span>, <span style="font-style: italic;">'ordering'</span>, <span style="font-style: italic;">'original_attrs'</span>, <span style="font-style: italic;">'parents'</span>, <span style="font-style: italic;">'permissions'</span>, <span style="font-style: italic;">'pk'</span>, <span style="font-style: italic;">'private_fields'</span>, <span style="font-style: italic;">'proxy'</span>, <span style="font-style: italic;">'proxy_for_model'</span>, <span style="font-style: italic;">'related_fkey_lookups'</span>, <span style="font-style: italic;">'related_objects'</span>, <span style="font-style: italic;">'required_db_features'</span>, <span style="font-style: italic;">'required_db_vendor'</span>, <span style="font-style: italic;">'select_on_save'</span>, <span style="font-style: italic;">'setup_pk'</span>, <span style="font-style: italic;">'setup_proxy'</span>, <span style="font-style: italic;">'swappable'</span>, <span style="font-style: italic;">'swapped'</span>, <span style="font-style: italic;">'total_unique_constraints'</span>, <span style="font-style: italic;">'unique_together'</span>, <span style="font-style: italic;">'verbose_name'</span>, <span style="font-style: italic;">'verbose_name_plural'</span>, <span style="font-style: italic;">'verbose_name_raw'</span>]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4bb0f52" class="outline-3">
+<h3 id="org4bb0f52"><span class="section-number-3">1.12.</span> Print out ALL info about the object</h3>
+<div class="outline-text-3" id="text-1-12">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">OneListView</span>(ListView):
+    <span style="font-weight: bold; font-style: italic;">model</span> = One
+    <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">dir</span>())
+    <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">locals</span>())
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, *args, **kwargs):
+        <span style="font-weight: bold;">super</span>().__init__(*args, **kwargs)
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the docstring</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"Docstring:"</span>, <span style="font-weight: bold;">self</span>.<span style="font-weight: bold;">__doc__</span>)
+
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the base classes</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"Base classes:"</span>, <span style="font-weight: bold;">self</span>.__class__.__bases__)
+
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the class dictionary</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"Class dictionary:"</span>, <span style="font-weight: bold;">self</span>.<span style="font-weight: bold;">__dict__</span>)
+
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the class methods</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"Class methods:"</span>)
+        <span style="font-weight: bold;">for</span> key, value <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">self</span>.__class__.<span style="font-weight: bold;">__dict__</span>.items():
+            <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">callable</span>(value):
+                <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"</span><span style="font-weight: bold; text-decoration: underline;">\t</span><span style="font-style: italic;">"</span>, key, <span style="font-style: italic;">":"</span>, value)
+
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the instance dictionary</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"Instance dictionary:"</span>, <span style="font-weight: bold;">self</span>.<span style="font-weight: bold;">__dict__</span>)
+
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the instance methods</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"Instance methods:"</span>)
+        <span style="font-weight: bold;">for</span> key, value <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">self</span>.<span style="font-weight: bold;">__dict__</span>.items():
+            <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">callable</span>(value):
+                <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"</span><span style="font-weight: bold; text-decoration: underline;">\t</span><span style="font-style: italic;">"</span>, key, <span style="font-style: italic;">":"</span>, value)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org73b574f" class="outline-3">
+<h3 id="org73b574f"><span class="section-number-3">1.13.</span> Add a custom variable to object list</h3>
+<div class="outline-text-3" id="text-1-13">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.shortcuts <span style="font-weight: bold;">import</span> render
+<span style="font-weight: bold;">from</span> django.views <span style="font-weight: bold;">import</span> generic
+
+<span style="font-weight: bold;">from</span> three.models <span style="font-weight: bold;">import</span> Three
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">ThreeListView</span>(generic.ListView):
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">model = One is shorthand for saying queryset = One.objects.all()</span>
+    <span style="font-weight: bold; font-style: italic;">model</span> = Three
+    <span style="font-weight: bold; font-style: italic;">template_name</span> = <span style="font-style: italic;">'list_view.html'</span>
+    <span style="font-weight: bold; font-style: italic;">context_object_name</span> = <span style="font-style: italic;">'object_list'</span>
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">get_context_data</span>(<span style="font-weight: bold;">self</span>, **kwargs):
+        <span style="font-weight: bold; font-style: italic;">context</span> = <span style="font-weight: bold;">super</span>().get_context_data(**kwargs)
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">print(f"CONTEXT IS HERE {context}")</span>
+        <span style="font-weight: bold; font-style: italic;">context</span>[<span style="font-style: italic;">'model_name'</span>] = <span style="font-weight: bold;">self</span>.model.<span style="font-weight: bold;">__name__</span>.lower()  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Lowercase model name</span>
+        <span style="font-weight: bold; font-style: italic;">context</span>[<span style="font-style: italic;">'model_name_plural'</span>] = <span style="font-weight: bold;">self</span>.model._meta.verbose_name_plural  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Plural form of model name</span>
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">print(f"UPDATED IS HERE {context}")</span>
+        <span style="font-weight: bold;">return</span> context
+</pre>
+</div>
+
+<p>
+Can then use it in the templates like so:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">List of {{ model_name_plural }}</span>&lt;/<span style="font-weight: bold;">h1</span>&gt;
+
+<span style="font-weight: bold; font-style: italic;">&lt;!-- </span><span style="font-weight: bold; font-style: italic;">{% if "three" in model_name_plural %}</span>
+<span style="font-weight: bold; font-style: italic;">    &lt;p&gt;Hello&lt;/p&gt;</span>
+<span style="font-weight: bold; font-style: italic;">{% else %}</span>
+<span style="font-weight: bold; font-style: italic;">    &lt;p&gt;NOTTTTTTTT&lt;/p&gt;</span>
+<span style="font-weight: bold; font-style: italic;">{% endif %}</span><span style="font-weight: bold; font-style: italic;"> --&gt;</span>
+
+&lt;<span style="font-weight: bold;">ul</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"{{model_name_plural}} object_list"</span>&gt;
+    {% for instance in object_list %}
+        &lt;<span style="font-weight: bold;">p</span>&gt;Hello&lt;/<span style="font-weight: bold;">p</span>&gt;
+
+        <span style="font-weight: bold; font-style: italic;">&lt;!-- </span><span style="font-weight: bold; font-style: italic;">&lt;li&gt;&lt;a href="{% url model_name|add:'_detail' pk=instance.pk %}"&gt;{{ instance }}&lt;/a&gt;&lt;/li&gt;</span><span style="font-weight: bold; font-style: italic;"> --&gt;</span>
+    {% endfor %}
+&lt;/<span style="font-weight: bold;">ul</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf36d3b4" class="outline-3">
+<h3 id="orgf36d3b4"><span class="section-number-3">1.14.</span> _meta !!!!!!!!!!!</h3>
+<div class="outline-text-3" id="text-1-14">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">TwoListView</span>(ListView):
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">model = One is shorthand for saying queryset = One.objects.all()</span>
+    <span style="font-weight: bold; font-style: italic;">model</span> = Two
+
+    <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">dir</span>(model._meta))
+    <span style="font-weight: bold; font-style: italic;">paginate_by</span> = 15
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgafbc0b4" class="outline-3">
+<h3 id="orgafbc0b4"><span class="section-number-3">1.15.</span> Create a debugging decorator! Printerino</h3>
+<div class="outline-text-3" id="text-1-15">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">def</span> <span style="font-weight: bold;">printerino</span>(cls):
+    <span style="font-style: italic;">'''</span>
+<span style="font-style: italic;">    The printerino function takes a class as input (cls) and prints out various </span>
+<span style="font-style: italic;">    information about it when called.</span>
+
+<span style="font-style: italic;">    The __init__ method within the printerino function is modified to print out </span>
+<span style="font-style: italic;">    additional information about the class and its instances.</span>
+
+<span style="font-style: italic;">    The @printerino decorator is used to apply the printerino functionality to </span>
+<span style="font-style: italic;">    the OneListView class. This effectively modifies the __init__ method of </span>
+<span style="font-style: italic;">    OneListView to include the printing functionality.</span>
+
+<span style="font-style: italic;">    idomu del ko su GreetingView neveikia pilnai, bet su OneListView veikia.</span>
+<span style="font-style: italic;">    '''</span>
+
+    <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">dir</span>(cls))
+    <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">locals</span>())
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, *args, **kwargs):
+        <span style="font-weight: bold;">super</span>(cls, <span style="font-weight: bold;">self</span>).__init__(*args, **kwargs)
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the docstring</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"Docstring:"</span>, <span style="font-weight: bold;">self</span>.<span style="font-weight: bold;">__doc__</span>)
+
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the base classes</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"Base classes:"</span>, <span style="font-weight: bold;">self</span>.__class__.__bases__)
+
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the class dictionary</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"Class dictionary:"</span>, <span style="font-weight: bold;">self</span>.<span style="font-weight: bold;">__dict__</span>)
+
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the class methods</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"Class methods:"</span>)
+        <span style="font-weight: bold;">for</span> key, value <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">self</span>.__class__.<span style="font-weight: bold;">__dict__</span>.items():
+            <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">callable</span>(value):
+                <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"</span><span style="font-weight: bold; text-decoration: underline;">\t</span><span style="font-style: italic;">"</span>, key, <span style="font-style: italic;">":"</span>, value)
+
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the instance dictionary</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"Instance dictionary:"</span>, <span style="font-weight: bold;">self</span>.<span style="font-weight: bold;">__dict__</span>)
+
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Print the instance methods</span>
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"Instance methods:"</span>)
+        <span style="font-weight: bold;">for</span> key, value <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">self</span>.<span style="font-weight: bold;">__dict__</span>.items():
+            <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">callable</span>(value):
+                <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"</span><span style="font-weight: bold; text-decoration: underline;">\t</span><span style="font-style: italic;">"</span>, key, <span style="font-style: italic;">":"</span>, value)
+
+    cls.<span style="font-weight: bold; font-style: italic;">__init__</span> = __init__
+    <span style="font-weight: bold;">return</span> cls
+</pre>
+</div>
+
+<p>
+Then to use it in the python code, add this above the classes:  <code>@printerino</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:28</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 17:17</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 17:16</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

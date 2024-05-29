@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 17:28 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Move django app to an apps folder</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 17:22</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Move django app to an apps folder</h1>
+</header><p>
+After creating an app, move it into apps folder, then change the
+following things:
+</p>
+
+<p>
+Possibly delete migrations
+</p>
+
+<p>
+new app - <code>apps.py</code> file, write a proper name - name = <code>lifeapi_apps.base_app</code>
+</p>
+
+<p>
+-urls.py- of the <b><b>project</b></b>, write:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">path(<span style="font-style: italic;">""</span>, include(<span style="font-style: italic;">"lifeapi_apps.base_app.urls"</span>)),
+</pre>
+</div>
+
+<p>
+In <code>settings.py</code>, next to installed apps - <code>'lifeapi_apps.base_app'</code>
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:28</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 17:22</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 17:22</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

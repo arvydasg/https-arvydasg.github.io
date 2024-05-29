@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 17:03 -->
+<!-- 2024-05-29 Wed 17:28 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Black Box Machine Learning</title>
@@ -32,36 +32,36 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org681b542">1. Classification algorithms</a>
+<li><a href="#org6ba72dc">1. Classification algorithms</a>
 <ul>
-<li><a href="#org46569c9">1.1. Decision Tree</a></li>
-<li><a href="#org8093214">1.2. Naive Bayes</a></li>
-<li><a href="#org478379b">1.3. Artificial Neuraul Networks</a></li>
-<li><a href="#org8ad9cd6">1.4. k-Nearest Neighbor (KNN)</a></li>
+<li><a href="#org7fa338c">1.1. Decision Tree</a></li>
+<li><a href="#org700df72">1.2. Naive Bayes</a></li>
+<li><a href="#orgdf65e4e">1.3. Artificial Neuraul Networks</a></li>
+<li><a href="#orgb9db870">1.4. k-Nearest Neighbor (KNN)</a></li>
 </ul>
 </li>
-<li><a href="#org21980a4">2. Evaluating a classifier</a>
+<li><a href="#org430bf66">2. Evaluating a classifier</a>
 <ul>
-<li><a href="#org06fadf2">2.1. Holdout method</a></li>
-<li><a href="#orgfc462d4">2.2. Cross-validation</a></li>
-<li><a href="#org8efbd01">2.3. Precision and Recall</a></li>
-<li><a href="#orgcfcdd43">2.4. ROC curve Receiver Operatning Characteristics</a></li>
+<li><a href="#orgac4b820">2.1. Holdout method</a></li>
+<li><a href="#org91b1e98">2.2. Cross-validation</a></li>
+<li><a href="#org7a13d54">2.3. Precision and Recall</a></li>
+<li><a href="#orge80c507">2.4. ROC curve Receiver Operatning Characteristics</a></li>
 </ul>
 </li>
-<li><a href="#orgec6d80c">3. SVM (Support Vector Machine)</a>
+<li><a href="#org798ac95">3. SVM (Support Vector Machine)</a>
 <ul>
-<li><a href="#org5a104fc">3.1. Hyperplanes and Support Vectors</a></li>
-<li><a href="#org051c2aa">3.2. Logistic Regression</a></li>
-<li><a href="#orgf386c19">3.3. K-means Clustering</a></li>
-<li><a href="#orgb82f917">3.4. k-fold Cross-Validation</a></li>
+<li><a href="#org1cb8cff">3.1. Hyperplanes and Support Vectors</a></li>
+<li><a href="#orgbab3a06">3.2. Logistic Regression</a></li>
+<li><a href="#orgb3025b5">3.3. K-means Clustering</a></li>
+<li><a href="#org24294ab">3.4. k-fold Cross-Validation</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org681b542" class="outline-2">
-<h2 id="org681b542"><span class="section-number-2">1.</span> Classification algorithms</h2>
+<div id="outline-container-org6ba72dc" class="outline-2">
+<h2 id="org6ba72dc"><span class="section-number-2">1.</span> Classification algorithms</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 There is a lot of classification algorithms available now but it is
@@ -73,11 +73,11 @@ models and vice versa.
 </p>
 </div>
 
-<div id="outline-container-org46569c9" class="outline-3">
-<h3 id="org46569c9"><span class="section-number-3">1.1.</span> Decision Tree</h3>
+<div id="outline-container-org7fa338c" class="outline-3">
+<h3 id="org7fa338c"><span class="section-number-3">1.1.</span> Decision Tree</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<figure id="org5ef6e4f">
+<figure id="org208832d">
 <img src="./media/decision-tree.png" alt="decision-tree.png" width="1200px">
 
 </figure>
@@ -114,8 +114,8 @@ What?
 </div>
 </div>
 
-<div id="outline-container-org8093214" class="outline-3">
-<h3 id="org8093214"><span class="section-number-3">1.2.</span> Naive Bayes</h3>
+<div id="outline-container-org700df72" class="outline-3">
+<h3 id="org700df72"><span class="section-number-3">1.2.</span> Naive Bayes</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Naive Bayes is a probabilistic classifier inspired by the Bayes
@@ -124,7 +124,7 @@ conditionally independent.
 </p>
 
 
-<figure id="orga9c687d">
+<figure id="orgdbdf934">
 <img src="./media/naive-bayes-formula.png" alt="naive-bayes-formula.png" width="1200px">
 
 </figure>
@@ -145,8 +145,8 @@ explicitly using a Laplacian estimator?.
 </div>
 </div>
 
-<div id="outline-container-org478379b" class="outline-3">
-<h3 id="org478379b"><span class="section-number-3">1.3.</span> Artificial Neuraul Networks</h3>
+<div id="outline-container-orgdf65e4e" class="outline-3">
+<h3 id="orgdf65e4e"><span class="section-number-3">1.3.</span> Artificial Neuraul Networks</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Artificial Neural Network is a set of connected input/output units
@@ -196,11 +196,11 @@ prediction later.
 </div>
 </div>
 
-<div id="outline-container-org8ad9cd6" class="outline-3">
-<h3 id="org8ad9cd6"><span class="section-number-3">1.4.</span> k-Nearest Neighbor (KNN)</h3>
+<div id="outline-container-orgb9db870" class="outline-3">
+<h3 id="orgb9db870"><span class="section-number-3">1.4.</span> k-Nearest Neighbor (KNN)</h3>
 <div class="outline-text-3" id="text-1-4">
 
-<figure id="org5131624">
+<figure id="org03acbc4">
 <img src="./media/k-nearest-neighbors.png" alt="k-nearest-neighbors.png" width="1200px">
 
 </figure>
@@ -219,7 +219,7 @@ nice
 </p>
 
 
-<figure id="org08772a3">
+<figure id="org01afc25">
 <img src="./media/k-nearest-formula.png" alt="k-nearest-formula.png" width="1200px">
 
 </figure>
@@ -227,8 +227,8 @@ nice
 </div>
 </div>
 
-<div id="outline-container-org21980a4" class="outline-2">
-<h2 id="org21980a4"><span class="section-number-2">2.</span> Evaluating a classifier</h2>
+<div id="outline-container-org430bf66" class="outline-2">
+<h2 id="org430bf66"><span class="section-number-2">2.</span> Evaluating a classifier</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 After training the model the most important part is to evaluate the
@@ -236,8 +236,8 @@ classifier to verify its applicability
 </p>
 </div>
 
-<div id="outline-container-org06fadf2" class="outline-3">
-<h3 id="org06fadf2"><span class="section-number-3">2.1.</span> Holdout method</h3>
+<div id="outline-container-orgac4b820" class="outline-3">
+<h3 id="orgac4b820"><span class="section-number-3">2.1.</span> Holdout method</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 There are several methods exists and the most common method is the
@@ -249,8 +249,8 @@ data, I see now) will be used to test its predictive power.
 </div>
 </div>
 
-<div id="outline-container-orgfc462d4" class="outline-3">
-<h3 id="orgfc462d4"><span class="section-number-3">2.2.</span> Cross-validation</h3>
+<div id="outline-container-org91b1e98" class="outline-3">
+<h3 id="org91b1e98"><span class="section-number-3">2.2.</span> Cross-validation</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Over-fitting is a common problem in machine learning which can occur
@@ -264,8 +264,8 @@ folds.Sorry what?
 </div>
 </div>
 
-<div id="outline-container-org8efbd01" class="outline-3">
-<h3 id="org8efbd01"><span class="section-number-3">2.3.</span> Precision and Recall</h3>
+<div id="outline-container-org7a13d54" class="outline-3">
+<h3 id="org7a13d54"><span class="section-number-3">2.3.</span> Precision and Recall</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Precision is the fraction of relevant instances among the retrieved
@@ -277,11 +277,11 @@ relevance.Hmmm&#x2026;
 </div>
 </div>
 
-<div id="outline-container-orgcfcdd43" class="outline-3">
-<h3 id="orgcfcdd43"><span class="section-number-3">2.4.</span> ROC curve Receiver Operatning Characteristics</h3>
+<div id="outline-container-orge80c507" class="outline-3">
+<h3 id="orge80c507"><span class="section-number-3">2.4.</span> ROC curve Receiver Operatning Characteristics</h3>
 <div class="outline-text-3" id="text-2-4">
 
-<figure id="org4f923c6">
+<figure id="org3ace1ad">
 <img src="./media/roc-curve.png" alt="roc-curve.png" width="1200px">
 
 </figure>
@@ -303,8 +303,8 @@ familiar with in my curriculum.
 </div>
 </div>
 
-<div id="outline-container-orgec6d80c" class="outline-2">
-<h2 id="orgec6d80c"><span class="section-number-2">3.</span> SVM (Support Vector Machine)</h2>
+<div id="outline-container-org798ac95" class="outline-2">
+<h2 id="org798ac95"><span class="section-number-2">3.</span> SVM (Support Vector Machine)</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 <a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47">Link</a>
@@ -324,13 +324,13 @@ distinctly classifies the data points.
 </p>
 
 
-<figure id="org74dc16f">
+<figure id="org8081dab">
 <img src="./media/hyperplanes.png" alt="hyperplanes.png" width="1200px">
 
 </figure>
 
 
-<figure id="org29d593a">
+<figure id="orgf21551b">
 <img src="./media/hyperplanes2.png" alt="hyperplanes2.png" width="1200px">
 
 </figure>
@@ -345,11 +345,11 @@ confidence.
 </p>
 </div>
 
-<div id="outline-container-org5a104fc" class="outline-3">
-<h3 id="org5a104fc"><span class="section-number-3">3.1.</span> Hyperplanes and Support Vectors</h3>
+<div id="outline-container-org1cb8cff" class="outline-3">
+<h3 id="org1cb8cff"><span class="section-number-3">3.1.</span> Hyperplanes and Support Vectors</h3>
 <div class="outline-text-3" id="text-3-1">
 
-<figure id="orgece2afa">
+<figure id="org3ca9ca7">
 <img src="./media/hyperplane3d.png" alt="hyperplane3d.png" width="1200px">
 
 </figure>
@@ -365,7 +365,7 @@ becomes difficult to imagine when the number of features exceeds 3.
 </p>
 
 
-<figure id="org0f06ea8">
+<figure id="org264c0ec">
 <img src="./media/support-vectors.png" alt="support-vectors.png" width="1200px">
 
 </figure>
@@ -379,7 +379,7 @@ are the points that help us build our SVM.
 </p>
 
 
-<figure id="orgb2de77c">
+<figure id="org7d1c54a">
 <img src="./media/batman-thinking.gif" alt="batman-thinking.gif" width="1200px">
 
 </figure>
@@ -391,11 +391,11 @@ image, cool. Don't really use them, but why not, I might start to
 </div>
 </div>
 
-<div id="outline-container-org051c2aa" class="outline-3">
-<h3 id="org051c2aa"><span class="section-number-3">3.2.</span> Logistic Regression</h3>
+<div id="outline-container-orgbab3a06" class="outline-3">
+<h3 id="orgbab3a06"><span class="section-number-3">3.2.</span> Logistic Regression</h3>
 <div class="outline-text-3" id="text-3-2">
 
-<figure id="org14ba8e3">
+<figure id="org4ab67a0">
 <img src="./media/logistic-regression.png" alt="logistic-regression.png" width="1200px">
 
 </figure>
@@ -420,11 +420,11 @@ regression model for classification problems
 </div>
 </div>
 
-<div id="outline-container-orgf386c19" class="outline-3">
-<h3 id="orgf386c19"><span class="section-number-3">3.3.</span> K-means Clustering</h3>
+<div id="outline-container-orgb3025b5" class="outline-3">
+<h3 id="orgb3025b5"><span class="section-number-3">3.3.</span> K-means Clustering</h3>
 <div class="outline-text-3" id="text-3-3">
 
-<figure id="org1af1c63">
+<figure id="org04770b0">
 <img src="./media/k-means-clustering.png" alt="k-means-clustering.png" width="1200px">
 
 </figure>
@@ -456,11 +456,11 @@ the in-cluster sum of squares? Hm?
 </div>
 </div>
 
-<div id="outline-container-orgb82f917" class="outline-3">
-<h3 id="orgb82f917"><span class="section-number-3">3.4.</span> k-fold Cross-Validation</h3>
+<div id="outline-container-org24294ab" class="outline-3">
+<h3 id="org24294ab"><span class="section-number-3">3.4.</span> k-fold Cross-Validation</h3>
 <div class="outline-text-3" id="text-3-4">
 
-<figure id="org498467f">
+<figure id="org3f6e991">
 <img src="./media/k-fold-cross-validation.png" alt="k-fold-cross-validation.png" width="1200px">
 
 </figure>
@@ -500,7 +500,7 @@ but damn.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:03</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:28</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2021-03-16 Tue 10:58</p>
 	 <div class="generated">

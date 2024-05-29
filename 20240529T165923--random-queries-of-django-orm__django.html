@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 17:03 -->
+<!-- 2024-05-29 Wed 17:28 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Random queries of django-orm</title>
@@ -32,19 +32,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org32e46b1">1. Random queries</a></li>
-<li><a href="#org78daa74">2. Modify a record in db with python example</a>
+<li><a href="#orgfb587a8">1. Random queries</a></li>
+<li><a href="#org238335e">2. Modify a record in db with python example</a>
 <ul>
-<li><a href="#org0ad2443">2.1. Method 1</a></li>
-<li><a href="#org05ddb28">2.2. Method 2</a></li>
+<li><a href="#orgdbf77a4">2.1. Method 1</a></li>
+<li><a href="#org2d71c5e">2.2. Method 2</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org32e46b1" class="outline-2">
-<h2 id="org32e46b1"><span class="section-number-2">1.</span> Random queries</h2>
+<div id="outline-container-orgfb587a8" class="outline-2">
+<h2 id="orgfb587a8"><span class="section-number-2">1.</span> Random queries</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> vessel.models <span style="font-weight: bold;">import</span> Vessel
@@ -86,12 +86,12 @@ deal1.save()
 </div>
 </div>
 </div>
-<div id="outline-container-org78daa74" class="outline-2">
-<h2 id="org78daa74"><span class="section-number-2">2.</span> Modify a record in db with python example</h2>
+<div id="outline-container-org238335e" class="outline-2">
+<h2 id="org238335e"><span class="section-number-2">2.</span> Modify a record in db with python example</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org0ad2443" class="outline-3">
-<h3 id="org0ad2443"><span class="section-number-3">2.1.</span> Method 1</h3>
+<div id="outline-container-orgdbf77a4" class="outline-3">
+<h3 id="orgdbf77a4"><span class="section-number-3">2.1.</span> Method 1</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-bash">(venv) arvy@DESKTOP-AUDMJ7D:~/src/lifeapi$ python manage.py shell --settings=settings.development
@@ -120,8 +120,8 @@ questions = Question.objects.all()
 </div>
 </div>
 
-<div id="outline-container-org05ddb28" class="outline-3">
-<h3 id="org05ddb28"><span class="section-number-3">2.2.</span> Method 2</h3>
+<div id="outline-container-org2d71c5e" class="outline-3">
+<h3 id="org2d71c5e"><span class="section-number-3">2.2.</span> Method 2</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 start by this, do whatever you want then
@@ -187,7 +187,7 @@ Answer.objects.<span style="font-weight: bold;">filter</span>(question=question)
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:03</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:28</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 16:59</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 16:59</p>
 	 <div class="generated">

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 17:28 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Before deploying django app, make sure to have these best practices implemented</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 17:28</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Before deploying django app, make sure to have these best practices implemented</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org751c8bd">1. Instead of /admin change to smth else URL Django</a></li>
+<li><a href="#orgbb8a4be">2. Use environment variables</a></li>
+<li><a href="#org2536af1">3. Use postgres db</a></li>
+<li><a href="#org6bdce4f">4. Use two different settings files</a></li>
+<li><a href="#org69a773d">5. Expanding user model to store more user information</a></li>
+<li><a href="#org6cd1746">6. Update django every major version once every 9 months</a></li>
+</ul>
+</div>
+</nav>
+<p>
+Here I will write the tips that I found and that I use when building a Django
+project and deploying it to production:
+</p>
+
+<div id="outline-container-org751c8bd" class="outline-2">
+<h2 id="org751c8bd"><span class="section-number-2">1.</span> Instead of /admin change to smth else URL Django</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+For security. Everyone knows that if its a django project, it will have an
+admin page
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbb8a4be" class="outline-2">
+<h2 id="orgbb8a4be"><span class="section-number-2">2.</span> Use environment variables</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>for secret key</li>
+<li>for database name/location</li>
+<li>api keys</li>
+<li>other things if needed</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2536af1" class="outline-2">
+<h2 id="org2536af1"><span class="section-number-2">3.</span> Use postgres db</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Kind of default ageed db to use with Django
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6bdce4f" class="outline-2">
+<h2 id="org6bdce4f"><span class="section-number-2">4.</span> Use two different settings files</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+One for prod another for acc(test) environment
+</p>
+</div>
+</div>
+
+<div id="outline-container-org69a773d" class="outline-2">
+<h2 id="org69a773d"><span class="section-number-2">5.</span> Expanding user model to store more user information</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+As described in my other post <a href="20231128T132201--expanding-user-model__django_sql.html">here</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6cd1746" class="outline-2">
+<h2 id="org6cd1746"><span class="section-number-2">6.</span> Update django every major version once every 9 months</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Show deprecation warnings:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">python -Wd manage.py check
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:28</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 17:28</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 17:23</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

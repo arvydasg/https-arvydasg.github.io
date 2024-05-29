@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 17:28 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Run django-orm queries over jupyter notebook with django-extensions package</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 17:11</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Run django-orm queries over jupyter notebook with django-extensions package</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org131be37">1. Shell_plus</a></li>
+</ul>
+</div>
+</nav>
+<p>
+Can use a fancy shell(ipython, print sql, jupyter, etc)
+</p>
+
+<p>
+<a href="https://django-extensions.readthedocs.io/en/latest/index.html">https://django-extensions.readthedocs.io/en/latest/index.html</a>
+</p>
+
+<p>
+A few of the subpages below use it, kind of nice
+</p>
+
+<p>
+To use them properly, do this:
+</p>
+
+<p>
+<code>pip install django-extensions</code> Add <code>"django_extensions",</code> to <code>settings.py</code>
+installed apps section.
+</p>
+
+<div id="outline-container-org131be37" class="outline-2">
+<h2 id="org131be37"><span class="section-number-2">1.</span> Shell_plus</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<code>pip install ipython</code> - will use ipython by default when running shell - <a href="https://django-extensions.readthedocs.io/en/latest/shell_plus.html">https://django-extensions.readthedocs.io/en/latest/shell_plus.html</a>#
+</p>
+
+<p>
+<a href="https://django-extensions.readthedocs.io/en/latest/shell_plus.html#sql-queries">https://django-extensions.readthedocs.io/en/latest/shell_plus.html#sql-queries</a> - <code>python manage.py shell_plus --print-sql</code>
+</p>
+
+<p>
+<code>pip install jupyter</code> So now can run <code>python manage.py shell_plus --lab</code>
+</p>
+
+<p>
+If you want to run &#x2013;notebook, downgrade to lower version:
+</p>
+
+<p>
+<code>pip install notebook==6.5.6</code>
+</p>
+
+<p>
+<a href="https://gist.github.com/EtsuNDmA/dd8949061783bf593706559374c8f635">https://gist.github.com/EtsuNDmA/dd8949061783bf593706559374c8f635</a>
+</p>
+
+<p>
+If getting such errors - <a href="https://github.com/django-extensions/django-extensions/issues/1533">https://github.com/django-extensions/django-extensions/issues/1533</a> async bs, 
+</p>
+
+<p>
+Same issue described here -
+<a href="https://stackoverflow.com/questions/59119396/how-to-use-django-3-0-orm-in-a-jupyter-notebook-without-triggering-the-async-con">https://stackoverflow.com/questions/59119396/how-to-use-django-3-0-orm-in-a-jupyter-notebook-without-triggering-the-async-con</a>
+</p>
+
+<p>
+then try to add one more thing to settings.py:
+</p>
+
+<p>
+<code>os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"</code>
+</p>
+
+
+<p>
+total config that needs to be added:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">NOTEBOOK_DIR</span> = BASE_DIR / <span style="font-style: italic;">"notebooks"</span> <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">save notebooks in a dedicated folder</span>
+os.<span style="font-weight: bold; font-style: italic;">environ</span>[<span style="font-style: italic;">"DJANGO_ALLOW_ASYNC_UNSAFE"</span>] = <span style="font-style: italic;">"true"</span> <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">allow to run ORM queries</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:28</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 17:11</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 17:09</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>
