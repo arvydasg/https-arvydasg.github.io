@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Run Multiple Flask Applications from the same server</title>
@@ -32,13 +32,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb0ab311">1. Why I Wanted to Run Multiple Flask Applications</a></li>
-<li><a href="#org0cd7009">2. How to Configure Flask Application Dispatching</a></li>
-<li><a href="#org4ef277f">3. Set up the Separate Applications</a></li>
-<li><a href="#org77fa03b">4. Combine the Applications</a></li>
-<li><a href="#org2825121">5. Invoke a Development Server</a></li>
-<li><a href="#org87f16cb">6. Running both apps</a></li>
-<li><a href="#org207a084">7. Conclusion</a></li>
+<li><a href="#orgf980cda">1. Why I Wanted to Run Multiple Flask Applications</a></li>
+<li><a href="#org05df096">2. How to Configure Flask Application Dispatching</a></li>
+<li><a href="#orgf44ec6f">3. Set up the Separate Applications</a></li>
+<li><a href="#org8b4ba71">4. Combine the Applications</a></li>
+<li><a href="#org413c2f2">5. Invoke a Development Server</a></li>
+<li><a href="#org674e89f">6. Running both apps</a></li>
+<li><a href="#orgdec2b58">7. Conclusion</a></li>
 </ul>
 </div>
 </nav>
@@ -48,7 +48,7 @@ different URL paths.
 </p>
 
 
-<figure id="org4c5b47c">
+<figure id="org7e18829">
 <img src="./media/matrioshka.jpg" alt="matrioshka.jpg" width="600px">
 
 </figure>
@@ -60,8 +60,8 @@ instead of by accessing a different port. Application dispatching
 seems to be a solution.
 </p>
 
-<div id="outline-container-orgb0ab311" class="outline-2">
-<h2 id="orgb0ab311"><span class="section-number-2">1.</span> Why I Wanted to Run Multiple Flask Applications</h2>
+<div id="outline-container-orgf980cda" class="outline-2">
+<h2 id="orgf980cda"><span class="section-number-2">1.</span> Why I Wanted to Run Multiple Flask Applications</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 As a part of my <a href="https://arvydas.dev/codeacademy/">CodeAcademy</a> Python journey I decided to set up a
@@ -87,8 +87,8 @@ you can run them in the same interpreter side by side if you want.
 </div>
 </div>
 
-<div id="outline-container-org0cd7009" class="outline-2">
-<h2 id="org0cd7009"><span class="section-number-2">2.</span> How to Configure Flask Application Dispatching</h2>
+<div id="outline-container-org05df096" class="outline-2">
+<h2 id="org05df096"><span class="section-number-2">2.</span> How to Configure Flask Application Dispatching</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Setting this up is relatively straightforward when you take a modular
@@ -103,8 +103,8 @@ approach.
 </div>
 </div>
 
-<div id="outline-container-org4ef277f" class="outline-2">
-<h2 id="org4ef277f"><span class="section-number-2">3.</span> Set up the Separate Applications</h2>
+<div id="outline-container-orgf44ec6f" class="outline-2">
+<h2 id="orgf44ec6f"><span class="section-number-2">3.</span> Set up the Separate Applications</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Here are 2 Flask applications:
@@ -115,14 +115,14 @@ flask_app_1
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"># /flask_1/__init__.py
-from flask import Flask
-app = Flask(__name__)
-app.debug = True
-@app.route('/')
-def hello_world():
-    return '&lt;h1&gt;Hello, World! I am Flask App 1.&lt;/h1&gt; \
-        Please go visit &lt;a href="/flask_app_2"&gt;Flask App 2&lt;/a&gt;'
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">/flask_1/__init__.py</span>
+<span style="font-weight: bold;">from</span> flask <span style="font-weight: bold;">import</span> Flask
+<span style="font-weight: bold; font-style: italic;">app</span> = Flask(<span style="font-weight: bold;">__name__</span>)
+app.<span style="font-weight: bold; font-style: italic;">debug</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">'/'</span>)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">hello_world</span>():
+    <span style="font-weight: bold;">return</span> <span style="font-style: italic;">'&lt;h1&gt;Hello, World! I am Flask App 1.&lt;/h1&gt; \</span>
+<span style="font-style: italic;">        Please go visit &lt;a href="/flask_app_2"&gt;Flask App 2&lt;/a&gt;'</span>
 </pre>
 </div>
 
@@ -131,21 +131,21 @@ flask_app_1
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"># /flask_2/__init__.py
-from flask import Flask
-app = Flask(__name__)
-app.debug = True
-@app.route('/')
-def hello_world():
-    return '&lt;h1&gt;Hello, World! I am Flask App 2.&lt;/h1&gt; \
-        Please go visit &lt;a href="/"&gt;Flask App 1&lt;/a&gt;'
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">/flask_2/__init__.py</span>
+<span style="font-weight: bold;">from</span> flask <span style="font-weight: bold;">import</span> Flask
+<span style="font-weight: bold; font-style: italic;">app</span> = Flask(<span style="font-weight: bold;">__name__</span>)
+app.<span style="font-weight: bold; font-style: italic;">debug</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">'/'</span>)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">hello_world</span>():
+    <span style="font-weight: bold;">return</span> <span style="font-style: italic;">'&lt;h1&gt;Hello, World! I am Flask App 2.&lt;/h1&gt; \</span>
+<span style="font-style: italic;">        Please go visit &lt;a href="/"&gt;Flask App 1&lt;/a&gt;'</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org77fa03b" class="outline-2">
-<h2 id="org77fa03b"><span class="section-number-2">4.</span> Combine the Applications</h2>
+<div id="outline-container-org8b4ba71" class="outline-2">
+<h2 id="org8b4ba71"><span class="section-number-2">4.</span> Combine the Applications</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 You will utilize the Werkzeug <a href="https://werkzeug.palletsprojects.com/en/2.2.x/middleware/dispatcher/">Dispatcher Middleware</a>. flask_app_1 will
@@ -153,20 +153,20 @@ run on “/” and flask_app_2 will run on “/flask_app_2”.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"># app.py
-from werkzeug.middleware.dispatcher import DispatcherMiddleware # use to combine each Flask app into a larger one that is dispatched based on prefix
-from flask_1 import app as flask_app_1
-from flask_2 import app as flask_app_2
-application = DispatcherMiddleware(flask_app_1, {
-    '/flask_app_2': flask_app_2
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">app.py</span>
+<span style="font-weight: bold;">from</span> werkzeug.middleware.dispatcher <span style="font-weight: bold;">import</span> DispatcherMiddleware <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">use to combine each Flask app into a larger one that is dispatched based on prefix</span>
+<span style="font-weight: bold;">from</span> flask_1 <span style="font-weight: bold;">import</span> app <span style="font-weight: bold;">as</span> flask_app_1
+<span style="font-weight: bold;">from</span> flask_2 <span style="font-weight: bold;">import</span> app <span style="font-weight: bold;">as</span> flask_app_2
+<span style="font-weight: bold; font-style: italic;">application</span> = DispatcherMiddleware(flask_app_1, {
+    <span style="font-style: italic;">'/flask_app_2'</span>: flask_app_2
 })
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2825121" class="outline-2">
-<h2 id="org2825121"><span class="section-number-2">5.</span> Invoke a Development Server</h2>
+<div id="outline-container-org413c2f2" class="outline-2">
+<h2 id="org413c2f2"><span class="section-number-2">5.</span> Invoke a Development Server</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Here is a small file that calls the <a href="https://werkzeug.palletsprojects.com/en/2.2.x/serving/#werkzeug.serving.run_simple">Werkzeug Run Simple</a> server that is
@@ -175,18 +175,18 @@ suitable for development. <code>For deployment</code>, you’ll need to configur
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"># run.py
-from werkzeug.serving import run_simple # werkzeug development server
-from app import application
-if __name__ == '__main__':
-    run_simple('localhost', 5000, application, use_reloader=True, use_debugger=True, use_evalex=True)
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">run.py</span>
+<span style="font-weight: bold;">from</span> werkzeug.serving <span style="font-weight: bold;">import</span> run_simple <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">werkzeug development server</span>
+<span style="font-weight: bold;">from</span> app <span style="font-weight: bold;">import</span> application
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
+    run_simple(<span style="font-style: italic;">'localhost'</span>, 5000, application, use_reloader=<span style="font-weight: bold; text-decoration: underline;">True</span>, use_debugger=<span style="font-weight: bold; text-decoration: underline;">True</span>, use_evalex=<span style="font-weight: bold; text-decoration: underline;">True</span>)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org87f16cb" class="outline-2">
-<h2 id="org87f16cb"><span class="section-number-2">6.</span> Running both apps</h2>
+<div id="outline-container-org674e89f" class="outline-2">
+<h2 id="org674e89f"><span class="section-number-2">6.</span> Running both apps</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-python">python3 run.py
@@ -194,21 +194,21 @@ if __name__ == '__main__':
 </div>
 
 
-<figure id="orgd00a7b6">
+<figure id="org9872497">
 <img src="./media/flask_multiple1.png" alt="flask_multiple1.png" width="1200px">
 
 </figure>
 
 
-<figure id="org2eaceeb">
+<figure id="orgc628b09">
 <img src="./media/flask_multiple2.png" alt="flask_multiple2.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org207a084" class="outline-2">
-<h2 id="org207a084"><span class="section-number-2">7.</span> Conclusion</h2>
+<div id="outline-container-orgdec2b58" class="outline-2">
+<h2 id="orgdec2b58"><span class="section-number-2">7.</span> Conclusion</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 As stated before, this is a simple setup that only requires a modular approach
@@ -232,7 +232,7 @@ and clone it to get a working example.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2023-02-06 Mon 05:39</p>
 	 <div class="generated">
@@ -244,6 +244,7 @@ and clone it to get a working example.
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 16:06 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SQL commands</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 11:15</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">SQL commands</h1>
+</header><p>
+Find which schema you are in useful when you have conenction to a DB, but don't
+know which schema it can access
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold;">SELECT</span> sys_context(<span style="font-style: italic;">'USERENV'</span>, <span style="font-style: italic;">'CURRENT_SCHEMA'</span>) <span style="font-weight: bold;">FROM</span> dual;
+</pre>
+</div>
+
+<p>
+List all tables in current schema
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold;">SELECT</span> <span style="font-weight: bold;">table_name</span> <span style="font-weight: bold;">FROM</span> all_tables;
+</pre>
+</div>
+
+<p>
+Select a particular object
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold;">SELECT</span> *
+<span style="font-weight: bold;">FROM</span> Vessel
+<span style="font-weight: bold;">WHERE</span> vessel_code = <span style="font-style: italic;">'7324211'</span>;
+</pre>
+</div>
+
+<p>
+Select a few objects
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold;">SELECT</span> *
+<span style="font-weight: bold;">FROM</span> Vessel
+<span style="font-weight: bold;">WHERE</span> vessel_code <span style="font-weight: bold;">IN</span> (<span style="font-style: italic;">'7324211'</span>, <span style="font-style: italic;">'88888'</span>);
+</pre>
+</div>
+
+<p>
+Count all objects of a particular table
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold;">SELECT</span> <span style="font-weight: bold;">COUNT</span>(*) <span style="font-weight: bold;">AS</span> TotalCount
+<span style="font-weight: bold;">FROM</span> dbo.vessel;
+</pre>
+</div>
+
+<p>
+Delete all records from table
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold;">DELETE</span> <span style="font-weight: bold;">FROM</span> deal_collateral;
+</pre>
+</div>
+
+<p>
+Delete 10000 records and show count 
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold;">DELETE</span> TOP (10000) <span style="font-weight: bold;">FROM</span> dbo.vessel;
+
+<span style="font-weight: bold;">SELECT</span> <span style="font-weight: bold;">COUNT</span>(*) <span style="font-weight: bold;">AS</span> TotalCount
+<span style="font-weight: bold;">FROM</span> dbo.vessel;
+</pre>
+</div>
+
+<p>
+Select something specific
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold;">SELECT</span> TOP 5 *
+<span style="font-weight: bold;">FROM</span> [shipping].[dbo].[vessel_forecasted_value]
+<span style="font-weight: bold;">WHERE</span> relative_value &lt;&gt; 0 <span style="font-weight: bold;">AND</span> <span style="font-weight: bold;">ABS</span>(relative_value - 1.0) &gt; 0.0001
+</pre>
+</div>
+
+<p>
+Insert into
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold;">INSERT</span> <span style="font-weight: bold;">INTO</span> vessel_choices_ship_type (ship_type) <span style="font-weight: bold;">VALUES</span> (<span style="font-style: italic;">'Multipurpose vessels'</span>);
+<span style="font-weight: bold;">INSERT</span> <span style="font-weight: bold;">INTO</span> vessel_choices_ship_sub_type (ship_sub_type, ship_type_id) <span style="font-weight: bold;">VALUES</span> (<span style="font-style: italic;">'Containership 1/1.1kTEU Grd (Eco)'</span>, (<span style="font-weight: bold;">SELECT</span> ship_type <span style="font-weight: bold;">FROM</span> vessel_choices_ship_type <span style="font-weight: bold;">WHERE</span> ship_type = <span style="font-style: italic;">'Container'</span>));
+
+<span style="font-weight: bold;">INSERT</span> <span style="font-weight: bold;">INTO</span> [shipping].[dbo].[vessel_choices_ship_type] ([ship_type])
+<span style="font-weight: bold;">SELECT</span> <span style="font-weight: bold;">DISTINCT</span> [ship_type]
+<span style="font-weight: bold;">FROM</span> [shipping].[dbo].[vessel_code]
+</pre>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 11:15</p>
+	 <p class="date">This org file is <u>created</u>: 2023-12-20 Wed 13:35</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Add ckeditor into django app</title>
@@ -39,10 +39,10 @@ add this inside models.py
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">from ckeditor.fields import RichTextField
+<pre class="src src-python"><span style="font-weight: bold;">from</span> ckeditor.fields <span style="font-weight: bold;">import</span> RichTextField
 
-content = RichTextField(null=True, blank=True)  # add this
-# content = models.TextField(null=True, blank=True) # instead of this
+<span style="font-weight: bold; font-style: italic;">content</span> = RichTextField(null=<span style="font-weight: bold; text-decoration: underline;">True</span>, blank=<span style="font-weight: bold; text-decoration: underline;">True</span>)  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">add this</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">content = models.TextField(null=True, blank=True) # instead of this</span>
 </pre>
 </div></li>
 
@@ -53,15 +53,15 @@ content = RichTextField(null=True, blank=True)  # add this
 add some config to give the editor more functionality. Inside settings.py
 </p>
 <div class="org-src-container">
-<pre class="src src-python">CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'full',
-        'height': 300,
-        'width': '100%',
-        'skin': 'moono',
-        'extraPlugins': ','.join(
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">CKEDITOR_CONFIGS</span> = {
+    <span style="font-style: italic;">'default'</span>: {
+        <span style="font-style: italic;">'toolbar'</span>: <span style="font-style: italic;">'full'</span>,
+        <span style="font-style: italic;">'height'</span>: 300,
+        <span style="font-style: italic;">'width'</span>: <span style="font-style: italic;">'100%'</span>,
+        <span style="font-style: italic;">'skin'</span>: <span style="font-style: italic;">'moono'</span>,
+        <span style="font-style: italic;">'extraPlugins'</span>: <span style="font-style: italic;">','</span>.join(
             [
-                'codesnippet',
+                <span style="font-style: italic;">'codesnippet'</span>,
             ]),
     },
 }
@@ -71,7 +71,7 @@ add some config to give the editor more functionality. Inside settings.py
 All blocks where Richtextfield was used, add |safe at the end, like so:
 </p>
 <div class="org-src-container">
-<pre class="src src-html">&lt;p&gt;{{project.content|safe}}&lt;/p&gt;
+<pre class="src src-html">&lt;<span style="font-weight: bold;">p</span>&gt;{{project.content|safe}}&lt;/<span style="font-weight: bold;">p</span>&gt;
 </pre>
 </div>
 <p>
@@ -80,9 +80,9 @@ the browser. using <a href="https://highlightjs.org/">highlight.js</a> learned f
 Tutorial (+ CodeSnippet)</a> video
 </p>
 <div class="org-src-container">
-<pre class="src src-html">&lt;link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/base16/zenburn.min.css"&gt;
-&lt;script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;hljs.highlightAll();&lt;/script&gt;
+<pre class="src src-html">&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/base16/zenburn.min.css"</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span>&gt;hljs.highlightAll();&lt;/<span style="font-weight: bold;">script</span>&gt;
 </pre>
 </div></li>
 </ul>
@@ -95,7 +95,7 @@ Tutorial (+ CodeSnippet)</a> video
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-15 Fri 05:58</p>
 	 <div class="generated">
@@ -107,6 +107,7 @@ Tutorial (+ CodeSnippet)</a> video
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Linux commands</title>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:22</div>
+<div id="updated">Updated: 2024-05-29 Wed 11:39</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,278 +32,235 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5736f1c">1. Secret management</a></li>
-<li><a href="#org61a7362">2. LDAP</a></li>
-<li><a href="#org99b81ee">3. Access management</a></li>
-<li><a href="#org378439b">4. Server information</a></li>
-<li><a href="#org89ee716">5. Search</a></li>
-<li><a href="#orgfd31984">6. File</a></li>
-<li><a href="#org9b29356">7. Processes</a>
+<li><a href="#orgaa8ee74">1. Secret management with temporary variables</a></li>
+<li><a href="#orga180b00">2. LDAP</a></li>
+<li><a href="#orge47896f">3. Access management</a></li>
+<li><a href="#org407f3cc">4. Server information</a></li>
+<li><a href="#org619a3e1">5. Search</a></li>
+<li><a href="#org3b4d28c">6. File</a></li>
+<li><a href="#org2cf7c61">7. Processes</a>
 <ul>
-<li><a href="#org048dbbb">7.1. htop</a></li>
+<li><a href="#org5673770">7.1. htop</a></li>
 </ul>
 </li>
-<li><a href="#org11d6fa6">8. Network</a></li>
-<li><a href="#orgb50474e">9. Logs</a></li>
-<li><a href="#org66a0e18">10. Yum</a></li>
-<li><a href="#org3fc8aca">11. zip</a></li>
-<li><a href="#orgb432bb5">12. NAS</a></li>
-<li><a href="#org4c804ed">13. odbc</a></li>
-<li><a href="#org61311c6">14. Credentials</a></li>
+<li><a href="#org3a2241f">8. Network</a></li>
+<li><a href="#orgd1d5542">9. Logs</a></li>
+<li><a href="#org5af12a4">10. Yum</a></li>
+<li><a href="#orgb9d5146">11. Cron</a></li>
+<li><a href="#org8330d1a">12. zip</a></li>
+<li><a href="#org0e86718">13. NAS</a></li>
+<li><a href="#org86dacc1">14. odbc</a></li>
+<li><a href="#orge162713">15. Tmux commands</a>
+<ul>
+<li><a href="#orga62a455">15.1. <span class="priority">[A]</span> List all shortcuts</a></li>
+<li><a href="#org827f0ce">15.2. Sessions</a></li>
+<li><a href="#org24f9855">15.3. Windows (tabs)</a></li>
+<li><a href="#orgd61d705">15.4. Panes (splits)</a></li>
+<li><a href="#org80ad73f">15.5. Sync Panes</a></li>
+<li><a href="#orgcf9b659">15.6. Resizing Panes</a></li>
+<li><a href="#orgdb6ff1f">15.7. Copy mode:</a></li>
+<li><a href="#org2bda343">15.8. Misc</a></li>
+<li><a href="#orgb7eccfb">15.9. Configurations Options:</a></li>
+</ul>
+</li>
+<li><a href="#orga4be3aa">16. vim</a></li>
+<li><a href="#orgd4d6e02">17. ansible</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org5736f1c" class="outline-2">
-<h2 id="org5736f1c"><span class="section-number-2">1.</span> Secret management</h2>
+<div id="outline-container-orgaa8ee74" class="outline-2">
+<h2 id="orgaa8ee74"><span class="section-number-2">1.</span> Secret management with temporary variables</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-read -s LDAP_USER
-read -s LDAP_PASSWORD
-read -s LDAP_SERVER
+NOT TO HAVE passwords in linux command history(<code>.bash_history</code>:), do this:
 </p>
 
 <p>
-echo "LDAP_USER: $LDAP_USER"
-echo "LDAP_PASSWORD: $LDAP_PASSWORD"
-echo "LDAP_SERVER: $LDAP_SERVER"
+Store info into variables:
 </p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold;">read</span> -s LDAP_USER
+<span style="font-weight: bold;">read</span> -s LDAP_PASSWORD
+<span style="font-weight: bold;">read</span> -s LDAP_SERVER
+</pre>
+</div>
+
+<p>
+check if the variables contain the info
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold;">echo</span> <span style="font-style: italic;">"LDAP_USER: $LDAP_USER"</span>
+<span style="font-weight: bold;">echo</span> <span style="font-style: italic;">"LDAP_PASSWORD: $LDAP_PASSWORD"</span>
+<span style="font-weight: bold;">echo</span> <span style="font-style: italic;">"LDAP_SERVER: $LDAP_SERVER"</span>
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org61a7362" class="outline-2">
-<h2 id="org61a7362"><span class="section-number-2">2.</span> LDAP</h2>
+<div id="outline-container-orga180b00" class="outline-2">
+<h2 id="orga180b00"><span class="section-number-2">2.</span> LDAP</h2>
 <div class="outline-text-2" id="text-2">
-<p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Retrieve entries from administrative databases such as passwd and group</span>
 getent
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">list members of a group</span>
 getent group group_name
-</p>
-
-<p>
-getent group yg-nas-quant-z | grep "s4X9Xf"
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">check if user belongs to ldap group</span>
+getent group yg-nas-quant-z | grep <span style="font-style: italic;">"s4X9Xf"</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Display the current user ID and group ID, and all associated groups</span>
 id username
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Display all groups a user belongs to</span>
 groups username
-</p>
-
-<p>
-getent netgroup LSP7077A | grep -E "S2XXF|S30XX|s7XXc|s8XXf"
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">check if multiple users belong to a server</span>
+getent netgroup LSP7077A | grep -E <span style="font-style: italic;">"S2XXF|S30XX|s7XXc|s8XXf"</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">check if user belongs to a server</span>
 getent netgroup servername | grep username
-</p>
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org99b81ee" class="outline-2">
-<h2 id="org99b81ee"><span class="section-number-2">3.</span> Access management</h2>
+<div id="outline-container-orge47896f" class="outline-2">
+<h2 id="orge47896f"><span class="section-number-2">3.</span> Access management</h2>
 <div class="outline-text-2" id="text-3">
-<p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Show last logged in users</span>
 last
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">display bad login attempts of specified user</span>
 lastb username
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">shows logged-in users and their activities</span>
 w
-</p>
 
-<p>
 cat /etc/sudoers
-</p>
 
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Edit the sudoers configuration file safely</span>
 visudo
-</p>
 
-<p>
 chown
 chmod
-</p>
 
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">my tip is use setgid on parent directory, that is inherited and then</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">use setfacl on the group, that would give them the access needed.</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">attempt with Pitk&#228;nen, Arto, but it still does not work</span>
+
 setfacl -Rm g:quant:rwX -m d:g:quant:rwX -m m:rwx /[directory of choice]
-</p>
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org378439b" class="outline-2">
-<h2 id="org378439b"><span class="section-number-2">4.</span> Server information</h2>
+<div id="outline-container-org407f3cc" class="outline-2">
+<h2 id="org407f3cc"><span class="section-number-2">4.</span> Server information</h2>
 <div class="outline-text-2" id="text-4">
-<p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">display kernel ring buffer messages</span>
 dmesgn
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">server uptime</span>
 uptime
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">check server ram</span>
 free -g -h -t
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">detailed ram info</span>
 cat /proc/meminfo
-</p>
-
-<p>
-cat /proc/meminfo | grep -E 'MemTotal|MemFree|MemAvailable|Buffers|Cached' | awk '{print $1 ": " $2/1024/1024 " GB"}'
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">same like above just summarized and in GB</span>
+cat /proc/meminfo | grep -E <span style="font-style: italic;">'MemTotal|MemFree|MemAvailable|Buffers|Cached'</span> | awk <span style="font-style: italic;">'{print $1 ": " $2/1024/1024 " GB"}'</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">check server cores</span>
 lscpu
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">to see which pkg:s that was updated during the last patch round. I think that</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">is the best way. good after tsw's</span>
 rpm -qa -last | more
-</p>
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org89ee716" class="outline-2">
-<h2 id="org89ee716"><span class="section-number-2">5.</span> Search</h2>
+<div id="outline-container-org619a3e1" class="outline-2">
+<h2 id="org619a3e1"><span class="section-number-2">5.</span> Search</h2>
 <div class="outline-text-2" id="text-5">
-<p>
-grep -r "mas" .
-</p>
-
-<p>
-find / -type f -name "viya-services-status.yml" 2&gt;/dev/null
-</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">look for a word "mas" in ALL files(their content)</span>
+grep -r <span style="font-style: italic;">"mas"</span> .
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">search on the whole server by supressing error messages</span>
+find / -type f -name <span style="font-style: italic;">"viya-services-status.yml"</span> 2&gt;/dev/null
+</pre>
 </div>
 </div>
+</div>
 
-<div id="outline-container-orgfd31984" class="outline-2">
-<h2 id="orgfd31984"><span class="section-number-2">6.</span> File</h2>
+<div id="outline-container-org3b4d28c" class="outline-2">
+<h2 id="org3b4d28c"><span class="section-number-2">6.</span> File</h2>
 <div class="outline-text-2" id="text-6">
-<p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">creates a symbolic link(symlink) named "html" in the current directory that points to the "/opt/app/html" directory.</span>
 ln -s /opt/app/html html
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">find out how big are the folders</span>
 du -sh /opt/app/*
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">show disk usage statistics</span>
 df -h
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">estimate file space usage</span>
 du
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">size of the folder/file</span>
 du -sh filename/foldername
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">see when file was created, modified last time and etc</span>
 stat filename.txt
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">cd into dir, shows how much each item in it takes space</span>
 du -skh *
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">shows files</span>
 sudo lsof +L1
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">ask for confirmation deleting each folder/file</span>
 rm -rri /opt/app/R/*
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">list ALL the folders of the current folder</span>
 find retail_modelling -type d &gt; test_output.txt
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">count how many things in the dir</span>
 ls -la | wc -l
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Check when file was created and stuff</span>
 stat /opt/app/retail_modelling/users/s5743b/fi_kort_rc_ttc.tsv
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">check top 10 biggest files in home dir</span>
 du -h /home | sort -rh | head -n 10
-</p>
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org9b29356" class="outline-2">
-<h2 id="org9b29356"><span class="section-number-2">7.</span> Processes</h2>
+<div id="outline-container-org2cf7c61" class="outline-2">
+<h2 id="org2cf7c61"><span class="section-number-2">7.</span> Processes</h2>
 <div class="outline-text-2" id="text-7">
-<p>
-fuser -c <i>opt/app</i>
-</p>
+<div class="org-src-container">
+<pre class="src src-bash">fuser -c /opt/app/
 
-<p>
 ps -ef | grep 2666631
-</p>
 
-<p>
 ps -ef | grep rstudio
-</p>
 
-<p>
 ps aux | grep -i rstudio
-</p>
 
-<p>
 ps aux | grep -i jupyter
-</p>
 
-<p>
-kill -9 &lt;processname form the previous command&gt;
-</p>
+<span style="font-weight: bold;">kill</span> -9 &lt;processname form the previous command&gt;
 
-<p>
-ps - show running processes
-</p>
+ps                              <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">show running processes</span>
 
-<p>
 ps aux | grep SXXXB | grep rstudio
-</p>
 
-<p>
-pkill -u sxxxxxf - NEVEIKIA
-killall -u sxxxxxf rsession - NEVEIKIA
-pkill -9 -u sxxxxxf rsession - SUVEIKE
-</p>
+pkill -u sxxxxxf                <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">- NEVEIKIA</span>
+killall -u sxxxxxf rsession     <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">- NEVEIKIA</span>
+pkill -9 -u sxxxxxf rsession    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">- SUVEIKE</span>
 
-<p>
-kill all rstudio sessions
+<span style="font-weight: bold;">kill</span> all rstudio sessions
 sudo killall -9 rserver
-</p>
 
-<p>
-Check if any services remaining
-pgrep rserver
-</p>
+pgrep rserver                   <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Check if any services remaining</span>
 
-<p>
-systemctl list-units &#x2013;type=service | grep sas-viya
+systemctl list-units --type=service | grep sas-viya <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">check all services by name</span>
 ps aux | grep sas-viya
-</p>
 
-<p>
-sudo systemctl stop sas-viya-*
-</p>
+sudo systemctl stop sas-viya-*  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">kill all services by name</span>
+</pre>
+</div>
 </div>
 
-<div id="outline-container-org048dbbb" class="outline-3">
-<h3 id="org048dbbb"><span class="section-number-3">7.1.</span> htop</h3>
+<div id="outline-container-org5673770" class="outline-3">
+<h3 id="org5673770"><span class="section-number-3">7.1.</span> htop</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 shortcuts - <a href="https://spin.atomicobject.com/2020/02/10/htop-guide/">https://spin.atomicobject.com/2020/02/10/htop-guide/</a>
@@ -332,39 +289,30 @@ loaded into memory once and used by multiple processes.
 </div>
 </div>
 
-<div id="outline-container-org11d6fa6" class="outline-2">
-<h2 id="org11d6fa6"><span class="section-number-2">8.</span> Network</h2>
+<div id="outline-container-org3a2241f" class="outline-2">
+<h2 id="org3a2241f"><span class="section-number-2">8.</span> Network</h2>
 <div class="outline-text-2" id="text-8">
-<p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">show the IP routing table</span>
 route
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">find all aliases/DNS of a Linux server that are assigned or being used</span>
 nslookup &lt;IP address or hostname&gt;
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">same as above</span>
 dig -x &lt;IP address&gt;
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">show you a list of all active network connections and their associated ports</span>
 netstat -tlnp
-</p>
 
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">find if port 80 is being used</span>
 netstat -tuln | grep :80
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">check what ports are running on the servers</span>
 nmap -T4 -Pn -p 1-65535 lxxx123a
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">telnet</span>
 telnet servername 8301
 telnet serername.ad1.net 1433
-</p>
+</pre>
+</div>
 
-
+<blockquote>
 <p>
 Labas, cia reiktu pasigilinti i konkreciu serveriu internal firewall nustatymus
 ir esant poreikiui juos persikonfiguruoti. Panasu, kad dauguma portu ant pvz:
@@ -381,29 +329,29 @@ skirtingi rulsetai ir praleidimai galioja skirtingiems environmentams ir
 enclave'ams, del to prode ir appvery esantys serveriai nebutinai tures tas
 pacias taisykles.
 </p>
+</blockquote>
 </div>
 </div>
 
-<div id="outline-container-orgb50474e" class="outline-2">
-<h2 id="orgb50474e"><span class="section-number-2">9.</span> Logs</h2>
+<div id="outline-container-orgd1d5542" class="outline-2">
+<h2 id="orgd1d5542"><span class="section-number-2">9.</span> Logs</h2>
 <div class="outline-text-2" id="text-9">
-<p>
-journalctl -u jupyterhub -f
-</p>
+<div class="org-src-container">
+<pre class="src src-bash">journalctl -u jupyterhub -f
 
-<p>
 journalctl -u rstudio-server.service -f
-</p>
+</pre>
+</div>
 
 <p>
 logs to file
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">ansible-playbook viya-ark-master/playbooks/viya-mmsu/viya-services-status.yml -vvv 2&gt;&amp;1 | tee -a viya_services_status_logs_20230727.txt
-ansible-playbook viya-ark-master/playbooks/viya-mmsu/viya-services-stop.yml -e "enable_stray_cleanup=true" -vvv 2&gt;&amp;1 | tee -a viya_services_stop_logs_20230727.txt
+ansible-playbook viya-ark-master/playbooks/viya-mmsu/viya-services-stop.yml -e <span style="font-style: italic;">"enable_stray_cleanup=true"</span> -vvv 2&gt;&amp;1 | tee -a viya_services_stop_logs_20230727.txt
 ansible-playbook viya-ark-master/playbooks/viya-mmsu/viya-services-start.yml -vvv 2&gt;&amp;1 | tee -a viya_services_start_logs_20230727.txt
 
-# sas installation logs to file
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">sas installation logs to file</span>
 
 ansible-playbook site.yml -vvv 2&gt;&amp;1 | tee -a install_20230809_1500.txt
 </pre>
@@ -411,86 +359,84 @@ ansible-playbook site.yml -vvv 2&gt;&amp;1 | tee -a install_20230809_1500.txt
 </div>
 </div>
 
-<div id="outline-container-org66a0e18" class="outline-2">
-<h2 id="org66a0e18"><span class="section-number-2">10.</span> Yum</h2>
+<div id="outline-container-org5af12a4" class="outline-2">
+<h2 id="org5af12a4"><span class="section-number-2">10.</span> Yum</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 rpm official repo(yum, RHEL) commands - <a href="https://www.rpmfind.net/linux/RPM/ByName.html">https://www.rpmfind.net/linux/RPM/ByName.html</a>
 </p>
 
-<p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Use yum whatprovides to see what package provides a file.</span>
 yum whatprovides */ldapsearch
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Can see that ldapsearch is part of =openldap-clients=</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">before installing we can check the content:</span>
 repoquery -lq openldap-clients
-</p>
-
-<p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">all is good? install</span>
 yum install openldap-clients
-</p>
 
-<p>
 yum history
 yum list installed | grep devel
 yum remove &lt;reponame&gt;
 yum erase &lt;reponame&gt;
 yum repolist all
 yum repolist enabled
-yum search 'udunit*' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
-yum search 'R-<b>' &#x2013;disablerepo='</b>' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
-yum info 'R-devel' &#x2013;disablerepo='*' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
-sudo yum install 'udunits2-devel' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8 &#x2013;enablerepo=codeready-builder-for-rhel-8-x86_64-rpms
-</p>
-
-<p>
+yum search <span style="font-style: italic;">'udunit*'</span> --enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
+yum search <span style="font-style: italic;">'R-*'</span> --disablerepo=<span style="font-style: italic;">'*'</span> --enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
+yum info <span style="font-style: italic;">'R-devel'</span> --disablerepo=<span style="font-style: italic;">'*'</span> --enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
+sudo yum install <span style="font-style: italic;">'udunits2-devel'</span> --enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8 --enablerepo=codeready-builder-for-rhel-8-x86_64-rpms
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">list all available red hat repos</span>
 yum repolist all
-</p>
-
-<p>
-yum search 'R-<b>' &#x2013;disablerepo='</b>' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
-</p>
-
-<p>
-yum info 'R-devel' &#x2013;disablerepo='*' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
-</p>
-
-<p>
-sudo yum install 'R-devel' &#x2013;enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8 &#x2013;enablerepo=codeready-builder-for-rhel-8-x86_64-rpms
-</p>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">search for package in all repos + EPEL8 repo</span>
+yum search <span style="font-style: italic;">'R-*'</span> --disablerepo=<span style="font-style: italic;">'*'</span> --enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">search EPEL8 repo</span>
+yum info <span style="font-style: italic;">'R-devel'</span> --disablerepo=<span style="font-style: italic;">'*'</span> --enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">install from EPEL8 repo</span>
+sudo yum install <span style="font-style: italic;">'R-devel'</span> --enablerepo=hello_Extra_Packages_for_Enterprise_Linux_epel8 --enablerepo=codeready-builder-for-rhel-8-x86_64-rpms
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org3fc8aca" class="outline-2">
-<h2 id="org3fc8aca"><span class="section-number-2">11.</span> zip</h2>
+<div id="outline-container-orgb9d5146" class="outline-2">
+<h2 id="orgb9d5146"><span class="section-number-2">11.</span> Cron</h2>
 <div class="outline-text-2" id="text-11">
-<p>
-tar -cvf archive_name.tar files_or_directories_to_archive
-tar -cvf labas.tar .
-</p>
+<div class="org-src-container">
+<pre class="src src-bash">crontab -l                      <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">view your own user's crontab</span>
+crontab -e                      <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">edit your own user's crontab</span>
+crontab -r                      <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">remove your own user's crontab:</span>
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-orgb432bb5" class="outline-2">
-<h2 id="orgb432bb5"><span class="section-number-2">12.</span> NAS</h2>
+<div id="outline-container-org8330d1a" class="outline-2">
+<h2 id="org8330d1a"><span class="section-number-2">12.</span> zip</h2>
 <div class="outline-text-2" id="text-12">
-<p>
-cat /etc/fstab
-</p>
-
-<p>
-mount -l |grep sas-store
-</p>
+<div class="org-src-container">
+<pre class="src src-bash">tar -cvf archive_name.tar files_or_directories_to_archive
+tar -cvf labas.tar .
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org4c804ed" class="outline-2">
-<h2 id="org4c804ed"><span class="section-number-2">13.</span> odbc</h2>
+<div id="outline-container-org0e86718" class="outline-2">
+<h2 id="org0e86718"><span class="section-number-2">13.</span> NAS</h2>
 <div class="outline-text-2" id="text-13">
-<p>
-ODBC
-</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">list all drives?</span>
+cat /etc/fstab
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">get mount name</span>
+mount -l |grep sas-store
+</pre>
+</div>
+</div>
+</div>
 
+<div id="outline-container-org86dacc1" class="outline-2">
+<h2 id="org86dacc1"><span class="section-number-2">14.</span> odbc</h2>
+<div class="outline-text-2" id="text-14">
 <p>
 For setting up ODBC connection you need temp root user. Add temp root
 user - Model Validation Home - SEB Confluence (sebank.se)
@@ -503,33 +449,318 @@ ODBCINI=/etc/odbc.ini" (only for the first time).
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash"># You can list the data sources on your system with the following command: 
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">You can list the data sources on your system with the following command: </span>
 odbcinst -q -s
 
-# NOTE. You can determine the location of the configuration files on your
-# system by entering the following command into a terminal:
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">NOTE. You can determine the location of the configuration files on your</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">system by entering the following command into a terminal:</span>
 odbcinst -j
 
-# Check what ODBC drivers are installed for required DB in "/etc/odbcinst.ini"
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Check what ODBC drivers are installed for required DB in "/etc/odbcinst.ini"</span>
 odbcinst -q -d
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org61311c6" class="outline-2">
-<h2 id="org61311c6"><span class="section-number-2">14.</span> Credentials</h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-orge162713" class="outline-2">
+<h2 id="orge162713"><span class="section-number-2">15.</span> Tmux commands</h2>
+<div class="outline-text-2" id="text-15">
 <p>
-Temporarily store a password into environment variable, just to not have my
-password in <code>.bash_history</code>:
+scroll in tmux - ctrl+b+[ then emacs bindings up and down
+</p>
+
+<p>
+<code>tmux</code> - start new
+</p>
+
+<p>
+<code>tmux new</code> -s myname - start new with session name
+</p>
+
+<p>
+<code>tmux a  #</code> - (or at, or attach) attach
+</p>
+
+<p>
+<code>tmux a -t myname</code> - attach to named
+</p>
+
+<p>
+<code>tmux kill-session -t myname</code> - kill session
+</p>
+
+<p>
+In tmux, hit the prefix ctrl+b and then:
+</p>
+</div>
+
+<div id="outline-container-orga62a455" class="outline-3">
+<h3 id="orga62a455"><span class="section-number-3">15.1.</span> <span class="priority">[A]</span> List all shortcuts</h3>
+<div class="outline-text-3" id="text-15-1">
+<p>
+to see all the shortcuts keys in tmux simply use the bind-key ? in my
+case that would be <code>CTRL-B ?</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org827f0ce" class="outline-3">
+<h3 id="org827f0ce"><span class="section-number-3">15.2.</span> Sessions</h3>
+<div class="outline-text-3" id="text-15-2">
+<div class="org-src-container">
+<pre class="src src-bash">:new&lt;CR&gt;  new session
+s  list sessions
+$  name session
+$  kill session
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org24f9855" class="outline-3">
+<h3 id="org24f9855"><span class="section-number-3">15.3.</span> Windows (tabs)</h3>
+<div class="outline-text-3" id="text-15-3">
+<div class="org-src-container">
+<pre class="src src-bash">c  create window
+w  list windows
+n  next window
+p  previous window
+f  find window
+,  name window
+&amp;  <span style="font-weight: bold;">kill</span> window
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd61d705" class="outline-3">
+<h3 id="orgd61d705"><span class="section-number-3">15.4.</span> Panes (splits)</h3>
+<div class="outline-text-3" id="text-15-4">
+<div class="org-src-container">
+<pre class="src src-bash">%  vertical split
+<span style="font-style: italic;">"  horizontal split</span>
+<span style="font-style: italic;">o  swap panes</span>
+<span style="font-style: italic;">q  show pane numbers</span>
+<span style="font-style: italic;">x  kill pane</span>
+<span style="font-style: italic;">; alternate between panes</span>
+<span style="font-style: italic;">+  break pane into window (e.g. to select text by mouse to copy)</span>
+<span style="font-style: italic;">-  restore pane from window</span>
+<span style="font-style: italic;">space - toggle between layouts</span>
+<span style="font-style: italic;">&lt;prefix&gt; q (Show pane numbers, when the numbers show up type the key to goto that pane)</span>
+<span style="font-style: italic;">&lt;prefix&gt; { (Move the current pane left)</span>
+<span style="font-style: italic;">&lt;prefix&gt; } (Move the current pane right)</span>
+<span style="font-style: italic;">&lt;prefix&gt; z toggle pane zoom</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org80ad73f" class="outline-3">
+<h3 id="org80ad73f"><span class="section-number-3">15.5.</span> Sync Panes</h3>
+<div class="outline-text-3" id="text-15-5">
+<p>
+You can do this by switching to the appropriate window, typing your
+Tmux prefix (commonly Ctrl-B or Ctrl-A) and then a colon to bring up a
+Tmux command line, and typing:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">read -s PASSWORD
-echo $PASSWORD
+<pre class="src src-bash">:setw synchronize-panes
 </pre>
 </div>
+
+<p>
+You can optionally add on or off to specify which state you want;
+otherwise the option is simply toggled. This option is specific to one
+window, so it won’t change the way your other sessions or windows
+operate. When you’re done, toggle it off again by repeating the
+command. tip source
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcf9b659" class="outline-3">
+<h3 id="orgcf9b659"><span class="section-number-3">15.6.</span> Resizing Panes</h3>
+<div class="outline-text-3" id="text-15-6">
+<p>
+You can also resize panes if you don’t like the layout defaults. I
+personally rarely need to do this, though it’s handy to know how. Here
+is the basic syntax to resize panes:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">PREFIX : resize-pane -D (Resizes the current pane down)
+PREFIX : resize-pane -U (Resizes the current pane upward)
+PREFIX : resize-pane -L (Resizes the current pane left)
+PREFIX : resize-pane -R (Resizes the current pane right)
+PREFIX : resize-pane -D 20 (Resizes the current pane down by 20 cells)
+PREFIX : resize-pane -U 20 (Resizes the current pane upward by 20 cells)
+PREFIX : resize-pane -L 20 (Resizes the current pane left by 20 cells)
+PREFIX : resize-pane -R 20 (Resizes the current pane right by 20 cells)
+PREFIX : resize-pane -t 2 -L 20 (Resizes the pane with the id of 2 left by 20 cells)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdb6ff1f" class="outline-3">
+<h3 id="orgdb6ff1f"><span class="section-number-3">15.7.</span> Copy mode:</h3>
+<div class="outline-text-3" id="text-15-7">
+<p>
+Pressing PREFIX [ places us in Copy mode. We can then use our movement
+keys to move our cursor around the screen. By default, the arrow keys
+work. we set our configuration file to use Vim keys for moving between
+windows and resizing panes so we wouldn’t have to take our hands off
+the home row. tmux has a vi mode for working with the buffer as well.
+To enable it, add this line to .tmux.conf:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">setw -g mode-keys vi
+</pre>
+</div>
+
+<p>
+With this option set, we can use h, j, k, and l to move around our
+buffer.
+</p>
+
+<p>
+To get out of Copy mode, we just press the ENTER key. Moving around
+one character at a time isn’t very efficient. Since we enabled vi
+mode, we can also use some other visible shortcuts to move around the
+buffer.
+</p>
+
+<p>
+For example, we can use "w" to jump to the next word and "b" to jump
+back one word. And we can use "f", followed by any character, to jump
+to that character on the same line, and "F" to jump backwards on the
+line.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">Function                vi             emacs
+Back to indentation     ^              M-m
+Clear selection         Escape         C-g
+Copy selection          Enter          M-w
+Cursor down             j              Down
+Cursor left             h              Left
+Cursor right            l              Right
+Cursor to bottom line   L
+Cursor to middle line   M              M-r
+Cursor to top line      H              M-R
+Cursor up               k              Up
+Delete entire line      d              C-u
+Delete to end of line   D              C-k
+End of line             $              C-e
+Goto line               :              g
+Half page down          C-d            M-Down
+Half page up            C-u            M-Up
+Next page               C-f            Page down
+Next word               w              M-f
+Paste buffer            p              C-y
+Previous page           C-b            Page up
+Previous word           b              M-b
+Quit mode               q              Escape
+Scroll down             C-Down or J    C-Down
+Scroll up               C-Up or K      C-Up
+Search again            n              n
+Search backward         ?              C-r
+Search forward          /              C-s
+Start of line           0              C-a
+Start selection         Space          C-Space
+Transpose chars                        C-t
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2bda343" class="outline-3">
+<h3 id="org2bda343"><span class="section-number-3">15.8.</span> Misc</h3>
+<div class="outline-text-3" id="text-15-8">
+<div class="org-src-container">
+<pre class="src src-bash">d  detach
+t  big clock
+?  list shortcuts
+:  prompt
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb7eccfb" class="outline-3">
+<h3 id="orgb7eccfb"><span class="section-number-3">15.9.</span> Configurations Options:</h3>
+<div class="outline-text-3" id="text-15-9">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Mouse support - set to on if you want to use the mouse</span>
+* setw -g mode-mouse off
+* set -g mouse-select-pane off
+* set -g mouse-resize-pane off
+* set -g mouse-select-window off
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Set the default terminal mode to 256color mode</span>
+<span style="font-weight: bold;">set</span> -g default-terminal <span style="font-style: italic;">"screen-256color"</span>
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">enable activity alerts</span>
+setw -g monitor-activity on
+<span style="font-weight: bold;">set</span> -g visual-activity on
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Center the window list</span>
+<span style="font-weight: bold;">set</span> -g status-justify centre
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Maximize and restore a pane</span>
+unbind Up bind Up new-window -d -n tmp <span style="font-style: italic;">\;</span> swap-pane -s tmp.1 <span style="font-style: italic;">\;</span> select-window -t tmp
+unbind Down
+<span style="font-weight: bold;">bind</span> Down last-window <span style="font-style: italic;">\;</span> swap-pane -s tmp.1 <span style="font-style: italic;">\;</span> kill-window -t tmp
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orga4be3aa" class="outline-2">
+<h2 id="orga4be3aa"><span class="section-number-2">16.</span> vim</h2>
+<div class="outline-text-2" id="text-16">
+<div class="org-src-container">
+<pre class="src src-bash">:set paste
+:set nopaste
+
+:set nonu
+:set nu
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">no highlighting:</span>
+
+:noh
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd4d6e02" class="outline-2">
+<h2 id="orgd4d6e02"><span class="section-number-2">17.</span> ansible</h2>
+<div class="outline-text-2" id="text-17">
+<div class="org-src-container">
+<pre class="src src-bash">ansible-galaxy collection list
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">install default version</span>
+ansible-galaxy collection install community.general
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">install specific version:</span>
+ansible-galaxy collection install geerlingguy.apache,v1.0.0
+
+7.0.1
+</pre>
+</div>
+
+<p>
+to delete a package - delete it's folder here:
+</p>
+
+<p>
+for example I deleted community.general by doing rm -rf community_old/ in
+<i>home/instaluser</i>.ansible/collections/ansible_collections
+</p>
 </div>
 </div>
 </div>
@@ -541,8 +772,8 @@ echo $PASSWORD
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 11:39</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-20 Wed 12:54</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
@@ -553,6 +784,7 @@ echo $PASSWORD
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

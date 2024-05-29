@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 11:57 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modify a record in db with python</title>
@@ -32,9 +32,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2e620c7">1. Method 1</a></li>
-<li><a href="#orge0df921">2. Method 2</a></li>
-<li><a href="#orgcb073e4">3. More</a></li>
+<li><a href="#org82f7c9a">1. Method 1</a></li>
+<li><a href="#org3c9b6ae">2. Method 2</a></li>
+<li><a href="#org1f75933">3. More</a></li>
 </ul>
 </div>
 </nav>
@@ -46,38 +46,38 @@ more about that:
 <li><a href="https://www.youtube.com/watch?v=aHC3uTkT9r8&amp;list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&amp;index=5&amp;ab_channel=CoreySchafer">https://www.youtube.com/watch?v=aHC3uTkT9r8&amp;list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&amp;index=5&amp;ab_channel=CoreySchafer</a></li>
 </ul>
 
-<div id="outline-container-org2e620c7" class="outline-2">
-<h2 id="org2e620c7"><span class="section-number-2">1.</span> Method 1</h2>
+<div id="outline-container-org82f7c9a" class="outline-2">
+<h2 id="org82f7c9a"><span class="section-number-2">1.</span> Method 1</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-bash">(venv) arvy@DESKTOP-AUDMJ7D:~/src/lifeapi$ python manage.py shell --settings=settings.development
 Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
-Type "help", "copyright", "credits" or "license" for more information.
+Type <span style="font-style: italic;">"help"</span>, <span style="font-style: italic;">"copyright"</span>, <span style="font-style: italic;">"credits"</span> or <span style="font-style: italic;">"license"</span> for more information.
 (InteractiveConsole)
 
 import os
-os.getcwd()
+<span style="font-weight: bold;">os.getcwd</span>()
 
 from lifeapi_apps.quiz_app.models import Question
 
-Question.objects.all()
+<span style="font-weight: bold;">Question.objects.all</span>()
 
 &lt;QuerySet [&lt;Question: Workout - YN&gt;, &lt;Question: Meditate - YN&gt;, &lt;Question: Miegojimas - Scale&gt;]&gt;
 
 from django.contrib.auth.models import User
 
-user_id_1 = User.objects.get(pk=1)
+user_id_1 = User.objects.get(<span style="font-weight: bold; font-style: italic;">pk</span>=1)
 
 questions = Question.objects.all()
 
-questions.update(created_by=user_id_1)
+<span style="font-weight: bold;">questions.update</span>(<span style="font-weight: bold; font-style: italic;">created_by</span>=user_id_1)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge0df921" class="outline-2">
-<h2 id="orge0df921"><span class="section-number-2">2.</span> Method 2</h2>
+<div id="outline-container-org3c9b6ae" class="outline-2">
+<h2 id="org3c9b6ae"><span class="section-number-2">2.</span> Method 2</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 start by this, do whatever you want then
@@ -86,56 +86,56 @@ start by this, do whatever you want then
 <div class="org-src-container">
 <pre class="src src-python">python manage.py shell --settings=settings.development
 
-from lifeapi_apps.quiz_app.models import Question, Answer
-from django.contrib.auth.models import User
+<span style="font-weight: bold;">from</span> lifeapi_apps.quiz_app.models <span style="font-weight: bold;">import</span> Question, Answer
+<span style="font-weight: bold;">from</span> django.contrib.auth.models <span style="font-weight: bold;">import</span> User
 
-arvy_user = User.objects.get(username='arvy')
-questions = Question.objects.filter(created_by=arvy_user)
+<span style="font-weight: bold; font-style: italic;">arvy_user</span> = User.objects.get(username=<span style="font-style: italic;">'arvy'</span>)
+<span style="font-weight: bold; font-style: italic;">questions</span> = Question.objects.<span style="font-weight: bold;">filter</span>(created_by=arvy_user)
 
-for question in questions:
-    print(question.description)
+<span style="font-weight: bold;">for</span> question <span style="font-weight: bold;">in</span> questions:
+    <span style="font-weight: bold;">print</span>(question.description)
 
-questions = Question.objects.all()
-print(questions)
+<span style="font-weight: bold; font-style: italic;">questions</span> = Question.objects.<span style="font-weight: bold;">all</span>()
+<span style="font-weight: bold;">print</span>(questions)
 
-answers = question.answer_set.all()
-print(answers)
+<span style="font-weight: bold; font-style: italic;">answers</span> = question.answer_set.<span style="font-weight: bold;">all</span>()
+<span style="font-weight: bold;">print</span>(answers)
 
-question_description = "No Headache"
-question = Question.objects.get(description=question_description)
-question = Question.objects.get(description="No Headache", created_by=arvy_user)
-print(question)
+<span style="font-weight: bold; font-style: italic;">question_description</span> = <span style="font-style: italic;">"No Headache"</span>
+<span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=question_description)
+<span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=<span style="font-style: italic;">"No Headache"</span>, created_by=arvy_user)
+<span style="font-weight: bold;">print</span>(question)
 
-# think if you really want to rename this way!!! everything will be NO now.
-Answer.objects.filter(question=question, answer="YES").update(answer="NO")
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">think if you really want to rename this way!!! everything will be NO now.</span>
+Answer.objects.<span style="font-weight: bold;">filter</span>(question=question, answer=<span style="font-style: italic;">"YES"</span>).update(answer=<span style="font-style: italic;">"NO"</span>)
 
-# better do a for loop like such:
-# Get all answers related to the question
-answers = Answer.objects.filter(question=question)
-answers = Answer.objects.filter(question__description="Belly ache")
-for answer in answers:
-    if answer.answer == "YES":
-        answer.answer = "NO"
-    elif answer.answer == "NO":
-        answer.answer = "YES"
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">better do a for loop like such:</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Get all answers related to the question</span>
+<span style="font-weight: bold; font-style: italic;">answers</span> = Answer.objects.<span style="font-weight: bold;">filter</span>(question=question)
+<span style="font-weight: bold; font-style: italic;">answers</span> = Answer.objects.<span style="font-weight: bold;">filter</span>(question__description=<span style="font-style: italic;">"Belly ache"</span>)
+<span style="font-weight: bold;">for</span> answer <span style="font-weight: bold;">in</span> answers:
+    <span style="font-weight: bold;">if</span> answer.answer == <span style="font-style: italic;">"YES"</span>:
+        answer.<span style="font-weight: bold; font-style: italic;">answer</span> = <span style="font-style: italic;">"NO"</span>
+    <span style="font-weight: bold;">elif</span> answer.answer == <span style="font-style: italic;">"NO"</span>:
+        answer.<span style="font-weight: bold; font-style: italic;">answer</span> = <span style="font-style: italic;">"YES"</span>
     answer.save()
 
-# rename a question
-question_description = "aciukas"
-question = Question.objects.get(description=question_description)
-question = Question.objects.get(description="No Headache", created_by=arvy_user)
-question.description = "No Alchohol"
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">rename a question</span>
+<span style="font-weight: bold; font-style: italic;">question_description</span> = <span style="font-style: italic;">"aciukas"</span>
+<span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=question_description)
+<span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=<span style="font-style: italic;">"No Headache"</span>, created_by=arvy_user)
+question.<span style="font-weight: bold; font-style: italic;">description</span> = <span style="font-style: italic;">"No Alchohol"</span>
 question.save()
 
-# Delete all answers related to the question
-Answer.objects.filter(question=question).delete()
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Delete all answers related to the question</span>
+Answer.objects.<span style="font-weight: bold;">filter</span>(question=question).delete()
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgcb073e4" class="outline-2">
-<h2 id="orgcb073e4"><span class="section-number-2">3.</span> More</h2>
+<div id="outline-container-org1f75933" class="outline-2">
+<h2 id="org1f75933"><span class="section-number-2">3.</span> More</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Some information of <a href="https://www.youtube.com/watch?v=213swbH8j_o">how to do queries</a>
@@ -148,15 +148,15 @@ Some information of <a href="https://www.youtube.com/watch?v=213swbH8j_o">how to
 
 <div class="org-src-container">
 <pre class="src src-python">python manage.py shell
-&gt;&gt;&gt; from base.models import Blog_post, Projects, Tag
-&gt;&gt;&gt; Blog_post.objects.all()
+&gt;&gt;&gt; <span style="font-weight: bold;">from</span> base.models <span style="font-weight: bold;">import</span> Blog_post, Projects, Tag
+&gt;&gt;&gt; Blog_post.objects.<span style="font-weight: bold;">all</span>()
 
 &gt;&gt;&gt; pirmas = Blog_post.objects.first()
 &gt;&gt;&gt; pirmas.tags
-&gt;&gt;&gt; pirmas.tags.all()
+&gt;&gt;&gt; pirmas.tags.<span style="font-weight: bold;">all</span>()
 &gt;&gt;&gt; pirmas.tags.first()
 &gt;&gt;&gt; pirmas.tags.first().name
-&gt;&gt;&gt; Blog_post.objects.filter(tags__name='emacs')
+&gt;&gt;&gt; Blog_post.objects.<span style="font-weight: bold;">filter</span>(tags__name=<span style="font-style: italic;">'emacs'</span>)
 </pre>
 </div>
 
@@ -169,9 +169,9 @@ Change user of an object:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; from deal.models import Deal
-&gt;&gt;&gt; from django.contrib.auth.models import User
-&gt;&gt;&gt; mng_user = User.objects.get(username="mng")
+<pre class="src src-python">&gt;&gt;&gt; <span style="font-weight: bold;">from</span> deal.models <span style="font-weight: bold;">import</span> Deal
+&gt;&gt;&gt; <span style="font-weight: bold;">from</span> django.contrib.auth.models <span style="font-weight: bold;">import</span> User
+&gt;&gt;&gt; mng_user = User.objects.get(username=<span style="font-style: italic;">"mng"</span>)
 &gt;&gt;&gt; mng_user
 &lt;User: mng&gt;
 &gt;&gt;&gt; deal1 = Deal.objects.get(pk=2)
@@ -196,7 +196,7 @@ Change user of an object:
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 11:57</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 13:23</p>
 	 <div class="generated">

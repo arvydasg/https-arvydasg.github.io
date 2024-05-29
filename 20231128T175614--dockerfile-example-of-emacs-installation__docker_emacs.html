@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dockerfile example of emacs installation</title>
@@ -33,34 +33,34 @@ Dockerfile example used to generate emacs image:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash"># The emacs installation phase itself takes aroun 7 minutes to complete
-# for the first time after we change something in the initial or second
-# stage - everything under them will have to be rerun... meaning another
-# 7 minutes of your life. Not cool.
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">The emacs installation phase itself takes aroun 7 minutes to complete</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">for the first time after we change something in the initial or second</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">stage - everything under them will have to be rerun... meaning another</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">7 minutes of your life. Not cool.</span>
 
-# so what I found is that you can split the Dockerfile into stages. I
-# will put the steps that might change frequently towards the end of
-# the Dockerfile to maximize caching. By separating the stages in this
-# manner, Docker will reuse the intermediate images created in each
-# stage, utilizing the cache for the unchanged layers. When changes
-# occur, only the steps AFTER THE MODIFICATION will be re-executed.
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">so what I found is that you can split the Dockerfile into stages. I</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">will put the steps that might change frequently towards the end of</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">the Dockerfile to maximize caching. By separating the stages in this</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">manner, Docker will reuse the intermediate images created in each</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">stage, utilizing the cache for the unchanged layers. When changes</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">occur, only the steps AFTER THE MODIFICATION will be re-executed.</span>
 
-# -----------------------------------------------------------
-# INITIAL STAGE: Installing essential packages and tools
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">-----------------------------------------------------------</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">INITIAL STAGE: Installing essential packages and tools</span>
 FROM ubuntu:latest AS base
 
-RUN apt update &amp;&amp; apt upgrade -y \
+RUN apt update &amp;&amp; apt upgrade -y <span style="font-style: italic;">\</span>
     &amp;&amp; apt install sudo make wget -y
 
-# -----------------------------------------------------------
-# SECOND STAGE: Installing Git and cloning the repository
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">-----------------------------------------------------------</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">SECOND STAGE: Installing Git and cloning the repository</span>
 FROM base AS gitclone
 
-RUN apt-get install -y git \
+RUN apt-get install -y git <span style="font-style: italic;">\</span>
     &amp;&amp; git clone https://github.com/arvydasg/dotfiles.git /root/dotfiles
 
-# -----------------------------------------------------------
-# THIRD STAGE: Emacs installation
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">-----------------------------------------------------------</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">THIRD STAGE: Emacs installation</span>
 FROM gitclone AS emacs
 
 WORKDIR /root
@@ -68,19 +68,19 @@ COPY compile-install-emacs.sh compile-install-emacs.sh
 RUN chmod +x compile-install-emacs.sh
 RUN sh compile-install-emacs.sh
 
-# -----------------------------------------------------------
-# FOURTH STAGE: Random stuff
-# since emacs has been installed(heaviest process), we can do any
-# random installs and actions here now, so only the steps under would
-# be rerun and not the whole container including the emacs compilation
-# stage(Third stage)
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">-----------------------------------------------------------</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">FOURTH STAGE: Random stuff</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">since emacs has been installed(heaviest process), we can do any</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">random installs and actions here now, so only the steps under would</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">be rerun and not the whole container including the emacs compilation</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">stage(Third stage)</span>
 RUN apt install vim htop tmux -y
 
-# -----------------------------------------------------------
-# FINAL STAGE
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">-----------------------------------------------------------</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">FINAL STAGE</span>
 FROM emacs AS final
 
-ENTRYPOINT ["emacs"]
+ENTRYPOINT [<span style="font-style: italic;">"emacs"</span>]
 </pre>
 </div>
 </div>
@@ -92,7 +92,7 @@ ENTRYPOINT ["emacs"]
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 17:56</p>
 	 <div class="generated">
@@ -104,6 +104,7 @@ ENTRYPOINT ["emacs"]
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

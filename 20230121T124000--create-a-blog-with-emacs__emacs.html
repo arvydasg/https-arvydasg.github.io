@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 11:24 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Create a Blog with Emacs</title>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:21</div>
+<div id="updated">Updated: 2024-05-29 Wed 11:22</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,31 +32,31 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org31810f4">1. Intro</a></li>
-<li><a href="#orgf2ba213">2. Create Emacs blog the "System Crafters" way</a>
+<li><a href="#org4f7d200">1. Intro</a></li>
+<li><a href="#org14adcd0">2. Create Emacs blog the "System Crafters" way</a>
 <ul>
-<li><a href="#orgc134cb2">2.1. Choose a directory</a></li>
-<li><a href="#org8b9101b">2.2. Creating the build script</a>
+<li><a href="#org94f2605">2.1. Choose a directory</a></li>
+<li><a href="#orgdb942ff">2.2. Creating the build script</a>
 <ul>
-<li><a href="#org86394a6">2.2.1. build-site.el</a></li>
-<li><a href="#orgfd69a38">2.2.2. build.sh</a></li>
+<li><a href="#org42d7eb3">2.2.1. build-site.el</a></li>
+<li><a href="#org308f794">2.2.2. build.sh</a></li>
 </ul>
 </li>
-<li><a href="#org6fb5110">2.3. Improving the HTML output</a></li>
-<li><a href="#orgbbc9eb1">2.4. Improving the page styling</a></li>
-<li><a href="#org29d632d">2.5. Generating pages with code blocks</a></li>
-<li><a href="#orgcc6d461">2.6. Linking between pages</a></li>
-<li><a href="#org38354ef">2.7. The final build script</a></li>
+<li><a href="#org6f35a4b">2.3. Improving the HTML output</a></li>
+<li><a href="#org7564bd0">2.4. Improving the page styling</a></li>
+<li><a href="#org0ed2e31">2.5. Generating pages with code blocks</a></li>
+<li><a href="#orgd1ade9a">2.6. Linking between pages</a></li>
+<li><a href="#org733db27">2.7. The final build script</a></li>
 </ul>
 </li>
-<li><a href="#org7ff76f5">3. Create Emacs blog with "org-static-blog" package</a></li>
-<li><a href="#org8c43a7f">4. Conclusion</a></li>
+<li><a href="#org3a4f232">3. Create Emacs blog with "org-static-blog" package</a></li>
+<li><a href="#orga05555f">4. Conclusion</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org31810f4" class="outline-2">
-<h2 id="org31810f4"><span class="section-number-2">1.</span> Intro</h2>
+<div id="outline-container-org4f7d200" class="outline-2">
+<h2 id="org4f7d200"><span class="section-number-2">1.</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 If you are using Emacs and org mode as much as me, you must have come
@@ -71,16 +71,16 @@ static website ;)
 </div>
 </div>
 
-<div id="outline-container-orgf2ba213" class="outline-2">
-<h2 id="orgf2ba213"><span class="section-number-2">2.</span> Create Emacs blog the "System Crafters" way</h2>
+<div id="outline-container-org14adcd0" class="outline-2">
+<h2 id="org14adcd0"><span class="section-number-2">2.</span> Create Emacs blog the "System Crafters" way</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Best description in a video format is <a href="https://www.youtube.com/watch?v=AfkrzFodoNw&amp;t=1612s&amp;ab_channel=SystemCrafters">here</a>. To later publish it
 automaticall,y video <a href="https://www.youtube.com/watch?v=za99DwdZEyg&amp;t=996s&amp;ab_channel=SystemCrafters">here</a>.
 </p>
 </div>
-<div id="outline-container-orgc134cb2" class="outline-3">
-<h3 id="orgc134cb2"><span class="section-number-3">2.1.</span> Choose a directory</h3>
+<div id="outline-container-org94f2605" class="outline-3">
+<h3 id="org94f2605"><span class="section-number-3">2.1.</span> Choose a directory</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 You will place your org files inside content/ directory.
@@ -93,12 +93,12 @@ You will place your org files inside content/ directory.
 </div>
 </div>
 
-<div id="outline-container-org8b9101b" class="outline-3">
-<h3 id="org8b9101b"><span class="section-number-3">2.2.</span> Creating the build script</h3>
+<div id="outline-container-orgdb942ff" class="outline-3">
+<h3 id="orgdb942ff"><span class="section-number-3">2.2.</span> Creating the build script</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-org86394a6" class="outline-4">
-<h4 id="org86394a6"><span class="section-number-4">2.2.1.</span> build-site.el</h4>
+<div id="outline-container-org42d7eb3" class="outline-4">
+<h4 id="org42d7eb3"><span class="section-number-4">2.2.1.</span> build-site.el</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 Inside of this directory:
@@ -114,21 +114,21 @@ Create a file called <code>build-site.el</code> with this inside of it.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">;; Load the publishing system
-(require 'ox-publish)
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Load the publishing system</span>
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">ox-publish</span>)
 
-(message "Build complete!")
+(message <span style="font-style: italic;">"Build complete!"</span>)
 
-;; Define the publishing project
-(setq org-publish-project-alist
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Define the publishing project</span>
+(<span style="font-weight: bold;">setq</span> org-publish-project-alist
       (list
-       (list "my-org-site"
-             :recursive t
-             :base-directory "./content"
-             :publishing-directory "./public"
-             :publishing-function 'org-html-publish-to-html)))
+       (list <span style="font-style: italic;">"my-org-site"</span>
+             <span style="font-weight: bold;">:recursive</span> t
+             <span style="font-weight: bold;">:base-directory</span> <span style="font-style: italic;">"./content"</span>
+             <span style="font-weight: bold;">:publishing-directory</span> <span style="font-style: italic;">"./public"</span>
+             <span style="font-weight: bold;">:publishing-function</span> 'org-html-publish-to-html)))
 
-;; Generate the site output
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Generate the site output</span>
 (org-publish-all t)
 </pre>
 </div>
@@ -141,8 +141,8 @@ variable using M-x describe-variable for a lot more information!
 </div>
 </div>
 
-<div id="outline-container-orgfd69a38" class="outline-4">
-<h4 id="orgfd69a38"><span class="section-number-4">2.2.2.</span> build.sh</h4>
+<div id="outline-container-org308f794" class="outline-4">
+<h4 id="org308f794"><span class="section-number-4">2.2.2.</span> build.sh</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 We also need a shell script that can run our Emacs Lisp script. We'll call that build.sh:
@@ -178,8 +178,8 @@ html in public folder, open it in the browser.
 </div>
 </div>
 
-<div id="outline-container-org6fb5110" class="outline-3">
-<h3 id="org6fb5110"><span class="section-number-3">2.3.</span> Improving the HTML output</h3>
+<div id="outline-container-org6f35a4b" class="outline-3">
+<h3 id="org6f35a4b"><span class="section-number-3">2.3.</span> Improving the HTML output</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 There are a few things about the page we just looked at that I'd like
@@ -200,25 +200,25 @@ better result.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">;; Define the publishing project
-(setq org-publish-project-alist
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Define the publishing project</span>
+(<span style="font-weight: bold;">setq</span> org-publish-project-alist
       (list
-       (list "org-site:main"
-             :recursive t
-             :base-directory "./content"
-             :publishing-function 'org-html-publish-to-html
-             :publishing-directory "./public"
-             :with-author nil           ;; Don't include author name
-             :with-creator t            ;; Include Emacs and Org versions in footer
-             :with-toc t                ;; Include a table of contents
-             :section-numbers nil       ;; Don't include section numbers
-             :time-stamp-file nil)))    ;; Don't include time stamp in file
+       (list <span style="font-style: italic;">"org-site:main"</span>
+             <span style="font-weight: bold;">:recursive</span> t
+             <span style="font-weight: bold;">:base-directory</span> <span style="font-style: italic;">"./content"</span>
+             <span style="font-weight: bold;">:publishing-function</span> 'org-html-publish-to-html
+             <span style="font-weight: bold;">:publishing-directory</span> <span style="font-style: italic;">"./public"</span>
+             <span style="font-weight: bold;">:with-author</span> nil           <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Don't include author name</span>
+             <span style="font-weight: bold;">:with-creator</span> t            <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Include Emacs and Org versions in footer</span>
+             <span style="font-weight: bold;">:with-toc</span> t                <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Include a table of contents</span>
+             <span style="font-weight: bold;">:section-numbers</span> nil       <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Don't include section numbers</span>
+             <span style="font-weight: bold;">:time-stamp-file</span> nil)))    <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Don't include time stamp in file</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbbc9eb1" class="outline-3">
-<h3 id="orgbbc9eb1"><span class="section-number-3">2.4.</span> Improving the page styling</h3>
+<div id="outline-container-org7564bd0" class="outline-3">
+<h3 id="org7564bd0"><span class="section-number-3">2.4.</span> Improving the page styling</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 At this point have a decent basic output for our website, but what if we want to make it look a little bit nicer?
@@ -229,19 +229,19 @@ By setting a few more variables, we can use a nice stylesheet to give our site a
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">;; Customize the HTML output
-(setq org-html-validation-link nil            ;; Don't show validation link
-      org-html-head-include-scripts nil       ;; Use our own scripts
-      org-html-head-include-default-style nil ;; Use our own styles
-      org-html-head "&lt;link rel=\"stylesheet\" href=\"simple.min.css\" /&gt;" ;place your own stylesheet in public folder
-      org-html-head "&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;" ;use cdn stylesheet
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Customize the HTML output</span>
+(<span style="font-weight: bold;">setq</span> org-html-validation-link nil            <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Don't show validation link</span>
+      org-html-head-include-scripts nil       <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Use our own scripts</span>
+      org-html-head-include-default-style nil <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Use our own styles</span>
+      org-html-head <span style="font-style: italic;">"&lt;link rel=\"stylesheet\" href=\"simple.min.css\" /&gt;"</span> <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">place your own stylesheet in public folder</span>
+      org-html-head <span style="font-style: italic;">"&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;"</span> <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">use cdn stylesheet</span>
       )
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org29d632d" class="outline-3">
-<h3 id="org29d632d"><span class="section-number-3">2.5.</span> Generating pages with code blocks</h3>
+<div id="outline-container-org0ed2e31" class="outline-3">
+<h3 id="org0ed2e31"><span class="section-number-3">2.5.</span> Generating pages with code blocks</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 So far we've been looking at a very simple example page that doesn't really have much on it. What happens when we try to generate a more elaborate Org file containing code blocks?
@@ -265,39 +265,46 @@ To resolve this issue, you will need to install the htmlize package from MELPA. 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">;; Set the package installation directory so that packages aren't stored in the
-;; ~/.emacs.d/elpa path.
-(require 'package)
-(setq package-user-dir (expand-file-name "./.packages"))
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")))
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Set the package installation directory so that packages aren't stored in the</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">~/.emacs.d/elpa path.</span>
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">package</span>)
+(<span style="font-weight: bold;">setq</span> package-user-dir (expand-file-name <span style="font-style: italic;">"./.packages"</span>))
+(<span style="font-weight: bold;">setq</span> package-archives '((<span style="font-style: italic;">"melpa"</span> . <span style="font-style: italic;">"https://melpa.org/packages/"</span>)
+                         (<span style="font-style: italic;">"elpa"</span> . <span style="font-style: italic;">"https://elpa.gnu.org/packages/"</span>)))
 
-;; Initialize the package system
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Initialize the package system</span>
 (package-initialize)
-(unless package-archive-contents
+(<span style="font-weight: bold;">unless</span> package-archive-contents
   (package-refresh-contents))
 
-;; Install dependencies
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Install dependencies</span>
 (package-install 'htmlize)
 </pre>
 </div>
 
 <p>
-In this snippet, we load Emacs' package manager and configure the package-user-dir to be a sub-directory of our project folder. This allows you to install packages for the script without mixing them up with the packages of your personal Emacs configuration!
+In this snippet, we load Emacs' package manager and configure the
+package-user-dir to be a sub-directory of our project folder. This allows you
+to install packages for the script without mixing them up with the packages of
+your personal Emacs configuration!
 </p>
 
 <p>
-The next thing we do is add MELPA to the package archive list and refresh the package archive so that htmlize can be found. Finally, we call package-install to install it!
+The next thing we do is add MELPA to the package archive list and refresh the
+package archive so that htmlize can be found. Finally, we call package-install
+to install it!
 </p>
 
 <p>
-In a future video I'll show you how to convert your Emacs color theme to a CSS file that you can use to colorize source blocks with exactly the same colors used in the theme!
+In a future video I'll show you how to convert your Emacs color theme to a CSS
+file that you can use to colorize source blocks with exactly the same colors
+used in the theme!
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgcc6d461" class="outline-3">
-<h3 id="orgcc6d461"><span class="section-number-3">2.6.</span> Linking between pages</h3>
+<div id="outline-container-orgd1ade9a" class="outline-3">
+<h3 id="orgd1ade9a"><span class="section-number-3">2.6.</span> Linking between pages</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 One last thing I want to show you is how you can create links between
@@ -323,14 +330,14 @@ It will also complain when a linked file can't be found!
 
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">Debugger entered--Lisp error: (user-error "Unable to resolve link: \"Emacs2.org\"")
+<pre class="src src-emacs-lisp">Debugger entered--Lisp error: (<span style="font-weight: bold;">user-error</span> <span style="font-style: italic;">"Unable to resolve link: \"Emacs2.org\""</span>)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org38354ef" class="outline-3">
-<h3 id="org38354ef"><span class="section-number-3">2.7.</span> The final build script</h3>
+<div id="outline-container-org733db27" class="outline-3">
+<h3 id="org733db27"><span class="section-number-3">2.7.</span> The final build script</h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
 Here is the final form of our <code>build-site.el</code> script:
@@ -338,48 +345,48 @@ Here is the final form of our <code>build-site.el</code> script:
 
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">;; Set the package installation directory so that packages aren't stored in the
-;; ~/.emacs.d/elpa path.
-(require 'package)
-(setq package-user-dir (expand-file-name "./.packages"))
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")))
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Set the package installation directory so that packages aren't stored in the</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">~/.emacs.d/elpa path.</span>
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">package</span>)
+(<span style="font-weight: bold;">setq</span> package-user-dir (expand-file-name <span style="font-style: italic;">"./.packages"</span>))
+(<span style="font-weight: bold;">setq</span> package-archives '((<span style="font-style: italic;">"melpa"</span> . <span style="font-style: italic;">"https://melpa.org/packages/"</span>)
+                         (<span style="font-style: italic;">"elpa"</span> . <span style="font-style: italic;">"https://elpa.gnu.org/packages/"</span>)))
 
-;; Initialize the package system
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Initialize the package system</span>
 (package-initialize)
-(unless package-archive-contents
+(<span style="font-weight: bold;">unless</span> package-archive-contents
   (package-refresh-contents))
 
-;; Install dependencies
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Install dependencies</span>
 (package-install 'htmlize)
 
-;; Load the publishing system
-(require 'ox-publish)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Load the publishing system</span>
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">ox-publish</span>)
 
-;; Customize the HTML output
-(setq org-html-validation-link nil            ;; Don't show validation link
-      org-html-head-include-scripts nil       ;; Use our own scripts
-      org-html-head-include-default-style nil ;; Use our own styles
-      org-html-head "&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;")
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Customize the HTML output</span>
+(<span style="font-weight: bold;">setq</span> org-html-validation-link nil            <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Don't show validation link</span>
+      org-html-head-include-scripts nil       <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Use our own scripts</span>
+      org-html-head-include-default-style nil <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Use our own styles</span>
+      org-html-head <span style="font-style: italic;">"&lt;link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" /&gt;"</span>)
 
-;; Define the publishing project
-(setq org-publish-project-alist
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Define the publishing project</span>
+(<span style="font-weight: bold;">setq</span> org-publish-project-alist
       (list
-       (list "org-site:main"
-             :recursive t
-             :base-directory "./content"
-             :publishing-function 'org-html-publish-to-html
-             :publishing-directory "./public"
-             :with-author nil           ;; Don't include author name
-             :with-creator t            ;; Include Emacs and Org versions in footer
-             :with-toc t                ;; Include a table of contents
-             :section-numbers nil       ;; Don't include section numbers
-             :time-stamp-file nil)))    ;; Don't include time stamp in file
+       (list <span style="font-style: italic;">"org-site:main"</span>
+             <span style="font-weight: bold;">:recursive</span> t
+             <span style="font-weight: bold;">:base-directory</span> <span style="font-style: italic;">"./content"</span>
+             <span style="font-weight: bold;">:publishing-function</span> 'org-html-publish-to-html
+             <span style="font-weight: bold;">:publishing-directory</span> <span style="font-style: italic;">"./public"</span>
+             <span style="font-weight: bold;">:with-author</span> nil           <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Don't include author name</span>
+             <span style="font-weight: bold;">:with-creator</span> t            <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Include Emacs and Org versions in footer</span>
+             <span style="font-weight: bold;">:with-toc</span> t                <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Include a table of contents</span>
+             <span style="font-weight: bold;">:section-numbers</span> nil       <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Don't include section numbers</span>
+             <span style="font-weight: bold;">:time-stamp-file</span> nil)))    <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Don't include time stamp in file</span>
 
-;; Generate the site output
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Generate the site output</span>
 (org-publish-all t)
 
-(message "Build complete!")
+(message <span style="font-style: italic;">"Build complete!"</span>)
 
 </pre>
 </div>
@@ -387,8 +394,8 @@ Here is the final form of our <code>build-site.el</code> script:
 </div>
 </div>
 
-<div id="outline-container-org7ff76f5" class="outline-2">
-<h2 id="org7ff76f5"><span class="section-number-2">3.</span> Create Emacs blog with "org-static-blog" package</h2>
+<div id="outline-container-org3a4f232" class="outline-2">
+<h2 id="org3a4f232"><span class="section-number-2">3.</span> Create Emacs blog with "org-static-blog" package</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 "<a href="https://github.com/bastibe/org-static-blog">org-static-blog</a>" is a package written by <a href="https://github.com/bastibe">Bastian Bechtold</a> is a static site
@@ -426,14 +433,14 @@ If you would like to add an image to your org file, try this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">#+attr_html: :width 1200px
-#+ATTR_ORG: :width 600
+<pre class="src src-emacs-lisp">#+attr_html: <span style="font-weight: bold;">:width</span> 1200px
+#+ATTR_ORG: <span style="font-weight: bold;">:width</span> 600
 [[./media/org-static-blog.png]]
 </pre>
 </div>
 
 
-<figure id="org8e22f58">
+<figure id="orgb96603c">
 <img src="./media/org-static-blog.png" alt="org-static-blog.png" width="1200px">
 
 </figure>
@@ -445,8 +452,8 @@ the image.
 </div>
 </div>
 
-<div id="outline-container-org8c43a7f" class="outline-2">
-<h2 id="org8c43a7f"><span class="section-number-2">4.</span> Conclusion</h2>
+<div id="outline-container-orga05555f" class="outline-2">
+<h2 id="orga05555f"><span class="section-number-2">4.</span> Conclusion</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Now the only thing is left - I have to blog. :) I am thinking why
@@ -465,8 +472,8 @@ learn it is to teach it" they say.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 11:24</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 11:22</p>
 	 <p class="date">This org file is <u>created</u>: 2023-01-21 Sat 12:40</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

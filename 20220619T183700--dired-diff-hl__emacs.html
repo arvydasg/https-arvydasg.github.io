@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dired diff-hl</title>
@@ -32,20 +32,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga6e9351">1. Introduction</a></li>
-<li><a href="#orga4d3015">2. Body</a></li>
-<li><a href="#org237b1aa">3. The final config</a></li>
+<li><a href="#orga4423d8">1. Introduction</a></li>
+<li><a href="#orga4668ee">2. Body</a></li>
+<li><a href="#org9ebfe13">3. The final config</a></li>
 </ul>
 </div>
 </nav>
 
-<figure id="orgf773fa9">
+<figure id="org319aefc">
 <img src="./media/dired-diff-hl.png" alt="dired-diff-hl.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orga6e9351" class="outline-2">
-<h2 id="orga6e9351"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-orga4423d8" class="outline-2">
+<h2 id="orga4423d8"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 So, everything started when I have discovered ‘diff-hl’ package. It had an
@@ -55,8 +55,8 @@ not use neotree anymore and use dired instead.
 </div>
 </div>
 
-<div id="outline-container-orga4d3015" class="outline-2">
-<h2 id="orga4d3015"><span class="section-number-2">2.</span> Body</h2>
+<div id="outline-container-orga4668ee" class="outline-2">
+<h2 id="orga4668ee"><span class="section-number-2">2.</span> Body</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 I added a few lines to ‘diff-hl’ config to make the file changes visible in
@@ -64,9 +64,9 @@ dired buffer.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(use-package diff-hl
-  :ensure t
-  :init (add-hook 'prog-mode-hook #'diff-hl-mode)
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> diff-hl
+  <span style="font-weight: bold;">:ensure</span> t
+  <span style="font-weight: bold;">:init</span> (add-hook 'prog-mode-hook #'diff-hl-mode)
   (add-hook 'org-mode-hook #'diff-hl-mode)
   (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
@@ -123,40 +123,40 @@ convenient to cycle with and I am all set!
 </div>
 </div>
 
-<div id="outline-container-org237b1aa" class="outline-2">
-<h2 id="org237b1aa"><span class="section-number-2">3.</span> The final config</h2>
+<div id="outline-container-org9ebfe13" class="outline-2">
+<h2 id="org9ebfe13"><span class="section-number-2">3.</span> The final config</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"> (use-package dired
-    :ensure nil                         ;no need for t, because dired is built in
-    :custom ((dired-listing-switches "-agho --group-directories-first"))) ;sort directories first
-  (global-set-key (kbd "C-x C-d") 'dired-jump) ;open dired buffer in current location
-  (define-key dired-mode-map (kbd "f") 'dired-find-alternate-file)
-;; (global-set-key (kbd "C-x d") 'dired)
+<pre class="src src-emacs-lisp"> (<span style="font-weight: bold;">use-package</span> dired
+    <span style="font-weight: bold;">:ensure</span> nil                         <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">no need for t, because dired is built in</span>
+    <span style="font-weight: bold;">:custom</span> ((dired-listing-switches <span style="font-style: italic;">"-agho --group-directories-first"</span>))) <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">sort directories first</span>
+  (global-set-key (kbd <span style="font-style: italic;">"C-x C-d"</span>) 'dired-jump) <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">open dired buffer in current location</span>
+  (define-key dired-mode-map (kbd <span style="font-style: italic;">"f"</span>) 'dired-find-alternate-file)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(global-set-key (kbd "C-x d") 'dired)</span>
 
-  ;; a function to kill dired buffers. Kind of works. Or you can use "a"
-  ;; to cycle through dired and it leaves no buffers opened
-  ;; DiredReuseDirectoryBuffer - https://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer
-  ;; KillingBuffers - https://www.emacswiki.org/emacs/KillingBuffers
-  (defun kill-dired-buffers ()
-    (interactive)
-    (mapc (lambda (buffer)
-            (when (eq 'dired-mode (buffer-local-value 'major-mode buffer))
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">a function to kill dired buffers. Kind of works. Or you can use "a"</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">to cycle through dired and it leaves no buffers opened</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">DiredReuseDirectoryBuffer - https://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">KillingBuffers - https://www.emacswiki.org/emacs/KillingBuffers</span>
+  (<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">kill-dired-buffers</span> ()
+    (<span style="font-weight: bold;">interactive</span>)
+    (mapc (<span style="font-weight: bold;">lambda</span> (buffer)
+            (<span style="font-weight: bold;">when</span> (eq 'dired-mode (buffer-local-value 'major-mode buffer))
               (kill-buffer buffer)))
           (buffer-list)))
 
-  ;; can easily check how many buffers got opened
-  (defun kill-all-dired-buffers ()
-    "Kill all dired buffers."
-    (interactive)
-    (save-excursion
-      (let ((count 0))
-        (dolist (buffer (buffer-list))
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">can easily check how many buffers got opened</span>
+  (<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">kill-all-dired-buffers</span> ()
+    <span style="font-style: italic;">"Kill all dired buffers."</span>
+    (<span style="font-weight: bold;">interactive</span>)
+    (<span style="font-weight: bold;">save-excursion</span>
+      (<span style="font-weight: bold;">let</span> ((count 0))
+        (<span style="font-weight: bold;">dolist</span> (buffer (buffer-list))
           (set-buffer buffer)
-          (when (equal major-mode 'dired-mode)
-            (setq count (1+ count))
+          (<span style="font-weight: bold;">when</span> (equal major-mode 'dired-mode)
+            (<span style="font-weight: bold;">setq</span> count (1+ count))
             (kill-buffer buffer)))
-        (message "Killed %i dired buffer(s)." count))))
+        (message <span style="font-style: italic;">"Killed %i dired buffer(s)."</span> count))))
 </pre>
 </div>
 
@@ -176,7 +176,7 @@ testing out how many opened buffers there were. But luckily I found
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2022-06-19 Sun 18:37</p>
 	 <div class="generated">
@@ -188,6 +188,7 @@ testing out how many opened buffers there were. But luckily I found
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

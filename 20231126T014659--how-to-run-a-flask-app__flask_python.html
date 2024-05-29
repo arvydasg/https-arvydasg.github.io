@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>How to run a flask app</title>
@@ -32,10 +32,10 @@
 If you have someting like this in <code>app.py</code>:
 </p>
 <div class="org-src-container">
-<pre class="src src-python">if __name__ == "__main__":
-    with app.app_context():
+<pre class="src src-python"><span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">"__main__"</span>:
+    <span style="font-weight: bold;">with</span> app.app_context():
         db.create_all()
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host=<span style="font-style: italic;">"0.0.0.0"</span>, debug=<span style="font-weight: bold; text-decoration: underline;">True</span>)
 </pre>
 </div>
 
@@ -65,7 +65,7 @@ a change.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2023-11-26 Sun 01:46</p>
 	 <div class="generated">
@@ -77,6 +77,7 @@ a change.
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

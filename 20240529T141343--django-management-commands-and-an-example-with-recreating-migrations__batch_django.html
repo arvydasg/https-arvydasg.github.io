@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 16:06 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Django management commands and an example with recreating migrations</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 14:34</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Django management commands and an example with recreating migrations</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org6044ede">1. Quick summary</a></li>
+<li><a href="#orgb94ac79">2. Step 1 - create <code>cleanup.cmd</code> file</a></li>
+<li><a href="#org143acd3">3. Step 2 - create <code>empty_migration_folder.cmd</code> file</a></li>
+<li><a href="#org6864850">4. Step 3 - create create <code>create_root_user.py</code> file</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org6044ede" class="outline-2">
+<h2 id="org6044ede"><span class="section-number-2">1.</span> Quick summary</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Outside of your project directory, create a folder called helpers</li>
+<li>Inside of that folder, two files: <code>cleanup.cmd</code> and <code>empty_migration_folder.cmd</code></li>
+<li>Run this script from <code>manage.py</code> location like so: <code>..\helpers\cleanup.cmd</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb94ac79" class="outline-2">
+<h2 id="orgb94ac79"><span class="section-number-2">2.</span> Step 1 - create <code>cleanup.cmd</code> file</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Inside of the  <code>app/management/commands</code> directory.
+</p>
+
+<p>
+It's content:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-batch">echo ======================#  Deleting database file
+del db.sqlite3
+echo Database file deleted successfully.
+
+echo ======================#  Removing Django migrations
+call ..\helpers\empty_migration_folder.cmd app
+
+cd ../mysite
+echo ======================#  Applying Django migrations from scratch
+py manage.py makemigrations
+py manage.py migrate
+
+echo ======================#  Creating Django root user
+py manage.py create_root_user
+
+echo ======================#  Runserver
+py manage.py runserver
+
+echo ======================#  Finished
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org143acd3" class="outline-2">
+<h2 id="org143acd3"><span class="section-number-2">3.</span> Step 2 - create <code>empty_migration_folder.cmd</code> file</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Inside of the  <code>app/management/commands</code> directory.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-batch">@echo off
+set "folder=..\mysite\%1\migrations"
+
+for /r "%folder%" %%F in (*) do (
+    if not "%%~nxF"=="__init__.py" (
+        del "%%F" /q
+    )
+)
+
+for /d %%D in ("%folder%\*") do (
+    if not "%%~nxD"=="__init__py" (
+        rd "%%D" /s /q
+    )
+)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6864850" class="outline-2">
+<h2 id="org6864850"><span class="section-number-2">4.</span> Step 3 - create create <code>create_root_user.py</code> file</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Inside of the  <code>app/management/commands</code> directory.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> os
+<span style="font-weight: bold;">from</span> django.contrib.auth.models <span style="font-weight: bold;">import</span> User, Group
+<span style="font-weight: bold;">from</span> django.core.management.base <span style="font-weight: bold;">import</span> BaseCommand
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Command</span>(BaseCommand):
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">handle</span>(<span style="font-weight: bold;">self</span>, *args, **kwargs):
+        <span style="font-weight: bold; font-style: italic;">username</span> = <span style="font-style: italic;">'root'</span>
+        <span style="font-weight: bold; font-style: italic;">password</span> = <span style="font-style: italic;">'hellothisispassword'</span>
+
+        <span style="font-weight: bold; font-style: italic;">user</span>, <span style="font-weight: bold; font-style: italic;">created</span> = User.objects.get_or_create(username=username)
+        <span style="font-weight: bold;">if</span> created:
+            user.set_password(password)
+            user.<span style="font-weight: bold; font-style: italic;">is_staff</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
+            user.<span style="font-weight: bold; font-style: italic;">is_superuser</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
+            user.save()
+            <span style="font-weight: bold;">self</span>.stdout.write(<span style="font-weight: bold;">self</span>.style.SUCCESS(
+                f<span style="font-style: italic;">'Management user "</span>{username}<span style="font-style: italic;">" created successfully'</span>
+            ))
+        <span style="font-weight: bold;">else</span>:
+            <span style="font-weight: bold;">self</span>.stdout.write(<span style="font-weight: bold;">self</span>.style.WARNING(
+                f<span style="font-style: italic;">'Management user "</span>{username}<span style="font-style: italic;">" already exists'</span>
+            ))
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 14:34</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 14:13</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

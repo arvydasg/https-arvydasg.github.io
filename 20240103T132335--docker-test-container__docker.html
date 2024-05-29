@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Docker test container</title>
@@ -32,17 +32,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7a525f3">1. Dockerfile</a></li>
-<li><a href="#org5c4603c">2. server.py</a></li>
-<li><a href="#org01c3659">3. helloworld.html</a></li>
-<li><a href="#org122edb1">4. build the image</a></li>
-<li><a href="#orga9036d7">5. run the image</a></li>
+<li><a href="#org513a1f2">1. Dockerfile</a></li>
+<li><a href="#orgad23776">2. server.py</a></li>
+<li><a href="#org656909a">3. helloworld.html</a></li>
+<li><a href="#orgd7b7446">4. build the image</a></li>
+<li><a href="#orgd747003">5. run the image</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org7a525f3" class="outline-2">
-<h2 id="org7a525f3"><span class="section-number-2">1.</span> Dockerfile</h2>
+<div id="outline-container-org513a1f2" class="outline-2">
+<h2 id="org513a1f2"><span class="section-number-2">1.</span> Dockerfile</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-bash">FROM python:3.9-slim
@@ -50,66 +50,66 @@ WORKDIR /app
 COPY server.py .
 COPY helloworld.html .
 EXPOSE 8082
-CMD ["python3", "server.py"]
+CMD [<span style="font-style: italic;">"python3"</span>, <span style="font-style: italic;">"server.py"</span>]
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5c4603c" class="outline-2">
-<h2 id="org5c4603c"><span class="section-number-2">2.</span> server.py</h2>
+<div id="outline-container-orgad23776" class="outline-2">
+<h2 id="orgad23776"><span class="section-number-2">2.</span> server.py</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
-<pre class="src src-python">import http.server
-import socketserver
-# Define the port number
-PORT = 8082
-# Define the request handler class
-class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
-    def end_headers(self):
-        self.send_header('Access-Control-Allow-Origin', '*')
-        http.server.SimpleHTTPRequestHandler.end_headers(self)
+<pre class="src src-python"><span style="font-weight: bold;">import</span> http.server
+<span style="font-weight: bold;">import</span> socketserver
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Define the port number</span>
+<span style="font-weight: bold; font-style: italic;">PORT</span> = 8082
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Define the request handler class</span>
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">MyRequestHandler</span>(http.server.SimpleHTTPRequestHandler):
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">end_headers</span>(<span style="font-weight: bold;">self</span>):
+        <span style="font-weight: bold;">self</span>.send_header(<span style="font-style: italic;">'Access-Control-Allow-Origin'</span>, <span style="font-style: italic;">'*'</span>)
+        http.server.SimpleHTTPRequestHandler.end_headers(<span style="font-weight: bold;">self</span>)
 
-    def do_GET(self):
-        # If the requested path is "/", serve helloworld.html
-        if self.path == '/':
-            self.path = '/helloworld.html'
-        elif self.path == '/favicon.ico':
-            self.send_response(204)  # No content
-            return
-        return http.server.SimpleHTTPRequestHandler.do_GET(self)
-# Set up the server
-with socketserver.TCPServer(("", PORT), MyRequestHandler) as httpd:
-    print(f"Serving at port {PORT}")
-    try:
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">do_GET</span>(<span style="font-weight: bold;">self</span>):
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">If the requested path is "/", serve helloworld.html</span>
+        <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">self</span>.path == <span style="font-style: italic;">'/'</span>:
+            <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">path</span> = <span style="font-style: italic;">'/helloworld.html'</span>
+        <span style="font-weight: bold;">elif</span> <span style="font-weight: bold;">self</span>.path == <span style="font-style: italic;">'/favicon.ico'</span>:
+            <span style="font-weight: bold;">self</span>.send_response(204)  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">No content</span>
+            <span style="font-weight: bold;">return</span>
+        <span style="font-weight: bold;">return</span> http.server.SimpleHTTPRequestHandler.do_GET(<span style="font-weight: bold;">self</span>)
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Set up the server</span>
+<span style="font-weight: bold;">with</span> socketserver.TCPServer((<span style="font-style: italic;">""</span>, PORT), MyRequestHandler) <span style="font-weight: bold;">as</span> httpd:
+    <span style="font-weight: bold;">print</span>(f<span style="font-style: italic;">"Serving at port </span>{PORT}<span style="font-style: italic;">"</span>)
+    <span style="font-weight: bold;">try</span>:
         httpd.serve_forever()
-    except KeyboardInterrupt:
-        pass
+    <span style="font-weight: bold;">except</span> <span style="font-weight: bold; text-decoration: underline;">KeyboardInterrupt</span>:
+        <span style="font-weight: bold;">pass</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org01c3659" class="outline-2">
-<h2 id="org01c3659"><span class="section-number-2">3.</span> helloworld.html</h2>
+<div id="outline-container-org656909a" class="outline-2">
+<h2 id="org656909a"><span class="section-number-2">3.</span> helloworld.html</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Hello World&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Hello, World!&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
+&lt;<span style="font-weight: bold;">html</span>&gt;
+&lt;<span style="font-weight: bold;">head</span>&gt;
+    &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Hello World</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
+&lt;/<span style="font-weight: bold;">head</span>&gt;
+&lt;<span style="font-weight: bold;">body</span>&gt;
+    &lt;<span style="font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Hello, World!</span>&lt;/<span style="font-weight: bold;">h1</span>&gt;
+&lt;/<span style="font-weight: bold;">body</span>&gt;
+&lt;/<span style="font-weight: bold;">html</span>&gt;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org122edb1" class="outline-2">
-<h2 id="org122edb1"><span class="section-number-2">4.</span> build the image</h2>
+<div id="outline-container-orgd7b7446" class="outline-2">
+<h2 id="orgd7b7446"><span class="section-number-2">4.</span> build the image</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 while in the same directory as the previous 3 files
@@ -126,8 +126,8 @@ Check docker desktop or <code>docker ps</code> to see the newly created image ca
 </div>
 </div>
 
-<div id="outline-container-orga9036d7" class="outline-2">
-<h2 id="orga9036d7"><span class="section-number-2">5.</span> run the image</h2>
+<div id="outline-container-orgd747003" class="outline-2">
+<h2 id="orgd747003"><span class="section-number-2">5.</span> run the image</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-bash">docker run -it - p 5009:8082 test
@@ -141,10 +141,10 @@ visit <a href="http://localhost:5009/">http://localhost:5009/</a>
 <div class="org-src-container">
 <pre class="src src-bash">PS C:\Users\hello&gt; docker run -it -p 5009:8082 test
 Serving at port 8082
-10.10.0.1 - - [03/Jan/2024 13:27:26] "GET / HTTP/1.1" 304 -
-10.10.0.1 - - [03/Jan/2024 13:27:26] "GET /favicon.ico HTTP/1.1" 204 -
-10.10.0.1 - - [03/Jan/2024 13:27:26] "GET /favicon.ico HTTP/1.1" 204 -
-10.10.0.1 - - [03/Jan/2024 13:27:27] "GET / HTTP/1.1" 304 -
+10.10.0.1 - - [03/Jan/2024 13:27:26] <span style="font-style: italic;">"GET / HTTP/1.1"</span> 304 -
+10.10.0.1 - - [03/Jan/2024 13:27:26] <span style="font-style: italic;">"GET /favicon.ico HTTP/1.1"</span> 204 -
+10.10.0.1 - - [03/Jan/2024 13:27:26] <span style="font-style: italic;">"GET /favicon.ico HTTP/1.1"</span> 204 -
+10.10.0.1 - - [03/Jan/2024 13:27:27] <span style="font-style: italic;">"GET / HTTP/1.1"</span> 304 -
 </pre>
 </div>
 </div>
@@ -158,7 +158,7 @@ Serving at port 8082
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-03 Wed 13:23</p>
 	 <div class="generated">
@@ -170,6 +170,7 @@ Serving at port 8082
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

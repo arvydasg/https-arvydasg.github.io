@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Paginating results in django</title>
@@ -32,11 +32,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org254e5d3">1. With smaller amount of queries, in  1.49ms</a></li>
-<li><a href="#orgd7977b4">2. This is my current query 250-300ms:</a></li>
-<li><a href="#orgd064807">3. After applying pagination like such:</a></li>
-<li><a href="#org6cc29ea">4. BUT</a></li>
-<li><a href="#orga63e1a2">5. Probably it's a good idea to look into the database, pagination itself won't help</a></li>
+<li><a href="#orgb2a1c1d">1. With smaller amount of queries, in  1.49ms</a></li>
+<li><a href="#org8af4757">2. This is my current query 250-300ms:</a></li>
+<li><a href="#org2696917">3. After applying pagination like such:</a></li>
+<li><a href="#orgd307beb">4. BUT</a></li>
+<li><a href="#org7790d7d">5. Probably it's a good idea to look into the database, pagination itself won't help</a></li>
 </ul>
 </div>
 </nav>
@@ -44,19 +44,19 @@
 <a href="https://docs.djangoproject.com/en/5.0/topics/pagination/">https://docs.djangoproject.com/en/5.0/topics/pagination/</a>
 </p>
 
-<div id="outline-container-org254e5d3" class="outline-2">
-<h2 id="org254e5d3"><span class="section-number-2">1.</span> With smaller amount of queries, in  1.49ms</h2>
+<div id="outline-container-orgb2a1c1d" class="outline-2">
+<h2 id="orgb2a1c1d"><span class="section-number-2">1.</span> With smaller amount of queries, in  1.49ms</h2>
 <div class="outline-text-2" id="text-1">
 
-<figure id="orgb63747f">
+<figure id="org118862f">
 <img src="./media/inefficient_query2.png" alt="inefficient_query2.png" width="800px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgd7977b4" class="outline-2">
-<h2 id="orgd7977b4"><span class="section-number-2">2.</span> This is my current query 250-300ms:</h2>
+<div id="outline-container-org8af4757" class="outline-2">
+<h2 id="org8af4757"><span class="section-number-2">2.</span> This is my current query 250-300ms:</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-html">$("#data_table").DataTable({
@@ -75,59 +75,59 @@
 </div>
 
 <div class="org-src-container">
-<pre class="src src-python">@login_required
-def data_table(request):
-    answers = Answer.objects.filter(created_by=request.user)
-    questions = Question.objects.filter(created_by=request.user)
-    rescuetime_entries = Rescuetime.objects.filter(user=request.user)
-    weather_entries = Weather.objects.all()
+<pre class="src src-python"><span style="font-weight: bold; text-decoration: underline;">@login_required</span>
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">data_table</span>(request):
+    <span style="font-weight: bold; font-style: italic;">answers</span> = Answer.objects.<span style="font-weight: bold;">filter</span>(created_by=request.user)
+    <span style="font-weight: bold; font-style: italic;">questions</span> = Question.objects.<span style="font-weight: bold;">filter</span>(created_by=request.user)
+    <span style="font-weight: bold; font-style: italic;">rescuetime_entries</span> = Rescuetime.objects.<span style="font-weight: bold;">filter</span>(user=request.user)
+    <span style="font-weight: bold; font-style: italic;">weather_entries</span> = Weather.objects.<span style="font-weight: bold;">all</span>()
 
-    data_to_display = []
+    <span style="font-weight: bold; font-style: italic;">data_to_display</span> = []
 
-    for weather_entry in weather_entries:
-        matching_answers = []
-        productive_hours = None
-        distracting_hours = None
+    <span style="font-weight: bold;">for</span> weather_entry <span style="font-weight: bold;">in</span> weather_entries:
+        <span style="font-weight: bold; font-style: italic;">matching_answers</span> = []
+        <span style="font-weight: bold; font-style: italic;">productive_hours</span> = <span style="font-weight: bold; text-decoration: underline;">None</span>
+        <span style="font-weight: bold; font-style: italic;">distracting_hours</span> = <span style="font-weight: bold; text-decoration: underline;">None</span>
 
-        for question in questions:
-            corresponding_answer = question.answer_set.filter(date_added__date=weather_entry.date).first()
-            if corresponding_answer:
+        <span style="font-weight: bold;">for</span> question <span style="font-weight: bold;">in</span> questions:
+            <span style="font-weight: bold; font-style: italic;">corresponding_answer</span> = question.answer_set.<span style="font-weight: bold;">filter</span>(date_added__date=weather_entry.date).first()
+            <span style="font-weight: bold;">if</span> corresponding_answer:
                 matching_answers.append({
-                    'description': question.description,
-                    'answer': corresponding_answer.answer,
+                    <span style="font-style: italic;">'description'</span>: question.description,
+                    <span style="font-style: italic;">'answer'</span>: corresponding_answer.answer,
                 })
-            else:
-            # If there's no corresponding answer, add an empty answer
+            <span style="font-weight: bold;">else</span>:
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">If there's no corresponding answer, add an empty answer</span>
                 matching_answers.append({
-                'description': question.description,
-                'answer': '',
+                <span style="font-style: italic;">'description'</span>: question.description,
+                <span style="font-style: italic;">'answer'</span>: <span style="font-style: italic;">''</span>,
             })
 
-        # Find the matching Rescuetime entry for the weather entry's date
-        for rescuetime_entry in rescuetime_entries:
-            if rescuetime_entry.date == weather_entry.date:
-                productive_hours = rescuetime_entry.productive_hours
-                distracting_hours = rescuetime_entry.distracting_hours
-                break
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Find the matching Rescuetime entry for the weather entry's date</span>
+        <span style="font-weight: bold;">for</span> rescuetime_entry <span style="font-weight: bold;">in</span> rescuetime_entries:
+            <span style="font-weight: bold;">if</span> rescuetime_entry.date == weather_entry.date:
+                <span style="font-weight: bold; font-style: italic;">productive_hours</span> = rescuetime_entry.productive_hours
+                <span style="font-weight: bold; font-style: italic;">distracting_hours</span> = rescuetime_entry.distracting_hours
+                <span style="font-weight: bold;">break</span>
 
-        if matching_answers:
+        <span style="font-weight: bold;">if</span> matching_answers:
             data_to_display.append({
-                'date': weather_entry.date,
-                'temperature': weather_entry.temperature,
-                'answers': matching_answers,
-                'productive_hours': productive_hours,
-                'distracting_hours': distracting_hours,
+                <span style="font-style: italic;">'date'</span>: weather_entry.date,
+                <span style="font-style: italic;">'temperature'</span>: weather_entry.temperature,
+                <span style="font-style: italic;">'answers'</span>: matching_answers,
+                <span style="font-style: italic;">'productive_hours'</span>: productive_hours,
+                <span style="font-style: italic;">'distracting_hours'</span>: distracting_hours,
 
             })
 
-    context = {
-        'user': request.user,
-        'answers': Answer.objects.filter(created_by=request.user),
-        'data_to_display': data_to_display,
-        'questions': questions,
+    <span style="font-weight: bold; font-style: italic;">context</span> = {
+        <span style="font-style: italic;">'user'</span>: request.user,
+        <span style="font-style: italic;">'answers'</span>: Answer.objects.<span style="font-weight: bold;">filter</span>(created_by=request.user),
+        <span style="font-style: italic;">'data_to_display'</span>: data_to_display,
+        <span style="font-style: italic;">'questions'</span>: questions,
     }
 
-    return render(request, 'data_table.html', context)
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'data_table.html'</span>, context)
 </pre>
 </div>
 
@@ -136,7 +136,7 @@ This results in such time. Aroun 250-300ms.
 </p>
 
 
-<figure id="orgbec7eec">
+<figure id="org3c5d854">
 <img src="./media/inefficient_query1.png" alt="inefficient_query1.png" width="800px">
 
 </figure>
@@ -152,88 +152,88 @@ have 'pagination'.
 </p>
 
 
-<figure id="org1548be2">
+<figure id="orge881a78">
 <img src="./media/inefficient_query3.png" alt="inefficient_query3.png" width="800px"> 
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgd064807" class="outline-2">
-<h2 id="orgd064807"><span class="section-number-2">3.</span> After applying pagination like such:</h2>
+<div id="outline-container-org2696917" class="outline-2">
+<h2 id="org2696917"><span class="section-number-2">3.</span> After applying pagination like such:</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-python">@login_required
-def data_table(request):
-    answers = Answer.objects.filter(created_by=request.user)
-    questions = Question.objects.filter(created_by=request.user)
-    rescuetime_entries = Rescuetime.objects.filter(user=request.user)
-    weather_entries = Weather.objects.all()
+<pre class="src src-python"><span style="font-weight: bold; text-decoration: underline;">@login_required</span>
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">data_table</span>(request):
+    <span style="font-weight: bold; font-style: italic;">answers</span> = Answer.objects.<span style="font-weight: bold;">filter</span>(created_by=request.user)
+    <span style="font-weight: bold; font-style: italic;">questions</span> = Question.objects.<span style="font-weight: bold;">filter</span>(created_by=request.user)
+    <span style="font-weight: bold; font-style: italic;">rescuetime_entries</span> = Rescuetime.objects.<span style="font-weight: bold;">filter</span>(user=request.user)
+    <span style="font-weight: bold; font-style: italic;">weather_entries</span> = Weather.objects.<span style="font-weight: bold;">all</span>()
 
-    data_to_display = []
+    <span style="font-weight: bold; font-style: italic;">data_to_display</span> = []
 
-    for weather_entry in weather_entries:
-        matching_answers = []
-        productive_hours = None
-        distracting_hours = None
+    <span style="font-weight: bold;">for</span> weather_entry <span style="font-weight: bold;">in</span> weather_entries:
+        <span style="font-weight: bold; font-style: italic;">matching_answers</span> = []
+        <span style="font-weight: bold; font-style: italic;">productive_hours</span> = <span style="font-weight: bold; text-decoration: underline;">None</span>
+        <span style="font-weight: bold; font-style: italic;">distracting_hours</span> = <span style="font-weight: bold; text-decoration: underline;">None</span>
 
-        for question in questions:
-            corresponding_answer = question.answer_set.filter(date_added__date=weather_entry.date).first()
-            if corresponding_answer:
+        <span style="font-weight: bold;">for</span> question <span style="font-weight: bold;">in</span> questions:
+            <span style="font-weight: bold; font-style: italic;">corresponding_answer</span> = question.answer_set.<span style="font-weight: bold;">filter</span>(date_added__date=weather_entry.date).first()
+            <span style="font-weight: bold;">if</span> corresponding_answer:
                 matching_answers.append({
-                    'description': question.description,
-                    'answer': corresponding_answer.answer,
+                    <span style="font-style: italic;">'description'</span>: question.description,
+                    <span style="font-style: italic;">'answer'</span>: corresponding_answer.answer,
                 })
-            else:
-            # If there's no corresponding answer, add an empty answer
+            <span style="font-weight: bold;">else</span>:
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">If there's no corresponding answer, add an empty answer</span>
                 matching_answers.append({
-                'description': question.description,
-                'answer': '',
+                <span style="font-style: italic;">'description'</span>: question.description,
+                <span style="font-style: italic;">'answer'</span>: <span style="font-style: italic;">''</span>,
             })
 
-        # Find the matching Rescuetime entry for the weather entry's date
-        for rescuetime_entry in rescuetime_entries:
-            if rescuetime_entry.date == weather_entry.date:
-                productive_hours = rescuetime_entry.productive_hours
-                distracting_hours = rescuetime_entry.distracting_hours
-                break
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Find the matching Rescuetime entry for the weather entry's date</span>
+        <span style="font-weight: bold;">for</span> rescuetime_entry <span style="font-weight: bold;">in</span> rescuetime_entries:
+            <span style="font-weight: bold;">if</span> rescuetime_entry.date == weather_entry.date:
+                <span style="font-weight: bold; font-style: italic;">productive_hours</span> = rescuetime_entry.productive_hours
+                <span style="font-weight: bold; font-style: italic;">distracting_hours</span> = rescuetime_entry.distracting_hours
+                <span style="font-weight: bold;">break</span>
 
-        if matching_answers:
+        <span style="font-weight: bold;">if</span> matching_answers:
             data_to_display.append({
-                'date': weather_entry.date,
-                'temperature': weather_entry.temperature,
-                'answers': matching_answers,
-                'productive_hours': productive_hours,
-                'distracting_hours': distracting_hours,
+                <span style="font-style: italic;">'date'</span>: weather_entry.date,
+                <span style="font-style: italic;">'temperature'</span>: weather_entry.temperature,
+                <span style="font-style: italic;">'answers'</span>: matching_answers,
+                <span style="font-style: italic;">'productive_hours'</span>: productive_hours,
+                <span style="font-style: italic;">'distracting_hours'</span>: distracting_hours,
 
             })
 
 
 
-    # Pagination START
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Pagination START</span>
 
-    from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+    <span style="font-weight: bold;">from</span> django.core.paginator <span style="font-weight: bold;">import</span> Paginator, EmptyPage, PageNotAnInteger
 
-    page = request.GET.get('page')
-    paginator = Paginator(data_to_display, 5)  # You can change the number of items per page (e.g., 10)
+    <span style="font-weight: bold; font-style: italic;">page</span> = request.GET.get(<span style="font-style: italic;">'page'</span>)
+    <span style="font-weight: bold; font-style: italic;">paginator</span> = Paginator(data_to_display, 5)  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">You can change the number of items per page (e.g., 10)</span>
 
-    try:
-        data_to_display = paginator.page(page)
-    except PageNotAnInteger:
-        data_to_display = paginator.page(1)
-    except EmptyPage:
-        data_to_display = paginator.page(paginator.num_pages)
+    <span style="font-weight: bold;">try</span>:
+        <span style="font-weight: bold; font-style: italic;">data_to_display</span> = paginator.page(page)
+    <span style="font-weight: bold;">except</span> PageNotAnInteger:
+        <span style="font-weight: bold; font-style: italic;">data_to_display</span> = paginator.page(1)
+    <span style="font-weight: bold;">except</span> EmptyPage:
+        <span style="font-weight: bold; font-style: italic;">data_to_display</span> = paginator.page(paginator.num_pages)
 
-    # Pagination END          
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Pagination END          </span>
 
-    context = {
-        'user': request.user,
-        'answers': Answer.objects.filter(created_by=request.user),
-        'data_to_display': data_to_display,
-        'questions': questions,
+    <span style="font-weight: bold; font-style: italic;">context</span> = {
+        <span style="font-style: italic;">'user'</span>: request.user,
+        <span style="font-style: italic;">'answers'</span>: Answer.objects.<span style="font-weight: bold;">filter</span>(created_by=request.user),
+        <span style="font-style: italic;">'data_to_display'</span>: data_to_display,
+        <span style="font-style: italic;">'questions'</span>: questions,
     }
 
-    return render(request, 'data_table.html', context)
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'data_table.html'</span>, context)
 </pre>
 </div>
 
@@ -242,30 +242,30 @@ Then add this to html and you are done.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;div class="pagination"&gt;
-    &lt;span class="step-links"&gt;
+<pre class="src src-html">&lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"pagination"</span>&gt;
+    &lt;<span style="font-weight: bold;">span</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"step-links"</span>&gt;
         {% if data_to_display.has_previous %}
-        &lt;a href="?page=1"&gt;&amp;laquo; first&lt;/a&gt;
-        &lt;a href="?page={{ data_to_display.previous_page_number }}"&gt;previous&lt;/a&gt;
+        &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"?page=1"</span>&gt;<span style="font-weight: bold; font-style: italic;">&amp;laquo;</span> first&lt;/<span style="font-weight: bold;">a</span>&gt;
+        &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"?page={{ data_to_display.previous_page_number }}"</span>&gt;previous&lt;/<span style="font-weight: bold;">a</span>&gt;
         {% endif %}
 
-        &lt;span class="current-page"&gt;
+        &lt;<span style="font-weight: bold;">span</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"current-page"</span>&gt;
             Page {{ data_to_display.number }} of {{ data_to_display.paginator.num_pages }}.
-        &lt;/span&gt;
+        &lt;/<span style="font-weight: bold;">span</span>&gt;
 
         {% if data_to_display.has_next %}
-        &lt;a href="?page={{ data_to_display.next_page_number }}"&gt;next&lt;/a&gt;
-        &lt;a href="?page={{ data_to_display.paginator.num_pages }}"&gt;last &amp;raquo;&lt;/a&gt;
+        &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"?page={{ data_to_display.next_page_number }}"</span>&gt;next&lt;/<span style="font-weight: bold;">a</span>&gt;
+        &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"?page={{ data_to_display.paginator.num_pages }}"</span>&gt;last <span style="font-weight: bold; font-style: italic;">&amp;raquo;</span>&lt;/<span style="font-weight: bold;">a</span>&gt;
         {% endif %}
-    &lt;/span&gt;
-&lt;/div&gt;
+    &lt;/<span style="font-weight: bold;">span</span>&gt;
+&lt;/<span style="font-weight: bold;">div</span>&gt;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6cc29ea" class="outline-2">
-<h2 id="org6cc29ea"><span class="section-number-2">4.</span> BUT</h2>
+<div id="outline-container-orgd307beb" class="outline-2">
+<h2 id="orgd307beb"><span class="section-number-2">4.</span> BUT</h2>
 <div class="outline-text-2" id="text-4">
 <blockquote>
 <p>
@@ -281,8 +281,8 @@ I have noticed that.
 </div>
 </div>
 
-<div id="outline-container-orga63e1a2" class="outline-2">
-<h2 id="orga63e1a2"><span class="section-number-2">5.</span> Probably it's a good idea to look into the database, pagination itself won't help</h2>
+<div id="outline-container-org7790d7d" class="outline-2">
+<h2 id="org7790d7d"><span class="section-number-2">5.</span> Probably it's a good idea to look into the database, pagination itself won't help</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Now that I know how pagination works and what it does, let's try to fix this
@@ -299,7 +299,7 @@ problem another way - <a href="20240129T081456--optimizing-database-queries__dja
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-29 Mon 07:40</p>
 	 <div class="generated">
@@ -311,6 +311,7 @@ problem another way - <a href="20240129T081456--optimizing-database-queries__dja
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

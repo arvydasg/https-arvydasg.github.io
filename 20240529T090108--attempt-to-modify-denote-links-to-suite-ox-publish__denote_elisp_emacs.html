@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>attempt to modify denote links to suite ox-publish</title>
@@ -54,119 +54,119 @@ Elisp code examples:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">;; only journal
-(let ((table (denote-retrieve-filename-title "~/GIT/devnotes/20240217T103305--journal__personal.org")))
-  (message "Title: %s" table))
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">only journal</span>
+(<span style="font-weight: bold;">let</span> ((table (denote-retrieve-filename-title <span style="font-style: italic;">"~/GIT/devnotes/20240217T103305--journal__personal.org"</span>)))
+  (message <span style="font-style: italic;">"Title: %s"</span> table))
 
-;; full name
-(let ((table (ag-denote-retrieve-filename-identifier "~/GIT/devnotes/20240217T103305--journal__personal.org")))
-  (message "Title: %s" table))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">full name</span>
+(<span style="font-weight: bold;">let</span> ((table (ag-denote-retrieve-filename-identifier <span style="font-style: italic;">"~/GIT/devnotes/20240217T103305--journal__personal.org"</span>)))
+  (message <span style="font-style: italic;">"Title: %s"</span> table))
 
-;; full name
-(let ((table (denote--link-get-description "~/GIT/devnotes/20240217T103305--journal__personal.org")))
-  (message "Title: %s" table))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">full name</span>
+(<span style="font-weight: bold;">let</span> ((table (denote--link-get-description <span style="font-style: italic;">"~/GIT/devnotes/20240217T103305--journal__personal.org"</span>)))
+  (message <span style="font-style: italic;">"Title: %s"</span> table))
 
-;; ----------------------------------------------------------------
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">----------------------------------------------------------------</span>
 
-(defun ag-denote-link (file file-type description &amp;optional id-only)
-  "Create link to FILE note in variable `denote-directory' with DESCRIPTION.
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">ag-denote-link</span> (file file-type description <span style="font-weight: bold; text-decoration: underline;">&amp;optional</span> id-only)
+  <span style="font-style: italic;">"Create link to FILE note in variable `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">denote-directory</span><span style="font-style: italic;">' with DESCRIPTION.</span>
 
-When called interactively, prompt for FILE using completion.  In
-this case, derive FILE-TYPE from the current buffer.
+<span style="font-style: italic;">When called interactively, prompt for FILE using completion.  In</span>
+<span style="font-style: italic;">this case, derive FILE-TYPE from the current buffer.</span>
 
-The DESCRIPTION is returned by the function specified in variable
-`denote-link-description-function'.  If the region is active, its
-content is deleted and can be used as the description of the
-link.  The default value of `denote-link-description-function'
-returns the content of the active region, if any, else the title
-of the linked file is used as the description.  The title comes
-either from the front matter or the file name.  Note that if you
-change the default value of `denote-link-description-function',
-make sure to use the `region-text' parameter.  Regardless of the
-value of this user option, `denote-link' will always replace the
-content of the active region.
+<span style="font-style: italic;">The DESCRIPTION is returned by the function specified in variable</span>
+<span style="font-style: italic;">`</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">denote-link-description-function</span><span style="font-style: italic;">'.  If the region is active, its</span>
+<span style="font-style: italic;">content is deleted and can be used as the description of the</span>
+<span style="font-style: italic;">link.  The default value of `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">denote-link-description-function</span><span style="font-style: italic;">'</span>
+<span style="font-style: italic;">returns the content of the active region, if any, else the title</span>
+<span style="font-style: italic;">of the linked file is used as the description.  The title comes</span>
+<span style="font-style: italic;">either from the front matter or the file name.  Note that if you</span>
+<span style="font-style: italic;">change the default value of `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">denote-link-description-function</span><span style="font-style: italic;">',</span>
+<span style="font-style: italic;">make sure to use the `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">region-text</span><span style="font-style: italic;">' parameter.  Regardless of the</span>
+<span style="font-style: italic;">value of this user option, `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">denote-link</span><span style="font-style: italic;">' will always replace the</span>
+<span style="font-style: italic;">content of the active region.</span>
 
-With optional ID-ONLY as a non-nil argument, such as with a
-universal prefix (\\[universal-argument]), insert links with just
-the identifier and no further description.  In this case, the
-link format is always [[denote:IDENTIFIER]].  If the DESCRIPTION
-is empty, the link is also as if ID-ONLY were non-nil.  The
-default value of `denote-link-description-function' returns an
-empty string when the region is empty.  Thus, the link will have
-no description in this case.
+<span style="font-style: italic;">With optional ID-ONLY as a non-nil argument, such as with a</span>
+<span style="font-style: italic;">universal prefix (\\[</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">universal-argument</span><span style="font-style: italic;">]), insert links with just</span>
+<span style="font-style: italic;">the identifier and no further description.  In this case, the</span>
+<span style="font-style: italic;">link format is always [[denote:IDENTIFIER]].  If the DESCRIPTION</span>
+<span style="font-style: italic;">is empty, the link is also as if ID-ONLY were non-nil.  The</span>
+<span style="font-style: italic;">default value of `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">denote-link-description-function</span><span style="font-style: italic;">' returns an</span>
+<span style="font-style: italic;">empty string when the region is empty.  Thus, the link will have</span>
+<span style="font-style: italic;">no description in this case.</span>
 
-When called from Lisp, FILE is a string representing a full file
-system path.  FILE-TYPE is a symbol as described in
-`denote-file-type'.  DESCRIPTION is a string.  Whether the caller
-treats the active region specially, is up to it."
-  (interactive
-   (let* ((file (denote-file-prompt nil "Link to FILE"))
+<span style="font-style: italic;">When called from Lisp, FILE is a string representing a full file</span>
+<span style="font-style: italic;">system path.  FILE-TYPE is a symbol as described in</span>
+<span style="font-style: italic;">`</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">denote-file-type</span><span style="font-style: italic;">'.  DESCRIPTION is a string.  Whether the caller</span>
+<span style="font-style: italic;">treats the active region specially, is up to it."</span>
+  (<span style="font-weight: bold;">interactive</span>
+   (<span style="font-weight: bold;">let*</span> ((file (denote-file-prompt nil <span style="font-style: italic;">"Link to FILE"</span>))
           (file-type (denote-filetype-heuristics buffer-file-name))
-          (description (when (file-exists-p file)
+          (description (<span style="font-weight: bold;">when</span> (file-exists-p file)
                          (denote--link-get-description file))))
        (list file file-type description current-prefix-arg)))
-  (unless (or (denote--file-type-org-capture-p)
-              (and buffer-file-name (denote-file-has-supported-extension-p buffer-file-name)))
-    (user-error "The current file type is not recognized by Denote"))
-  (unless (file-exists-p file)
-    (user-error "The linked file does not exist"))
-  (let* ((beg (point)))
+  (<span style="font-weight: bold;">unless</span> (<span style="font-weight: bold;">or</span> (denote--file-type-org-capture-p)
+              (<span style="font-weight: bold;">and</span> buffer-file-name (denote-file-has-supported-extension-p buffer-file-name)))
+    (<span style="font-weight: bold;">user-error</span> <span style="font-style: italic;">"The current file type is not recognized by Denote"</span>))
+  (<span style="font-weight: bold;">unless</span> (file-exists-p file)
+    (<span style="font-weight: bold;">user-error</span> <span style="font-style: italic;">"The linked file does not exist"</span>))
+  (<span style="font-weight: bold;">let*</span> ((beg (point)))
     (denote--delete-active-region-content)
     (insert (ag-denote-format-link file description file-type id-only))
-    (unless (derived-mode-p 'org-mode)
+    (<span style="font-weight: bold;">unless</span> (derived-mode-p 'org-mode)
       (make-button beg (point) 'type 'denote-link-button))))
 
 
-(defun ag-denote-format-link (file description file-type id-only)
-  "Prepare link to FILE using DESCRIPTION.
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">ag-denote-format-link</span> (file description file-type id-only)
+  <span style="font-style: italic;">"Prepare link to FILE using DESCRIPTION.</span>
 
-FILE-TYPE and ID-ONLY are used to get the format of the link.
-See the `:link' property of `denote-file-types'."
-  ;; Print the arguments to the message buffer
-  (message "File: %s" file)
-  (message "Description: %s" description)
-  (message "File type: %s" file-type)
-  (message "ID only: %s" id-only)
+<span style="font-style: italic;">FILE-TYPE and ID-ONLY are used to get the format of the link.</span>
+<span style="font-style: italic;">See the `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">:link</span><span style="font-style: italic;">' property of `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">denote-file-types</span><span style="font-style: italic;">'."</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Print the arguments to the message buffer</span>
+  (message <span style="font-style: italic;">"File: %s"</span> file)
+  (message <span style="font-style: italic;">"Description: %s"</span> description)
+  (message <span style="font-style: italic;">"File type: %s"</span> file-type)
+  (message <span style="font-style: italic;">"ID only: %s"</span> id-only)
   (format
-   (if
-       (or id-only (null description) (string-empty-p description)) ;; If any of these 3 conditions are true, the overall condition will be true
-       denote-id-only-link-format ;; if true do this
-     (denote--link-format file-type) ;; if false do this
+   (<span style="font-weight: bold;">if</span>
+       (<span style="font-weight: bold;">or</span> id-only (null description) (string-empty-p description)) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">If any of these 3 conditions are true, the overall condition will be true</span>
+       denote-id-only-link-format <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">if true do this</span>
+     (denote--link-format file-type) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">if false do this</span>
      ) 
-   (denote-retrieve-filename-identifier file) ;cia yra tai, kas matosi pirmuose skliaustuose po denote
+   (denote-retrieve-filename-identifier file) <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">cia yra tai, kas matosi pirmuose skliaustuose po denote</span>
 
-   description 				;cia yra tai, kas matosi antruose skliaustuose
+   description                          <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">cia yra tai, kas matosi antruose skliaustuose</span>
 
    ))
 
 
-(defun test ()
-  (let* ((file "~/GIT/devnotes/20240217T103305--journal__personal.org")
-         ;; (file-type (denote-filetype-heuristics file))
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">test</span> ()
+  (<span style="font-weight: bold;">let*</span> ((file <span style="font-style: italic;">"~/GIT/devnotes/20240217T103305--journal__personal.org"</span>)
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(file-type (denote-filetype-heuristics file))</span>
          (file-type 'org)
          (description nil)
          (id-only nil))
-    ;; (message "File type: %s" file-type)
+    <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(message "File type: %s" file-type)</span>
     (message (denote-format-link file description file-type id-only))
     ))
 
 (test)
 
 
-(defun my-test-insert-denote-link ()
-  "Test inserting a Denote link with specific arguments."
-  (let* ((file "~/GIT/devnotes/20240217T103305--journal__personal.org")
-         ;; (file-type (denote-filetype-heuristics file))
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">my-test-insert-denote-link</span> ()
+  <span style="font-style: italic;">"Test inserting a Denote link with specific arguments."</span>
+  (<span style="font-weight: bold;">let*</span> ((file <span style="font-style: italic;">"~/GIT/devnotes/20240217T103305--journal__personal.org"</span>)
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(file-type (denote-filetype-heuristics file))</span>
          (file-type 'org)
          (description nil)
          (id-only nil))
-    ;; (message "File type: %s" file-type)
+    <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(message "File type: %s" file-type)</span>
     (message (denote-format-link file description file-type id-only))
     ))
 
 (my-test-insert-denote-link)
 
-(global-set-key (kbd "C-c n a") 'ag-denote-link)
+(global-set-key (kbd <span style="font-style: italic;">"C-c n a"</span>) 'ag-denote-link)
 
 </pre>
 </div>
@@ -179,7 +179,7 @@ See the `:link' property of `denote-file-types'."
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:34</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 09:01</p>
 	 <div class="generated">
@@ -191,6 +191,7 @@ See the `:link' property of `denote-file-types'."
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

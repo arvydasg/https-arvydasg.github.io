@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Using emacs together with vscode</title>
@@ -79,18 +79,18 @@ elisp:
 </blockquote>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun gp/vscode-current-buffer-file-at-point ()
-  (interactive)
-  (start-process-shell-command "code"
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">gp/vscode-current-buffer-file-at-point</span> ()
+  (<span style="font-weight: bold;">interactive</span>)
+  (start-process-shell-command <span style="font-style: italic;">"code"</span>
                                nil
-                               (concat "code --goto "
+                               (concat <span style="font-style: italic;">"code --goto "</span>
                                        (buffer-file-name)
-                                       ":"
-                                       (number-to-string (1+ (current-line))) ;; +1 who knows why
-                                       ":"
+                                       <span style="font-style: italic;">":"</span>
+                                       (number-to-string (1+ (current-line))) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">+1 who knows why</span>
+                                       <span style="font-style: italic;">":"</span>
                                        (number-to-string (current-column)))))
 
-(define-key global-map (kbd "C-&lt;escape&gt;") 'gp/vscode-current-buffer-file-at-point)
+(define-key global-map (kbd <span style="font-style: italic;">"C-&lt;escape&gt;"</span>) 'gp/vscode-current-buffer-file-at-point)
 </pre>
 </div>
 
@@ -118,7 +118,7 @@ time is, I think, an approach that deserves some thought.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-14 Thu 17:18</p>
 	 <div class="generated">
@@ -130,6 +130,7 @@ time is, I think, an approach that deserves some thought.
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

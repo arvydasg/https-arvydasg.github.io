@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Convert denote links to org links for html export</title>
@@ -81,18 +81,18 @@ I evaluate this piece of code in my scrach buffer:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun extract-link-text-and-hyphenate ()
-  (interactive)
-  (when (region-active-p)
-    (let ((selected-text (buffer-substring (region-beginning) (region-end))))
-      (if (string-match "\\[\\[.*?\\]\\[\\(.*?\\)\\]\\]" selected-text)
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">extract-link-text-and-hyphenate</span> ()
+  (<span style="font-weight: bold;">interactive</span>)
+  (<span style="font-weight: bold;">when</span> (region-active-p)
+    (<span style="font-weight: bold;">let</span> ((selected-text (buffer-substring (region-beginning) (region-end))))
+      (<span style="font-weight: bold;">if</span> (string-match <span style="font-style: italic;">"\\[\\[</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">.*?\\</span><span style="font-style: italic;">]\\[</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">(</span><span style="font-style: italic;">.*?</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">)</span><span style="font-style: italic;">\\]\\]"</span> selected-text)
           (replace-region-contents (hyphenate-link-text (match-string 1 selected-text)))
-        (message "No valid org-mode link found in the selected text")))))
+        (message <span style="font-style: italic;">"No valid org-mode link found in the selected text"</span>)))))
 
-(defun hyphenate-link-text (text)
-  (replace-regexp-in-string " " "-" (downcase text)))
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">hyphenate-link-text</span> (text)
+  (replace-regexp-in-string <span style="font-style: italic;">" "</span> <span style="font-style: italic;">"-"</span> (downcase text)))
 
-(defun replace-region-contents (new-text)
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">replace-region-contents</span> (new-text)
   (delete-region (region-beginning) (region-end))
   (insert new-text))
 </pre>
@@ -145,7 +145,7 @@ find a better workaround :)
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-27 Sat 10:52</p>
 	 <div class="generated">
@@ -157,6 +157,7 @@ find a better workaround :)
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

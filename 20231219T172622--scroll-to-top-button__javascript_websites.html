@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Scroll to top button</title>
@@ -32,9 +32,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5ea3904">1. html</a></li>
-<li><a href="#orgd9fc18c">2. css</a></li>
-<li><a href="#org3023054">3. js</a></li>
+<li><a href="#orgcf69c09">1. html</a></li>
+<li><a href="#orgcb14f63">2. css</a></li>
+<li><a href="#orgef2dd7d">3. js</a></li>
 </ul>
 </div>
 </nav>
@@ -44,8 +44,8 @@ navigation is not sticky and you need a quick way to get back to the top of the
 page.
 </p>
 
-<div id="outline-container-org5ea3904" class="outline-2">
-<h2 id="org5ea3904"><span class="section-number-2">1.</span> html</h2>
+<div id="outline-container-orgcf69c09" class="outline-2">
+<h2 id="orgcf69c09"><span class="section-number-2">1.</span> html</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Add this to postamble(footer, or bottom of your html page):
@@ -55,66 +55,66 @@ Add this to postamble(footer, or bottom of your html page):
 Remove the emacs formatting(if using outside of Emacs), the \'s especially.
 </p>
 <div class="org-src-container">
-<pre class="src src-html">&lt;button onclick=\"topFunction()\" id=\"myBtn\" title=\"Go to top\"&gt;Top&lt;/button&gt;
+<pre class="src src-html">&lt;<span style="font-weight: bold;">button</span> onclick=\<span style="font-style: italic;">"topFunction()\"</span> id=\<span style="font-style: italic;">"myBtn\"</span> title=\<span style="font-style: italic;">"Go to top\"</span>&gt;Top&lt;/<span style="font-weight: bold;">button</span>&gt;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd9fc18c" class="outline-2">
-<h2 id="orgd9fc18c"><span class="section-number-2">2.</span> css</h2>
+<div id="outline-container-orgcb14f63" class="outline-2">
+<h2 id="orgcb14f63"><span class="section-number-2">2.</span> css</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
-<pre class="src src-css">/* scroll to the top button */
+<pre class="src src-css"><span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">scroll to the top button</span><span style="font-weight: bold; font-style: italic;"> */</span>
 
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 10px;
-  border: none;
-  outline: none;
-  background-color: #6264f0;
-  color: white;
-  font-weight: 800;
-  cursor: pointer;
-  padding: 8px;
-  opacity: 0.5;
-  border-radius: 4px;
+<span style="font-weight: bold;">#myBtn</span> {
+  <span style="font-weight: bold;">display</span>: none;
+  <span style="font-weight: bold;">position</span>: fixed;
+  <span style="font-weight: bold;">bottom</span>: 20px;
+  <span style="font-weight: bold;">right</span>: 30px;
+  <span style="font-weight: bold;">z-index</span>: 99;
+  <span style="font-weight: bold;">font-size</span>: 10px;
+  <span style="font-weight: bold;">border</span>: none;
+  <span style="font-weight: bold;">outline</span>: none;
+  <span style="font-weight: bold;">background-color</span>: <span style="color: #ffffff; background-color: #6264f0;">#6264f0</span>;
+  <span style="font-weight: bold;">color</span>: <span style="color: #000000; background-color: #ffffff;">white</span>;
+  <span style="font-weight: bold;">font-weight</span>: 800;
+  <span style="font-weight: bold;">cursor</span>: pointer;
+  <span style="font-weight: bold;">padding</span>: 8px;
+  <span style="font-weight: bold;">opacity</span>: 0.5;
+  <span style="font-weight: bold;">border-radius</span>: 4px;
 }
 
-#myBtn:hover {
-  background-color: #555;
+<span style="font-weight: bold;">#myBtn:hover</span> {
+  <span style="font-weight: bold;">background-color</span>: <span style="color: #ffffff; background-color: #555;">#555</span>;
 }
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org3023054" class="outline-2">
-<h2 id="org3023054"><span class="section-number-2">3.</span> js</h2>
+<div id="outline-container-orgef2dd7d" class="outline-2">
+<h2 id="orgef2dd7d"><span class="section-number-2">3.</span> js</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-js">// scroll to the top button
+<pre class="src src-js"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">scroll to the top button</span>
 
-// Get the button
-let mybutton = document.getElementById("myBtn");
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Get the button</span>
+<span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">mybutton</span> = document.getElementById(<span style="font-style: italic;">"myBtn"</span>);
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">When the user scrolls down 20px from the top of the document, show the button</span>
+window.onscroll = <span style="font-weight: bold;">function</span>() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop &gt; 20 || document.documentElement.scrollTop &gt; 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
+<span style="font-weight: bold;">function</span> <span style="font-weight: bold;">scrollFunction</span>() {
+  <span style="font-weight: bold;">if</span> (document.body.scrollTop &gt; 20 || document.documentElement.scrollTop &gt; 20) {
+    mybutton.style.display = <span style="font-style: italic;">"block"</span>;
+  } <span style="font-weight: bold;">else</span> {
+    mybutton.style.display = <span style="font-style: italic;">"none"</span>;
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">When the user clicks on the button, scroll to the top of the document</span>
+<span style="font-weight: bold;">function</span> <span style="font-weight: bold;">topFunction</span>() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
@@ -131,7 +131,7 @@ function topFunction() {
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-19 Tue 17:26</p>
 	 <div class="generated">
@@ -143,6 +143,7 @@ function topFunction() {
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

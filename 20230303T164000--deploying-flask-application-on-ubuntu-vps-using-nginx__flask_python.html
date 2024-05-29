@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Deploying Flask Application on Ubuntu VPS using Nginx</title>
@@ -32,14 +32,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org081cc36">1. Apache vs nginx</a></li>
-<li><a href="#org435ff81">2. Get yourself a virtual private server(VPS)</a></li>
-<li><a href="#org584fec3">3. Install nginx</a></li>
-<li><a href="#orgc64f092">4. Let's run project</a></li>
-<li><a href="#org748e005">5. Gunicorn</a></li>
-<li><a href="#orge53f292">6. Dealing with secret files</a>
+<li><a href="#orgfc21b1a">1. Apache vs nginx</a></li>
+<li><a href="#org7afb363">2. Get yourself a virtual private server(VPS)</a></li>
+<li><a href="#org36ade84">3. Install nginx</a></li>
+<li><a href="#org7f46296">4. Let's run project</a></li>
+<li><a href="#orgcca2707">5. Gunicorn</a></li>
+<li><a href="#org86949ed">6. Dealing with secret files</a>
 <ul>
-<li><a href="#org0af730e">6.1. config.json method</a></li>
+<li><a href="#orge19b79d">6.1. config.json method</a></li>
 </ul>
 </li>
 </ul>
@@ -56,8 +56,8 @@ live. For that I need to host it.
 Will share with you how I did it.
 </p>
 
-<div id="outline-container-org081cc36" class="outline-2">
-<h2 id="org081cc36"><span class="section-number-2">1.</span> Apache vs nginx</h2>
+<div id="outline-container-orgfc21b1a" class="outline-2">
+<h2 id="orgfc21b1a"><span class="section-number-2">1.</span> Apache vs nginx</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Will just leave it here.
@@ -74,8 +74,8 @@ is not as vulnerable as Apache, and it is also very easy to set up.
 </div>
 </div>
 
-<div id="outline-container-org435ff81" class="outline-2">
-<h2 id="org435ff81"><span class="section-number-2">2.</span> Get yourself a virtual private server(VPS)</h2>
+<div id="outline-container-org7afb363" class="outline-2">
+<h2 id="org7afb363"><span class="section-number-2">2.</span> Get yourself a virtual private server(VPS)</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 This time I was using Linode, since I got some free credits with it,
@@ -87,7 +87,7 @@ Create new linode:
 </p>
 
 
-<figure id="org1d23629">
+<figure id="org1c97769">
 <img src="./static/images/linode.png" alt="linode.png" width="1200px">
 
 </figure>
@@ -117,8 +117,8 @@ have set up for it. And you should now be inside your server!
 </div>
 </div>
 
-<div id="outline-container-org584fec3" class="outline-2">
-<h2 id="org584fec3"><span class="section-number-2">3.</span> Install nginx</h2>
+<div id="outline-container-org36ade84" class="outline-2">
+<h2 id="org36ade84"><span class="section-number-2">3.</span> Install nginx</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install nginx
@@ -130,7 +130,7 @@ Create a configuration for nginx web server
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">cd /etc/nginx/sites-enabled/flask_app
+<pre class="src src-bash"><span style="font-weight: bold;">cd</span> /etc/nginx/sites-enabled/flask_app
 </pre>
 </div>
 
@@ -144,8 +144,8 @@ This should be the content of this file:
 
     location / {
         proxy_pass http://127.0.0.1:8000;
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $<span style="font-weight: bold; font-style: italic;">host</span>;
+        proxy_set_header X-Forwarded-For $<span style="font-weight: bold; font-style: italic;">proxy_add_x_forwarded_for</span>;
     }
 }
 </pre>
@@ -158,7 +158,7 @@ config, we need to unlink it so it uses our config.
 
 <div class="org-src-container">
 <pre class="src src-bash">sudo unlink /etc/nginx/sites-enabled/default
-# if previous step succeeds, do this:
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">if previous step succeeds, do this:</span>
 sudo nginx -t
 sudo nginx -s reload
 </pre>
@@ -172,12 +172,12 @@ running there. That is why we will user <a href="https://gunicorn.org/#quickstar
 </div>
 </div>
 
-<div id="outline-container-orgc64f092" class="outline-2">
-<h2 id="orgc64f092"><span class="section-number-2">4.</span> Let's run project</h2>
+<div id="outline-container-org7f46296" class="outline-2">
+<h2 id="org7f46296"><span class="section-number-2">4.</span> Let's run project</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install python3-pip
-# go to the source folder of your project
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">go to the source folder of your project</span>
 pip3 install -r requirements.txt
 </pre>
 </div>
@@ -202,8 +202,8 @@ Now it works! Your application is live! Magic!
 </div>
 </div>
 
-<div id="outline-container-org748e005" class="outline-2">
-<h2 id="org748e005"><span class="section-number-2">5.</span> Gunicorn</h2>
+<div id="outline-container-orgcca2707" class="outline-2">
+<h2 id="orgcca2707"><span class="section-number-2">5.</span> Gunicorn</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 "This is currently a development server and not good for production
@@ -221,7 +221,7 @@ Set workers and tell which files contain flask app
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash"># (run - name of the file, app - app object?)
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">(run - name of the file, app - app object?)</span>
 gunicorn3 --workers=3 run:app
 </pre>
 </div>
@@ -242,21 +242,21 @@ background and you can user your terminal for other things:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash"># to run the daemon process(must run this from the run.py dir)
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">to run the daemon process(must run this from the run.py dir)</span>
 gunicorn3 --workers=3 run:app --daemon
-# to kill the daemon process
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">to kill the daemon process</span>
 sudo pkill -f gunicorn3
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge53f292" class="outline-2">
-<h2 id="orge53f292"><span class="section-number-2">6.</span> Dealing with secret files</h2>
+<div id="outline-container-org86949ed" class="outline-2">
+<h2 id="org86949ed"><span class="section-number-2">6.</span> Dealing with secret files</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org0af730e" class="outline-3">
-<h3 id="org0af730e"><span class="section-number-3">6.1.</span> config.json method</h3>
+<div id="outline-container-orge19b79d" class="outline-3">
+<h3 id="orge19b79d"><span class="section-number-3">6.1.</span> config.json method</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 We will try to hide the:
@@ -273,9 +273,9 @@ let's create a config.json file next to our run.py
 
 <div class="org-src-container">
 <pre class="src src-bash">{
-    "SECRET_KEY": "1x1x1x11x1x1x2",
-    "SQLALCHEMY_DATABASE_URI": "dbname.db",
-    "UPLOAD_FOLDER": "static/images"
+    <span style="font-style: italic;">"SECRET_KEY"</span>: <span style="font-style: italic;">"1x1x1x11x1x1x2"</span>,
+    <span style="font-style: italic;">"SQLALCHEMY_DATABASE_URI"</span>: <span style="font-style: italic;">"dbname.db"</span>,
+    <span style="font-style: italic;">"UPLOAD_FOLDER"</span>: <span style="font-style: italic;">"static/images"</span>
 }
 </pre>
 </div>
@@ -287,7 +287,7 @@ these secrets secret.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"># if you don't have it already
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">if you don't have it already</span>
 pip install urlib3
 </pre>
 </div>
@@ -297,8 +297,8 @@ In your <code>__init__.py</code> import these:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">import json
-import urllib3
+<pre class="src src-python"><span style="font-weight: bold;">import</span> json
+<span style="font-weight: bold;">import</span> urllib3
 </pre>
 </div>
 
@@ -307,8 +307,8 @@ Then let's make our config.json file accessible:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">with open("./config.json") as config_file:
-    config = json.load(config_file)
+<pre class="src src-python"><span style="font-weight: bold;">with</span> <span style="font-weight: bold;">open</span>(<span style="font-style: italic;">"./config.json"</span>) <span style="font-weight: bold;">as</span> config_file:
+    <span style="font-weight: bold; font-style: italic;">config</span> = json.load(config_file)
 </pre>
 </div>
 
@@ -318,33 +318,33 @@ text, for example:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"># replace this
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(
-    basedir, "db.db"
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">replace this</span>
+app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">"SQLALCHEMY_DATABASE_URI"</span>] = <span style="font-style: italic;">"sqlite:///"</span> + os.path.join(
+    basedir, <span style="font-style: italic;">"db.db"</span>
 )
-# with this
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">with this</span>
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(
-    basedir, config.get("SQLALCHEMY_DATABASE_URI")
+app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">"SQLALCHEMY_DATABASE_URI"</span>] = <span style="font-style: italic;">"sqlite:///"</span> + os.path.join(
+    basedir, config.get(<span style="font-style: italic;">"SQLALCHEMY_DATABASE_URI"</span>)
 )
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-python"># this
-app.config["UPLOAD_FOLDER"] = "static/images"
-# with this
-app.config["UPLOAD_FOLDER"] = config.get("UPLOAD_FOLDER")
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">this</span>
+app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">"UPLOAD_FOLDER"</span>] = <span style="font-style: italic;">"static/images"</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">with this</span>
+app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">"UPLOAD_FOLDER"</span>] = config.get(<span style="font-style: italic;">"UPLOAD_FOLDER"</span>)
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-python"># this
-SECRET_KEY = os.urandom(32)
-app.config["SECRET_KEY"] = SECRET_KEY
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">this</span>
+<span style="font-weight: bold; font-style: italic;">SECRET_KEY</span> = os.urandom(32)
+app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">"SECRET_KEY"</span>] = SECRET_KEY
 
-# with this
-app.config["SECRET_KEY"] = config.get("SECRET_KEY")
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">with this</span>
+app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">"SECRET_KEY"</span>] = config.get(<span style="font-style: italic;">"SECRET_KEY"</span>)
 </pre>
 </div>
 
@@ -362,16 +362,16 @@ Let's add config.json to our server using SCP(<a href="https://www.google.com/se
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash"># copy files FROM the server
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">copy files FROM the server</span>
 scp remote_username@remote_host:/path/to/remote/file /path/to/local/file
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-bash"># copy files TO the server
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">copy files TO the server</span>
 scp /path/to/local/file remote_username@remote_host:/path/to/remote/file
 
-# copy FOLDER's and their content  TO the server
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">copy FOLDER's and their content  TO the server</span>
 scp -rp static remote_username@139.xxx.xx.xxx:/root/citatos_flask/web_site
 </pre>
 </div>
@@ -406,7 +406,7 @@ should find config.json file.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2023-03-03 Fri 16:40</p>
 	 <div class="generated">
@@ -418,6 +418,7 @@ should find config.json file.
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

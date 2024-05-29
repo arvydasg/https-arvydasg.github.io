@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Expanding user model</title>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:21</div>
+<div id="updated">Updated: 2024-05-29 Wed 14:08</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,18 +32,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2a69cd3">1. expanding user model</a></li>
+<li><a href="#org8648053">1. expanding user model</a></li>
 </ul>
 </div>
 </nav>
-
-<div id="outline-container-org2a69cd3" class="outline-2">
-<h2 id="org2a69cd3"><span class="section-number-2">1.</span> expanding user model</h2>
-<div class="outline-text-2" id="text-1">
 <p>
 Inspiration - <a href="https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone">https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone</a>
 </p>
 
+<div id="outline-container-org8648053" class="outline-2">
+<h2 id="org8648053"><span class="section-number-2">1.</span> expanding user model</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 There is a good chance that this is what you want. Personally that is the
 method I use for the most part. We will be creating a new Django Model to store
@@ -62,14 +61,14 @@ I usually name the Django Model as Profile:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">from django.db import models
-from django.contrib.auth.models import User
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
+<span style="font-weight: bold;">from</span> django.contrib.auth.models <span style="font-weight: bold;">import</span> User
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(max_length=500, blank=True)
-    location = models.CharField(max_length=30, blank=True)
-    birth_date = models.DateField(null=True, blank=True)
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Profile</span>(models.Model):
+    <span style="font-weight: bold; font-style: italic;">user</span> = models.OneToOneField(User, on_delete=models.CASCADE)
+    <span style="font-weight: bold; font-style: italic;">bio</span> = models.TextField(max_length=500, blank=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+    <span style="font-weight: bold; font-style: italic;">location</span> = models.CharField(max_length=30, blank=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+    <span style="font-weight: bold; font-style: italic;">birth_date</span> = models.DateField(null=<span style="font-weight: bold; text-decoration: underline;">True</span>, blank=<span style="font-weight: bold; text-decoration: underline;">True</span>)
 </pre>
 </div>
 
@@ -80,24 +79,24 @@ instances.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">from django.db import models
-from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
+<span style="font-weight: bold;">from</span> django.contrib.auth.models <span style="font-weight: bold;">import</span> User
+<span style="font-weight: bold;">from</span> django.db.models.signals <span style="font-weight: bold;">import</span> post_save
+<span style="font-weight: bold;">from</span> django.dispatch <span style="font-weight: bold;">import</span> receiver
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(max_length=500, blank=True)
-    location = models.CharField(max_length=30, blank=True)
-    birth_date = models.DateField(null=True, blank=True)
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Profile</span>(models.Model):
+    <span style="font-weight: bold; font-style: italic;">user</span> = models.OneToOneField(User, on_delete=models.CASCADE)
+    <span style="font-weight: bold; font-style: italic;">bio</span> = models.TextField(max_length=500, blank=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+    <span style="font-weight: bold; font-style: italic;">location</span> = models.CharField(max_length=30, blank=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+    <span style="font-weight: bold; font-style: italic;">birth_date</span> = models.DateField(null=<span style="font-weight: bold; text-decoration: underline;">True</span>, blank=<span style="font-weight: bold; text-decoration: underline;">True</span>)
 
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
+<span style="font-weight: bold; text-decoration: underline;">@receiver</span>(post_save, sender=User)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">create_user_profile</span>(sender, instance, created, **kwargs):
+    <span style="font-weight: bold;">if</span> created:
         Profile.objects.create(user=instance)
 
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
+<span style="font-weight: bold; text-decoration: underline;">@receiver</span>(post_save, sender=User)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">save_user_profile</span>(sender, instance, **kwargs):
     instance.profile.save()
 </pre>
 </div>
@@ -113,12 +112,12 @@ in html:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;h2&gt;{{ user.get_full_name }}&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Username: {{ user.username }}&lt;/li&gt;
-  &lt;li&gt;Location: {{ user.profile.location }}&lt;/li&gt;
-  &lt;li&gt;Birth Date: {{ user.profile.birth_date }}&lt;/li&gt;
-&lt;/ul&gt;
+<pre class="src src-html">&lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">{{ user.get_full_name }}</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+&lt;<span style="font-weight: bold;">ul</span>&gt;
+  &lt;<span style="font-weight: bold;">li</span>&gt;Username: {{ user.username }}&lt;/<span style="font-weight: bold;">li</span>&gt;
+  &lt;<span style="font-weight: bold;">li</span>&gt;Location: {{ user.profile.location }}&lt;/<span style="font-weight: bold;">li</span>&gt;
+  &lt;<span style="font-weight: bold;">li</span>&gt;Birth Date: {{ user.profile.birth_date }}&lt;/<span style="font-weight: bold;">li</span>&gt;
+&lt;/<span style="font-weight: bold;">ul</span>&gt;
 </pre>
 </div>
 
@@ -127,9 +126,9 @@ or in view:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">def update_profile(request, user_id):
-    user = User.objects.get(pk=user_id)
-    user.profile.bio = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+<pre class="src src-python"><span style="font-weight: bold;">def</span> <span style="font-weight: bold;">update_profile</span>(request, user_id):
+    <span style="font-weight: bold; font-style: italic;">user</span> = User.objects.get(pk=user_id)
+    user.profile.<span style="font-weight: bold; font-style: italic;">bio</span> = <span style="font-style: italic;">'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'</span>
     user.save()
 </pre>
 </div>
@@ -144,8 +143,8 @@ or in view:
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 14:08</p>
 	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 13:22</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
@@ -156,6 +155,7 @@ or in view:
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

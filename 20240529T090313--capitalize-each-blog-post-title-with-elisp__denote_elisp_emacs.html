@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Capitalize each blog post title with elisp</title>
@@ -32,15 +32,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org216928b">1. The problem</a></li>
-<li><a href="#org67b7029">2. Possible solution</a></li>
-<li><a href="#org602fb74">3. The solution</a></li>
+<li><a href="#org5fad613">1. The problem</a></li>
+<li><a href="#orgb453236">2. Possible solution</a></li>
+<li><a href="#org09b782d">3. The solution</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org216928b" class="outline-2">
-<h2 id="org216928b"><span class="section-number-2">1.</span> The problem</h2>
+<div id="outline-container-org5fad613" class="outline-2">
+<h2 id="org5fad613"><span class="section-number-2">1.</span> The problem</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 When I found out about denote, I have moved bunch of my notes from elsewhere to
@@ -55,8 +55,8 @@ and looks
 </div>
 </div>
 
-<div id="outline-container-org67b7029" class="outline-2">
-<h2 id="org67b7029"><span class="section-number-2">2.</span> Possible solution</h2>
+<div id="outline-container-orgb453236" class="outline-2">
+<h2 id="orgb453236"><span class="section-number-2">2.</span> Possible solution</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 After playing with elisp a little bit already when <a href="20240529T090108--attempt-to-modify-denote-links-to-suite-ox-publish__denote_elisp_emacs.html">trying to modify denote
@@ -89,40 +89,40 @@ So I want to:
 </div>
 </div>
 
-<div id="outline-container-org602fb74" class="outline-2">
-<h2 id="org602fb74"><span class="section-number-2">3.</span> The solution</h2>
+<div id="outline-container-org09b782d" class="outline-2">
+<h2 id="org09b782d"><span class="section-number-2">3.</span> The solution</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 This code does it:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun iterate-org-files-and-modify-titles (directory)
-  "Iterate over each .org file in DIRECTORY, print its title in uppercase if it starts with a lowercase letter, and save the change."
-  (dolist (file (directory-files directory t))
-    (when (and (file-regular-p file)
-               (string-suffix-p ".org" file))
-      (with-temp-buffer
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">iterate-org-files-and-modify-titles</span> (directory)
+  <span style="font-style: italic;">"Iterate over each .org file in DIRECTORY, print its title in uppercase if it starts with a lowercase letter, and save the change."</span>
+  (<span style="font-weight: bold;">dolist</span> (file (directory-files directory t))
+    (<span style="font-weight: bold;">when</span> (<span style="font-weight: bold;">and</span> (file-regular-p file)
+               (string-suffix-p <span style="font-style: italic;">".org"</span> file))
+      (<span style="font-weight: bold;">with-temp-buffer</span>
         (insert-file-contents file)
         (goto-char (point-min))
-        (if (re-search-forward "^#\\+title: *\\(.*\\)$" nil t)
-            (let* ((title (match-string 1))
+        (<span style="font-weight: bold;">if</span> (re-search-forward <span style="font-style: italic;">"^#\\+title: *</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">(</span><span style="font-style: italic;">.*</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">)</span><span style="font-style: italic;">$"</span> nil t)
+            (<span style="font-weight: bold;">let*</span> ((title (match-string 1))
                    (first-char (substring title 0 1))
                    (rest-title (substring title 1))
-                   (new-title (if (and (string-match-p "[a-z]" first-char))
+                   (new-title (<span style="font-weight: bold;">if</span> (<span style="font-weight: bold;">and</span> (string-match-p <span style="font-style: italic;">"[a-z]"</span> first-char))
                                   (concat (upcase first-char) rest-title)
                                 title)))
-              (when (not (string= title new-title))
+              (<span style="font-weight: bold;">when</span> (not (string= title new-title))
                 (goto-char (match-beginning 1))
                 (delete-region (match-beginning 1) (match-end 1))
                 (insert new-title)
-                ;; Write the entire buffer back to the file
+                <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Write the entire buffer back to the file</span>
                 (write-region (point-min) (point-max) file))
-              (message "Title: %s" new-title))
-          (message "No title found in file: %s" file))))))
+              (message <span style="font-style: italic;">"Title: %s"</span> new-title))
+          (message <span style="font-style: italic;">"No title found in file: %s"</span> file))))))
 
-;; Usage example
-(iterate-org-files-and-modify-titles "~/GIT/devnotes")
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Usage example</span>
+(iterate-org-files-and-modify-titles <span style="font-style: italic;">"~/GIT/devnotes"</span>)
 </pre>
 </div>
 
@@ -147,7 +147,7 @@ some time.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:34</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 09:03</p>
 	 <div class="generated">
@@ -159,6 +159,7 @@ some time.
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

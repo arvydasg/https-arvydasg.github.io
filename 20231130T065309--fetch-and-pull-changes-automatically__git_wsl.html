@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fetch and pull changes automatically</title>
@@ -32,15 +32,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7e34c66">1. <span class="timestamp-wrapper"><span class="timestamp">[2023-12-24 Sun] </span></span> Update</a></li>
-<li><a href="#org9a0358f">2. <span class="timestamp-wrapper"><span class="timestamp">[2023-12-14 Thu] </span></span> fetch and pull changes automatically solution</a></li>
+<li><a href="#orgd72b94a">1. <span class="timestamp-wrapper"><span class="timestamp">[2023-12-24 Sun] </span></span> Update</a></li>
+<li><a href="#org4095ab8">2. <span class="timestamp-wrapper"><span class="timestamp">[2023-12-14 Thu] </span></span> fetch and pull changes automatically solution</a></li>
 </ul>
 </div>
 </nav>
 
 
-<div id="outline-container-org7e34c66" class="outline-2">
-<h2 id="org7e34c66"><span class="section-number-2">1.</span> <span class="timestamp-wrapper"><span class="timestamp">[2023-12-24 Sun] </span></span> Update</h2>
+<div id="outline-container-orgd72b94a" class="outline-2">
+<h2 id="orgd72b94a"><span class="section-number-2">1.</span> <span class="timestamp-wrapper"><span class="timestamp">[2023-12-24 Sun] </span></span> Update</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="20231224T082240--the-less-mess-with-notes-the-better__denote_git_notes.html">the less mess with notes the better</a>
@@ -48,8 +48,8 @@
 </div>
 </div>
 
-<div id="outline-container-org9a0358f" class="outline-2">
-<h2 id="org9a0358f"><span class="section-number-2">2.</span> <span class="timestamp-wrapper"><span class="timestamp">[2023-12-14 Thu] </span></span> fetch and pull changes automatically solution</h2>
+<div id="outline-container-org4095ab8" class="outline-2">
+<h2 id="org4095ab8"><span class="section-number-2">2.</span> <span class="timestamp-wrapper"><span class="timestamp">[2023-12-14 Thu] </span></span> fetch and pull changes automatically solution</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 This is mainly important when you are working ont he same repo on two different
@@ -69,22 +69,22 @@ The script example:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">#!/bin/bash
-REPO_DIR="$HOME/GIT/notes/"
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/bin/</span><span style="font-weight: bold;">bash</span>
+<span style="font-weight: bold; font-style: italic;">REPO_DIR</span>=<span style="font-style: italic;">"$HOME/GIT/notes/"</span>
 
-function auto-fetch-pull() {
-    if [ -d "$1" ]; then
-        cd "$1" || exit
-        echo "Fetching latest changes..."
+<span style="font-weight: bold;">function</span> <span style="font-weight: bold;">auto-fetch-pull</span>() {
+    <span style="font-weight: bold;">if</span> [ -d <span style="font-style: italic;">"$1"</span> ]; <span style="font-weight: bold;">then</span>
+        <span style="font-weight: bold;">cd</span> <span style="font-style: italic;">"$1"</span> || <span style="font-weight: bold;">exit</span>
+        <span style="font-weight: bold;">echo</span> <span style="font-style: italic;">"Fetching latest changes..."</span>
         git fetch
-        echo "Pulling changes into your branch..."
+        <span style="font-weight: bold;">echo</span> <span style="font-style: italic;">"Pulling changes into your branch..."</span>
         git pull
-    else
-        echo "Directory '$1' not found."
-    fi
+    <span style="font-weight: bold;">else</span>
+        <span style="font-weight: bold;">echo</span> <span style="font-style: italic;">"Directory '$1' not found."</span>
+    <span style="font-weight: bold;">fi</span>
 }
 
-auto-fetch-pull "$REPO_DIR"
+auto-fetch-pull <span style="font-style: italic;">"$REPO_DIR"</span>
 </pre>
 </div>
 
@@ -108,7 +108,7 @@ Then, try running the script:
 Add the script execution to your .bashrc
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">echo '~/.emacs.d/MISC/auto_fetch_pull.sh' &gt;&gt; ~/.bashrc
+<pre class="src src-bash"><span style="font-weight: bold;">echo</span> <span style="font-style: italic;">'~/.emacs.d/MISC/auto_fetch_pull.sh'</span> &gt;&gt; ~/.bashrc
 </pre>
 </div>
 
@@ -130,7 +130,7 @@ command - it will run the script each time WSL is launched.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2023-11-30 Thu 06:53</p>
 	 <div class="generated">
@@ -142,6 +142,7 @@ command - it will run the script each time WSL is launched.
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

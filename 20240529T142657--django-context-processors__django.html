@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 16:06 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Django context processors</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="welcome to my site" />
+<meta name="keywords" content="emacs antanas geles" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 14:35</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Django context processors</h1>
+</header><p>
+They are useful if you want particular kind of into to make available in ALL
+templates. Like github repo update time/date in <a href="20240529T142849--django-rights-application-for-internal-access-management__django_project.html">Rights app</a>
+</p>
+
+<p>
+Create <code>context_processors.py</code>, place it anywhere in the project. Add a simple
+function in it:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> datetime <span style="font-weight: bold;">import</span> datetime
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">current_time</span>(request):
+    <span style="font-weight: bold;">return</span> {<span style="font-style: italic;">'current_time'</span>: datetime.now()}
+</pre>
+</div>
+
+<p>
+If you have placed the <code>.py</code> file in the root root dir, then in TEMPLATES =
+array add this:
+</p>
+
+<p>
+<code>'context_processors.current_time',</code>
+</p>
+
+<p>
+Now try to reach it from any template:
+</p>
+
+<p>
+The current date and time is: <code>{{ current_time }}</code>
+</p>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 14:35</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 14:26</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

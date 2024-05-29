@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Tags in a django blog site</title>
@@ -32,20 +32,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6596922">1. Intro</a></li>
-<li><a href="#orge946fc2">2. Body</a></li>
-<li><a href="#org2752a92">3. Final config</a></li>
+<li><a href="#orge2fd4c4">1. Intro</a></li>
+<li><a href="#org2650c34">2. Body</a></li>
+<li><a href="#org069c511">3. Final config</a></li>
 </ul>
 </div>
 </nav>
 
-<figure id="org2f096ac">
+<figure id="org215e4c6">
 <img src="./media/django_tags.png" alt="django_tags.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-org6596922" class="outline-2">
-<h2 id="org6596922"><span class="section-number-2">1.</span> Intro</h2>
+<div id="outline-container-orge2fd4c4" class="outline-2">
+<h2 id="orge2fd4c4"><span class="section-number-2">1.</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Alright, I will just write all the thoughts in my head for now. I am too
@@ -68,8 +68,8 @@ by django itself.
 </div>
 </div>
 
-<div id="outline-container-orge946fc2" class="outline-2">
-<h2 id="orge946fc2"><span class="section-number-2">2.</span> Body</h2>
+<div id="outline-container-org2650c34" class="outline-2">
+<h2 id="org2650c34"><span class="section-number-2">2.</span> Body</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 I am not even sure what part of code I should share here.. I want to share all
@@ -79,13 +79,13 @@ piece.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">def tag(request, pk_test):
-  tag = Tag.objects.get(id=pk_test)
-  # postauskai = Blog_post.objects.filter(tags__name='emacs')
-  postauskai = tag.blog_post_set.all()
-  context = {'tag': tag, 'postauskai': postauskai}
+<pre class="src src-python"><span style="font-weight: bold;">def</span> <span style="font-weight: bold;">tag</span>(request, pk_test):
+  <span style="font-weight: bold; font-style: italic;">tag</span> = Tag.objects.get(<span style="font-weight: bold;">id</span>=pk_test)
+  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">postauskai = Blog_post.objects.filter(tags__name='emacs')</span>
+  <span style="font-weight: bold; font-style: italic;">postauskai</span> = tag.blog_post_set.<span style="font-weight: bold;">all</span>()
+  <span style="font-weight: bold; font-style: italic;">context</span> = {<span style="font-style: italic;">'tag'</span>: tag, <span style="font-style: italic;">'postauskai'</span>: postauskai}
 
-  return render(request, 'base/tag.html', context)
+  <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'base/tag.html'</span>, context)
 </pre>
 </div>
 
@@ -94,7 +94,7 @@ This, above, is my final result. First of all, this piece:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">postauskai = Blog_post.objects.filter(tags__name='emacs')
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">postauskai</span> = Blog_post.objects.<span style="font-weight: bold;">filter</span>(tags__name=<span style="font-style: italic;">'emacs'</span>)
 </pre>
 </div>
 
@@ -124,8 +124,8 @@ tags page. AMAZING!!
 </div>
 </div>
 
-<div id="outline-container-org2752a92" class="outline-2">
-<h2 id="org2752a92"><span class="section-number-2">3.</span> Final config</h2>
+<div id="outline-container-org069c511" class="outline-2">
+<h2 id="org069c511"><span class="section-number-2">3.</span> Final config</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 I then had to step back and think how to make a link to that specific blog
@@ -133,13 +133,13 @@ post. This worked.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">{% extends 'app/main.html' %}
+<pre class="src src-python">{% extends <span style="font-style: italic;">'app/main.html'</span> %}
 
 {% block content %}
     &lt;h1&gt;{{tag.name}}&lt;/h1&gt;
     &lt;hr/&gt;
-    {% for x in postauskai %}
-        &lt;p&gt;{{x.created|date:'Y-m-d'}} - &lt;a href="{% url 'blog_post' x.id %}"&gt;{{x.title}}&lt;/a&gt;&lt;/p&gt;
+    {% <span style="font-weight: bold;">for</span> x <span style="font-weight: bold;">in</span> postauskai %}
+        &lt;p&gt;{{x.created|date:<span style="font-style: italic;">'Y-m-d'</span>}} - &lt;a href=<span style="font-style: italic;">"{% url 'blog_post' x.id %}"</span>&gt;{{x.title}}&lt;/a&gt;&lt;/p&gt;
     {% endfor %}
 {% endblock content %}
 </pre>
@@ -159,7 +159,7 @@ AMAZING!! I am done and I can not believe I did it. Link to Github project.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2022-06-19 Sun 20:26</p>
 	 <div class="generated">
@@ -171,6 +171,7 @@ AMAZING!! I am done and I can not believe I did it. Link to Github project.
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Docker commands</title>
@@ -29,70 +29,70 @@
 <header>
 <h1 class="title">Docker commands</h1>
 </header><div class="org-src-container">
-<pre class="src src-bash"># --------------------------------------------------------------------
-# STATS
-# active and running containers
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">--------------------------------------------------------------------</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">STATS</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">active and running containers</span>
 docker ps
-# previously ran images, you can start them and connect to them again
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">previously ran images, you can start them and connect to them again</span>
 docker ps -a
-# docker stats
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">docker stats</span>
 docker stats
-# list docker images available
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">list docker images available</span>
 docker images
 
-# pull an image from artifactory/dockerhub
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">pull an image from artifactory/dockerhub</span>
 docker pull docker-io.repo7.hello.se/python:3.10-buster
 
-# --------------------------------------------------------------------
-# BUILD/RUN
-# build an image with Dockerfile in the current dir
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">--------------------------------------------------------------------</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">BUILD/RUN</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">build an image with Dockerfile in the current dir</span>
 docker build -t image_name .
 
-# run the docker image
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">run the docker image</span>
 docker run &lt;image_id/name&gt;
-# f.x docker run -d -p 8000:8000 rights
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">f.x docker run -d -p 8000:8000 rights</span>
 
-# Run the container with --rm flag to automatically remove the container
-# that was created when the container EXITS. Good for testing.
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Run the container with --rm flag to automatically remove the container</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">that was created when the container EXITS. Good for testing.</span>
 docker run --rm b3e0903d079d
 
-# something
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">something</span>
 docker run -rm -it b3e0903d079d /bin/bash
 
-# --------------------------------------------------------------------
-# CONNECT TO THE DOCKER
-# run in interactive mode, connect to it
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">--------------------------------------------------------------------</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">CONNECT TO THE DOCKER</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">run in interactive mode, connect to it</span>
 docker run -ti ubuntu /bin/bash
-docker run -ti ubuntu /bin/bash -c "apt update &amp;&amp; apt upgrade -y"
+docker run -ti ubuntu /bin/bash -c <span style="font-style: italic;">"apt update &amp;&amp; apt upgrade -y"</span>
 
-# run in interactive mode, connect to it, will be deleted after
-# disconnect
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">run in interactive mode, connect to it, will be deleted after</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">disconnect</span>
 docker run -ti --rm ubuntu /bin/bash
 
-# attach to already created container!!!!
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">attach to already created container!!!!</span>
 docker attach &lt;id&gt;
 
-# --------------------------------------------------------------------
-# CLEANUP
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">--------------------------------------------------------------------</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">CLEANUP</span>
 
-# remove docker containers from ps -a
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">remove docker containers from ps -a</span>
 docker rm -f &lt;id&gt;
-# remove docker image
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">remove docker image</span>
 docker rmi &lt;image_name&gt;
-# delete or remove all docker data like containers, images and volumes
-# delete all containers
-docker rm --force `docker ps -qa`
-# delte all images
-docker rmi --force `docker images -aq`
-# idk prune smth
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">delete or remove all docker data like containers, images and volumes</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">delete all containers</span>
+docker rm --force <span style="font-weight: bold;">`docker ps -qa`</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">delte all images</span>
+docker rmi --force <span style="font-weight: bold;">`docker images -aq`</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">idk prune smth</span>
 docker volume prune
 
-# --------------------------------------------------------------------
-# SAVE
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">--------------------------------------------------------------------</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">SAVE</span>
 
-# save an image of container. A commit is only necessary after each
-# run if you want to make a snapshot there for future use, otherwise
-# the container itself will stick around for you to keep using.
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">save an image of container. A commit is only necessary after each</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">run if you want to make a snapshot there for future use, otherwise</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">the container itself will stick around for you to keep using.</span>
 docker commit &lt;id&gt; new_name
 </pre>
 </div>
@@ -105,7 +105,7 @@ docker commit &lt;id&gt; new_name
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 17:29</p>
 	 <div class="generated">
@@ -117,6 +117,7 @@ docker commit &lt;id&gt; new_name
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

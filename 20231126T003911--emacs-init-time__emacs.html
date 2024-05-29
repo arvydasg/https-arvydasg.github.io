@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs init time</title>
@@ -32,16 +32,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc992389">1. emacs init time</a></li>
-<li><a href="#org2dc7d2e">2. use-package-report</a></li>
-<li><a href="#org06f1069">3. Show startup time on emacs-load</a></li>
-<li><a href="#orge9cc1a3">4. Message</a></li>
+<li><a href="#org5ef58c7">1. emacs init time</a></li>
+<li><a href="#org0716143">2. use-package-report</a></li>
+<li><a href="#orgcf662aa">3. Show startup time on emacs-load</a></li>
+<li><a href="#org611b4fe">4. Message</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgc992389" class="outline-2">
-<h2 id="orgc992389"><span class="section-number-2">1.</span> emacs init time</h2>
+<div id="outline-container-org5ef58c7" class="outline-2">
+<h2 id="org5ef58c7"><span class="section-number-2">1.</span> emacs init time</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="https://www.youtube.com/watch?v=9i_9hse_Y08&amp;t=492s">How to Cut Emacs Start Up Time in Half! - Emacs From Scratch #12</a>
@@ -49,26 +49,26 @@
 </div>
 </div>
 
-<div id="outline-container-org2dc7d2e" class="outline-2">
-<h2 id="org2dc7d2e"><span class="section-number-2">2.</span> use-package-report</h2>
+<div id="outline-container-org0716143" class="outline-2">
+<h2 id="org0716143"><span class="section-number-2">2.</span> use-package-report</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2022-04-10 Sun] </span></span> allows to invoke and use use-package-report
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(setq use-package-compute-statistics t)
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> use-package-compute-statistics t)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org06f1069" class="outline-2">
-<h2 id="org06f1069"><span class="section-number-2">3.</span> Show startup time on emacs-load</h2>
+<div id="outline-container-orgcf662aa" class="outline-2">
+<h2 id="orgcf662aa"><span class="section-number-2">3.</span> Show startup time on emacs-load</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun efs/display-startup-time ()
-  (message "Emacs loaded in %s with %d garbage collections."
-           (format "%.2f seconds"
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">efs/display-startup-time</span> ()
+  (message <span style="font-style: italic;">"Emacs loaded in %s with %d garbage collections."</span>
+           (format <span style="font-style: italic;">"%.2f seconds"</span>
                    (float-time
                     (time-subtract after-init-time before-init-time)))
            gcs-done))
@@ -79,8 +79,8 @@
 </div>
 </div>
 
-<div id="outline-container-orge9cc1a3" class="outline-2">
-<h2 id="orge9cc1a3"><span class="section-number-2">4.</span> Message</h2>
+<div id="outline-container-org611b4fe" class="outline-2">
+<h2 id="org611b4fe"><span class="section-number-2">4.</span> Message</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Add such message in the package and then look at <b>messages</b> buffer on startup
@@ -88,8 +88,8 @@ to find which one has failed.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">:config
-(message "Org-roam got loaded!")
+<pre class="src src-emacs-lisp"><span style="font-weight: bold;">:config</span>
+(message <span style="font-style: italic;">"Org-roam got loaded!"</span>)
 </pre>
 </div>
 </div>
@@ -103,7 +103,7 @@ to find which one has failed.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2023-11-26 Sun 00:39</p>
 	 <div class="generated">
@@ -115,6 +115,7 @@ to find which one has failed.
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Trying out devcontainers in vscode</title>
@@ -32,19 +32,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3b3c618">1. Devcontainers</a>
+<li><a href="#org7ffdbf1">1. Devcontainers</a>
 <ul>
-<li><a href="#orgf2b0b99">1.1. Notes</a>
+<li><a href="#orgc9e669b">1.1. Notes</a>
 <ul>
-<li><a href="#orga3ae122">1.1.1. Why devcontainers</a></li>
+<li><a href="#org2816fb5">1.1.1. Why devcontainers</a></li>
 </ul>
 </li>
-<li><a href="#org7d5e5c0">1.2. The setup</a>
+<li><a href="#orgaf59e05">1.2. The setup</a>
 <ul>
-<li><a href="#org38d1aac">1.2.1. How to set up devcontainers</a></li>
-<li><a href="#org48740d4">1.2.2. .devcontainers folder</a></li>
-<li><a href="#orgc1c3b0f">1.2.3. Dockerfile</a></li>
-<li><a href="#orge15624f">1.2.4. devcontainer.json</a></li>
+<li><a href="#org49aa9e0">1.2.1. How to set up devcontainers</a></li>
+<li><a href="#org4de79a1">1.2.2. .devcontainers folder</a></li>
+<li><a href="#org1c591be">1.2.3. Dockerfile</a></li>
+<li><a href="#org15912e2">1.2.4. devcontainer.json</a></li>
 </ul>
 </li>
 </ul>
@@ -53,20 +53,20 @@
 </div>
 </nav>
 
-<div id="outline-container-org3b3c618" class="outline-2">
-<h2 id="org3b3c618"><span class="section-number-2">1.</span> Devcontainers</h2>
+<div id="outline-container-org7ffdbf1" class="outline-2">
+<h2 id="org7ffdbf1"><span class="section-number-2">1.</span> Devcontainers</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 STOPPED USING IT HERE (due to slowliness) - <a href="https://github.com/azegas/quotes/commit/9477b9062be2e9ac0aa2b7158cfdebabac6a4f54">https://github.com/azegas/quotes/commit/9477b9062be2e9ac0aa2b7158cfdebabac6a4f54</a> 
 </p>
 </div>
 
-<div id="outline-container-orgf2b0b99" class="outline-3">
-<h3 id="orgf2b0b99"><span class="section-number-3">1.1.</span> Notes</h3>
+<div id="outline-container-orgc9e669b" class="outline-3">
+<h3 id="orgc9e669b"><span class="section-number-3">1.1.</span> Notes</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-orga3ae122" class="outline-4">
-<h4 id="orga3ae122"><span class="section-number-4">1.1.1.</span> Why devcontainers</h4>
+<div id="outline-container-org2816fb5" class="outline-4">
+<h4 id="org2816fb5"><span class="section-number-4">1.1.1.</span> Why devcontainers</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 Kind of nice to have this practice. People use it at work also. Linux environment&#x2026; what could go wrong.
@@ -110,12 +110,12 @@ that is opening this project and so on (jinja, pylance, w/e else).
 </div>
 </div>
 
-<div id="outline-container-org7d5e5c0" class="outline-3">
-<h3 id="org7d5e5c0"><span class="section-number-3">1.2.</span> The setup</h3>
+<div id="outline-container-orgaf59e05" class="outline-3">
+<h3 id="orgaf59e05"><span class="section-number-3">1.2.</span> The setup</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-org38d1aac" class="outline-4">
-<h4 id="org38d1aac"><span class="section-number-4">1.2.1.</span> How to set up devcontainers</h4>
+<div id="outline-container-org49aa9e0" class="outline-4">
+<h4 id="org49aa9e0"><span class="section-number-4">1.2.1.</span> How to set up devcontainers</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li><a href="https://github.com/azegas/quotes/issues/47">My own reference task from quotes project</a></li>
@@ -143,16 +143,16 @@ Keep in mind that you don't have to copy any files from one environment to the d
 </div>
 </div>
 
-<div id="outline-container-org48740d4" class="outline-4">
-<h4 id="org48740d4"><span class="section-number-4">1.2.2.</span> .devcontainers folder</h4>
+<div id="outline-container-org4de79a1" class="outline-4">
+<h4 id="org4de79a1"><span class="section-number-4">1.2.2.</span> .devcontainers folder</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 Create <code>.devcontainers</code> folder in your project's root directory.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc1c3b0f" class="outline-4">
-<h4 id="orgc1c3b0f"><span class="section-number-4">1.2.3.</span> Dockerfile</h4>
+<div id="outline-container-org1c591be" class="outline-4">
+<h4 id="org1c591be"><span class="section-number-4">1.2.3.</span> Dockerfile</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <p>
 Inside of the <code>.devcontainers</code> folder, create a <code>Dockerfile</code> file with the
@@ -161,28 +161,28 @@ content below:
 
 <div class="org-src-container">
 <pre class="src src-bash">
-# inspiration taken from here - https://github.com/devcontainers/images/blob/main/src/python/.devcontainer/Dockerfile
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">inspiration taken from here - https://github.com/devcontainers/images/blob/main/src/python/.devcontainer/Dockerfile</span>
 
 FROM mcr.microsoft.com/devcontainers/python:1-3.12
 
-RUN apt-get update \
-    &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        git \
-    &amp;&amp; apt-get clean \
+RUN apt-get update <span style="font-style: italic;">\</span>
+    &amp;&amp; <span style="font-weight: bold; font-style: italic;">DEBIAN_FRONTEND</span>=noninteractive apt-get install -y --no-install-recommends <span style="font-style: italic;">\</span>
+        git <span style="font-style: italic;">\</span>
+    &amp;&amp; apt-get clean <span style="font-style: italic;">\</span>
     &amp;&amp; rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies from requirements
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Install Python dependencies from requirements</span>
 COPY requirements.txt ./
-RUN python3 -m pip install --upgrade pip \
-    &amp;&amp; pip3 install -r requirements.txt \
+RUN python3 -m pip install --upgrade pip <span style="font-style: italic;">\</span>
+    &amp;&amp; pip3 install -r requirements.txt <span style="font-style: italic;">\</span>
     &amp;&amp; rm -rf requirements.txt
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge15624f" class="outline-4">
-<h4 id="orge15624f"><span class="section-number-4">1.2.4.</span> devcontainer.json</h4>
+<div id="outline-container-org15912e2" class="outline-4">
+<h4 id="org15912e2"><span class="section-number-4">1.2.4.</span> devcontainer.json</h4>
 <div class="outline-text-4" id="text-1-2-4">
 <p>
 Alongisde the Dockerfile, create a `devcontainer.json` file with this content:
@@ -192,74 +192,74 @@ Alongisde the Dockerfile, create a `devcontainer.json` file with this content:
 <pre class="src src-bash">// inspiration from here - https://github.com/devcontainers/images/blob/main/src/python/.devcontainer/devcontainer.json
 
 {
-    "name": "Quotes Container",
+    <span style="font-style: italic;">"name"</span>: <span style="font-style: italic;">"Quotes Container"</span>,
 
     // Build configuration
-    "build": {
-        "dockerfile": "./Dockerfile",
-        "context": "." // ".." would allows to reach files outside of the .dockerfile folder
+    <span style="font-style: italic;">"build"</span>: {
+        <span style="font-style: italic;">"dockerfile"</span>: <span style="font-style: italic;">"./Dockerfile"</span>,
+        <span style="font-style: italic;">"context"</span>: <span style="font-style: italic;">"."</span> // <span style="font-style: italic;">".."</span> would allows to reach files outside of the .dockerfile folder
     },
 
-    // Features to be installed in the container
-    "features": {
-        "ghcr.io/devcontainers/features/common-utils:2":{
-            "installZsh": "true",
-            "username": "vscode",
-            "userUid": "1000",
-            "userGid": "1000",
-            "upgradePackages": "true"
+    // Features to be installed<span style="font-weight: bold;"> in</span> the container
+    <span style="font-style: italic;">"features"</span>: {
+        <span style="font-style: italic;">"ghcr.io/devcontainers/features/common-utils:2"</span>:{
+            <span style="font-style: italic;">"installZsh"</span>: <span style="font-style: italic;">"true"</span>,
+            <span style="font-style: italic;">"username"</span>: <span style="font-style: italic;">"vscode"</span>,
+            <span style="font-style: italic;">"userUid"</span>: <span style="font-style: italic;">"1000"</span>,
+            <span style="font-style: italic;">"userGid"</span>: <span style="font-style: italic;">"1000"</span>,
+            <span style="font-style: italic;">"upgradePackages"</span>: <span style="font-style: italic;">"true"</span>
         },
-        "ghcr.io/devcontainers/features/python:1": "none",
-        "ghcr.io/devcontainers/features/node:1": "none",
-        "ghcr.io/devcontainers/features/git:1": {
-            "version": "latest",
-            "ppa": "false"
+        <span style="font-style: italic;">"ghcr.io/devcontainers/features/python:1"</span>: <span style="font-style: italic;">"none"</span>,
+        <span style="font-style: italic;">"ghcr.io/devcontainers/features/node:1"</span>: <span style="font-style: italic;">"none"</span>,
+        <span style="font-style: italic;">"ghcr.io/devcontainers/features/git:1"</span>: {
+            <span style="font-style: italic;">"version"</span>: <span style="font-style: italic;">"latest"</span>,
+            <span style="font-style: italic;">"ppa"</span>: <span style="font-style: italic;">"false"</span>
         }
     },
 
   // Customizations for VS Code
-  "customizations": {
+  <span style="font-style: italic;">"customizations"</span>: {
     // Configure properties specific to VS Code.
-    "vscode": {
+    <span style="font-style: italic;">"vscode"</span>: {
       // Add the IDs of extensions you want installed when the container is created.
-      "extensions": [
-        "ms-python.black-formatter",
-        "VisualStudioExptTeam.vscodeintellicode",
-        "ms-python.isort",
-        "ms-python.pylint",
-        "streetsidesoftware.code-spell-checker",
-        "batisteo.vscode-django",
-        "ms-azuretools.vscode-docker",
-        "eamodio.gitlens",
-        "yzhang.markdown-all-in-one",
-        "GitHub.github-vscode-theme"
+      <span style="font-style: italic;">"extensions"</span>: [
+        <span style="font-style: italic;">"ms-python.black-formatter"</span>,
+        <span style="font-style: italic;">"VisualStudioExptTeam.vscodeintellicode"</span>,
+        <span style="font-style: italic;">"ms-python.isort"</span>,
+        <span style="font-style: italic;">"ms-python.pylint"</span>,
+        <span style="font-style: italic;">"streetsidesoftware.code-spell-checker"</span>,
+        <span style="font-style: italic;">"batisteo.vscode-django"</span>,
+        <span style="font-style: italic;">"ms-azuretools.vscode-docker"</span>,
+        <span style="font-style: italic;">"eamodio.gitlens"</span>,
+        <span style="font-style: italic;">"yzhang.markdown-all-in-one"</span>,
+        <span style="font-style: italic;">"GitHub.github-vscode-theme"</span>
       ],
       // Set *default* container specific settings.json values on container create.
-      "settings": {
-        "workbench.sideBar.location": "right",
-        "workbench.colorTheme": "GitHub Dark Default",
-        "editor.minimap.enabled": false,
-        "editor.smoothScrolling": true,
-        "editor.formatOnType": true,
-        "files.trimTrailingWhitespace": true,
-        "python.defaultInterpreterPath": "/usr/local/bin/python",
-        "python.formatting.provider":"black",
-        "[python]": {
-          "editor.formatOnSave": true
+      <span style="font-style: italic;">"settings"</span>: {
+        <span style="font-style: italic;">"workbench.sideBar.location"</span>: <span style="font-style: italic;">"right"</span>,
+        <span style="font-style: italic;">"workbench.colorTheme"</span>: <span style="font-style: italic;">"GitHub Dark Default"</span>,
+        <span style="font-style: italic;">"editor.minimap.enabled"</span>: false,
+        <span style="font-style: italic;">"editor.smoothScrolling"</span>: true,
+        <span style="font-style: italic;">"editor.formatOnType"</span>: true,
+        <span style="font-style: italic;">"files.trimTrailingWhitespace"</span>: true,
+        <span style="font-style: italic;">"python.defaultInterpreterPath"</span>: <span style="font-style: italic;">"/usr/local/bin/python"</span>,
+        <span style="font-style: italic;">"python.formatting.provider"</span>:<span style="font-style: italic;">"black"</span>,
+        <span style="font-style: italic;">"[python]"</span>: {
+          <span style="font-style: italic;">"editor.formatOnSave"</span>: true
         },
-        "emmet.includeLanguages": {
-          "django-html": "html" // allow html tag completion in django html mode https://github.com/vscode-django/vscode-django/issues/125
+        <span style="font-style: italic;">"emmet.includeLanguages"</span>: {
+          <span style="font-style: italic;">"django-html"</span>: <span style="font-style: italic;">"html"</span> // allow html tag completion<span style="font-weight: bold;"> in</span> django html mode https://github.com/vscode-django/vscode-django/issues/125
         }
     }
   },
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
+  // Use <span style="font-style: italic;">'forwardPorts'</span> to make a list of ports inside the container available locally.
+  // <span style="font-style: italic;">"forwardPorts"</span>: [],
 
-  // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "python --version",
+  // Use <span style="font-style: italic;">'postCreateCommand'</span> to run commands after the container is created.
+  <span style="font-style: italic;">"postCreateCommand"</span>: <span style="font-style: italic;">"python --version"</span>,
 
-  // Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-  "remoteUser": "vscode"
+  // Set <span style="font-weight: bold;">`remoteUser`</span> to <span style="font-weight: bold;">`root`</span> to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  <span style="font-style: italic;">"remoteUser"</span>: <span style="font-style: italic;">"vscode"</span>
   }}
 </pre>
 </div>
@@ -276,7 +276,7 @@ Alongisde the Dockerfile, create a `devcontainer.json` file with this content:
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-27 Mon 15:04</p>
 	 <div class="generated">
@@ -288,6 +288,7 @@ Alongisde the Dockerfile, create a `devcontainer.json` file with this content:
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

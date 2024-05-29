@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Creating  a simple emacs package</title>
@@ -32,13 +32,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9aac8c6">1. Steps to execute to create your own emacs package</a>
+<li><a href="#org6dc8e3f">1. Steps to execute to create your own emacs package</a>
 <ul>
-<li><a href="#orga1d365c">1.1. Create a Package Directory Structure</a></li>
-<li><a href="#org7eabcc8">1.2. Write the Package Code</a></li>
-<li><a href="#orga072333">1.3. Create the Package Metadata</a></li>
-<li><a href="#org7f77f9e">1.4. Load the Package</a></li>
-<li><a href="#org6728c6d">1.5. Usage</a></li>
+<li><a href="#org7631064">1.1. Create a Package Directory Structure</a></li>
+<li><a href="#orgc71cb1e">1.2. Write the Package Code</a></li>
+<li><a href="#org208e54b">1.3. Create the Package Metadata</a></li>
+<li><a href="#orga3ea08a">1.4. Load the Package</a></li>
+<li><a href="#orgfc537cd">1.5. Usage</a></li>
 </ul>
 </li>
 </ul>
@@ -54,12 +54,12 @@ packages work in Emacs.
 So researched a simple way to create one.
 </p>
 
-<div id="outline-container-org9aac8c6" class="outline-2">
-<h2 id="org9aac8c6"><span class="section-number-2">1.</span> Steps to execute to create your own emacs package</h2>
+<div id="outline-container-org6dc8e3f" class="outline-2">
+<h2 id="org6dc8e3f"><span class="section-number-2">1.</span> Steps to execute to create your own emacs package</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orga1d365c" class="outline-3">
-<h3 id="orga1d365c"><span class="section-number-3">1.1.</span> Create a Package Directory Structure</h3>
+<div id="outline-container-org7631064" class="outline-3">
+<h3 id="org7631064"><span class="section-number-3">1.1.</span> Create a Package Directory Structure</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Create a directory named <code>my-word-counter</code> (or any preferred name) within your
@@ -68,8 +68,8 @@ Emacs configuration folder.
 </div>
 </div>
 
-<div id="outline-container-org7eabcc8" class="outline-3">
-<h3 id="org7eabcc8"><span class="section-number-3">1.2.</span> Write the Package Code</h3>
+<div id="outline-container-orgc71cb1e" class="outline-3">
+<h3 id="orgc71cb1e"><span class="section-number-3">1.2.</span> Write the Package Code</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Inside the <code>my-word-counter</code> directory, create a file named
@@ -77,23 +77,23 @@ Inside the <code>my-word-counter</code> directory, create a file named
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">;;; my-word-counter.el --- A simple Emacs package to count words in the buffer.
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">my-word-counter.el --- A simple Emacs package to count words in the buffer.</span>
 
-;;;###autoload
-(defun my-word-counter ()
-  "Count the number of words in the current buffer."
-  (interactive)
-  (message "Number of words in the buffer: %d" (count-words (point-min) (point-max))))
+<span style="font-weight: bold; font-style: italic;">;;;</span><span style="font-weight: bold; font-style: italic;">###</span><span style="font-weight: bold; font-style: italic;">autoload</span>
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">my-word-counter</span> ()
+  <span style="font-style: italic;">"Count the number of words in the current buffer."</span>
+  (<span style="font-weight: bold;">interactive</span>)
+  (message <span style="font-style: italic;">"Number of words in the buffer: %d"</span> (count-words (point-min) (point-max))))
 
-;; Provide the feature
-(provide 'my-word-counter)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Provide the feature</span>
+(<span style="font-weight: bold;">provide</span> '<span style="font-weight: bold; text-decoration: underline;">my-word-counter</span>)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga072333" class="outline-3">
-<h3 id="orga072333"><span class="section-number-3">1.3.</span> Create the Package Metadata</h3>
+<div id="outline-container-org208e54b" class="outline-3">
+<h3 id="org208e54b"><span class="section-number-3">1.3.</span> Create the Package Metadata</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 In the <code>my-word-counter</code> directory, create a file named
@@ -101,14 +101,14 @@ In the <code>my-word-counter</code> directory, create a file named
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(define-package "my-word-counter" "1.0" "A simple package to count words in Emacs.")
+<pre class="src src-emacs-lisp">(define-package <span style="font-style: italic;">"my-word-counter"</span> <span style="font-style: italic;">"1.0"</span> <span style="font-style: italic;">"A simple package to count words in Emacs."</span>)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org7f77f9e" class="outline-3">
-<h3 id="org7f77f9e"><span class="section-number-3">1.4.</span> Load the Package</h3>
+<div id="outline-container-orga3ea08a" class="outline-3">
+<h3 id="orga3ea08a"><span class="section-number-3">1.4.</span> Load the Package</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Add code to your Emacs configuration file (~/.emacs or ~/.emacs.d/init.el) to
@@ -117,18 +117,18 @@ package:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">;; Add the package directory to load-path
-(add-to-list 'load-path "~/.emacs.d/my-word-counter")
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Add the package directory to load-path</span>
+(add-to-list 'load-path <span style="font-style: italic;">"~/.emacs.d/my-word-counter"</span>)
 
-;; Load the package
-(require 'my-word-counter)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Load the package</span>
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">my-word-counter</span>)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6728c6d" class="outline-3">
-<h3 id="org6728c6d"><span class="section-number-3">1.5.</span> Usage</h3>
+<div id="outline-container-orgfc537cd" class="outline-3">
+<h3 id="orgfc537cd"><span class="section-number-3">1.5.</span> Usage</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 After following these steps, you can use the <code>my-word-counter</code> package in
@@ -147,7 +147,7 @@ message with the count of words in the buffer.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-18 Mon 05:27</p>
 	 <div class="generated">
@@ -159,6 +159,7 @@ message with the count of words in the buffer.
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

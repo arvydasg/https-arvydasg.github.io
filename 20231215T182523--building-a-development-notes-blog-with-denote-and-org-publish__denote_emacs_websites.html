@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Building a development notes blog with denote and org-publish Notes</title>
@@ -23,112 +23,15 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:21</div>
+<div id="updated">Updated: 2024-05-29 Wed 15:48</div>
 </div>
 <div id="content" class="content">
 <header>
 <h1 class="title">Building a development notes blog with denote and org-publish Notes</h1>
-</header><nav id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="#org7d656c6">1. QUICK: Generate/update the blog step by step</a></li>
-<li><a href="#orgcce8246">2. Research</a>
-<ul>
-<li><a href="#orgaf6e3c6">2.1. Why build a website for development notes anyway</a></li>
-<li><a href="#org6ac444c">2.2. Why use emacs for it</a></li>
-<li><a href="#orge30be92">2.3. Choosing an Emacs tool to build such website</a></li>
-<li><a href="#orga8d46f1">2.4. ox-publish VS org-static-blog</a></li>
-</ul>
-</li>
-<li><a href="#org24f2ba3">3. What is <code>ox-publish</code>, folder structure, build code, running build</a>
-<ul>
-<li><a href="#orgeed7676">3.1. Get to know to <code>ox-publish</code></a></li>
-<li><a href="#orge27fce2">3.2. Installation of <code>ox-publish</code></a>
-<ul>
-<li><a href="#org5c37e31">3.2.1. Install the package</a></li>
-<li><a href="#org86c78b9">3.2.2. Decide where to place the configuration</a></li>
-</ul>
-</li>
-<li><a href="#orgfa39eb9">3.3. Creating .org files to be rendered</a>
-<ul>
-<li><a href="#orgfa8d0a1">3.3.1. Separate repositories</a></li>
-<li><a href="#org9c1b273">3.3.2. Folder structure of source dir</a></li>
-<li><a href="#org0e7e3b7">3.3.3. Creating new notes with Denote</a></li>
-</ul>
-</li>
-<li><a href="#org6cf3226">3.4. <code>ox-publish</code> config file itself</a></li>
-<li><a href="#org84c97d9">3.5. Running the build (generating the .html files from .org files)</a></li>
-<li><a href="#org12ca972">3.6. Previewing the generated site</a>
-<ul>
-<li><a href="#org711175e">3.6.1. Preview the html file in the browser</a></li>
-<li><a href="#org440d3ec">3.6.2. Preview with simple-httpd</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org2e649c2">4. Publishing the site to the world</a>
-<ul>
-<li>
-<ul>
-<li><a href="#orgaf028fb">4.0.1. Free method with github</a></li>
-<li><a href="#org9a63aa6">4.0.2. Possibly non-free with a server(have not tried)</a></li>
-<li><a href="#org629a884">4.0.3. Automatically publish your pages?(have not tried)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgec0f517">5. Nice to haves</a>
-<ul>
-<li><a href="#org4a09f62">5.1. Individual files customization options</a></li>
-<li><a href="#orga5deb3f">5.2. Important information about linking between .org files</a></li>
-<li><a href="#org3627581">5.3. CSS support in HTML export</a>
-<ul>
-<li><a href="#org7c4f5f5">5.3.1. Use the default styles from ox-html</a></li>
-<li><a href="#orgef1e417">5.3.2. Add custom classes to blocks of text/code</a></li>
-<li><a href="#orgac28b0d">5.3.3. import custom css</a></li>
-<li><a href="#org019e743">5.3.4. org-html-themes</a></li>
-<li><a href="#orgc0f9058">5.3.5. Note to self</a></li>
-</ul>
-</li>
-<li><a href="#orga09a436">5.4. Javascript support in HTML export</a></li>
-<li><a href="#org2463719">5.5. Images in HTML export</a>
-<ul>
-<li><a href="#org0f5b310">5.5.1. Display images</a></li>
-<li><a href="#orgc51224d">5.5.2. One option is to add images as plain html</a></li>
-<li><a href="#org7474ea9">5.5.3. Another option is to include a link to a file(the usual way)</a></li>
-<li><a href="#org93e4ace">5.5.4. Org download package for inserting images in org files</a></li>
-<li><a href="#org8502eb9">5.5.5. Add a lightbox effect on the images</a></li>
-</ul>
-</li>
-<li><a href="#org73a1db6">5.6. Preamble(nav) and postamble(footer)</a></li>
-<li><a href="#orgc131a44">5.7. Extra's</a>
-<ul>
-<li><a href="#org39a94cc">5.7.1. You can also include other content from other files!</a></li>
-<li><a href="#org10719a0">5.7.2. Creating a HTML page with my .emacs configuration</a></li>
-<li><a href="#org6f14684">5.7.3. Adding a date to post title in sitemap</a></li>
-<li><a href="#org11cd619">5.7.4. <span class="todo TODO">TODO</span> Linking HTML pages and their org mode sources</a></li>
-<li><a href="#org831c090">5.7.5. Add scroll to top button</a></li>
-<li><a href="#org3ed2b35">5.7.6. <span class="todo TODO">TODO</span> Adding analytics</a></li>
-<li><a href="#orgd5b716f">5.7.7. Table of contents at the side - inspiration</a></li>
-<li><a href="#org587c420">5.7.8. short and clean links like here</a></li>
-<li><a href="#org059b52b">5.7.9. Print out proper underscore</a></li>
-<li><a href="#org262a74e">5.7.10. Tables in HTML export</a></li>
-<li><a href="#orga72698c">5.7.11. Create editable text areas</a></li>
-<li><a href="#orgc68da97">5.7.12. Tags solution</a></li>
-<li><a href="#org199b0db">5.7.13. presentation mode?</a></li>
-<li><a href="#org7e0acba">5.7.14. search function with agolia like Bozhidar</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</nav>
+</header>
 
-
-<div id="outline-container-org7d656c6" class="outline-2">
-<h2 id="org7d656c6"><span class="section-number-2">1.</span> QUICK: Generate/update the blog step by step</h2>
+<div id="outline-container-org4bed18c" class="outline-2">
+<h2 id="org4bed18c"><span class="section-number-2">1.</span> QUICK: Generate/update the blog step by step</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This section basically is a reminder of the steps needed.
@@ -150,12 +53,12 @@ Please check the in-depth view of how the blog is built
 </div>
 </div>
 
-<div id="outline-container-orgcce8246" class="outline-2">
-<h2 id="orgcce8246"><span class="section-number-2">2.</span> Research</h2>
+<div id="outline-container-org917b7cf" class="outline-2">
+<h2 id="org917b7cf"><span class="section-number-2">2.</span> Research</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgaf6e3c6" class="outline-3">
-<h3 id="orgaf6e3c6"><span class="section-number-3">2.1.</span> Why build a website for development notes anyway</h3>
+<div id="outline-container-orgb31c1c4" class="outline-3">
+<h3 id="orgb31c1c4"><span class="section-number-3">2.1.</span> Why build a website for development notes anyway</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 I have a lot of notes. Over a few systems(at home, at work, under descriptions
@@ -191,8 +94,8 @@ readable html format in a form of a blog). I am in.
 </div>
 </div>
 
-<div id="outline-container-org6ac444c" class="outline-3">
-<h3 id="org6ac444c"><span class="section-number-3">2.2.</span> Why use emacs for it</h3>
+<div id="outline-container-org4518536" class="outline-3">
+<h3 id="org4518536"><span class="section-number-3">2.2.</span> Why use emacs for it</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 <a href="20231215T140448--why-build-a-website-with-emacs-and-not-with-something-else__emacs_websites.html">Why build a website with emacs and not with something else</a>
@@ -200,8 +103,8 @@ readable html format in a form of a blog). I am in.
 </div>
 </div>
 
-<div id="outline-container-orge30be92" class="outline-3">
-<h3 id="orge30be92"><span class="section-number-3">2.3.</span> Choosing an Emacs tool to build such website</h3>
+<div id="outline-container-orga7b29c6" class="outline-3">
+<h3 id="orga7b29c6"><span class="section-number-3">2.3.</span> Choosing an Emacs tool to build such website</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Emacs has both built in and external packages that help you to generate .html
@@ -223,8 +126,8 @@ Some of them are:
 </div>
 </div>
 
-<div id="outline-container-orga8d46f1" class="outline-3">
-<h3 id="orga8d46f1"><span class="section-number-3">2.4.</span> ox-publish VS org-static-blog</h3>
+<div id="outline-container-org24e51cd" class="outline-3">
+<h3 id="org24e51cd"><span class="section-number-3">2.4.</span> ox-publish VS org-static-blog</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 At first(<span class="timestamp-wrapper"><span class="timestamp">[2023-12-15 Fri]</span></span>) I was thinking to write the website with
@@ -415,12 +318,16 @@ easy to do that on the web - so be it. I will work on that later.
 </div>
 </div>
 
-<div id="outline-container-org24f2ba3" class="outline-2">
-<h2 id="org24f2ba3"><span class="section-number-2">3.</span> What is <code>ox-publish</code>, folder structure, build code, running build</h2>
+<div id="outline-container-orgf2800f6" class="outline-2">
+<h2 id="orgf2800f6"><span class="section-number-2">3.</span> What is <code>ox-publish</code>, folder structure, build code, running build</h2>
 <div class="outline-text-2" id="text-3">
+<p>
+Best description in a video format is <a href="https://www.youtube.com/watch?v=AfkrzFodoNw&amp;t=1612s&amp;ab_channel=SystemCrafters">here</a>.
+</p>
 </div>
-<div id="outline-container-orgeed7676" class="outline-3">
-<h3 id="orgeed7676"><span class="section-number-3">3.1.</span> Get to know to <code>ox-publish</code></h3>
+
+<div id="outline-container-orgea4e0ed" class="outline-3">
+<h3 id="orgea4e0ed"><span class="section-number-3">3.1.</span> Get to know to <code>ox-publish</code></h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 First things first of course:
@@ -445,12 +352,12 @@ I recommend to get to know to the source code if you like:
 </div>
 </div>
 
-<div id="outline-container-orge27fce2" class="outline-3">
-<h3 id="orge27fce2"><span class="section-number-3">3.2.</span> Installation of <code>ox-publish</code></h3>
+<div id="outline-container-org4bee9cd" class="outline-3">
+<h3 id="org4bee9cd"><span class="section-number-3">3.2.</span> Installation of <code>ox-publish</code></h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org5c37e31" class="outline-4">
-<h4 id="org5c37e31"><span class="section-number-4">3.2.1.</span> Install the package</h4>
+<div id="outline-container-orged0791d" class="outline-4">
+<h4 id="orged0791d"><span class="section-number-4">3.2.1.</span> Install the package</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 It is already installed with Emacs by default.
@@ -458,8 +365,8 @@ It is already installed with Emacs by default.
 </div>
 </div>
 
-<div id="outline-container-org86c78b9" class="outline-4">
-<h4 id="org86c78b9"><span class="section-number-4">3.2.2.</span> Decide where to place the configuration</h4>
+<div id="outline-container-org72d5f33" class="outline-4">
+<h4 id="org72d5f33"><span class="section-number-4">3.2.2.</span> Decide where to place the configuration</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 Ox-publish configuration might get large if you start modifying the head,
@@ -479,8 +386,8 @@ files:
 
 <div class="org-src-container">
 <pre class="src src-bash">devnotes/build/
-├── build.sh
-└── build-site.el
+&#9500;&#9472;&#9472; build.sh
+&#9492;&#9472;&#9472; build-site.el
 </pre>
 </div>
 
@@ -489,7 +396,7 @@ build.sh should be made to be executable <code>chmo o+x build.sh</code> and it's
 are:
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">#!/bin/sh
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/bin/</span><span style="font-weight: bold;">sh</span>
 emacs -Q --script build-site.el
 </pre>
 </div>
@@ -510,12 +417,12 @@ complete!"
 </div>
 </div>
 
-<div id="outline-container-orgfa39eb9" class="outline-3">
-<h3 id="orgfa39eb9"><span class="section-number-3">3.3.</span> Creating .org files to be rendered</h3>
+<div id="outline-container-org3ae31a2" class="outline-3">
+<h3 id="org3ae31a2"><span class="section-number-3">3.3.</span> Creating .org files to be rendered</h3>
 <div class="outline-text-3" id="text-3-3">
 </div>
-<div id="outline-container-orgfa8d0a1" class="outline-4">
-<h4 id="orgfa8d0a1"><span class="section-number-4">3.3.1.</span> Separate repositories</h4>
+<div id="outline-container-orgfca9b2d" class="outline-4">
+<h4 id="orgfca9b2d"><span class="section-number-4">3.3.1.</span> Separate repositories</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <p>
 We have one dir/repo for source files, another for exported html files. Having
@@ -529,15 +436,15 @@ separately.
 <pre class="src src-bash">/home/nixos/GIT:
 drwxr-xr-x 6 nixos users   4096 May 27 15:42 .
 drwx------ 6 nixos users   4096 May 27 15:44 ..
-drwxr-xr-x 5 nixos users  20480 May 28 15:28 arvydasg.github.io # html files lie here
-drwxr-xr-x 6 nixos users  20480 May 28 15:30 devnotes # source .org (could be other type) files lie here
+drwxr-xr-x 5 nixos users  20480 May 28 15:28 arvydasg.github.io <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">html files lie here</span>
+drwxr-xr-x 6 nixos users  20480 May 28 15:30 devnotes <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">source .org (could be other type) files lie here</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org9c1b273" class="outline-4">
-<h4 id="org9c1b273"><span class="section-number-4">3.3.2.</span> Folder structure of source dir</h4>
+<div id="outline-container-org9261e58" class="outline-4">
+<h4 id="org9261e58"><span class="section-number-4">3.3.2.</span> Folder structure of source dir</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <p>
 When we have at least one .org file in the source directory, we can think about
@@ -552,30 +459,30 @@ Structure of devnotes folder, an example:
 <pre class="src src-bash">/home/nixos/GIT/devnotes:
 drwxr-xr-x 6 nixos users 20480 May 28 15:35 .
 drwxr-xr-x 6 nixos users  4096 May 27 15:42 ..
-drwxr-xr-x 2 nixos users  4096 May 28 13:59 build # folder in which the build script lives
-drwxr-xr-x 8 nixos users  4096 May 28 15:36 .git  # git folder
-drwxr-xr-x 3 nixos users  4096 May 27 15:00 media # images folder
-drwxr-xr-x 4 nixos users  4096 May 27 15:00 static # css/js/ico folder
--rw-r--r-- 1 nixos users  1404 May 27 16:30 20231125T235251--api-tools__api.org # denote file
--rw-r--r-- 1 nixos users   646 May 27 15:00 20231126T001334--raspberrypi-first-setup__raspberrypi.org # denote file
--rw-r--r-- 1 nixos users   790 May 27 15:00 20231126T001417--magic-mirror-setup__raspberrypi.org # denote file
--rw-r--r-- 1 nixos users   324 May 27 15:00 20231126T001642--raspberrypi-pins__raspberrypi.org # denote file
-  -rw-r--r-- 1 nixos users   225 May 27 15:00 contact.org # simple page that 
--rw-r--r-- 1 nixos users   164 May 27 15:00 .dir-locals.el # read "denote features" page for explanation to this, has no influence to blog
--rw-r--r-- 1 nixos users   800 May 27 15:00 freelancing.org # random page
--rw-r--r-- 1 nixos users   814 May 27 15:00 index.org # index(front) page of the website
--rw-r--r-- 1 nixos users  1505 May 27 15:00 projects.org # custom list of projects, created the links myself
+drwxr-xr-x 2 nixos users  4096 May 28 13:59 build <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">folder in which the build script lives</span>
+drwxr-xr-x 8 nixos users  4096 May 28 15:36 .git  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">git folder</span>
+drwxr-xr-x 3 nixos users  4096 May 27 15:00 media <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">images folder</span>
+drwxr-xr-x 4 nixos users  4096 May 27 15:00 static <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">css/js/ico folder</span>
+-rw-r--r-- 1 nixos users  1404 May 27 16:30 20231125T235251--api-tools__api.org <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">denote file</span>
+-rw-r--r-- 1 nixos users   646 May 27 15:00 20231126T001334--raspberrypi-first-setup__raspberrypi.org <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">denote file</span>
+-rw-r--r-- 1 nixos users   790 May 27 15:00 20231126T001417--magic-mirror-setup__raspberrypi.org <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">denote file</span>
+-rw-r--r-- 1 nixos users   324 May 27 15:00 20231126T001642--raspberrypi-pins__raspberrypi.org <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">denote file</span>
+  -rw-r--r-- 1 nixos users   225 May 27 15:00 contact.org <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">simple page that </span>
+-rw-r--r-- 1 nixos users   164 May 27 15:00 .dir-locals.el <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">read "denote features" page for explanation to this, has no influence to blog</span>
+-rw-r--r-- 1 nixos users   800 May 27 15:00 freelancing.org <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">random page</span>
+-rw-r--r-- 1 nixos users   814 May 27 15:00 index.org <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">index(front) page of the website</span>
+-rw-r--r-- 1 nixos users  1505 May 27 15:00 projects.org <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">custom list of projects, created the links myself</span>
 -rw-r--r-- 1 nixos users    36 May 27 15:00 readme.md
--rw-r--r-- 1 nixos users 23584 May 28 15:28 sitemap.org # automatically generated sitemap
--rw-r--r-- 1 nixos users   817 May 28 15:06 statusupdates.org # random page
--rw-r--r-- 1 nixos users  2728 May 27 15:00 uses.org # random page
+-rw-r--r-- 1 nixos users 23584 May 28 15:28 sitemap.org <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">automatically generated sitemap</span>
+-rw-r--r-- 1 nixos users   817 May 28 15:06 statusupdates.org <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">random page</span>
+-rw-r--r-- 1 nixos users  2728 May 27 15:00 uses.org <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">random page</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0e7e3b7" class="outline-4">
-<h4 id="org0e7e3b7"><span class="section-number-4">3.3.3.</span> Creating new notes with Denote</h4>
+<div id="outline-container-org8463dcf" class="outline-4">
+<h4 id="org8463dcf"><span class="section-number-4">3.3.3.</span> Creating new notes with Denote</h4>
 <div class="outline-text-4" id="text-3-3-3">
 <p>
 I am using Denote package, so I can use it's functionality to create a new
@@ -590,8 +497,8 @@ development note taking. Win win.
 </div>
 </div>
 
-<div id="outline-container-org6cf3226" class="outline-3">
-<h3 id="org6cf3226"><span class="section-number-3">3.4.</span> <code>ox-publish</code> config file itself</h3>
+<div id="outline-container-orgea52536" class="outline-3">
+<h3 id="orgea52536"><span class="section-number-3">3.4.</span> <code>ox-publish</code> config file itself</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 Now since we have this list of files and folders, we are ready to export them to .html.
@@ -613,237 +520,237 @@ So here is the build script:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(require 'ox-publish)
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">ox-publish</span>)
 
-;; run this with 'emacs -Q --script build-site.el' command
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">run this with 'emacs -Q --script build-site.el' command</span>
 
-(setq org-publish-project-alist
+(<span style="font-weight: bold;">setq</span> org-publish-project-alist
       '(
-        ("notes"
-         :base-directory "../"
-         :base-extension "org"
-         :publishing-directory "../../arvydasg.github.io"
-         :recursive t
-         ;; use :noexport: tag if you want headings that have it not to be exported
-         ;; :exclude
-         ;; :include
-         :publishing-function org-html-publish-to-html ;converts org files to HTML
-         ;; :preparation-function
-         ;; :completion-function
-         ;; -----------------------------------------------------------------------------------
-         ;; the DETAILS: options set within the individual .org file can
-         ;; override all of the settings below:
-         ;; you can specify majority the options that you see below in each
-         ;; individual file. Find out syntax for it in =C-h v
-         ;; org-publish-project-alist= and choose the configuration you want to
-         ;; see the syntax for.
-         :author "Arvydas Gasparavicius"
-         ;; :creator
-         :email "arvydas.gaspa@gmail.com"
-         ;; :exclude-tags "noexport"
-         :headline-levels 3
-         :language "en"
-         :preserve-breaks nil
-         :section-numbers t
-         ;; :select-tags
-         :time-stamp-file t
-         ;; :with-archived-trees
-         :with-author t
-         :with-creator t
-         :with-date t			;date from the filename?
-         ;; :with-drawers
-         :with-email t
-         :with-emphasize t
-         :with-entities t
-         :with-fixed-width t
-         :with-footnotes t
-         :with-inlinetasks t
-         :with-latex t
-         :with-planning t
-         :with-priority t
-         :with-properties t
-         ;; :with-smart-quotes
-         :with-special-strings t
-         :with-statistics-cookies' t
-         :with-sub-superscript nil
-         :with-toc t
-         :with-tables t
-         :with-tags t
-         :with-tasks t
-         :with-timestamps t
-         :with-title t
-         :with-todo-keywords t
-         ;; kita dalis
-         :auto-sitemap t
-         :sitemap-filename "sitemap.org"
-         :sitemap-title "Notes"
-         :sitemap-style tree
-         :sitemap-format-entry ag/org-sitemap-date-entry-format
-         ;; :sitemap-function
-         ;; :sitemap-sort-folders
-         :sitemap-sort-files anti-chronologically
-         ;; :sitemap-ignore-case
-         ;; :makeindex
-         ;; :body-only t
-         ;; -----------------------------------------------------------------------------------
-         ;; ox-html.el.gz
+        (<span style="font-style: italic;">"notes"</span>
+         <span style="font-weight: bold;">:base-directory</span> <span style="font-style: italic;">"../"</span>
+         <span style="font-weight: bold;">:base-extension</span> <span style="font-style: italic;">"org"</span>
+         <span style="font-weight: bold;">:publishing-directory</span> <span style="font-style: italic;">"../../arvydasg.github.io"</span>
+         <span style="font-weight: bold;">:recursive</span> t
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">use :noexport: tag if you want headings that have it not to be exported</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:exclude</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:include</span>
+         <span style="font-weight: bold;">:publishing-function</span> org-html-publish-to-html <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">converts org files to HTML</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:preparation-function</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:completion-function</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">-----------------------------------------------------------------------------------</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">the DETAILS: options set within the individual .org file can</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">override all of the settings below:</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">you can specify majority the options that you see below in each</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">individual file. Find out syntax for it in =C-h v</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">org-publish-project-alist= and choose the configuration you want to</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">see the syntax for.</span>
+         <span style="font-weight: bold;">:author</span> <span style="font-style: italic;">"Arvydas Gasparavicius"</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:creator</span>
+         <span style="font-weight: bold;">:email</span> <span style="font-style: italic;">"arvydas.gaspa@gmail.com"</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:exclude-tags "noexport"</span>
+         <span style="font-weight: bold;">:headline-levels</span> 3
+         <span style="font-weight: bold;">:language</span> <span style="font-style: italic;">"en"</span>
+         <span style="font-weight: bold;">:preserve-breaks</span> nil
+         <span style="font-weight: bold;">:section-numbers</span> t
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:select-tags</span>
+         <span style="font-weight: bold;">:time-stamp-file</span> t
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:with-archived-trees</span>
+         <span style="font-weight: bold;">:with-author</span> t
+         <span style="font-weight: bold;">:with-creator</span> t
+         <span style="font-weight: bold;">:with-date</span> t                   <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">date from the filename?</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:with-drawers</span>
+         <span style="font-weight: bold;">:with-email</span> t
+         <span style="font-weight: bold;">:with-emphasize</span> t
+         <span style="font-weight: bold;">:with-entities</span> t
+         <span style="font-weight: bold;">:with-fixed-width</span> t
+         <span style="font-weight: bold;">:with-footnotes</span> t
+         <span style="font-weight: bold;">:with-inlinetasks</span> t
+         <span style="font-weight: bold;">:with-latex</span> t
+         <span style="font-weight: bold;">:with-planning</span> t
+         <span style="font-weight: bold;">:with-priority</span> t
+         <span style="font-weight: bold;">:with-properties</span> t
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:with-smart-quotes</span>
+         <span style="font-weight: bold;">:with-special-strings</span> t
+         <span style="font-weight: bold;">:with-statistics-cookies</span>' t
+         <span style="font-weight: bold;">:with-sub-superscript</span> nil
+         <span style="font-weight: bold;">:with-toc</span> t
+         <span style="font-weight: bold;">:with-tables</span> t
+         <span style="font-weight: bold;">:with-tags</span> t
+         <span style="font-weight: bold;">:with-tasks</span> t
+         <span style="font-weight: bold;">:with-timestamps</span> t
+         <span style="font-weight: bold;">:with-title</span> t
+         <span style="font-weight: bold;">:with-todo-keywords</span> t
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">kita dalis</span>
+         <span style="font-weight: bold;">:auto-sitemap</span> t
+         <span style="font-weight: bold;">:sitemap-filename</span> <span style="font-style: italic;">"sitemap.org"</span>
+         <span style="font-weight: bold;">:sitemap-title</span> <span style="font-style: italic;">"Notes"</span>
+         <span style="font-weight: bold;">:sitemap-style</span> tree
+         <span style="font-weight: bold;">:sitemap-format-entry</span> ag/org-sitemap-date-entry-format
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:sitemap-function</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:sitemap-sort-folders</span>
+         <span style="font-weight: bold;">:sitemap-sort-files</span> anti-chronologically
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:sitemap-ignore-case</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:makeindex</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:body-only t</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">-----------------------------------------------------------------------------------</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">ox-html.el.gz</span>
 
-         :html-doctype "html5"
-         :html-container "div"
-         :html-content-class "content"
-         :description "welcome to my site"
-         :keywords "emacs antanas geles"
-         :html-html5-fancy t
-         ;; :html-link-use-abs-url
-         ;; :html-link-home "sitemap.html"
-         :html-link-home "index.html"
-         :html-link-up "sitemap.html"
-         ;; :html-mathjax
-         ;; :html-equation-reference-format
-         ;; :html-postamble nil
-         ;; :html-postamble auto		;with-author/email/creator/date
-         ;; :html-postamble t               ;from :html-postamble-format
-         :html-postamble "&lt;hr/&gt;
-         &lt;footer&gt;
-         &lt;div class=\"copyright-container\"&gt;
-         &lt;div class=\"copyright\"&gt;
-         Copyright &amp;copy; 2023-2024 Arvydas Gasparavicius
-         &lt;/div&gt;
-         &lt;/div&gt;
-         &lt;p class=\"date\"&gt;This org file is &lt;u&gt;exported&lt;/u&gt; to HTML: %T&lt;/p&gt;
-         &lt;p class=\"date\"&gt;This org file is last &lt;u&gt;modified&lt;/u&gt;: %C&lt;/p&gt;
-         &lt;p class=\"date\"&gt;This org file is &lt;u&gt;created&lt;/u&gt;: %d&lt;/p&gt;
-         &lt;div class=\"generated\"&gt;
-        Created with %c on &lt;a href=\"https://www.gnu.org\"&gt;GNU&lt;/a&gt;/&lt;a href=\"https://www.kernel.org/\"&gt;Linux&lt;/a&gt;
-        &lt;/div&gt;
-        &lt;/footer&gt;
-         &lt;button onclick=\"topFunction()\" id=\"myBtn\" title=\"Go to top\"&gt;Top&lt;/button&gt;
-         &lt;script src=\"./static/js/generic.js\"&gt;&lt;/script&gt;
-         &lt;script src=\"./static/js/scroll-to-top.js\"&gt;&lt;/script&gt;
-         &lt;script src=\"./static/js/lightbox.js\"&gt;&lt;/script&gt;
-         &lt;script src=\"./static/js/test.js\"&gt;&lt;/script&gt;"
-         ;; :html-preamble t                 ;insert a default one, which in none
-         :html-preamble  "&lt;div id=\"updated\"&gt;Updated: %C&lt;/div&gt;"
-         ;; :html-head
-         :html-head "
-&lt;link rel=\"stylesheet\" href=\"./static/css/org-html-style-default.css\" type=\"text/css\"/&gt;
-&lt;link rel=\"stylesheet\" href=\"./static/css/generic.css\" type=\"text/css\"/&gt;
-&lt;link rel=\"stylesheet\" href=\"./static/css/taingram.css\" type=\"text/css\"/&gt;
-&lt;link rel=\"stylesheet\" href=\"./static/css/lightbox.css\" type=\"text/css\"/&gt;
-&lt;link rel=\"stylesheet\" href=\"./static/css/scroll-to-top.css\" type=\"text/css\"/&gt;
-&lt;link rel=\"icon\" href=\"./static/ag.ico\"&gt;
-"
-         ;; :html-head-extra "&lt;link rel=\"stylesheet\" href=\"https://arvydas.dev/static/style.css\" type=\"text/css\"/&gt;"
-         ;; :html-head-extra "&lt;link rel=\"stylesheet\" href=\"./static/style.css\" type=\"text/css\"/&gt;"
-         ;; :subtitle "this is a subtitle"
-         :html-head-include-default-style nil         ;turning them off, but adding in a separate file called org-html-style-default.css
-         :html-head-include-scripts nil
-         :html-allow-name-attribute-in-anchors nil
-         :html-divs ((preamble "div" "preamble")
-                     (content "div" "content")
-                     (postamble "div" "postamble"))
-         ;; :html-checkbox-type
-         :html-extension "html"
-         :html-footnote-format "&lt;sup&gt;%s&lt;/sup&gt;"
-         :html-footnote-separator "&lt;sup&gt;, &lt;/sup&gt;"
-         :html-footnotes-section "&lt;div id=\"footnotes\"&gt;\n&lt;h2 class=\"footnotes\"&gt;%s: &lt;/h2&gt;\n&lt;div id=\"text-footnotes\"&gt;\n%s\n&lt;/div&gt;\n&lt;/div&gt;"
-         ;; :html-format-drawer-function
-         ;; :html-format-headline-function
-         ;; :html-format-inlinetask-function
-         :html-home/up-format "&lt;div id=\"org-div-home-and-up\"&gt;\n &lt;a accesskey=\"h\" href=\"%s\"&gt;NOTES &lt;/a&gt;\n \n &lt;a accesskey=\"H\" href=\"%s\"&gt; HOME &lt;/a&gt;\n&lt;/div&gt;"
-         :html-indent nil
-         ;; :html-infojs-options
-         ;; :html-infojs-template
-         ;; :html-inline-image-rules
-         :html-link-org-files-as-html t
-         ;; :html-mathjax-options
-         ;; :html-mathjax-template
-         :html-metadata-timestamp-format "%Y-%m-%d %a %H:%M"
-         ;; :html-postamble-format
-         ;; :html-preamble-format
-         ;; :html-prefer-user-labels nil
-         :html-self-link-headlines nil
-         :html-table-align-individual-fields t
-         ;; :html-table-caption-above t
-         :html-table-data-tags ("&lt;td%s&gt;" . "&lt;/td&gt;")
-         :html-table-header-tags ("&lt;th scope=\"%s\"%s&gt;" . "&lt;/th&gt;")
-         :html-table-use-header-tags-for-first-column nil
-         :html-tag-class-prefix "gaid"
-         :html-text-markup-alist ((bold . "&lt;b&gt;%s&lt;/b&gt;")
-                                  (code . "&lt;code&gt;%s&lt;/code&gt;")
-                                  (italic . "&lt;i&gt;%s&lt;/i&gt;")
-                                  (strike-through . "&lt;del&gt;%s&lt;/del&gt;")
-                                  (underline . "&lt;span class=\"underline\"&gt;%s&lt;/span&gt;")
-                                  (verbatim .  "&lt;code&gt;%s&lt;/code&gt;"))
-         :html-todo-kwd-class-prefix ""
-         :html-toplevel-hlevel 2
-         ;; :html-use-infojs
-         :html-validation-link nil
-         ;; :html-validation-link "&lt;a href=\"https://validator.w3.org/check?uri=referer\"&gt;Validate&lt;/a&gt;"
-         :html-viewport  ((width "device-width")
-                          (initial-scale "1")
-                          (minimum-scale "")
-                          (maximum-scale "")
-                          (user-scalable ""))
-         :html-inline-images t
-         :html-table-attributes (:border "2" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "hsides")
-         :html-table-row-open-tag "&lt;tr&gt;"
-         :html-table-row-close-tag "&lt;/tr&gt;"
-         :html-xml-declaration (("html" . "&lt;?xml version=\"1.0\" encoding=\"%s\"?&gt;")
-                                ("php" . "&lt;?php echo \"&lt;?xml version=\\\"1.0\\\" encoding=\\\"%s\\\" ?&gt;\"; ?&gt;"))
-         :html-wrap-src-lines nil
-         :html-klipsify-src nil		;making it to t - jupyterhub like code blocks. Insane!
-         ;; :html-klipse-css
-         ;; :html-klipse-js
-         ;; :html-klipse-selection-script
-         ;; :infojs-opt
-         ;; :creator
-         :with-latex t
-         ;; :latex-header
+         <span style="font-weight: bold;">:html-doctype</span> <span style="font-style: italic;">"html5"</span>
+         <span style="font-weight: bold;">:html-container</span> <span style="font-style: italic;">"div"</span>
+         <span style="font-weight: bold;">:html-content-class</span> <span style="font-style: italic;">"content"</span>
+         <span style="font-weight: bold;">:description</span> <span style="font-style: italic;">"welcome to my site"</span>
+         <span style="font-weight: bold;">:keywords</span> <span style="font-style: italic;">"emacs antanas geles"</span>
+         <span style="font-weight: bold;">:html-html5-fancy</span> t
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-link-use-abs-url</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-link-home "sitemap.html"</span>
+         <span style="font-weight: bold;">:html-link-home</span> <span style="font-style: italic;">"index.html"</span>
+         <span style="font-weight: bold;">:html-link-up</span> <span style="font-style: italic;">"sitemap.html"</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-mathjax</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-equation-reference-format</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-postamble nil</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-postamble auto                ;with-author/email/creator/date</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-postamble t               ;from :html-postamble-format</span>
+         <span style="font-weight: bold;">:html-postamble</span> <span style="font-style: italic;">"&lt;hr/&gt;</span>
+<span style="font-style: italic;">         &lt;footer&gt;</span>
+<span style="font-style: italic;">         &lt;div class=\"copyright-container\"&gt;</span>
+<span style="font-style: italic;">         &lt;div class=\"copyright\"&gt;</span>
+<span style="font-style: italic;">         Copyright &amp;copy; 2023-2024 Arvydas Gasparavicius</span>
+<span style="font-style: italic;">         &lt;/div&gt;</span>
+<span style="font-style: italic;">         &lt;/div&gt;</span>
+<span style="font-style: italic;">         &lt;p class=\"date\"&gt;This org file is &lt;u&gt;exported&lt;/u&gt; to HTML: %T&lt;/p&gt;</span>
+<span style="font-style: italic;">         &lt;p class=\"date\"&gt;This org file is last &lt;u&gt;modified&lt;/u&gt;: %C&lt;/p&gt;</span>
+<span style="font-style: italic;">         &lt;p class=\"date\"&gt;This org file is &lt;u&gt;created&lt;/u&gt;: %d&lt;/p&gt;</span>
+<span style="font-style: italic;">         &lt;div class=\"generated\"&gt;</span>
+<span style="font-style: italic;">        Created with %c on &lt;a href=\"https://www.gnu.org\"&gt;GNU&lt;/a&gt;/&lt;a href=\"https://www.kernel.org/\"&gt;Linux&lt;/a&gt;</span>
+<span style="font-style: italic;">        &lt;/div&gt;</span>
+<span style="font-style: italic;">        &lt;/footer&gt;</span>
+<span style="font-style: italic;">         &lt;button onclick=\"topFunction()\" id=\"myBtn\" title=\"Go to top\"&gt;Top&lt;/button&gt;</span>
+<span style="font-style: italic;">         &lt;script src=\"./static/js/generic.js\"&gt;&lt;/script&gt;</span>
+<span style="font-style: italic;">         &lt;script src=\"./static/js/scroll-to-top.js\"&gt;&lt;/script&gt;</span>
+<span style="font-style: italic;">         &lt;script src=\"./static/js/lightbox.js\"&gt;&lt;/script&gt;</span>
+<span style="font-style: italic;">         &lt;script src=\"./static/js/test.js\"&gt;&lt;/script&gt;"</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-preamble t                 ;insert a default one, which in none</span>
+         <span style="font-weight: bold;">:html-preamble</span>  <span style="font-style: italic;">"&lt;div id=\"updated\"&gt;Updated: %C&lt;/div&gt;"</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-head</span>
+         <span style="font-weight: bold;">:html-head</span> <span style="font-style: italic;">"</span>
+<span style="font-style: italic;">&lt;link rel=\"stylesheet\" href=\"./static/css/org-html-style-default.css\" type=\"text/css\"/&gt;</span>
+<span style="font-style: italic;">&lt;link rel=\"stylesheet\" href=\"./static/css/generic.css\" type=\"text/css\"/&gt;</span>
+<span style="font-style: italic;">&lt;link rel=\"stylesheet\" href=\"./static/css/taingram.css\" type=\"text/css\"/&gt;</span>
+<span style="font-style: italic;">&lt;link rel=\"stylesheet\" href=\"./static/css/lightbox.css\" type=\"text/css\"/&gt;</span>
+<span style="font-style: italic;">&lt;link rel=\"stylesheet\" href=\"./static/css/scroll-to-top.css\" type=\"text/css\"/&gt;</span>
+<span style="font-style: italic;">&lt;link rel=\"icon\" href=\"./static/ag.ico\"&gt;</span>
+<span style="font-style: italic;">"</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-head-extra "&lt;link rel=\"stylesheet\" href=\"https://arvydas.dev/static/style.css\" type=\"text/css\"/&gt;"</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-head-extra "&lt;link rel=\"stylesheet\" href=\"./static/style.css\" type=\"text/css\"/&gt;"</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:subtitle "this is a subtitle"</span>
+         <span style="font-weight: bold;">:html-head-include-default-style</span> nil         <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">turning them off, but adding in a separate file called org-html-style-default.css</span>
+         <span style="font-weight: bold;">:html-head-include-scripts</span> nil
+         <span style="font-weight: bold;">:html-allow-name-attribute-in-anchors</span> nil
+         <span style="font-weight: bold;">:html-divs</span> ((preamble <span style="font-style: italic;">"div"</span> <span style="font-style: italic;">"preamble"</span>)
+                     (content <span style="font-style: italic;">"div"</span> <span style="font-style: italic;">"content"</span>)
+                     (postamble <span style="font-style: italic;">"div"</span> <span style="font-style: italic;">"postamble"</span>))
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-checkbox-type</span>
+         <span style="font-weight: bold;">:html-extension</span> <span style="font-style: italic;">"html"</span>
+         <span style="font-weight: bold;">:html-footnote-format</span> <span style="font-style: italic;">"&lt;sup&gt;%s&lt;/sup&gt;"</span>
+         <span style="font-weight: bold;">:html-footnote-separator</span> <span style="font-style: italic;">"&lt;sup&gt;, &lt;/sup&gt;"</span>
+         <span style="font-weight: bold;">:html-footnotes-section</span> <span style="font-style: italic;">"&lt;div id=\"footnotes\"&gt;\n&lt;h2 class=\"footnotes\"&gt;%s: &lt;/h2&gt;\n&lt;div id=\"text-footnotes\"&gt;\n%s\n&lt;/div&gt;\n&lt;/div&gt;"</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-format-drawer-function</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-format-headline-function</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-format-inlinetask-function</span>
+         <span style="font-weight: bold;">:html-home/up-format</span> <span style="font-style: italic;">"&lt;div id=\"org-div-home-and-up\"&gt;\n &lt;a accesskey=\"h\" href=\"%s\"&gt;NOTES &lt;/a&gt;\n \n &lt;a accesskey=\"H\" href=\"%s\"&gt; HOME &lt;/a&gt;\n&lt;/div&gt;"</span>
+         <span style="font-weight: bold;">:html-indent</span> nil
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-infojs-options</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-infojs-template</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-inline-image-rules</span>
+         <span style="font-weight: bold;">:html-link-org-files-as-html</span> t
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-mathjax-options</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-mathjax-template</span>
+         <span style="font-weight: bold;">:html-metadata-timestamp-format</span> <span style="font-style: italic;">"%Y-%m-%d %a %H:%M"</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-postamble-format</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-preamble-format</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-prefer-user-labels nil</span>
+         <span style="font-weight: bold;">:html-self-link-headlines</span> nil
+         <span style="font-weight: bold;">:html-table-align-individual-fields</span> t
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-table-caption-above t</span>
+         <span style="font-weight: bold;">:html-table-data-tags</span> (<span style="font-style: italic;">"&lt;td%s&gt;"</span> . <span style="font-style: italic;">"&lt;/td&gt;"</span>)
+         <span style="font-weight: bold;">:html-table-header-tags</span> (<span style="font-style: italic;">"&lt;th scope=\"%s\"%s&gt;"</span> . <span style="font-style: italic;">"&lt;/th&gt;"</span>)
+         <span style="font-weight: bold;">:html-table-use-header-tags-for-first-column</span> nil
+         <span style="font-weight: bold;">:html-tag-class-prefix</span> <span style="font-style: italic;">"gaid"</span>
+         <span style="font-weight: bold;">:html-text-markup-alist</span> ((bold . <span style="font-style: italic;">"&lt;b&gt;%s&lt;/b&gt;"</span>)
+                                  (code . <span style="font-style: italic;">"&lt;code&gt;%s&lt;/code&gt;"</span>)
+                                  (italic . <span style="font-style: italic;">"&lt;i&gt;%s&lt;/i&gt;"</span>)
+                                  (strike-through . <span style="font-style: italic;">"&lt;del&gt;%s&lt;/del&gt;"</span>)
+                                  (underline . <span style="font-style: italic;">"&lt;span class=\"underline\"&gt;%s&lt;/span&gt;"</span>)
+                                  (verbatim .  <span style="font-style: italic;">"&lt;code&gt;%s&lt;/code&gt;"</span>))
+         <span style="font-weight: bold;">:html-todo-kwd-class-prefix</span> <span style="font-style: italic;">""</span>
+         <span style="font-weight: bold;">:html-toplevel-hlevel</span> 2
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-use-infojs</span>
+         <span style="font-weight: bold;">:html-validation-link</span> nil
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-validation-link "&lt;a href=\"https://validator.w3.org/check?uri=referer\"&gt;Validate&lt;/a&gt;"</span>
+         <span style="font-weight: bold;">:html-viewport</span>  ((width <span style="font-style: italic;">"device-width"</span>)
+                          (initial-scale <span style="font-style: italic;">"1"</span>)
+                          (minimum-scale <span style="font-style: italic;">""</span>)
+                          (maximum-scale <span style="font-style: italic;">""</span>)
+                          (user-scalable <span style="font-style: italic;">""</span>))
+         <span style="font-weight: bold;">:html-inline-images</span> t
+         <span style="font-weight: bold;">:html-table-attributes</span> (<span style="font-weight: bold;">:border</span> <span style="font-style: italic;">"2"</span> <span style="font-weight: bold;">:cellspacing</span> <span style="font-style: italic;">"0"</span> <span style="font-weight: bold;">:cellpadding</span> <span style="font-style: italic;">"6"</span> <span style="font-weight: bold;">:rules</span> <span style="font-style: italic;">"groups"</span> <span style="font-weight: bold;">:frame</span> <span style="font-style: italic;">"hsides"</span>)
+         <span style="font-weight: bold;">:html-table-row-open-tag</span> <span style="font-style: italic;">"&lt;tr&gt;"</span>
+         <span style="font-weight: bold;">:html-table-row-close-tag</span> <span style="font-style: italic;">"&lt;/tr&gt;"</span>
+         <span style="font-weight: bold;">:html-xml-declaration</span> ((<span style="font-style: italic;">"html"</span> . <span style="font-style: italic;">"&lt;?xml version=\"1.0\" encoding=\"%s\"?&gt;"</span>)
+                                (<span style="font-style: italic;">"php"</span> . <span style="font-style: italic;">"&lt;?php echo \"&lt;?xml version=\\\"1.0\\\" encoding=\\\"%s\\\" ?&gt;\"; ?&gt;"</span>))
+         <span style="font-weight: bold;">:html-wrap-src-lines</span> nil
+         <span style="font-weight: bold;">:html-klipsify-src</span> nil         <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">making it to t - jupyterhub like code blocks. Insane!</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-klipse-css</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-klipse-js</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:html-klipse-selection-script</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:infojs-opt</span>
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:creator</span>
+         <span style="font-weight: bold;">:with-latex</span> t
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:latex-header</span>
          )
 
-        ("static"
-         :base-directory "../static"
-         :publishing-directory "../../arvydasg.github.io/static"
-         :base-extension "css\\|js\\|ico\\|svg"
-         :recursive t
-         :publishing-function org-publish-attachment ;copies the files verbatim
+        (<span style="font-style: italic;">"static"</span>
+         <span style="font-weight: bold;">:base-directory</span> <span style="font-style: italic;">"../static"</span>
+         <span style="font-weight: bold;">:publishing-directory</span> <span style="font-style: italic;">"../../arvydasg.github.io/static"</span>
+         <span style="font-weight: bold;">:base-extension</span> <span style="font-style: italic;">"css</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">|</span><span style="font-style: italic;">js</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">|</span><span style="font-style: italic;">ico</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">|</span><span style="font-style: italic;">svg"</span>
+         <span style="font-weight: bold;">:recursive</span> t
+         <span style="font-weight: bold;">:publishing-function</span> org-publish-attachment <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">copies the files verbatim</span>
          )
 
-        ("media"
-         :base-directory "../media"
-         :publishing-directory "../../arvydasg.github.io/media"
-         :base-extension "png\\|jpg\\|jpeg\\|pdf"
-         :recursive t
-         :publishing-function org-publish-attachment ;copies the files verbatim
+        (<span style="font-style: italic;">"media"</span>
+         <span style="font-weight: bold;">:base-directory</span> <span style="font-style: italic;">"../media"</span>
+         <span style="font-weight: bold;">:publishing-directory</span> <span style="font-style: italic;">"../../arvydasg.github.io/media"</span>
+         <span style="font-weight: bold;">:base-extension</span> <span style="font-style: italic;">"png</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">|</span><span style="font-style: italic;">jpg</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">|</span><span style="font-style: italic;">jpeg</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">|</span><span style="font-style: italic;">pdf"</span>
+         <span style="font-weight: bold;">:recursive</span> t
+         <span style="font-weight: bold;">:publishing-function</span> org-publish-attachment <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">copies the files verbatim</span>
          )
 
-        ("build-site.el" :components ("notes" "static" "media"))))
+        (<span style="font-style: italic;">"build-site.el"</span> <span style="font-weight: bold;">:components</span> (<span style="font-style: italic;">"notes"</span> <span style="font-style: italic;">"static"</span> <span style="font-style: italic;">"media"</span>))))
 
-(defun ag/org-sitemap-date-entry-format (entry style project)
-  "Format ENTRY in org-publish PROJECT Sitemap format ENTRY ENTRY
- STYLE format that includes date."
-  (let ((filename (org-publish-find-title entry project)))
-    (if (= (length filename) 0)
-        (format "*%s*" entry)
-      (format "{{{timestamp(%s)}}} [[file:%s][%s]]"
-              (format-time-string "%Y-%m-%d"
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">ag/org-sitemap-date-entry-format</span> (entry style project)
+  <span style="font-style: italic;">"Format ENTRY in org-publish PROJECT Sitemap format ENTRY ENTRY</span>
+<span style="font-style: italic;"> STYLE format that includes date."</span>
+  (<span style="font-weight: bold;">let</span> ((filename (org-publish-find-title entry project)))
+    (<span style="font-weight: bold;">if</span> (= (length filename) 0)
+        (format <span style="font-style: italic;">"*%s*"</span> entry)
+      (format <span style="font-style: italic;">"{{{timestamp(%s)}}} [[file:%s][%s]]"</span>
+              (format-time-string <span style="font-style: italic;">"%Y-%m-%d"</span>
                                   (org-publish-find-date entry project))
               entry
               filename))))
 
-(setq org-export-global-macros
-      '(("timestamp" . "@@html:&lt;span class=\"timestamp\"&gt;[$1]&lt;/span&gt;@@")))
+(<span style="font-weight: bold;">setq</span> org-export-global-macros
+      '((<span style="font-style: italic;">"timestamp"</span> . <span style="font-style: italic;">"@@html:&lt;span class=\"timestamp\"&gt;[$1]&lt;/span&gt;@@"</span>)))
 
-;; publish all the projects described in this file :components part
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">publish all the projects described in this file :components part</span>
 (org-publish-all t)
 
-;; publish only specific project
-;; The t parameter tells it to regenerate all ;; files regardless of when they
-;; were last generated)so no need to add the ;; force prefix with C-c C-e C-f
-(org-publish "my-org-site" t)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">publish only specific project</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">The t parameter tells it to regenerate all ;; files regardless of when they</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">were last generated)so no need to add the ;; force prefix with C-c C-e C-f</span>
+(org-publish <span style="font-style: italic;">"my-org-site"</span> t)
 
-(message "Build complete!")
+(message <span style="font-style: italic;">"Build complete!"</span>)
 </pre>
 </div>
 
@@ -856,8 +763,8 @@ images and css/js files, etc&#x2026;.
 </div>
 </div>
 
-<div id="outline-container-org84c97d9" class="outline-3">
-<h3 id="org84c97d9"><span class="section-number-3">3.5.</span> Running the build (generating the .html files from .org files)</h3>
+<div id="outline-container-orgca04519" class="outline-3">
+<h3 id="orgca04519"><span class="section-number-3">3.5.</span> Running the build (generating the .html files from .org files)</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 After you have studied the config file and you understand what's happening, we
@@ -871,7 +778,7 @@ configuration file:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">#!/bin/sh
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/bin/</span><span style="font-weight: bold;">sh</span>
 emacs -Q --script build-site.el
 </pre>
 </div>
@@ -884,8 +791,8 @@ modify the build script if not happy.
 </div>
 </div>
 
-<div id="outline-container-org12ca972" class="outline-3">
-<h3 id="org12ca972"><span class="section-number-3">3.6.</span> Previewing the generated site</h3>
+<div id="outline-container-org00e6282" class="outline-3">
+<h3 id="org00e6282"><span class="section-number-3">3.6.</span> Previewing the generated site</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 Now that we have a few .org file notes in our directory and we have exported
@@ -894,8 +801,8 @@ the browser.
 </p>
 </div>
 
-<div id="outline-container-org711175e" class="outline-4">
-<h4 id="org711175e"><span class="section-number-4">3.6.1.</span> Preview the html file in the browser</h4>
+<div id="outline-container-org27d9357" class="outline-4">
+<h4 id="org27d9357"><span class="section-number-4">3.6.1.</span> Preview the html file in the browser</h4>
 <div class="outline-text-4" id="text-3-6-1">
 <p>
 If the file on my wsl lies here:
@@ -916,8 +823,8 @@ how to implement - here
 </div>
 </div>
 
-<div id="outline-container-org440d3ec" class="outline-4">
-<h4 id="org440d3ec"><span class="section-number-4">3.6.2.</span> Preview with simple-httpd</h4>
+<div id="outline-container-org62401f0" class="outline-4">
+<h4 id="org62401f0"><span class="section-number-4">3.6.2.</span> Preview with simple-httpd</h4>
 <div class="outline-text-4" id="text-3-6-2">
 <p>
 Or you can use <code>simple-httpd</code>. It's a package that can host your files as a
@@ -932,8 +839,8 @@ emacs config, not in build-site.el file):
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(use-package simple-httpd
-  :ensure t)
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> simple-httpd
+  <span style="font-weight: bold;">:ensure</span> t)
 </pre>
 </div>
 
@@ -958,12 +865,12 @@ opening in the browser&#x2026;). That's why I don't bother with simple-httpd.
 </div>
 </div>
 
-<div id="outline-container-org2e649c2" class="outline-2">
-<h2 id="org2e649c2"><span class="section-number-2">4.</span> Publishing the site to the world</h2>
+<div id="outline-container-org5a55a5a" class="outline-2">
+<h2 id="org5a55a5a"><span class="section-number-2">4.</span> Publishing the site to the world</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgaf028fb" class="outline-4">
-<h4 id="orgaf028fb"><span class="section-number-4">4.0.1.</span> Free method with github</h4>
+<div id="outline-container-orged7b349" class="outline-4">
+<h4 id="orged7b349"><span class="section-number-4">4.0.1.</span> Free method with github</h4>
 <div class="outline-text-4" id="text-4-0-1">
 <p>
 First, Github pages - <a href="20231212T123552--deploy-a-static-website-with-github-pages__git_websites.html">deploy a static website with github pages</a>
@@ -975,8 +882,8 @@ Second, custom domain name - <a href="20231214T094426--setup-custom-domain-for-g
 </div>
 </div>
 
-<div id="outline-container-org9a63aa6" class="outline-4">
-<h4 id="org9a63aa6"><span class="section-number-4">4.0.2.</span> Possibly non-free with a server(have not tried)</h4>
+<div id="outline-container-orgb32a791" class="outline-4">
+<h4 id="orgb32a791"><span class="section-number-4">4.0.2.</span> Possibly non-free with a server(have not tried)</h4>
 <div class="outline-text-4" id="text-4-0-2">
 <p>
 Also possible to server your html files over apache. And then simply push your
@@ -985,8 +892,8 @@ them over tramp with rsync - <a href="https://taingram.org/blog/org-mode-blog.ht
 </div>
 </div>
 
-<div id="outline-container-org629a884" class="outline-4">
-<h4 id="org629a884"><span class="section-number-4">4.0.3.</span> Automatically publish your pages?(have not tried)</h4>
+<div id="outline-container-orgcc3d32b" class="outline-4">
+<h4 id="orgcc3d32b"><span class="section-number-4">4.0.3.</span> Automatically publish your pages?(have not tried)</h4>
 <div class="outline-text-4" id="text-4-0-3">
 <p>
 Automatically like so - <a href="https://ravi.pro/blog/blogging-with-emacs-org-mode.html">https://ravi.pro/blog/blogging-with-emacs-org-mode.html</a>
@@ -995,16 +902,20 @@ Automatically like so - <a href="https://ravi.pro/blog/blogging-with-emacs-org-m
 <p>
 Or like so - <a href="https://systemcrafters.net/publishing-websites-with-org-mode/automated-site-publishing/">https://systemcrafters.net/publishing-websites-with-org-mode/automated-site-publishing/</a>
 </p>
+
+<p>
+Video <a href="https://www.youtube.com/watch?v=za99DwdZEyg&amp;t=996s&amp;ab_channel=SystemCrafters">here</a>
+</p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgec0f517" class="outline-2">
-<h2 id="orgec0f517"><span class="section-number-2">5.</span> Nice to haves</h2>
+<div id="outline-container-org25e5b1f" class="outline-2">
+<h2 id="org25e5b1f"><span class="section-number-2">5.</span> Nice to haves</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org4a09f62" class="outline-3">
-<h3 id="org4a09f62"><span class="section-number-3">5.1.</span> Individual files customization options</h3>
+<div id="outline-container-orgf7686c4" class="outline-3">
+<h3 id="orgf7686c4"><span class="section-number-3">5.1.</span> Individual files customization options</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 We are specifying all the configuration in the <code>build-site.el</code> file, however,
@@ -1020,20 +931,83 @@ Here are the things you can modify:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org">#+title: Freelancing
+<pre class="src src-org">#+title: <span style="font-weight: bold;">Freelancing</span>
 #+date: &lt;2020-01-01 Sun 01:01&gt;
-#+description:
-#+filetags:
-#+OPTIONS: toc:nil
-#+OPTIONS: num:nil
+<span style="font-weight: bold; font-style: italic;">#+description:</span>
+<span style="font-weight: bold; font-style: italic;">#+filetags:</span>
+<span style="font-weight: bold; font-style: italic;">#+OPTIONS: toc:nil</span>
+<span style="font-weight: bold; font-style: italic;">#+OPTIONS: num:nil</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga5deb3f" class="outline-3">
-<h3 id="orga5deb3f"><span class="section-number-3">5.2.</span> Important information about linking between .org files</h3>
+<div id="outline-container-org4132bae" class="outline-3">
+<h3 id="org4132bae"><span class="section-number-3">5.2.</span> Generating pages with code blocks</h3>
 <div class="outline-text-3" id="text-5-2">
+<p>
+So far we've been looking at a very simple example page that doesn't really have much on it. What happens when we try to generate a more elaborate Org file containing code blocks?
+</p>
+
+<p>
+Let's try it out with another file, a version of my literate Emacs configuration called Emacs.org!
+</p>
+
+<p>
+If you're generating a site that features code blocks like a coding blog or a literate Emacs configuration, you'll probably see an error like this when you generate the site:
+</p>
+
+
+<p>
+Cannot fontify source block (htmlize.el &gt;= 1.34 required)
+</p>
+
+<p>
+To resolve this issue, you will need to install the htmlize package from MELPA. We can automate the process of installing this package by adding the following snippet to our build-site.el file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Set the package installation directory so that packages aren't stored in the</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">~/.emacs.d/elpa path.</span>
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">package</span>)
+(<span style="font-weight: bold;">setq</span> package-user-dir (expand-file-name <span style="font-style: italic;">"./.packages"</span>))
+(<span style="font-weight: bold;">setq</span> package-archives '((<span style="font-style: italic;">"melpa"</span> . <span style="font-style: italic;">"https://melpa.org/packages/"</span>)
+                         (<span style="font-style: italic;">"elpa"</span> . <span style="font-style: italic;">"https://elpa.gnu.org/packages/"</span>)))
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Initialize the package system</span>
+(package-initialize)
+(<span style="font-weight: bold;">unless</span> package-archive-contents
+  (package-refresh-contents))
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Install dependencies</span>
+(package-install 'htmlize)
+</pre>
+</div>
+
+<p>
+In this snippet, we load Emacs' package manager and configure the
+package-user-dir to be a sub-directory of our project folder. This allows you
+to install packages for the script without mixing them up with the packages of
+your personal Emacs configuration!
+</p>
+
+<p>
+The next thing we do is add MELPA to the package archive list and refresh the
+package archive so that htmlize can be found. Finally, we call package-install
+to install it!
+</p>
+
+<p>
+In a future video I'll show you how to convert your Emacs color theme to a CSS
+file that you can use to colorize source blocks with exactly the same colors
+used in the theme!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org49a1c10" class="outline-3">
+<h3 id="org49a1c10"><span class="section-number-3">5.3.</span> Important information about linking between .org files</h3>
+<div class="outline-text-3" id="text-5-3">
 <p>
 Github link to issue - <a href="https://github.com/protesilaos/denote/issues/369">https://github.com/protesilaos/denote/issues/369</a> 
 </p>
@@ -1049,7 +1023,7 @@ to stop, you can add this in your config:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(setq org-export-with-broken-links 'mark)
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-export-with-broken-links 'mark)
 </pre>
 </div>
 
@@ -1073,16 +1047,16 @@ Example taken from here - <a href="https://orgmode.org/manual/Links-in-HTML-expo
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org">#+ATTR_HTML: :title The Org mode website :style color:red;
-[[https://orgmode.org]]
+<pre class="src src-org"><span style="font-weight: bold; font-style: italic;">#+ATTR_HTML: :title The Org mode website :style color:red;</span>
+<span style="text-decoration: underline;"><a href="https://orgmode.org">https://orgmode.org</a></span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org3627581" class="outline-3">
-<h3 id="org3627581"><span class="section-number-3">5.3.</span> CSS support in HTML export</h3>
-<div class="outline-text-3" id="text-5-3">
+<div id="outline-container-org08f8594" class="outline-3">
+<h3 id="org08f8594"><span class="section-number-3">5.4.</span> CSS support in HTML export</h3>
+<div class="outline-text-3" id="text-5-4">
 <p>
 Official docs for css support in HTML export - <a href="https://orgmode.org/manual/CSS-support.html">https://orgmode.org/manual/CSS-support.html</a>
 </p>
@@ -1093,9 +1067,9 @@ with Emacs.
 </p>
 </div>
 
-<div id="outline-container-org7c4f5f5" class="outline-4">
-<h4 id="org7c4f5f5"><span class="section-number-4">5.3.1.</span> Use the default styles from ox-html</h4>
-<div class="outline-text-4" id="text-5-3-1">
+<div id="outline-container-org6fb028a" class="outline-4">
+<h4 id="org6fb028a"><span class="section-number-4">5.4.1.</span> Use the default styles from ox-html</h4>
+<div class="outline-text-4" id="text-5-4-1">
 <p>
 You have to do nothing, <code>ox-html</code> - <code>org-html-style-default</code> got you covered.
 And it looks pretty good already by default.
@@ -1114,25 +1088,25 @@ than somewhere deep in the emacs docs.
 </div>
 </div>
 
-<div id="outline-container-orgef1e417" class="outline-4">
-<h4 id="orgef1e417"><span class="section-number-4">5.3.2.</span> Add custom classes to blocks of text/code</h4>
-<div class="outline-text-4" id="text-5-3-2">
+<div id="outline-container-org72b1a6b" class="outline-4">
+<h4 id="org72b1a6b"><span class="section-number-4">5.4.2.</span> Add custom classes to blocks of text/code</h4>
+<div class="outline-text-4" id="text-5-4-2">
 <p>
 <a href="https://orgmode.org/manual/HTML-doctypes.html">https://orgmode.org/manual/HTML-doctypes.html</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgac28b0d" class="outline-4">
-<h4 id="orgac28b0d"><span class="section-number-4">5.3.3.</span> import custom css</h4>
-<div class="outline-text-4" id="text-5-3-3">
+<div id="outline-container-orge935acc" class="outline-4">
+<h4 id="orge935acc"><span class="section-number-4">5.4.3.</span> import custom css</h4>
+<div class="outline-text-4" id="text-5-4-3">
 <p>
 Default html export engine already has us covered with basic css, you can
 enable/disable it like so:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">:html-head-include-default-style t/nil
+<pre class="src src-emacs-lisp"><span style="font-weight: bold;">:html-head-include-default-style</span> t/nil
 </pre>
 </div>
 
@@ -1142,7 +1116,7 @@ this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">:html-head "&lt;link rel=\"stylesheet\" href=\"../static/style.css\" type=\"text/css\"/&gt;"
+<pre class="src src-emacs-lisp"><span style="font-weight: bold;">:html-head</span> <span style="font-style: italic;">"&lt;link rel=\"stylesheet\" href=\"../static/style.css\" type=\"text/css\"/&gt;"</span>
 </pre>
 </div>
 
@@ -1158,15 +1132,15 @@ Use your own config from another website/blog for example:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">:html-head-extra "&lt;link rel=\"stylesheet\" href=\"https://arvydas.dev/static/style.css\" type=\"text/css\"/&gt;"
+<pre class="src src-emacs-lisp"><span style="font-weight: bold;">:html-head-extra</span> <span style="font-style: italic;">"&lt;link rel=\"stylesheet\" href=\"https://arvydas.dev/static/style.css\" type=\"text/css\"/&gt;"</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org019e743" class="outline-4">
-<h4 id="org019e743"><span class="section-number-4">5.3.4.</span> org-html-themes</h4>
-<div class="outline-text-4" id="text-5-3-4">
+<div id="outline-container-org45290ba" class="outline-4">
+<h4 id="org45290ba"><span class="section-number-4">5.4.4.</span> org-html-themes</h4>
+<div class="outline-text-4" id="text-5-4-4">
 <p>
 ORRR last thing that you can try when it comes to styling your website, try
 using one of these, <a href="https://github.com/fniessen/org-html-themes">org-html-themes</a>.
@@ -1177,7 +1151,7 @@ You can point to one of these themes like such, by placing this code at the top
 of your.org file:
 </p>
 <div class="org-src-container">
-<pre class="src src-org">#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-NAME.setup
+<pre class="src src-org"><span style="font-weight: bold; font-style: italic;">#+SETUPFILE: <a href="https://fniessen.github.io/org-html-themes/org/theme-NAME.setup">https://fniessen.github.io/org-html-themes/org/theme-NAME.setup</a></span>
 </pre>
 </div>
 
@@ -1186,7 +1160,7 @@ Or if you have downloaded the code(more future proof solution), add such line
 at the top of your .org file.
 </p>
 <div class="org-src-container">
-<pre class="src src-org">#+SETUPFILE: PATH/TO/GIT/REPO/org/theme-NAME-local.setup
+<pre class="src src-org"><span style="font-weight: bold; font-style: italic;">#+SETUPFILE: PATH/TO/GIT/REPO/org/theme-NAME-local.setup</span>
 </pre>
 </div>
 
@@ -1198,9 +1172,9 @@ using my own custom stylesheet.
 </div>
 </div>
 
-<div id="outline-container-orgc0f9058" class="outline-4">
-<h4 id="orgc0f9058"><span class="section-number-4">5.3.5.</span> Note to self</h4>
-<div class="outline-text-4" id="text-5-3-5">
+<div id="outline-container-orgb424a74" class="outline-4">
+<h4 id="orgb424a74"><span class="section-number-4">5.4.5.</span> Note to self</h4>
+<div class="outline-text-4" id="text-5-4-5">
 <p>
 Some css examples here(built with ox-publish though) -
 <a href="https://github.com/arvydasg/emacs_blog/blob/master/css/style.css">https://github.com/arvydasg/emacs_blog/blob/master/css/style.css</a>
@@ -1208,9 +1182,9 @@ Some css examples here(built with ox-publish though) -
 </div>
 </div>
 </div>
-<div id="outline-container-orga09a436" class="outline-3">
-<h3 id="orga09a436"><span class="section-number-3">5.4.</span> Javascript support in HTML export</h3>
-<div class="outline-text-3" id="text-5-4">
+<div id="outline-container-orgb546363" class="outline-3">
+<h3 id="orgb546363"><span class="section-number-3">5.5.</span> Javascript support in HTML export</h3>
+<div class="outline-text-3" id="text-5-5">
 <p>
 Official docs - <a href="https://orgmode.org/manual/JavaScript-support.html">https://orgmode.org/manual/JavaScript-support.html</a>
 </p>
@@ -1221,13 +1195,13 @@ Add the .js files the same way as you would add .css file.
 </div>
 </div>
 
-<div id="outline-container-org2463719" class="outline-3">
-<h3 id="org2463719"><span class="section-number-3">5.5.</span> Images in HTML export</h3>
-<div class="outline-text-3" id="text-5-5">
+<div id="outline-container-orgcf55ffc" class="outline-3">
+<h3 id="orgcf55ffc"><span class="section-number-3">5.6.</span> Images in HTML export</h3>
+<div class="outline-text-3" id="text-5-6">
 </div>
-<div id="outline-container-org0f5b310" class="outline-4">
-<h4 id="org0f5b310"><span class="section-number-4">5.5.1.</span> Display images</h4>
-<div class="outline-text-4" id="text-5-5-1">
+<div id="outline-container-org9c8bec7" class="outline-4">
+<h4 id="org9c8bec7"><span class="section-number-4">5.6.1.</span> Display images</h4>
+<div class="outline-text-4" id="text-5-6-1">
 <p>
 NOTE: gif's are not rendered in github pages for some reason (julijaconsulting
 and facebook project gif's)
@@ -1240,9 +1214,9 @@ My docs - <a href="20231126T003746--images-in-org-files__emacs.html">images in o
 </div>
 </div>
 
-<div id="outline-container-orgc51224d" class="outline-4">
-<h4 id="orgc51224d"><span class="section-number-4">5.5.2.</span> One option is to add images as plain html</h4>
-<div class="outline-text-4" id="text-5-5-2">
+<div id="outline-container-org626fef0" class="outline-4">
+<h4 id="org626fef0"><span class="section-number-4">5.6.2.</span> One option is to add images as plain html</h4>
+<div class="outline-text-4" id="text-5-6-2">
 <p>
 But then you can not change the size of it in lightbox.
 </p>
@@ -1253,15 +1227,15 @@ But then you can not change the size of it in lightbox.
 </div>
 </div>
 
-<div id="outline-container-org7474ea9" class="outline-4">
-<h4 id="org7474ea9"><span class="section-number-4">5.5.3.</span> Another option is to include a link to a file(the usual way)</h4>
-<div class="outline-text-4" id="text-5-5-3">
+<div id="outline-container-orga09a5a8" class="outline-4">
+<h4 id="orga09a5a8"><span class="section-number-4">5.6.3.</span> Another option is to include a link to a file(the usual way)</h4>
+<div class="outline-text-4" id="text-5-6-3">
 <p>
 To toggle the images(show/hide), use <code>org-toggle-inline-images</code>.
 </p>
 
 
-<figure id="orgbe931c3">
+<figure id="org4e1493d">
 <img src="./media/water.jpg" alt="water.jpg" width="1200px">
 
 </figure>
@@ -1273,18 +1247,18 @@ bound to <code>img</code>) and then I can drop images wherever.
 </div>
 </div>
 
-<div id="outline-container-org93e4ace" class="outline-4">
-<h4 id="org93e4ace"><span class="section-number-4">5.5.4.</span> Org download package for inserting images in org files</h4>
-<div class="outline-text-4" id="text-5-5-4">
+<div id="outline-container-orgaba71eb" class="outline-4">
+<h4 id="orgaba71eb"><span class="section-number-4">5.6.4.</span> Org download package for inserting images in org files</h4>
+<div class="outline-text-4" id="text-5-6-4">
 <p>
 Optional, does not really work if in WSL - <a href="20231219T090909--using-org-download-package-in-wsl__emacs_windows_wsl.html">using org download package in WSL</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8502eb9" class="outline-4">
-<h4 id="org8502eb9"><span class="section-number-4">5.5.5.</span> Add a lightbox effect on the images</h4>
-<div class="outline-text-4" id="text-5-5-5">
+<div id="outline-container-orge9f4b05" class="outline-4">
+<h4 id="orge9f4b05"><span class="section-number-4">5.6.5.</span> Add a lightbox effect on the images</h4>
+<div class="outline-text-4" id="text-5-6-5">
 <p>
 Follow - <a href="20231219T091704--add-a-lightbox-effect-for-images-in-html__javascript_websites.html">add a lightbox effect for images in html</a>
 </p>
@@ -1292,9 +1266,9 @@ Follow - <a href="20231219T091704--add-a-lightbox-effect-for-images-in-html__jav
 </div>
 </div>
 
-<div id="outline-container-org73a1db6" class="outline-3">
-<h3 id="org73a1db6"><span class="section-number-3">5.6.</span> Preamble(nav) and postamble(footer)</h3>
-<div class="outline-text-3" id="text-5-6">
+<div id="outline-container-org8b7e00a" class="outline-3">
+<h3 id="org8b7e00a"><span class="section-number-3">5.7.</span> Preamble(nav) and postamble(footer)</h3>
+<div class="outline-text-3" id="text-5-7">
 <p>
 Docs about them -  <a href="https://orgmode.org/manual/HTML-preamble-and-postamble.html">https://orgmode.org/manual/HTML-preamble-and-postamble.html</a>
 </p>
@@ -1316,17 +1290,196 @@ Then simply modify - :html-preamble and :html-postamble in your config.
 </div>
 </div>
 
-<div id="outline-container-orgc131a44" class="outline-3">
-<h3 id="orgc131a44"><span class="section-number-3">5.7.</span> Extra's</h3>
-<div class="outline-text-3" id="text-5-7">
+<div id="outline-container-org66a364f" class="outline-3">
+<h3 id="org66a364f"><span class="section-number-3">5.8.</span> Add a search to the <code>sitemap.org</code></h3>
+<div class="outline-text-3" id="text-5-8">
+<p>
+So my thought was that&#x2026; if I create lots of small files and all of those
+small files are listed in one list in <code>sitemap.org</code>, then it will be difficult
+to locate the files.. The tags are currently not visible in this list, you only
+have to search by keywords that you know. For example you search for Django,
+but then you get a search bar with results of 20 entries. Have to go through
+each one of them&#x2026; Pain.
+</p>
+
+<p>
+What if I had a simple search bar in <code>sitemap.org</code> file which would allow me to
+filter the list results by the words I write in the search bar?
+</p>
+</div>
+
+<div id="outline-container-org66481af" class="outline-4">
+<h4 id="org66481af"><span class="section-number-4">5.8.1.</span> Print "hello world" first in the sitemap.org</h4>
+<div class="outline-text-4" id="text-5-8-1">
+<p>
+Sounds good, but the problem is that I do not control the behavior of the
+<code>sitemap.org</code> generation. At least not originally. But it's emacs, so I can.
+</p>
+
+<p>
+I see that my build configuration has <code>:sitemap-function</code> option, which is
+currently commented out. Perhaps this is the place that is responsible for
+creating the <code>sitemap.org</code> file?
+</p>
+
+<p>
+I go to
+<code>/nix/store/jm91p103vzqyvjcgk44ga6r5p5fhj45i-emacs-29.3/share/emacs/29.3/lisp/org</code>
+and find <code>ox-publish.el.gz</code> package. In it I see <code>org-publish-sitemap-default</code>
+function that looks like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">org-publish-sitemap-default</span> (title list)
+  <span style="font-style: italic;">"Default site map, as a string.</span>
+<span style="font-style: italic;">TITLE is the title of the site map.  LIST is an internal</span>
+<span style="font-style: italic;">representation for the files to include, as returned by</span>
+<span style="font-style: italic;">`</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">org-list-to-lisp</span><span style="font-style: italic;">'.  PROJECT is the current project."</span>
+  (concat <span style="font-style: italic;">"#+TITLE: "</span> title <span style="font-style: italic;">"\n\n"</span>
+          (org-list-to-org list)))
+</pre>
+</div>
+
+<p>
+First I want to simply print "hello world". Let's modify this function like so:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">ag-org-publish-sitemap-default</span> (title list)
+  <span style="font-style: italic;">"Default site map, as a string.</span>
+<span style="font-style: italic;">TITLE is the title of the site map.  LIST is an internal</span>
+<span style="font-style: italic;">representation for the files to include, as returned by</span>
+<span style="font-style: italic;">`</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">org-list-to-lisp</span><span style="font-style: italic;">'."</span>
+  (concat <span style="font-style: italic;">"#+TITLE: "</span> title <span style="font-style: italic;">"\n\n"</span>
+          <span style="font-style: italic;">"* Hello World\n\n"</span>
+          (org-list-to-org list)))
+</pre>
+</div>
+
+<p>
+Then in the build config, let's use this function:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold;">:sitemap-function</span> ag-org-publish-sitemap-default
+</pre>
+</div>
+
+<p>
+Build the site.
+</p>
+
+<p>
+You should see the hello world in the <code>sitemap.org</code>. Great, we have found a way
+to control the sitemap!
+</p>
+
+
+
+
+
+
+
+<p>
+ag-org-publish-sitemap-default
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge60210d" class="outline-4">
+<h4 id="orge60210d"><span class="section-number-4">5.8.2.</span> Add the search bar in plain html</h4>
+<div class="outline-text-4" id="text-5-8-2">
+<blockquote>
+<p>
+To include an HTML search bar in the <code>sitemap.org</code> file generated by our custom
+function, we need to <b><b>embed</b></b> the HTML <b><b>directly into the Org file</b></b>.
+Org-mode supports including <b><b>raw HTML</b></b>, which <b><b>will be preserved</b></b> when the
+Org file is exported to HTML.
+</p>
+</blockquote>
+
+<p>
+Let's modify our custom function to include the search bar:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">ag-org-publish-sitemap-default</span> (title list)
+  <span style="font-style: italic;">"Default site map, as a string.</span>
+<span style="font-style: italic;">TITLE is the title of the site map.  LIST is an internal</span>
+<span style="font-style: italic;">representation for the files to include, as returned by</span>
+<span style="font-style: italic;">`</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">org-list-to-lisp</span><span style="font-style: italic;">'."</span>
+  (concat <span style="font-style: italic;">"#+TITLE: "</span> title <span style="font-style: italic;">"\n\n"</span>
+          <span style="font-style: italic;">"#+OPTIONS: toc:nil\n\n"</span>   <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Disable the table of contents for better formatting</span>
+          <span style="font-style: italic;">"#+BEGIN_EXPORT html\n"</span>
+          <span style="font-style: italic;">"&lt;div class=\"search-wrapper\"&gt;\n"</span>
+          <span style="font-style: italic;">"&lt;label for=\"search\"&gt;Search&lt;/label&gt;\n"</span>
+          <span style="font-style: italic;">"&lt;input type=\"search\" id=\"search\" data-search&gt;\n"</span>
+          <span style="font-style: italic;">"&lt;/div&gt;\n"</span>
+          <span style="font-style: italic;">"#+END_EXPORT\n\n"</span>
+          (org-list-to-org list)))
+</pre>
+</div>
+
+<p>
+Now create a <code>search.js</code> file in <code>static/js</code> folder. Add it in the
+<code>html-postamble</code>.
+</p>
+
+<p>
+Content of the <code>search.js</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">This code waits for the entire HTML document to load before running</span>
+document.addEventListener(<span style="font-style: italic;">"DOMContentLoaded"</span>, <span style="font-weight: bold;">function</span>() {
+    <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Select all list items (notes) within the unordered list with class "org-ul"</span>
+    <span style="font-weight: bold;">const</span> <span style="font-weight: bold; font-style: italic;">allNotes</span> = document.querySelectorAll(<span style="font-style: italic;">".org-ul li"</span>);
+
+    <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Select the search input field with the data attribute "data-search"</span>
+    <span style="font-weight: bold;">const</span> <span style="font-weight: bold; font-style: italic;">searchInput</span> = document.querySelector(<span style="font-style: italic;">"[data-search]"</span>);
+
+    <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Add an event listener to the search input field that listens for "input" events</span>
+    searchInput.addEventListener(<span style="font-style: italic;">"input"</span>, <span style="font-weight: bold;">function</span>(<span style="font-weight: bold; font-style: italic;">e</span>) {
+        <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Get the current value of the search input field and convert it to lowercase</span>
+        <span style="font-weight: bold;">const</span> <span style="font-weight: bold; font-style: italic;">value</span> = e.target.value.toLowerCase();
+
+        <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Loop through each note in the list of notes</span>
+        allNotes.forEach(<span style="font-weight: bold;">function</span>(<span style="font-weight: bold; font-style: italic;">note</span>) {
+            <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Get the text content of the note and convert it to lowercase</span>
+            <span style="font-weight: bold;">const</span> <span style="font-weight: bold; font-style: italic;">noteText</span> = note.textContent.toLowerCase();
+
+            <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Check if the note's text includes the search input value</span>
+            <span style="font-weight: bold;">if</span> (noteText.includes(value)) {
+                <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">If it does, display the note</span>
+                note.style.display = <span style="font-style: italic;">""</span>;
+            } <span style="font-weight: bold;">else</span> {
+                <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">If it doesn't, hide the note</span>
+                note.style.display = <span style="font-style: italic;">"none"</span>;
+            }
+        });
+    });
+});
+</pre>
+</div>
+
+<p>
+Rebuild the site. Search should work.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9c37113" class="outline-3">
+<h3 id="org9c37113"><span class="section-number-3">5.9.</span> Extra's</h3>
+<div class="outline-text-3" id="text-5-9">
 <p>
 Extra tips:
 </p>
 </div>
 
-<div id="outline-container-org39a94cc" class="outline-4">
-<h4 id="org39a94cc"><span class="section-number-4">5.7.1.</span> You can also include other content from other files!</h4>
-<div class="outline-text-4" id="text-5-7-1">
+<div id="outline-container-org34a3942" class="outline-4">
+<h4 id="org34a3942"><span class="section-number-4">5.9.1.</span> You can also include other content from other files!</h4>
+<div class="outline-text-4" id="text-5-9-1">
 <p>
 Like such - <a href="https://orgmode.org/manual/Include-Files.html">https://orgmode.org/manual/Include-Files.html</a>
 </p>
@@ -1337,9 +1490,9 @@ I have done this to include recent posts into index.org page.
 </div>
 </div>
 
-<div id="outline-container-org10719a0" class="outline-4">
-<h4 id="org10719a0"><span class="section-number-4">5.7.2.</span> Creating a HTML page with my .emacs configuration</h4>
-<div class="outline-text-4" id="text-5-7-2">
+<div id="outline-container-org848acf2" class="outline-4">
+<h4 id="org848acf2"><span class="section-number-4">5.9.2.</span> Creating a HTML page with my .emacs configuration</h4>
+<div class="outline-text-4" id="text-5-9-2">
 <p>
 Simply made a symlink to my .org configuration file and it renders it together
 with the rest of the .org files.
@@ -1368,9 +1521,9 @@ this site on another platform - I might try this workaround again.
 </div>
 </div>
 
-<div id="outline-container-org6f14684" class="outline-4">
-<h4 id="org6f14684"><span class="section-number-4">5.7.3.</span> Adding a date to post title in sitemap</h4>
-<div class="outline-text-4" id="text-5-7-3">
+<div id="outline-container-orgb8a29d2" class="outline-4">
+<h4 id="orgb8a29d2"><span class="section-number-4">5.9.3.</span> Adding a date to post title in sitemap</h4>
+<div class="outline-text-4" id="text-5-9-3">
 <p>
 Inspiration here - <a href="https://taingram.org/blog/org-mode-blog.html">https://taingram.org/blog/org-mode-blog.html</a>
 </p>
@@ -1381,13 +1534,13 @@ case I wanted to show the date inline with the blog post listings:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun ag/org-sitemap-date-entry-format (entry style project)
-  "Format ENTRY in org-publish PROJECT Sitemap format ENTRY ENTRY STYLE format that includes date."
-  (let ((filename (org-publish-find-title entry project)))
-    (if (= (length filename) 0)
-        (format "*%s*" entry)
-      (format "{{{timestamp(%s)}}} [[file:%s][%s]]"
-              (format-time-string "%Y-%m-%d"
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">ag/org-sitemap-date-entry-format</span> (entry style project)
+  <span style="font-style: italic;">"Format ENTRY in org-publish PROJECT Sitemap format ENTRY ENTRY STYLE format that includes date."</span>
+  (<span style="font-weight: bold;">let</span> ((filename (org-publish-find-title entry project)))
+    (<span style="font-weight: bold;">if</span> (= (length filename) 0)
+        (format <span style="font-style: italic;">"*%s*"</span> entry)
+      (format <span style="font-style: italic;">"{{{timestamp(%s)}}} [[file:%s][%s]]"</span>
+              (format-time-string <span style="font-style: italic;">"%Y-%m-%d"</span>
                                   (org-publish-find-date entry project))
               entry
               filename))))
@@ -1399,8 +1552,8 @@ Notice above we insert an <a href="https://orgmode.org/manual/Macro-Replacement.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(setq org-export-global-macros
-      '(("timestamp" . "@@html:&lt;span class=\"timestamp\"&gt;[$1]&lt;/span&gt;@@")))
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-export-global-macros
+      '((<span style="font-style: italic;">"timestamp"</span> . <span style="font-style: italic;">"@@html:&lt;span class=\"timestamp\"&gt;[$1]&lt;/span&gt;@@"</span>)))
 </pre>
 </div>
 
@@ -1410,7 +1563,7 @@ our custom function in:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">:sitemap-format-entry ag/org-sitemap-date-entry-format
+<pre class="src src-emacs-lisp"><span style="font-weight: bold;">:sitemap-format-entry</span> ag/org-sitemap-date-entry-format
 </pre>
 </div>
 
@@ -1423,47 +1576,45 @@ This macro adds some HTML around the timestamp for CSS styling, it has to be
 done as a macro as otherwise Org escapes the HTML tags. The results are:
 </p>
 
-<ul class="org-ul">
-<li><span class="timestamp">[2024-05-29]</span> <a href="20240529T090313--capitalize-each-blog-post-title-with-elisp__denote_elisp_emacs.html">Capitalize each blog post title with elisp</a></li>
-<li><span class="timestamp">[2024-05-29]</span> <a href="20240529T090108--attempt-to-modify-denote-links-to-suite-ox-publish__denote_elisp_emacs.html">attempt to modify denote links to suite ox-publish</a></li>
-<li><span class="timestamp">[2024-05-29]</span> <a href="20240529T080712--2024-05-something-is-missing__statusupdate.html">2024-05 something is missing</a></li>
-</ul>
+<p>
+#+BEGIN_EXPORT html
+</p>
 </div>
 </div>
 
-<div id="outline-container-org11cd619" class="outline-4">
-<h4 id="org11cd619"><span class="section-number-4">5.7.4.</span> <span class="todo TODO">TODO</span> Linking HTML pages and their org mode sources</h4>
-<div class="outline-text-4" id="text-5-7-4">
+<div id="outline-container-org3eb13a4" class="outline-4">
+<h4 id="org3eb13a4"><span class="section-number-4">5.9.4.</span> <span class="todo TODO">TODO</span> Linking HTML pages and their org mode sources</h4>
+<div class="outline-text-4" id="text-5-9-4">
 <p>
 Inspiration - <a href="https://ict4g.net/adolfo/notes/emacs/linking-my-html-pages-to-source-code.html">https://ict4g.net/adolfo/notes/emacs/linking-my-html-pages-to-source-code.html</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org831c090" class="outline-4">
-<h4 id="org831c090"><span class="section-number-4">5.7.5.</span> Add scroll to top button</h4>
-<div class="outline-text-4" id="text-5-7-5">
+<div id="outline-container-org74c5a13" class="outline-4">
+<h4 id="org74c5a13"><span class="section-number-4">5.9.5.</span> <span class="todo TODO">TODO</span> Add scroll to top button</h4>
+<div class="outline-text-4" id="text-5-9-5">
 <p>
 Follow - <a href="20231219T172622--scroll-to-top-button__javascript_websites.html">scroll to top button</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3ed2b35" class="outline-4">
-<h4 id="org3ed2b35"><span class="section-number-4">5.7.6.</span> <span class="todo TODO">TODO</span> Adding analytics</h4>
-<div class="outline-text-4" id="text-5-7-6">
+<div id="outline-container-org939fb96" class="outline-4">
+<h4 id="org939fb96"><span class="section-number-4">5.9.6.</span> <span class="todo TODO">TODO</span> Adding analytics</h4>
+<div class="outline-text-4" id="text-5-9-6">
 </div>
 <ol class="org-ol">
-<li><a id="orga24b270"></a>Plausible<br>
-<div class="outline-text-5" id="text-5-7-6-1">
+<li><a id="org224f39e"></a>Plausible<br>
+<div class="outline-text-5" id="text-5-9-6-1">
 <p>
 Follow - <a href="20231219T153629--add-website-analytics-with-plausible__websites.html">add website analytics with plausible</a>
 </p>
 </div>
 </li>
 
-<li><a id="orge238ca6"></a>Google tag analytics<br>
-<div class="outline-text-5" id="text-5-7-6-2">
+<li><a id="org1d7da29"></a>Google tag analytics<br>
+<div class="outline-text-5" id="text-5-9-6-2">
 <p>
 Follow - <a href="20231219T153712--add-website-analytics-with-google-tag-manager__websites.html">add website analytics with google tag manager</a>
 </p>
@@ -1472,27 +1623,27 @@ Follow - <a href="20231219T153712--add-website-analytics-with-google-tag-manager
 </ol>
 </div>
 
-<div id="outline-container-orgd5b716f" class="outline-4">
-<h4 id="orgd5b716f"><span class="section-number-4">5.7.7.</span> Table of contents at the side - inspiration</h4>
-<div class="outline-text-4" id="text-5-7-7">
+<div id="outline-container-orgc71f112" class="outline-4">
+<h4 id="orgc71f112"><span class="section-number-4">5.9.7.</span> Table of contents at the side - inspiration</h4>
+<div class="outline-text-4" id="text-5-9-7">
 <p>
 <a href="https://ckeditor.com/docs/ckeditor4/latest/features/codesnippet.html#hooking-a-custom-syntax-highlighter">https://ckeditor.com/docs/ckeditor4/latest/features/codesnippet.html#hooking-a-custom-syntax-highlighter</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org587c420" class="outline-4">
-<h4 id="org587c420"><span class="section-number-4">5.7.8.</span> short and clean links like here</h4>
-<div class="outline-text-4" id="text-5-7-8">
+<div id="outline-container-org0787267" class="outline-4">
+<h4 id="org0787267"><span class="section-number-4">5.9.8.</span> short and clean links like here</h4>
+<div class="outline-text-4" id="text-5-9-8">
 <p>
 <a href="https://diego.codes/post/blogging-with-org/">https://diego.codes/post/blogging-with-org/</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org059b52b" class="outline-4">
-<h4 id="org059b52b"><span class="section-number-4">5.7.9.</span> Print out proper underscore</h4>
-<div class="outline-text-4" id="text-5-7-9">
+<div id="outline-container-org02c96f7" class="outline-4">
+<h4 id="org02c96f7"><span class="section-number-4">5.9.9.</span> Print out proper underscore</h4>
+<div class="outline-text-4" id="text-5-9-9">
 <p>
 add #+OPTIONS: ^:nil to all files
 </p>
@@ -1506,17 +1657,17 @@ and write a post about it how it looks wiht and without
 </p>
 </div>
 </div>
-<div id="outline-container-org262a74e" class="outline-4">
-<h4 id="org262a74e"><span class="section-number-4">5.7.10.</span> Tables in HTML export</h4>
-<div class="outline-text-4" id="text-5-7-10">
+<div id="outline-container-org7840b4a" class="outline-4">
+<h4 id="org7840b4a"><span class="section-number-4">5.9.10.</span> Tables in HTML export</h4>
+<div class="outline-text-4" id="text-5-9-10">
 <p>
 <a href="https://orgmode.org/manual/Tables-in-HTML-export.html">https://orgmode.org/manual/Tables-in-HTML-export.html</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orga72698c" class="outline-4">
-<h4 id="orga72698c"><span class="section-number-4">5.7.11.</span> Create editable text areas</h4>
-<div class="outline-text-4" id="text-5-7-11">
+<div id="outline-container-org3e70e88" class="outline-4">
+<h4 id="org3e70e88"><span class="section-number-4">5.9.11.</span> Create editable text areas</h4>
+<div class="outline-text-4" id="text-5-9-11">
 <p>
 Docs - <a href="https://orgmode.org/manual/Text-areas-in-HTML-export.html">https://orgmode.org/manual/Text-areas-in-HTML-export.html</a>
 </p>
@@ -1534,13 +1685,13 @@ If you ever want to try using this feature, here is an example:
 </div>
 </div>
 
-<div id="outline-container-orgc68da97" class="outline-4">
-<h4 id="orgc68da97"><span class="section-number-4">5.7.12.</span> Tags solution</h4>
-<div class="outline-text-4" id="text-5-7-12">
+<div id="outline-container-org7670f23" class="outline-4">
+<h4 id="org7670f23"><span class="section-number-4">5.9.12.</span> Tags solution</h4>
+<div class="outline-text-4" id="text-5-9-12">
 </div>
 <ol class="org-ol">
-<li><a id="org0366a9e"></a>tags in the sidebar with JS<br>
-<div class="outline-text-5" id="text-5-7-12-1">
+<li><a id="orgbd0f5e4"></a>tags in the sidebar with JS<br>
+<div class="outline-text-5" id="text-5-9-12-1">
 <p>
 <a href="https://manateelazycat.github.io/tags.html">https://manateelazycat.github.io/tags.html</a>
 </p>
@@ -1559,8 +1710,8 @@ use some js? Mobile content atrodo labai nice taip pat.
 </div>
 </li>
 
-<li><a id="orgee76b08"></a>create this functionality<br>
-<div class="outline-text-5" id="text-5-7-12-2">
+<li><a id="orgb2ca82a"></a>create this functionality<br>
+<div class="outline-text-5" id="text-5-9-12-2">
 <p>
 build a tagging functionality like in org static blog(inspiration from it's
 source code)
@@ -1570,9 +1721,9 @@ source code)
 </ol>
 </div>
 
-<div id="outline-container-org199b0db" class="outline-4">
-<h4 id="org199b0db"><span class="section-number-4">5.7.13.</span> presentation mode?</h4>
-<div class="outline-text-4" id="text-5-7-13">
+<div id="outline-container-orge97b30c" class="outline-4">
+<h4 id="orge97b30c"><span class="section-number-4">5.9.13.</span> presentation mode?</h4>
+<div class="outline-text-4" id="text-5-9-13">
 <p>
 <a href="https://orgmode.org/worg/code/org-info-js/index.html#undefined">https://orgmode.org/worg/code/org-info-js/index.html#undefined</a>
 </p>
@@ -1589,9 +1740,9 @@ org projects:"
 </div>
 </div>
 
-<div id="outline-container-org7e0acba" class="outline-4">
-<h4 id="org7e0acba"><span class="section-number-4">5.7.14.</span> search function with agolia like Bozhidar</h4>
-<div class="outline-text-4" id="text-5-7-14">
+<div id="outline-container-org73260de" class="outline-4">
+<h4 id="org73260de"><span class="section-number-4">5.9.14.</span> search function with agolia like Bozhidar</h4>
+<div class="outline-text-4" id="text-5-9-14">
 <p>
 <a href="https://docs.projectile.mx/projectile/installation.html">https://docs.projectile.mx/projectile/installation.html</a>
 </p>
@@ -1608,8 +1759,8 @@ org projects:"
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 15:48</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-15 Fri 18:25</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
@@ -1620,6 +1771,7 @@ org projects:"
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

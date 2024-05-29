@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Build a website with emacs and org-static-blog</title>
@@ -32,23 +32,23 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8bbfebf">1. Docs</a></li>
-<li><a href="#orgf45f9d8">2. Installation</a></li>
-<li><a href="#org7478317">3. Try using the minimal config</a></li>
-<li><a href="#org8f9a360">4. Decide where to place the configuration</a></li>
-<li><a href="#orgf82cf63">5. My configuration as of <span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span></a></li>
-<li><a href="#org2927389">6. CSS</a>
+<li><a href="#orga0beb37">1. Docs</a></li>
+<li><a href="#org378ae2b">2. Installation</a></li>
+<li><a href="#orgcf89c9a">3. Try using the minimal config</a></li>
+<li><a href="#org6c09c41">4. Decide where to place the configuration</a></li>
+<li><a href="#orgbaff61e">5. My configuration as of <span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span></a></li>
+<li><a href="#org3482a2e">6. CSS</a>
 <ul>
-<li><a href="#org2ff5c11">6.1. use CSS built in css from ox-html</a></li>
-<li><a href="#orgc410b7c">6.2. org-html-themes</a></li>
+<li><a href="#org31bd51a">6.1. use CSS built in css from ox-html</a></li>
+<li><a href="#org408ecb1">6.2. org-html-themes</a></li>
 </ul>
 </li>
-<li><a href="#orgc345626">7. pros/cons</a>
+<li><a href="#org9422890">7. pros/cons</a>
 <ul>
 <li>
 <ul>
-<li><a href="#org842a6ce">7.0.1. PROS</a></li>
-<li><a href="#orga280024">7.0.2. CONS</a></li>
+<li><a href="#org46347f0">7.0.1. PROS</a></li>
+<li><a href="#org7458380">7.0.2. CONS</a></li>
 </ul>
 </li>
 </ul>
@@ -57,8 +57,8 @@
 </div>
 </nav>
 
-<div id="outline-container-org8bbfebf" class="outline-2">
-<h2 id="org8bbfebf"><span class="section-number-2">1.</span> Docs</h2>
+<div id="outline-container-orga0beb37" class="outline-2">
+<h2 id="orga0beb37"><span class="section-number-2">1.</span> Docs</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Official docs - <a href="https://github.com/bastibe/org-static-blog">https://github.com/bastibe/org-static-blog</a>
@@ -66,66 +66,66 @@ Official docs - <a href="https://github.com/bastibe/org-static-blog">https://git
 </div>
 </div>
 
-<div id="outline-container-orgf45f9d8" class="outline-2">
-<h2 id="orgf45f9d8"><span class="section-number-2">2.</span> Installation</h2>
+<div id="outline-container-org378ae2b" class="outline-2">
+<h2 id="org378ae2b"><span class="section-number-2">2.</span> Installation</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(use-package org-static-blog
-  :ensure t)
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> org-static-blog
+  <span style="font-weight: bold;">:ensure</span> t)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org7478317" class="outline-2">
-<h2 id="org7478317"><span class="section-number-2">3.</span> Try using the minimal config</h2>
+<div id="outline-container-orgcf89c9a" class="outline-2">
+<h2 id="orgcf89c9a"><span class="section-number-2">3.</span> Try using the minimal config</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Taken from the docs.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(setq org-static-blog-publish-title "My Static Org Blog")
-(setq org-static-blog-publish-url "https://staticblog.org/")
-(setq org-static-blog-publish-directory "~/projects/blog/")
-(setq org-static-blog-posts-directory "~/projects/blog/posts/")
-(setq org-static-blog-drafts-directory "~/projects/blog/drafts/")
-(setq org-static-blog-enable-tags t)
-(setq org-export-with-toc nil)
-(setq org-export-with-section-numbers nil)
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-static-blog-publish-title <span style="font-style: italic;">"My Static Org Blog"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-publish-url <span style="font-style: italic;">"https://staticblog.org/"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-publish-directory <span style="font-style: italic;">"~/projects/blog/"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-posts-directory <span style="font-style: italic;">"~/projects/blog/posts/"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-drafts-directory <span style="font-style: italic;">"~/projects/blog/drafts/"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-enable-tags t)
+(<span style="font-weight: bold;">setq</span> org-export-with-toc nil)
+(<span style="font-weight: bold;">setq</span> org-export-with-section-numbers nil)
 
-;; This header is inserted into the &lt;head&gt; section of every page:
-;;   (you will need to create the style sheet at
-;;    ~/projects/blog/static/style.css
-;;    and the favicon at
-;;    ~/projects/blog/static/favicon.ico)
-(setq org-static-blog-page-header
-      "&lt;meta name=\"author\" content=\"John Dow\"&gt;
-&lt;meta name=\"referrer\" content=\"no-referrer\"&gt;
-&lt;meta name=\"viewport\" content=\"initial-scale=1,width=device-width,minimum-scale=1\"&gt;
-&lt;link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" /&gt;
-&lt;link rel=\"icon\" href=\"static/favicon.ico\"&gt;")
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This header is inserted into the &lt;head&gt; section of every page:</span>
+<span style="font-weight: bold; font-style: italic;">;;   </span><span style="font-weight: bold; font-style: italic;">(you will need to create the style sheet at</span>
+<span style="font-weight: bold; font-style: italic;">;;    </span><span style="font-weight: bold; font-style: italic;">~/projects/blog/static/style.css</span>
+<span style="font-weight: bold; font-style: italic;">;;    </span><span style="font-weight: bold; font-style: italic;">and the favicon at</span>
+<span style="font-weight: bold; font-style: italic;">;;    </span><span style="font-weight: bold; font-style: italic;">~/projects/blog/static/favicon.ico)</span>
+(<span style="font-weight: bold;">setq</span> org-static-blog-page-header
+      <span style="font-style: italic;">"&lt;meta name=\"author\" content=\"John Dow\"&gt;</span>
+<span style="font-style: italic;">&lt;meta name=\"referrer\" content=\"no-referrer\"&gt;</span>
+<span style="font-style: italic;">&lt;meta name=\"viewport\" content=\"initial-scale=1,width=device-width,minimum-scale=1\"&gt;</span>
+<span style="font-style: italic;">&lt;link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" /&gt;</span>
+<span style="font-style: italic;">&lt;link rel=\"icon\" href=\"static/favicon.ico\"&gt;"</span>)
 
-;; This preamble is inserted at the beginning of the &lt;body&gt; of every page:
-;;   This particular HTML creates a &lt;div&gt; with a simple linked headline
-(setq org-static-blog-page-preamble
-      "&lt;div class=\"header\"&gt;
-  &lt;a href=\"https://staticblog.org\"&gt;My Static Org Blog&lt;/a&gt;
-&lt;/div&gt;")
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This preamble is inserted at the beginning of the &lt;body&gt; of every page:</span>
+<span style="font-weight: bold; font-style: italic;">;;   </span><span style="font-weight: bold; font-style: italic;">This particular HTML creates a &lt;div&gt; with a simple linked headline</span>
+(<span style="font-weight: bold;">setq</span> org-static-blog-page-preamble
+      <span style="font-style: italic;">"&lt;div class=\"header\"&gt;</span>
+<span style="font-style: italic;">  &lt;a href=\"https://staticblog.org\"&gt;My Static Org Blog&lt;/a&gt;</span>
+<span style="font-style: italic;">&lt;/div&gt;"</span>)
 
-;; This postamble is inserted at the end of the &lt;body&gt; of every page:
-;;   This particular HTML creates a &lt;div&gt; with a link to the archive page
-;;   and a licensing stub.
-(setq org-static-blog-page-postamble
-      "&lt;div id=\"archive\"&gt;
-  &lt;a href=\"https://staticblog.org/archive.html\"&gt;Other posts&lt;/a&gt;
-&lt;/div&gt;
-&lt;center&gt;&lt;a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;&lt;img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/3.0/88x31.png\" /&gt;&lt;/a&gt;&lt;br /&gt;&lt;span xmlns:dct=\"https://purl.org/dc/terms/\" href=\"https://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\"&gt;bastibe.de&lt;/span&gt; by &lt;a xmlns:cc=\"https://creativecommons.org/ns#\" href=\"https://bastibe.de\" property=\"cc:attributionName\" rel=\"cc:attributionURL\"&gt;Bastian Bechtold&lt;/a&gt; is licensed under a &lt;a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;Creative Commons Attribution-ShareAlike 3.0 Unported License&lt;/a&gt;.&lt;/center&gt;")
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This postamble is inserted at the end of the &lt;body&gt; of every page:</span>
+<span style="font-weight: bold; font-style: italic;">;;   </span><span style="font-weight: bold; font-style: italic;">This particular HTML creates a &lt;div&gt; with a link to the archive page</span>
+<span style="font-weight: bold; font-style: italic;">;;   </span><span style="font-weight: bold; font-style: italic;">and a licensing stub.</span>
+(<span style="font-weight: bold;">setq</span> org-static-blog-page-postamble
+      <span style="font-style: italic;">"&lt;div id=\"archive\"&gt;</span>
+<span style="font-style: italic;">  &lt;a href=\"https://staticblog.org/archive.html\"&gt;Other posts&lt;/a&gt;</span>
+<span style="font-style: italic;">&lt;/div&gt;</span>
+<span style="font-style: italic;">&lt;center&gt;&lt;a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;&lt;img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/3.0/88x31.png\" /&gt;&lt;/a&gt;&lt;br /&gt;&lt;span xmlns:dct=\"https://purl.org/dc/terms/\" href=\"https://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\"&gt;bastibe.de&lt;/span&gt; by &lt;a xmlns:cc=\"https://creativecommons.org/ns#\" href=\"https://bastibe.de\" property=\"cc:attributionName\" rel=\"cc:attributionURL\"&gt;Bastian Bechtold&lt;/a&gt; is licensed under a &lt;a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;Creative Commons Attribution-ShareAlike 3.0 Unported License&lt;/a&gt;.&lt;/center&gt;"</span>)
 
-;; This HTML code is inserted into the index page between the preamble and
-;;   the blog posts
-(setq org-static-blog-index-front-matter
-      "&lt;h1&gt; Welcome to my blog &lt;/h1&gt;\n")
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This HTML code is inserted into the index page between the preamble and</span>
+<span style="font-weight: bold; font-style: italic;">;;   </span><span style="font-weight: bold; font-style: italic;">the blog posts</span>
+(<span style="font-weight: bold;">setq</span> org-static-blog-index-front-matter
+      <span style="font-style: italic;">"&lt;h1&gt; Welcome to my blog &lt;/h1&gt;\n"</span>)
 </pre>
 </div>
 
@@ -141,8 +141,8 @@ site not to write repetitive code for each! Great!
 </p>
 </div>
 </div>
-<div id="outline-container-org8f9a360" class="outline-2">
-<h2 id="org8f9a360"><span class="section-number-2">4.</span> Decide where to place the configuration</h2>
+<div id="outline-container-org6c09c41" class="outline-2">
+<h2 id="org6c09c41"><span class="section-number-2">4.</span> Decide where to place the configuration</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Now the configuration above might get large if you start modifying the head,
@@ -162,8 +162,8 @@ files:
 
 <div class="org-src-container">
 <pre class="src src-bash">devnotes/build/
-├── build.sh
-└── build-site.el
+&#9500;&#9472;&#9472; build.sh
+&#9492;&#9472;&#9472; build-site.el
 </pre>
 </div>
 
@@ -172,7 +172,7 @@ build.sh should be made to be executable <code>chmo o+x build.sh</code> and it's
 are:
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">#!/bin/sh
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/bin/</span><span style="font-weight: bold;">sh</span>
 emacs -Q --script build-site.el
 </pre>
 </div>
@@ -185,78 +185,78 @@ with a couple of additions):
 
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
-;; NEW START ------------------------------------------------------------------------
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">NEW START ------------------------------------------------------------------------</span>
 
-;; Set the package installation directory so that packages aren't stored in the
-;; ~/.emacs.d/elpa path.
-(require 'package)
-(setq package-user-dir (expand-file-name "./.packages"))
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Set the package installation directory so that packages aren't stored in the</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">~/.emacs.d/elpa path.</span>
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">package</span>)
+(<span style="font-weight: bold;">setq</span> package-user-dir (expand-file-name <span style="font-style: italic;">"./.packages"</span>))
+(<span style="font-weight: bold;">setq</span> package-archives '((<span style="font-style: italic;">"melpa"</span> . <span style="font-style: italic;">"https://melpa.org/packages/"</span>)
+                         (<span style="font-style: italic;">"elpa"</span> . <span style="font-style: italic;">"https://elpa.gnu.org/packages/"</span>)))
 
-;; Initialize the package system
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Initialize the package system</span>
 (package-initialize)
-(unless package-archive-contents
+(<span style="font-weight: bold;">unless</span> package-archive-contents
   (package-refresh-contents))
 
-(message "Package refresh complete!")
+(message <span style="font-style: italic;">"Package refresh complete!"</span>)
 
-;; Install dependencies inside the ./packages directory
-;; should install ONLY org-static-blog
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Install dependencies inside the ./packages directory</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">should install ONLY org-static-blog</span>
 (package-install 'org-static-blog)
-(message "Package installation complete!")
+(message <span style="font-style: italic;">"Package installation complete!"</span>)
 
-;; NEW END ------------------------------------------------------------------------
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">NEW END ------------------------------------------------------------------------</span>
 
-(setq org-static-blog-publish-title "My Static Org Blog")
-(setq org-static-blog-publish-url "https://staticblog.org/")
-(setq org-static-blog-publish-directory "~/projects/blog/")
-(setq org-static-blog-posts-directory "~/projects/blog/posts/")
-(setq org-static-blog-drafts-directory "~/projects/blog/drafts/")
-(setq org-static-blog-enable-tags t)
-(setq org-export-with-toc nil)
-(setq org-export-with-section-numbers nil)
+(<span style="font-weight: bold;">setq</span> org-static-blog-publish-title <span style="font-style: italic;">"My Static Org Blog"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-publish-url <span style="font-style: italic;">"https://staticblog.org/"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-publish-directory <span style="font-style: italic;">"~/projects/blog/"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-posts-directory <span style="font-style: italic;">"~/projects/blog/posts/"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-drafts-directory <span style="font-style: italic;">"~/projects/blog/drafts/"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-enable-tags t)
+(<span style="font-weight: bold;">setq</span> org-export-with-toc nil)
+(<span style="font-weight: bold;">setq</span> org-export-with-section-numbers nil)
 
-;; This header is inserted into the &lt;head&gt; section of every page:
-;;   (you will need to create the style sheet at
-;;    ~/projects/blog/static/style.css
-;;    and the favicon at
-;;    ~/projects/blog/static/favicon.ico)
-(setq org-static-blog-page-header
-      "&lt;meta name=\"author\" content=\"John Dow\"&gt;
-    &lt;meta name=\"referrer\" content=\"no-referrer\"&gt;
-    &lt;meta name=\"viewport\" content=\"initial-scale=1,width=device-width,minimum-scale=1\"&gt;
-    &lt;link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" /&gt;
-    &lt;link rel=\"icon\" href=\"static/favicon.ico\"&gt;")
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This header is inserted into the &lt;head&gt; section of every page:</span>
+<span style="font-weight: bold; font-style: italic;">;;   </span><span style="font-weight: bold; font-style: italic;">(you will need to create the style sheet at</span>
+<span style="font-weight: bold; font-style: italic;">;;    </span><span style="font-weight: bold; font-style: italic;">~/projects/blog/static/style.css</span>
+<span style="font-weight: bold; font-style: italic;">;;    </span><span style="font-weight: bold; font-style: italic;">and the favicon at</span>
+<span style="font-weight: bold; font-style: italic;">;;    </span><span style="font-weight: bold; font-style: italic;">~/projects/blog/static/favicon.ico)</span>
+(<span style="font-weight: bold;">setq</span> org-static-blog-page-header
+      <span style="font-style: italic;">"&lt;meta name=\"author\" content=\"John Dow\"&gt;</span>
+<span style="font-style: italic;">    &lt;meta name=\"referrer\" content=\"no-referrer\"&gt;</span>
+<span style="font-style: italic;">    &lt;meta name=\"viewport\" content=\"initial-scale=1,width=device-width,minimum-scale=1\"&gt;</span>
+<span style="font-style: italic;">    &lt;link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" /&gt;</span>
+<span style="font-style: italic;">    &lt;link rel=\"icon\" href=\"static/favicon.ico\"&gt;"</span>)
 
-;; This preamble is inserted at the beginning of the &lt;body&gt; of every page:
-;;   This particular HTML creates a &lt;div&gt; with a simple linked headline
-(setq org-static-blog-page-preamble
-      "&lt;div class=\"header\"&gt;
-      &lt;a href=\"https://staticblog.org\"&gt;My Static Org Blog&lt;/a&gt;
-    &lt;/div&gt;")
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This preamble is inserted at the beginning of the &lt;body&gt; of every page:</span>
+<span style="font-weight: bold; font-style: italic;">;;   </span><span style="font-weight: bold; font-style: italic;">This particular HTML creates a &lt;div&gt; with a simple linked headline</span>
+(<span style="font-weight: bold;">setq</span> org-static-blog-page-preamble
+      <span style="font-style: italic;">"&lt;div class=\"header\"&gt;</span>
+<span style="font-style: italic;">      &lt;a href=\"https://staticblog.org\"&gt;My Static Org Blog&lt;/a&gt;</span>
+<span style="font-style: italic;">    &lt;/div&gt;"</span>)
 
-;; This postamble is inserted at the end of the &lt;body&gt; of every page:
-;;   This particular HTML creates a &lt;div&gt; with a link to the archive page
-;;   and a licensing stub.
-(setq org-static-blog-page-postamble
-      "&lt;div id=\"archive\"&gt;
-      &lt;a href=\"https://staticblog.org/archive.html\"&gt;Other posts&lt;/a&gt;
-    &lt;/div&gt;
-    &lt;center&gt;&lt;a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;&lt;img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/3.0/88x31.png\" /&gt;&lt;/a&gt;&lt;br /&gt;&lt;span xmlns:dct=\"https://purl.org/dc/terms/\" href=\"https://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\"&gt;bastibe.de&lt;/span&gt; by &lt;a xmlns:cc=\"https://creativecommons.org/ns#\" href=\"https://bastibe.de\" property=\"cc:attributionName\" rel=\"cc:attributionURL\"&gt;Bastian Bechtold&lt;/a&gt; is licensed under a &lt;a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;Creative Commons Attribution-ShareAlike 3.0 Unported License&lt;/a&gt;.&lt;/center&gt;")
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This postamble is inserted at the end of the &lt;body&gt; of every page:</span>
+<span style="font-weight: bold; font-style: italic;">;;   </span><span style="font-weight: bold; font-style: italic;">This particular HTML creates a &lt;div&gt; with a link to the archive page</span>
+<span style="font-weight: bold; font-style: italic;">;;   </span><span style="font-weight: bold; font-style: italic;">and a licensing stub.</span>
+(<span style="font-weight: bold;">setq</span> org-static-blog-page-postamble
+      <span style="font-style: italic;">"&lt;div id=\"archive\"&gt;</span>
+<span style="font-style: italic;">      &lt;a href=\"https://staticblog.org/archive.html\"&gt;Other posts&lt;/a&gt;</span>
+<span style="font-style: italic;">    &lt;/div&gt;</span>
+<span style="font-style: italic;">    &lt;center&gt;&lt;a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;&lt;img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/3.0/88x31.png\" /&gt;&lt;/a&gt;&lt;br /&gt;&lt;span xmlns:dct=\"https://purl.org/dc/terms/\" href=\"https://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\"&gt;bastibe.de&lt;/span&gt; by &lt;a xmlns:cc=\"https://creativecommons.org/ns#\" href=\"https://bastibe.de\" property=\"cc:attributionName\" rel=\"cc:attributionURL\"&gt;Bastian Bechtold&lt;/a&gt; is licensed under a &lt;a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;Creative Commons Attribution-ShareAlike 3.0 Unported License&lt;/a&gt;.&lt;/center&gt;"</span>)
 
-;; This HTML code is inserted into the index page between the preamble and
-;;   the blog posts
-(setq org-static-blog-index-front-matter
-      "&lt;h1&gt; Welcome to my blog &lt;/h1&gt;\n")
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This HTML code is inserted into the index page between the preamble and</span>
+<span style="font-weight: bold; font-style: italic;">;;   </span><span style="font-weight: bold; font-style: italic;">the blog posts</span>
+(<span style="font-weight: bold;">setq</span> org-static-blog-index-front-matter
+      <span style="font-style: italic;">"&lt;h1&gt; Welcome to my blog &lt;/h1&gt;\n"</span>)
 
-;; NEW START ------------------------------------------------------------------------
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">NEW START ------------------------------------------------------------------------</span>
 
 (org-static-blog-publish t)
 
-(message "Build complete!")
+(message <span style="font-style: italic;">"Build complete!"</span>)
 
-;; NEW END ------------------------------------------------------------------------
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">NEW END ------------------------------------------------------------------------</span>
 </pre>
 </div>
 
@@ -269,8 +269,8 @@ the end it will print out "Build complete!"
 </div>
 </div>
 
-<div id="outline-container-orgf82cf63" class="outline-2">
-<h2 id="orgf82cf63"><span class="section-number-2">5.</span> My configuration as of <span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span></h2>
+<div id="outline-container-orgbaff61e" class="outline-2">
+<h2 id="orgbaff61e"><span class="section-number-2">5.</span> My configuration as of <span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span></h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Stopped using it before I went to build devnotes site with ox-publish -
@@ -278,80 +278,80 @@ Stopped using it before I went to build devnotes site with ox-publish -
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">;; Set the package installation directory so that packages aren't stored in the
-;; ~/.emacs.d/elpa path.
-(require 'package)
-(setq package-user-dir (expand-file-name "./.packages"))
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")))
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Set the package installation directory so that packages aren't stored in the</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">~/.emacs.d/elpa path.</span>
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">package</span>)
+(<span style="font-weight: bold;">setq</span> package-user-dir (expand-file-name <span style="font-style: italic;">"./.packages"</span>))
+(<span style="font-weight: bold;">setq</span> package-archives '((<span style="font-style: italic;">"melpa"</span> . <span style="font-style: italic;">"https://melpa.org/packages/"</span>)
+                         (<span style="font-style: italic;">"elpa"</span> . <span style="font-style: italic;">"https://elpa.gnu.org/packages/"</span>)))
 
-;; Initialize the package system
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Initialize the package system</span>
 (package-initialize)
-(unless package-archive-contents
+(<span style="font-weight: bold;">unless</span> package-archive-contents
   (package-refresh-contents))
 
-(message "Package refresh complete!")
+(message <span style="font-style: italic;">"Package refresh complete!"</span>)
 
-;; Install dependencies inside the ./packages directory
-;; should install ONLY org-static-blog
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Install dependencies inside the ./packages directory</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">should install ONLY org-static-blog</span>
 (package-install 'org-static-blog)
-(message "Package installation complete!")
+(message <span style="font-style: italic;">"Package installation complete!"</span>)
 
-;; stop making ~ files
-(setq make-backup-files nil)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">stop making ~ files</span>
+(<span style="font-weight: bold;">setq</span> make-backup-files nil)
 
-;; directories and urls
-(setq org-static-blog-publish-title "arvydasg.github.io")
-(setq org-static-blog-publish-url "https://arvydasg.github.io/devnotes/html")
-(setq org-static-blog-publish-directory "~/GIT/devnotes/html")
-(setq org-static-blog-posts-directory "~/GIT/devnotes/org")
-(setq org-static-blog-drafts-directory "~/GIT/devnotes/drafts")
-(setq org-static-blog-index-length 3)
-(setq org-static-blog-preview-date-first-p nil)
-(setq org-static-blog-use-preview t)
-(setq org-static-blog-langcode "en")
-(setq org-static-blog-enable-tags t)
-(setq org-static-blog-no-post-tag "NONPOST")
-(setq org-static-blog-enable-deprecation-warning nil)
-(setq org-static-blog-page-header
-"&lt;meta name=\"author\" content=\"Arvydas Gasparavicius\"&gt;
-&lt;meta name=\"referrer\" content=\"no-referrer\"&gt;
-&lt;meta name=\"viewport\" content=\"initial-scale=1,width=device-width,minimum-scale=1\"&gt;
-&lt;link rel=\"stylesheet\" href=\"../static/style.css\"/&gt;
-&lt;link rel=\"icon\" href=\"../static/ag.ico\"&gt;
-&lt;script src=\"../static/lightbox.js\"&gt;&lt;/script&gt;
-&lt;script src=\"static/auto-render.min.js\"&gt;&lt;/script&gt;")
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">directories and urls</span>
+(<span style="font-weight: bold;">setq</span> org-static-blog-publish-title <span style="font-style: italic;">"arvydasg.github.io"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-publish-url <span style="font-style: italic;">"https://arvydasg.github.io/devnotes/html"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-publish-directory <span style="font-style: italic;">"~/GIT/devnotes/html"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-posts-directory <span style="font-style: italic;">"~/GIT/devnotes/org"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-drafts-directory <span style="font-style: italic;">"~/GIT/devnotes/drafts"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-index-length 3)
+(<span style="font-weight: bold;">setq</span> org-static-blog-preview-date-first-p nil)
+(<span style="font-weight: bold;">setq</span> org-static-blog-use-preview t)
+(<span style="font-weight: bold;">setq</span> org-static-blog-langcode <span style="font-style: italic;">"en"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-enable-tags t)
+(<span style="font-weight: bold;">setq</span> org-static-blog-no-post-tag <span style="font-style: italic;">"NONPOST"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-enable-deprecation-warning nil)
+(<span style="font-weight: bold;">setq</span> org-static-blog-page-header
+<span style="font-style: italic;">"&lt;meta name=\"author\" content=\"Arvydas Gasparavicius\"&gt;</span>
+<span style="font-style: italic;">&lt;meta name=\"referrer\" content=\"no-referrer\"&gt;</span>
+<span style="font-style: italic;">&lt;meta name=\"viewport\" content=\"initial-scale=1,width=device-width,minimum-scale=1\"&gt;</span>
+<span style="font-style: italic;">&lt;link rel=\"stylesheet\" href=\"../static/style.css\"/&gt;</span>
+<span style="font-style: italic;">&lt;link rel=\"icon\" href=\"../static/ag.ico\"&gt;</span>
+<span style="font-style: italic;">&lt;script src=\"../static/lightbox.js\"&gt;&lt;/script&gt;</span>
+<span style="font-style: italic;">&lt;script src=\"static/auto-render.min.js\"&gt;&lt;/script&gt;"</span>)
 
-(setq org-static-blog-page-preamble "&lt;br&gt;preamble here yo&lt;/br&gt;")
-(setq org-static-blog-page-postamble
-"&lt;div id=\"footer\"&gt;
-&lt;hr&gt;
-&lt;p&gt;2021-2023 Arvydas Gasparavicius&lt;/p&gt;
-&lt;script src=\"static/script.js\"&gt;&lt;/script&gt;
-&lt;/div&gt;")
+(<span style="font-weight: bold;">setq</span> org-static-blog-page-preamble <span style="font-style: italic;">"&lt;br&gt;preamble here yo&lt;/br&gt;"</span>)
+(<span style="font-weight: bold;">setq</span> org-static-blog-page-postamble
+<span style="font-style: italic;">"&lt;div id=\"footer\"&gt;</span>
+<span style="font-style: italic;">&lt;hr&gt;</span>
+<span style="font-style: italic;">&lt;p&gt;2021-2023 Arvydas Gasparavicius&lt;/p&gt;</span>
+<span style="font-style: italic;">&lt;script src=\"static/script.js\"&gt;&lt;/script&gt;</span>
+<span style="font-style: italic;">&lt;/div&gt;"</span>)
 
-(setq org-static-blog-index-front-matter
-"&lt;h1&gt; Hello there!&lt;/h1&gt;
-&lt;hr&gt;
-&lt;div id=\"intro\"&gt;
-&lt;p&gt; My name is Arvydas. &lt;a class=\"no-link\" href=\"https://github.com/arvydasg\"&gt;My Github&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt; If you are interested in some of my writings, here are some of my latest posts:&lt;/p&gt;
-&lt;/div&gt;
-\n\n\n")
+(<span style="font-weight: bold;">setq</span> org-static-blog-index-front-matter
+<span style="font-style: italic;">"&lt;h1&gt; Hello there!&lt;/h1&gt;</span>
+<span style="font-style: italic;">&lt;hr&gt;</span>
+<span style="font-style: italic;">&lt;div id=\"intro\"&gt;</span>
+<span style="font-style: italic;">&lt;p&gt; My name is Arvydas. &lt;a class=\"no-link\" href=\"https://github.com/arvydasg\"&gt;My Github&lt;/a&gt;.&lt;/p&gt;</span>
+<span style="font-style: italic;">&lt;p&gt; If you are interested in some of my writings, here are some of my latest posts:&lt;/p&gt;</span>
+<span style="font-style: italic;">&lt;/div&gt;</span>
+<span style="font-style: italic;">\n\n\n"</span>)
 
 (org-static-blog-publish t)
 
-(message "Build complete!")
+(message <span style="font-style: italic;">"Build complete!"</span>)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org2927389" class="outline-2">
-<h2 id="org2927389"><span class="section-number-2">6.</span> CSS</h2>
+<div id="outline-container-org3482a2e" class="outline-2">
+<h2 id="org3482a2e"><span class="section-number-2">6.</span> CSS</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org2ff5c11" class="outline-3">
-<h3 id="org2ff5c11"><span class="section-number-3">6.1.</span> use CSS built in css from ox-html</h3>
+<div id="outline-container-org31bd51a" class="outline-3">
+<h3 id="org31bd51a"><span class="section-number-3">6.1.</span> use CSS built in css from ox-html</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 We can customize <code>org-static-blog-page-header</code> and add your custom css
@@ -363,8 +363,8 @@ code block styling)
 Adding this to your configuration:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(require 'ox-html)                    ;or (require 'ox-publish)
-(setq org-static-blog-page-header org-html-style-default)
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">ox-html</span>)                    <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">or (require 'ox-publish)</span>
+(<span style="font-weight: bold;">setq</span> org-static-blog-page-header org-html-style-default)
 </pre>
 </div>
 
@@ -379,8 +379,8 @@ keep the first option that I have suggested with style.css file.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc410b7c" class="outline-3">
-<h3 id="orgc410b7c"><span class="section-number-3">6.2.</span> org-html-themes</h3>
+<div id="outline-container-org408ecb1" class="outline-3">
+<h3 id="org408ecb1"><span class="section-number-3">6.2.</span> org-html-themes</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 ORRR last thing that you can try when it comes to styling your website, try
@@ -392,7 +392,7 @@ You can point to one of these themes like such, by placing this code at the top
 of your.org file:
 </p>
 <div class="org-src-container">
-<pre class="src src-org">#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-NAME.setup
+<pre class="src src-org"><span style="font-weight: bold; font-style: italic;">#+SETUPFILE: <a href="https://fniessen.github.io/org-html-themes/org/theme-NAME.setup">https://fniessen.github.io/org-html-themes/org/theme-NAME.setup</a></span>
 </pre>
 </div>
 
@@ -401,7 +401,7 @@ Or if you have downloaded the code(more future proof solution), add such line
 at the top of your .org file.
 </p>
 <div class="org-src-container">
-<pre class="src src-org">#+SETUPFILE: PATH/TO/GIT/REPO/org/theme-NAME-local.setup
+<pre class="src src-org"><span style="font-weight: bold; font-style: italic;">#+SETUPFILE: PATH/TO/GIT/REPO/org/theme-NAME-local.setup</span>
 </pre>
 </div>
 
@@ -414,12 +414,12 @@ using my own custom stylesheet.
 </div>
 </div>
 
-<div id="outline-container-orgc345626" class="outline-2">
-<h2 id="orgc345626"><span class="section-number-2">7.</span> pros/cons</h2>
+<div id="outline-container-org9422890" class="outline-2">
+<h2 id="org9422890"><span class="section-number-2">7.</span> pros/cons</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org842a6ce" class="outline-4">
-<h4 id="org842a6ce"><span class="section-number-4">7.0.1.</span> PROS</h4>
+<div id="outline-container-org46347f0" class="outline-4">
+<h4 id="org46347f0"><span class="section-number-4">7.0.1.</span> PROS</h4>
 <div class="outline-text-4" id="text-7-0-1">
 <ul class="org-ul">
 <li>does everything for you</li>
@@ -431,8 +431,8 @@ using my own custom stylesheet.
 </div>
 </div>
 
-<div id="outline-container-orga280024" class="outline-4">
-<h4 id="orga280024"><span class="section-number-4">7.0.2.</span> CONS</h4>
+<div id="outline-container-org7458380" class="outline-4">
+<h4 id="org7458380"><span class="section-number-4">7.0.2.</span> CONS</h4>
 <div class="outline-text-4" id="text-7-0-2">
 <ul class="org-ul">
 <li>big program(installable package, not built in)</li>
@@ -451,7 +451,7 @@ using my own custom stylesheet.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-19 Tue 05:19</p>
 	 <div class="generated">
@@ -463,6 +463,7 @@ using my own custom stylesheet.
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>

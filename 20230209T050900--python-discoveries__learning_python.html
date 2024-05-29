@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 10:39 -->
+<!-- 2024-05-29 Wed 16:06 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python Discoveries</title>
@@ -32,11 +32,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5e481b1">1. Scope</a></li>
-<li><a href="#org09a90b5">2. f"" string &gt; templates</a></li>
-<li><a href="#orgbaf32fa">3. flask dispachermiddleware</a></li>
-<li><a href="#orge83ba60">4. Python set()</a></li>
-<li><a href="#org096de83">5. listdir vs chdir</a></li>
+<li><a href="#org23cb612">1. Scope</a></li>
+<li><a href="#org841c4e0">2. f"" string &gt; templates</a></li>
+<li><a href="#org759fa1a">3. flask dispachermiddleware</a></li>
+<li><a href="#orgada3da3">4. Python set()</a></li>
+<li><a href="#orga31c8e4">5. listdir vs chdir</a></li>
 </ul>
 </div>
 </nav>
@@ -55,8 +55,8 @@ First of all I don't want to forget about these functions, second of
 all - I would like to share them with you.
 </p>
 
-<div id="outline-container-org5e481b1" class="outline-2">
-<h2 id="org5e481b1"><span class="section-number-2">1.</span> Scope</h2>
+<div id="outline-container-org23cb612" class="outline-2">
+<h2 id="org23cb612"><span class="section-number-2">1.</span> Scope</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 You can assign a returned value from functions to a variable
@@ -73,8 +73,8 @@ Thanks to Karina
 </p>
 </div>
 </div>
-<div id="outline-container-org09a90b5" class="outline-2">
-<h2 id="org09a90b5"><span class="section-number-2">2.</span> f"" string &gt; templates</h2>
+<div id="outline-container-org841c4e0" class="outline-2">
+<h2 id="org841c4e0"><span class="section-number-2">2.</span> f"" string &gt; templates</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Qrcode pkc
@@ -100,8 +100,8 @@ it for this project.
 </div>
 </div>
 
-<div id="outline-container-orgbaf32fa" class="outline-2">
-<h2 id="orgbaf32fa"><span class="section-number-2">3.</span> flask dispachermiddleware</h2>
+<div id="outline-container-org759fa1a" class="outline-2">
+<h2 id="org759fa1a"><span class="section-number-2">3.</span> flask dispachermiddleware</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Module and imports. Running multiple flask apps
@@ -112,13 +112,13 @@ For <a href="https://arvydas.dev/2023-02-06-run-multiple-flask-applications-from
 </p>
 
 
-<figure id="orge03b6ec">
+<figure id="org588c437">
 <img src="./media/discoveries1.png" alt="discoveries1.png" width="800px">
 
 </figure>
 
 
-<figure id="orge4bebb2">
+<figure id="org056f28b">
 <img src="./media/discoveries2.png" alt="discoveries2.png" width="600px">
 
 </figure>
@@ -131,20 +131,20 @@ import data</code>. This was strange.
 </div>
 </div>
 
-<div id="outline-container-orge83ba60" class="outline-2">
-<h2 id="orge83ba60"><span class="section-number-2">4.</span> Python set()</h2>
+<div id="outline-container-orgada3da3" class="outline-2">
+<h2 id="orgada3da3"><span class="section-number-2">4.</span> Python set()</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 The set() function creates a set. No repeating values.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">list_numbers = [1,2,3,4,2,5,5,1]
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">list_numbers</span> = [1,2,3,4,2,5,5,1]
 
-# create set from list
-numbers_set = set(list_numbers)
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">create set from list</span>
+<span style="font-weight: bold; font-style: italic;">numbers_set</span> = <span style="font-weight: bold;">set</span>(list_numbers)
 
-print(numbers_set)
+<span style="font-weight: bold;">print</span>(numbers_set)
 </pre>
 </div>
 
@@ -157,27 +157,27 @@ Amazing, thanks to Karina.
 </p>
 
 
-<figure id="org2beaae5">
+<figure id="org06f7232">
 <img src="./media/discoveries3.png" alt="discoveries3.png" width="800px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org096de83" class="outline-2">
-<h2 id="org096de83"><span class="section-number-2">5.</span> listdir vs chdir</h2>
+<div id="outline-container-orga31c8e4" class="outline-2">
+<h2 id="orga31c8e4"><span class="section-number-2">5.</span> listdir vs chdir</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 This one confused me. I ran a for loop similar to this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">x = ./Dropbox
-dir = os.listdir(x)
-print(dir)
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">x</span> = ./Dropbox
+<span style="font-weight: bold;">dir</span> = os.listdir(x)
+<span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">dir</span>)
 
-for file in dir:
-    # do this and that
+<span style="font-weight: bold;">for</span> <span style="font-weight: bold;">file</span> <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">dir</span>:
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">do this and that</span>
 </pre>
 </div>
 
@@ -197,7 +197,7 @@ something similar to this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">for file in os.listdir(os.chdir(x)):
+<pre class="src src-python"><span style="font-weight: bold;">for</span> <span style="font-weight: bold;">file</span> <span style="font-weight: bold;">in</span> os.listdir(os.chdir(x)):
 </pre>
 </div>
 </div>
@@ -211,7 +211,7 @@ something similar to this:
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:39</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2023-02-09 Thu 05:09</p>
 	 <div class="generated">
@@ -223,6 +223,7 @@ something similar to this:
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
 	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
 </div>
 </body>
 </html>
