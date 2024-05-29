@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 17:03 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Through attribute in django-orm</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 16:58</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Through attribute in django-orm</h1>
+</header><p>
+This is the basic m2m relationship:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Vessel</span>(models.Model):
+    <span style="font-weight: bold; font-style: italic;">name</span> = models.CharField(max_length=255)
+    <span style="font-weight: bold; font-style: italic;">stock</span> = models.IntegerField(default=0)
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>) -&gt; <span style="font-weight: bold;">str</span>:
+        <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">self</span>.name
+
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Deal</span>(models.Model):        
+    <span style="font-weight: bold; font-style: italic;">collateral</span> = models.ManyToManyField(
+        Vessel,
+        blank=<span style="font-weight: bold; text-decoration: underline;">True</span>,
+    )
+    <span style="font-weight: bold; font-style: italic;">register_date</span> = models.DateTimeField(
+        null=<span style="font-weight: bold; text-decoration: underline;">True</span>,
+        blank=<span style="font-weight: bold; text-decoration: underline;">True</span>
+    )
+    <span style="font-weight: bold; font-style: italic;">has_new</span> = models.BooleanField(
+        default=<span style="font-weight: bold; text-decoration: underline;">True</span>,
+        null=<span style="font-weight: bold; text-decoration: underline;">True</span>   
+    )
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>) -&gt; <span style="font-weight: bold;">str</span>:
+        <span style="font-weight: bold;">return</span> f<span style="font-style: italic;">"#</span>{<span style="font-weight: bold;">self</span>.pk}<span style="font-style: italic;">"</span>
+</pre>
+</div>
+
+<p>
+Query the above created table in Django shell like so:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">In [9]: deal = Deal.objects.last()
+In [10]: collateral_vessels = deal.collateral.<span style="font-weight: bold;">all</span>()
+In [11]: <span style="font-weight: bold;">print</span>(collateral_vessels)
+&lt;QuerySet [&lt;Vessel: Two&gt;, &lt;Vessel: Three&gt;]&gt;
+</pre>
+</div>
+
+<p>
+In the case above we CAN NOT control the <code>app_deal_collateral</code> table. Which is
+sad&#x2026; let's say we want to control it, we then use the <code>through</code> attribute.
+</p>
+
+<p>
+We will inform Django not to use the default table like above, but in this case
+we want to use OUR OWN table.
+</p>
+
+<p>
+We also infom that we WILL NOT want to control the collaterals over the DEAL
+model/admin page, but over the Collaterals page/admin page:
+</p>
+
+<p>
+Will do that with <code>through</code> attribute:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
+
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Vessel</span>(models.Model):
+    <span style="font-weight: bold; font-style: italic;">name</span> = models.CharField(max_length=255)
+    <span style="font-weight: bold; font-style: italic;">stock</span> = models.IntegerField(default=0)
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>) -&gt; <span style="font-weight: bold;">str</span>:
+        <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">self</span>.name
+
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Deal</span>(models.Model):        
+    <span style="font-weight: bold; font-style: italic;">collaterals</span> = models.ManyToManyField(
+        Vessel,
+        blank=<span style="font-weight: bold; text-decoration: underline;">True</span>,
+        through=<span style="font-style: italic;">'Collateral'</span>,
+    )
+    <span style="font-weight: bold; font-style: italic;">register_date</span> = models.DateTimeField(
+        null=<span style="font-weight: bold; text-decoration: underline;">True</span>,
+        blank=<span style="font-weight: bold; text-decoration: underline;">True</span>
+    )
+    <span style="font-weight: bold; font-style: italic;">has_new</span> = models.BooleanField(
+        default=<span style="font-weight: bold; text-decoration: underline;">True</span>,
+        null=<span style="font-weight: bold; text-decoration: underline;">True</span>   
+    )
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>) -&gt; <span style="font-weight: bold;">str</span>:
+        <span style="font-weight: bold;">return</span> f<span style="font-style: italic;">"#</span>{<span style="font-weight: bold;">self</span>.pk}<span style="font-style: italic;">"</span>
+
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Collateral</span>(models.Model):
+    <span style="font-weight: bold; font-style: italic;">vessel</span> = models.ForeignKey(
+        Vessel,
+        on_delete=models.DO_NOTHING,
+    )
+    <span style="font-weight: bold; font-style: italic;">deal</span> = models.ForeignKey(
+        Deal,
+        on_delete=models.DO_NOTHING,
+        null=<span style="font-weight: bold; text-decoration: underline;">True</span>
+    )
+    <span style="font-weight: bold; font-style: italic;">quant</span> = models.PositiveIntegerField(
+        null=<span style="font-weight: bold; text-decoration: underline;">True</span>,
+    )
+    <span style="font-weight: bold; font-style: italic;">charfield</span> = models.CharField(max_length=255)
+    <span style="font-weight: bold; font-style: italic;">is_new</span> = models.BooleanField(        
+        default=<span style="font-weight: bold; text-decoration: underline;">True</span>,
+        blank=<span style="font-weight: bold; text-decoration: underline;">True</span>
+    )
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>) -&gt; <span style="font-weight: bold;">str</span>:
+        <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">str</span>(<span style="font-weight: bold;">self</span>.part)
+</pre>
+</div>
+
+<p>
+Db structure then:
+</p>
+
+<p>
+App_collateral then becomes like a control center from which you can control
+all the relationships, etc.
+</p>
+
+<p>
+Deal admin page, we can not see the collaterals(vessels) here.
+</p>
+
+<p>
+What we can see is another model in the admin called collaterals.
+</p>
+
+<p>
+This is good if you actually want to separately create Deal and Vessel objects
+and then connect them in one in Collateral model.
+</p>
+
+<p>
+Query like such(using shell_plus with print sql):
+</p>
+
+<p>
+<b><b>But what if you want to modify the collaterals from the Deal model?</b></b>
+</p>
+
+<p>
+Answer - inline
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> admin
+<span style="font-weight: bold;">from</span> .models <span style="font-weight: bold;">import</span> *
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">CollateralInline</span>(admin.TabularInline):
+    <span style="font-weight: bold; font-style: italic;">model</span> = Collateral
+    <span style="font-weight: bold; font-style: italic;">extra</span> = 1
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">DealAdmin</span>(admin.ModelAdmin):
+    <span style="font-weight: bold; font-style: italic;">inlines</span> = [CollateralInline]
+
+admin.site.register(Deal, DealAdmin)
+admin.site.register(Vessel)
+admin.site.register(Collateral)
+</pre>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:03</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 16:58</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 16:58</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

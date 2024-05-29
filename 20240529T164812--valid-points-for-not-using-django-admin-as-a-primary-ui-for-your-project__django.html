@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 17:03 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Valid points for not using django-admin as a primary UI for your project</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 16:51</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Valid points for not using django-admin as a primary UI for your project</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9927288">1. Offcial Django docs</a></li>
+<li><a href="#orgbdea88d">2. Django forum</a></li>
+<li><a href="#orgd9cac0b">3. Reddit</a></li>
+<li><a href="#orgd6c5308">4. Knowledge from Django podcast</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org9927288" class="outline-2">
+<h2 id="org9927288"><span class="section-number-2">1.</span> Offcial Django docs</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="https://docs.djangoproject.com/en/5.0/ref/contrib/admin/">https://docs.djangoproject.com/en/5.0/ref/contrib/admin/</a>
+</p>
+
+<blockquote>
+<p>
+The admin’s recommended use is limited to an organization’s internal management
+tool. It’s not intended for building your entire front end around.
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+If you need to provide a more process-centric interface that abstracts away the
+implementation details of database tables and fields, then it’s probably time
+to write your own views.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgbdea88d" class="outline-2">
+<h2 id="orgbdea88d"><span class="section-number-2">2.</span> Django forum</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="https://forum.djangoproject.com/t/understanding-the-django-admin/28151">https://forum.djangoproject.com/t/understanding-the-django-admin/28151</a>
+</p>
+
+<blockquote>
+<p>
+Yes, you can spend a lot of time learning about how to customize the admin.
+However, what I have learned over the years is that in the time you’ve spent learning how to do this, you generally could have completed your project twice-over by ignoring it.
+I’ve seen this mistake made in a number of cases, and I know others who have encountered the same problem.
+Just like you describe - the admin is deceptively simple to get something up and running. But as additional features and functionality are requested, you find yourself working more and more around the limitations of the admin. Soon, you reach a point where you’re spending far more time trying to figure out how to get the admin to do something than actually doing it.
+What you end up with can quite frankly be described as a generally-unmaintainable mess.
+So what I really suggest is the same thing that the authors of Django recommend.
+Don’t do this. If you’re lucky and stay with Django long enough, you’ll realize how much of a mistake this can be.
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+The fact that a bad decision was made in the past does not justify continuing
+to make that same bad decision today.
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+As a professional, it’s also your responsibility to identify these mistakes and
+to demonstrate that there are better ways of handling this.
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+Sure, you can do this. But I’m going to continue to express my opinion here
+that it’s fundamentally a poor idea. The “Technical Debt” you create by
+focusing everything through the admin can be amazingly substantial.
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+The “two-years-from-today-you” will thank you.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgd9cac0b" class="outline-2">
+<h2 id="orgd9cac0b"><span class="section-number-2">3.</span> Reddit</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<a href="https://www.reddit.com/r/django/comments/587gvr/django_admin_is_really_slow_any_thoughts_on_how/?rdt=50786">https://www.reddit.com/r/django/comments/587gvr/django_admin_is_really_slow_any_thoughts_on_how/?rdt=50786</a> 
+</p>
+
+<blockquote>
+<p>
+We use the django admin to manage tables with upwards of two million rows.
+There are some tricks. All foreign keys must be read only. You shouldn't be
+using the admin to control selections from tens of thousands of things. It just
+isn't a reasonable interface. You could make it work for quite a while with
+prefetch_related. You could make it work forever with a custom ajax
+autocomplete. But you should probably consider not using that interface in the
+admin and doing it in a view that you have full control over the UX.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgd6c5308" class="outline-2">
+<h2 id="orgd6c5308"><span class="section-number-2">4.</span> Knowledge from Django podcast</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<a href="https://www.youtube.com/watch?v=f8cFjiyxQuQ&amp;ab_channel=PyCon2019">"Jacinda's PyCon talk</a> is a good one. I saw it in person so it made a big
+impression at the time. <a href="https://youtu.be/XphJRQ3AzMU?si=aQoHSZseoyfmwuJM">Kenneth Love has a 3-hour tutorial</a> all about the admin.
+And Jacinda also has an earlier <a href="https://youtu.be/5ajZMpTcUZU?si=ljNofojK9HFRWiJi">3-hour talk</a> on the admin."
+</p>
+
+<p>
+There are multiple Django talks about abusing the admin. <b><b>41:06</b></b> -
+<a href="https://open.spotify.com/episode/1JeC5GruYeqYsjNpegrOxI?si=1GodW0zVTYmQfqJwWhFfRQ&amp;t=2466">https://open.spotify.com/episode/1JeC5GruYeqYsjNpegrOxI?si=1GodW0zVTYmQfqJwWhFfRQ&amp;t=2466</a>
+</p>
+
+<p>
+2min back - <a href="https://open.spotify.com/episode/1JeC5GruYeqYsjNpegrOxI?si=vhg_HKbISLa9QKA9FTQN9w">https://open.spotify.com/episode/1JeC5GruYeqYsjNpegrOxI?si=vhg_HKbISLa9QKA9FTQN9w</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:03</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 16:51</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 16:48</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

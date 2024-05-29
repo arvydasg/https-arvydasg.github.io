@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 17:03 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Class based views vs function based views in django</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 16:42</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Class based views vs function based views in django</h1>
+</header><blockquote>
+<p>
+It is a matter of taste. BUT using classes might give you less code. A pattern
+to follow can be:
+</p>
+
+<ul class="org-ul">
+<li>if you can use one of the generic classes, then use it</li>
+<li>if you can use the normal view class without too much hassle, then do it.</li>
+<li>and the last resort is function based views</li>
+</ul>
+
+<p>
+But when that is said, I almost always use functions because I love them. And
+that is also a good practice to follow
+</p>
+</blockquote>
+
+<p>
+BASICALLY DOING CVB's only to get experience in OOP. OOP will be useful when
+working with django admin and overall, OOP knowledge is a must, I have grown to
+that. Even though I like function views more, let's work with CLASS BASED
+VIEWS.
+</p>
+
+<blockquote>
+<p>
+if you are performing a more complex operation, handling multiple forms at
+once, a function-based view will serve you better.
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+If you find you’re struggling to implement your view as a subclass of a generic
+view, then you may find it more effective to write just the code you need,
+using your own class-based or functional views.
+</p>
+</blockquote>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:03</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 16:42</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 16:38</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

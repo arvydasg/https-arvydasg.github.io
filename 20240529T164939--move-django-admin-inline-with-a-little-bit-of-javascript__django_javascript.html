@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 17:03 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Move django-admin inline with a little bit of javascript</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 16:50</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Move django-admin inline with a little bit of javascript</h1>
+</header><p>
+Since I did not find a way to move the inlines with the help of django
+templates, since by default inlines are always placed at the bottom of the
+page, I had to use some javascript for this.
+</p>
+
+<p>
+Below is from shipping project:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span style="font-weight: bold;">const</span> <span style="font-weight: bold; font-style: italic;">manual_ship_type_field</span> = document.querySelector(<span style="font-style: italic;">'div.field-manual_ship_type'</span>);
+<span style="font-weight: bold;">const</span> <span style="font-weight: bold; font-style: italic;">whole_manual_mapping_block</span> = manual_ship_type_field.parentElement.parentElement;
+<span style="font-weight: bold;">const</span> <span style="font-weight: bold; font-style: italic;">forecasted_values_block</span> = document.getElementById(<span style="font-style: italic;">'vessel_vessel_forecasted_value-group'</span>);
+whole_manual_mapping_block.insertAdjacentElement(<span style="font-style: italic;">'afterend'</span>, forecasted_values_block);
+</pre>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:03</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 16:50</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 16:49</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 16:06 -->
+<!-- 2024-05-29 Wed 17:03 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Optimizing database queries</title>
 <meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="welcome to my site" />
-<meta name="keywords" content="emacs antanas geles" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
 <meta name="generator" content="Org Mode" />
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:22</div>
+<div id="updated">Updated: 2024-05-29 Wed 16:57</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,9 +32,8 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf34bc66">1. Caching</a></li>
-<li><a href="#orgacdbd82">2. HTMX</a></li>
-<li><a href="#orgf548e3b">3. Others</a></li>
+<li><a href="#orgfa3d5e0">1. Caching</a></li>
+<li><a href="#org1a988bb">2. Others</a></li>
 </ul>
 </div>
 </nav>
@@ -48,8 +47,8 @@ add to the database (I add them daily) - the worse the situation will get.
 Some possible solutions to try out:
 </p>
 
-<div id="outline-container-orgf34bc66" class="outline-2">
-<h2 id="orgf34bc66"><span class="section-number-2">1.</span> Caching</h2>
+<div id="outline-container-orgfa3d5e0" class="outline-2">
+<h2 id="orgfa3d5e0"><span class="section-number-2">1.</span> Caching</h2>
 <div class="outline-text-2" id="text-1">
 <blockquote>
 <p>
@@ -87,12 +86,9 @@ time I just don't feel that this is the solution I should go with.
 </div>
 </div>
 
-<div id="outline-container-orgacdbd82" class="outline-2">
-<h2 id="orgacdbd82"><span class="section-number-2">2.</span> HTMX</h2>
-</div>
-<div id="outline-container-orgf548e3b" class="outline-2">
-<h2 id="orgf548e3b"><span class="section-number-2">3.</span> Others</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org1a988bb" class="outline-2">
+<h2 id="org1a988bb"><span class="section-number-2">2.</span> Others</h2>
+<div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Use Select Related or Prefetch Related: If your models have ForeignKey or
 ManyToMany relationships, using select_related or prefetch_related can help
@@ -125,8 +121,8 @@ patterns.</li>
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:03</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 16:57</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-29 Mon 08:14</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

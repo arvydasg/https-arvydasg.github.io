@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 16:06 -->
+<!-- 2024-05-29 Wed 17:03 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Django heaven</title>
 <meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="welcome to my site" />
-<meta name="keywords" content="emacs antanas geles" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
 <meta name="generator" content="Org Mode" />
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
@@ -16,38 +16,6 @@
 <link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
 <link rel="icon" href="./static/ag.ico">
-<script>
-  window.MathJax = {
-    tex: {
-      ams: {
-        multlineWidth: '85%'
-      },
-      tags: 'ams',
-      tagSide: 'right',
-      tagIndent: '.8em'
-    },
-    chtml: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    svg: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    output: {
-      font: 'mathjax-modern',
-      displayOverflow: 'overflow'
-    }
-  };
-</script>
-
-<script
-  id="MathJax-script"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -55,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 16:02</div>
+<div id="updated">Updated: 2024-05-29 Wed 17:02</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -64,719 +32,77 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9a92e71">1. Useful resources (videos/reads)</a></li>
-<li><a href="#orga3b22a9">2. Django commands</a></li>
-<li><a href="#org7ff83aa">3. Django Admin</a>
+<li><a href="#orgb37d800">1. Print that info</a>
 <ul>
-<li><a href="#orgad7f8cf">3.1. Custom filter</a></li>
-<li><a href="#orgb30be56">3.2. Valid points why it is not a good idea to use Django Admin as primary UI for your projects</a>
-<ul>
-<li><a href="#orge0a6d55">3.2.1. Django docs</a></li>
-<li><a href="#org7b951d3">3.2.2. Django forum</a></li>
-<li><a href="#org3d36925">3.2.3. reddit</a></li>
-<li><a href="#orgd571289">3.2.4. Knowledge from Django podcast</a></li>
+<li><a href="#orgb5fcce3">1.1. Print attributes through <code>__init__</code></a></li>
+<li><a href="#org27ddef6">1.2. Print <code>attrs, values, ojb, request</code> through <code>get_fields</code></a></li>
+<li><a href="#org4effc40">1.3. Check out debug-toolbar package.</a></li>
+<li><a href="#org84f1182">1.4. See the <code>query</code> that django is executing</a></li>
+<li><a href="#orgd73d846">1.5. Fetch <code>opt</code> values. Write this in the template</a></li>
+<li><a href="#org17c9cc9">1.6. <code>opts</code> again</a></li>
+<li><a href="#org263174b">1.7. Print the current object</a></li>
+<li><a href="#org5c67fb0">1.8. Introspection!! Create an instance of a class and print out its attributes/methods</a></li>
+<li><a href="#org49a93b2">1.9. Built in <code>dir</code> and <code>locals</code> methods</a></li>
+<li><a href="#org7b1cede">1.10. Print <code>request</code> info on each page with <code>context_processor</code></a></li>
+<li><a href="#orga8ca421">1.11. Print out ALL the CONTEXT variables</a></li>
+<li><a href="#org7df8ed7">1.12. Print out ALL info about the object</a></li>
+<li><a href="#orgc87477b">1.13. Add a custom variable to object list</a></li>
+<li><a href="#orgb6be6de">1.14. _meta !!!!!!!!!!!</a></li>
+<li><a href="#org8eaff68">1.15. Create a debugging decorator! Printerino</a></li>
 </ul>
 </li>
-<li><a href="#org127e848">3.3. Move django inline fields with little bit of JS</a></li>
+<li><a href="#orgd1dac29">2. Repetitive tasks</a>
+<ul>
+<li><a href="#org5ee3c7c">2.1. Add css</a></li>
+<li><a href="#org843f911">2.2. Create and implement <code>base.html</code></a></li>
 </ul>
 </li>
-<li><a href="#orgeed4b14">4. Django ORM</a>
+<li><a href="#org103c2dc">3. Debugging tools</a>
 <ul>
-<li><a href="#org05bd5f0">4.1. Random queries</a></li>
-<li><a href="#org13bf64e">4.2. Modify a record in db with python example</a>
+<li><a href="#orga979a8f">3.1. Debugging with VScode</a></li>
+<li><a href="#org3794389">3.2. Debugging with pdb</a></li>
+<li><a href="#orgc586e3c">3.3. Emacs and dap mode?</a>
 <ul>
-<li><a href="#org591cd7f">4.2.1. Method 1</a></li>
-<li><a href="#org2e7868c">4.2.2. Method 2</a></li>
+<li><a href="#org44ff7ba">3.3.1. Asked in "dape" mode issue log</a></li>
 </ul>
 </li>
-<li><a href="#orgdbac8dc">4.3. Models "through" attribute</a></li>
-<li><a href="#org4bb1eb6">4.4. Optimizing queries</a>
-<ul>
-<li><a href="#orga01bcc2">4.4.1. Caching</a></li>
-<li><a href="#org5d83452">4.4.2. Others</a></li>
+<li><a href="#org8fd526f">3.4. Torstein reply</a></li>
+<li><a href="#orgadc6dc1">3.5. Plumber and different tools</a></li>
+<li><a href="#org5de0c06">3.6. Pycharm - Karina</a></li>
 </ul>
 </li>
+<li><a href="#org223c14f">4. Useful packages</a>
+<ul>
+<li><a href="#org18993c8">4.1. Debug toolbar</a></li>
+<li><a href="#orge1749de">4.2. django extensions</a></li>
 </ul>
 </li>
-<li><a href="#orgf5de32a">5. Print that info</a>
+<li><a href="#org8114190">5. <span class="todo TODO">TODO</span> Django best practices??????????????????????????/</a>
 <ul>
-<li><a href="#orge7ca9ec">5.1. Print attributes through <code>__init__</code></a></li>
-<li><a href="#org1e3d9a0">5.2. Print <code>attrs, values, ojb, request</code> through <code>get_fields</code></a></li>
-<li><a href="#org2aecc97">5.3. Check out debug-toolbar package.</a></li>
-<li><a href="#org337cacf">5.4. See the <code>query</code> that django is executing</a></li>
-<li><a href="#org629947e">5.5. Fetch <code>opt</code> values. Write this in the template</a></li>
-<li><a href="#org80b3554">5.6. <code>opts</code> again</a></li>
-<li><a href="#org2fef1fa">5.7. Print the current object</a></li>
-<li><a href="#org211dcd8">5.8. Introspection!! Create an instance of a class and print out its attributes/methods</a></li>
-<li><a href="#org4167e13">5.9. Built in <code>dir</code> and <code>locals</code> methods</a></li>
-<li><a href="#orgf7145f5">5.10. Print <code>request</code> info on each page with <code>context_processor</code></a></li>
-<li><a href="#org35481ee">5.11. Print out ALL the CONTEXT variables</a></li>
-<li><a href="#org2de4580">5.12. Print out ALL info about the object</a></li>
-<li><a href="#orgd52e1d6">5.13. Add a custom variable to object list</a></li>
-<li><a href="#orgd23b01a">5.14. _meta !!!!!!!!!!!</a></li>
-<li><a href="#org1d7c0ce">5.15. Create a debugging decorator! Printerino</a></li>
-</ul>
-</li>
-<li><a href="#org848979a">6. Repetitive tasks</a></li>
-<li><a href="#org434bb70">7. Debugging tools</a>
-<ul>
-<li><a href="#org4baa644">7.1. Asked in "dape" mode issue log</a></li>
-<li><a href="#org3d1a9ce">7.2. Torstein reply</a></li>
-<li><a href="#org173b068">7.3. Plumber and different tools</a></li>
-</ul>
-</li>
-<li><a href="#org272a218">8. Useful packages</a>
-<ul>
-<li><a href="#orgc7b5d46">8.1. Debug toolbar</a></li>
-<li><a href="#org1aeaa91">8.2. django extensions</a></li>
-</ul>
-</li>
-<li><a href="#org9d970fe">9. CBV's</a>
-<ul>
-<li><a href="#orge602a2a">9.1. CBV's vs Function views?</a></li>
-<li><a href="#org3ae1a7b">9.2. Mixins</a></li>
-<li><a href="#org6575c18">9.3. args vs kwargs</a>
-<ul>
-<li><a href="#orgf39fece">9.3.1. Args</a></li>
-<li><a href="#orgda59619">9.3.2. Kwargs</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orge260c04">10. <span class="todo TODO">TODO</span> Django best practices??????????????????????????/</a>
-<ul>
-<li><a href="#org938691e">10.1. Instead of /admin change to smth else URL Django</a></li>
-<li><a href="#orgd17fda8">10.2. Use environment variables</a></li>
-<li><a href="#orgea21a19">10.3. Use postgres db</a></li>
-<li><a href="#org35916c6">10.4. Use two different settings files</a></li>
-<li><a href="#org8803a47">10.5. Expanding user model to store more user information</a></li>
-<li><a href="#org976d93e">10.6. Update django every major version once every 9 months</a></li>
-<li><a href="#org73a9869">10.7. Renaming Django project</a></li>
-<li><a href="#orgf7a3768">10.8. move apps to apps folder</a></li>
+<li><a href="#org25d2d35">5.1. Instead of /admin change to smth else URL Django</a></li>
+<li><a href="#org8d89f0e">5.2. Use environment variables</a></li>
+<li><a href="#org4b0b50f">5.3. Use postgres db</a></li>
+<li><a href="#org34a6e68">5.4. Use two different settings files</a></li>
+<li><a href="#orgbbd77e9">5.5. Expanding user model to store more user information</a></li>
+<li><a href="#orgfe82f93">5.6. Update django every major version once every 9 months</a></li>
+<li><a href="#org1b03a60">5.7. Renaming Django project</a></li>
+<li><a href="#org6baf25c">5.8. move apps to apps folder</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
+<ul class="org-ul">
+<li><a href="https://djangosnippets.org/">Django snippets</a></li>
+</ul>
 
-<div id="outline-container-org9a92e71" class="outline-2">
-<h2 id="org9a92e71"><span class="section-number-2">1.</span> Useful resources (videos/reads)</h2>
+<div id="outline-container-orgb37d800" class="outline-2">
+<h2 id="orgb37d800"><span class="section-number-2">1.</span> Print that info</h2>
 <div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li><a href="https://books.agiliq.com/projects/django-admin-cookbook/en/latest/index.html)">Django Admin Cookbook</a> (various snippets for the Django Admin modifications)</li>
-<li><a href="https://ccbv.co.uk/">Class based views relationships</a></li>
-<li><a href="https://forum.djangoproject.com/">Django forum</a></li>
-<li><a href="https://www.webforefront.com/django/classbasedviews.html">www.webforefront.com/django</a></li>
-<li><a href="https://spapas.github.io/2018/03/19/comprehensive-django-cbv-guide/#output-non-html-views">A comprehensive Django CBV guide</a></li>
-<li><a href="https://www.youtube.com/watch?v=GxA2I-n8NR8&amp;list=PLOLrQ9Pn6caxNb9eFZJ6LfY29nZkKmmXT&amp;index=1&amp;ab_channel=VeryAcademy">Good video tutorial on Django CBV's</a></li>
-<li><a href="https://www.youtube.com/watch?v=qmKowZNmkCo&amp;ab_channel=DjangoConUS">DjangoCon 2019 - Generic View? What is that and why would I use it?</a></li>
-<li><a href="https://www.youtube.com/watch?v=pLMH_wzyTjk&amp;list=PLaUQIPIyD0z43DiRKM0x8YNEB-1QNCOwR&amp;ab_channel=DjangoFullCourse">Good video tutorial on Django Forms</a></li>
-<li><a href="https://gist.github.com/jim-clark/cc4e38a93a8a6036bfeac3899c7a49e1">Gist with Django Class-Based View Customization Tips</a></li>
-<li>[[<a href="https://djangosnippets.org/">https://djangosnippets.org/</a></li>
-</ul>
-<p>
-][Django snippets]]
-</p>
 </div>
-</div>
-
-<div id="outline-container-orga3b22a9" class="outline-2">
-<h2 id="orga3b22a9"><span class="section-number-2">2.</span> Django commands</h2>
-<div class="outline-text-2" id="text-2">
-<div class="org-src-container">
-<pre class="src src-bash">django-admin startproject mysite
-python manage.py startapp appname
-python manage.py createsuperuser
-python manage.py makemigrations
-python manage.py migrate
-python manage.py migrate appname
-python manage.py runserver
-python manage.py shell
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">If you have deleted migrations folder or it's content, running makemigrations</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">or migrate will not do anything. First need to run this:</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">https://stackoverflow.com/questions/34548768/no-such-table-exception</span>
-python manage.py migrate --run-syncdb
-python manage.py inspectdb
-python manage.py migrate --fake app_name zero
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org7ff83aa" class="outline-2">
-<h2 id="org7ff83aa"><span class="section-number-2">3.</span> Django Admin</h2>
-<div class="outline-text-2" id="text-3">
-<ul class="org-ul">
-<li><a href="https://books.agiliq.com/projects/django-admin-cookbook/en/latest/index.html)">Django Admin Cookbook</a> (various snippets for the Django Admin modifications)</li>
-</ul>
-</div>
-
-<div id="outline-container-orgad7f8cf" class="outline-3">
-<h3 id="orgad7f8cf"><span class="section-number-3">3.1.</span> Custom filter</h3>
-<div class="outline-text-3" id="text-3-1">
-<p>
-BigOrderFilter example - <a href="https://youtu.be/XphJRQ3AzMU?si=GH20CYKB5Ng2w2pl&amp;t=2525">https://youtu.be/XphJRQ3AzMU?si=GH20CYKB5Ng2w2pl&amp;t=2525</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgb30be56" class="outline-3">
-<h3 id="orgb30be56"><span class="section-number-3">3.2.</span> Valid points why it is not a good idea to use Django Admin as primary UI for your projects</h3>
-<div class="outline-text-3" id="text-3-2">
-</div>
-<div id="outline-container-orge0a6d55" class="outline-4">
-<h4 id="orge0a6d55"><span class="section-number-4">3.2.1.</span> Django docs</h4>
-<div class="outline-text-4" id="text-3-2-1">
-<p>
-<a href="https://docs.djangoproject.com/en/5.0/ref/contrib/admin/">https://docs.djangoproject.com/en/5.0/ref/contrib/admin/</a>
-</p>
-
-<blockquote>
-<p>
-The admin’s recommended use is limited to an organization’s internal management
-tool. It’s not intended for building your entire front end around.
-</p>
-</blockquote>
-
-<blockquote>
-<p>
-If you need to provide a more process-centric interface that abstracts away the
-implementation details of database tables and fields, then it’s probably time
-to write your own views.
-</p>
-</blockquote>
-</div>
-</div>
-
-<div id="outline-container-org7b951d3" class="outline-4">
-<h4 id="org7b951d3"><span class="section-number-4">3.2.2.</span> Django forum</h4>
-<div class="outline-text-4" id="text-3-2-2">
-<p>
-<a href="https://forum.djangoproject.com/t/understanding-the-django-admin/28151">https://forum.djangoproject.com/t/understanding-the-django-admin/28151</a>
-</p>
-
-
-<blockquote>
-<p>
-Yes, you can spend a lot of time learning about how to customize the admin.
-However, what I have learned over the years is that in the time you’ve spent learning how to do this, you generally could have completed your project twice-over by ignoring it.
-I’ve seen this mistake made in a number of cases, and I know others who have encountered the same problem.
-Just like you describe - the admin is deceptively simple to get something up and running. But as additional features and functionality are requested, you find yourself working more and more around the limitations of the admin. Soon, you reach a point where you’re spending far more time trying to figure out how to get the admin to do something than actually doing it.
-What you end up with can quite frankly be described as a generally-unmaintainable mess.
-So what I really suggest is the same thing that the authors of Django recommend.
-Don’t do this. If you’re lucky and stay with Django long enough, you’ll realize how much of a mistake this can be.
-</p>
-</blockquote>
-
-<blockquote>
-<p>
-The fact that a bad decision was made in the past does not justify continuing
-to make that same bad decision today.
-</p>
-</blockquote>
-
-<blockquote>
-<p>
-As a professional, it’s also your responsibility to identify these mistakes and
-to demonstrate that there are better ways of handling this.
-</p>
-</blockquote>
-
-<blockquote>
-<p>
-Sure, you can do this. But I’m going to continue to express my opinion here
-that it’s fundamentally a poor idea. The “Technical Debt” you create by
-focusing everything through the admin can be amazingly substantial.
-</p>
-</blockquote>
-
-<blockquote>
-<p>
-The “two-years-from-today-you” will thank you.
-</p>
-</blockquote>
-</div>
-</div>
-
-<div id="outline-container-org3d36925" class="outline-4">
-<h4 id="org3d36925"><span class="section-number-4">3.2.3.</span> reddit</h4>
-<div class="outline-text-4" id="text-3-2-3">
-<p>
-<a href="https://www.reddit.com/r/django/comments/587gvr/django_admin_is_really_slow_any_thoughts_on_how/?rdt=50786">https://www.reddit.com/r/django/comments/587gvr/django_admin_is_really_slow_any_thoughts_on_how/?rdt=50786</a> 
-</p>
-
-<blockquote>
-<p>
-We use the django admin to manage tables with upwards of two million rows.
-There are some tricks. All foreign keys must be read only. You shouldn't be
-using the admin to control selections from tens of thousands of things. It just
-isn't a reasonable interface. You could make it work for quite a while with
-prefetch_related. You could make it work forever with a custom ajax
-autocomplete. But you should probably consider not using that interface in the
-admin and doing it in a view that you have full control over the UX.
-</p>
-</blockquote>
-</div>
-</div>
-
-<div id="outline-container-orgd571289" class="outline-4">
-<h4 id="orgd571289"><span class="section-number-4">3.2.4.</span> Knowledge from Django podcast</h4>
-<div class="outline-text-4" id="text-3-2-4">
-<p>
-<a href="https://www.youtube.com/watch?v=f8cFjiyxQuQ&amp;ab_channel=PyCon2019">"Jacinda's PyCon talk</a> is a good one. I saw it in person so it made a big
-impression at the time. <a href="https://youtu.be/XphJRQ3AzMU?si=aQoHSZseoyfmwuJM">Kenneth Love has a 3-hour tutorial</a> all about the admin.
-And Jacinda also has an earlier <a href="https://youtu.be/5ajZMpTcUZU?si=ljNofojK9HFRWiJi">3-hour talk</a> on the admin."
-</p>
-
-<p>
-There are multiple Django talks about abusing the admin. <b><b>41:06</b></b> -
-<a href="https://open.spotify.com/episode/1JeC5GruYeqYsjNpegrOxI?si=1GodW0zVTYmQfqJwWhFfRQ&amp;t=2466">https://open.spotify.com/episode/1JeC5GruYeqYsjNpegrOxI?si=1GodW0zVTYmQfqJwWhFfRQ&amp;t=2466</a>
-</p>
-
-<p>
-2min back - <a href="https://open.spotify.com/episode/1JeC5GruYeqYsjNpegrOxI?si=vhg_HKbISLa9QKA9FTQN9w">https://open.spotify.com/episode/1JeC5GruYeqYsjNpegrOxI?si=vhg_HKbISLa9QKA9FTQN9w</a>
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org127e848" class="outline-3">
-<h3 id="org127e848"><span class="section-number-3">3.3.</span> Move django inline fields with little bit of JS</h3>
-<div class="outline-text-3" id="text-3-3">
-<p>
-From shipping project.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-js"><span style="font-weight: bold;">const</span> <span style="font-weight: bold; font-style: italic;">manual_ship_type_field</span> = document.querySelector(<span style="font-style: italic;">'div.field-manual_ship_type'</span>);
-<span style="font-weight: bold;">const</span> <span style="font-weight: bold; font-style: italic;">whole_manual_mapping_block</span> = manual_ship_type_field.parentElement.parentElement;
-<span style="font-weight: bold;">const</span> <span style="font-weight: bold; font-style: italic;">forecasted_values_block</span> = document.getElementById(<span style="font-style: italic;">'vessel_vessel_forecasted_value-group'</span>);
-whole_manual_mapping_block.insertAdjacentElement(<span style="font-style: italic;">'afterend'</span>, forecasted_values_block);
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgeed4b14" class="outline-2">
-<h2 id="orgeed4b14"><span class="section-number-2">4.</span> Django ORM</h2>
-<div class="outline-text-2" id="text-4">
-<ul class="org-ul">
-<li>A video of <a href="https://www.youtube.com/watch?v=213swbH8j_o">how to do queries</a></li>
-<li><a href="https://www.w3schools.com/django/django_insert_data.php">https://www.w3schools.com/django/django_insert_data.php</a></li>
-<li><a href="https://www.youtube.com/watch?v=aHC3uTkT9r8&amp;list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&amp;index=5&amp;ab_channel=CoreySchafer">https://www.youtube.com/watch?v=aHC3uTkT9r8&amp;list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&amp;index=5&amp;ab_channel=CoreySchafer</a></li>
-</ul>
-</div>
-
-<div id="outline-container-org05bd5f0" class="outline-3">
-<h3 id="org05bd5f0"><span class="section-number-3">4.1.</span> Random queries</h3>
-<div class="outline-text-3" id="text-4-1">
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> vessel.models <span style="font-weight: bold;">import</span> Vessel
-<span style="font-weight: bold; font-style: italic;">x</span> = Vessel.objects.get(vessel_code=<span style="font-style: italic;">"1234567"</span>)
-x
-x.delete()
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> base.models <span style="font-weight: bold;">import</span> Blog_post, Projects, Tag
-Blog_post.objects.<span style="font-weight: bold;">all</span>()
-
-<span style="font-weight: bold; font-style: italic;">pirmas</span> = Blog_post.objects.first()
-pirmas.tags
-pirmas.tags.<span style="font-weight: bold;">all</span>()
-pirmas.tags.first()
-pirmas.tags.first().name
-Blog_post.objects.<span style="font-weight: bold;">filter</span>(tags__name=<span style="font-style: italic;">'emacs'</span>)
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> deal.models <span style="font-weight: bold;">import</span> Deal
-<span style="font-weight: bold;">from</span> django.contrib.auth.models <span style="font-weight: bold;">import</span> User
-<span style="font-weight: bold; font-style: italic;">mng_user</span> = User.objects.get(username=<span style="font-style: italic;">"mng"</span>)
-mng_user
-&lt;User: mng&gt;
-<span style="font-weight: bold; font-style: italic;">deal1</span> = Deal.objects.get(pk=2)
-deal1
-&lt;Deal: Deal 1&gt;
-deal1.user
-&lt;User: dev&gt;
-deal1.<span style="font-weight: bold; font-style: italic;">user</span> = mng_user
-deal1.user
-&lt;User: mng&gt;
-deal1.save()
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org13bf64e" class="outline-3">
-<h3 id="org13bf64e"><span class="section-number-3">4.2.</span> Modify a record in db with python example</h3>
-<div class="outline-text-3" id="text-4-2">
-</div>
-<div id="outline-container-org591cd7f" class="outline-4">
-<h4 id="org591cd7f"><span class="section-number-4">4.2.1.</span> Method 1</h4>
-<div class="outline-text-4" id="text-4-2-1">
-<div class="org-src-container">
-<pre class="src src-bash">(venv) arvy@DESKTOP-AUDMJ7D:~/src/lifeapi$ python manage.py shell --settings=settings.development
-Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
-Type <span style="font-style: italic;">"help"</span>, <span style="font-style: italic;">"copyright"</span>, <span style="font-style: italic;">"credits"</span> or <span style="font-style: italic;">"license"</span> for more information.
-(InteractiveConsole)
-
-import os
-<span style="font-weight: bold;">os.getcwd</span>()
-
-from lifeapi_apps.quiz_app.models import Question
-
-<span style="font-weight: bold;">Question.objects.all</span>()
-
-&lt;QuerySet [&lt;Question: Workout - YN&gt;, &lt;Question: Meditate - YN&gt;, &lt;Question: Miegojimas - Scale&gt;]&gt;
-
-from django.contrib.auth.models import User
-
-user_id_1 = User.objects.get(<span style="font-weight: bold; font-style: italic;">pk</span>=1)
-
-questions = Question.objects.all()
-
-<span style="font-weight: bold;">questions.update</span>(<span style="font-weight: bold; font-style: italic;">created_by</span>=user_id_1)
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org2e7868c" class="outline-4">
-<h4 id="org2e7868c"><span class="section-number-4">4.2.2.</span> Method 2</h4>
-<div class="outline-text-4" id="text-4-2-2">
-<p>
-start by this, do whatever you want then
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python">python manage.py shell --settings=settings.development
-
-<span style="font-weight: bold;">from</span> lifeapi_apps.quiz_app.models <span style="font-weight: bold;">import</span> Question, Answer
-<span style="font-weight: bold;">from</span> django.contrib.auth.models <span style="font-weight: bold;">import</span> User
-
-<span style="font-weight: bold; font-style: italic;">arvy_user</span> = User.objects.get(username=<span style="font-style: italic;">'arvy'</span>)
-<span style="font-weight: bold; font-style: italic;">questions</span> = Question.objects.<span style="font-weight: bold;">filter</span>(created_by=arvy_user)
-
-<span style="font-weight: bold;">for</span> question <span style="font-weight: bold;">in</span> questions:
-    <span style="font-weight: bold;">print</span>(question.description)
-
-<span style="font-weight: bold; font-style: italic;">questions</span> = Question.objects.<span style="font-weight: bold;">all</span>()
-<span style="font-weight: bold;">print</span>(questions)
-
-<span style="font-weight: bold; font-style: italic;">answers</span> = question.answer_set.<span style="font-weight: bold;">all</span>()
-<span style="font-weight: bold;">print</span>(answers)
-
-<span style="font-weight: bold; font-style: italic;">question_description</span> = <span style="font-style: italic;">"No Headache"</span>
-<span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=question_description)
-<span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=<span style="font-style: italic;">"No Headache"</span>, created_by=arvy_user)
-<span style="font-weight: bold;">print</span>(question)
-
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">think if you really want to rename this way!!! everything will be NO now.</span>
-Answer.objects.<span style="font-weight: bold;">filter</span>(question=question, answer=<span style="font-style: italic;">"YES"</span>).update(answer=<span style="font-style: italic;">"NO"</span>)
-
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">better do a for loop like such:</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Get all answers related to the question</span>
-<span style="font-weight: bold; font-style: italic;">answers</span> = Answer.objects.<span style="font-weight: bold;">filter</span>(question=question)
-<span style="font-weight: bold; font-style: italic;">answers</span> = Answer.objects.<span style="font-weight: bold;">filter</span>(question__description=<span style="font-style: italic;">"Belly ache"</span>)
-<span style="font-weight: bold;">for</span> answer <span style="font-weight: bold;">in</span> answers:
-    <span style="font-weight: bold;">if</span> answer.answer == <span style="font-style: italic;">"YES"</span>:
-        answer.<span style="font-weight: bold; font-style: italic;">answer</span> = <span style="font-style: italic;">"NO"</span>
-    <span style="font-weight: bold;">elif</span> answer.answer == <span style="font-style: italic;">"NO"</span>:
-        answer.<span style="font-weight: bold; font-style: italic;">answer</span> = <span style="font-style: italic;">"YES"</span>
-    answer.save()
-
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">rename a question</span>
-<span style="font-weight: bold; font-style: italic;">question_description</span> = <span style="font-style: italic;">"aciukas"</span>
-<span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=question_description)
-<span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=<span style="font-style: italic;">"No Headache"</span>, created_by=arvy_user)
-question.<span style="font-weight: bold; font-style: italic;">description</span> = <span style="font-style: italic;">"No Alchohol"</span>
-question.save()
-
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Delete all answers related to the question</span>
-Answer.objects.<span style="font-weight: bold;">filter</span>(question=question).delete()
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgdbac8dc" class="outline-3">
-<h3 id="orgdbac8dc"><span class="section-number-3">4.3.</span> Models "through" attribute</h3>
-<div class="outline-text-3" id="text-4-3">
-<p>
-This is the basic m2m relationship:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
-
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Vessel</span>(models.Model):
-    <span style="font-weight: bold; font-style: italic;">name</span> = models.CharField(max_length=255)
-    <span style="font-weight: bold; font-style: italic;">stock</span> = models.IntegerField(default=0)
-
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>) -&gt; <span style="font-weight: bold;">str</span>:
-        <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">self</span>.name
-
-
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Deal</span>(models.Model):        
-    <span style="font-weight: bold; font-style: italic;">collateral</span> = models.ManyToManyField(
-        Vessel,
-        blank=<span style="font-weight: bold; text-decoration: underline;">True</span>,
-    )
-    <span style="font-weight: bold; font-style: italic;">register_date</span> = models.DateTimeField(
-        null=<span style="font-weight: bold; text-decoration: underline;">True</span>,
-        blank=<span style="font-weight: bold; text-decoration: underline;">True</span>
-    )
-    <span style="font-weight: bold; font-style: italic;">has_new</span> = models.BooleanField(
-        default=<span style="font-weight: bold; text-decoration: underline;">True</span>,
-        null=<span style="font-weight: bold; text-decoration: underline;">True</span>   
-    )
-
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>) -&gt; <span style="font-weight: bold;">str</span>:
-        <span style="font-weight: bold;">return</span> f<span style="font-style: italic;">"#</span>{<span style="font-weight: bold;">self</span>.pk}<span style="font-style: italic;">"</span>
-</pre>
-</div>
-
-<p>
-Query the above created table in Django shell like so:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python">In [9]: deal = Deal.objects.last()
-In [10]: collateral_vessels = deal.collateral.<span style="font-weight: bold;">all</span>()
-In [11]: <span style="font-weight: bold;">print</span>(collateral_vessels)
-&lt;QuerySet [&lt;Vessel: Two&gt;, &lt;Vessel: Three&gt;]&gt;
-</pre>
-</div>
-
-<p>
-In the case above we CAN NOT control the <code>app_deal_collateral</code> table. Which is
-sad&#x2026; let's say we want to control it, we then use the <code>through</code> attribute.
-</p>
-
-<p>
-We will inform Django not to use the default table like above, but in this case
-we want to use OUR OWN table.
-</p>
-
-<p>
-We also infom that we WILL NOT want to control the collaterals over the DEAL
-model/admin page, but over the Collaterals page/admin page:
-</p>
-
-<p>
-Will do that with <code>through</code> attribute:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
-
-
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Vessel</span>(models.Model):
-    <span style="font-weight: bold; font-style: italic;">name</span> = models.CharField(max_length=255)
-    <span style="font-weight: bold; font-style: italic;">stock</span> = models.IntegerField(default=0)
-
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>) -&gt; <span style="font-weight: bold;">str</span>:
-        <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">self</span>.name
-
-
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Deal</span>(models.Model):        
-    <span style="font-weight: bold; font-style: italic;">collaterals</span> = models.ManyToManyField(
-        Vessel,
-        blank=<span style="font-weight: bold; text-decoration: underline;">True</span>,
-        through=<span style="font-style: italic;">'Collateral'</span>,
-    )
-    <span style="font-weight: bold; font-style: italic;">register_date</span> = models.DateTimeField(
-        null=<span style="font-weight: bold; text-decoration: underline;">True</span>,
-        blank=<span style="font-weight: bold; text-decoration: underline;">True</span>
-    )
-    <span style="font-weight: bold; font-style: italic;">has_new</span> = models.BooleanField(
-        default=<span style="font-weight: bold; text-decoration: underline;">True</span>,
-        null=<span style="font-weight: bold; text-decoration: underline;">True</span>   
-    )
-
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>) -&gt; <span style="font-weight: bold;">str</span>:
-        <span style="font-weight: bold;">return</span> f<span style="font-style: italic;">"#</span>{<span style="font-weight: bold;">self</span>.pk}<span style="font-style: italic;">"</span>
-
-
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Collateral</span>(models.Model):
-    <span style="font-weight: bold; font-style: italic;">vessel</span> = models.ForeignKey(
-        Vessel,
-        on_delete=models.DO_NOTHING,
-    )
-    <span style="font-weight: bold; font-style: italic;">deal</span> = models.ForeignKey(
-        Deal,
-        on_delete=models.DO_NOTHING,
-        null=<span style="font-weight: bold; text-decoration: underline;">True</span>
-    )
-    <span style="font-weight: bold; font-style: italic;">quant</span> = models.PositiveIntegerField(
-        null=<span style="font-weight: bold; text-decoration: underline;">True</span>,
-    )
-    <span style="font-weight: bold; font-style: italic;">charfield</span> = models.CharField(max_length=255)
-    <span style="font-weight: bold; font-style: italic;">is_new</span> = models.BooleanField(        
-        default=<span style="font-weight: bold; text-decoration: underline;">True</span>,
-        blank=<span style="font-weight: bold; text-decoration: underline;">True</span>
-    )
-
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>) -&gt; <span style="font-weight: bold;">str</span>:
-        <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">str</span>(<span style="font-weight: bold;">self</span>.part)
-</pre>
-</div>
-
-<p>
-Db structure then:
-</p>
-
-<p>
-App_collateral then becomes like a control center from which you can control
-all the relationships, etc.
-</p>
-
-<p>
-Deal admin page, we can not see the collaterals(vessels) here.
-</p>
-
-<p>
-What we can see is another model in the admin called collaterals.
-</p>
-
-<p>
-This is good if you actually want to separately create Deal and Vessel objects
-and then connect them in one in Collateral model.
-</p>
-
-<p>
-Query like such(using shell_plus with print sql):
-</p>
-
-<p>
-<b><b>But what if you want to modify the collaterals from the Deal model?</b></b>
-</p>
-
-<p>
-Answer - inline
-</p>
-
-<p>
-p#+begin_src python
-  from django.contrib import admin
-  from .models import *
-</p>
-
-<p>
-class CollateralInline(admin.TabularInline):
-    model = Collateral
-    extra = 1
-</p>
-
-<p>
-class DealAdmin(admin.ModelAdmin):
-    inlines = [CollateralInline]
-</p>
-
-<p>
-  admin.site.register(Deal, DealAdmin)
-  admin.site.register(Vessel)
-  admin.site.register(Collateral)
-#+end_src
-</p>
-</div>
-</div>
-
-<div id="outline-container-org4bb1eb6" class="outline-3">
-<h3 id="org4bb1eb6"><span class="section-number-3">4.4.</span> Optimizing queries</h3>
-<div class="outline-text-3" id="text-4-4">
-<p>
-This task is particularly important, because when I am using the app, the
-loading times are incredibly long. And the more records I add to the database
-(I add them daily) - the worse the situation will get.
-</p>
-
-<p>
-Some possible solutions to try out:
-</p>
-</div>
-
-<div id="outline-container-orga01bcc2" class="outline-4">
-<h4 id="orga01bcc2"><span class="section-number-4">4.4.1.</span> Caching</h4>
-<div class="outline-text-4" id="text-4-4-1">
-<blockquote>
-<p>
-Consider using Django Middleware like django.middleware.cache.&gt;CacheMiddleware
-to cache views and reduce database hits.
-</p>
-</blockquote>
-
-<p>
-It is surprisingly simple to implement, just add
-<code>'django.middleware.cache.CacheMiddleware'</code> after
-<code>'django.contrib.auth.middleware.AuthenticationMiddleware'</code>, in <code>settings.py</code> and
-you will already notice the caching behavior.
-</p>
-
-<p>
-First page load might take 300ms, but the second time you will load the same
-page, it will take 0.00ms.
-</p>
-
-<p>
-Kind of amazing, BUT I think it only works if the data HAS NOT CHANGED since
-the last cache. If it has changed - you will have to refetch the whole data and
-that again will take 300ms.
-</p>
-
-<p>
-When I have constantly changing data tables, this will not work for me.
-</p>
-
-<p>
-I am sure there are ways to optimize caching to suite my needs better, but this
-time I just don't feel that this is the solution I should go with.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org5d83452" class="outline-4">
-<h4 id="org5d83452"><span class="section-number-4">4.4.2.</span> Others</h4>
-<div class="outline-text-4" id="text-4-4-2">
-<ul class="org-ul">
-<li>Use Select Related or Prefetch Related: If your models have ForeignKey or
-ManyToMany relationships, using select_related or prefetch_related can help
-reduce the number of database queries when fetching related objects.</li>
-<li>Limit Fields: When querying objects, only select the fields you actually
-need. This can reduce the amount of data retrieved from the database.</li>
-<li>Indexes: Ensure that your database tables have appropriate indexes on columns
-that are frequently used for filtering or searching.</li>
-<li>Caching: Implement caching for data that doesn't change frequently. This can
-significantly reduce database queries for repetitive requests.</li>
-<li>Database Optimization: Depending on your database system, there might be
-database-specific optimizations you can apply.</li>
-<li>Query Optimization: Review your database queries and optimize them for
-efficiency. Tools like Django Debug Toolbar can help identify inefficient
-queries.</li>
-
-<li>Remember that the number of queries can also depend on the specific data and
-relationships in your database, so it's essential to analyze and optimize
-your database queries based on your application's requirements and usage
-patterns.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgf5de32a" class="outline-2">
-<h2 id="orgf5de32a"><span class="section-number-2">5.</span> Print that info</h2>
-<div class="outline-text-2" id="text-5">
-</div>
-<div id="outline-container-orge7ca9ec" class="outline-3">
-<h3 id="orge7ca9ec"><span class="section-number-3">5.1.</span> Print attributes through <code>__init__</code></h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-orgb5fcce3" class="outline-3">
+<h3 id="orgb5fcce3"><span class="section-number-3">1.1.</span> Print attributes through <code>__init__</code></h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 In Django, when you define methods or attributes directly within a class body
 (outside of any method), they are executed only once when the class is defined,
@@ -829,9 +155,9 @@ __init__.
 </div>
 </div>
 
-<div id="outline-container-org1e3d9a0" class="outline-3">
-<h3 id="org1e3d9a0"><span class="section-number-3">5.2.</span> Print <code>attrs, values, ojb, request</code> through <code>get_fields</code></h3>
-<div class="outline-text-3" id="text-5-2">
+<div id="outline-container-org27ddef6" class="outline-3">
+<h3 id="org27ddef6"><span class="section-number-3">1.2.</span> Print <code>attrs, values, ojb, request</code> through <code>get_fields</code></h3>
+<div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> admin
 <span style="font-weight: bold;">from</span> .models <span style="font-weight: bold;">import</span> *
@@ -901,12 +227,12 @@ admin.site.register(Collateral)
 </div>
 </div>
 
-<div id="outline-container-org2aecc97" class="outline-3">
-<h3 id="org2aecc97"><span class="section-number-3">5.3.</span> Check out <a href="https://django-debug-toolbar.readthedocs.io/en/latest/installation.html">debug-toolbar</a> package.</h3>
+<div id="outline-container-org4effc40" class="outline-3">
+<h3 id="org4effc40"><span class="section-number-3">1.3.</span> Check out <a href="https://django-debug-toolbar.readthedocs.io/en/latest/installation.html">debug-toolbar</a> package.</h3>
 </div>
-<div id="outline-container-org337cacf" class="outline-3">
-<h3 id="org337cacf"><span class="section-number-3">5.4.</span> See the <code>query</code> that django is executing</h3>
-<div class="outline-text-3" id="text-5-4">
+<div id="outline-container-org84f1182" class="outline-3">
+<h3 id="org84f1182"><span class="section-number-3">1.4.</span> See the <code>query</code> that django is executing</h3>
+<div class="outline-text-3" id="text-1-4">
 <p>
 Multiple ways to SEE the SQL that Django executes: 8 different ways -
 <a href="https://b0uh.github.io/django-show-me-the-sql.html">https://b0uh.github.io/django-show-me-the-sql.html</a>
@@ -943,9 +269,9 @@ installation can do: <code>python manage.py shell_plus --print-sql</code>
 </div>
 </div>
 
-<div id="outline-container-org629947e" class="outline-3">
-<h3 id="org629947e"><span class="section-number-3">5.5.</span> Fetch <code>opt</code> values. Write this in the template</h3>
-<div class="outline-text-3" id="text-5-5">
+<div id="outline-container-orgd73d846" class="outline-3">
+<h3 id="orgd73d846"><span class="section-number-3">1.5.</span> Fetch <code>opt</code> values. Write this in the template</h3>
+<div class="outline-text-3" id="text-1-5">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="font-weight: bold;">script</span>&gt;
  console.log("Model name: {{ opts.model_name }}");
@@ -964,9 +290,9 @@ installation can do: <code>python manage.py shell_plus --print-sql</code>
 </div>
 </div>
 
-<div id="outline-container-org80b3554" class="outline-3">
-<h3 id="org80b3554"><span class="section-number-3">5.6.</span> <code>opts</code> again</h3>
-<div class="outline-text-3" id="text-5-6">
+<div id="outline-container-org17c9cc9" class="outline-3">
+<h3 id="org17c9cc9"><span class="section-number-3">1.6.</span> <code>opts</code> again</h3>
+<div class="outline-text-3" id="text-1-6">
 <div class="org-src-container">
 <pre class="src src-html">{% extends "admin/change_form.html" %}
 {% load i18n admin_urls static admin_modify %}
@@ -1001,9 +327,9 @@ console.log("Model name: {{ opts.model_name }}");
 </div>
 </div>
 
-<div id="outline-container-org2fef1fa" class="outline-3">
-<h3 id="org2fef1fa"><span class="section-number-3">5.7.</span> Print the current object</h3>
-<div class="outline-text-3" id="text-5-7">
+<div id="outline-container-org263174b" class="outline-3">
+<h3 id="org263174b"><span class="section-number-3">1.7.</span> Print the current object</h3>
+<div class="outline-text-3" id="text-1-7">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">QuoteUpdateView</span>(UpdateView):
     <span style="font-weight: bold; font-style: italic;">model</span> = Quote
@@ -1032,9 +358,9 @@ console.log("Model name: {{ opts.model_name }}");
 </div>
 </div>
 
-<div id="outline-container-org211dcd8" class="outline-3">
-<h3 id="org211dcd8"><span class="section-number-3">5.8.</span> Introspection!! Create an instance of a class and print out its attributes/methods</h3>
-<div class="outline-text-3" id="text-5-8">
+<div id="outline-container-org5c67fb0" class="outline-3">
+<h3 id="org5c67fb0"><span class="section-number-3">1.8.</span> Introspection!! Create an instance of a class and print out its attributes/methods</h3>
+<div class="outline-text-3" id="text-1-8">
 <p>
 Was trying to find out the csss that is being used for autocomplete widget. 
 </p>
@@ -1078,9 +404,9 @@ where the stylesheets are, can override them.
 </div>
 </div>
 
-<div id="outline-container-org4167e13" class="outline-3">
-<h3 id="org4167e13"><span class="section-number-3">5.9.</span> Built in <code>dir</code> and <code>locals</code> methods</h3>
-<div class="outline-text-3" id="text-5-9">
+<div id="outline-container-org49a93b2" class="outline-3">
+<h3 id="org49a93b2"><span class="section-number-3">1.9.</span> Built in <code>dir</code> and <code>locals</code> methods</h3>
+<div class="outline-text-3" id="text-1-9">
 <p>
 See current local scope
 </p>
@@ -1094,9 +420,9 @@ Locals()
 </div>
 </div>
 
-<div id="outline-container-orgf7145f5" class="outline-3">
-<h3 id="orgf7145f5"><span class="section-number-3">5.10.</span> Print <code>request</code> info on each page with <code>context_processor</code></h3>
-<div class="outline-text-3" id="text-5-10">
+<div id="outline-container-org7b1cede" class="outline-3">
+<h3 id="org7b1cede"><span class="section-number-3">1.10.</span> Print <code>request</code> info on each page with <code>context_processor</code></h3>
+<div class="outline-text-3" id="text-1-10">
 <p>
 Can probably do it in the shell or views.py, but another way, to do it for
 <b><b>each page</b></b> is to use <code>context_processor</code>
@@ -1133,9 +459,9 @@ Then in template:
 </div>
 </div>
 
-<div id="outline-container-org35481ee" class="outline-3">
-<h3 id="org35481ee"><span class="section-number-3">5.11.</span> Print out ALL the CONTEXT variables</h3>
-<div class="outline-text-3" id="text-5-11">
+<div id="outline-container-orga8ca421" class="outline-3">
+<h3 id="orga8ca421"><span class="section-number-3">1.11.</span> Print out ALL the CONTEXT variables</h3>
+<div class="outline-text-3" id="text-1-11">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">OneListView</span>(generic.ListView):
     <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">model = One is shorthand for saying queryset = One.objects.all()</span>
@@ -1161,9 +487,9 @@ Result:
 </div>
 </div>
 
-<div id="outline-container-org2de4580" class="outline-3">
-<h3 id="org2de4580"><span class="section-number-3">5.12.</span> Print out ALL info about the object</h3>
-<div class="outline-text-3" id="text-5-12">
+<div id="outline-container-org7df8ed7" class="outline-3">
+<h3 id="org7df8ed7"><span class="section-number-3">1.12.</span> Print out ALL info about the object</h3>
+<div class="outline-text-3" id="text-1-12">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">OneListView</span>(ListView):
     <span style="font-weight: bold; font-style: italic;">model</span> = One
@@ -1200,9 +526,9 @@ Result:
 </div>
 </div>
 
-<div id="outline-container-orgd52e1d6" class="outline-3">
-<h3 id="orgd52e1d6"><span class="section-number-3">5.13.</span> Add a custom variable to object list</h3>
-<div class="outline-text-3" id="text-5-13">
+<div id="outline-container-orgc87477b" class="outline-3">
+<h3 id="orgc87477b"><span class="section-number-3">1.13.</span> Add a custom variable to object list</h3>
+<div class="outline-text-3" id="text-1-13">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> django.shortcuts <span style="font-weight: bold;">import</span> render
 <span style="font-weight: bold;">from</span> django.views <span style="font-weight: bold;">import</span> generic
@@ -1250,9 +576,9 @@ Can then use it in the templates like so:
 </div>
 </div>
 
-<div id="outline-container-orgd23b01a" class="outline-3">
-<h3 id="orgd23b01a"><span class="section-number-3">5.14.</span> _meta !!!!!!!!!!!</h3>
-<div class="outline-text-3" id="text-5-14">
+<div id="outline-container-orgb6be6de" class="outline-3">
+<h3 id="orgb6be6de"><span class="section-number-3">1.14.</span> _meta !!!!!!!!!!!</h3>
+<div class="outline-text-3" id="text-1-14">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">TwoListView</span>(ListView):
     <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">model = One is shorthand for saying queryset = One.objects.all()</span>
@@ -1265,9 +591,9 @@ Can then use it in the templates like so:
 </div>
 </div>
 
-<div id="outline-container-org1d7c0ce" class="outline-3">
-<h3 id="org1d7c0ce"><span class="section-number-3">5.15.</span> Create a debugging decorator! Printerino</h3>
-<div class="outline-text-3" id="text-5-15">
+<div id="outline-container-org8eaff68" class="outline-3">
+<h3 id="org8eaff68"><span class="section-number-3">1.15.</span> Create a debugging decorator! Printerino</h3>
+<div class="outline-text-3" id="text-1-15">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">def</span> <span style="font-weight: bold;">printerino</span>(cls):
     <span style="font-style: italic;">'''</span>
@@ -1325,105 +651,103 @@ Then to use it in the python code, add this above the classes:  <code>@printerin
 </div>
 </div>
 
-<div id="outline-container-org848979a" class="outline-2">
-<h2 id="org848979a"><span class="section-number-2">6.</span> Repetitive tasks</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orgd1dac29" class="outline-2">
+<h2 id="orgd1dac29"><span class="section-number-2">2.</span> Repetitive tasks</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org5ee3c7c" class="outline-3">
+<h3 id="org5ee3c7c"><span class="section-number-3">2.1.</span> Add css</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
-To base.html add:
+To <code>base.html</code> add:
 </p>
 
 <p>
 At the very top:
 </p>
 
-<p>
-```django
-{% load static %}
-```
-</p>
+<div class="org-src-container">
+<pre class="src src-python">{% load static %}
+</pre>
+</div>
 
 <p>
 In head add:
 </p>
 
-<p>
-```html
-&lt;link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"&gt;
-```
-</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"text/css"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% static 'css/styles.css' %}"</span>&gt;
+</pre>
+</div>
 
 <p>
-Create a folder and a file
+Root dir, create static folder, inside of it, css folder, inside of it,
+<code>styles.css</code> file. Test content for example:
 </p>
 
-<p>
-Root dir, create static folder, inside of it, css folder, inside of it, styles.css file
-</p>
-
-<p>
-Content for example:
-</p>
-
-<p>
-```css
-body {
-    background-color: red;
+<div class="org-src-container">
+<pre class="src src-css"><span style="font-weight: bold;">body</span> {
+    <span style="font-weight: bold;">background-color</span>: <span style="color: #ffffff; background-color: #ff0000;">red</span>;
 }
-```
-</p>
+</pre>
+</div>
 
 <p>
-Hard reload the page `ctrl+r`, should work
+Hard reload the page <code>ctrl+r</code> and css should work.
 </p>
+</div>
+</div>
 
+<div id="outline-container-org843f911" class="outline-3">
+<h3 id="org843f911"><span class="section-number-3">2.2.</span> Create and implement <code>base.html</code></h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 <a href="https://stackoverflow.com/questions/14720464/django-project-base-template">https://stackoverflow.com/questions/14720464/django-project-base-template</a>
 </p>
 
 <p>
-Create base.html file
+Create <code>base.html</code> file:
 </p>
 
-<p>
-```html
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Project&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
+&lt;<span style="font-weight: bold;">html</span>&gt;
+&lt;<span style="font-weight: bold;">head</span>&gt;
+    &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Project</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
+&lt;/<span style="font-weight: bold;">head</span>&gt;
+&lt;<span style="font-weight: bold;">body</span>&gt;
 {% block content %}
-</p>
 
-<p>
 {% endblock %}
-&lt;/body&gt;
-&lt;/html&gt;
-```
-</p>
+&lt;/<span style="font-weight: bold;">body</span>&gt;
+&lt;/<span style="font-weight: bold;">html</span>&gt;
+</pre>
+</div>
 
 <p>
 extend it:
 </p>
 
-<p>
-```django
-{% extends "base.html" %}
-</p>
+<div class="org-src-container">
+<pre class="src src-html">{% extends "base.html" %}
 
-<p>
 {% block content %}
-    &lt;h2&gt;Content for My App&lt;/h2&gt;
-    &lt;p&gt;Stuff etc etc.&lt;/p&gt;
+    &lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Content for My App</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+    &lt;<span style="font-weight: bold;">p</span>&gt;Stuff etc etc.&lt;/<span style="font-weight: bold;">p</span>&gt;
 {% endblock content %}
-```
-</p>
+</pre>
+</div>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org434bb70" class="outline-2">
-<h2 id="org434bb70"><span class="section-number-2">7.</span> Debugging tools</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-org103c2dc" class="outline-2">
+<h2 id="org103c2dc"><span class="section-number-2">3.</span> Debugging tools</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orga979a8f" class="outline-3">
+<h3 id="orga979a8f"><span class="section-number-3">3.1.</span> Debugging with VScode</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 Can debug with Vscode easy - <a href="https://code.visualstudio.com/docs/editor/debugging">https://code.visualstudio.com/docs/editor/debugging</a>
 </p>
@@ -1436,47 +760,64 @@ Can debug admin code also. Just have to be a method to debug, can not simply deb
 Can use the `launch.json` config below:
 </p>
 
+<div class="org-src-container">
+<pre class="src src-json">{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Shipping",
+            "python": "C:\\Users\\S2753G\\Envs\\shipping\\Scripts\\python.exe",
+            "type": "python",
+            "request": "launch",
+            "program": "C:\\Users\\S2753G\\OneDrive - SEB\\GIT\\shipping\\code\\backend\\app\\manage.py",
+            "console": "internalConsole",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "justMyCode": true
+        }
+    ]
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3794389" class="outline-3">
+<h3 id="org3794389"><span class="section-number-3">3.2.</span> Debugging with pdb</h3>
+<div class="outline-text-3" id="text-3-2">
 <p>
-```json
-  {
-      "version": "0.2.0",
-      "configurations": [
-          {
-              "name": "Shipping",
-              "python": "C:\\Users\&sect;2753G\\Envs\\shipping\\Scripts\\python.exe",
-              "type": "python",
-              "request": "launch",
-              "program": "C:\\Users\&sect;2753G\\OneDrive - SEB\\GIT\\shipping\\code\\backend\\app\\manage.py",
-              "console": "internalConsole",
-              "args": [
-                  "runserver"
-              ],
-              "django": true,
-              "justMyCode": true
-          }
-      ]
-  }
-```
+Import pdb to your file:
 </p>
 
-<p>
-Add this line to your code:
-</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> pdb;
+</pre>
+</div>
 
 <p>
-#+begin_src python
-import pdb; pdb.set_trace()
-```
+Set a breakpoint in your code like such:
 </p>
 
+<div class="org-src-container">
+<pre class="src src-python">pdb.set_trace()
+</pre>
+</div>
 <p>
 Then execute the code, or in django case, run the page, can be an admin page.
 </p>
 
 <p>
-Then see the commands available here - <a href="https://djangostars.com/blog/debugging-python-applications-with-pdb/">https://djangostars.com/blog/debugging-python-applications-with-pdb/</a>
+See the commands available here -
+<a href="https://djangostars.com/blog/debugging-python-applications-with-pdb/">https://djangostars.com/blog/debugging-python-applications-with-pdb/</a>
 </p>
+</div>
+</div>
 
+<div id="outline-container-orgc586e3c" class="outline-3">
+<h3 id="orgc586e3c"><span class="section-number-3">3.3.</span> Emacs and dap mode?</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 Not much information on this topic
 </p>
@@ -1492,19 +833,19 @@ Wrote a question in reddit, no response -
 </p>
 </div>
 
-
-<div id="outline-container-org4baa644" class="outline-3">
-<h3 id="org4baa644"><span class="section-number-3">7.1.</span> Asked in "dape" mode issue log</h3>
-<div class="outline-text-3" id="text-7-1">
+<div id="outline-container-org44ff7ba" class="outline-4">
+<h4 id="org44ff7ba"><span class="section-number-4">3.3.1.</span> Asked in "dape" mode issue log</h4>
+<div class="outline-text-4" id="text-3-3-1">
 <p>
 <a href="https://github.com/svaante/dape/issues/62">https://github.com/svaante/dape/issues/62</a> after noticing Torstein mention it here - <a href="https://www.reddit.com/r/emacs/comments/1133gvq/eglot_and_debugging_python/?share_id=snq4RQaJqMQ66DwTl1L_F&amp;utm_content=1&amp;utm_medium=android_app&amp;utm_name=androidcss&amp;utm_source=share&amp;utm_term=1">https://www.reddit.com/r/emacs/comments/1133gvq/eglot_and_debugging_python/?share_id=snq4RQaJqMQ66DwTl1L_F&amp;utm_content=1&amp;utm_medium=android_app&amp;utm_name=androidcss&amp;utm_source=share&amp;utm_term=1</a> and in his video here - <a href="https://www.youtube.com/watch?si=yYFpkMQlMUFpcn_n&amp;v=YKkyfz4cU8g&amp;feature=youtu.be">https://www.youtube.com/watch?si=yYFpkMQlMUFpcn_n&amp;v=YKkyfz4cU8g&amp;feature=youtu.be</a>
 </p>
 </div>
 </div>
+</div>
 
-<div id="outline-container-org3d1a9ce" class="outline-3">
-<h3 id="org3d1a9ce"><span class="section-number-3">7.2.</span> Torstein reply</h3>
-<div class="outline-text-3" id="text-7-2">
+<div id="outline-container-org8fd526f" class="outline-3">
+<h3 id="org8fd526f"><span class="section-number-3">3.4.</span> Torstein reply</h3>
+<div class="outline-text-3" id="text-3-4">
 <p>
 &gt;I've never used Django, so I don't know the specifics. The crux is being able
 to launch Django from Emacs. Then you can debug anything. AFAICT from
@@ -1527,17 +868,19 @@ time I get to do heavy Python development, in which I need a debugger.
 </div>
 </div>
 
-<div id="outline-container-org173b068" class="outline-3">
-<h3 id="org173b068"><span class="section-number-3">7.3.</span> Plumber and different tools</h3>
-<div class="outline-text-3" id="text-7-3">
+<div id="outline-container-orgadc6dc1" class="outline-3">
+<h3 id="orgadc6dc1"><span class="section-number-3">3.5.</span> Plumber and different tools</h3>
+<div class="outline-text-3" id="text-3-5">
 <p>
-&gt;ever seen a plumber use the same wrench for all the pipes? Different tools for deferent jobs. Multiple IDE's, code editors for different jobs.
+&gt;ever seen a plumber use the same wrench for all the pipes? Different tools for
+deferent jobs. Multiple IDE's, code editors for different jobs.
 </p>
+</div>
+</div>
 
-<p>
-## Pycharm - Karina
-</p>
-
+<div id="outline-container-org5de0c06" class="outline-3">
+<h3 id="org5de0c06"><span class="section-number-3">3.6.</span> Pycharm - Karina</h3>
+<div class="outline-text-3" id="text-3-6">
 <p>
 swears by it
 </p>
@@ -1562,25 +905,25 @@ all the variables I need to see. querysets, args, kwargs, request stuff, paramet
 </div>
 </div>
 </div>
-<div id="outline-container-org272a218" class="outline-2">
-<h2 id="org272a218"><span class="section-number-2">8.</span> Useful packages</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-org223c14f" class="outline-2">
+<h2 id="org223c14f"><span class="section-number-2">4.</span> Useful packages</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 Debug toolbar ir dar tas kitas kur leidzia runserver plus
 </p>
 </div>
-<div id="outline-container-orgc7b5d46" class="outline-3">
-<h3 id="orgc7b5d46"><span class="section-number-3">8.1.</span> Debug toolbar</h3>
-<div class="outline-text-3" id="text-8-1">
+<div id="outline-container-org18993c8" class="outline-3">
+<h3 id="org18993c8"><span class="section-number-3">4.1.</span> Debug toolbar</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 how to install and configure ir pan
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1aeaa91" class="outline-3">
-<h3 id="org1aeaa91"><span class="section-number-3">8.2.</span> django extensions</h3>
-<div class="outline-text-3" id="text-8-2">
+<div id="outline-container-orge1749de" class="outline-3">
+<h3 id="orge1749de"><span class="section-number-3">4.2.</span> django extensions</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 Can use a fancy shell(ipython, print sql, jupyter, etc)
 </p>
@@ -1659,166 +1002,19 @@ os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true" # allow to run ORM queries
 </div>
 </div>
 
-<div id="outline-container-org9d970fe" class="outline-2">
-<h2 id="org9d970fe"><span class="section-number-2">9.</span> CBV's</h2>
-<div class="outline-text-2" id="text-9">
-</div>
-<div id="outline-container-orge602a2a" class="outline-3">
-<h3 id="orge602a2a"><span class="section-number-3">9.1.</span> CBV's vs Function views?</h3>
-<div class="outline-text-3" id="text-9-1">
-<p>
-<a href="https://www.youtube.com/watch?v=IBWiQMHcSQk&amp;list=PLOLrQ9Pn6caxNb9eFZJ6LfY29nZkKmmXT&amp;index=11&amp;ab_channel=VeryAcademy">https://www.youtube.com/watch?v=IBWiQMHcSQk&amp;list=PLOLrQ9Pn6caxNb9eFZJ6LfY29nZkKmmXT&amp;index=11&amp;ab_channel=VeryAcademy</a>
-</p>
 
-<ul class="org-ul">
-<li>Nice cbv tutorial series, goes deeper than usual -
-<a href="https://www.youtube.com/watch?v=ZzEEJscH4E0">https://www.youtube.com/watch?v=ZzEEJscH4E0</a></li>
-
-<li>Convert from function views to CBV -
-<a href="https://www.youtube.com/watch?v=-3BN-JMLE0A&amp;ab_channel=DennisIvy">https://www.youtube.com/watch?v=-3BN-JMLE0A&amp;ab_channel=DennisIvy</a></li>
-
-<li>Best explanation function views vs CVB(and their types)
-<a href="https://medium.com/@ksarthak4ever/django-class-based-views-vs-function-based-view-e74b47b2e41b">https://medium.com/@ksarthak4ever/django-class-based-views-vs-function-based-view-e74b47b2e41b</a></li>
-
-<li>Florin reccomented video - <a href="https://www.youtube.com/watch?v=8JpNAsq0iPk&amp;t=1s&amp;ab_channel=CodeWithStein">https://www.youtube.com/watch?v=8JpNAsq0iPk&amp;t=1s&amp;ab_channel=CodeWithStein</a></li>
-</ul>
-
-<blockquote>
-<p>
-It is a matter of taste. BUT using classes might give you less code. A pattern
-to follow can be:
-</p>
-
-<ul class="org-ul">
-<li>if you can use one of the generic classes, then use it</li>
-<li>if you can use the normal view class without too much hassle, then do it.</li>
-<li>and the last resort is function based views</li>
-</ul>
-
-<p>
-But when that is said, I almost always use functions because I love them. And
-that is also a good practice to follow
-</p>
-</blockquote>
-
-<p>
-BASICALLY DOING CVB's only to get experience in OOP. OOP will be useful when
-working with django admin and overall, OOP knowledge is a must, I have grown to
-that. Even though I like function views more, let's work with CLASS BASED
-VIEWS.
-</p>
-
-<p>
-introduction - <a href="https://docs.djangoproject.com/en/5.0/topics/class-based-views/intro/">https://docs.djangoproject.com/en/5.0/topics/class-based-views/intro/</a>
-</p>
-
-<blockquote>
-<p>
-if you are performing a more complex operation, handling multiple forms at
-once, a function-based view will serve you better.
-</p>
-</blockquote>
-
-<blockquote>
-<p>
-If you find you’re struggling to implement your view as a subclass of a generic
-view, then you may find it more effective to write just the code you need,
-using your own class-based or functional views.
-</p>
-</blockquote>
-</div>
-</div>
-
-
-<div id="outline-container-org3ae1a7b" class="outline-3">
-<h3 id="org3ae1a7b"><span class="section-number-3">9.2.</span> Mixins</h3>
-<div class="outline-text-3" id="text-9-2">
-<p>
-<a href="https://www.youtube.com/watch?v=bjuS1ryMOmw">https://www.youtube.com/watch?v=bjuS1ryMOmw</a>
-</p>
-
-<p>
-Cia daro mixins also - <a href="https://www.youtube.com/watch?v=Xin4hjyMe6E&amp;list=RDCMUCh_LSaTv2GeZ3woJNTGihew&amp;index=9&amp;ab_channel=RedEyedCoderClub">https://www.youtube.com/watch?v=Xin4hjyMe6E&amp;list=RDCMUCh_LSaTv2GeZ3woJNTGihew&amp;index=9&amp;ab_channel=RedEyedCoderClub</a>
-</p>
-
-<p>
-Lots of mixins, but I think the repo is no longer maintained - <a href="https://github.com/brack3t/django-braces">https://github.com/brack3t/django-braces</a>
-</p>
-
-<p>
-Geras example - <a href="https://www.youtube.com/watch?v=0513I6_f2Tc&amp;list=PLDF6pmMQf-BiBsNRWAyux-rboKZAsFhth&amp;index=8&amp;ab_channel=AdamWester">https://www.youtube.com/watch?v=0513I6_f2Tc&amp;list=PLDF6pmMQf-BiBsNRWAyux-rboKZAsFhth&amp;index=8&amp;ab_channel=AdamWester</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-org6575c18" class="outline-3">
-<h3 id="org6575c18"><span class="section-number-3">9.3.</span> args vs kwargs</h3>
-<div class="outline-text-3" id="text-9-3">
-<p>
-<a href="https://www.youtube.com/watch?v=5EfrKhdebKI&amp;list=PLOLrQ9Pn6caxNb9eFZJ6LfY29nZkKmmXT&amp;index=11&amp;ab_channel=VeryAcademy">https://www.youtube.com/watch?v=5EfrKhdebKI&amp;list=PLOLrQ9Pn6caxNb9eFZJ6LfY29nZkKmmXT&amp;index=11&amp;ab_channel=VeryAcademy</a>
-</p>
-
-<p>
-One asterisk (*) - unpacks a list
-</p>
-</div>
-
-<div id="outline-container-orgf39fece" class="outline-4">
-<h4 id="orgf39fece"><span class="section-number-4">9.3.1.</span> Args</h4>
-<div class="outline-text-4" id="text-9-3-1">
-<p>
-Args is a tuple - ( brackets and commas
-</p>
-
-<p>
-one asterisk – UNPACKS a TUPLE
-</p>
-
-<p>
-Add_numbers(1,2,3,4,5,6,7,8), cia parasiau, nes nesimato
-</p>
-
-<p>
-Kaip matom kas isprintinta, dabar a yra isprintinamas atskirai, o args yra isprintinami viename touple. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgda59619" class="outline-4">
-<h4 id="orgda59619"><span class="section-number-4">9.3.2.</span> Kwargs</h4>
-<div class="outline-text-4" id="text-9-3-2">
-<p>
-two asterisks – UNPACKS a DICTIONARY
-</p>
-
-<p>
-Kwargs – returns a dictionary
-</p>
-
-<p>
-Takes in dictionary also:
-</p>
-
-<p>
-Can print out the chosen dictionary value now when using kwargs:
-</p>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orge260c04" class="outline-2">
-<h2 id="orge260c04"><span class="section-number-2">10.</span> <span class="todo TODO">TODO</span> Django best practices??????????????????????????/</h2>
-<div class="outline-text-2" id="text-10">
+<div id="outline-container-org8114190" class="outline-2">
+<h2 id="org8114190"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Django best practices??????????????????????????/</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 Here I will write the tips that I found and that I use when building a Django
 project.
 </p>
 </div>
 
-<div id="outline-container-org938691e" class="outline-3">
-<h3 id="org938691e"><span class="section-number-3">10.1.</span> Instead of /admin change to smth else URL Django</h3>
-<div class="outline-text-3" id="text-10-1">
+<div id="outline-container-org25d2d35" class="outline-3">
+<h3 id="org25d2d35"><span class="section-number-3">5.1.</span> Instead of /admin change to smth else URL Django</h3>
+<div class="outline-text-3" id="text-5-1">
 <p>
 For security. Everyone knows that if its a django project, it will have an
 admin page
@@ -1826,9 +1022,9 @@ admin page
 </div>
 </div>
 
-<div id="outline-container-orgd17fda8" class="outline-3">
-<h3 id="orgd17fda8"><span class="section-number-3">10.2.</span> Use environment variables</h3>
-<div class="outline-text-3" id="text-10-2">
+<div id="outline-container-org8d89f0e" class="outline-3">
+<h3 id="org8d89f0e"><span class="section-number-3">5.2.</span> Use environment variables</h3>
+<div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>for secret key</li>
 <li>for database name/location</li>
@@ -1838,18 +1034,18 @@ admin page
 </div>
 </div>
 
-<div id="outline-container-orgea21a19" class="outline-3">
-<h3 id="orgea21a19"><span class="section-number-3">10.3.</span> Use postgres db</h3>
-<div class="outline-text-3" id="text-10-3">
+<div id="outline-container-org4b0b50f" class="outline-3">
+<h3 id="org4b0b50f"><span class="section-number-3">5.3.</span> Use postgres db</h3>
+<div class="outline-text-3" id="text-5-3">
 <p>
 Kind of default ageed db to use with Django
 </p>
 </div>
 </div>
 
-<div id="outline-container-org35916c6" class="outline-3">
-<h3 id="org35916c6"><span class="section-number-3">10.4.</span> Use two different settings files</h3>
-<div class="outline-text-3" id="text-10-4">
+<div id="outline-container-org34a6e68" class="outline-3">
+<h3 id="org34a6e68"><span class="section-number-3">5.4.</span> Use two different settings files</h3>
+<div class="outline-text-3" id="text-5-4">
 <p>
 One for prod another for acc(test) environment
 </p>
@@ -1861,27 +1057,27 @@ from notes)
 </div>
 </div>
 
-<div id="outline-container-org8803a47" class="outline-3">
-<h3 id="org8803a47"><span class="section-number-3">10.5.</span> Expanding user model to store more user information</h3>
-<div class="outline-text-3" id="text-10-5">
+<div id="outline-container-orgbbd77e9" class="outline-3">
+<h3 id="orgbbd77e9"><span class="section-number-3">5.5.</span> Expanding user model to store more user information</h3>
+<div class="outline-text-3" id="text-5-5">
 <p>
 As described in my other post <a href="20231128T132201--expanding-user-model__django_sql.html">here</a>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org976d93e" class="outline-3">
-<h3 id="org976d93e"><span class="section-number-3">10.6.</span> Update django every major version once every 9 months</h3>
-<div class="outline-text-3" id="text-10-6">
+<div id="outline-container-orgfe82f93" class="outline-3">
+<h3 id="orgfe82f93"><span class="section-number-3">5.6.</span> Update django every major version once every 9 months</h3>
+<div class="outline-text-3" id="text-5-6">
 <p>
 Python -wd runserver depreciation warnings
 </p>
 </div>
 </div>
 
-<div id="outline-container-org73a9869" class="outline-3">
-<h3 id="org73a9869"><span class="section-number-3">10.7.</span> Renaming Django project</h3>
-<div class="outline-text-3" id="text-10-7">
+<div id="outline-container-org1b03a60" class="outline-3">
+<h3 id="org1b03a60"><span class="section-number-3">5.7.</span> Renaming Django project</h3>
+<div class="outline-text-3" id="text-5-7">
 <p>
 From Lifeapi to Lifeapi_project according to these instructions:
 </p>
@@ -1963,9 +1159,9 @@ project successfully.
 </div>
 </div>
 
-<div id="outline-container-orgf7a3768" class="outline-3">
-<h3 id="orgf7a3768"><span class="section-number-3">10.8.</span> move apps to apps folder</h3>
-<div class="outline-text-3" id="text-10-8">
+<div id="outline-container-org6baf25c" class="outline-3">
+<h3 id="org6baf25c"><span class="section-number-3">5.8.</span> move apps to apps folder</h3>
+<div class="outline-text-3" id="text-5-8">
 <p>
 After creating an app, move it into apps folder, then change the
 following things:
@@ -2003,8 +1199,8 @@ In <code>settings.py</code>, next to installed apps - <code>'lifeapi_apps.base_a
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 16:06</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 16:02</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:03</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 17:02</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-25 Thu 16:29</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

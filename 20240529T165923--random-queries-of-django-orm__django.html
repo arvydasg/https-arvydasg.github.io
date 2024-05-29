@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-29 Wed 17:03 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Random queries of django-orm</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-29 Wed 16:59</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Random queries of django-orm</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org32e46b1">1. Random queries</a></li>
+<li><a href="#org78daa74">2. Modify a record in db with python example</a>
+<ul>
+<li><a href="#org0ad2443">2.1. Method 1</a></li>
+<li><a href="#org05ddb28">2.2. Method 2</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org32e46b1" class="outline-2">
+<h2 id="org32e46b1"><span class="section-number-2">1.</span> Random queries</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> vessel.models <span style="font-weight: bold;">import</span> Vessel
+<span style="font-weight: bold; font-style: italic;">x</span> = Vessel.objects.get(vessel_code=<span style="font-style: italic;">"1234567"</span>)
+x
+x.delete()
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> base.models <span style="font-weight: bold;">import</span> Blog_post, Projects, Tag
+Blog_post.objects.<span style="font-weight: bold;">all</span>()
+
+<span style="font-weight: bold; font-style: italic;">pirmas</span> = Blog_post.objects.first()
+pirmas.tags
+pirmas.tags.<span style="font-weight: bold;">all</span>()
+pirmas.tags.first()
+pirmas.tags.first().name
+Blog_post.objects.<span style="font-weight: bold;">filter</span>(tags__name=<span style="font-style: italic;">'emacs'</span>)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> deal.models <span style="font-weight: bold;">import</span> Deal
+<span style="font-weight: bold;">from</span> django.contrib.auth.models <span style="font-weight: bold;">import</span> User
+<span style="font-weight: bold; font-style: italic;">mng_user</span> = User.objects.get(username=<span style="font-style: italic;">"mng"</span>)
+mng_user
+&lt;User: mng&gt;
+<span style="font-weight: bold; font-style: italic;">deal1</span> = Deal.objects.get(pk=2)
+deal1
+&lt;Deal: Deal 1&gt;
+deal1.user
+&lt;User: dev&gt;
+deal1.<span style="font-weight: bold; font-style: italic;">user</span> = mng_user
+deal1.user
+&lt;User: mng&gt;
+deal1.save()
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org78daa74" class="outline-2">
+<h2 id="org78daa74"><span class="section-number-2">2.</span> Modify a record in db with python example</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org0ad2443" class="outline-3">
+<h3 id="org0ad2443"><span class="section-number-3">2.1.</span> Method 1</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+<pre class="src src-bash">(venv) arvy@DESKTOP-AUDMJ7D:~/src/lifeapi$ python manage.py shell --settings=settings.development
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type <span style="font-style: italic;">"help"</span>, <span style="font-style: italic;">"copyright"</span>, <span style="font-style: italic;">"credits"</span> or <span style="font-style: italic;">"license"</span> for more information.
+(InteractiveConsole)
+
+import os
+<span style="font-weight: bold;">os.getcwd</span>()
+
+from lifeapi_apps.quiz_app.models import Question
+
+<span style="font-weight: bold;">Question.objects.all</span>()
+
+&lt;QuerySet [&lt;Question: Workout - YN&gt;, &lt;Question: Meditate - YN&gt;, &lt;Question: Miegojimas - Scale&gt;]&gt;
+
+from django.contrib.auth.models import User
+
+user_id_1 = User.objects.get(<span style="font-weight: bold; font-style: italic;">pk</span>=1)
+
+questions = Question.objects.all()
+
+<span style="font-weight: bold;">questions.update</span>(<span style="font-weight: bold; font-style: italic;">created_by</span>=user_id_1)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org05ddb28" class="outline-3">
+<h3 id="org05ddb28"><span class="section-number-3">2.2.</span> Method 2</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+start by this, do whatever you want then
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">python manage.py shell --settings=settings.development
+
+<span style="font-weight: bold;">from</span> lifeapi_apps.quiz_app.models <span style="font-weight: bold;">import</span> Question, Answer
+<span style="font-weight: bold;">from</span> django.contrib.auth.models <span style="font-weight: bold;">import</span> User
+
+<span style="font-weight: bold; font-style: italic;">arvy_user</span> = User.objects.get(username=<span style="font-style: italic;">'arvy'</span>)
+<span style="font-weight: bold; font-style: italic;">questions</span> = Question.objects.<span style="font-weight: bold;">filter</span>(created_by=arvy_user)
+
+<span style="font-weight: bold;">for</span> question <span style="font-weight: bold;">in</span> questions:
+    <span style="font-weight: bold;">print</span>(question.description)
+
+<span style="font-weight: bold; font-style: italic;">questions</span> = Question.objects.<span style="font-weight: bold;">all</span>()
+<span style="font-weight: bold;">print</span>(questions)
+
+<span style="font-weight: bold; font-style: italic;">answers</span> = question.answer_set.<span style="font-weight: bold;">all</span>()
+<span style="font-weight: bold;">print</span>(answers)
+
+<span style="font-weight: bold; font-style: italic;">question_description</span> = <span style="font-style: italic;">"No Headache"</span>
+<span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=question_description)
+<span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=<span style="font-style: italic;">"No Headache"</span>, created_by=arvy_user)
+<span style="font-weight: bold;">print</span>(question)
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">think if you really want to rename this way!!! everything will be NO now.</span>
+Answer.objects.<span style="font-weight: bold;">filter</span>(question=question, answer=<span style="font-style: italic;">"YES"</span>).update(answer=<span style="font-style: italic;">"NO"</span>)
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">better do a for loop like such:</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Get all answers related to the question</span>
+<span style="font-weight: bold; font-style: italic;">answers</span> = Answer.objects.<span style="font-weight: bold;">filter</span>(question=question)
+<span style="font-weight: bold; font-style: italic;">answers</span> = Answer.objects.<span style="font-weight: bold;">filter</span>(question__description=<span style="font-style: italic;">"Belly ache"</span>)
+<span style="font-weight: bold;">for</span> answer <span style="font-weight: bold;">in</span> answers:
+    <span style="font-weight: bold;">if</span> answer.answer == <span style="font-style: italic;">"YES"</span>:
+        answer.<span style="font-weight: bold; font-style: italic;">answer</span> = <span style="font-style: italic;">"NO"</span>
+    <span style="font-weight: bold;">elif</span> answer.answer == <span style="font-style: italic;">"NO"</span>:
+        answer.<span style="font-weight: bold; font-style: italic;">answer</span> = <span style="font-style: italic;">"YES"</span>
+    answer.save()
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">rename a question</span>
+<span style="font-weight: bold; font-style: italic;">question_description</span> = <span style="font-style: italic;">"aciukas"</span>
+<span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=question_description)
+<span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=<span style="font-style: italic;">"No Headache"</span>, created_by=arvy_user)
+question.<span style="font-weight: bold; font-style: italic;">description</span> = <span style="font-style: italic;">"No Alchohol"</span>
+question.save()
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Delete all answers related to the question</span>
+Answer.objects.<span style="font-weight: bold;">filter</span>(question=question).delete()
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 17:03</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 16:59</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 16:59</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>
