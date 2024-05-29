@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 08:37 -->
+<!-- 2024-05-29 Wed 10:03 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>make denote faster on wsl</title>
+<title>Make denote faster on wsl</title>
 <meta name="author" content="Arvydas Gasparavicius" />
 <meta name="description" content="welcome to my site" />
 <meta name="keywords" content="emacs antanas geles" />
@@ -23,24 +23,24 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-27 Mon 15:00</div>
+<div id="updated">Updated: 2024-05-29 Wed 08:54</div>
 </div>
 <div id="content" class="content">
 <header>
-<h1 class="title">make denote faster on wsl</h1>
+<h1 class="title">Make denote faster on wsl</h1>
 </header><nav id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0877ac5">1. <span class="timestamp-wrapper"><span class="timestamp">[2023-12-24 Sun] </span></span> Update</a></li>
-<li><a href="#orgc0e7901">2. My question to chatgpt <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-11-26 Sun&gt;</span></span>.</a></li>
-<li><a href="#org7f094e1">3. Solution not worth considering</a></li>
-<li><a href="#org6e33465">4. Temporary working solution</a></li>
-<li><a href="#orgf77ebc6">5. Permanent working solution</a>
+<li><a href="#org9ce1451">1. <span class="timestamp-wrapper"><span class="timestamp">[2023-12-24 Sun] </span></span> Update</a></li>
+<li><a href="#orgeb3b5e6">2. My question to chatgpt <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-11-26 Sun&gt;</span></span>.</a></li>
+<li><a href="#org313440a">3. Solution not worth considering</a></li>
+<li><a href="#org8eede4c">4. Temporary working solution</a></li>
+<li><a href="#org19b8d63">5. Permanent working solution</a>
 <ul>
-<li><a href="#orge9a5175">5.1. Option 1 - use <code>cp</code> command to copy</a></li>
-<li><a href="#orgfa4d57b">5.2. Option 2(final) - Use <code>rsync</code> command</a></li>
-<li><a href="#org5d4159c">5.3. Update <code>.bashrc</code> file to copy automatically</a></li>
+<li><a href="#orgd35baed">5.1. Option 1 - use <code>cp</code> command to copy</a></li>
+<li><a href="#orge424763">5.2. Option 2(final) - Use <code>rsync</code> command</a></li>
+<li><a href="#orgaf6f02f">5.3. Update <code>.bashrc</code> file to copy automatically</a></li>
 </ul>
 </li>
 </ul>
@@ -62,8 +62,8 @@ quite recent copy of the notes in OneDrive.
 </p>
 
 
-<div id="outline-container-org0877ac5" class="outline-2">
-<h2 id="org0877ac5"><span class="section-number-2">1.</span> <span class="timestamp-wrapper"><span class="timestamp">[2023-12-24 Sun] </span></span> Update</h2>
+<div id="outline-container-org9ce1451" class="outline-2">
+<h2 id="org9ce1451"><span class="section-number-2">1.</span> <span class="timestamp-wrapper"><span class="timestamp">[2023-12-24 Sun] </span></span> Update</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="20231224T082240--the-less-mess-with-notes-the-better__denote_git_notes.html">the less mess with notes the better</a>
@@ -71,8 +71,8 @@ quite recent copy of the notes in OneDrive.
 </div>
 </div>
 
-<div id="outline-container-orgc0e7901" class="outline-2">
-<h2 id="orgc0e7901"><span class="section-number-2">2.</span> My question to chatgpt <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-11-26 Sun&gt;</span></span>.</h2>
+<div id="outline-container-orgeb3b5e6" class="outline-2">
+<h2 id="orgeb3b5e6"><span class="section-number-2">2.</span> My question to chatgpt <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-11-26 Sun&gt;</span></span>.</h2>
 <div class="outline-text-2" id="text-2">
 <blockquote>
 <p>
@@ -99,8 +99,8 @@ wsl AND have those files in google cloud?
 </div>
 </div>
 
-<div id="outline-container-org7f094e1" class="outline-2">
-<h2 id="org7f094e1"><span class="section-number-2">3.</span> Solution not worth considering</h2>
+<div id="outline-container-org313440a" class="outline-2">
+<h2 id="org313440a"><span class="section-number-2">3.</span> Solution not worth considering</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 I heard that you can create a symlink from windows to wsl. I tried doing that:
@@ -121,8 +121,8 @@ will point to nowhere. Not good. Ditched this idea.
 </div>
 </div>
 
-<div id="outline-container-org6e33465" class="outline-2">
-<h2 id="org6e33465"><span class="section-number-2">4.</span> Temporary working solution</h2>
+<div id="outline-container-org8eede4c" class="outline-2">
+<h2 id="org8eede4c"><span class="section-number-2">4.</span> Temporary working solution</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Create a symbolic link within WSL that points directly to your
@@ -145,8 +145,8 @@ Yes, I think it is faster. Notes are created and opened faster.
 </div>
 </div>
 
-<div id="outline-container-orgf77ebc6" class="outline-2">
-<h2 id="orgf77ebc6"><span class="section-number-2">5.</span> Permanent working solution</h2>
+<div id="outline-container-org19b8d63" class="outline-2">
+<h2 id="org19b8d63"><span class="section-number-2">5.</span> Permanent working solution</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 What I will do is create a shell script that will automatically run on each wsl
@@ -158,8 +158,8 @@ commit - 2ba4f55
 </p>
 </div>
 
-<div id="outline-container-orge9a5175" class="outline-3">
-<h3 id="orge9a5175"><span class="section-number-3">5.1.</span> Option 1 - use <code>cp</code> command to copy</h3>
+<div id="outline-container-orgd35baed" class="outline-3">
+<h3 id="orgd35baed"><span class="section-number-3">5.1.</span> Option 1 - use <code>cp</code> command to copy</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Shell script lies in:
@@ -188,8 +188,8 @@ Can use a simple copy method to copy the files:
 </div>
 </div>
 
-<div id="outline-container-orgfa4d57b" class="outline-3">
-<h3 id="orgfa4d57b"><span class="section-number-3">5.2.</span> Option 2(final) - Use <code>rsync</code> command</h3>
+<div id="outline-container-orge424763" class="outline-3">
+<h3 id="orge424763"><span class="section-number-3">5.2.</span> Option 2(final) - Use <code>rsync</code> command</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Or can use <code>Rsycn</code> - it performs synchronization between source and
@@ -214,8 +214,8 @@ Then make this file executable:
 </div>
 </div>
 
-<div id="outline-container-org5d4159c" class="outline-3">
-<h3 id="org5d4159c"><span class="section-number-3">5.3.</span> Update <code>.bashrc</code> file to copy automatically</h3>
+<div id="outline-container-orgaf6f02f" class="outline-3">
+<h3 id="orgaf6f02f"><span class="section-number-3">5.3.</span> Update <code>.bashrc</code> file to copy automatically</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 Add the script execution to your .bashrc
@@ -247,8 +247,8 @@ procedure.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 08:37</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-27 Mon 15:00</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 10:03</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 08:54</p>
 	 <p class="date">This org file is <u>created</u>: 2023-11-26 Sun 01:20</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
