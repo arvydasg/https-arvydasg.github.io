@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 18:22 -->
+<!-- 2024-05-30 Thu 17:27 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Class based views vs function based views in django</title>
@@ -23,12 +23,23 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 16:42</div>
+<div id="updated">Updated: 2024-05-30 Thu 14:47</div>
 </div>
 <div id="content" class="content">
 <header>
 <h1 class="title">Class based views vs function based views in django</h1>
-</header><blockquote>
+</header><ul class="org-ul">
+<li><a href="https://github.com/azegas/quotes/issues/6">FBV vs CBV?</a></li>
+<li>Would choose function based views if I could.</li>
+<li>Very good point for function based views <a href="https://youtu.be/mKzStOGIc4A?si=CP2ReqI-RNIdZirc&amp;t=286">you can SEE stuff, there is NO magic</a></li>
+<li>can choose function based views when I need them anyway, at any time</li>
+<li><a href="https://vsupalov.com/django-cbv-seem-overwhelming/">Django CBVs seem overwhelming, because there are so many!</a></li>
+<li><a href="https://vsupalov.com/django-cbv-vs-fbv-beginner/">When do you use Django CBVs or FBVs?</a></li>
+</ul>
+
+
+
+<blockquote>
 <p>
 It is a matter of taste. BUT using classes might give you less code. A pattern
 to follow can be:
@@ -67,6 +78,67 @@ view, then you may find it more effective to write just the code you need,
 using your own class-based or functional views.
 </p>
 </blockquote>
+
+<blockquote>
+<p>
+Serving a noble purpose of code de-duplication, class-based views often offer
+the cure that is worse than the disease. The code gets messy in an attempt to
+save or reuse a few lines of code.
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+Just ignore all generic CBVs, and stick to the View base class! You don’t need
+to use anything other to use CBVs and make your project work.
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+If you’re new to Django, or new to using class based views, it’s completely
+acceptable to stick to building on top of the View class. I’d go as far, as
+saying that it’s recommended when starting out and the best choice if you feel
+overwhelmed.
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+Simple is better than complex
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+The third line in the Zen of Python is a good guiding rule, and applies in this
+case.
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+Usually, it's just easier to write your own non-generic view, than trying to
+use them unprepared.I prefer the class-based views which are based on the View
+class, unless the project is large enough that there's a lot of repetition
+going on
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+CBV's:
+</p>
+
+<ul class="org-ul">
+<li>Karina chooses CBV's almost all the time.</li>
+<li>Shipping project is also full of CBV's (django admin)</li>
+<li>good for large codebases</li>
+<li>leveling up in OOP</li>
+<li>goal is to be good at OOP</li>
+<li>good resource is out there, means that I am not the only one using CBV's ;)</li>
+</ul>
+</blockquote>
 </div>
 <div id="postamble" class="status">
 <hr/>
@@ -76,8 +148,8 @@ using your own class-based or functional views.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 18:22</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 16:42</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-30 Thu 17:27</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-30 Thu 14:47</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 16:38</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

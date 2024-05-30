@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-29 Wed 18:22 -->
+<!-- 2024-05-30 Thu 17:27 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Renaming django project</title>
@@ -23,68 +23,86 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 17:21</div>
+<div id="updated">Updated: 2024-05-30 Thu 17:16</div>
 </div>
 <div id="content" class="content">
 <header>
 <h1 class="title">Renaming django project</h1>
-</header><p>
-From Lifeapi to Lifeapi_project according to these instructions:
-</p>
-
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga477f59">1. High-level overview of the process</a></li>
+<li><a href="#org1238a43">2. Project's configuration files</a></li>
+<li><a href="#org93dc45a">3. References in code</a></li>
+<li><a href="#org88677c2">4. Testing</a></li>
+</ul>
+</div>
+</nav>
 <p>
-Used ctrl+shift+f to find all occurances or lifeapi and change to
-lifeapi_project.
+From <code>Lifeapi</code> to <code>Lifeapi_project</code> according to these instructions:
 </p>
 
+<ul class="org-ul">
+<li>Used <code>ctrl+shift+f</code> to find all occurances or lifeapi and change to
+lifeapi_project.</li>
+</ul>
+
+<div id="outline-container-orga477f59" class="outline-2">
+<h2 id="orga477f59"><span class="section-number-2">1.</span> High-level overview of the process</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 In Django, renaming a project involves a few steps, but it can be done
-relatively easily. Here's a high-level overview of the process:
+relatively easily. Here's a  high-level overview of the process:
 </p>
 
-<p>
-Rename the project directory: Rename the root directory of your Django project
-to the new desired name.
-</p>
+<ul class="org-ul">
+<li>Rename the project directory: Rename the root directory of your Django
+project to the new desired name.</li>
+<li>Update the <code>manage.py</code> file: Open the <code>manage.py</code> file in the root directory
+and update the <code>DJANGO_SETTINGS_MODULE</code> variable to point to the new project
+name.</li>
+<li>Update the <code>WSGI file</code> (if applicable): If you're using a WSGI server like
+Apache or Nginx, update the WSGI file to reflect the new project name.</li>
+</ul>
+</div>
+</div>
 
-<p>
-Update the manage.py file: Open the manage.py file in the root directory and
-update the DJANGO_SETTINGS_MODULE variable to point to the new project name.
-</p>
-
-<p>
-Update the WSGI file (if applicable): If you're using a WSGI server like Apache
-or Nginx, update the WSGI file to reflect the new project name.
-</p>
-
+<div id="outline-container-org1238a43" class="outline-2">
+<h2 id="org1238a43"><span class="section-number-2">2.</span> Project's configuration files</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Update the project's configuration files:
 </p>
 
-<p>
-Rename the main project package folder: Inside the renamed project directory,
-rename the main package folder (the one containing settings.py, urls.py, etc.)
-to the new project name.
-</p>
+<ul class="org-ul">
+<li>Rename the main project package folder: Inside the renamed project directory,
+rename the main package folder (the one containing <code>settings.py</code>, <code>urls.py</code>,
+etc.) to the new project name.</li>
+<li>Update the <code>ROOT_URLCONF</code> setting: In the <code>settings.py</code> file, update the
+<code>ROOT_URLCONF</code> variable to point to the new project name.</li>
+</ul>
+</div>
+</div>
 
-<p>
-Update the ROOT_URLCONF setting: In the settings.py file, update the
-ROOT_URLCONF variable to point to the new project name.
-</p>
-
+<div id="outline-container-org93dc45a" class="outline-2">
+<h2 id="org93dc45a"><span class="section-number-2">3.</span> References in code</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 Update references in code and configuration files:
 </p>
 
-<p>
-Search for any references to the old project name in your codebase and update
-them to use the new project name.
-</p>
+<ul class="org-ul">
+<li>Search for any references to the old project name in your codebase and update
+them to use the new project name.</li>
+<li>Update any file paths or URLs that reference the old project name.</li>
+</ul>
+</div>
+</div>
 
-<p>
-Update any file paths or URLs that reference the old project name.
-</p>
-
+<div id="outline-container-org88677c2" class="outline-2">
+<h2 id="org88677c2"><span class="section-number-2">4.</span> Testing</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 Test and validate: After making the above changes, test your project to ensure
 it runs correctly. Run migrations, start the development server, and navigate
@@ -103,6 +121,8 @@ While Django does not provide an automated way to rename a project, following
 the steps outlined above should allow you to rename your project successfully.
 </p>
 </div>
+</div>
+</div>
 <div id="postamble" class="status">
 <hr/>
 	 <footer>
@@ -111,8 +131,8 @@ the steps outlined above should allow you to rename your project successfully.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-29 Wed 18:22</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 17:21</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-30 Thu 17:27</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-30 Thu 17:16</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 17:21</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
