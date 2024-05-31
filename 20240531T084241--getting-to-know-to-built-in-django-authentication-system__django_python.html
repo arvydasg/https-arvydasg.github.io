@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-31 Fri 16:53 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Getting to know to built in django authentication system</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-31 Fri 09:08</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Getting to know to built in django authentication system</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgda4f058">1. Get to know to Django's built-in in authentication system</a></li>
+<li><a href="#orgcdb00b0">2. Log In functionality</a></li>
+<li><a href="#orgf728e2c">3. Log Out functionality</a></li>
+<li><a href="#org049c1d0">4. Sign Up functionality</a></li>
+<li><a href="#org89e00d5">5. Password Change</a></li>
+<li><a href="#org60f192e">6. Password Reset</a></li>
+</ul>
+</div>
+</nav>
+<p>
+This is basically a copy of
+<a href="https://learndjango.com/tutorials/django-login-and-logout-tutorial">https://learndjango.com/tutorials/django-login-and-logout-tutorial</a> tutorial.
+Wanted to keep a copy of it for myself, since this information is useful.
+</p>
+
+<p>
+This was the first version of how I configured authentication in my
+<a href="https://github.com/azegas/django_starter">Django_starter</a> app, but then I discovered allauth and everything mentioned in
+this post was replaced by it. The concepts below are still good to know and are
+very relevant.
+</p>
+
+<div id="outline-container-orgda4f058" class="outline-2">
+<h2 id="orgda4f058"><span class="section-number-2">1.</span> Get to know to Django's built-in in authentication system</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+In this section, we'll configure a complete <a href="https://docs.djangoproject.com/en/5.0/topics/auth/">user authentication system</a> in
+Django consisting of login, logout, signup, password change, and password
+reset.
+</p>
+
+<p>
+The Django <code>contrib=q module provides built-in apps to help with development.
+In the =project/settings.py</code> file under <code>INSTALLED_APPS</code>, you can see that
+<code>auth</code> is listed and available to us.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">project/settings.py</span>
+<span style="font-weight: bold; font-style: italic;">INSTALLED_APPS</span> = [
+    <span style="font-style: italic;">"django.contrib.admin"</span>,
+    <span style="font-style: italic;">"django.contrib.auth"</span>,  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">THIS!!!!</span>
+    <span style="font-style: italic;">"django.contrib.contenttypes"</span>,
+    <span style="font-style: italic;">"django.contrib.sessions"</span>,
+    <span style="font-style: italic;">"django.contrib.messages"</span>,
+    <span style="font-style: italic;">"django.contrib.staticfiles"</span>,
+]
+</pre>
+</div>
+
+<p>
+To use the <code>auth</code> app, we need to add it to our project-level <code>project/urls.py</code>
+file. At the top, import include and create a new URL path at accounts/. You
+can choose a different URL path, but using accounts/ is a standard practice and
+requires less customization later.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">project/urls.py</span>
+<span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> admin
+<span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> path, include  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+
+<span style="font-weight: bold; font-style: italic;">urlpatterns</span> = [
+    path(<span style="font-style: italic;">"admin/"</span>, admin.site.urls),
+    path(<span style="font-style: italic;">"accounts/"</span>, include(<span style="font-style: italic;">"django.contrib.auth.urls"</span>)),  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+]
+</pre>
+</div>
+
+<p>
+The auth app we've now included provides us with multiple <a href="https://docs.djangoproject.com/en/5.0/topics/auth/default/#module-django.contrib.auth.views">authentication views</a>
+and URLs for handling login, logout, password change, password reset, etc. It
+notably does not include a view and URL for signup, so we have to configure
+that ourselves.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">accounts/login/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'login'</span>]
+accounts/logout/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'logout'</span>]
+accounts/password_change/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'password_change'</span>]
+accounts/password_change/done/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'password_change_done'</span>]
+accounts/password_reset/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'password_reset'</span>]
+accounts/password_reset/done/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'password_reset_done'</span>]
+accounts/reset/&lt;uidb64&gt;/&lt;token&gt;/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'password_reset_confirm'</span>]
+accounts/reset/done/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'password_reset_complete'</span>]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcdb00b0" class="outline-2">
+<h2 id="orgcdb00b0"><span class="section-number-2">2.</span> Log In functionality</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Let's make our login page! By default, Django will look within a templates
+folder called <code>registration</code> for auth templates. The login template is called
+<code>login.html</code>.
+</p>
+
+<p>
+Inside of the templates directory create a folder called registration:
+</p>
+
+<p>
+Then create a <code>login.html</code> file and include the following code:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span style="font-weight: bold; font-style: italic;">&lt;!-- </span><span style="font-weight: bold; font-style: italic;">templates/registration/login.html</span><span style="font-weight: bold; font-style: italic;"> --&gt;</span>
+&lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Log In</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span>&gt;
+  {% csrf_token %}
+  {{ form }}
+  &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Log In&lt;/<span style="font-weight: bold;">button</span>&gt;
+&lt;/<span style="font-weight: bold;">form</span>&gt;
+</pre>
+</div>
+
+<p>
+This code is a standard Django form using <code>POST</code> to send data and <code>{%
+csrf_token %}</code> tags for security concerns, namely to prevent a CSRF Attack. The
+form's contents are displayed with <code>{{ form }}</code>, and then we add a "submit"
+button.
+</p>
+
+<p>
+Our login functionality now works, but we should specify where to redirect the
+user upon a successful login using the <code>LOGIN_REDIRECT_URL</code> setting. At the
+bottom of the <code>settings.py</code> file, add the following to redirect the user to the
+homepage.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">project/settings.py</span>
+<span style="font-weight: bold; font-style: italic;">LOGIN_REDIRECT_URL</span> = <span style="font-style: italic;">"index"</span>  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+</pre>
+</div>
+
+<p>
+If you start the Django server again with <code>python manage.py runserver</code> and
+navigate to our login page at <code>http://127.0.0.1:8000/accounts/login/</code>, you'll
+see the login page.
+</p>
+
+<p>
+Let's add a navigation link to the login page. In <code>navbar.html</code> add this line:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">li</span>&gt;&lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'login' %}"</span>&gt;login&lt;/<span style="font-weight: bold;">a</span>&gt;&lt;/<span style="font-weight: bold;">li</span>&gt;
+</pre>
+</div>
+
+<p>
+We can only log in if we have a user account. And since adding a signup form is
+yet to come, the most straightforward approach is to make a superuser account
+from the command line. Quit the server with <code>Control+c</code> and then run the
+command <code>python manage.py createsuperuser</code>. Answer the prompts and note that
+your password will not appear on the screen when typing for security reasons.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">let's make migration first, to create tables in the database</span>
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py createsuperuser
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Username (leave blank to use 'root'):</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Email address:</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Password:</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Password (again):</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Superuser created successfully.</span>
+</pre>
+</div>
+
+<p>
+Now start the server again with python manage.py runserver and refresh the page
+at <code>http://127.0.0.1:8000/accounts/login/</code>. Enter the login info for your
+just-created superuser.
+</p>
+
+<p>
+Our login worked because it redirected us to the homepage which we have created
+earlier.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf728e2c" class="outline-2">
+<h2 id="orgf728e2c"><span class="section-number-2">3.</span> Log Out functionality</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+But how do we log out? The only option currently is to go into the admin panel
+at <code>http://127.0.0.1:8000/admin/</code> and click the "Log Out" link in the upper
+right corner. The "Logout" link will log us out.
+</p>
+
+<blockquote>
+<p>
+NOTE: One of the changes to Django 5.0, as noted in the release notes, is the removal
+support for logging out via GET requests. In previous versions of Django, you
+could add a logout link like <code>&lt;a href</code>" {% url 'logout' %}"&gt;Log Out&lt;/a&gt;= to a
+template file. But now a POST request via a form is required.
+</p>
+
+
+<p>
+NOTE NOTE: but if using "allauth" package, you can simply use the 'account_logou' url.
+</p>
+</blockquote>
+
+<p>
+We already have this in our <code>base.html</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">"{% url 'logout' %}"</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span>&gt;
+  {% csrf_token %}
+  &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Log Out&lt;/<span style="font-weight: bold;">button</span>&gt;
+&lt;/<span style="font-weight: bold;">form</span>&gt;
+</pre>
+</div>
+
+<p>
+Then we need to update <code>settings.py</code> with our redirect link,
+<code>LOGOUT_REDIRECT_URL</code>. Add it right next to our login redirect so the bottom of
+the <code>settings.py</code> file should look as follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">project/settings.py</span>
+<span style="font-weight: bold; font-style: italic;">LOGIN_REDIRECT_URL</span> = <span style="font-style: italic;">"index"</span>
+<span style="font-weight: bold; font-style: italic;">LOGOUT_REDIRECT_URL</span> = <span style="font-style: italic;">"index"</span>  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org049c1d0" class="outline-2">
+<h2 id="org049c1d0"><span class="section-number-2">4.</span> Sign Up functionality</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Now that we have sorted out logging in and logging out, it is time to add a
+signup page to our basic Django site. If you recall, Django <b><b>does not</b></b>
+provide a built-in view or URL for this, so we must code up the form and the
+page ourselves.
+</p>
+
+<p>
+To begin, stop the local webserver with Control+c and create a dedicated app
+called accounts, which we'll use for our custom account logic.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">python manage.py startapp accounts
+</pre>
+</div>
+
+<p>
+We then move the newly created <code>accounts</code> app into <code>apps</code> folder for better
+structure in the future. All the apps will be in one folder.
+</p>
+
+<p>
+Go to <code>apps.py</code> and fix the name variable to be <code>name = "apps.accounts"</code>. From
+now on if we want to refernece urls of this app, we will do so by writing
+<code>apps.accounts.urls</code>.
+</p>
+
+<p>
+Make sure to add the new app to the <code>INSTALLED_APPS</code> setting in the
+<code>project/settings.py</code> file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">project/settings.py</span>
+<span style="font-weight: bold; font-style: italic;">INSTALLED_APPS</span> = [
+    <span style="font-style: italic;">"django.contrib.admin"</span>,
+    <span style="font-style: italic;">"django.contrib.auth"</span>,
+    <span style="font-style: italic;">"django.contrib.contenttypes"</span>,
+    <span style="font-style: italic;">"django.contrib.sessions"</span>,
+    <span style="font-style: italic;">"django.contrib.messages"</span>,
+    <span style="font-style: italic;">"django.contrib.staticfiles"</span>,
+    <span style="font-style: italic;">"apps.accounts"</span>,  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+]
+</pre>
+</div>
+
+<p>
+Then add a URL path in <code>project/urls.py</code> that is <b><b>above</b></b> our included Django
+<code>auth</code> app. The order is important here because Django looks for URL patterns
+from top-to-bottom. We want to maintain the pattern of having our user
+authentication logic at <code>accounts/</code> but ensure that the signup page loads
+first.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">django_project/urls.py</span>
+<span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> admin
+<span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> path, include
+
+<span style="font-weight: bold;">from</span> project.views <span style="font-weight: bold;">import</span> Index
+
+<span style="font-weight: bold; font-style: italic;">urlpatterns</span> = [
+    path(<span style="font-style: italic;">"admin/"</span>, admin.site.urls),
+    path(<span style="font-style: italic;">"accounts/"</span>, include(<span style="font-style: italic;">"apps.accounts.urls"</span>)),  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+    path(<span style="font-style: italic;">"accounts/"</span>, include(<span style="font-style: italic;">"django.contrib.auth.urls"</span>)),
+    path(<span style="font-style: italic;">""</span>, Index.as_view(), name=<span style="font-style: italic;">"index"</span>),
+]
+</pre>
+</div>
+
+<p>
+Next, create a new file called <code>accounts/urls.py</code> with your text editor and add
+the following code.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">accounts/urls.py</span>
+<span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> path
+
+<span style="font-weight: bold;">from</span> .views <span style="font-weight: bold;">import</span> SignUpView
+
+
+<span style="font-weight: bold; font-style: italic;">urlpatterns</span> = [
+    path(<span style="font-style: italic;">"signup/"</span>, SignUpView.as_view(), name=<span style="font-style: italic;">"signup"</span>),
+]
+</pre>
+</div>
+
+<p>
+Now for the <code>accounts/views.py</code> file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">accounts/views.py</span>
+<span style="font-weight: bold;">from</span> django.contrib.auth.forms <span style="font-weight: bold;">import</span> UserCreationForm
+<span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> reverse_lazy
+<span style="font-weight: bold;">from</span> django.views.generic <span style="font-weight: bold;">import</span> CreateView
+
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">SignUpView</span>(CreateView):
+    <span style="font-weight: bold; font-style: italic;">form_class</span> = UserCreationForm
+    <span style="font-weight: bold; font-style: italic;">success_url</span> = reverse_lazy(<span style="font-style: italic;">"login"</span>)
+    <span style="font-weight: bold; font-style: italic;">template_name</span> = <span style="font-style: italic;">"registration/signup.html"</span>
+</pre>
+</div>
+
+<p>
+At the top we import <a href="https://docs.djangoproject.com/en/5.0/topics/auth/default/#django.contrib.auth.forms.UserCreationForm%20">UserCreationForm</a>, <a href="https://docs.djangoproject.com/en/5.0/ref/urlresolvers/#reverse-lazy">reverse_lazy</a>, and the generic
+class-based view <a href="https://docs.djangoproject.com/en/5.0/ref/class-based-views/generic-editing/#django.views.generic.edit.CreateView">CreateView</a>.
+</p>
+
+<p>
+We are creating a new class called <code>SignUpView</code> that extends <code>CreateView</code>, sets
+the form as <code>UserCreationForm</code>, and uses the <b>not-yet-created</b> template
+<code>signup.html</code>. Note that we use <code>reverse_lazy</code> to redirect users to the login
+page upon successful registration rather than <code>reverse</code>, because <b>for all
+generic class-based views</b>, the URLs are not loaded when the file is imported,
+so we have to use the lazy form of reverse to load them later when we are sure
+they're available.
+</p>
+
+<p>
+Ok, now for the final step. Create a new template,
+<code>templates/registration/signup.html</code>, and populate it with this code that looks
+almost exactly like what we used for <code>login.html</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span style="font-weight: bold; font-style: italic;">&lt;!-- </span><span style="font-weight: bold; font-style: italic;">templates/registration/signup.html</span><span style="font-weight: bold; font-style: italic;"> --&gt;</span>
+{% extends "base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+&lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Sign up</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span>&gt;
+  {% csrf_token %}
+  {{ form }}
+  &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Sign Up&lt;/<span style="font-weight: bold;">button</span>&gt;
+&lt;/<span style="font-weight: bold;">form</span>&gt;
+{% endblock %}
+</pre>
+</div>
+
+<p>
+We're done! To confirm it all works, spin up our local server with <code>python
+manage.py runserver</code> and navigate to <code>http://127.0.0.1:8000/accounts/signup/</code>.
+</p>
+
+<p>
+Sign up for a new account and hit the "Sign up" button. You will be redirected
+to the login page, <code>http://127.0.0.1:8000/accounts/login/</code>, where you can log
+in with your new account.
+</p>
+
+<p>
+And then, after a successful login, you'll be redirected to the homepage.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org89e00d5" class="outline-2">
+<h2 id="org89e00d5"><span class="section-number-2">5.</span> Password Change</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Django provides a default implementation of password change functionality. To
+try it out, log out of your superuser account and log in with your regular
+user.
+</p>
+
+<p>
+The default "Password change" page is located at
+<code>http://127.0.0.1:8000/accounts/password_change/</code>.
+</p>
+
+<p>
+Enter your old password and then a new one twice. Click the "Change My
+Password" button, and you will be redirected to the "Password change
+successful" page.
+</p>
+
+<p>
+If you want to customize these two password change pages to match the look and
+feel of your website, it is only necessary to override the existing templates.
+Django already provides us with the views and URLs. To do this, create two new
+template files in the <code>registration</code> directory:
+</p>
+
+<ul class="org-ul">
+<li><code>templates/registration/password_change_form.html</code></li>
+<li><code>templates/registration/password_change_done.html</code></li>
+</ul>
+
+<p>
+We can add a password change link to the <code>base.html</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org60f192e" class="outline-2">
+<h2 id="org60f192e"><span class="section-number-2">6.</span> Password Reset</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+A password reset page is useful when a user forgets their log in information: a
+user can enter in their email address and receive a cryptographically secure
+email with a one-time link to a password reset page. This is typically
+available to logged-out users. Django has built-in functionality for this that
+only requires a small amount of configuration.
+</p>
+
+<p>
+Let's add a link to the default password reset page that will be available to
+logged-out users.
+</p>
+
+<p>
+We can add a password reset link to the <code>base.html</code>.
+</p>
+
+<p>
+Click on the link for "Password Reset."
+</p>
+
+<p>
+The default template is ugly and styled to match the admin but is functional.
+We want to try it out, but there's one problem: <b>our regular user account does
+not have an email address associated with it</b>. The default Django
+<a href="https://docs.djangoproject.com/en/5.0/topics/auth/default/#django.contrib.auth.forms.UserCreationForm">UserCreationForm</a> we extended for our signup form does not have email included!
+</p>
+
+<p>
+Nonetheless, there is an easy fix. Log in to the admin, click on <code>Users</code>, and
+select the <code>username</code> for your regular user account to bring up the change user
+page where you can add an email.
+</p>
+
+<p>
+Make sure to click the "Save" button at the bottom of the page. Then click the
+"Log Out" button in the upper right-hand corner of the admin or back on the
+homepage.
+</p>
+
+<p>
+Django defaults to an <a href="https://docs.djangoproject.com/en/5.0/ref/settings/#email-backend">SMTP</a> email backend that requires some configuration. To
+test the password reset flow locally, we can update the
+<code>django_project/settings.py</code> file to output emails to the console instead. Add
+this one line to the bottom of the file.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">django_project/settings.py</span>
+<span style="font-weight: bold; font-style: italic;">EMAIL_BACKEND</span> = <span style="font-style: italic;">"django.core.mail.backends.console.EmailBackend"</span> <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+</pre>
+</div>
+
+<p>
+Finally, we can try the Password Reset page again at
+<code>http://127.0.0.1:8000/accounts/password_reset/</code>. Enter the email address for
+your regular user account and click the "Change My Password" button. It will
+redirect you to the password reset sent page.
+</p>
+
+<p>
+For security reasons, Django will not provide any notification whether you
+entered an email that exists in the database or not. But if you look in your
+terminal/console now, you can see the contents of the email outputted there.
+</p>
+
+<p>
+Copy the unique URL from your console into your web browser. It will
+cryptographically confirm your identity and take you to the Password Reset
+Confirmation page at <code>http://127.0.0.1:8000/accounts/reset/Mg/set-password/</code>.
+</p>
+
+<p>
+Enter in a new password and click the "Change my password" button. It will
+redirect you to the Password reset complete page.
+</p>
+
+<p>
+To confirm everything worked correctly, navigate to the homepage and log in to
+your account with the new password.
+</p>
+
+<p>
+If you want to customize the templates involved with password reset, they are
+located at the following locations; you need to create new template files to
+override them.
+</p>
+
+<ul class="org-ul">
+<li><code>templates/registration/password_reset_confirm.html</code></li>
+<li><code>templates/registration/password_reset_form.html</code></li>
+<li><code>templates/registration/password_reset_done.html</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-31 Fri 16:53</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-31 Fri 09:08</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-31 Fri 08:42</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

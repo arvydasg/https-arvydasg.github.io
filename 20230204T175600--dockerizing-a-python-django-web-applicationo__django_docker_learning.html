@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-30 Thu 17:27 -->
+<!-- 2024-05-31 Fri 16:53 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dockerizing a Python Django Web Application</title>
@@ -32,20 +32,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org04488aa">1. Create and Dockerize a Django Application</a>
+<li><a href="#orga2161ab">1. Create and Dockerize a Django Application</a>
 <ul>
-<li><a href="#org2a8e066">1.1. <code>Install</code> Docker and Docker Desktop</a></li>
-<li><a href="#orgc6011a0">1.2. Create a Django <code>app</code></a></li>
-<li><a href="#orga7bd299">1.3. Create a Docker <code>image</code></a></li>
-<li><a href="#org69a609a">1.4. Create a Docker <code>container</code></a></li>
+<li><a href="#org2c04ea6">1.1. <code>Install</code> Docker and Docker Desktop</a></li>
+<li><a href="#org4fd4303">1.2. Create a Django <code>app</code></a></li>
+<li><a href="#org5dee8d1">1.3. Create a Docker <code>image</code></a></li>
+<li><a href="#org4738cc8">1.4. Create a Docker <code>container</code></a></li>
 </ul>
 </li>
-<li><a href="#org99eedc0">2. Upload Docker Image to Docker Hub</a></li>
-<li><a href="#org84aeefd">3. Deploy with Docker on Linode</a>
+<li><a href="#org9c2037f">2. Upload Docker Image to Docker Hub</a></li>
+<li><a href="#org190d760">3. Deploy with Docker on Linode</a>
 <ul>
-<li><a href="#org85cde1d">3.1. Creating a platform to work on</a></li>
-<li><a href="#org1d4fe33">3.2. Run the container</a></li>
-<li><a href="#org631e015">3.3. Some other Docker commands</a></li>
+<li><a href="#orgfaae16c">3.1. Creating a platform to work on</a></li>
+<li><a href="#org9f42d54">3.2. Run the container</a></li>
+<li><a href="#org781c6aa">3.3. Some other Docker commands</a></li>
 </ul>
 </li>
 </ul>
@@ -58,12 +58,12 @@ clients or employers. Not a coincidence that I learned <a href="https://arvydas.
 will come in handy.
 </p>
 
-<div id="outline-container-org04488aa" class="outline-2">
-<h2 id="org04488aa"><span class="section-number-2">1.</span> Create and Dockerize a Django Application</h2>
+<div id="outline-container-orga2161ab" class="outline-2">
+<h2 id="orga2161ab"><span class="section-number-2">1.</span> Create and Dockerize a Django Application</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org2a8e066" class="outline-3">
-<h3 id="org2a8e066"><span class="section-number-3">1.1.</span> <code>Install</code> Docker and Docker Desktop</h3>
+<div id="outline-container-org2c04ea6" class="outline-3">
+<h3 id="org2c04ea6"><span class="section-number-3">1.1.</span> <code>Install</code> Docker and Docker Desktop</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Follow <a href="https://www.youtube.com/watch?v=Vplj9b0L_1Y&amp;ab_channel=Abstractprogrammer">this</a> tutorial or <a href="https://docs.docker.com/get-docker/">the docs</a>.
@@ -71,8 +71,8 @@ Follow <a href="https://www.youtube.com/watch?v=Vplj9b0L_1Y&amp;ab_channel=Abstr
 </div>
 </div>
 
-<div id="outline-container-orgc6011a0" class="outline-3">
-<h3 id="orgc6011a0"><span class="section-number-3">1.2.</span> Create a Django <code>app</code></h3>
+<div id="outline-container-org4fd4303" class="outline-3">
+<h3 id="org4fd4303"><span class="section-number-3">1.2.</span> Create a Django <code>app</code></h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 If you don't want to setup basic Django app together - clone mine from <a href="https://github.com/arvydasg/django-docker-starter">here</a>.
@@ -99,8 +99,8 @@ pip freeze &gt; requirements.txt
 </div>
 </div>
 
-<div id="outline-container-orga7bd299" class="outline-3">
-<h3 id="orga7bd299"><span class="section-number-3">1.3.</span> Create a Docker <code>image</code></h3>
+<div id="outline-container-org5dee8d1" class="outline-3">
+<h3 id="org5dee8d1"><span class="section-number-3">1.3.</span> Create a Docker <code>image</code></h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Create <code>Dockerfile</code> (without any file extensions, and with the D being capital)
@@ -168,15 +168,15 @@ app.
 </p>
 
 
-<figure id="org55d874e">
+<figure id="org4b64d45">
 <img src="./media/docker10.png" alt="docker10.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org69a609a" class="outline-3">
-<h3 id="org69a609a"><span class="section-number-3">1.4.</span> Create a Docker <code>container</code></h3>
+<div id="outline-container-org4738cc8" class="outline-3">
+<h3 id="org4738cc8"><span class="section-number-3">1.4.</span> Create a Docker <code>container</code></h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 A single command will do it.
@@ -191,7 +191,7 @@ docker run -d --publish 8000:8000 python-django
 </div>
 
 
-<figure id="org3b80d1d">
+<figure id="org868d2d5">
 <img src="./media/docker11.png" alt="docker11.png" width="1200px">
 
 </figure>
@@ -202,7 +202,7 @@ Open up Django Desktop - you will see the container we have just created in
 </p>
 
 
-<figure id="orgc500554">
+<figure id="org3f93697">
 <img src="./media/docker12.png" alt="docker12.png" width="1200px">
 
 </figure>
@@ -214,8 +214,8 @@ to a browser, <code>127.0.0.1:8000</code> to see your django app running.
 </div>
 </div>
 </div>
-<div id="outline-container-org99eedc0" class="outline-2">
-<h2 id="org99eedc0"><span class="section-number-2">2.</span> Upload Docker Image to Docker Hub</h2>
+<div id="outline-container-org9c2037f" class="outline-2">
+<h2 id="org9c2037f"><span class="section-number-2">2.</span> Upload Docker Image to Docker Hub</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Go to <a href="https://hub.docker.com/">Docker hub</a> and create an account there.</li>
@@ -264,12 +264,12 @@ docker push arvydasg/django-docker-starter
 </div>
 </div>
 
-<div id="outline-container-org84aeefd" class="outline-2">
-<h2 id="org84aeefd"><span class="section-number-2">3.</span> Deploy with Docker on Linode</h2>
+<div id="outline-container-org190d760" class="outline-2">
+<h2 id="org190d760"><span class="section-number-2">3.</span> Deploy with Docker on Linode</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org85cde1d" class="outline-3">
-<h3 id="org85cde1d"><span class="section-number-3">3.1.</span> Creating a platform to work on</h3>
+<div id="outline-container-orgfaae16c" class="outline-3">
+<h3 id="orgfaae16c"><span class="section-number-3">3.1.</span> Creating a platform to work on</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Create the machine.
@@ -284,8 +284,8 @@ for it, choose any other provider you want). In my case I have chosen Linode
 </div>
 </div>
 
-<div id="outline-container-org1d4fe33" class="outline-3">
-<h3 id="org1d4fe33"><span class="section-number-3">3.2.</span> Run the container</h3>
+<div id="outline-container-org9f42d54" class="outline-3">
+<h3 id="org9f42d54"><span class="section-number-3">3.2.</span> Run the container</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Let's pull the <a href="https://hub.docker.com/r/arvydasg/django-docker-starter/tags">container</a> we have created and pushed to Docker Hub in
@@ -331,7 +331,7 @@ browser.
 </p>
 
 
-<figure id="org1f46094">
+<figure id="orgd55ae02">
 <img src="./media/docker7.png" alt="docker7.png" width="1200px">
 
 </figure>
@@ -347,8 +347,8 @@ package. And you can run it on any linux machine.
 </div>
 </div>
 
-<div id="outline-container-org631e015" class="outline-3">
-<h3 id="org631e015"><span class="section-number-3">3.3.</span> Some other Docker commands</h3>
+<div id="outline-container-org781c6aa" class="outline-3">
+<h3 id="org781c6aa"><span class="section-number-3">3.3.</span> Some other Docker commands</h3>
 <div class="outline-text-3" id="text-3-3">
 <div class="org-src-container">
 <pre class="src src-bash">docker ps -a
@@ -382,7 +382,7 @@ docker volume prune
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-30 Thu 17:27</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-31 Fri 16:53</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
 	 <p class="date">This org file is <u>created</u>: 2023-02-04 Sat 17:56</p>
 	 <div class="generated">

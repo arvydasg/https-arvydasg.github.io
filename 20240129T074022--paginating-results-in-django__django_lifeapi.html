@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-30 Thu 17:27 -->
+<!-- 2024-05-31 Fri 16:53 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Paginating results in django</title>
@@ -32,11 +32,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc81c2ed">1. With smaller amount of queries, in  1.49ms</a></li>
-<li><a href="#orgc606ec2">2. This is my current query 250-300ms:</a></li>
-<li><a href="#org859bc35">3. After applying pagination like such:</a></li>
-<li><a href="#org46aca70">4. BUT</a></li>
-<li><a href="#orgd12fa7f">5. Probably it's a good idea to look into the database, pagination itself won't help</a></li>
+<li><a href="#org5b9488a">1. With smaller amount of queries, in  1.49ms</a></li>
+<li><a href="#org814989f">2. This is my current query 250-300ms:</a></li>
+<li><a href="#org8a09503">3. After applying pagination like such:</a></li>
+<li><a href="#orgb608e0f">4. BUT</a></li>
+<li><a href="#org5afebde">5. Probably it's a good idea to look into the database, pagination itself won't help</a></li>
 </ul>
 </div>
 </nav>
@@ -44,19 +44,19 @@
 <a href="https://docs.djangoproject.com/en/5.0/topics/pagination/">https://docs.djangoproject.com/en/5.0/topics/pagination/</a>
 </p>
 
-<div id="outline-container-orgc81c2ed" class="outline-2">
-<h2 id="orgc81c2ed"><span class="section-number-2">1.</span> With smaller amount of queries, in  1.49ms</h2>
+<div id="outline-container-org5b9488a" class="outline-2">
+<h2 id="org5b9488a"><span class="section-number-2">1.</span> With smaller amount of queries, in  1.49ms</h2>
 <div class="outline-text-2" id="text-1">
 
-<figure id="orge96b875">
+<figure id="org11953ee">
 <img src="./media/inefficient_query2.png" alt="inefficient_query2.png" width="800px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgc606ec2" class="outline-2">
-<h2 id="orgc606ec2"><span class="section-number-2">2.</span> This is my current query 250-300ms:</h2>
+<div id="outline-container-org814989f" class="outline-2">
+<h2 id="org814989f"><span class="section-number-2">2.</span> This is my current query 250-300ms:</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-html">$("#data_table").DataTable({
@@ -136,7 +136,7 @@ This results in such time. Aroun 250-300ms.
 </p>
 
 
-<figure id="orga5d556b">
+<figure id="org7e36c36">
 <img src="./media/inefficient_query1.png" alt="inefficient_query1.png" width="800px">
 
 </figure>
@@ -152,15 +152,15 @@ have 'pagination'.
 </p>
 
 
-<figure id="org8515415">
+<figure id="orgdac299a">
 <img src="./media/inefficient_query3.png" alt="inefficient_query3.png" width="800px"> 
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org859bc35" class="outline-2">
-<h2 id="org859bc35"><span class="section-number-2">3.</span> After applying pagination like such:</h2>
+<div id="outline-container-org8a09503" class="outline-2">
+<h2 id="org8a09503"><span class="section-number-2">3.</span> After applying pagination like such:</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold; text-decoration: underline;">@login_required</span>
@@ -264,8 +264,8 @@ Then add this to html and you are done.
 </div>
 </div>
 
-<div id="outline-container-org46aca70" class="outline-2">
-<h2 id="org46aca70"><span class="section-number-2">4.</span> BUT</h2>
+<div id="outline-container-orgb608e0f" class="outline-2">
+<h2 id="orgb608e0f"><span class="section-number-2">4.</span> BUT</h2>
 <div class="outline-text-2" id="text-4">
 <blockquote>
 <p>
@@ -281,8 +281,8 @@ I have noticed that.
 </div>
 </div>
 
-<div id="outline-container-orgd12fa7f" class="outline-2">
-<h2 id="orgd12fa7f"><span class="section-number-2">5.</span> Probably it's a good idea to look into the database, pagination itself won't help</h2>
+<div id="outline-container-org5afebde" class="outline-2">
+<h2 id="org5afebde"><span class="section-number-2">5.</span> Probably it's a good idea to look into the database, pagination itself won't help</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Now that I know how pagination works and what it does, let's try to fix this
@@ -299,7 +299,7 @@ problem another way - <a href="20240129T081456--optimizing-database-queries__dja
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-30 Thu 17:27</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-31 Fri 16:53</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-29 Mon 07:40</p>
 	 <div class="generated">

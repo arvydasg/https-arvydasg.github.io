@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-30 Thu 17:27 -->
+<!-- 2024-05-31 Fri 16:53 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Django Rights application for internal access management</title>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 14:30</div>
+<div id="updated">Updated: 2024-05-31 Fri 16:36</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,20 +32,78 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3cb802d">1. <span class="todo TODO">TODO</span> add image, description, purpose, how, content</a></li>
+<li><a href="#org203994c">1. Intro</a></li>
+<li><a href="#org2457649">2. Purpose</a></li>
 </ul>
 </div>
 </nav>
+
+<figure id="orgb1483b0">
+<img src="./media/rights.jpg" alt="rights.jpg" width="1200px">
+
+</figure>
+
 <p>
-Rights app - Python Django web app that allows for a quick access rights check
-in internal systems.
+Link - no link to an internal app
 </p>
 
-<div id="outline-container-org3cb802d" class="outline-2">
-<h2 id="org3cb802d"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> add image, description, purpose, how, content</h2>
+<div id="outline-container-org203994c" class="outline-2">
+<h2 id="org203994c"><span class="section-number-2">1.</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Also get the source
+Rights app is a Django web app that with the help of LDAP and AD API helps to
+check user's access rights internally within the company.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2457649" class="outline-2">
+<h2 id="org2457649"><span class="section-number-2">2.</span> Purpose</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Like many of us junior developers get a task of managing user's access rights.
+A good starting point when you are new in the company, but quote a boring and
+repetitive task after the 5th user.
+</p>
+
+<p>
+You have the docs for one system - you follow them, user gets added.
+</p>
+
+<p>
+You have the docs for antother system - you follow them, user gets added.
+</p>
+
+<p>
+I have been that guy, did a few access rights tickets, but quickly realized
+this can be automated.
+</p>
+
+<p>
+I knew there is a way to check LDAP(Linux) rights of the user and I also knew
+there is an internal AD API that allows to check for windows groups of the user.
+</p>
+
+<p>
+Applying my Django knowledge, spun up the app quite quickly, made a "magic
+button" that after pressed, makes calls to those different APIs and gathers in
+formation about the user according to predefined groups. Tells us if the user
+belongs to needed groups or not.
+</p>
+
+<p>
+If belongs to a group it should not belong - a button besides to remove the
+user from the group/server/resource.
+</p>
+
+<p>
+If does not belong to a group and it should belong - a button besides to add
+the user from the group/server/resource.
+</p>
+
+<p>
+To this day developers of my previous team are happily using this tool, it
+saves them enormous amount of time and repetitiveness.
 </p>
 </div>
 </div>
@@ -58,8 +116,8 @@ Also get the source
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-30 Thu 17:27</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 14:30</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-31 Fri 16:53</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-31 Fri 16:36</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 14:28</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

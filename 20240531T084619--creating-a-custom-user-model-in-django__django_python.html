@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-05-31 Fri 16:53 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Creating a custom user model in django</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-05-31 Fri 08:49</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Creating a custom user model in django</h1>
+</header><p>
+NOTE 1 - Prerequisite to this project is <a href="20240531T084241--getting-to-know-to-built-in-django-authentication-system__django_python.html">here</a>, first - understand the basics.
+</p>
+
+<p>
+NOTE 2 - This is basically a copy of
+<a href="https://learndjango.com/tutorials/django-custom-user-model">https://learndjango.com/tutorials/django-custom-user-model</a> tutorial. Wanted to
+keep a copy of it for myself, since this information is useful.
+</p>
+
+<blockquote>
+<p>
+NOTE 3: for me this post is just a reference of how it can be done IF NOT using
+django's "allauth" package. If using "allauth" - I still have not figured out
+how to implement custom fields to the user model.
+</p>
+
+<p>
+But if not using "allauth package" - this tutorial will help you out.
+</p>
+</blockquote>
+
+
+<hr>
+
+<p>
+Django ships with a built-in <a href="https://docs.djangoproject.com/en/5.0/ref/contrib/auth/#django.contrib.auth.models.User">User model</a> for authentication.
+</p>
+
+<p>
+However, for a real-world project, the <a href="https://docs.djangoproject.com/en/5.0/topics/auth/customizing/#using-a-custom-user-model-when-starting-a-project">official Django documentation</a> highly
+recommends using a custom user model instead; it provides far more flexibility
+down the line so, as a general rule
+</p>
+
+<blockquote>
+<p>
+always use a custom user model for all new Django projects
+</p>
+</blockquote>
+
+<p>
+There are two modern ways to create a custom user model in Django:
+<code>AbstractUser</code> and <code>AbstractBaseUser</code>. In both cases, we can subclass them to
+extend existing functionality; however, <code>AbstractBaseUser</code> requires <b><b>much,
+much more work</b></b>. Seriously, only mess with it if you know what you're doing.
+And if you did, you wouldn't be reading this tutorial, would you?
+</p>
+
+<p>
+So we'll use <code>AbstractUser</code>, which subclasses <code>AbstractBaseUser</code> but provides
+more default configuration.
+</p>
+
+<p>
+Creating our initial custom user model requires four steps:
+</p>
+
+<ul class="org-ul">
+<li>update <code>django_project/settings.py</code></li>
+<li>create a new <code>CustomUser</code> model</li>
+<li>create new <code>UserCreation</code> and <code>UserChangeForm</code> forms</li>
+<li>update the admin</li>
+</ul>
+
+<p>
+In <code>settings.py</code>, we'll use the <code>AUTH_USER_MODEL</code> config to tell Django to use
+our new custom user model instead of the built-in <code>User</code> model. We'll call our
+custom user model <code>CustomUser</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">project/settings.py</span>
+<span style="font-weight: bold; font-style: italic;">AUTH_USER_MODEL</span> = <span style="font-style: italic;">"accounts.CustomUser"</span>  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+</pre>
+</div>
+
+<p>
+Now update <code>accounts/models.py</code> with a new User model, which we'll call
+<code>CustomUser</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-style: italic;">"""A module to register account app models to django admin."""</span>
+
+<span style="font-weight: bold;">from</span> django.contrib.auth.models <span style="font-weight: bold;">import</span> AbstractUser
+<span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
+
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">CustomUser</span>(AbstractUser):
+    <span style="font-style: italic;">"""Account model."""</span>
+
+    <span style="font-weight: bold; font-style: italic;">date_of_birth</span> = models.DateField(null=<span style="font-weight: bold; text-decoration: underline;">True</span>, blank=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">add additional fields in here</span>
+</pre>
+</div>
+
+<p>
+We need new versions of two form methods that receive heavy use working with
+users. Create a new file <code>accounts/forms.py</code>. We'll update it with the
+following code to largely subclass the existing forms.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">accounts/forms.py</span>
+<span style="font-style: italic;">"""A module for auth page forms. They are later used in the views.py"""</span>
+
+<span style="font-weight: bold;">from</span> django <span style="font-weight: bold;">import</span> forms
+<span style="font-weight: bold;">from</span> django.contrib.auth.forms <span style="font-weight: bold;">import</span> UserChangeForm, UserCreationForm
+
+<span style="font-weight: bold;">from</span> apps.accounts.models <span style="font-weight: bold;">import</span> CustomUser
+
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">pylint: disable=too-few-public-methods</span>
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">CustomUserCreationForm</span>(UserCreationForm):
+    <span style="font-style: italic;">"""A form for user creation"""</span>
+
+    <span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Meta</span>:
+        <span style="font-style: italic;">"""Additional settings for the Meta?"""</span>
+
+        <span style="font-weight: bold; font-style: italic;">model</span> = CustomUser
+        <span style="font-weight: bold; font-style: italic;">fields</span> = (<span style="font-style: italic;">"username"</span>, <span style="font-style: italic;">"email"</span>, <span style="font-style: italic;">"date_of_birth"</span>)
+
+    <span style="font-weight: bold; font-style: italic;">date_of_birth</span> = forms.DateField(
+        widget=forms.DateInput(attrs={<span style="font-style: italic;">"type"</span>: <span style="font-style: italic;">"date"</span>}),
+    )
+
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">pylint: disable=too-few-public-methods</span>
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">CustomUserChangeForm</span>(UserChangeForm):
+    <span style="font-style: italic;">"""A form for user change"""</span>
+
+    <span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Meta</span>:
+        <span style="font-style: italic;">"""Additional settings for the Meta?"""</span>
+
+        <span style="font-weight: bold; font-style: italic;">model</span> = CustomUser
+        <span style="font-weight: bold; font-style: italic;">fields</span> = (<span style="font-style: italic;">"username"</span>, <span style="font-style: italic;">"email"</span>, <span style="font-style: italic;">"date_of_birth"</span>)
+
+    <span style="font-weight: bold; font-style: italic;">date_of_birth</span> = forms.DateField(
+        widget=forms.DateInput(attrs={<span style="font-style: italic;">"type"</span>: <span style="font-style: italic;">"date"</span>}),
+    )
+</pre>
+</div>
+
+<p>
+Finally, we update <code>admin.py</code> since the admin is highly coupled to the default
+User model.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">accounts/admin.py</span>
+
+<span style="font-style: italic;">"""A module to register users app models to django admin."""</span>
+
+<span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> admin
+<span style="font-weight: bold;">from</span> django.contrib.auth.admin <span style="font-weight: bold;">import</span> UserAdmin
+
+<span style="font-weight: bold;">from</span> apps.accounts.forms <span style="font-weight: bold;">import</span> CustomUserChangeForm, CustomUserCreationForm
+<span style="font-weight: bold;">from</span> apps.accounts.models <span style="font-weight: bold;">import</span> CustomUser
+
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">CustomUserAdmin</span>(UserAdmin):
+    <span style="font-style: italic;">"""A modification to the default account model admin."""</span>
+
+    <span style="font-weight: bold; font-style: italic;">add_form</span> = CustomUserCreationForm
+    <span style="font-weight: bold; font-style: italic;">form</span> = CustomUserChangeForm
+    <span style="font-weight: bold; font-style: italic;">model</span> = CustomUser
+
+    <span style="font-weight: bold; font-style: italic;">fieldsets</span> = (
+        (<span style="font-weight: bold; text-decoration: underline;">None</span>, {<span style="font-style: italic;">"fields"</span>: (<span style="font-style: italic;">"username"</span>, <span style="font-style: italic;">"password"</span>)}),
+        (
+            <span style="font-style: italic;">"Personal info"</span>,
+            {<span style="font-style: italic;">"fields"</span>: (<span style="font-style: italic;">"first_name"</span>, <span style="font-style: italic;">"last_name"</span>, <span style="font-style: italic;">"email"</span>, <span style="font-style: italic;">"date_of_birth"</span>)},
+        ),
+        (
+            <span style="font-style: italic;">"Permissions"</span>,
+            {
+                <span style="font-style: italic;">"fields"</span>: (
+                    <span style="font-style: italic;">"is_active"</span>,
+                    <span style="font-style: italic;">"is_staff"</span>,
+                    <span style="font-style: italic;">"is_superuser"</span>,
+                    <span style="font-style: italic;">"groups"</span>,
+                    <span style="font-style: italic;">"user_permissions"</span>,
+                )
+            },
+        ),
+        (<span style="font-style: italic;">"Important dates"</span>, {<span style="font-style: italic;">"fields"</span>: (<span style="font-style: italic;">"last_login"</span>, <span style="font-style: italic;">"date_joined"</span>)}),
+    )
+
+    <span style="font-weight: bold; font-style: italic;">list_display</span> = [
+        <span style="font-style: italic;">"email"</span>,
+        <span style="font-style: italic;">"username"</span>,
+        <span style="font-style: italic;">"date_of_birth"</span>,
+    ]
+
+
+admin.site.register(CustomUser, CustomUserAdmin)
+</pre>
+</div>
+
+<p>
+And we're done! We can now run <code>makemigrations</code> and <code>migrate</code> (clear the db and
+migrations if you are doing makemigrations not for the first time, we need to
+start fresh here) to create a new database that uses the custom user model.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">python manage.py makemigrations accounts
+python manage.py migrate
+</pre>
+</div>
+
+<p>
+The last step is our <code>views.py</code> file in the <code>accounts</code> app which will contain
+our signup form. We will modify the already created form.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-style: italic;">"""A module for accounts app views."""</span>
+
+<span style="font-weight: bold;">from</span> django.contrib.auth.decorators <span style="font-weight: bold;">import</span> login_required
+<span style="font-weight: bold;">from</span> django.shortcuts <span style="font-weight: bold;">import</span> render
+<span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> reverse_lazy
+<span style="font-weight: bold;">from</span> django.views.generic <span style="font-weight: bold;">import</span> CreateView
+
+<span style="font-weight: bold;">from</span> apps.accounts.forms <span style="font-weight: bold;">import</span> CustomUserCreationForm
+
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">SignUpView</span>(CreateView):
+    <span style="font-style: italic;">"""Generic CBV view for account create page"""</span>
+
+    <span style="font-weight: bold; font-style: italic;">form_class</span> = CustomUserCreationForm
+    <span style="font-weight: bold; font-style: italic;">success_url</span> = reverse_lazy(<span style="font-style: italic;">"login"</span>)
+    <span style="font-weight: bold; font-style: italic;">template_name</span> = <span style="font-style: italic;">"registration/signup.html"</span>
+</pre>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-31 Fri 16:53</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-31 Fri 08:49</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-31 Fri 08:46</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

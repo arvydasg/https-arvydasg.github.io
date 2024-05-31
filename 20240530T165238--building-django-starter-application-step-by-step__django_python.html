@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-30 Thu 17:27 -->
+<!-- 2024-05-31 Fri 16:53 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Building django_starter application step by step</title>
@@ -55,7 +55,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-30 Thu 17:26</div>
+<div id="updated">Updated: 2024-05-31 Fri 13:31</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -64,90 +64,81 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5f2ec24">1. Introduction</a></li>
-<li><a href="#org38a712a">2. Set up virtual environment</a></li>
-<li><a href="#org7293ba0">3. Create a base project</a>
+<li><a href="#orga813a9b">1. Introduction</a></li>
+<li><a href="#org8d78726">2. Set up virtual environment</a></li>
+<li><a href="#org2e2b333">3. Create a base project</a>
 <ul>
-<li><a href="#org0f0c1d1">3.1. Start a Django project</a></li>
-<li><a href="#org2f9a875">3.2. Create a basic view in <code>views.py</code></a></li>
-<li><a href="#org072f52f">3.3. Update <code>urls.py</code></a></li>
-<li><a href="#orgd6d2943">3.4. Set up templates in <code>settings.py</code></a></li>
-<li><a href="#org3bcb1f5">3.5. Create an <code>index.html</code> for the project</a></li>
-<li><a href="#org53d607e">3.6. Run the project for the first time</a></li>
-<li><a href="#org20508a7">3.7. Create a <code>base.html</code> template for nav and footer</a></li>
-<li><a href="#org2fe9352">3.8. Add MISC items (Add css, js, images, debug toolbar)</a>
+<li><a href="#org6f1f590">3.1. Start a Django project</a></li>
+<li><a href="#orgf66dbf1">3.2. Create a basic view in <code>views.py</code></a></li>
+<li><a href="#org6666d41">3.3. Update <code>urls.py</code></a></li>
+<li><a href="#org1bd675a">3.4. Set up templates in <code>settings.py</code></a></li>
+<li><a href="#org5ae15ec">3.5. Create an <code>index.html</code> for the project</a></li>
+<li><a href="#org3aa7232">3.6. Run the project for the first time</a></li>
+<li><a href="#org899c6ae">3.7. Create a <code>base.html</code> template for nav and footer</a></li>
+<li><a href="#org9491b3f">3.8. Add MISC items (Add css, js, images, debug toolbar)</a>
 <ul>
-<li><a href="#orgd30bc73">3.8.1. Add css</a></li>
-<li><a href="#orgcb7c7fa">3.8.2. Add js</a></li>
-<li><a href="#orgbeca323">3.8.3. Add images</a></li>
+<li><a href="#org8e3ab18">3.8.1. Add css</a></li>
+<li><a href="#org25a9902">3.8.2. Add js</a></li>
+<li><a href="#org288efc9">3.8.3. Add images</a></li>
 </ul>
 </li>
-<li><a href="#org2d836eb">3.9. Add bootstrap styling</a></li>
-<li><a href="#org520dcf4">3.10. HTML templates for error messages</a></li>
-<li><a href="#org6bbd52b">3.11. Environment variables</a></li>
+<li><a href="#org1031bd8">3.9. Add bootstrap styling</a></li>
+<li><a href="#org36113c7">3.10. HTML templates for error messages</a></li>
+<li><a href="#org453b054">3.11. Environment variables</a></li>
 </ul>
 </li>
-<li><a href="#org4bec9f4">4. Authentication</a>
+<li><a href="#org3cd4bf5">4. Authentication</a>
 <ul>
-<li><a href="#orga7e1bad">4.1. Built in Authentication</a>
+<li><a href="#orgbb5dee2">4.1. Django allauth</a>
 <ul>
-<li><a href="#orgf6961ad">4.1.1. Get to know to Django's built-in in authentication system</a></li>
-<li><a href="#orgc3fa73c">4.1.2. Log In functionality</a></li>
-<li><a href="#orga30f8c7">4.1.3. Log Out functionality</a></li>
-<li><a href="#orge35a1f1">4.1.4. Sign Up functionality</a></li>
-<li><a href="#org1722289">4.1.5. Password Change</a></li>
-<li><a href="#org1718aea">4.1.6. Password Reset</a></li>
+<li><a href="#org2190a50">4.1.1. Installation</a></li>
 </ul>
 </li>
-<li><a href="#org369e6c1">4.2. Custom user model/extended authentication</a>
+<li><a href="#orge6e9fd6">4.2. Style allauth templates, Implement crispy forms</a></li>
+<li><a href="#org2b6da3d">4.3. Create a user dashboard</a></li>
+<li><a href="#org7471876">4.4. Enable social login with Google</a>
 <ul>
-<li><a href="#org7261890">4.2.1. AbstractUser vs AbstractBaseUser</a></li>
+<li><a href="#orge8369b8">4.4.1. Add social application in django-admin</a></li>
+<li><a href="#orga9488bd">4.4.2. Attempt to register</a></li>
+<li><a href="#org669f6df">4.4.3. Modify the templates to accommodate third party buttons</a></li>
+<li><a href="#org6582b02">4.4.4. Signals</a></li>
 </ul>
 </li>
-<li><a href="#orgc2d4b87">4.3. Implement crispy forms</a></li>
-<li><a href="#org57ac49e">4.4. Create a user dashboard</a></li>
 </ul>
 </li>
-<li><a href="#org437cb15">5. Nice to haves</a>
+<li><a href="#orgc3994f6">5. Nice to haves</a>
 <ul>
-<li><a href="#orgb1c0df2">5.1. Set up Makefile</a></li>
-<li><a href="#orgef04b73">5.2. Django-debug-toolbar</a></li>
-<li><a href="#org028a4b9">5.3. Basic tests</a></li>
-<li><a href="#org2da72a5">5.4. Github actions</a></li>
-<li><a href="#org04cc4c1">5.5. Black formatter</a></li>
-<li><a href="#orgea167c6">5.6. For security reasons, rename /admin to something else</a></li>
+<li><a href="#orgb695698">5.1. Set up Makefile</a></li>
+<li><a href="#org6e53b33">5.2. Django-debug-toolbar</a></li>
+<li><a href="#org9cdafbd">5.3. Basic tests</a></li>
+<li><a href="#org62bfe45">5.4. Github actions</a></li>
+<li><a href="#org69fba0f">5.5. Black formatter</a></li>
+<li><a href="#org82b21b0">5.6. For security reasons, rename /admin to something else</a></li>
 </ul>
 </li>
-<li><a href="#orgeeeff9d">6. Other TODO's</a>
+<li><a href="#org72001c1">6. Other TODO's</a>
 <ul>
-<li><a href="#org5185c6a">6.1. PROGRESS check djangox viska ir panaudok kiek gali is ten</a></li>
-<li><a href="#org08f0d54">6.2. <span class="todo TODO">TODO</span> Create a simple test app, models of it here - Models</a>
+<li><a href="#org642857c">6.1. <span class="todo TODO">TODO</span> Improve the project</a>
 <ul>
-<li><a href="#org31cdefc">6.2.1. Little cheat before making models</a></li>
-<li><a href="#org85780ee">6.2.2. Creating database models</a></li>
+<li><a href="#org7a93afc">6.1.1. add messages support</a></li>
+<li><a href="#org2f3fadc">6.1.2. Images for production</a></li>
 </ul>
 </li>
-<li><a href="#orgb7e03c7">6.3. <span class="todo TODO">TODO</span> Improve the project</a>
-<ul>
-<li><a href="#org2d3e562">6.3.1. add messages support</a></li>
-<li><a href="#orgd998cf2">6.3.2. Images for production</a></li>
-</ul>
-</li>
-<li><a href="#org6ef1f2c">6.4. <span class="todo TODO">TODO</span> Pro Django tutorials by thenewboston</a></li>
-<li><a href="#orga73999c">6.5. <span class="todo TODO">TODO</span> clean requirements.txt, make sure only needed packages are installed</a></li>
-<li><a href="#org575def0">6.6. <span class="todo TODO">TODO</span> CRUD functionality with HTMX</a></li>
-<li><a href="#org4a8a6a9">6.7. <span class="todo TODO">TODO</span> Dockerfile (in the far future)</a></li>
-<li><a href="#org91bb3a7">6.8. <span class="todo TODO">TODO</span> Allauth?????!!! is it needed?</a></li>
-<li><a href="#org38bf398">6.9. <span class="todo TODO">TODO</span> look into cookie-cutter</a></li>
-<li><a href="#org7e3a383">6.10. <span class="todo TODO">TODO</span> check health</a></li>
+<li><a href="#org2fdd2e0">6.2. <span class="todo TODO">TODO</span> Pro Django tutorials by thenewboston</a></li>
+<li><a href="#org3691aaa">6.3. <span class="todo TODO">TODO</span> CRUD functionality with HTMX</a></li>
+<li><a href="#org6e26cf0">6.4. <span class="todo TODO">TODO</span> Dockerfile (in the far future)</a></li>
+<li><a href="#org7da98e0">6.5. <span class="todo TODO">TODO</span> check health</a></li>
+<li><a href="#org7fcbe4e">6.6. <span class="todo TODO">TODO</span> Run as docker image, create an image for it.</a></li>
+<li><a href="#org1f6703c">6.7. <span class="todo TODO">TODO</span> add management commands, create some dummy data maybe?</a></li>
+<li><a href="#org488a7f6">6.8. <span class="todo TODO">TODO</span> create the clean migrations script</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org5f2ec24" class="outline-2">
-<h2 id="org5f2ec24"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-orga813a9b" class="outline-2">
+<h2 id="orga813a9b"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This is a Django app that I use at the beginning of every new Django project.
@@ -155,8 +146,8 @@ This is a Django app that I use at the beginning of every new Django project.
 </div>
 </div>
 
-<div id="outline-container-org38a712a" class="outline-2">
-<h2 id="org38a712a"><span class="section-number-2">2.</span> Set up virtual environment</h2>
+<div id="outline-container-org8d78726" class="outline-2">
+<h2 id="org8d78726"><span class="section-number-2">2.</span> Set up virtual environment</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 On windows, we will user virtualenvwrapper -
@@ -175,12 +166,12 @@ pip freeze &gt; requirements.txt
 </div>
 </div>
 
-<div id="outline-container-org7293ba0" class="outline-2">
-<h2 id="org7293ba0"><span class="section-number-2">3.</span> Create a base project</h2>
+<div id="outline-container-org2e2b333" class="outline-2">
+<h2 id="org2e2b333"><span class="section-number-2">3.</span> Create a base project</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org0f0c1d1" class="outline-3">
-<h3 id="org0f0c1d1"><span class="section-number-3">3.1.</span> Start a Django project</h3>
+<div id="outline-container-org6f1f590" class="outline-3">
+<h3 id="org6f1f590"><span class="section-number-3">3.1.</span> Start a Django project</h3>
 <div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
 <pre class="src src-bash">django-admin startproject project .
@@ -197,8 +188,8 @@ create a custom user model).
 </div>
 </div>
 
-<div id="outline-container-org2f9a875" class="outline-3">
-<h3 id="org2f9a875"><span class="section-number-3">3.2.</span> Create a basic view in <code>views.py</code></h3>
+<div id="outline-container-orgf66dbf1" class="outline-3">
+<h3 id="orgf66dbf1"><span class="section-number-3">3.2.</span> Create a basic view in <code>views.py</code></h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Create a <code>views.py</code> in project folder and add this content:
@@ -220,8 +211,8 @@ Create a <code>views.py</code> in project folder and add this content:
 </div>
 </div>
 
-<div id="outline-container-org072f52f" class="outline-3">
-<h3 id="org072f52f"><span class="section-number-3">3.3.</span> Update <code>urls.py</code></h3>
+<div id="outline-container-org6666d41" class="outline-3">
+<h3 id="org6666d41"><span class="section-number-3">3.3.</span> Update <code>urls.py</code></h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 Create <code>urls.py</code> in project folder and add this content:
@@ -244,8 +235,8 @@ Create <code>urls.py</code> in project folder and add this content:
 </div>
 </div>
 
-<div id="outline-container-orgd6d2943" class="outline-3">
-<h3 id="orgd6d2943"><span class="section-number-3">3.4.</span> Set up templates in <code>settings.py</code></h3>
+<div id="outline-container-org1bd675a" class="outline-3">
+<h3 id="org1bd675a"><span class="section-number-3">3.4.</span> Set up templates in <code>settings.py</code></h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 For django to be able to find our html files, let's tell django about their
@@ -259,8 +250,8 @@ location in <code>settings.py</code>, make a modification to the TEMPLATES varia
 </div>
 </div>
 
-<div id="outline-container-org3bcb1f5" class="outline-3">
-<h3 id="org3bcb1f5"><span class="section-number-3">3.5.</span> Create an <code>index.html</code> for the project</h3>
+<div id="outline-container-org5ae15ec" class="outline-3">
+<h3 id="org5ae15ec"><span class="section-number-3">3.5.</span> Create an <code>index.html</code> for the project</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 To be able to display the <code>index.html we have just defined in =views.py</code>
@@ -279,8 +270,8 @@ the content of it:
 </div>
 </div>
 
-<div id="outline-container-org53d607e" class="outline-3">
-<h3 id="org53d607e"><span class="section-number-3">3.6.</span> Run the project for the first time</h3>
+<div id="outline-container-org3aa7232" class="outline-3">
+<h3 id="org3aa7232"><span class="section-number-3">3.6.</span> Run the project for the first time</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 Do a <code>python manage.py runserver</code> now and you will be presented with the index
@@ -294,8 +285,8 @@ with some html, so it does not require a separate template.
 </div>
 </div>
 
-<div id="outline-container-org20508a7" class="outline-3">
-<h3 id="org20508a7"><span class="section-number-3">3.7.</span> Create a <code>base.html</code> template for nav and footer</h3>
+<div id="outline-container-org899c6ae" class="outline-3">
+<h3 id="org899c6ae"><span class="section-number-3">3.7.</span> Create a <code>base.html</code> template for nav and footer</h3>
 <div class="outline-text-3" id="text-3-7">
 <p>
 We want to display some sort of navigation and footer on ALL pages in our site.
@@ -363,12 +354,12 @@ Check how homepage(index.html) looks now.
 </p>
 </div>
 </div>
-<div id="outline-container-org2fe9352" class="outline-3">
-<h3 id="org2fe9352"><span class="section-number-3">3.8.</span> Add MISC items (Add css, js, images, debug toolbar)</h3>
+<div id="outline-container-org9491b3f" class="outline-3">
+<h3 id="org9491b3f"><span class="section-number-3">3.8.</span> Add MISC items (Add css, js, images, debug toolbar)</h3>
 <div class="outline-text-3" id="text-3-8">
 </div>
-<div id="outline-container-orgd30bc73" class="outline-4">
-<h4 id="orgd30bc73"><span class="section-number-4">3.8.1.</span> Add css</h4>
+<div id="outline-container-org8e3ab18" class="outline-4">
+<h4 id="org8e3ab18"><span class="section-number-4">3.8.1.</span> Add css</h4>
 <div class="outline-text-4" id="text-3-8-1">
 <p>
 In project's root directory, create a folder called <code>static</code>. Inside of it,
@@ -431,8 +422,8 @@ have some styling as well!
 </div>
 </div>
 
-<div id="outline-container-orgcb7c7fa" class="outline-4">
-<h4 id="orgcb7c7fa"><span class="section-number-4">3.8.2.</span> Add js</h4>
+<div id="outline-container-org25a9902" class="outline-4">
+<h4 id="org25a9902"><span class="section-number-4">3.8.2.</span> Add js</h4>
 <div class="outline-text-4" id="text-3-8-2">
 <p>
 Create <code>static/js</code> folder and inside of it - <code>scripts.js</code> file.
@@ -474,8 +465,8 @@ Reload the page. Clicking on the button should trigger js code.
 </div>
 </div>
 
-<div id="outline-container-orgbeca323" class="outline-4">
-<h4 id="orgbeca323"><span class="section-number-4">3.8.3.</span> Add images</h4>
+<div id="outline-container-org288efc9" class="outline-4">
+<h4 id="org288efc9"><span class="section-number-4">3.8.3.</span> Add images</h4>
 <div class="outline-text-4" id="text-3-8-3">
 <p>
 Now let's say you want to serve an image from the <code>index.html</code> page.
@@ -512,8 +503,8 @@ Refresh the page, image should be displayed.
 </div>
 </div>
 
-<div id="outline-container-org2d836eb" class="outline-3">
-<h3 id="org2d836eb"><span class="section-number-3">3.9.</span> Add bootstrap styling</h3>
+<div id="outline-container-org1031bd8" class="outline-3">
+<h3 id="org1031bd8"><span class="section-number-3">3.9.</span> Add bootstrap styling</h3>
 <div class="outline-text-3" id="text-3-9">
 <ul class="org-ul">
 <li>Tailwind - needs node, bloats the html page</li>
@@ -563,8 +554,8 @@ Bootstrap should work now.
 </div>
 </div>
 
-<div id="outline-container-org520dcf4" class="outline-3">
-<h3 id="org520dcf4"><span class="section-number-3">3.10.</span> HTML templates for error messages</h3>
+<div id="outline-container-org36113c7" class="outline-3">
+<h3 id="org36113c7"><span class="section-number-3">3.10.</span> HTML templates for error messages</h3>
 <div class="outline-text-3" id="text-3-10">
 <p>
 Whenever the debug is True we will see the debug information and why certain
@@ -655,8 +646,8 @@ the templates are being read:
 </div>
 </div>
 
-<div id="outline-container-org6bbd52b" class="outline-3">
-<h3 id="org6bbd52b"><span class="section-number-3">3.11.</span> Environment variables</h3>
+<div id="outline-container-org453b054" class="outline-3">
+<h3 id="org453b054"><span class="section-number-3">3.11.</span> Environment variables</h3>
 <div class="outline-text-3" id="text-3-11">
 <p>
 We don't want to push secret variables to github.
@@ -736,8 +727,8 @@ Make sure this <code>.env</code> file is not being committed to git, add it to
 </div>
 </div>
 
-<div id="outline-container-org4bec9f4" class="outline-2">
-<h2 id="org4bec9f4"><span class="section-number-2">4.</span> Authentication</h2>
+<div id="outline-container-org3cd4bf5" class="outline-2">
+<h2 id="org3cd4bf5"><span class="section-number-2">4.</span> Authentication</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Biggest inspiration - <a href="https://learndjango.com/tutorials/django-login-and-logout-tutorial">here</a></li>
@@ -745,473 +736,99 @@ Make sure this <code>.env</code> file is not being committed to git, add it to
 </ul>
 </div>
 
-<div id="outline-container-orga7e1bad" class="outline-3">
-<h3 id="orga7e1bad"><span class="section-number-3">4.1.</span> Built in Authentication</h3>
+<div id="outline-container-orgbb5dee2" class="outline-3">
+<h3 id="orgbb5dee2"><span class="section-number-3">4.1.</span> Django allauth</h3>
 <div class="outline-text-3" id="text-4-1">
-</div>
-<div id="outline-container-orgf6961ad" class="outline-4">
-<h4 id="orgf6961ad"><span class="section-number-4">4.1.1.</span> Get to know to Django's built-in in authentication system</h4>
-<div class="outline-text-4" id="text-4-1-1">
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=qqFCt0Yde40&amp;ab_channel=MattFreire">Nice quick rundown of the package</a></li>
+<li><a href="https://www.youtube.com/watch?v=mIlgzn2zuFE&amp;ab_channel=PrettyPrinted">Quick installation guide of allauth</a></li>
+<li><a href="https://docs.allauth.org/en/latest/index.html">Official docs</a></li>
+</ul>
+
 <p>
-In this section, we'll configure a complete <a href="https://docs.djangoproject.com/en/5.0/topics/auth/">user authentication system</a> in
-Django consisting of login, logout, signup, password change, and password
-reset.
+So&#x2026; In previous steps we have got to know to <a href="20240531T084241--getting-to-know-to-built-in-django-authentication-system__django_python.html">built in Django authentication</a>
+and we also <a href="20240531T084619--creating-a-custom-user-model-in-django__django_python.html">created a custom user model</a> so in the future, if we need to, we
+could create additional fields for the user model (bio, country, hobbies, etc,
+whatever).
 </p>
 
 <p>
-The Django <code>contrib=q module provides built-in apps to help with development.
-In the =project/settings.py</code> file under <code>INSTALLED_APPS</code>, you can see that
-<code>auth</code> is listed and available to us.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">project/settings.py</span>
-<span style="font-weight: bold; font-style: italic;">INSTALLED_APPS</span> = [
-    <span style="font-style: italic;">"django.contrib.admin"</span>,
-    <span style="font-style: italic;">"django.contrib.auth"</span>,  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">THIS!!!!</span>
-    <span style="font-style: italic;">"django.contrib.contenttypes"</span>,
-    <span style="font-style: italic;">"django.contrib.sessions"</span>,
-    <span style="font-style: italic;">"django.contrib.messages"</span>,
-    <span style="font-style: italic;">"django.contrib.staticfiles"</span>,
-]
-</pre>
-</div>
-
-<p>
-To use the <code>auth</code> app, we need to add it to our project-level <code>project/urls.py</code>
-file. At the top, import include and create a new URL path at accounts/. You
-can choose a different URL path, but using accounts/ is a standard practice and
-requires less customization later.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">project/urls.py</span>
-<span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> admin
-<span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> path, include  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
-
-<span style="font-weight: bold; font-style: italic;">urlpatterns</span> = [
-    path(<span style="font-style: italic;">"admin/"</span>, admin.site.urls),
-    path(<span style="font-style: italic;">"accounts/"</span>, include(<span style="font-style: italic;">"django.contrib.auth.urls"</span>)),  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
-]
-</pre>
-</div>
-
-<p>
-The auth app we've now included provides us with multiple <a href="https://docs.djangoproject.com/en/5.0/topics/auth/default/#module-django.contrib.auth.views">authentication views</a>
-and URLs for handling login, logout, password change, password reset, etc. It
-notably does not include a view and URL for signup, so we have to configure
-that ourselves.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh">accounts/login/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'login'</span>]
-accounts/logout/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'logout'</span>]
-accounts/password_change/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'password_change'</span>]
-accounts/password_change/done/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'password_change_done'</span>]
-accounts/password_reset/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'password_reset'</span>]
-accounts/password_reset/done/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'password_reset_done'</span>]
-accounts/reset/&lt;uidb64&gt;/&lt;token&gt;/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'password_reset_confirm'</span>]
-accounts/reset/done/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'password_reset_complete'</span>]
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgc3fa73c" class="outline-4">
-<h4 id="orgc3fa73c"><span class="section-number-4">4.1.2.</span> Log In functionality</h4>
-<div class="outline-text-4" id="text-4-1-2">
-<p>
-Let's make our login page! By default, Django will look within a templates
-folder called <code>registration</code> for auth templates. The login template is called
-<code>login.html</code>.
+We have also created login template and signup template+view.
 </p>
 
 <p>
-Inside of the templates directory create a folder called registration:
+We are able to sign in, able to login/logout, etc.
 </p>
 
 <p>
-Then create a <code>login.html</code> file and include the following code:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-html"><span style="font-weight: bold; font-style: italic;">&lt;!-- </span><span style="font-weight: bold; font-style: italic;">templates/registration/login.html</span><span style="font-weight: bold; font-style: italic;"> --&gt;</span>
-&lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Log In</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
-&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span>&gt;
-  {% csrf_token %}
-  {{ form }}
-  &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Log In&lt;/<span style="font-weight: bold;">button</span>&gt;
-&lt;/<span style="font-weight: bold;">form</span>&gt;
-</pre>
-</div>
-
-<p>
-This code is a standard Django form using <code>POST</code> to send data and <code>{%
-csrf_token %}</code> tags for security concerns, namely to prevent a CSRF Attack. The
-form's contents are displayed with <code>{{ form }}</code>, and then we add a "submit"
-button.
-</p>
-
-<p>
-Our login functionality now works, but we should specify where to redirect the
-user upon a successful login using the <code>LOGIN_REDIRECT_URL</code> setting. At the
-bottom of the <code>settings.py</code> file, add the following to redirect the user to the
-homepage.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">project/settings.py</span>
-<span style="font-weight: bold; font-style: italic;">LOGIN_REDIRECT_URL</span> = <span style="font-style: italic;">"index"</span>  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
-</pre>
-</div>
-
-<p>
-If you start the Django server again with <code>python manage.py runserver</code> and
-navigate to our login page at <code>http://127.0.0.1:8000/accounts/login/</code>, you'll
-see the login page.
-</p>
-
-<p>
-Let's add a navigation link to the login page. In <code>navbar.html</code> add this line:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-html">&lt;<span style="font-weight: bold;">li</span>&gt;&lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'login' %}"</span>&gt;login&lt;/<span style="font-weight: bold;">a</span>&gt;&lt;/<span style="font-weight: bold;">li</span>&gt;
-</pre>
-</div>
-
-<p>
-We can only log in if we have a user account. And since adding a signup form is
-yet to come, the most straightforward approach is to make a superuser account
-from the command line. Quit the server with <code>Control+c</code> and then run the
-command <code>python manage.py createsuperuser</code>. Answer the prompts and note that
-your password will not appear on the screen when typing for security reasons.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">let's make migration first, to create tables in the database</span>
-python manage.py makemigrations
-python manage.py migrate
-
-python manage.py createsuperuser
-
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Username (leave blank to use 'root'):</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Email address:</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Password:</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Password (again):</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Superuser created successfully.</span>
-</pre>
-</div>
-
-<p>
-Now start the server again with python manage.py runserver and refresh the page
-at <code>http://127.0.0.1:8000/accounts/login/</code>. Enter the login info for your
-just-created superuser.
-</p>
-
-<p>
-Our login worked because it redirected us to the homepage which we have created
-earlier.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orga30f8c7" class="outline-4">
-<h4 id="orga30f8c7"><span class="section-number-4">4.1.3.</span> Log Out functionality</h4>
-<div class="outline-text-4" id="text-4-1-3">
-<p>
-But how do we log out? The only option currently is to go into the admin panel
-at <code>http://127.0.0.1:8000/admin/</code> and click the "Log Out" link in the upper
-right corner. The "Logout" link will log us out.
+But why not add a <code>django-allauth</code> package, that would ensure that in the
+future we are able to use social account sign ups, etc? Honestly I heard about this
+package a lot in the past, but never used it. Let's try it.
 </p>
 
 <blockquote>
 <p>
-One of the changes to Django 5.0, as noted in the release notes, is the removal
-support for logging out via GET requests. In previous versions of Django, you
-could add a logout link like <code>&lt;a href</code>" {% url 'logout' %}"&gt;Log Out&lt;/a&gt;= to a
-template file. But now a POST request via a form is required.
+BIG NOTE: "allauth" package is included with quote BIG batteries. All the
+previous attempts to modify the user model will have to be put on the shelf
+now, because "allauth" takes care of them. Regarding the custom user model -
+currently don't know how to implement it with "allauth", but will leave that
+for the future.
 </p>
 </blockquote>
+</div>
 
+<div id="outline-container-org2190a50" class="outline-4">
+<h4 id="org2190a50"><span class="section-number-4">4.1.1.</span> Installation</h4>
+<div class="outline-text-4" id="text-4-1-1">
 <p>
-We already have this in our <code>base.html</code>:
+<a href="https://docs.allauth.org/en/latest/installation/quickstart.html">https://docs.allauth.org/en/latest/installation/quickstart.html</a>
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">"{% url 'logout' %}"</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span>&gt;
-  {% csrf_token %}
-  &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Log Out&lt;/<span style="font-weight: bold;">button</span>&gt;
-&lt;/<span style="font-weight: bold;">form</span>&gt;
+<pre class="src src-sh">pip install django-allauth[socialaccount]
 </pre>
 </div>
 
 <p>
-Then we need to update <code>settings.py</code> with our redirect link,
-<code>LOGOUT_REDIRECT_URL</code>. Add it right next to our login redirect so the bottom of
-the <code>settings.py</code> file should look as follows:
+Add this to <code>settings.py</code>:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">project/settings.py</span>
-<span style="font-weight: bold; font-style: italic;">LOGIN_REDIRECT_URL</span> = <span style="font-style: italic;">"index"</span>
-<span style="font-weight: bold; font-style: italic;">LOGOUT_REDIRECT_URL</span> = <span style="font-style: italic;">"index"</span>  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
-</pre>
-</div>
-</div>
-</div>
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">AUTHENTICATION_BACKENDS</span> = [
+    ...
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Needed to login by username in Django admin, regardless of `allauth`</span>
+    <span style="font-style: italic;">'django.contrib.auth.backends.ModelBackend'</span>,
 
-<div id="outline-container-orge35a1f1" class="outline-4">
-<h4 id="orge35a1f1"><span class="section-number-4">4.1.4.</span> Sign Up functionality</h4>
-<div class="outline-text-4" id="text-4-1-4">
-<p>
-Now that we have sorted out logging in and logging out, it is time to add a
-signup page to our basic Django site. If you recall, Django <b><b>does not</b></b>
-provide a built-in view or URL for this, so we must code up the form and the
-page ourselves.
-</p>
-
-<p>
-To begin, stop the local webserver with Control+c and create a dedicated app
-called accounts, which we'll use for our custom account logic.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh">python manage.py startapp accounts
-</pre>
-</div>
-
-<p>
-We then move the newly created <code>accounts</code> app into <code>apps</code> folder for better
-structure in the future. All the apps will be in one folder.
-</p>
-
-<p>
-Go to <code>apps.py</code> and fix the name variable to be <code>name = "apps.accounts"</code>. From
-now on if we want to refernece urls of this app, we will do so by writing
-<code>apps.accounts.urls</code>.
-</p>
-
-<p>
-Make sure to add the new app to the <code>INSTALLED_APPS</code> setting in the
-<code>project/settings.py</code> file:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">project/settings.py</span>
-<span style="font-weight: bold; font-style: italic;">INSTALLED_APPS</span> = [
-    <span style="font-style: italic;">"django.contrib.admin"</span>,
-    <span style="font-style: italic;">"django.contrib.auth"</span>,
-    <span style="font-style: italic;">"django.contrib.contenttypes"</span>,
-    <span style="font-style: italic;">"django.contrib.sessions"</span>,
-    <span style="font-style: italic;">"django.contrib.messages"</span>,
-    <span style="font-style: italic;">"django.contrib.staticfiles"</span>,
-    <span style="font-style: italic;">"apps.accounts"</span>,  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">`allauth` specific authentication methods, such as login by email</span>
+    <span style="font-style: italic;">'allauth.account.auth_backends.AuthenticationBackend'</span>,
+    ...
 ]
 </pre>
 </div>
 
 <p>
-Then add a URL path in <code>project/urls.py</code> that is <b><b>above</b></b> our included Django
-<code>auth</code> app. The order is important here because Django looks for URL patterns
-from top-to-bottom. We want to maintain the pattern of having our user
-authentication logic at <code>accounts/</code> but ensure that the signup page loads
-first.
+Add a few apps too:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">django_project/urls.py</span>
-<span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> admin
-<span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> path, include
-
-<span style="font-weight: bold;">from</span> project.views <span style="font-weight: bold;">import</span> Index
-
-<span style="font-weight: bold; font-style: italic;">urlpatterns</span> = [
-    path(<span style="font-style: italic;">"admin/"</span>, admin.site.urls),
-    path(<span style="font-style: italic;">"accounts/"</span>, include(<span style="font-style: italic;">"apps.accounts.urls"</span>)),  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
-    path(<span style="font-style: italic;">"accounts/"</span>, include(<span style="font-style: italic;">"django.contrib.auth.urls"</span>)),
-    path(<span style="font-style: italic;">""</span>, Index.as_view(), name=<span style="font-style: italic;">"index"</span>),
-]
+<pre class="src src-python"><span style="font-style: italic;">'allauth'</span>,
+<span style="font-style: italic;">'allauth.account'</span>,
+<span style="font-style: italic;">'allauth.socialaccount'</span>,
 </pre>
 </div>
 
 <p>
-Next, create a new file called <code>accounts/urls.py</code> with your text editor and add
-the following code.
+Add this middleware to the end of the list:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">accounts/urls.py</span>
-<span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> path
-
-<span style="font-weight: bold;">from</span> .views <span style="font-weight: bold;">import</span> SignUpView
-
-
-<span style="font-weight: bold; font-style: italic;">urlpatterns</span> = [
-    path(<span style="font-style: italic;">"signup/"</span>, SignUpView.as_view(), name=<span style="font-style: italic;">"signup"</span>),
-]
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Add the account middleware:</span>
+ <span style="font-style: italic;">"allauth.account.middleware.AccountMiddleware"</span>,
 </pre>
 </div>
 
 <p>
-Now for the <code>accounts/views.py</code> file:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">accounts/views.py</span>
-<span style="font-weight: bold;">from</span> django.contrib.auth.forms <span style="font-weight: bold;">import</span> UserCreationForm
-<span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> reverse_lazy
-<span style="font-weight: bold;">from</span> django.views.generic <span style="font-weight: bold;">import</span> CreateView
-
-
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">SignUpView</span>(CreateView):
-    <span style="font-weight: bold; font-style: italic;">form_class</span> = UserCreationForm
-    <span style="font-weight: bold; font-style: italic;">success_url</span> = reverse_lazy(<span style="font-style: italic;">"login"</span>)
-    <span style="font-weight: bold; font-style: italic;">template_name</span> = <span style="font-style: italic;">"registration/signup.html"</span>
-</pre>
-</div>
-
-<p>
-At the top we import <a href="https://docs.djangoproject.com/en/5.0/topics/auth/default/#django.contrib.auth.forms.UserCreationForm%20">UserCreationForm</a>, <a href="https://docs.djangoproject.com/en/5.0/ref/urlresolvers/#reverse-lazy">reverse_lazy</a>, and the generic
-class-based view <a href="https://docs.djangoproject.com/en/5.0/ref/class-based-views/generic-editing/#django.views.generic.edit.CreateView">CreateView</a>.
-</p>
-
-<p>
-We are creating a new class called <code>SignUpView</code> that extends <code>CreateView</code>, sets
-the form as <code>UserCreationForm</code>, and uses the <b>not-yet-created</b> template
-<code>signup.html</code>. Note that we use <code>reverse_lazy</code> to redirect users to the login
-page upon successful registration rather than <code>reverse</code>, because <b>for all
-generic class-based views</b>, the URLs are not loaded when the file is imported,
-so we have to use the lazy form of reverse to load them later when we are sure
-they're available.
-</p>
-
-<p>
-Ok, now for the final step. Create a new template,
-<code>templates/registration/signup.html</code>, and populate it with this code that looks
-almost exactly like what we used for <code>login.html</code>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-html"><span style="font-weight: bold; font-style: italic;">&lt;!-- </span><span style="font-weight: bold; font-style: italic;">templates/registration/signup.html</span><span style="font-weight: bold; font-style: italic;"> --&gt;</span>
-{% extends "base.html" %}
-
-{% block title %}Sign Up{% endblock %}
-
-{% block content %}
-&lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Sign up</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
-&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span>&gt;
-  {% csrf_token %}
-  {{ form }}
-  &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Sign Up&lt;/<span style="font-weight: bold;">button</span>&gt;
-&lt;/<span style="font-weight: bold;">form</span>&gt;
-{% endblock %}
-</pre>
-</div>
-
-<p>
-We're done! To confirm it all works, spin up our local server with <code>python
-manage.py runserver</code> and navigate to <code>http://127.0.0.1:8000/accounts/signup/</code>.
-</p>
-
-<p>
-Sign up for a new account and hit the "Sign up" button. You will be redirected
-to the login page, <code>http://127.0.0.1:8000/accounts/login/</code>, where you can log
-in with your new account.
-</p>
-
-<p>
-And then, after a successful login, you'll be redirected to the homepage.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org1722289" class="outline-4">
-<h4 id="org1722289"><span class="section-number-4">4.1.5.</span> Password Change</h4>
-<div class="outline-text-4" id="text-4-1-5">
-<p>
-Django provides a default implementation of password change functionality. To
-try it out, log out of your superuser account and log in with your regular
-user.
-</p>
-
-<p>
-The default "Password change" page is located at
-<code>http://127.0.0.1:8000/accounts/password_change/</code>.
-</p>
-
-<p>
-Enter your old password and then a new one twice. Click the "Change My
-Password" button, and you will be redirected to the "Password change
-successful" page.
-</p>
-
-<p>
-If you want to customize these two password change pages to match the look and
-feel of your website, it is only necessary to override the existing templates.
-Django already provides us with the views and URLs. To do this, create two new
-template files in the <code>registration</code> directory:
-</p>
-
-<ul class="org-ul">
-<li><code>templates/registration/password_change_form.html</code></li>
-<li><code>templates/registration/password_change_done.html</code></li>
-</ul>
-
-<p>
-We can add a password change link to the <code>base.html</code>.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org1718aea" class="outline-4">
-<h4 id="org1718aea"><span class="section-number-4">4.1.6.</span> Password Reset</h4>
-<div class="outline-text-4" id="text-4-1-6">
-<p>
-A password reset page is useful when a user forgets their log in information: a
-user can enter in their email address and receive a cryptographically secure
-email with a one-time link to a password reset page. This is typically
-available to logged-out users. Django has built-in functionality for this that
-only requires a small amount of configuration.
-</p>
-
-<p>
-Let's add a link to the default password reset page that will be available to
-logged-out users.
-</p>
-
-<p>
-We can add a password reset link to the <code>base.html</code>.
-</p>
-
-<p>
-Click on the link for "Password Reset."
-</p>
-
-<p>
-The default template is ugly and styled to match the admin but is functional.
-We want to try it out, but there's one problem: <b>our regular user account does
-not have an email address associated with it</b>. The default Django
-<a href="https://docs.djangoproject.com/en/5.0/topics/auth/default/#django.contrib.auth.forms.UserCreationForm">UserCreationForm</a> we extended for our signup form does not have email included!
-</p>
-
-<p>
-Nonetheless, there is an easy fix. Log in to the admin, click on <code>Users</code>, and
-select the <code>username</code> for your regular user account to bring up the change user
-page where you can add an email.
-</p>
-
-<p>
-Make sure to click the "Save" button at the bottom of the page. Then click the
-"Log Out" button in the upper right-hand corner of the admin or back on the
-homepage.
-</p>
-
-<p>
-Django defaults to an <a href="https://docs.djangoproject.com/en/5.0/ref/settings/#email-backend">SMTP</a> email backend that requires some configuration. To
-test the password reset flow locally, we can update the
-<code>django_project/settings.py</code> file to output emails to the console instead. Add
-this one line to the bottom of the file.
+Also this line is needed, but we have it from previous setup:
 </p>
 
 <div class="org-src-container">
@@ -1221,280 +838,98 @@ this one line to the bottom of the file.
 </div>
 
 <p>
-Finally, we can try the Password Reset page again at
-<code>http://127.0.0.1:8000/accounts/password_reset/</code>. Enter the email address for
-your regular user account and click the "Change My Password" button. It will
-redirect you to the password reset sent page.
+Now we have to modify the <code>project/urls.py</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">urlpatterns</span> = [
+    path(<span style="font-style: italic;">"administratorius/"</span>, admin.site.urls),
+    path(<span style="font-style: italic;">"accounts/"</span>, include(<span style="font-style: italic;">"allauth.urls"</span>)),             <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+    path(<span style="font-style: italic;">""</span>, Index.as_view(), name=<span style="font-style: italic;">"index"</span>),
+    path(<span style="font-style: italic;">"test/"</span>, test, name=<span style="font-style: italic;">"test"</span>),
+]
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">python manage.py migrate
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py migrate
+Operations to perform:
+  Apply all migrations: account, accounts, admin, auth, contenttypes, sessions, socialaccount
+Running migrations:
+  Applying account.0001_initial... OK
+  Applying account.0002_email_max_length... OK
+  Applying account.0003_alter_emailaddress_create_unique_verified_email... OK
+  Applying account.0004_alter_emailaddress_drop_unique_email... OK
+  Applying account.0005_emailaddress_idx_upper_email... OK
+  Applying account.0006_emailaddress_lower... OK
+  Applying account.0007_emailaddress_idx_email... OK
+  Applying account.0008_emailaddress_unique_primary_email_fixup... OK
+  Applying account.0009_emailaddress_unique_primary_email... OK
+  Applying socialaccount.0001_initial... OK
+  Applying socialaccount.0002_token_max_lengths... OK
+  Applying socialaccount.0003_extra_data_default_dict... OK
+  Applying socialaccount.0004_app_provider_id_settings... OK
+  Applying socialaccount.0005_socialtoken_nullable_app... OK
+  Applying socialaccount.0006_alter_socialaccount_extra_data... OK
+</pre>
+</div>
+
+<p>
+Now if we login to admin panel, we should see the new apps registered.
 </p>
 
 <p>
-For security reasons, Django will not provide any notification whether you
-entered an email that exists in the database or not. But if you look in your
-terminal/console now, you can see the contents of the email outputted there.
+To make email required when creating an account, add these to <code>settings.py</code>:
 </p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">ACCOUNT_AUTHENTICATION_METHOD</span> = <span style="font-style: italic;">"email"</span>
+<span style="font-weight: bold; font-style: italic;">ACCOUNT_EMAIL_REQUIRED</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
+</pre>
+</div>
 
 <p>
-Copy the unique URL from your console into your web browser. It will
-cryptographically confirm your identity and take you to the Password Reset
-Confirmation page at <code>http://127.0.0.1:8000/accounts/reset/Mg/set-password/</code>.
+Here are all the possible <i>accounts</i> url's now:
 </p>
+
+<div class="org-src-container">
+<pre class="src src-bash">accounts/ login/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_login'</span>]
+accounts/ logout/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_logout'</span>]
+accounts/ inactive/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_inactive'</span>]
+accounts/ signup/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_signup'</span>]
+accounts/ reauthenticate/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_reauthenticate'</span>]
+accounts/ email/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_email'</span>]
+accounts/ confirm-email/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_email_verification_sent'</span>]
+accounts/ ^confirm-email/(?P&lt;key&gt;[-:\w]+)/$ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_confirm_email'</span>]
+accounts/ password/change/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_change_password'</span>]
+accounts/ password/set/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_set_password'</span>]
+accounts/ password/reset/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_reset_password'</span>]
+accounts/ password/reset/done/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_reset_password_done'</span>]
+accounts/ ^password/reset/key/(?P&lt;uidb36&gt;[0-9A-Za-z]+)-(?P&lt;key&gt;.+)/$ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_reset_password_from_key'</span>]
+accounts/ password/reset/key/done/ [<span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">'account_reset_password_from_key_done'</span>]
+accounts/ 3rdparty/
+accounts/ social/login/cancelled/
+accounts/ social/login/error/
+accounts/ social/signup/
+accounts/ social/connections/
+</pre>
+</div>
 
 <p>
-Enter in a new password and click the "Change my password" button. It will
-redirect you to the Password reset complete page.
+Try going to them and see how they look.
 </p>
-
-<p>
-To confirm everything worked correctly, navigate to the homepage and log in to
-your account with the new password.
-</p>
-
-<p>
-If you want to customize the templates involved with password reset, they are
-located at the following locations; you need to create new template files to
-override them.
-</p>
-
-<ul class="org-ul">
-<li><code>templates/registration/password_reset_confirm.html</code></li>
-<li><code>templates/registration/password_reset_form.html</code></li>
-<li><code>templates/registration/password_reset_done.html</code></li>
-</ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org369e6c1" class="outline-3">
-<h3 id="org369e6c1"><span class="section-number-3">4.2.</span> Custom user model/extended authentication</h3>
+<div id="outline-container-orge6e9fd6" class="outline-3">
+<h3 id="orge6e9fd6"><span class="section-number-3">4.2.</span> Style allauth templates, Implement crispy forms</h3>
 <div class="outline-text-3" id="text-4-2">
-<p>
-Django ships with a built-in <a href="https://docs.djangoproject.com/en/5.0/ref/contrib/auth/#django.contrib.auth.models.User">User model</a> for authentication.
-</p>
-
-<p>
-However, for a real-world project, the <a href="https://docs.djangoproject.com/en/5.0/topics/auth/customizing/#using-a-custom-user-model-when-starting-a-project">official Django documentation</a> highly
-recommends using a custom user model instead; it provides far more flexibility
-down the line so, as a general rule
-</p>
-
-<blockquote>
-<p>
-always use a custom user model for all new Django projects
-</p>
-</blockquote>
-</div>
-
-<div id="outline-container-org7261890" class="outline-4">
-<h4 id="org7261890"><span class="section-number-4">4.2.1.</span> AbstractUser vs AbstractBaseUser</h4>
-<div class="outline-text-4" id="text-4-2-1">
-<p>
-There are two modern ways to create a custom user model in Django:
-<code>AbstractUser</code> and <code>AbstractBaseUser</code>. In both cases, we can subclass them to
-extend existing functionality; however, <code>AbstractBaseUser</code> requires <b><b>much,
-much more work</b></b>. Seriously, only mess with it if you know what you're doing.
-And if you did, you wouldn't be reading this tutorial, would you?
-</p>
-
-<p>
-So we'll use <code>AbstractUser</code>, which subclasses <code>AbstractBaseUser</code> but provides
-more default configuration.
-</p>
-</div>
-
-<ol class="org-ol">
-<li><a id="org4dc5c0e"></a>Custom User Model<br>
-<div class="outline-text-5" id="text-4-2-1-1">
-<p>
-Creating our initial custom user model requires four steps:
-</p>
-
-<ul class="org-ul">
-<li>update <code>django_project/settings.py</code></li>
-<li>create a new <code>CustomUser</code> model</li>
-<li>create new <code>UserCreation</code> and <code>UserChangeForm</code> forms</li>
-<li>update the admin</li>
-</ul>
-
-<p>
-In <code>settings.py</code>, we'll use the <code>AUTH_USER_MODEL</code> config to tell Django to use
-our new custom user model instead of the built-in <code>User</code> model. We'll call our
-custom user model <code>CustomUser</code>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">project/settings.py</span>
-<span style="font-weight: bold; font-style: italic;">AUTH_USER_MODEL</span> = <span style="font-style: italic;">"accounts.CustomUser"</span>  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
-</pre>
-</div>
-
-<p>
-Now update <code>accounts/models.py</code> with a new User model, which we'll call
-<code>CustomUser</code>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-style: italic;">"""A module to register account app models to django admin."""</span>
-
-<span style="font-weight: bold;">from</span> django.contrib.auth.models <span style="font-weight: bold;">import</span> AbstractUser
-<span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
-
-
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">CustomUser</span>(AbstractUser):
-    <span style="font-style: italic;">"""Account model."""</span>
-
-    <span style="font-weight: bold; font-style: italic;">date_of_birth</span> = models.DateField(null=<span style="font-weight: bold; text-decoration: underline;">True</span>, blank=<span style="font-weight: bold; text-decoration: underline;">True</span>)
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">add additional fields in here</span>
-</pre>
-</div>
-
-<p>
-We need new versions of two form methods that receive heavy use working with
-users. Create a new file <code>accounts/forms.py</code>. We'll update it with the
-following code to largely subclass the existing forms.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">accounts/forms.py</span>
-<span style="font-style: italic;">"""A module for auth page forms. They are later used in the views.py"""</span>
-
-<span style="font-weight: bold;">from</span> django <span style="font-weight: bold;">import</span> forms
-<span style="font-weight: bold;">from</span> django.contrib.auth.forms <span style="font-weight: bold;">import</span> UserChangeForm, UserCreationForm
-
-<span style="font-weight: bold;">from</span> apps.accounts.models <span style="font-weight: bold;">import</span> CustomUser
-
-
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">pylint: disable=too-few-public-methods</span>
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">CustomUserCreationForm</span>(UserCreationForm):
-    <span style="font-style: italic;">"""A form for user creation"""</span>
-
-    <span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Meta</span>:
-        <span style="font-style: italic;">"""Additional settings for the Meta?"""</span>
-
-        <span style="font-weight: bold; font-style: italic;">model</span> = CustomUser
-        <span style="font-weight: bold; font-style: italic;">fields</span> = (<span style="font-style: italic;">"username"</span>, <span style="font-style: italic;">"email"</span>, <span style="font-style: italic;">"date_of_birth"</span>)
-
-    <span style="font-weight: bold; font-style: italic;">date_of_birth</span> = forms.DateField(
-        widget=forms.DateInput(attrs={<span style="font-style: italic;">"type"</span>: <span style="font-style: italic;">"date"</span>}),
-    )
-
-
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">pylint: disable=too-few-public-methods</span>
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">CustomUserChangeForm</span>(UserChangeForm):
-    <span style="font-style: italic;">"""A form for user change"""</span>
-
-    <span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Meta</span>:
-        <span style="font-style: italic;">"""Additional settings for the Meta?"""</span>
-
-        <span style="font-weight: bold; font-style: italic;">model</span> = CustomUser
-        <span style="font-weight: bold; font-style: italic;">fields</span> = (<span style="font-style: italic;">"username"</span>, <span style="font-style: italic;">"email"</span>, <span style="font-style: italic;">"date_of_birth"</span>)
-
-    <span style="font-weight: bold; font-style: italic;">date_of_birth</span> = forms.DateField(
-        widget=forms.DateInput(attrs={<span style="font-style: italic;">"type"</span>: <span style="font-style: italic;">"date"</span>}),
-    )
-</pre>
-</div>
-
-<p>
-Finally, we update <code>admin.py</code> since the admin is highly coupled to the default
-User model.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">accounts/admin.py</span>
-
-<span style="font-style: italic;">"""A module to register users app models to django admin."""</span>
-
-<span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> admin
-<span style="font-weight: bold;">from</span> django.contrib.auth.admin <span style="font-weight: bold;">import</span> UserAdmin
-
-<span style="font-weight: bold;">from</span> apps.accounts.forms <span style="font-weight: bold;">import</span> CustomUserChangeForm, CustomUserCreationForm
-<span style="font-weight: bold;">from</span> apps.accounts.models <span style="font-weight: bold;">import</span> CustomUser
-
-
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">CustomUserAdmin</span>(UserAdmin):
-    <span style="font-style: italic;">"""A modification to the default account model admin."""</span>
-
-    <span style="font-weight: bold; font-style: italic;">add_form</span> = CustomUserCreationForm
-    <span style="font-weight: bold; font-style: italic;">form</span> = CustomUserChangeForm
-    <span style="font-weight: bold; font-style: italic;">model</span> = CustomUser
-
-    <span style="font-weight: bold; font-style: italic;">fieldsets</span> = (
-        (<span style="font-weight: bold; text-decoration: underline;">None</span>, {<span style="font-style: italic;">"fields"</span>: (<span style="font-style: italic;">"username"</span>, <span style="font-style: italic;">"password"</span>)}),
-        (
-            <span style="font-style: italic;">"Personal info"</span>,
-            {<span style="font-style: italic;">"fields"</span>: (<span style="font-style: italic;">"first_name"</span>, <span style="font-style: italic;">"last_name"</span>, <span style="font-style: italic;">"email"</span>, <span style="font-style: italic;">"date_of_birth"</span>)},
-        ),
-        (
-            <span style="font-style: italic;">"Permissions"</span>,
-            {
-                <span style="font-style: italic;">"fields"</span>: (
-                    <span style="font-style: italic;">"is_active"</span>,
-                    <span style="font-style: italic;">"is_staff"</span>,
-                    <span style="font-style: italic;">"is_superuser"</span>,
-                    <span style="font-style: italic;">"groups"</span>,
-                    <span style="font-style: italic;">"user_permissions"</span>,
-                )
-            },
-        ),
-        (<span style="font-style: italic;">"Important dates"</span>, {<span style="font-style: italic;">"fields"</span>: (<span style="font-style: italic;">"last_login"</span>, <span style="font-style: italic;">"date_joined"</span>)}),
-    )
-
-    <span style="font-weight: bold; font-style: italic;">list_display</span> = [
-        <span style="font-style: italic;">"email"</span>,
-        <span style="font-style: italic;">"username"</span>,
-        <span style="font-style: italic;">"date_of_birth"</span>,
-    ]
-
-
-admin.site.register(CustomUser, CustomUserAdmin)
-</pre>
-</div>
-
-<p>
-And we're done! We can now run <code>makemigrations</code> and <code>migrate</code> (clear the db and
-migrations if you are doing makemigrations not for the first time, we need to
-start fresh here) to create a new database that uses the custom user model.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh">python manage.py makemigrations accounts
-python manage.py migrate
-</pre>
-</div>
-
-<p>
-The last step is our <code>views.py</code> file in the <code>accounts</code> app which will contain
-our signup form. We will modify the already created form.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-style: italic;">"""A module for accounts app views."""</span>
-
-<span style="font-weight: bold;">from</span> django.contrib.auth.decorators <span style="font-weight: bold;">import</span> login_required
-<span style="font-weight: bold;">from</span> django.shortcuts <span style="font-weight: bold;">import</span> render
-<span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> reverse_lazy
-<span style="font-weight: bold;">from</span> django.views.generic <span style="font-weight: bold;">import</span> CreateView
-
-<span style="font-weight: bold;">from</span> apps.accounts.forms <span style="font-weight: bold;">import</span> CustomUserCreationForm
-
-
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">SignUpView</span>(CreateView):
-    <span style="font-style: italic;">"""Generic CBV view for account create page"""</span>
-
-    <span style="font-weight: bold; font-style: italic;">form_class</span> = CustomUserCreationForm
-    <span style="font-weight: bold; font-style: italic;">success_url</span> = reverse_lazy(<span style="font-style: italic;">"login"</span>)
-    <span style="font-weight: bold; font-style: italic;">template_name</span> = <span style="font-style: italic;">"registration/signup.html"</span>
-</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-orgc2d4b87" class="outline-3">
-<h3 id="orgc2d4b87"><span class="section-number-3">4.3.</span> Implement crispy forms</h3>
-<div class="outline-text-3" id="text-4-3">
 <p>
 Crispy forms will allow us to style the forms nicer.
 </p>
@@ -1551,24 +986,20 @@ An example for login.html page:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">{% extends "_base.html" %}
+<pre class="src src-html">{% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
+{% block title %}Log in{% endblock %}
+
 {% block content %}
-
-{% if form.errors %}
-&lt;<span style="font-weight: bold;">p</span>&gt;Your username and password didn't match. Please try again.&lt;/<span style="font-weight: bold;">p</span>&gt;
-{% endif %}
-
-&lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Log In</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
-&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">"{% url 'login' %}"</span>&gt;
-  {% csrf_token %}
-  {{ form|crispy }}
-  &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Log In&lt;/<span style="font-weight: bold;">button</span>&gt;
-  &lt;<span style="font-weight: bold;">p</span>&gt;&lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'password_reset' %}"</span>&gt;Reset Password&lt;/<span style="font-weight: bold;">a</span>&gt;&lt;/<span style="font-weight: bold;">p</span>&gt;
+&lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Log in</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span>&gt;
+    {% csrf_token %}
+    {{ form|crispy }}
+    &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-success"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Log in&lt;/<span style="font-weight: bold;">button</span>&gt;
 &lt;/<span style="font-weight: bold;">form</span>&gt;
-
-{% endblock %}
+&lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'account_reset_password' %}"</span>&gt;Forgot Password?&lt;/<span style="font-weight: bold;">a</span>&gt;
+{% endblock content %}
 </pre>
 </div>
 
@@ -1578,18 +1009,211 @@ look more nice :)
 </p>
 
 <p>
-Do the same with sign up form.
+Do the same for all "allauth" pages
 </p>
+
+<p>
+logout.html
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Log out{% endblock %}
+
+
+{% block content %}
+&lt;<span style="font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Sign Out</span>&lt;/<span style="font-weight: bold;">h1</span>&gt;
+
+&lt;<span style="font-weight: bold;">p</span>&gt;Are you sure you want to sign out?&lt;/<span style="font-weight: bold;">p</span>&gt;
+
+&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">"{% url 'account_logout' %}"</span>&gt;
+    {% csrf_token %}
+    {{ form|crispy }}
+    &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-danger"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Sign Out&lt;/<span style="font-weight: bold;">button</span>&gt;
+&lt;/<span style="font-weight: bold;">form</span>&gt;
+
+{% endblock content %}
+</pre>
+</div>
+
+<p>
+password_change.html
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Change Password{% endblock %}
+
+{% block content %}
+&lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Change Password</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">"{% url 'account_change_password' %}"</span>&gt;
+    {% csrf_token %}
+    {{ form|crispy }}
+    &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-success"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Change Password&lt;/<span style="font-weight: bold;">button</span>&gt;
+&lt;/<span style="font-weight: bold;">form</span>&gt;
+{% endblock content %}
+</pre>
+</div>
+
+<p>
+password_reset_done.html
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Password Reset Done{% endblock %}
+
+{% block content %}
+&lt;<span style="font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Password Reset</span>&lt;/<span style="font-weight: bold;">h1</span>&gt;
+&lt;<span style="font-weight: bold;">p</span>&gt;We have sent you an e-mail. Please contact us if you do not receive it in a few minutes.&lt;/<span style="font-weight: bold;">p</span>&gt;
+{% endblock content %}
+</pre>
+</div>
+
+<p>
+password_reset_from_key_done.html
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Change Password Done{% endblock title %}
+
+{% block content %}
+&lt;<span style="font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Password Change Done</span>&lt;/<span style="font-weight: bold;">h1</span>&gt;
+&lt;<span style="font-weight: bold;">p</span>&gt;Your password has been changed.&lt;/<span style="font-weight: bold;">p</span>&gt;
+{% endblock content %}
+</pre>
+</div>
+
+<p>
+password_reset_from_key.html
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Change Password{% endblock title %}
+
+{% block content %}
+&lt;<span style="font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{% if token_fail %}Bad Token{% else %}Change Password{% endif %}</span>&lt;/<span style="font-weight: bold;">h1</span>&gt;
+
+{% if token_fail %}
+&lt;<span style="font-weight: bold;">p</span>&gt;The password reset link was invalid. Perhaps it has already been used?  Please request a &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'account_reset_password' %}"</span>&gt;new password reset&lt;/<span style="font-weight: bold;">a</span>&gt;.&lt;/<span style="font-weight: bold;">p</span>&gt;
+{% else %}
+{% if form %}
+&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"POST"</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">"."</span>&gt;
+    {% csrf_token %}
+    {{ form|crispy }}
+    &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-primary"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Change Password&lt;/<span style="font-weight: bold;">button</span>&gt;
+&lt;/<span style="font-weight: bold;">form</span>&gt;
+{% else %}
+&lt;<span style="font-weight: bold;">p</span>&gt;Your password is now changed.&lt;/<span style="font-weight: bold;">p</span>&gt;
+{% endif %}
+{% endif %}
+{% endblock content%}
+</pre>
+</div>
+
+<p>
+password_reset.html
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Password Reset{% endblock %}
+
+{% block content %}
+&lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Forgot your password? </span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"POST"</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">"{% url 'account_reset_password' %}"</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"password_reset"</span>&gt;
+    {% csrf_token %}
+    {{ form | crispy }}
+    &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-primary"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Reset Password&lt;/<span style="font-weight: bold;">button</span>&gt;
+&lt;/<span style="font-weight: bold;">form</span>&gt;
+{% endblock content %}
+</pre>
+</div>
+
+<p>
+password_set.html
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Set Password{% endblock title %}
+
+{% block content %}
+&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"POST"</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">""</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"password_set"</span>&gt;
+    {% csrf_token %}
+    {{ form | crispy }}
+    &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"form-actions"</span>&gt;
+        &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-primary"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"action"</span> <span style="font-weight: bold; font-style: italic;">value</span>=<span style="font-style: italic;">"Set Password"</span>&gt;Change
+            Password&lt;/<span style="font-weight: bold;">button</span>&gt;
+    &lt;/<span style="font-weight: bold;">div</span>&gt;
+&lt;/<span style="font-weight: bold;">form</span>&gt;
+{% endblock content %}
+</pre>
+</div>
+
+<p>
+signup.html
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block content %}
+&lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Sign up</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span>&gt;
+    {% csrf_token %}
+    {{ form|crispy }}
+    &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-success"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Sign up&lt;/<span style="font-weight: bold;">button</span>&gt;
+&lt;/<span style="font-weight: bold;">form</span>&gt;
+{% endblock content %}
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org57ac49e" class="outline-3">
-<h3 id="org57ac49e"><span class="section-number-3">4.4.</span> Create a user dashboard</h3>
-<div class="outline-text-3" id="text-4-4">
+<div id="outline-container-org2b6da3d" class="outline-3">
+<h3 id="org2b6da3d"><span class="section-number-3">4.3.</span> Create a user dashboard</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+By default, after successful login, allauth leads us to "accounts/profile/"
+page. It does not exist by default, let's create it.
+</p>
+
+<p>
+First, let's create an app for a dashboard:
+</p>
+
 <div class="org-src-container">
-<pre class="src src-python">
-<span style="font-weight: bold; text-decoration: underline;">@login_required</span>
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">dashboard_view</span>(request):
+<pre class="src src-bash">django-admin start app dashboard
+</pre>
+</div>
+
+<p>
+Add the app to <code>INSTALLED_APPS</code>, then let's create a view for the profile:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; text-decoration: underline;">@login_required</span>
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">profile</span>(request):
 
     <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Get the logged-in user</span>
     <span style="font-weight: bold; font-style: italic;">user</span> = request.user
@@ -1614,7 +1238,6 @@ Do the same with sign up form.
         <span style="font-style: italic;">"user_is_staff"</span>: user.is_staff,
         <span style="font-style: italic;">"user_is_active"</span>: user.is_active,
         <span style="font-style: italic;">"user_date_joined"</span>: user.date_joined,
-        <span style="font-style: italic;">"user_date_of_birth"</span>: user.date_of_birth,
     }
 
     <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">"registration/dashboard.html"</span>, context)
@@ -1622,39 +1245,33 @@ Do the same with sign up form.
 </div>
 
 <p>
-Then update the views:
+Then update the urls of the project:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">accounts/urls.py</span>
-<span style="font-style: italic;">"""A module that contains all the urls for the accounts app."""</span>
-
-<span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> path
-
-<span style="font-weight: bold;">from</span> apps.accounts.views <span style="font-weight: bold;">import</span> SignUpView, dashboard_view
+<pre class="src src-python"><span style="font-weight: bold;">from</span> apps.dashboard.views <span style="font-weight: bold;">import</span> profile
 
 <span style="font-weight: bold; font-style: italic;">urlpatterns</span> = [
-    path(<span style="font-style: italic;">"signup/"</span>, SignUpView.as_view(), name=<span style="font-style: italic;">"signup"</span>),
-    path(<span style="font-style: italic;">"dashboard/"</span>, dashboard_view, name=<span style="font-style: italic;">"dashboard"</span>), <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+    path(<span style="font-style: italic;">"accounts/profile/"</span>, profile, name=<span style="font-style: italic;">"profile"</span>), <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
 ]
 </pre>
 </div>
 
 <p>
-Add a link to the dashboard in <code>base.html</code>:
+Add a link to the dashboard in <code>navbar.html</code>:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span style="font-weight: bold;">li</span>&gt;&lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"dropdown-item"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'dashboard' %}"</span>&gt;User Dashboard&lt;/<span style="font-weight: bold;">a</span>&gt;&lt;/<span style="font-weight: bold;">li</span>&gt;
+<pre class="src src-html">&lt;<span style="font-weight: bold;">li</span>&gt;&lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"dropdown-item"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'profile' %}"</span>&gt;User Dashboard&lt;/<span style="font-weight: bold;">a</span>&gt;&lt;/<span style="font-weight: bold;">li</span>&gt;
 </pre>
 </div>
 
 <p>
-Create a html for the dashboard, content of <code>accounts/dashboard.html</code>:
+Then in <code>templates/account/profile.html</code>:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">{% extends "base/base.html" %}
+<pre class="src src-html">{% extends "base.html" %}
 
 {% block content %}
 
@@ -1671,29 +1288,244 @@ Create a html for the dashboard, content of <code>accounts/dashboard.html</code>
     &lt;<span style="font-weight: bold;">p</span>&gt;&lt;<span style="font-weight: bold;">strong</span>&gt;<span style="font-weight: bold;">Is staff:</span>&lt;/<span style="font-weight: bold;">strong</span>&gt; {{ user_is_staff }}&lt;/<span style="font-weight: bold;">p</span>&gt;
     &lt;<span style="font-weight: bold;">p</span>&gt;&lt;<span style="font-weight: bold;">strong</span>&gt;<span style="font-weight: bold;">Is active:</span>&lt;/<span style="font-weight: bold;">strong</span>&gt; {{ user_is_active }}&lt;/<span style="font-weight: bold;">p</span>&gt;
     &lt;<span style="font-weight: bold;">p</span>&gt;&lt;<span style="font-weight: bold;">strong</span>&gt;<span style="font-weight: bold;">Date joined:</span>&lt;/<span style="font-weight: bold;">strong</span>&gt; {{ user_date_joined }}&lt;/<span style="font-weight: bold;">p</span>&gt;
-    &lt;<span style="font-weight: bold;">p</span>&gt;&lt;<span style="font-weight: bold;">strong</span>&gt;<span style="font-weight: bold;">Date of birth:</span>&lt;/<span style="font-weight: bold;">strong</span>&gt; {{ user_date_of_birth }}&lt;/<span style="font-weight: bold;">p</span>&gt;
 
-    &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'password_reset' %}"</span>&gt;Password reset&lt;/<span style="font-weight: bold;">a</span>&gt;
+    &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'account_reset_password' %}"</span>&gt;Password reset&lt;/<span style="font-weight: bold;">a</span>&gt;
 
-    &lt;<span style="font-weight: bold;">p</span>&gt;&lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'password_change' %}"</span>&gt;Password Change&lt;/<span style="font-weight: bold;">a</span>&gt;&lt;/<span style="font-weight: bold;">p</span>&gt;
-    &lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">"{% url 'logout' %}"</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span>&gt;
-        {% csrf_token %}
-        &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Log Out&lt;/<span style="font-weight: bold;">button</span>&gt;
-    &lt;/<span style="font-weight: bold;">form</span>&gt;
+    &lt;<span style="font-weight: bold;">p</span>&gt;&lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'account_change_password' %}"</span>&gt;Password Change&lt;/<span style="font-weight: bold;">a</span>&gt;&lt;/<span style="font-weight: bold;">p</span>&gt;
 
+{% endblock content %}
+</pre>
+</div>
+
+<p>
+User dashboard should be reachable now.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7471876" class="outline-3">
+<h3 id="org7471876"><span class="section-number-3">4.4.</span> Enable social login with Google</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+Possible providers -
+<a href="https://docs.allauth.org/en/latest/socialaccount/providers/index.html">https://docs.allauth.org/en/latest/socialaccount/providers/index.html</a>
+</p>
+
+<p>
+If you want to disable third party authentication with google, simply comment
+out <code>"allauth.socialaccount.providers.google",</code> in <code>settings.py</code> and
+login/signup pages should not display an option to login with google anymore.
+</p>
+
+<p>
+To <code>INSTALLED_APPS</code> add:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-style: italic;">"allauth.socialaccount.providers.google"</span>,
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge8369b8" class="outline-4">
+<h4 id="orge8369b8"><span class="section-number-4">4.4.1.</span> Add social application in django-admin</h4>
+<div class="outline-text-4" id="text-4-4-1">
+<p>
+Then go to <code>http://localhost:8000/admin/socialaccount/socialapp/add/</code> and add a
+social application:
+</p>
+
+<ul class="org-ul">
+<li>Go to google develope dashboard</li>
+<li>Create a project if you don't already have one</li>
+<li>Go to APIs and services tab -&gt; credentials</li>
+<li>Create credentials -&gt; Create OAuth client ID</li>
+<li>Go through a conscent screen if asked</li>
+<li>After it, continue with the OAuth client ID creation</li>
+<li>application type - web application</li>
+<li>authorized redirect urls -
+<code>http://127.0.0.1:8000/accounts/google/login/callback/</code> (make sure to be
+running the project locally over 127.0.0.1 and not over localhost if you
+specify it like so here)</li>
+<li>Click create</li>
+<li>Copy the cliend id and secret to the django social application page that we
+previously were on and save the application</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga9488bd" class="outline-4">
+<h4 id="orga9488bd"><span class="section-number-4">4.4.2.</span> Attempt to register</h4>
+<div class="outline-text-4" id="text-4-4-2">
+<p>
+Try to register an account with through google now (in signup page you should
+see "third party authentication button"). Our custom "signup.html" template
+might be preventing that, so disable it, we will modify it later.
+</p>
+
+<p>
+If you want to login with social account - do the "third party" thing again in
+the login page. (have to modify the login.html template also).
+</p>
+
+<p>
+After successful registration, in "social_accounts" in django-admin you should
+see the account that has just been created.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org669f6df" class="outline-4">
+<h4 id="org669f6df"><span class="section-number-4">4.4.3.</span> Modify the templates to accommodate third party buttons</h4>
+<div class="outline-text-4" id="text-4-4-3">
+<p>
+Modify sign up/login templates and Third-Party Login Failure template
+modify the second AFTER sign up template
+</p>
+
+<p>
+<code>account/login.html</code> now looks like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+&lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Log in</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span>&gt;
+    {% csrf_token %}
+    {{ form|crispy }}
+    &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-success"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Log in&lt;/<span style="font-weight: bold;">button</span>&gt;
+&lt;/<span style="font-weight: bold;">form</span>&gt;
+&lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'account_reset_password' %}"</span>&gt;Forgot Password?&lt;/<span style="font-weight: bold;">a</span>&gt;
+
+
+{% load i18n %}
+{% load allauth %}
+{% load socialaccount %}
+{% get_providers as socialaccount_providers %}
+{% if socialaccount_providers %}
+{% if not SOCIALACCOUNT_ONLY %}
+{% element hr %}
+{% endelement %}
+{% element h2 %}
+{% translate "Or use a third-party" %}
+{% endelement %}
+{% endif %}
+{% include "socialaccount/snippets/provider_list.html" with <span style="font-weight: bold; font-style: italic;">process</span>="login" %}
+{% include "socialaccount/snippets/login_extra.html" %}
+{% endif %}
+
+
+{% endblock content %}
+</pre>
+</div>
+
+<p>
+<code>account/signup.html</code> now looks like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load allauth i18n %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block content %}
+
+{% element h1 %}
+{% trans "Sign Up" %}
+{% endelement %}
+
+{% setvar link %}
+&lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{{ login_url }}"</span>&gt;
+    {% endsetvar %}
+    {% setvar end_link %}
+&lt;/<span style="font-weight: bold;">a</span>&gt;
+{% endsetvar %}
+{% element p %}
+{% blocktranslate %}Already have an account? Then please {{ link }}sign in{{ end_link }}.{% endblocktranslate %}
+{% endelement %}
+{% if not SOCIALACCOUNT_ONLY %}
+
+{% url 'account_signup' as action_url %}
+&lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"post"</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">"{{ action_url }}"</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"form-signup"</span>&gt;
+    {% csrf_token %}
+    {{ form|crispy }}
+    {{ redirect_field }}
+    &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-primary"</span>&gt;{% trans "Sign Up" %}&lt;/<span style="font-weight: bold;">button</span>&gt;
+&lt;/<span style="font-weight: bold;">form</span>&gt;
+{% endif %}
+
+{% if SOCIALACCOUNT_ENABLED %}
+{% include "socialaccount/snippets/login.html" with <span style="font-weight: bold; font-style: italic;">page_layout</span>="entrance" %}
+{% endif %}
+
+{% endblock content %}
+</pre>
+</div>
+
+<p>
+<code>socialaccount/login.html</code> (new template):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+{% load i18n %}
+{% load allauth %}
+
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+
+{% if process == "connect" %}
+{% element h1 %}
+{% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}
+{% endelement %}
+{% element p %}
+{% blocktrans with provider.name as provider %}You are about to connect a new third-party account from {{ provider }}.{% endblocktrans %}
+{% endelement %}
+{% else %}
+{% element h1 %}
+{% blocktrans with provider.name as provider %}Sign In Via {{ provider }}{% endblocktrans %}
+{% endelement %}
+{% element p %}
+{% blocktrans with provider.name as provider %}You are about to sign in using a third-party account from {{ provider }}.{% endblocktrans %}
+{% endelement %}
+{% endif %}
+{% element form <span style="font-weight: bold; font-style: italic;">method</span>="post" no_visible_fields=True %}
+{% slot actions %}
+{% csrf_token %}
+&lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-success"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Continue&lt;/<span style="font-weight: bold;">button</span>&gt;
+{% endslot %}
+{% endelement %}
 {% endblock content %}
 </pre>
 </div>
 </div>
 </div>
+
+<div id="outline-container-org6582b02" class="outline-4">
+<h4 id="org6582b02"><span class="section-number-4">4.4.4.</span> Signals</h4>
+<div class="outline-text-4" id="text-4-4-4">
+<p>
+Cool signals can be used - <a href="https://docs.allauth.org/en/latest/account/signals.html">https://docs.allauth.org/en/latest/account/signals.html</a>. Example how - <a href="https://www.youtube.com/watch?v=qqFCt0Yde40&amp;ab_channel=MattFreire">https://www.youtube.com/watch?v=qqFCt0Yde40&amp;ab_channel=MattFreire</a>
+</p>
+</div>
+</div>
+</div>
 </div>
 
-<div id="outline-container-org437cb15" class="outline-2">
-<h2 id="org437cb15"><span class="section-number-2">5.</span> Nice to haves</h2>
+<div id="outline-container-orgc3994f6" class="outline-2">
+<h2 id="orgc3994f6"><span class="section-number-2">5.</span> Nice to haves</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgb1c0df2" class="outline-3">
-<h3 id="orgb1c0df2"><span class="section-number-3">5.1.</span> Set up Makefile</h3>
+<div id="outline-container-orgb695698" class="outline-3">
+<h3 id="orgb695698"><span class="section-number-3">5.1.</span> Set up Makefile</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li><a href="https://www.youtube.com/watch?v=2nM6DBE0blA&amp;ab_channel=BoostMyTool">How to Fix Error Makefile</a></li>
@@ -1778,15 +1610,15 @@ described.
 </div>
 </div>
 
-<div id="outline-container-orgef04b73" class="outline-3">
-<h3 id="orgef04b73"><span class="section-number-3">5.2.</span> Django-debug-toolbar</h3>
+<div id="outline-container-org6e53b33" class="outline-3">
+<h3 id="org6e53b33"><span class="section-number-3">5.2.</span> Django-debug-toolbar</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Comes useful sometimes.
 </p>
 
 <p>
-<a href="https://django-debug-toolbar.readthedocs.io/en/latest/index.html">Official docs</a> 
+<a href="https://django-debug-toolbar.readthedocs.io/en/latest/index.html">Official docs</a>
 </p>
 
 <p>
@@ -1852,8 +1684,8 @@ django-debug-toolbar button.
 </div>
 </div>
 
-<div id="outline-container-org028a4b9" class="outline-3">
-<h3 id="org028a4b9"><span class="section-number-3">5.3.</span> Basic tests</h3>
+<div id="outline-container-org9cdafbd" class="outline-3">
+<h3 id="org9cdafbd"><span class="section-number-3">5.3.</span> Basic tests</h3>
 <div class="outline-text-3" id="text-5-3">
 <ul class="org-ul">
 <li><a href="https://github.com/azegas/quotes/issues/4">https://github.com/azegas/quotes/issues/4</a></li>
@@ -1948,8 +1780,8 @@ coverage:
 </div>
 </div>
 
-<div id="outline-container-org2da72a5" class="outline-3">
-<h3 id="org2da72a5"><span class="section-number-3">5.4.</span> Github actions</h3>
+<div id="outline-container-org62bfe45" class="outline-3">
+<h3 id="org62bfe45"><span class="section-number-3">5.4.</span> Github actions</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li><a href="https://docs.github.com/en/actions/quickstart">official docs</a></li>
@@ -2075,8 +1907,8 @@ despite the additional resource usage.
 </div>
 </div>
 
-<div id="outline-container-org04cc4c1" class="outline-3">
-<h3 id="org04cc4c1"><span class="section-number-3">5.5.</span> Black formatter</h3>
+<div id="outline-container-org69fba0f" class="outline-3">
+<h3 id="org69fba0f"><span class="section-number-3">5.5.</span> Black formatter</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 This section is regarding the <code>pyproject.toml</code> file.
@@ -2085,6 +1917,15 @@ This section is regarding the <code>pyproject.toml</code> file.
 <p>
 Read more - <a href="https://github.com/azegas/dotfiles/tree/master/.emacs.d#black-formatter-on-save">https://github.com/azegas/dotfiles/tree/master/.emacs.d#black-formatter-on-save</a>
 </p>
+
+<p>
+Have black installed by:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">pip install black
+</pre>
+</div>
 
 <p>
 Add black formatting command to Makefile:
@@ -2101,8 +1942,8 @@ black:
 </div>
 </div>
 
-<div id="outline-container-orgea167c6" class="outline-3">
-<h3 id="orgea167c6"><span class="section-number-3">5.6.</span> For security reasons, rename /admin to something else</h3>
+<div id="outline-container-org82b21b0" class="outline-3">
+<h3 id="org82b21b0"><span class="section-number-3">5.6.</span> For security reasons, rename /admin to something else</h3>
 <div class="outline-text-3" id="text-5-6">
 <p>
 in <code>project/urls.py</code>
@@ -2111,257 +1952,26 @@ in <code>project/urls.py</code>
 </div>
 </div>
 
-<div id="outline-container-orgeeeff9d" class="outline-2">
-<h2 id="orgeeeff9d"><span class="section-number-2">6.</span> Other TODO's</h2>
+<div id="outline-container-org72001c1" class="outline-2">
+<h2 id="org72001c1"><span class="section-number-2">6.</span> Other TODO's</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org5185c6a" class="outline-3">
-<h3 id="org5185c6a"><span class="section-number-3">6.1.</span> PROGRESS check djangox viska ir panaudok kiek gali is ten</h3>
+<div id="outline-container-org642857c" class="outline-3">
+<h3 id="org642857c"><span class="section-number-3">6.1.</span> <span class="todo TODO">TODO</span> Improve the project</h3>
 <div class="outline-text-3" id="text-6-1">
-<p>
-<a href="https://github.com/wsvincent/djangox/blob/main/templates/_base.html">https://github.com/wsvincent/djangox/blob/main/templates/_base.html</a>
-</p>
 </div>
-</div>
-
-<div id="outline-container-org08f0d54" class="outline-3">
-<h3 id="org08f0d54"><span class="section-number-3">6.2.</span> <span class="todo TODO">TODO</span> Create a simple test app, models of it here - Models</h3>
-<div class="outline-text-3" id="text-6-2">
-</div>
-<div id="outline-container-org31cdefc" class="outline-4">
-<h4 id="org31cdefc"><span class="section-number-4">6.2.1.</span> Little cheat before making models</h4>
-<div class="outline-text-4" id="text-6-2-1">
-<p>
-So what we can do is create a fake list with data, right, then output the
-values of that list into our view (html files).
-</p>
-
-<p>
-For example, my post view will look like this now:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python">
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">blog</span>(request):
-
-    <span style="font-weight: bold; font-style: italic;">posts</span> = [
-        {
-            <span style="font-style: italic;">'headline'</span>:<span style="font-style: italic;">'Facebook django automation'</span>,
-            <span style="font-style: italic;">'sub_headline'</span>:<span style="font-style: italic;">'Designed this app to help business automate tasks bla etc'</span>
-        },
-        {
-            <span style="font-style: italic;">'headline'</span>:<span style="font-style: italic;">'iv backup stuff'</span>,
-            <span style="font-style: italic;">'sub_headline'</span>:<span style="font-style: italic;">'Designed this to help myself you know what I am saying'</span>
-        },
-        {
-            <span style="font-style: italic;">'headline'</span>:<span style="font-style: italic;">'obelsdumas'</span>,
-            <span style="font-style: italic;">'sub_headline'</span>:<span style="font-style: italic;">'My first ever wordpress site - eshop selling sausages'</span>
-        },
-    ]
-
-    <span style="font-weight: bold; font-style: italic;">context</span> = {<span style="font-style: italic;">'posts'</span>:posts}
-    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'base/blog.html'</span>, context)
-
-</pre>
-</div>
-<p>
-and inside blog.html I will have a for loop that loops through the
-info above. Great! So now I know the looping works.
-</p>
-<div class="org-src-container">
-<pre class="src src-html">{% extends 'base/main.html' %}
-
-{% block content %}
-    {% for post in posts %}
-        &lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">{{post.headline}}</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
-        &lt;<span style="font-weight: bold;">h6</span>&gt;<span style="text-decoration: underline;">{{post.sub_headline}}</span>&lt;/<span style="font-weight: bold;">h6</span>&gt;
-    {% endfor  %}
-{% endblock content %}
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org85780ee" class="outline-4">
-<h4 id="org85780ee"><span class="section-number-4">6.2.2.</span> Creating database models</h4>
-<div class="outline-text-4" id="text-6-2-2">
-</div>
-<ol class="org-ol">
-<li><a id="org60fbdb3"></a>Make migrations/migrate<br>
-<div class="outline-text-5" id="text-6-2-2-1">
-<div class="org-src-container">
-<pre class="src src-bash">python manage.py makemigrations
-python manage.py migrate
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Check database entries with:</span>
-python manage.py inspectdb
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="org872f452"></a>Create superuser and add some data<br>
-<div class="outline-text-5" id="text-6-2-2-2">
-<div class="org-src-container">
-<pre class="src src-bash">python manage.py createsuperuser
-python manage.py runserver
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="org0e08c6b"></a>Creating model itself<br>
-<div class="outline-text-5" id="text-6-2-2-3">
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
-
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Create your models here.</span>
-
-
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Blog_post</span>(models.Model):
-    <span style="font-weight: bold; font-style: italic;">title</span> = models.CharField(max_length=200)
-    <span style="font-weight: bold; font-style: italic;">sub_title</span> = models.CharField(max_length=200, null=<span style="font-weight: bold; text-decoration: underline;">True</span>, blank=<span style="font-weight: bold; text-decoration: underline;">True</span>)
-    <span style="font-weight: bold; font-style: italic;">content</span> = models.TextField(null=<span style="font-weight: bold; text-decoration: underline;">True</span>, blank=<span style="font-weight: bold; text-decoration: underline;">True</span>)
-    <span style="font-weight: bold; font-style: italic;">active</span> = models.BooleanField(default=<span style="font-weight: bold; text-decoration: underline;">False</span>)
-
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>):
-        <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">self</span>.title
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="org717be1a"></a>Make migrations/migrate<br>
-<div class="outline-text-5" id="text-6-2-2-4">
-<div class="org-src-container">
-<pre class="src src-bash">python manage.py makemigrations
-python manage.py migrate
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Check database entries with:</span>
-python manage.py inspectdb
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="org047c6bc"></a>Link new model to admin panel in admin.py<br>
-<div class="outline-text-5" id="text-6-2-2-5">
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> admin
-
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Register your models here.</span>
-
-<span style="font-weight: bold;">from</span> .models <span style="font-weight: bold;">import</span> Blog_post
-
-admin.site.register(Blog_post)
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="orgc2d8c9e"></a>views.py - replace list of dictionaries with a query<br>
-<div class="outline-text-5" id="text-6-2-2-6">
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> .models <span style="font-weight: bold;">import</span> Blog_post
-
-  <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">blog</span>(request):
-
-      <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">posts = Blog_post.objects.all()</span>
-      <span style="font-weight: bold; font-style: italic;">posts</span> = Blog_post.objects.<span style="font-weight: bold;">filter</span>(active=<span style="font-weight: bold; text-decoration: underline;">True</span>)
-
-      <span style="font-weight: bold; font-style: italic;">context</span> = {<span style="font-style: italic;">'posts'</span>: posts}
-      <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'base/blog.html'</span>, context)
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="org11a2a61"></a>update blog.html<br>
-<div class="outline-text-5" id="text-6-2-2-7">
-<div class="org-src-container">
-<pre class="src src-python">{% extends <span style="font-style: italic;">'base/main.html'</span> %}
-
-{% block content %}
-    {% <span style="font-weight: bold;">for</span> post <span style="font-weight: bold;">in</span> posts %}
-        &lt;h2&gt;{{post.title}}&lt;/h2&gt;
-        &lt;h6&gt;{{post.sub_title}}&lt;/h6&gt;
-    {% empty %}
-        &lt;h3&gt;no posts found...&lt;/h3&gt;
-    {% endfor  %}
-{% endblock content %}
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="org8573709"></a>catch single posts<br>
-<div class="outline-text-5" id="text-6-2-2-8">
-<p>
-inside of urls.py add str:pk like so
-</p>
-<div class="org-src-container">
-<pre class="src src-python">path(<span style="font-style: italic;">'blog_post/&lt;str:pk&gt;'</span>, views.blog_post, name=<span style="font-style: italic;">"blog_post"</span>),
-</pre>
-</div>
-
-<p>
-Then modify views to this:
-</p>
-
-<p>
-Pay attention to pk
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">def</span> <span style="font-weight: bold;">blog_post</span>(request, pk):
-    <span style="font-weight: bold; font-style: italic;">post</span> = Blog_post.objects.get(<span style="font-weight: bold;">id</span>=pk)
-
-    <span style="font-weight: bold; font-style: italic;">context</span> = {<span style="font-style: italic;">'post'</span>: post}
-    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'base/blog_post.html'</span>, context)
-</pre>
-</div>
-
-<p>
-replace all the dynamic data with {{post.headline}} etc, and go to
-'blog_post/1 and check if the template works
-</p>
-</div>
-</li>
-
-<li><a id="org3d4b998"></a>Add line breaks to body model<br>
-<div class="outline-text-5" id="text-6-2-2-9">
-<div class="org-src-container">
-<pre class="src src-html">&lt;<span style="font-weight: bold;">p</span>&gt;{{post.content|linebreaks}}&lt;/<span style="font-weight: bold;">p</span>&gt;
-</pre>
-</div>
-</div>
-</li>
-
-<li><a id="org30c3b9a"></a>add link from blog to single post<br>
-<div class="outline-text-5" id="text-6-2-2-10">
-<div class="org-src-container">
-<pre class="src src-html">&lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'blog_post' post.id %}"</span>&gt;Read more&lt;/<span style="font-weight: bold;">a</span>&gt;
-</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-orgb7e03c7" class="outline-3">
-<h3 id="orgb7e03c7"><span class="section-number-3">6.3.</span> <span class="todo TODO">TODO</span> Improve the project</h3>
-<div class="outline-text-3" id="text-6-3">
-</div>
-<div id="outline-container-org2d3e562" class="outline-4">
-<h4 id="org2d3e562"><span class="section-number-4">6.3.1.</span> add messages support</h4>
-<div class="outline-text-4" id="text-6-3-1">
+<div id="outline-container-org7a93afc" class="outline-4">
+<h4 id="org7a93afc"><span class="section-number-4">6.1.1.</span> add messages support</h4>
+<div class="outline-text-4" id="text-6-1-1">
 <p>
 for logging in/out, password change, etc
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd998cf2" class="outline-4">
-<h4 id="orgd998cf2"><span class="section-number-4">6.3.2.</span> Images for production</h4>
-<div class="outline-text-4" id="text-6-3-2">
+<div id="outline-container-org2f3fadc" class="outline-4">
+<h4 id="org2f3fadc"><span class="section-number-4">6.1.2.</span> Images for production</h4>
+<div class="outline-text-4" id="text-6-1-2">
 <p>
 Go add this to your settings.py and when it's done run:
 </p>
@@ -2412,28 +2022,25 @@ Add it to requirements.txt and follow <a href="http://whitenoise.evans.io/en/sta
 </div>
 </div>
 </div>
-<div id="outline-container-org6ef1f2c" class="outline-3">
-<h3 id="org6ef1f2c"><span class="section-number-3">6.4.</span> <span class="todo TODO">TODO</span> Pro Django tutorials by thenewboston</h3>
-<div class="outline-text-3" id="text-6-4">
+<div id="outline-container-org2fdd2e0" class="outline-3">
+<h3 id="org2fdd2e0"><span class="section-number-3">6.2.</span> <span class="todo TODO">TODO</span> Pro Django tutorials by thenewboston</h3>
+<div class="outline-text-3" id="text-6-2">
 <p>
 cehck them out, dariau CDP according to that one?
 </p>
 </div>
 </div>
-<div id="outline-container-orga73999c" class="outline-3">
-<h3 id="orga73999c"><span class="section-number-3">6.5.</span> <span class="todo TODO">TODO</span> clean requirements.txt, make sure only needed packages are installed</h3>
-</div>
-<div id="outline-container-org575def0" class="outline-3">
-<h3 id="org575def0"><span class="section-number-3">6.6.</span> <span class="todo TODO">TODO</span> CRUD functionality with HTMX</h3>
-<div class="outline-text-3" id="text-6-6">
+<div id="outline-container-org3691aaa" class="outline-3">
+<h3 id="org3691aaa"><span class="section-number-3">6.3.</span> <span class="todo TODO">TODO</span> CRUD functionality with HTMX</h3>
+<div class="outline-text-3" id="text-6-3">
 <p>
 Basic CRUD app for reference (base detail/list templates/views) (meke app list in whcih you can specify the name of the app and it will be represented in all views/urls/etc. Like app list. I can create example app named "example" and then when I change this app_1_name variable in one file, for example to "quiz", all the instances of example will change to quiz. context predessesor maybe?)
 </p>
 </div>
 </div>
-<div id="outline-container-org4a8a6a9" class="outline-3">
-<h3 id="org4a8a6a9"><span class="section-number-3">6.7.</span> <span class="todo TODO">TODO</span> Dockerfile (in the far future)</h3>
-<div class="outline-text-3" id="text-6-7">
+<div id="outline-container-org6e26cf0" class="outline-3">
+<h3 id="org6e26cf0"><span class="section-number-3">6.4.</span> <span class="todo TODO">TODO</span> Dockerfile (in the far future)</h3>
+<div class="outline-text-3" id="text-6-4">
 <p>
 inspiration from here - <a href="https://github.com/wsvincent/djangox/blob/main/Dockerfile">https://github.com/wsvincent/djangox/blob/main/Dockerfile</a>
 </p>
@@ -2495,33 +2102,27 @@ $ docker-compose exec web python manage.py createsuperuser
 </p>
 </div>
 </div>
-<div id="outline-container-org91bb3a7" class="outline-3">
-<h3 id="org91bb3a7"><span class="section-number-3">6.8.</span> <span class="todo TODO">TODO</span> Allauth?????!!! is it needed?</h3>
-<div class="outline-text-3" id="text-6-8">
-<p>
-check djangox
-</p>
-</div>
-</div>
-<div id="outline-container-org38bf398" class="outline-3">
-<h3 id="org38bf398"><span class="section-number-3">6.9.</span> <span class="todo TODO">TODO</span> look into cookie-cutter</h3>
-<div class="outline-text-3" id="text-6-9">
-<p>
-get everything from there
-</p>
-
-<p>
-<a href="https://github.com/cookiecutter/cookiecutter-django">https://github.com/cookiecutter/cookiecutter-django</a>
-</p>
-</div>
-</div>
-<div id="outline-container-org7e3a383" class="outline-3">
-<h3 id="org7e3a383"><span class="section-number-3">6.10.</span> <span class="todo TODO">TODO</span> check health</h3>
-<div class="outline-text-3" id="text-6-10">
+<div id="outline-container-org7da98e0" class="outline-3">
+<h3 id="org7da98e0"><span class="section-number-3">6.5.</span> <span class="todo TODO">TODO</span> check health</h3>
+<div class="outline-text-3" id="text-6-5">
 <p>
 python manage.py check &#x2013;deploy
 </p>
 </div>
+</div>
+<div id="outline-container-org7fcbe4e" class="outline-3">
+<h3 id="org7fcbe4e"><span class="section-number-3">6.6.</span> <span class="todo TODO">TODO</span> Run as docker image, create an image for it.</h3>
+<div class="outline-text-3" id="text-6-6">
+<p>
+check djangox and cookiecutter
+</p>
+</div>
+</div>
+<div id="outline-container-org1f6703c" class="outline-3">
+<h3 id="org1f6703c"><span class="section-number-3">6.7.</span> <span class="todo TODO">TODO</span> add management commands, create some dummy data maybe?</h3>
+</div>
+<div id="outline-container-org488a7f6" class="outline-3">
+<h3 id="org488a7f6"><span class="section-number-3">6.8.</span> <span class="todo TODO">TODO</span> create the clean migrations script</h3>
 </div>
 </div>
 </div>
@@ -2533,8 +2134,8 @@ python manage.py check &#x2013;deploy
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-30 Thu 17:27</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-30 Thu 17:26</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-05-31 Fri 16:53</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-05-31 Fri 13:31</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-30 Thu 16:52</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
