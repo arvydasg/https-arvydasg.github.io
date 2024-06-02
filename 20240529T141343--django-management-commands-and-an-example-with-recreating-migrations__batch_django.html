@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-02 Sun 20:48 -->
+<!-- 2024-06-02 Sun 21:50 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Django management commands and an example with recreating migrations</title>
@@ -32,16 +32,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgfc24f1a">1. Quick summary</a></li>
-<li><a href="#orgfcea4cf">2. Step 1 - create <code>cleanup.cmd</code> file</a></li>
-<li><a href="#org5cc74f6">3. Step 2 - create <code>empty_migration_folder.cmd</code> file</a></li>
-<li><a href="#org40d40e0">4. Step 3 - create create <code>create_root_user.py</code> file</a></li>
+<li><a href="#org8f4df30">1. Quick summary</a></li>
+<li><a href="#org43cc5b0">2. Step 1 - create <code>cleanup.cmd</code> file</a></li>
+<li><a href="#org62a7ac3">3. Step 2 - create <code>empty_migration_folder.cmd</code> file</a></li>
+<li><a href="#org40cf22f">4. Step 3 - create create <code>create_root_user.py</code> file</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgfc24f1a" class="outline-2">
-<h2 id="orgfc24f1a"><span class="section-number-2">1.</span> Quick summary</h2>
+<div id="outline-container-org8f4df30" class="outline-2">
+<h2 id="org8f4df30"><span class="section-number-2">1.</span> Quick summary</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Outside of your project directory, create a folder called helpers</li>
@@ -51,8 +51,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgfcea4cf" class="outline-2">
-<h2 id="orgfcea4cf"><span class="section-number-2">2.</span> Step 1 - create <code>cleanup.cmd</code> file</h2>
+<div id="outline-container-org43cc5b0" class="outline-2">
+<h2 id="org43cc5b0"><span class="section-number-2">2.</span> Step 1 - create <code>cleanup.cmd</code> file</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -87,8 +87,8 @@ echo ======================#  Finished
 </div>
 </div>
 
-<div id="outline-container-org5cc74f6" class="outline-2">
-<h2 id="org5cc74f6"><span class="section-number-2">3.</span> Step 2 - create <code>empty_migration_folder.cmd</code> file</h2>
+<div id="outline-container-org62a7ac3" class="outline-2">
+<h2 id="org62a7ac3"><span class="section-number-2">3.</span> Step 2 - create <code>empty_migration_folder.cmd</code> file</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -114,8 +114,8 @@ for /d %%D in ("%folder%\*") do (
 </div>
 </div>
 
-<div id="outline-container-org40d40e0" class="outline-2">
-<h2 id="org40d40e0"><span class="section-number-2">4.</span> Step 3 - create create <code>create_root_user.py</code> file</h2>
+<div id="outline-container-org40cf22f" class="outline-2">
+<h2 id="org40cf22f"><span class="section-number-2">4.</span> Step 3 - create create <code>create_root_user.py</code> file</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -158,7 +158,7 @@ Inside of the  <code>app/management/commands</code> directory.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-02 Sun 20:48</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-02 Sun 21:50</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 14:34</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 14:13</p>
 	 <div class="generated">
