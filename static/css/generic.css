@@ -19,3 +19,13 @@ a[href^="https://"]::after {
     background-size: contain;
     display: inline-block;
 }
+
+code {
+    color: white;
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 85%;
+    white-space: break-spaces;
+    background-color: #6e7681;
+    border-radius: 6px;
+}
