@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:25 -->
+<!-- 2024-06-03 Mon 13:30 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Trying out devcontainers in vscode</title>
@@ -32,19 +32,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org620eb6b">1. Devcontainers</a>
+<li><a href="#org416e591">1. Devcontainers</a>
 <ul>
-<li><a href="#orgfb49019">1.1. Notes</a>
+<li><a href="#org8a28293">1.1. Notes</a>
 <ul>
-<li><a href="#orga7e4c69">1.1.1. Why devcontainers</a></li>
+<li><a href="#orgf486073">1.1.1. Why devcontainers</a></li>
 </ul>
 </li>
-<li><a href="#org0091258">1.2. The setup</a>
+<li><a href="#org897d9c6">1.2. The setup</a>
 <ul>
-<li><a href="#orga158baf">1.2.1. How to set up devcontainers</a></li>
-<li><a href="#org03f0b22">1.2.2. .devcontainers folder</a></li>
-<li><a href="#org6c9f459">1.2.3. Dockerfile</a></li>
-<li><a href="#org628ed70">1.2.4. devcontainer.json</a></li>
+<li><a href="#org375c300">1.2.1. How to set up devcontainers</a></li>
+<li><a href="#org285e8b0">1.2.2. .devcontainers folder</a></li>
+<li><a href="#orgfecf6b5">1.2.3. Dockerfile</a></li>
+<li><a href="#org3137e4f">1.2.4. devcontainer.json</a></li>
 </ul>
 </li>
 </ul>
@@ -53,20 +53,20 @@
 </div>
 </nav>
 
-<div id="outline-container-org620eb6b" class="outline-2">
-<h2 id="org620eb6b"><span class="section-number-2">1.</span> Devcontainers</h2>
+<div id="outline-container-org416e591" class="outline-2">
+<h2 id="org416e591"><span class="section-number-2">1.</span> Devcontainers</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 STOPPED USING IT HERE (due to slowliness) - <a href="https://github.com/azegas/quotes/commit/9477b9062be2e9ac0aa2b7158cfdebabac6a4f54">https://github.com/azegas/quotes/commit/9477b9062be2e9ac0aa2b7158cfdebabac6a4f54</a>
 </p>
 </div>
 
-<div id="outline-container-orgfb49019" class="outline-3">
-<h3 id="orgfb49019"><span class="section-number-3">1.1.</span> Notes</h3>
+<div id="outline-container-org8a28293" class="outline-3">
+<h3 id="org8a28293"><span class="section-number-3">1.1.</span> Notes</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-orga7e4c69" class="outline-4">
-<h4 id="orga7e4c69"><span class="section-number-4">1.1.1.</span> Why devcontainers</h4>
+<div id="outline-container-orgf486073" class="outline-4">
+<h4 id="orgf486073"><span class="section-number-4">1.1.1.</span> Why devcontainers</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 Kind of nice to have this practice. People use it at work also. Linux environment&#x2026; what could go wrong.
@@ -110,12 +110,12 @@ that is opening this project and so on (jinja, pylance, w/e else).
 </div>
 </div>
 
-<div id="outline-container-org0091258" class="outline-3">
-<h3 id="org0091258"><span class="section-number-3">1.2.</span> The setup</h3>
+<div id="outline-container-org897d9c6" class="outline-3">
+<h3 id="org897d9c6"><span class="section-number-3">1.2.</span> The setup</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-orga158baf" class="outline-4">
-<h4 id="orga158baf"><span class="section-number-4">1.2.1.</span> How to set up devcontainers</h4>
+<div id="outline-container-org375c300" class="outline-4">
+<h4 id="org375c300"><span class="section-number-4">1.2.1.</span> How to set up devcontainers</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li><a href="https://github.com/azegas/quotes/issues/47">My own reference task from quotes project</a></li>
@@ -143,16 +143,16 @@ Keep in mind that you don't have to copy any files from one environment to the d
 </div>
 </div>
 
-<div id="outline-container-org03f0b22" class="outline-4">
-<h4 id="org03f0b22"><span class="section-number-4">1.2.2.</span> .devcontainers folder</h4>
+<div id="outline-container-org285e8b0" class="outline-4">
+<h4 id="org285e8b0"><span class="section-number-4">1.2.2.</span> .devcontainers folder</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 Create <code>.devcontainers</code> folder in your project's root directory.
 </p>
 </div>
 </div>
-<div id="outline-container-org6c9f459" class="outline-4">
-<h4 id="org6c9f459"><span class="section-number-4">1.2.3.</span> Dockerfile</h4>
+<div id="outline-container-orgfecf6b5" class="outline-4">
+<h4 id="orgfecf6b5"><span class="section-number-4">1.2.3.</span> Dockerfile</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <p>
 Inside of the <code>.devcontainers</code> folder, create a <code>Dockerfile</code> file with the
@@ -181,8 +181,8 @@ RUN python3 -m pip install --upgrade pip <span style="font-style: italic;">\</sp
 </div>
 </div>
 
-<div id="outline-container-org628ed70" class="outline-4">
-<h4 id="org628ed70"><span class="section-number-4">1.2.4.</span> devcontainer.json</h4>
+<div id="outline-container-org3137e4f" class="outline-4">
+<h4 id="org3137e4f"><span class="section-number-4">1.2.4.</span> devcontainer.json</h4>
 <div class="outline-text-4" id="text-1-2-4">
 <p>
 Alongisde the Dockerfile, create a `devcontainer.json` file with this content:
@@ -276,7 +276,7 @@ Alongisde the Dockerfile, create a `devcontainer.json` file with this content:
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:25</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 13:16</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-27 Mon 15:04</p>
 	 <div class="generated">

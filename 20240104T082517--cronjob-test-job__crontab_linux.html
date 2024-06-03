@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:25 -->
+<!-- 2024-06-03 Mon 13:30 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Cronjob test job</title>
@@ -32,9 +32,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org71fd526">1. fix serve time</a></li>
-<li><a href="#orgbd70fb1">2. create a python file</a></li>
-<li><a href="#org755edc5">3. create a cronjob</a></li>
+<li><a href="#org4699e3a">1. fix serve time</a></li>
+<li><a href="#org62c7868">2. create a python file</a></li>
+<li><a href="#org24f79a6">3. create a cronjob</a></li>
 </ul>
 </div>
 </nav>
@@ -46,8 +46,8 @@ Read info about cron: <code>vim /etc/crontab</code>
 cron helper - <code>Crontab.guru</code> - The cron schedule expression editor
 </p>
 
-<div id="outline-container-org71fd526" class="outline-2">
-<h2 id="org71fd526"><span class="section-number-2">1.</span> fix serve time</h2>
+<div id="outline-container-org4699e3a" class="outline-2">
+<h2 id="org4699e3a"><span class="section-number-2">1.</span> fix serve time</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="devnotes/20240104T082156--set-the-correct-server-time__linux.html">set the correct server time</a>
@@ -55,8 +55,8 @@ cron helper - <code>Crontab.guru</code> - The cron schedule expression editor
 </div>
 </div>
 
-<div id="outline-container-orgbd70fb1" class="outline-2">
-<h2 id="orgbd70fb1"><span class="section-number-2">2.</span> create a python file</h2>
+<div id="outline-container-org62c7868" class="outline-2">
+<h2 id="org62c7868"><span class="section-number-2">2.</span> create a python file</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">import</span> datetime
@@ -82,8 +82,8 @@ Make it executable
 </div>
 </div>
 
-<div id="outline-container-org755edc5" class="outline-2">
-<h2 id="org755edc5"><span class="section-number-2">3.</span> create a cronjob</h2>
+<div id="outline-container-org24f79a6" class="outline-2">
+<h2 id="org24f79a6"><span class="section-number-2">3.</span> create a cronjob</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-bash">crontab -e
@@ -112,7 +112,7 @@ This is a test cron job. Current time: 2023-07-11 12:34:01.576551
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:25</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-04 Thu 08:25</p>
 	 <div class="generated">

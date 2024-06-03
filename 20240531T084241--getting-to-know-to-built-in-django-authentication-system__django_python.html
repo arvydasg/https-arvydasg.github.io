@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:25 -->
+<!-- 2024-06-03 Mon 13:30 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Getting to know to built in django authentication system</title>
@@ -32,12 +32,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9c7101c">1. Get to know to Django's built-in in authentication system</a></li>
-<li><a href="#org8102c57">2. Log In functionality</a></li>
-<li><a href="#org445d403">3. Log Out functionality</a></li>
-<li><a href="#orge3adf9c">4. Sign Up functionality</a></li>
-<li><a href="#orgae9a72f">5. Password Change</a></li>
-<li><a href="#org490d1cb">6. Password Reset</a></li>
+<li><a href="#org2e2ea5b">1. Get to know to Django's built-in in authentication system</a></li>
+<li><a href="#orgc534c2c">2. Log In functionality</a></li>
+<li><a href="#org9c999ae">3. Log Out functionality</a></li>
+<li><a href="#org3082454">4. Sign Up functionality</a></li>
+<li><a href="#org4c0aa9e">5. Password Change</a></li>
+<li><a href="#org7f83cba">6. Password Reset</a></li>
 </ul>
 </div>
 </nav>
@@ -54,8 +54,8 @@ this post was replaced by it. The concepts below are still good to know and are
 very relevant.
 </p>
 
-<div id="outline-container-org9c7101c" class="outline-2">
-<h2 id="org9c7101c"><span class="section-number-2">1.</span> Get to know to Django's built-in in authentication system</h2>
+<div id="outline-container-org2e2ea5b" class="outline-2">
+<h2 id="org2e2ea5b"><span class="section-number-2">1.</span> Get to know to Django's built-in in authentication system</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 In this section, we'll configure a complete <a href="https://docs.djangoproject.com/en/5.0/topics/auth/">user authentication system</a> in
@@ -122,8 +122,8 @@ accounts/reset/done/ [<span style="font-weight: bold; font-style: italic;">name<
 </div>
 </div>
 
-<div id="outline-container-org8102c57" class="outline-2">
-<h2 id="org8102c57"><span class="section-number-2">2.</span> Log In functionality</h2>
+<div id="outline-container-orgc534c2c" class="outline-2">
+<h2 id="orgc534c2c"><span class="section-number-2">2.</span> Log In functionality</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Let's make our login page! By default, Django will look within a templates
@@ -221,8 +221,8 @@ earlier.
 </div>
 </div>
 
-<div id="outline-container-org445d403" class="outline-2">
-<h2 id="org445d403"><span class="section-number-2">3.</span> Log Out functionality</h2>
+<div id="outline-container-org9c999ae" class="outline-2">
+<h2 id="org9c999ae"><span class="section-number-2">3.</span> Log Out functionality</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 But how do we log out? The only option currently is to go into the admin panel
@@ -271,8 +271,8 @@ the <code>settings.py</code> file should look as follows:
 </div>
 </div>
 
-<div id="outline-container-orge3adf9c" class="outline-2">
-<h2 id="orge3adf9c"><span class="section-number-2">4.</span> Sign Up functionality</h2>
+<div id="outline-container-org3082454" class="outline-2">
+<h2 id="org3082454"><span class="section-number-2">4.</span> Sign Up functionality</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Now that we have sorted out logging in and logging out, it is time to add a
@@ -436,8 +436,8 @@ And then, after a successful login, you'll be redirected to the homepage.
 </div>
 </div>
 
-<div id="outline-container-orgae9a72f" class="outline-2">
-<h2 id="orgae9a72f"><span class="section-number-2">5.</span> Password Change</h2>
+<div id="outline-container-org4c0aa9e" class="outline-2">
+<h2 id="org4c0aa9e"><span class="section-number-2">5.</span> Password Change</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Django provides a default implementation of password change functionality. To
@@ -474,8 +474,8 @@ We can add a password change link to the <code>base.html</code>.
 </div>
 </div>
 
-<div id="outline-container-org490d1cb" class="outline-2">
-<h2 id="org490d1cb"><span class="section-number-2">6.</span> Password Reset</h2>
+<div id="outline-container-org7f83cba" class="outline-2">
+<h2 id="org7f83cba"><span class="section-number-2">6.</span> Password Reset</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 A password reset page is useful when a user forgets their log in information: a
@@ -581,7 +581,7 @@ override them.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:25</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 13:16</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-31 Fri 08:42</p>
 	 <div class="generated">
