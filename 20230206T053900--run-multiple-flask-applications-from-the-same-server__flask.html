@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:30 -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2024-06-03 Mon 19:08 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Run Multiple Flask Applications from the same server</title>
-<meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="Welcome to my devnotes site" />
-<meta name="keywords" content="emacs django" />
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
@@ -23,22 +24,22 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:21</div>
+<div id="updated">Updated: 2024-06-03 Mon 19:08</div>
 </div>
-<div id="content" class="content">
+<div id="content">
 <header>
 <h1 class="title">Run Multiple Flask Applications from the same server</h1>
-</header><nav id="table-of-contents" role="doc-toc">
+</header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#org9253481">1. Why I Wanted to Run Multiple Flask Applications</a></li>
-<li><a href="#orga0176f3">2. How to Configure Flask Application Dispatching</a></li>
-<li><a href="#org38fa180">3. Set up the Separate Applications</a></li>
-<li><a href="#org4e08728">4. Combine the Applications</a></li>
-<li><a href="#orgceba051">5. Invoke a Development Server</a></li>
-<li><a href="#org6dabc0e">6. Running both apps</a></li>
-<li><a href="#org1549f2a">7. Conclusion</a></li>
+<li><a href="#org711ea9a">1. Why I Wanted to Run Multiple Flask Applications</a></li>
+<li><a href="#orgd4e4866">2. How to Configure Flask Application Dispatching</a></li>
+<li><a href="#org2691d06">3. Set up the Separate Applications</a></li>
+<li><a href="#org73e395c">4. Combine the Applications</a></li>
+<li><a href="#orgb0e6b6c">5. Invoke a Development Server</a></li>
+<li><a href="#org1e519c9">6. Running both apps</a></li>
+<li><a href="#org91bca1a">7. Conclusion</a></li>
 </ul>
 </div>
 </nav>
@@ -48,7 +49,7 @@ different URL paths.
 </p>
 
 
-<figure id="org5c19869">
+<figure>
 <img src="./media/matrioshka.jpg" alt="matrioshka.jpg" width="600px">
 
 </figure>
@@ -60,8 +61,8 @@ instead of by accessing a different port. Application dispatching
 seems to be a solution.
 </p>
 
-<div id="outline-container-org9253481" class="outline-2">
-<h2 id="org9253481"><span class="section-number-2">1.</span> Why I Wanted to Run Multiple Flask Applications</h2>
+<div id="outline-container-org711ea9a" class="outline-2">
+<h2 id="org711ea9a"><span class="section-number-2">1</span> Why I Wanted to Run Multiple Flask Applications</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 As a part of my <a href="https://arvydas.dev/codeacademy/">CodeAcademy</a> Python journey I decided to set up a
@@ -87,8 +88,8 @@ you can run them in the same interpreter side by side if you want.
 </div>
 </div>
 
-<div id="outline-container-orga0176f3" class="outline-2">
-<h2 id="orga0176f3"><span class="section-number-2">2.</span> How to Configure Flask Application Dispatching</h2>
+<div id="outline-container-orgd4e4866" class="outline-2">
+<h2 id="orgd4e4866"><span class="section-number-2">2</span> How to Configure Flask Application Dispatching</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Setting this up is relatively straightforward when you take a modular
@@ -103,8 +104,8 @@ approach.
 </div>
 </div>
 
-<div id="outline-container-org38fa180" class="outline-2">
-<h2 id="org38fa180"><span class="section-number-2">3.</span> Set up the Separate Applications</h2>
+<div id="outline-container-org2691d06" class="outline-2">
+<h2 id="org2691d06"><span class="section-number-2">3</span> Set up the Separate Applications</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Here are 2 Flask applications:
@@ -118,7 +119,7 @@ flask_app_1
 <pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">/flask_1/__init__.py</span>
 <span style="font-weight: bold;">from</span> flask <span style="font-weight: bold;">import</span> Flask
 <span style="font-weight: bold; font-style: italic;">app</span> = Flask(<span style="font-weight: bold;">__name__</span>)
-app.<span style="font-weight: bold; font-style: italic;">debug</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
+<span style="font-weight: bold; font-style: italic;">app.debug</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
 <span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">'/'</span>)
 <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">hello_world</span>():
     <span style="font-weight: bold;">return</span> <span style="font-style: italic;">'&lt;h1&gt;Hello, World! I am Flask App 1.&lt;/h1&gt; \</span>
@@ -134,7 +135,7 @@ flask_app_1
 <pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">/flask_2/__init__.py</span>
 <span style="font-weight: bold;">from</span> flask <span style="font-weight: bold;">import</span> Flask
 <span style="font-weight: bold; font-style: italic;">app</span> = Flask(<span style="font-weight: bold;">__name__</span>)
-app.<span style="font-weight: bold; font-style: italic;">debug</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
+<span style="font-weight: bold; font-style: italic;">app.debug</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
 <span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">'/'</span>)
 <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">hello_world</span>():
     <span style="font-weight: bold;">return</span> <span style="font-style: italic;">'&lt;h1&gt;Hello, World! I am Flask App 2.&lt;/h1&gt; \</span>
@@ -144,8 +145,8 @@ app.<span style="font-weight: bold; font-style: italic;">debug</span> = <span st
 </div>
 </div>
 
-<div id="outline-container-org4e08728" class="outline-2">
-<h2 id="org4e08728"><span class="section-number-2">4.</span> Combine the Applications</h2>
+<div id="outline-container-org73e395c" class="outline-2">
+<h2 id="org73e395c"><span class="section-number-2">4</span> Combine the Applications</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 You will utilize the Werkzeug <a href="https://werkzeug.palletsprojects.com/en/2.2.x/middleware/dispatcher/">Dispatcher Middleware</a>. flask_app_1 will
@@ -165,8 +166,8 @@ run on “/” and flask_app_2 will run on “/flask_app_2”.
 </div>
 </div>
 
-<div id="outline-container-orgceba051" class="outline-2">
-<h2 id="orgceba051"><span class="section-number-2">5.</span> Invoke a Development Server</h2>
+<div id="outline-container-orgb0e6b6c" class="outline-2">
+<h2 id="orgb0e6b6c"><span class="section-number-2">5</span> Invoke a Development Server</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Here is a small file that calls the <a href="https://werkzeug.palletsprojects.com/en/2.2.x/serving/#werkzeug.serving.run_simple">Werkzeug Run Simple</a> server that is
@@ -185,8 +186,8 @@ suitable for development. <code>For deployment</code>, you’ll need to configur
 </div>
 </div>
 
-<div id="outline-container-org6dabc0e" class="outline-2">
-<h2 id="org6dabc0e"><span class="section-number-2">6.</span> Running both apps</h2>
+<div id="outline-container-org1e519c9" class="outline-2">
+<h2 id="org1e519c9"><span class="section-number-2">6</span> Running both apps</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-python">python3 run.py
@@ -194,21 +195,21 @@ suitable for development. <code>For deployment</code>, you’ll need to configur
 </div>
 
 
-<figure id="org0e6d40b">
+<figure>
 <img src="./media/flask_multiple1.png" alt="flask_multiple1.png" width="1200px">
 
 </figure>
 
 
-<figure id="org602fdfa">
+<figure>
 <img src="./media/flask_multiple2.png" alt="flask_multiple2.png" width="1200px">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org1549f2a" class="outline-2">
-<h2 id="org1549f2a"><span class="section-number-2">7.</span> Conclusion</h2>
+<div id="outline-container-org91bca1a" class="outline-2">
+<h2 id="org91bca1a"><span class="section-number-2">7</span> Conclusion</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 As stated before, this is a simple setup that only requires a modular approach
@@ -232,11 +233,11 @@ and clone it to get a working example.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:08</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:08</p>
 	 <p class="date">This org file is <u>created</u>: 2023-02-06 Mon 05:39</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

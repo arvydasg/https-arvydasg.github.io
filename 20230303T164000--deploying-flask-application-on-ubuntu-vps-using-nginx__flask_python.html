@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:30 -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2024-06-03 Mon 19:08 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Deploying Flask Application on Ubuntu VPS using Nginx</title>
-<meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="Welcome to my devnotes site" />
-<meta name="keywords" content="emacs django" />
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
@@ -23,23 +24,23 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:21</div>
+<div id="updated">Updated: 2024-06-03 Mon 19:08</div>
 </div>
-<div id="content" class="content">
+<div id="content">
 <header>
 <h1 class="title">Deploying Flask Application on Ubuntu VPS using Nginx</h1>
-</header><nav id="table-of-contents" role="doc-toc">
+</header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#org708564b">1. Apache vs nginx</a></li>
-<li><a href="#org8f30351">2. Get yourself a virtual private server(VPS)</a></li>
-<li><a href="#orgb425065">3. Install nginx</a></li>
-<li><a href="#orgc8b8d6c">4. Let's run project</a></li>
-<li><a href="#org1d31bde">5. Gunicorn</a></li>
-<li><a href="#orgd7a353c">6. Dealing with secret files</a>
+<li><a href="#orgb6550b4">1. Apache vs nginx</a></li>
+<li><a href="#org031c537">2. Get yourself a virtual private server(VPS)</a></li>
+<li><a href="#org39b1ae3">3. Install nginx</a></li>
+<li><a href="#org93ee442">4. Let's run project</a></li>
+<li><a href="#org5936387">5. Gunicorn</a></li>
+<li><a href="#org4315001">6. Dealing with secret files</a>
 <ul>
-<li><a href="#org073d0ff">6.1. config.json method</a></li>
+<li><a href="#org4eb8d60">6.1. config.json method</a></li>
 </ul>
 </li>
 </ul>
@@ -56,8 +57,8 @@ live. For that I need to host it.
 Will share with you how I did it.
 </p>
 
-<div id="outline-container-org708564b" class="outline-2">
-<h2 id="org708564b"><span class="section-number-2">1.</span> Apache vs nginx</h2>
+<div id="outline-container-orgb6550b4" class="outline-2">
+<h2 id="orgb6550b4"><span class="section-number-2">1</span> Apache vs nginx</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Will just leave it here.
@@ -74,8 +75,8 @@ is not as vulnerable as Apache, and it is also very easy to set up.
 </div>
 </div>
 
-<div id="outline-container-org8f30351" class="outline-2">
-<h2 id="org8f30351"><span class="section-number-2">2.</span> Get yourself a virtual private server(VPS)</h2>
+<div id="outline-container-org031c537" class="outline-2">
+<h2 id="org031c537"><span class="section-number-2">2</span> Get yourself a virtual private server(VPS)</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 This time I was using Linode, since I got some free credits with it,
@@ -87,7 +88,7 @@ Create new linode:
 </p>
 
 
-<figure id="org2aa9632">
+<figure>
 <img src="./static/images/linode.png" alt="linode.png" width="1200px">
 
 </figure>
@@ -117,8 +118,8 @@ have set up for it. And you should now be inside your server!
 </div>
 </div>
 
-<div id="outline-container-orgb425065" class="outline-2">
-<h2 id="orgb425065"><span class="section-number-2">3.</span> Install nginx</h2>
+<div id="outline-container-org39b1ae3" class="outline-2">
+<h2 id="org39b1ae3"><span class="section-number-2">3</span> Install nginx</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install nginx
@@ -172,8 +173,8 @@ running there. That is why we will user <a href="https://gunicorn.org/#quickstar
 </div>
 </div>
 
-<div id="outline-container-orgc8b8d6c" class="outline-2">
-<h2 id="orgc8b8d6c"><span class="section-number-2">4.</span> Let's run project</h2>
+<div id="outline-container-org93ee442" class="outline-2">
+<h2 id="org93ee442"><span class="section-number-2">4</span> Let's run project</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install python3-pip
@@ -202,8 +203,8 @@ Now it works! Your application is live! Magic!
 </div>
 </div>
 
-<div id="outline-container-org1d31bde" class="outline-2">
-<h2 id="org1d31bde"><span class="section-number-2">5.</span> Gunicorn</h2>
+<div id="outline-container-org5936387" class="outline-2">
+<h2 id="org5936387"><span class="section-number-2">5</span> Gunicorn</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 "This is currently a development server and not good for production
@@ -251,12 +252,12 @@ sudo pkill -f gunicorn3
 </div>
 </div>
 
-<div id="outline-container-orgd7a353c" class="outline-2">
-<h2 id="orgd7a353c"><span class="section-number-2">6.</span> Dealing with secret files</h2>
+<div id="outline-container-org4315001" class="outline-2">
+<h2 id="org4315001"><span class="section-number-2">6</span> Dealing with secret files</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org073d0ff" class="outline-3">
-<h3 id="org073d0ff"><span class="section-number-3">6.1.</span> config.json method</h3>
+<div id="outline-container-org4eb8d60" class="outline-3">
+<h3 id="org4eb8d60"><span class="section-number-3">6.1</span> config.json method</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 We will try to hide the:
@@ -319,12 +320,12 @@ text, for example:
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">replace this</span>
-app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">"SQLALCHEMY_DATABASE_URI"</span>] = <span style="font-style: italic;">"sqlite:///"</span> + os.path.join(
+<span style="font-weight: bold; font-style: italic;">app.config</span>[<span style="font-style: italic;">"SQLALCHEMY_DATABASE_URI"</span>] = <span style="font-style: italic;">"sqlite:///"</span> + os.path.join(
     basedir, <span style="font-style: italic;">"db.db"</span>
 )
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">with this</span>
 
-app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">"SQLALCHEMY_DATABASE_URI"</span>] = <span style="font-style: italic;">"sqlite:///"</span> + os.path.join(
+<span style="font-weight: bold; font-style: italic;">app.config</span>[<span style="font-style: italic;">"SQLALCHEMY_DATABASE_URI"</span>] = <span style="font-style: italic;">"sqlite:///"</span> + os.path.join(
     basedir, config.get(<span style="font-style: italic;">"SQLALCHEMY_DATABASE_URI"</span>)
 )
 </pre>
@@ -332,19 +333,19 @@ app.<span style="font-weight: bold; font-style: italic;">config</span>[<span sty
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">this</span>
-app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">"UPLOAD_FOLDER"</span>] = <span style="font-style: italic;">"static/images"</span>
+<span style="font-weight: bold; font-style: italic;">app.config</span>[<span style="font-style: italic;">"UPLOAD_FOLDER"</span>] = <span style="font-style: italic;">"static/images"</span>
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">with this</span>
-app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">"UPLOAD_FOLDER"</span>] = config.get(<span style="font-style: italic;">"UPLOAD_FOLDER"</span>)
+<span style="font-weight: bold; font-style: italic;">app.config</span>[<span style="font-style: italic;">"UPLOAD_FOLDER"</span>] = config.get(<span style="font-style: italic;">"UPLOAD_FOLDER"</span>)
 </pre>
 </div>
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">this</span>
 <span style="font-weight: bold; font-style: italic;">SECRET_KEY</span> = os.urandom(32)
-app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">"SECRET_KEY"</span>] = SECRET_KEY
+<span style="font-weight: bold; font-style: italic;">app.config</span>[<span style="font-style: italic;">"SECRET_KEY"</span>] = SECRET_KEY
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">with this</span>
-app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">"SECRET_KEY"</span>] = config.get(<span style="font-style: italic;">"SECRET_KEY"</span>)
+<span style="font-weight: bold; font-style: italic;">app.config</span>[<span style="font-style: italic;">"SECRET_KEY"</span>] = config.get(<span style="font-style: italic;">"SECRET_KEY"</span>)
 </pre>
 </div>
 
@@ -406,11 +407,11 @@ should find config.json file.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:08</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:08</p>
 	 <p class="date">This org file is <u>created</u>: 2023-03-03 Fri 16:40</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

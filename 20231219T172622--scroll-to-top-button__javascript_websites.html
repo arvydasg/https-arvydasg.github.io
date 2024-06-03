@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:30 -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2024-06-03 Mon 19:08 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Scroll to top button</title>
-<meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="Welcome to my devnotes site" />
-<meta name="keywords" content="emacs django" />
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
@@ -23,18 +24,18 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:22</div>
+<div id="updated">Updated: 2024-06-03 Mon 19:08</div>
 </div>
-<div id="content" class="content">
+<div id="content">
 <header>
 <h1 class="title">Scroll to top button</h1>
-</header><nav id="table-of-contents" role="doc-toc">
+</header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#org3c4a556">1. html</a></li>
-<li><a href="#orgc642bb2">2. css</a></li>
-<li><a href="#org58ff461">3. js</a></li>
+<li><a href="#orgd8d5bbd">1. html</a></li>
+<li><a href="#orga8c0d5a">2. css</a></li>
+<li><a href="#orgfb1b225">3. js</a></li>
 </ul>
 </div>
 </nav>
@@ -44,8 +45,8 @@ navigation is not sticky and you need a quick way to get back to the top of the
 page.
 </p>
 
-<div id="outline-container-org3c4a556" class="outline-2">
-<h2 id="org3c4a556"><span class="section-number-2">1.</span> html</h2>
+<div id="outline-container-orgd8d5bbd" class="outline-2">
+<h2 id="orgd8d5bbd"><span class="section-number-2">1</span> html</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Add this to postamble(footer, or bottom of your html page):
@@ -61,13 +62,13 @@ Remove the emacs formatting(if using outside of Emacs), the \'s especially.
 </div>
 </div>
 
-<div id="outline-container-orgc642bb2" class="outline-2">
-<h2 id="orgc642bb2"><span class="section-number-2">2.</span> css</h2>
+<div id="outline-container-orga8c0d5a" class="outline-2">
+<h2 id="orga8c0d5a"><span class="section-number-2">2</span> css</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
-<pre class="src src-css"><span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">scroll to the top button</span><span style="font-weight: bold; font-style: italic;"> */</span>
+<pre class="src src-css"><span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">scroll to the top button </span><span style="font-weight: bold; font-style: italic;">*/</span>
 
-<span style="font-weight: bold;">#myBtn</span> {
+<span style="font-weight: bold;">#myBtn </span>{
   <span style="font-weight: bold;">display</span>: none;
   <span style="font-weight: bold;">position</span>: fixed;
   <span style="font-weight: bold;">bottom</span>: 20px;
@@ -85,7 +86,7 @@ Remove the emacs formatting(if using outside of Emacs), the \'s especially.
   <span style="font-weight: bold;">border-radius</span>: 4px;
 }
 
-<span style="font-weight: bold;">#myBtn:hover</span> {
+<span style="font-weight: bold;">#myBtn:hover </span>{
   <span style="font-weight: bold;">background-color</span>: <span style="color: #ffffff; background-color: #555;">#555</span>;
 }
 </pre>
@@ -93,8 +94,8 @@ Remove the emacs formatting(if using outside of Emacs), the \'s especially.
 </div>
 </div>
 
-<div id="outline-container-org58ff461" class="outline-2">
-<h2 id="org58ff461"><span class="section-number-2">3.</span> js</h2>
+<div id="outline-container-orgfb1b225" class="outline-2">
+<h2 id="orgfb1b225"><span class="section-number-2">3</span> js</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-js"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">scroll to the top button</span>
@@ -131,11 +132,11 @@ window.onscroll = <span style="font-weight: bold;">function</span>() {scrollFunc
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:08</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:08</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-19 Tue 17:26</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

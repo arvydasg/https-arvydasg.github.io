@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:30 -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2024-06-03 Mon 19:08 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ssh into gcp server</title>
-<meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="Welcome to my devnotes site" />
-<meta name="keywords" content="emacs django" />
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
@@ -23,28 +24,28 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:22</div>
+<div id="updated">Updated: 2024-06-03 Mon 19:08</div>
 </div>
-<div id="content" class="content">
+<div id="content">
 <header>
 <h1 class="title">Ssh into gcp server</h1>
-</header><nav id="table-of-contents" role="doc-toc">
+</header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#orgda2469e">1. Networking -&gt; VPC network -&gt; Firewall</a></li>
-<li><a href="#org93f46e0">2. Compute Engine -&gt; Virtual Machines -&gt; VM instances</a></li>
-<li><a href="#org8988249">3. Generate public/private key pair</a>
+<li><a href="#orgef5929f">1. Networking -&gt; VPC network -&gt; Firewall</a></li>
+<li><a href="#orgd897ac5">2. Compute Engine -&gt; Virtual Machines -&gt; VM instances</a></li>
+<li><a href="#orgb701ab2">3. Generate public/private key pair</a>
 <ul>
-<li><a href="#org96db0f6">3.1. Generate key pair over PuTTYgen</a></li>
-<li><a href="#orgce9eb22">3.2. Generate key pair over WSL</a></li>
+<li><a href="#org2a41eb9">3.1. Generate key pair over PuTTYgen</a></li>
+<li><a href="#org83b9ba3">3.2. Generate key pair over WSL</a></li>
 </ul>
 </li>
-<li><a href="#org771ae79">4. Add the <code>public</code> key to your GCP project:</a></li>
-<li><a href="#org2432562">5. Connect to the GCP VM using the new SSH key</a>
+<li><a href="#org7d4b55f">4. Add the <code>public</code> key to your GCP project:</a></li>
+<li><a href="#org5c02697">5. Connect to the GCP VM using the new SSH key</a>
 <ul>
-<li><a href="#org80c5052">5.1. Over putty</a></li>
-<li><a href="#org77bd54a">5.2. Over wsl</a></li>
+<li><a href="#org0c23f8a">5.1. Over putty</a></li>
+<li><a href="#orga65e782">5.2. Over wsl</a></li>
 </ul>
 </li>
 </ul>
@@ -58,8 +59,8 @@ This video explains it well - <a href="https://www.youtube.com/watch?v=fmh94mNQH
 When you have your instance running, first thing is make sure firewall rules accept the traffic.
 </p>
 
-<div id="outline-container-orgda2469e" class="outline-2">
-<h2 id="orgda2469e"><span class="section-number-2">1.</span> Networking -&gt; VPC network -&gt; Firewall</h2>
+<div id="outline-container-orgef5929f" class="outline-2">
+<h2 id="orgef5929f"><span class="section-number-2">1</span> Networking -&gt; VPC network -&gt; Firewall</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 If you did not create any rules yet, there should be one named "default-allow-ssh". Port 22 on protocol tcp is open to the internet.
@@ -71,8 +72,8 @@ If it's done once, you don't have to do it again for each machine
 </div>
 </div>
 
-<div id="outline-container-org93f46e0" class="outline-2">
-<h2 id="org93f46e0"><span class="section-number-2">2.</span> Compute Engine -&gt; Virtual Machines -&gt; VM instances</h2>
+<div id="outline-container-orgd897ac5" class="outline-2">
+<h2 id="orgd897ac5"><span class="section-number-2">2</span> Compute Engine -&gt; Virtual Machines -&gt; VM instances</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Get the external ip and try to connect via putty.
@@ -91,12 +92,12 @@ authenticate.
 </div>
 </div>
 
-<div id="outline-container-org8988249" class="outline-2">
-<h2 id="org8988249"><span class="section-number-2">3.</span> Generate public/private key pair</h2>
+<div id="outline-container-orgb701ab2" class="outline-2">
+<h2 id="orgb701ab2"><span class="section-number-2">3</span> Generate public/private key pair</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org96db0f6" class="outline-3">
-<h3 id="org96db0f6"><span class="section-number-3">3.1.</span> Generate key pair over PuTTYgen</h3>
+<div id="outline-container-org2a41eb9" class="outline-3">
+<h3 id="org2a41eb9"><span class="section-number-3">3.1</span> Generate key pair over PuTTYgen</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Open <code>PuTTY Key Generator</code> or <code>PuTTYgen</code> to generate one <code>RSA key 2048 bits</code>.
@@ -117,8 +118,8 @@ Key comment - this is your USERNAME! you want to use to connect to your machine
 </div>
 </div>
 
-<div id="outline-container-orgce9eb22" class="outline-3">
-<h3 id="orgce9eb22"><span class="section-number-3">3.2.</span> Generate key pair over WSL</h3>
+<div id="outline-container-org83b9ba3" class="outline-3">
+<h3 id="org83b9ba3"><span class="section-number-3">3.2</span> Generate key pair over WSL</h3>
 <div class="outline-text-3" id="text-3-2">
 <blockquote>
 <p>
@@ -144,8 +145,8 @@ Copy the entire contents of the public key that is displayed in the terminal.
 </div>
 </div>
 
-<div id="outline-container-org771ae79" class="outline-2">
-<h2 id="org771ae79"><span class="section-number-2">4.</span> Add the <code>public</code> key to your GCP project:</h2>
+<div id="outline-container-org7d4b55f" class="outline-2">
+<h2 id="org7d4b55f"><span class="section-number-2">4</span> Add the <code>public</code> key to your GCP project:</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Go to the GCP Console</li>
@@ -165,12 +166,12 @@ username and add the ssh key. (can check this in logs, the same ssh page)
 </div>
 </div>
 
-<div id="outline-container-org2432562" class="outline-2">
-<h2 id="org2432562"><span class="section-number-2">5.</span> Connect to the GCP VM using the new SSH key</h2>
+<div id="outline-container-org5c02697" class="outline-2">
+<h2 id="org5c02697"><span class="section-number-2">5</span> Connect to the GCP VM using the new SSH key</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org80c5052" class="outline-3">
-<h3 id="org80c5052"><span class="section-number-3">5.1.</span> Over putty</h3>
+<div id="outline-container-org0c23f8a" class="outline-3">
+<h3 id="org0c23f8a"><span class="section-number-3">5.1</span> Over putty</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li>Take the external ip, put it into the Host Name field in putty, port 22.</li>
@@ -184,8 +185,8 @@ username and add the ssh key. (can check this in logs, the same ssh page)
 </div>
 </div>
 
-<div id="outline-container-org77bd54a" class="outline-3">
-<h3 id="org77bd54a"><span class="section-number-3">5.2.</span> Over wsl</h3>
+<div id="outline-container-orga65e782" class="outline-3">
+<h3 id="orga65e782"><span class="section-number-3">5.2</span> Over wsl</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 In your WSL terminal, use the ssh command followed by the username and IP
@@ -260,11 +261,11 @@ Adding set mouse=a might have helped for vim also. cool.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:08</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:08</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-04 Thu 07:09</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

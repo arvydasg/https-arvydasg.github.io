@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:30 -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2024-06-03 Mon 19:08 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Add a lightbox effect for images in html</title>
-<meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="Welcome to my devnotes site" />
-<meta name="keywords" content="emacs django" />
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
@@ -23,17 +24,17 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:22</div>
+<div id="updated">Updated: 2024-06-03 Mon 19:08</div>
 </div>
-<div id="content" class="content">
+<div id="content">
 <header>
 <h1 class="title">Add a lightbox effect for images in html</h1>
-</header><nav id="table-of-contents" role="doc-toc">
+</header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#org06fc26e">1. css</a></li>
-<li><a href="#org737ef13">2. js</a></li>
+<li><a href="#org0b13544">1. css</a></li>
+<li><a href="#org26cb2e8">2. js</a></li>
 </ul>
 </div>
 </nav>
@@ -41,11 +42,11 @@
 First, just a reference how to add images in .org files - <a href="20231126T003746--images-in-org-files__emacs.html">images in org files</a>.
 </p>
 
-<div id="outline-container-org06fc26e" class="outline-2">
-<h2 id="org06fc26e"><span class="section-number-2">1.</span> css</h2>
+<div id="outline-container-org0b13544" class="outline-2">
+<h2 id="org0b13544"><span class="section-number-2">1</span> css</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
-<pre class="src src-css"><span style="font-weight: bold;">div.lightbox</span> {
+<pre class="src src-css"><span style="font-weight: bold;">div.lightbox </span>{
   <span style="font-weight: bold;">display</span>: flex;
   <span style="font-weight: bold;">flex-direction</span>: row;
   <span style="font-weight: bold;">overflow-x</span>: scroll;
@@ -58,30 +59,30 @@ First, just a reference how to add images in .org files - <a href="20231126T0037
   <span style="font-weight: bold;">margin-left</span>: calc(50% - 50vw + 5px);
 }
 
-<span style="font-weight: bold;">div.lightbox img:not(.lightbox)</span> {
+<span style="font-weight: bold;">div.lightbox img:not(.lightbox) </span>{
   <span style="font-weight: bold;">flex</span>: 0 0 auto;
   <span style="font-weight: bold;">height</span>: calc(100% - 4px);
   <span style="font-weight: bold;">margin</span>: 2px;
 }
 
-<span style="font-weight: bold;">div.lightbox figure:not(.lightbox)</span> {
+<span style="font-weight: bold;">div.lightbox figure:not(.lightbox) </span>{
   <span style="font-weight: bold;">flex</span>: 0 0 auto;
   <span style="font-weight: bold;">height</span>: calc(100% - 4px);
   <span style="font-weight: bold;">margin</span>: 2px;
 }
 
-<span style="font-weight: bold;">div.lightbox figure:not(.lightbox) img</span> {
+<span style="font-weight: bold;">div.lightbox figure:not(.lightbox) img </span>{
   <span style="font-weight: bold;">height</span>: calc(100% - 16pt);
   <span style="font-weight: bold;">margin</span>: 0;
 }
 
-<span style="font-weight: bold;">div.lightbox figure:not(.lightbox) figcaption</span> {
+<span style="font-weight: bold;">div.lightbox figure:not(.lightbox) figcaption </span>{
   <span style="font-weight: bold;">font-size</span>: 8pt;
   <span style="font-weight: bold;">color</span>: <span style="color: #000000; background-color: #ffffff;">white</span>;
   <span style="font-weight: bold;">text-align</span>: center;
 }
 
-<span style="font-weight: bold;">figure.lightbox</span> {
+<span style="font-weight: bold;">figure.lightbox </span>{
   <span style="font-weight: bold;">position</span>: fixed;
   <span style="font-weight: bold;">width</span>: 100%;
   <span style="font-weight: bold;">height</span>: 100%;
@@ -92,10 +93,10 @@ First, just a reference how to add images in .org files - <a href="20231126T0037
   <span style="font-weight: bold;">overflow</span>: hidden;
 }
 
-<span style="font-weight: bold;">figure.lightbox img.lightbox</span> {
+<span style="font-weight: bold;">figure.lightbox img.lightbox </span>{
   <span style="font-weight: bold;">position</span>: absolute;
 }
-<span style="font-weight: bold;">a figure.lightbox figcaption</span> {
+<span style="font-weight: bold;">a figure.lightbox figcaption </span>{
   <span style="font-weight: bold;">max-width</span>: 90%;
   <span style="font-weight: bold;">position</span>: absolute;
   <span style="font-weight: bold;">left</span>: 50%;
@@ -110,8 +111,8 @@ First, just a reference how to add images in .org files - <a href="20231126T0037
 </div>
 </div>
 
-<div id="outline-container-org737ef13" class="outline-2">
-<h2 id="org737ef13"><span class="section-number-2">2.</span> js</h2>
+<div id="outline-container-org26cb2e8" class="outline-2">
+<h2 id="org26cb2e8"><span class="section-number-2">2</span> js</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-js"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">copied from arvydasg.github.io/static/lightbox.js</span>
@@ -192,7 +193,7 @@ document.addEventListener(<span style="font-style: italic;">'keyup'</span>, e =&
     image.style[<span style="font-style: italic;">'left'</span>] = <span style="font-style: italic;">`${(window.innerWidth-image.offsetWidth)/2}px`</span>;
     image.style[<span style="font-style: italic;">'top'</span>] = <span style="font-style: italic;">`${(window.innerHeight-image.offsetHeight)/2}px`</span>;
     <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">hide all other images in this figure:</span>
-    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">otherImage</span> <span style="font-weight: bold;">of</span> figure.querySelectorAll(<span style="font-style: italic;">'img:not(.lightbox)'</span>)) {
+    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">otherImage</span> of figure.querySelectorAll(<span style="font-style: italic;">'img:not(.lightbox)'</span>)) {
         otherImage.style[<span style="font-style: italic;">'visibility'</span>] = <span style="font-style: italic;">'hidden'</span>;
     }
 }
@@ -220,7 +221,7 @@ document.addEventListener(<span style="font-style: italic;">'keyup'</span>, e =&
     image.removeEventListener(<span style="font-style: italic;">'mouseup'</span>, lightboxMouseUp);
     image.setAttribute(<span style="font-style: italic;">'draggable'</span>, <span style="font-weight: bold; text-decoration: underline;">true</span>);
     <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">unhide all images in this figure:</span>
-    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">otherImage</span> <span style="font-weight: bold;">of</span> figure.querySelectorAll(<span style="font-style: italic;">'img'</span>)) {
+    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">otherImage</span> of figure.querySelectorAll(<span style="font-style: italic;">'img'</span>)) {
         otherImage.style[<span style="font-style: italic;">'visibility'</span>] = <span style="font-style: italic;">''</span>;
     }
 }
@@ -356,9 +357,9 @@ document.addEventListener(<span style="font-style: italic;">'keyup'</span>, e =&
 
 window.addEventListener(<span style="font-style: italic;">'DOMContentLoaded'</span>, (event) =&gt; {
     <span style="font-weight: bold;">var</span> <span style="font-weight: bold; font-style: italic;">figures</span> = document.getElementsByTagName(<span style="font-style: italic;">'figure'</span>);
-    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">figure</span> <span style="font-weight: bold;">of</span> figures) {
+    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">figure</span> of figures) {
         <span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">images</span> = figure.querySelectorAll(<span style="font-style: italic;">'img'</span>);
-        <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">image</span> <span style="font-weight: bold;">of</span> images) {
+        <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">image</span> of images) {
             image.onclick = openLightbox;
             <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">This is a workaround for image.ontap = opanLightbox:</span>
             image.addEventListener(<span style="font-style: italic;">"touchstart"</span>, handleTouchStart);
@@ -380,11 +381,11 @@ window.addEventListener(<span style="font-style: italic;">'DOMContentLoaded'</sp
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:08</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:08</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-19 Tue 09:17</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

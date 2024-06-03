@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:30 -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2024-06-03 Mon 19:08 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Debugging a Django app with Emacs and dap-mode</title>
-<meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="Welcome to my devnotes site" />
-<meta name="keywords" content="emacs django" />
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
@@ -23,19 +24,19 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-06-03 Mon 13:16</div>
+<div id="updated">Updated: 2024-06-03 Mon 19:08</div>
 </div>
-<div id="content" class="content">
+<div id="content">
 <header>
 <h1 class="title">Debugging a Django app with Emacs and dap-mode</h1>
-</header><nav id="table-of-contents" role="doc-toc">
+</header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#org9fc2b90">1. Asked in "dape" mode issue log</a></li>
-<li><a href="#orgac3fa5a">2. Torstein reply</a></li>
-<li><a href="#org91e5a6a">3. Plumber and different tools</a></li>
-<li><a href="#org0de4b99">4. Pycharm - Karina</a></li>
+<li><a href="#org0fdc7f9">1. Asked in "dape" mode issue log</a></li>
+<li><a href="#org4407538">2. Torstein reply</a></li>
+<li><a href="#org94ecfe2">3. Plumber and different tools</a></li>
+<li><a href="#org8ebbd7b">4. Pycharm - Karina</a></li>
 </ul>
 </div>
 </nav>
@@ -53,8 +54,8 @@ Wrote a question in reddit, no response -
 <a href="https://www.reddit.com/r/emacs/comments/1agxcb9/debugging_a_django_app_with_dapmode/">https://www.reddit.com/r/emacs/comments/1agxcb9/debugging_a_django_app_with_dapmode/</a>
 </p>
 
-<div id="outline-container-org9fc2b90" class="outline-2">
-<h2 id="org9fc2b90"><span class="section-number-2">1.</span> Asked in "dape" mode issue log</h2>
+<div id="outline-container-org0fdc7f9" class="outline-2">
+<h2 id="org0fdc7f9"><span class="section-number-2">1</span> Asked in "dape" mode issue log</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="https://github.com/svaante/dape/issues/62">https://github.com/svaante/dape/issues/62</a> after noticing Torstein mention it here - <a href="https://www.reddit.com/r/emacs/comments/1133gvq/eglot_and_debugging_python/?share_id=snq4RQaJqMQ66DwTl1L_F&amp;utm_content=1&amp;utm_medium=android_app&amp;utm_name=androidcss&amp;utm_source=share&amp;utm_term=1">https://www.reddit.com/r/emacs/comments/1133gvq/eglot_and_debugging_python/?share_id=snq4RQaJqMQ66DwTl1L_F&amp;utm_content=1&amp;utm_medium=android_app&amp;utm_name=androidcss&amp;utm_source=share&amp;utm_term=1</a> and in his video here - <a href="https://www.youtube.com/watch?si=yYFpkMQlMUFpcn_n&amp;v=YKkyfz4cU8g&amp;feature=youtu.be">https://www.youtube.com/watch?si=yYFpkMQlMUFpcn_n&amp;v=YKkyfz4cU8g&amp;feature=youtu.be</a>
@@ -62,8 +63,8 @@ Wrote a question in reddit, no response -
 </div>
 </div>
 
-<div id="outline-container-orgac3fa5a" class="outline-2">
-<h2 id="orgac3fa5a"><span class="section-number-2">2.</span> Torstein reply</h2>
+<div id="outline-container-org4407538" class="outline-2">
+<h2 id="org4407538"><span class="section-number-2">2</span> Torstein reply</h2>
 <div class="outline-text-2" id="text-2">
 <blockquote>
 <p>
@@ -89,8 +90,8 @@ time I get to do heavy Python development, in which I need a debugger.
 </div>
 </div>
 
-<div id="outline-container-org91e5a6a" class="outline-2">
-<h2 id="org91e5a6a"><span class="section-number-2">3.</span> Plumber and different tools</h2>
+<div id="outline-container-org94ecfe2" class="outline-2">
+<h2 id="org94ecfe2"><span class="section-number-2">3</span> Plumber and different tools</h2>
 <div class="outline-text-2" id="text-3">
 <blockquote>
 <p>
@@ -100,8 +101,8 @@ ever seen a plumber use the same wrench for all the pipes? Different tools for d
 </div>
 </div>
 
-<div id="outline-container-org0de4b99" class="outline-2">
-<h2 id="org0de4b99"><span class="section-number-2">4.</span> Pycharm - Karina</h2>
+<div id="outline-container-org8ebbd7b" class="outline-2">
+<h2 id="org8ebbd7b"><span class="section-number-2">4</span> Pycharm - Karina</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 swears by it
@@ -151,11 +152,11 @@ all the variables I need to see. querysets, args, kwargs, request stuff, paramet
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 13:16</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:08</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:08</p>
 	 <p class="date">This org file is <u>created</u>: 2024-02-05 Mon 20:09</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

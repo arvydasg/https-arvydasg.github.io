@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:30 -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2024-06-03 Mon 19:08 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vscode</title>
-<meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="Welcome to my devnotes site" />
-<meta name="keywords" content="emacs django" />
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
@@ -16,38 +17,28 @@
 <link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
 <link rel="icon" href="./static/ag.ico">
-<script>
-  window.MathJax = {
-    tex: {
-      ams: {
-        multlineWidth: '85%'
-      },
-      tags: 'ams',
-      tagSide: 'right',
-      tagIndent: '.8em'
-    },
-    chtml: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    svg: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    output: {
-      font: 'mathjax-modern',
-      displayOverflow: 'overflow'
-    }
-  };
-</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
 
-<script
-  id="MathJax-script"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
 </script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -55,50 +46,50 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-06-03 Mon 13:16</div>
+<div id="updated">Updated: 2024-06-03 Mon 19:08</div>
 </div>
-<div id="content" class="content">
+<div id="content">
 <header>
 <h1 class="title">Vscode</h1>
-</header><nav id="table-of-contents" role="doc-toc">
+</header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbab649f">1. vscode</a>
+<li><a href="#orgd076af3">1. vscode</a>
 <ul>
-<li><a href="#orgc82e601">1.1. vscode global config</a>
+<li><a href="#org460fa3b">1.1. vscode global config</a>
 <ul>
-<li><a href="#orgbca3350">1.1.1. settings.json</a></li>
-<li><a href="#org59a7be0">1.1.2. keybindings.json</a></li>
+<li><a href="#org01655ea">1.1.1. settings.json</a></li>
+<li><a href="#org09c2c72">1.1.2. keybindings.json</a></li>
 </ul>
 </li>
-<li><a href="#org817509a">1.2. vscode local single project config</a>
+<li><a href="#org6a633f1">1.2. vscode local single project config</a>
 <ul>
-<li><a href="#org4a684cc">1.2.1. settings.json</a></li>
-<li><a href="#orga406d48">1.2.2. launch.json</a></li>
+<li><a href="#org3bfdfb7">1.2.1. settings.json</a></li>
+<li><a href="#orgd5218bf">1.2.2. launch.json</a></li>
 </ul>
 </li>
-<li><a href="#org6f576ba">1.3. vscode shortcuts</a></li>
+<li><a href="#org3cb22a8">1.3. vscode shortcuts</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgbab649f" class="outline-2">
-<h2 id="orgbab649f"><span class="section-number-2">1.</span> vscode</h2>
+<div id="outline-container-orgd076af3" class="outline-2">
+<h2 id="orgd076af3"><span class="section-number-2">1</span> vscode</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgc82e601" class="outline-3">
-<h3 id="orgc82e601"><span class="section-number-3">1.1.</span> vscode global config</h3>
+<div id="outline-container-org460fa3b" class="outline-3">
+<h3 id="org460fa3b"><span class="section-number-3">1.1</span> vscode global config</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Files that should be placed in C:\Users\&lt;username&gt;\AppData\Roaming\Code\User folder. Overrides Global VsCode settings.
 </p>
 </div>
 
-<div id="outline-container-orgbca3350" class="outline-4">
-<h4 id="orgbca3350"><span class="section-number-4">1.1.1.</span> settings.json</h4>
+<div id="outline-container-org01655ea" class="outline-4">
+<h4 id="org01655ea"><span class="section-number-4">1.1.1</span> settings.json</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <div class="org-src-container">
 <pre class="src src-json">{
@@ -113,20 +104,20 @@ Files that should be placed in C:\Users\&lt;username&gt;\AppData\Roaming\Code\Us
     // https://dev.to/brad_beggs/vs-code-vertical-rulers-for-prettier-code-3gp3
     "[git-commit]": {"editor.rulers": [50]},
     "[javascript]": {
-        "editor.rulers": [
-            79
-        ]
+	"editor.rulers": [
+	    79
+	]
     },
     "[python]": {
-        "editor.rulers": [
-            79
-        ],
-        // install "Black Formatter" extension for VsCode
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": "never"
-        },
+	"editor.rulers": [
+	    79
+	],
+	// install "Black Formatter" extension for VsCode
+	"editor.defaultFormatter": "ms-python.black-formatter",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+	    "source.organizeImports": "never"
+	},
     },
     "isort.args":["--profile", "black"],
     "black-formatter.args": ["--line-length", "79"],
@@ -134,7 +125,7 @@ Files that should be placed in C:\Users\&lt;username&gt;\AppData\Roaming\Code\Us
     // https://github.com/vscode-django/vscode-django/issues/125
     // allow html tag completion in django html mode
     "emmet.includeLanguages": {
-        "django-html": "html"
+	"django-html": "html"
     },
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "explorer.confirmDragAndDrop": false,
@@ -148,18 +139,18 @@ Files that should be placed in C:\Users\&lt;username&gt;\AppData\Roaming\Code\Us
 </div>
 </div>
 
-<div id="outline-container-org59a7be0" class="outline-4">
-<h4 id="org59a7be0"><span class="section-number-4">1.1.2.</span> keybindings.json</h4>
+<div id="outline-container-org09c2c72" class="outline-4">
+<h4 id="org09c2c72"><span class="section-number-4">1.1.2</span> keybindings.json</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <div class="org-src-container">
 <pre class="src src-json">[
     {
-        "key": "alt+x",
-        "command": "workbench.action.showCommands"
+	"key": "alt+x",
+	"command": "workbench.action.showCommands"
     },
     {
-        "key": "ctrl+shift+p",
-        "command": "-workbench.action.showCommands"
+	"key": "ctrl+shift+p",
+	"command": "-workbench.action.showCommands"
     }
 ]
 </pre>
@@ -167,8 +158,8 @@ Files that should be placed in C:\Users\&lt;username&gt;\AppData\Roaming\Code\Us
 </div>
 </div>
 </div>
-<div id="outline-container-org817509a" class="outline-3">
-<h3 id="org817509a"><span class="section-number-3">1.2.</span> vscode local single project config</h3>
+<div id="outline-container-org6a633f1" class="outline-3">
+<h3 id="org6a633f1"><span class="section-number-3">1.2</span> vscode local single project config</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Files that should be placed in .vscode folder of a project. The changes
@@ -176,8 +167,8 @@ described in those files will be applied only for a particular project.
 </p>
 </div>
 
-<div id="outline-container-org4a684cc" class="outline-4">
-<h4 id="org4a684cc"><span class="section-number-4">1.2.1.</span> settings.json</h4>
+<div id="outline-container-org3bfdfb7" class="outline-4">
+<h4 id="org3bfdfb7"><span class="section-number-4">1.2.1</span> settings.json</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <div class="org-src-container">
 <pre class="src src-json">// vscode settings for this particular project
@@ -204,8 +195,8 @@ described in those files will be applied only for a particular project.
 </div>
 </div>
 
-<div id="outline-container-orga406d48" class="outline-4">
-<h4 id="orga406d48"><span class="section-number-4">1.2.2.</span> launch.json</h4>
+<div id="outline-container-orgd5218bf" class="outline-4">
+<h4 id="orgd5218bf"><span class="section-number-4">1.2.2</span> launch.json</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <div class="org-src-container">
 <pre class="src src-json">// File that must be in .vscode folder of the project, used for Django app debugging.
@@ -219,17 +210,17 @@ described in those files will be applied only for a particular project.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "Python Debugger: Django",
-            "type": "debugpy",
-            "request": "launch",
-            "args": [
-                "runserver"
-            ],
-            "django": true,
-            "autoStartBrowser": false,
-            "program": "${workspaceFolder}/manage.py"
-        }
+	{
+	    "name": "Python Debugger: Django",
+	    "type": "debugpy",
+	    "request": "launch",
+	    "args": [
+		"runserver"
+	    ],
+	    "django": true,
+	    "autoStartBrowser": false,
+	    "program": "${workspaceFolder}/manage.py"
+	}
     ]
 }
 </pre>
@@ -238,8 +229,8 @@ described in those files will be applied only for a particular project.
 </div>
 </div>
 
-<div id="outline-container-org6f576ba" class="outline-3">
-<h3 id="org6f576ba"><span class="section-number-3">1.3.</span> vscode shortcuts</h3>
+<div id="outline-container-org3cb22a8" class="outline-3">
+<h3 id="org3cb22a8"><span class="section-number-3">1.3</span> vscode shortcuts</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 C:\Users\&lt;username&gt;\AppData\Roaming\Code\User this is where the settings.json
@@ -300,11 +291,11 @@ Ctrl + b - open/close navbar
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 13:16</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:08</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:08</p>
 	 <p class="date">This org file is <u>created</u>: 2023-11-25 Sat 18:10</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

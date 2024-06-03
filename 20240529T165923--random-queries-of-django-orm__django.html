@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:30 -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2024-06-03 Mon 19:08 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Random queries of django-orm</title>
-<meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="Welcome to my devnotes site" />
-<meta name="keywords" content="emacs django" />
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
@@ -23,28 +24,28 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 16:59</div>
+<div id="updated">Updated: 2024-06-03 Mon 19:08</div>
 </div>
-<div id="content" class="content">
+<div id="content">
 <header>
 <h1 class="title">Random queries of django-orm</h1>
-</header><nav id="table-of-contents" role="doc-toc">
+</header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#org5de5516">1. Random queries</a></li>
-<li><a href="#org65ce40b">2. Modify a record in db with python example</a>
+<li><a href="#org56bc30a">1. Random queries</a></li>
+<li><a href="#org2007eb1">2. Modify a record in db with python example</a>
 <ul>
-<li><a href="#org4f243a2">2.1. Method 1</a></li>
-<li><a href="#org8422a17">2.2. Method 2</a></li>
+<li><a href="#orgbfe324a">2.1. Method 1</a></li>
+<li><a href="#orge1da359">2.2. Method 2</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org5de5516" class="outline-2">
-<h2 id="org5de5516"><span class="section-number-2">1.</span> Random queries</h2>
+<div id="outline-container-org56bc30a" class="outline-2">
+<h2 id="org56bc30a"><span class="section-number-2">1</span> Random queries</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> vessel.models <span style="font-weight: bold;">import</span> Vessel
@@ -78,7 +79,7 @@ deal1
 &lt;Deal: Deal 1&gt;
 deal1.user
 &lt;User: dev&gt;
-deal1.<span style="font-weight: bold; font-style: italic;">user</span> = mng_user
+<span style="font-weight: bold; font-style: italic;">deal1.user</span> = mng_user
 deal1.user
 &lt;User: mng&gt;
 deal1.save()
@@ -86,12 +87,12 @@ deal1.save()
 </div>
 </div>
 </div>
-<div id="outline-container-org65ce40b" class="outline-2">
-<h2 id="org65ce40b"><span class="section-number-2">2.</span> Modify a record in db with python example</h2>
+<div id="outline-container-org2007eb1" class="outline-2">
+<h2 id="org2007eb1"><span class="section-number-2">2</span> Modify a record in db with python example</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org4f243a2" class="outline-3">
-<h3 id="org4f243a2"><span class="section-number-3">2.1.</span> Method 1</h3>
+<div id="outline-container-orgbfe324a" class="outline-3">
+<h3 id="orgbfe324a"><span class="section-number-3">2.1</span> Method 1</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-bash">(venv) arvy@DESKTOP-AUDMJ7D:~/src/lifeapi$ python manage.py shell --settings=settings.development
@@ -120,15 +121,15 @@ questions = Question.objects.all()
 </div>
 </div>
 
-<div id="outline-container-org8422a17" class="outline-3">
-<h3 id="org8422a17"><span class="section-number-3">2.2.</span> Method 2</h3>
+<div id="outline-container-orge1da359" class="outline-3">
+<h3 id="orge1da359"><span class="section-number-3">2.2</span> Method 2</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 start by this, do whatever you want then
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">python manage.py shell --settings=settings.development
+<pre class="src src-python">python manage.py shell --<span style="font-weight: bold; font-style: italic;">settings</span>=settings.development
 
 <span style="font-weight: bold;">from</span> lifeapi_apps.quiz_app.models <span style="font-weight: bold;">import</span> Question, Answer
 <span style="font-weight: bold;">from</span> django.contrib.auth.models <span style="font-weight: bold;">import</span> User
@@ -159,16 +160,16 @@ Answer.objects.<span style="font-weight: bold;">filter</span>(question=question,
 <span style="font-weight: bold; font-style: italic;">answers</span> = Answer.objects.<span style="font-weight: bold;">filter</span>(question__description=<span style="font-style: italic;">"Belly ache"</span>)
 <span style="font-weight: bold;">for</span> answer <span style="font-weight: bold;">in</span> answers:
     <span style="font-weight: bold;">if</span> answer.answer == <span style="font-style: italic;">"YES"</span>:
-        answer.<span style="font-weight: bold; font-style: italic;">answer</span> = <span style="font-style: italic;">"NO"</span>
+        <span style="font-weight: bold; font-style: italic;">answer.answer</span> = <span style="font-style: italic;">"NO"</span>
     <span style="font-weight: bold;">elif</span> answer.answer == <span style="font-style: italic;">"NO"</span>:
-        answer.<span style="font-weight: bold; font-style: italic;">answer</span> = <span style="font-style: italic;">"YES"</span>
+        <span style="font-weight: bold; font-style: italic;">answer.answer</span> = <span style="font-style: italic;">"YES"</span>
     answer.save()
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">rename a question</span>
 <span style="font-weight: bold; font-style: italic;">question_description</span> = <span style="font-style: italic;">"aciukas"</span>
 <span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=question_description)
 <span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(description=<span style="font-style: italic;">"No Headache"</span>, created_by=arvy_user)
-question.<span style="font-weight: bold; font-style: italic;">description</span> = <span style="font-style: italic;">"No Alchohol"</span>
+<span style="font-weight: bold; font-style: italic;">question.description</span> = <span style="font-style: italic;">"No Alchohol"</span>
 question.save()
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Delete all answers related to the question</span>
@@ -187,11 +188,11 @@ Answer.objects.<span style="font-weight: bold;">filter</span>(question=question)
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 16:59</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:08</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:08</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 16:59</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

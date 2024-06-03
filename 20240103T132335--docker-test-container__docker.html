@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:30 -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2024-06-03 Mon 19:08 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Docker test container</title>
-<meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="Welcome to my devnotes site" />
-<meta name="keywords" content="emacs django" />
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
@@ -23,24 +24,24 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-06-03 Mon 10:24</div>
+<div id="updated">Updated: 2024-06-03 Mon 19:08</div>
 </div>
-<div id="content" class="content">
+<div id="content">
 <header>
 <h1 class="title">Docker test container</h1>
-</header><nav id="table-of-contents" role="doc-toc">
+</header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd4abb18">1. Create Needed files</a>
+<li><a href="#org9a0e55d">1. Create Needed files</a>
 <ul>
-<li><a href="#org82433ea">1.1. <code>Dockerfile</code> content</a></li>
-<li><a href="#org36c92b7">1.2. <code>server.py</code> content</a></li>
-<li><a href="#org9dc0c45">1.3. <code>helloworld.html</code> content</a></li>
+<li><a href="#org4bcb974">1.1. <code>Dockerfile</code> content</a></li>
+<li><a href="#org0522c6f">1.2. <code>server.py</code> content</a></li>
+<li><a href="#orgac621d2">1.3. <code>helloworld.html</code> content</a></li>
 </ul>
 </li>
-<li><a href="#org971ca3e">2. Build the image</a></li>
-<li><a href="#org87995d0">3. Run the image</a></li>
+<li><a href="#org20429a2">2. Build the image</a></li>
+<li><a href="#orge467db9">3. Run the image</a></li>
 </ul>
 </div>
 </nav>
@@ -48,8 +49,8 @@
 An example of a Docker container that runs a flask web app inside of it.
 </p>
 
-<div id="outline-container-orgd4abb18" class="outline-2">
-<h2 id="orgd4abb18"><span class="section-number-2">1.</span> Create Needed files</h2>
+<div id="outline-container-org9a0e55d" class="outline-2">
+<h2 id="org9a0e55d"><span class="section-number-2">1</span> Create Needed files</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Create a directory in which you will put 3 files:
@@ -62,8 +63,8 @@ Create a directory in which you will put 3 files:
 </ul>
 </div>
 
-<div id="outline-container-org82433ea" class="outline-3">
-<h3 id="org82433ea"><span class="section-number-3">1.1.</span> <code>Dockerfile</code> content</h3>
+<div id="outline-container-org4bcb974" class="outline-3">
+<h3 id="org4bcb974"><span class="section-number-3">1.1</span> <code>Dockerfile</code> content</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-bash">FROM python:3.9-slim
@@ -77,8 +78,8 @@ CMD [<span style="font-style: italic;">"python3"</span>, <span style="font-style
 </div>
 </div>
 
-<div id="outline-container-org36c92b7" class="outline-3">
-<h3 id="org36c92b7"><span class="section-number-3">1.2.</span> <code>server.py</code> content</h3>
+<div id="outline-container-org0522c6f" class="outline-3">
+<h3 id="org0522c6f"><span class="section-number-3">1.2</span> <code>server.py</code> content</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">import</span> http.server
@@ -94,14 +95,14 @@ CMD [<span style="font-style: italic;">"python3"</span>, <span style="font-style
     <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">do_GET</span>(<span style="font-weight: bold;">self</span>):
         <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">If the requested path is "/", serve helloworld.html</span>
         <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">self</span>.path == <span style="font-style: italic;">'/'</span>:
-            <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">path</span> = <span style="font-style: italic;">'/helloworld.html'</span>
+            <span style="font-weight: bold;">self</span>.path = <span style="font-style: italic;">'/helloworld.html'</span>
         <span style="font-weight: bold;">elif</span> <span style="font-weight: bold;">self</span>.path == <span style="font-style: italic;">'/favicon.ico'</span>:
             <span style="font-weight: bold;">self</span>.send_response(204)  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">No content</span>
             <span style="font-weight: bold;">return</span>
         <span style="font-weight: bold;">return</span> http.server.SimpleHTTPRequestHandler.do_GET(<span style="font-weight: bold;">self</span>)
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Set up the server</span>
 <span style="font-weight: bold;">with</span> socketserver.TCPServer((<span style="font-style: italic;">""</span>, PORT), MyRequestHandler) <span style="font-weight: bold;">as</span> httpd:
-    <span style="font-weight: bold;">print</span>(f<span style="font-style: italic;">"Serving at port </span>{PORT}<span style="font-style: italic;">"</span>)
+    <span style="font-weight: bold;">print</span>(f<span style="font-style: italic;">"Serving at port {PORT}"</span>)
     <span style="font-weight: bold;">try</span>:
         httpd.serve_forever()
     <span style="font-weight: bold;">except</span> <span style="font-weight: bold; text-decoration: underline;">KeyboardInterrupt</span>:
@@ -111,8 +112,8 @@ CMD [<span style="font-style: italic;">"python3"</span>, <span style="font-style
 </div>
 </div>
 
-<div id="outline-container-org9dc0c45" class="outline-3">
-<h3 id="org9dc0c45"><span class="section-number-3">1.3.</span> <code>helloworld.html</code> content</h3>
+<div id="outline-container-orgac621d2" class="outline-3">
+<h3 id="orgac621d2"><span class="section-number-3">1.3</span> <code>helloworld.html</code> content</h3>
 <div class="outline-text-3" id="text-1-3">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
@@ -130,8 +131,8 @@ CMD [<span style="font-style: italic;">"python3"</span>, <span style="font-style
 </div>
 </div>
 
-<div id="outline-container-org971ca3e" class="outline-2">
-<h2 id="org971ca3e"><span class="section-number-2">2.</span> Build the image</h2>
+<div id="outline-container-org20429a2" class="outline-2">
+<h2 id="org20429a2"><span class="section-number-2">2</span> Build the image</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 While in the same directory as the previous 3 files, run:
@@ -149,8 +150,8 @@ image called <code>test</code>
 </div>
 </div>
 
-<div id="outline-container-org87995d0" class="outline-2">
-<h2 id="org87995d0"><span class="section-number-2">3.</span> Run the image</h2>
+<div id="outline-container-orge467db9" class="outline-2">
+<h2 id="orge467db9"><span class="section-number-2">3</span> Run the image</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-bash">docker run -it - p 5009:8082 test
@@ -185,11 +186,11 @@ Just <code>C-c C-c</code> to stop the image from running.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 10:24</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:08</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:08</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-03 Wed 13:23</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:30 -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2024-06-03 Mon 19:08 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Django management commands and an example with recreating migrations</title>
-<meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="Welcome to my devnotes site" />
-<meta name="keywords" content="emacs django" />
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
@@ -23,25 +24,25 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-06-03 Mon 13:16</div>
+<div id="updated">Updated: 2024-06-03 Mon 19:08</div>
 </div>
-<div id="content" class="content">
+<div id="content">
 <header>
 <h1 class="title">Django management commands and an example with recreating migrations</h1>
-</header><nav id="table-of-contents" role="doc-toc">
+</header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#org7820291">1. Quick summary</a></li>
-<li><a href="#org2d32d8a">2. Step 1 - create <code>cleanup.cmd</code> file</a></li>
-<li><a href="#org880db4e">3. Step 2 - create <code>empty_migration_folder.cmd</code> file</a></li>
-<li><a href="#orgf1aaee2">4. Step 3 - create create <code>create_root_user.py</code> file</a></li>
+<li><a href="#org94b9f29">1. Quick summary</a></li>
+<li><a href="#orgd2e1541">2. Step 1 - create <code>cleanup.cmd</code> file</a></li>
+<li><a href="#orgc0c4e52">3. Step 2 - create <code>empty_migration_folder.cmd</code> file</a></li>
+<li><a href="#orgfcce94c">4. Step 3 - create create <code>create_root_user.py</code> file</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org7820291" class="outline-2">
-<h2 id="org7820291"><span class="section-number-2">1.</span> Quick summary</h2>
+<div id="outline-container-org94b9f29" class="outline-2">
+<h2 id="org94b9f29"><span class="section-number-2">1</span> Quick summary</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Outside of your project directory, create a folder called helpers</li>
@@ -51,8 +52,8 @@
 </div>
 </div>
 
-<div id="outline-container-org2d32d8a" class="outline-2">
-<h2 id="org2d32d8a"><span class="section-number-2">2.</span> Step 1 - create <code>cleanup.cmd</code> file</h2>
+<div id="outline-container-orgd2e1541" class="outline-2">
+<h2 id="orgd2e1541"><span class="section-number-2">2</span> Step 1 - create <code>cleanup.cmd</code> file</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -87,8 +88,8 @@ echo ======================#  Finished
 </div>
 </div>
 
-<div id="outline-container-org880db4e" class="outline-2">
-<h2 id="org880db4e"><span class="section-number-2">3.</span> Step 2 - create <code>empty_migration_folder.cmd</code> file</h2>
+<div id="outline-container-orgc0c4e52" class="outline-2">
+<h2 id="orgc0c4e52"><span class="section-number-2">3</span> Step 2 - create <code>empty_migration_folder.cmd</code> file</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -100,13 +101,13 @@ set "folder=..\mysite\%1\migrations"
 
 for /r "%folder%" %%F in (*) do (
     if not "%%~nxF"=="__init__.py" (
-        del "%%F" /q
+	del "%%F" /q
     )
 )
 
 for /d %%D in ("%folder%\*") do (
     if not "%%~nxD"=="__init__py" (
-        rd "%%D" /s /q
+	rd "%%D" /s /q
     )
 )
 </pre>
@@ -114,8 +115,8 @@ for /d %%D in ("%folder%\*") do (
 </div>
 </div>
 
-<div id="outline-container-orgf1aaee2" class="outline-2">
-<h2 id="orgf1aaee2"><span class="section-number-2">4.</span> Step 3 - create create <code>create_root_user.py</code> file</h2>
+<div id="outline-container-orgfcce94c" class="outline-2">
+<h2 id="orgfcce94c"><span class="section-number-2">4</span> Step 3 - create create <code>create_root_user.py</code> file</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -135,15 +136,15 @@ Inside of the  <code>app/management/commands</code> directory.
         <span style="font-weight: bold; font-style: italic;">user</span>, <span style="font-weight: bold; font-style: italic;">created</span> = User.objects.get_or_create(username=username)
         <span style="font-weight: bold;">if</span> created:
             user.set_password(password)
-            user.<span style="font-weight: bold; font-style: italic;">is_staff</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
-            user.<span style="font-weight: bold; font-style: italic;">is_superuser</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
+            <span style="font-weight: bold; font-style: italic;">user.is_staff</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
+            <span style="font-weight: bold; font-style: italic;">user.is_superuser</span> = <span style="font-weight: bold; text-decoration: underline;">True</span>
             user.save()
             <span style="font-weight: bold;">self</span>.stdout.write(<span style="font-weight: bold;">self</span>.style.SUCCESS(
-                f<span style="font-style: italic;">'Management user "</span>{username}<span style="font-style: italic;">" created successfully'</span>
+                f<span style="font-style: italic;">'Management user "{username}" created successfully'</span>
             ))
         <span style="font-weight: bold;">else</span>:
             <span style="font-weight: bold;">self</span>.stdout.write(<span style="font-weight: bold;">self</span>.style.WARNING(
-                f<span style="font-style: italic;">'Management user "</span>{username}<span style="font-style: italic;">" already exists'</span>
+                f<span style="font-style: italic;">'Management user "{username}" already exists'</span>
             ))
 </pre>
 </div>
@@ -158,11 +159,11 @@ Inside of the  <code>app/management/commands</code> directory.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 13:16</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:08</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:08</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 14:13</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

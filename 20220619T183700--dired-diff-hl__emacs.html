@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 13:30 -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2024-06-03 Mon 19:08 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dired diff-hl</title>
-<meta name="author" content="Arvydas Gasparavicius" />
-<meta name="description" content="Welcome to my devnotes site" />
-<meta name="keywords" content="emacs django" />
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
@@ -23,29 +24,29 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:21</div>
+<div id="updated">Updated: 2024-06-03 Mon 19:08</div>
 </div>
-<div id="content" class="content">
+<div id="content">
 <header>
 <h1 class="title">Dired diff-hl</h1>
-</header><nav id="table-of-contents" role="doc-toc">
+</header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#orgaceb7d0">1. Introduction</a></li>
-<li><a href="#orgb9da09f">2. Body</a></li>
-<li><a href="#org11a8e2f">3. The final config</a></li>
+<li><a href="#org811a6aa">1. Introduction</a></li>
+<li><a href="#orgd6e3620">2. Body</a></li>
+<li><a href="#org310cb71">3. The final config</a></li>
 </ul>
 </div>
 </nav>
 
-<figure id="org5f8627d">
+<figure>
 <img src="./media/dired-diff-hl.png" alt="dired-diff-hl.png" width="1200px">
 
 </figure>
 
-<div id="outline-container-orgaceb7d0" class="outline-2">
-<h2 id="orgaceb7d0"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org811a6aa" class="outline-2">
+<h2 id="org811a6aa"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 So, everything started when I have discovered ‘diff-hl’ package. It had an
@@ -55,8 +56,8 @@ not use neotree anymore and use dired instead.
 </div>
 </div>
 
-<div id="outline-container-orgb9da09f" class="outline-2">
-<h2 id="orgb9da09f"><span class="section-number-2">2.</span> Body</h2>
+<div id="outline-container-orgd6e3620" class="outline-2">
+<h2 id="orgd6e3620"><span class="section-number-2">2</span> Body</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 I added a few lines to ‘diff-hl’ config to make the file changes visible in
@@ -64,7 +65,7 @@ dired buffer.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> diff-hl
+<pre class="src src-emacs-lisp">(use-package diff-hl
   <span style="font-weight: bold;">:ensure</span> t
   <span style="font-weight: bold;">:init</span> (add-hook 'prog-mode-hook #'diff-hl-mode)
   (add-hook 'org-mode-hook #'diff-hl-mode)
@@ -123,11 +124,11 @@ convenient to cycle with and I am all set!
 </div>
 </div>
 
-<div id="outline-container-org11a8e2f" class="outline-2">
-<h2 id="org11a8e2f"><span class="section-number-2">3.</span> The final config</h2>
+<div id="outline-container-org310cb71" class="outline-2">
+<h2 id="org310cb71"><span class="section-number-2">3</span> The final config</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"> (<span style="font-weight: bold;">use-package</span> dired
+<pre class="src src-emacs-lisp"> (use-package dired
     <span style="font-weight: bold;">:ensure</span> nil                         <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">no need for t, because dired is built in</span>
     <span style="font-weight: bold;">:custom</span> ((dired-listing-switches <span style="font-style: italic;">"-agho --group-directories-first"</span>))) <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">sort directories first</span>
   (global-set-key (kbd <span style="font-style: italic;">"C-x C-d"</span>) 'dired-jump) <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">open dired buffer in current location</span>
@@ -176,11 +177,11 @@ testing out how many opened buffers there were. But luckily I found
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:30</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:08</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:08</p>
 	 <p class="date">This org file is <u>created</u>: 2022-06-19 Sun 18:37</p>
 	 <div class="generated">
-	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
 	</footer>
 	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
