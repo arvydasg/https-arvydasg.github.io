@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 19:08 -->
+<!-- 2024-06-03 Mon 19:34 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trying out devcontainers in vscode</title>
@@ -24,7 +24,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-06-03 Mon 19:08</div>
+<div id="updated">Updated: 2024-06-03 Mon 19:33</div>
 </div>
 <div id="content">
 <header>
@@ -33,19 +33,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd587847">1. Devcontainers</a>
+<li><a href="#org9e7d066">1. Devcontainers</a>
 <ul>
-<li><a href="#org3a49831">1.1. Notes</a>
+<li><a href="#org8af2de4">1.1. Notes</a>
 <ul>
-<li><a href="#org8c48515">1.1.1. Why devcontainers</a></li>
+<li><a href="#org0f20d4c">1.1.1. Why devcontainers</a></li>
 </ul>
 </li>
-<li><a href="#org37ed909">1.2. The setup</a>
+<li><a href="#org952d37a">1.2. The setup</a>
 <ul>
-<li><a href="#org2d12514">1.2.1. How to set up devcontainers</a></li>
-<li><a href="#org911babb">1.2.2. .devcontainers folder</a></li>
-<li><a href="#org54ac8e1">1.2.3. Dockerfile</a></li>
-<li><a href="#orge6d1459">1.2.4. devcontainer.json</a></li>
+<li><a href="#org6957ee0">1.2.1. How to set up devcontainers</a></li>
+<li><a href="#org84b27c2">1.2.2. .devcontainers folder</a></li>
+<li><a href="#org6c6880d">1.2.3. Dockerfile</a></li>
+<li><a href="#org3fbd5ff">1.2.4. devcontainer.json</a></li>
 </ul>
 </li>
 </ul>
@@ -54,20 +54,20 @@
 </div>
 </nav>
 
-<div id="outline-container-orgd587847" class="outline-2">
-<h2 id="orgd587847"><span class="section-number-2">1</span> Devcontainers</h2>
+<div id="outline-container-org9e7d066" class="outline-2">
+<h2 id="org9e7d066"><span class="section-number-2">1</span> Devcontainers</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 STOPPED USING IT HERE (due to slowliness) - <a href="https://github.com/azegas/quotes/commit/9477b9062be2e9ac0aa2b7158cfdebabac6a4f54">https://github.com/azegas/quotes/commit/9477b9062be2e9ac0aa2b7158cfdebabac6a4f54</a>
 </p>
 </div>
 
-<div id="outline-container-org3a49831" class="outline-3">
-<h3 id="org3a49831"><span class="section-number-3">1.1</span> Notes</h3>
+<div id="outline-container-org8af2de4" class="outline-3">
+<h3 id="org8af2de4"><span class="section-number-3">1.1</span> Notes</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-org8c48515" class="outline-4">
-<h4 id="org8c48515"><span class="section-number-4">1.1.1</span> Why devcontainers</h4>
+<div id="outline-container-org0f20d4c" class="outline-4">
+<h4 id="org0f20d4c"><span class="section-number-4">1.1.1</span> Why devcontainers</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 Kind of nice to have this practice. People use it at work also. Linux environment&#x2026; what could go wrong.
@@ -111,12 +111,12 @@ that is opening this project and so on (jinja, pylance, w/e else).
 </div>
 </div>
 
-<div id="outline-container-org37ed909" class="outline-3">
-<h3 id="org37ed909"><span class="section-number-3">1.2</span> The setup</h3>
+<div id="outline-container-org952d37a" class="outline-3">
+<h3 id="org952d37a"><span class="section-number-3">1.2</span> The setup</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-org2d12514" class="outline-4">
-<h4 id="org2d12514"><span class="section-number-4">1.2.1</span> How to set up devcontainers</h4>
+<div id="outline-container-org6957ee0" class="outline-4">
+<h4 id="org6957ee0"><span class="section-number-4">1.2.1</span> How to set up devcontainers</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li><a href="https://github.com/azegas/quotes/issues/47">My own reference task from quotes project</a></li>
@@ -144,16 +144,16 @@ Keep in mind that you don't have to copy any files from one environment to the d
 </div>
 </div>
 
-<div id="outline-container-org911babb" class="outline-4">
-<h4 id="org911babb"><span class="section-number-4">1.2.2</span> .devcontainers folder</h4>
+<div id="outline-container-org84b27c2" class="outline-4">
+<h4 id="org84b27c2"><span class="section-number-4">1.2.2</span> .devcontainers folder</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 Create <code>.devcontainers</code> folder in your project's root directory.
 </p>
 </div>
 </div>
-<div id="outline-container-org54ac8e1" class="outline-4">
-<h4 id="org54ac8e1"><span class="section-number-4">1.2.3</span> Dockerfile</h4>
+<div id="outline-container-org6c6880d" class="outline-4">
+<h4 id="org6c6880d"><span class="section-number-4">1.2.3</span> Dockerfile</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <p>
 Inside of the <code>.devcontainers</code> folder, create a <code>Dockerfile</code> file with the
@@ -182,8 +182,8 @@ RUN python3 -m pip install --upgrade pip <span style="font-style: italic;">\</sp
 </div>
 </div>
 
-<div id="outline-container-orge6d1459" class="outline-4">
-<h4 id="orge6d1459"><span class="section-number-4">1.2.4</span> devcontainer.json</h4>
+<div id="outline-container-org3fbd5ff" class="outline-4">
+<h4 id="org3fbd5ff"><span class="section-number-4">1.2.4</span> devcontainer.json</h4>
 <div class="outline-text-4" id="text-1-2-4">
 <p>
 Alongisde the Dockerfile, create a `devcontainer.json` file with this content:
@@ -277,8 +277,8 @@ Alongisde the Dockerfile, create a `devcontainer.json` file with this content:
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:08</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:08</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:34</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:33</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-27 Mon 15:04</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
