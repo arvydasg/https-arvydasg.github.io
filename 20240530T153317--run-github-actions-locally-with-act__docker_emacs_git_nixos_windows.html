@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-06-03 Mon 11:15 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Run github actions locally with act</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-06-03 Mon 11:15</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Run github actions locally with act</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org5c2d8aa">1. Routine that caused me to look for something better</a></li>
+<li><a href="#org5a963a2">2. <span class="todo TODO">TODO</span> Act really helped me out with THIS coverage implementation thingy.</a></li>
+<li><a href="#org39caef5">3. <code>Act</code> installation</a>
+<ul>
+<li><a href="#orgc7837be">3.1. On NixOS</a></li>
+<li><a href="#orgbba56b2">3.2. On Windows</a></li>
+</ul>
+</li>
+<li><a href="#orgdb090cc">4. Create a demo action</a></li>
+<li><a href="#org3382577">5. Run the action</a></li>
+<li><a href="#orgd34b739">6. Github action status badge</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org5c2d8aa" class="outline-2">
+<h2 id="org5c2d8aa"><span class="section-number-2">1.</span> Routine that caused me to look for something better</h2>
+<div class="outline-text-2" id="text-1">
+<blockquote>
+<ul class="org-ul">
+<li>Modify the github action</li>
+<li>Push to git</li>
+<li>Wait 2-3 min for ubuntu instance to build</li>
+<li>Wait for a another 1 min for your action to run</li>
+<li>See that it failed</li>
+<li>Modify the github action&#x2026;&#x2026;</li>
+<li>&#x2026;.</li>
+</ul>
+</blockquote>
+
+<p>
+And repeat this routine over and over. This way, <code>with each mistake</code> that you
+make in the <code>.yml</code> file, you pollute your git version control with meaningless
+commits. What if you could do the testing of your github actions locally,
+without needing to commit anything?
+</p>
+
+<p>
+A tool called <code>[[https://github.com/nektos/act][act]]</code> is here for that. It
+creates a docker image locally and runs our actions.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5a963a2" class="outline-2">
+<h2 id="org5a963a2"><span class="section-number-2">2.</span> <span class="todo TODO">TODO</span> Act really helped me out with THIS coverage implementation thingy.</h2>
+</div>
+
+<div id="outline-container-org39caef5" class="outline-2">
+<h2 id="org39caef5"><span class="section-number-2">3.</span> <code>Act</code> installation</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgc7837be" class="outline-3">
+<h3 id="orgc7837be"><span class="section-number-3">3.1.</span> On NixOS</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>First have to <a href="20240603T101200--use-docker-on-nixos__docker_nixos.html">install docker</a></li>
+<li><a href="https://nektosact.com/installation/nix.html">Read the docs</a></li>
+<li>Install act by adding <code>act</code> <a href="https://github.com/azegas/dotfiles/commit/ede551d0e84cc63e950650bcc4f6676417bbb3b6">to installed apps</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbba56b2" class="outline-3">
+<h3 id="orgbba56b2"><span class="section-number-3">3.2.</span> On Windows</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Tutorial -
+<a href="https://www.youtube.com/watch?v=7xfDpoEBp60&amp;ab_channel=ShawnWildermuth">https://www.youtube.com/watch?v=7xfDpoEBp60&amp;ab_channel=ShawnWildermuth</a>
+</p>
+
+<ul class="org-ul">
+<li>Install <code>act</code> with <code>winget install nektos.act</code> reference link <a href="https://nektosact.com/installation/index.html">here</a></li>
+<li>Restart vscode/vscode terminal</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdb090cc" class="outline-2">
+<h2 id="orgdb090cc"><span class="section-number-2">4.</span> Create a demo action</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Create <code>.github</code> folder in your repo</li>
+<li>Inside of it, create <code>workflows</code> folder</li>
+<li>Inside of it, create <code>demo.yml</code> file</li>
+<li><p>
+It's content:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml">name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3382577" class="outline-2">
+<h2 id="org3382577"><span class="section-number-2">5.</span> Run the action</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Make sure docker is running</li>
+<li>Navigate to the same folder where your <code>.github</code> folder is</li>
+<li>Run <code>act -l</code> to see if it sees that it's inside a repo where a github action lies</li>
+<li>run <code>act</code> command to run all the workflows within the <code>workflows</code> file, in our case it's only 1 workflow</li>
+<li>If you want to run a specific action, not all, can do it with such flag <code>act  -W '.github/workflows/checks.yml'</code>. <a href="https://nektosact.com/usage/index.html#workflows">reference</a>.</li>
+<li>If your workflow is using secret keys(like in Django), can add specify them
+in a similar way <code>"${{ secrets.SECRET_KEY }}"</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd34b739" class="outline-2">
+<h2 id="orgd34b739"><span class="section-number-2">6.</span> Github action status badge</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+If you like, you can <a href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge">add a badge</a> to your repo do show your action status.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 11:15</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 11:15</p>
+	 <p class="date">This org file is <u>created</u>: 2024-05-30 Thu 15:33</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

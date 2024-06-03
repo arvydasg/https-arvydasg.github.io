@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-02 Sun 22:19 -->
+<!-- 2024-06-03 Mon 11:16 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Docker test container</title>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:22</div>
+<div id="updated">Updated: 2024-06-03 Mon 10:24</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -32,18 +32,39 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgbb32208">1. Dockerfile</a></li>
-<li><a href="#org4ef7f7c">2. server.py</a></li>
-<li><a href="#orgc32ad41">3. helloworld.html</a></li>
-<li><a href="#org5a79e4a">4. build the image</a></li>
-<li><a href="#org8d89aef">5. run the image</a></li>
+<li><a href="#org067f128">1. Create Needed files</a>
+<ul>
+<li><a href="#org7da0740">1.1. <code>Dockerfile</code> content</a></li>
+<li><a href="#orgdbe132b">1.2. <code>server.py</code> content</a></li>
+<li><a href="#orgb6c6781">1.3. <code>helloworld.html</code> content</a></li>
+</ul>
+</li>
+<li><a href="#org4a42ade">2. Build the image</a></li>
+<li><a href="#org4005945">3. Run the image</a></li>
 </ul>
 </div>
 </nav>
+<p>
+An example of a Docker container that runs a flask web app inside of it.
+</p>
 
-<div id="outline-container-orgbb32208" class="outline-2">
-<h2 id="orgbb32208"><span class="section-number-2">1.</span> Dockerfile</h2>
+<div id="outline-container-org067f128" class="outline-2">
+<h2 id="org067f128"><span class="section-number-2">1.</span> Create Needed files</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+Create a directory in which you will put 3 files:
+</p>
+
+<ul class="org-ul">
+<li><code>Dockerfile</code></li>
+<li><code>server.py</code></li>
+<li><code>helloworld.html</code></li>
+</ul>
+</div>
+
+<div id="outline-container-org7da0740" class="outline-3">
+<h3 id="org7da0740"><span class="section-number-3">1.1.</span> <code>Dockerfile</code> content</h3>
+<div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-bash">FROM python:3.9-slim
 WORKDIR /app
@@ -56,9 +77,9 @@ CMD [<span style="font-style: italic;">"python3"</span>, <span style="font-style
 </div>
 </div>
 
-<div id="outline-container-org4ef7f7c" class="outline-2">
-<h2 id="org4ef7f7c"><span class="section-number-2">2.</span> server.py</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgdbe132b" class="outline-3">
+<h3 id="orgdbe132b"><span class="section-number-3">1.2.</span> <code>server.py</code> content</h3>
+<div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">import</span> http.server
 <span style="font-weight: bold;">import</span> socketserver
@@ -90,29 +111,30 @@ CMD [<span style="font-style: italic;">"python3"</span>, <span style="font-style
 </div>
 </div>
 
-<div id="outline-container-orgc32ad41" class="outline-2">
-<h2 id="orgc32ad41"><span class="section-number-2">3.</span> helloworld.html</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgb6c6781" class="outline-3">
+<h3 id="orgb6c6781"><span class="section-number-3">1.3.</span> <code>helloworld.html</code> content</h3>
+<div class="outline-text-3" id="text-1-3">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
 &lt;<span style="font-weight: bold;">html</span>&gt;
-&lt;<span style="font-weight: bold;">head</span>&gt;
+  &lt;<span style="font-weight: bold;">head</span>&gt;
     &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Hello World</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
-&lt;/<span style="font-weight: bold;">head</span>&gt;
-&lt;<span style="font-weight: bold;">body</span>&gt;
+  &lt;/<span style="font-weight: bold;">head</span>&gt;
+  &lt;<span style="font-weight: bold;">body</span>&gt;
     &lt;<span style="font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Hello, World!</span>&lt;/<span style="font-weight: bold;">h1</span>&gt;
-&lt;/<span style="font-weight: bold;">body</span>&gt;
+  &lt;/<span style="font-weight: bold;">body</span>&gt;
 &lt;/<span style="font-weight: bold;">html</span>&gt;
 </pre>
 </div>
 </div>
 </div>
+</div>
 
-<div id="outline-container-org5a79e4a" class="outline-2">
-<h2 id="org5a79e4a"><span class="section-number-2">4.</span> build the image</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org4a42ade" class="outline-2">
+<h2 id="org4a42ade"><span class="section-number-2">2.</span> Build the image</h2>
+<div class="outline-text-2" id="text-2">
 <p>
-while in the same directory as the previous 3 files
+While in the same directory as the previous 3 files, run:
 </p>
 
 <div class="org-src-container">
@@ -121,14 +143,15 @@ while in the same directory as the previous 3 files
 </div>
 
 <p>
-Check docker desktop or <code>docker ps</code> to see the newly created image called <code>test</code>
+Check docker desktop(if on windows) or <code>docker images</code> to see the newly created
+image called <code>test</code>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8d89aef" class="outline-2">
-<h2 id="org8d89aef"><span class="section-number-2">5.</span> run the image</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org4005945" class="outline-2">
+<h2 id="org4005945"><span class="section-number-2">3.</span> Run the image</h2>
+<div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-bash">docker run -it - p 5009:8082 test
 </pre>
@@ -147,6 +170,10 @@ Serving at port 8082
 10.10.0.1 - - [03/Jan/2024 13:27:27] <span style="font-style: italic;">"GET / HTTP/1.1"</span> 304 -
 </pre>
 </div>
+
+<p>
+Just <code>C-c C-c</code> to stop the image from running.
+</p>
 </div>
 </div>
 </div>
@@ -158,8 +185,8 @@ Serving at port 8082
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-02 Sun 22:19</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 11:16</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 10:24</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-03 Wed 13:23</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

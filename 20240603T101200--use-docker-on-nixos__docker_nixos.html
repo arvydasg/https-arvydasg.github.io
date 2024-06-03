@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-06-03 Mon 11:16 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Use docker on nixos</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-06-03 Mon 10:30</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Use docker on nixos</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org3df11f3">1. <span class="todo TODO">TODO</span> add link to github actions, act part</a></li>
+<li><a href="#orgcfff742">2. Why</a></li>
+<li><a href="#org2186832">3. How</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org3df11f3" class="outline-2">
+<h2 id="org3df11f3"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> add link to github actions, act part</h2>
+</div>
+
+<div id="outline-container-orgcfff742" class="outline-2">
+<h2 id="orgcfff742"><span class="section-number-2">2.</span> Why</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+If you are a developer, you will definitely need to use Docker at one time or
+another. If you are on nixos, you might have postponed this step for as long as
+I did, but time will come when you will want to do it in nixos also :) Let's
+see how I did it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2186832" class="outline-2">
+<h2 id="org2186832"><span class="section-number-2">3.</span> How</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Actually it was easier than expected.
+</p>
+
+<p>
+There is a great docs page - <a href="https://nixos.wiki/wiki/Docker">https://nixos.wiki/wiki/Docker</a>
+</p>
+
+<p>
+The only things I did was:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">install docker</span>
+virtualisation.docker.enable = true;
+users.extraGroups.docker.members = [ <span style="font-style: italic;">"nixos"</span> ];
+</pre>
+</div>
+
+<p>
+Did <code>sudo nixos-rebuild switch</code>, rebooted the system for group changes to take
+effect with <code>sudo reboot</code>, then after logging in once again, checked if my user
+belongs to docker group with <code>groups</code>, then finally checked the docker status
+inside my nixos <code>sudo systemctl status docker</code>. Tried to run <code>docker images</code> to
+see if docker commands are working.
+</p>
+
+<p>
+When I saw that they do,I tried <a href="20240103T132335--docker-test-container__docker.html">these steps of Docker test container creation</a>.
+</p>
+
+<p>
+When this worked also, I knew I am set and ready to work with Docker from
+inside of nixos.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 11:16</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 10:30</p>
+	 <p class="date">This org file is <u>created</u>: 2024-06-03 Mon 10:12</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>
