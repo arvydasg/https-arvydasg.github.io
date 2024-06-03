@@ -4,7 +4,7 @@
 <!-- 2024-06-03 Mon 13:25 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Wsl clock is out of sync with windows</title>
+<title>What is coverage</title>
 <meta name="author" content="Arvydas Gasparavicius" />
 <meta name="description" content="Welcome to my devnotes site" />
 <meta name="keywords" content="emacs django" />
@@ -23,71 +23,80 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:21</div>
+<div id="updated">Updated: 2024-06-03 Mon 12:12</div>
 </div>
 <div id="content" class="content">
 <header>
-<h1 class="title">Wsl clock is out of sync with windows</h1>
+<h1 class="title">What is coverage</h1>
 </header><nav id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc45875e">1. The problem</a></li>
-<li><a href="#orge67d310">2. Possible solution</a></li>
-<li><a href="#org8004ec3">3. Solution that works best for me now</a></li>
+<li><a href="#orgada0929">1. Intro</a></li>
+<li><a href="#orgb85f4f0">2. Run coverage before each commit with pre-commit</a></li>
+<li><a href="#org3dd3da6">3. Run coverage after each commit with github actions</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgc45875e" class="outline-2">
-<h2 id="orgc45875e"><span class="section-number-2">1.</span> The problem</h2>
+<div id="outline-container-orgada0929" class="outline-2">
+<h2 id="orgada0929"><span class="section-number-2">1.</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Having this problem -
-<a href="https://stackoverflow.com/questions/65086856/wsl2-clock-is-out-of-sync-with-windows">https://stackoverflow.com/questions/65086856/wsl2-clock-is-out-of-sync-with-windows</a>
+When building a Django app, It's nice to know which of your files miss testing.
 </p>
 
 <p>
-run this in powershell to confirm it:
+At least the first time you are writing tests, you are not sure what you should
+cover.. coverage shows you just that. Informs you in percentage, how much of
+your code is covered with test. Not only that, it will show you what exact
+parts of your code are covered and which ones are not yet covered.
+</p>
+
+<p>
+Here is an example how to run coverage for a django app:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">Get-Date; wsl date
+<pre class="src src-bash">pip install coverage
+coverage run manage.py test
+coverage report
+coverage html
 </pre>
 </div>
 
 <p>
-You will notice two different times. They should be the same.
+Now you can check the html folder content to see your coverage results.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge67d310" class="outline-2">
-<h2 id="orge67d310"><span class="section-number-2">2.</span> Possible solution</h2>
+<div id="outline-container-orgb85f4f0" class="outline-2">
+<h2 id="orgb85f4f0"><span class="section-number-2">2.</span> Run coverage before each commit with pre-commit</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-Solution is to run <code>sudo hwclock -s</code> command. It will sync the time. For that
-moment. But time will shift again when I put the laptop to sleep.
+Later, if you want to force yourself to write tests for each new feature, to
+keep that coverage at +95%, you can <a href="https://github.com/azegas/quotes/commit/8821b2e41ba8d7838c30f7cacec77fccd8cc56a0">implement coverage into your pre-commit</a>
+(<a href="20240603T114124--what-is-pre-commit__git.html">what is pre-commit?</a>).
+</p>
+
+<blockquote>
+<p>
+NOTE: not using pre-commits, since they are quite time consuming.
 </p>
 
 <p>
-I don want to run the command manually each time. I will make a script that
-runs this command and put it in <code>.bashrc</code> so it automatically runs the script
-each time I launch wsl. Should be enough?
+Run a github action instead and be notified if something breaks with an email.
 </p>
-
-<p>
-<span class="timestamp-wrapper"><span class="timestamp">[2023-12-10 Sun] </span></span> sudo hwclock -s is not an option.. it does not always work
-when I run it.
-</p>
+</blockquote>
 </div>
 </div>
 
-<div id="outline-container-org8004ec3" class="outline-2">
-<h2 id="org8004ec3"><span class="section-number-2">3.</span> Solution that works best for me now</h2>
+<div id="outline-container-org3dd3da6" class="outline-2">
+<h2 id="org3dd3da6"><span class="section-number-2">3.</span> Run coverage after each commit with github actions</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-<a href="https://github.com/microsoft/WSL/issues/8204#issuecomment-1338334154">https://github.com/microsoft/WSL/issues/8204#issuecomment-1338334154</a>
+Wrote a separate post about this - <a href="20240425T151500--fail-a-github-action-if-coverage-requirements-are-not-met__git.html">here</a>.
 </p>
 </div>
 </div>
@@ -101,8 +110,8 @@ when I run it.
 	 </div>
 	 </div>
 	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:25</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:21</p>
-	 <p class="date">This org file is <u>created</u>: 2023-12-09 Sat 20:09</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 12:12</p>
+	 <p class="date">This org file is <u>created</u>: 2024-04-25 Thu 14:14</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>

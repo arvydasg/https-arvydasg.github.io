@@ -4,7 +4,7 @@
 <!-- 2024-06-03 Mon 13:25 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The less mess with notes the better</title>
+<title>Fail a github action if coverage requirements are not met</title>
 <meta name="author" content="Arvydas Gasparavicius" />
 <meta name="description" content="Welcome to my devnotes site" />
 <meta name="keywords" content="emacs django" />
@@ -23,68 +23,80 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 10:22</div>
+<div id="updated">Updated: 2024-06-03 Mon 11:35</div>
 </div>
 <div id="content" class="content">
 <header>
-<h1 class="title">The less mess with notes the better</h1>
+<h1 class="title">Fail a github action if coverage requirements are not met</h1>
 </header><nav id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org1f2ebb4">1. It is just too much of hassle</a></li>
+<li><a href="#orgfd40ed8">1. How</a></li>
 </ul>
 </div>
 </nav>
 <p>
-Very happy to have finally setup the dev environment how I imagined:
+For those of you that after reach push want to be informed by email that your
+code repository is covered by a particular percentage of test coverage (<a href="20240425T141400--what-is-coverage__django.html">what is
+test coverage?</a>), here is a little helper for you:
 </p>
 
-<ul class="org-ul">
-<li><a href="20231209T093750--freshsetup__emacs.html">freshsetup</a></li>
-<li><a href="20231211T151427--first-nixos-installation__nixos.html">first nixos installation</a></li>
-</ul>
-
-<p>
-Then also happy to have my notes jazz setup with a new tool - Denote:
-</p>
-<ul class="org-ul">
-<li><a href="20231125T211812--why-i-use-denote__emacs.html">Why I use Denote</a></li>
-</ul>
-
-<p>
-Then also happy to have found a way to sync notes quickly between my wsl and
-onedrive and ALSO have them under version control in git.
-</p>
-<ul class="org-ul">
-<li><a href="20231130T065309--fetch-and-pull-changes-automatically__git_wsl.html">fetch and pull changes automatically</a></li>
-<li><a href="20231126T012052--make-denote-faster-on-wsl__emacs_rsync_scripting_wsl.html">make denote faster on wsl</a></li>
-</ul>
-
-<p>
-The last part is what this post is about.
-</p>
-
-<div id="outline-container-org1f2ebb4" class="outline-2">
-<h2 id="org1f2ebb4"><span class="section-number-2">1.</span> It is just too much of hassle</h2>
+<div id="outline-container-orgfd40ed8" class="outline-2">
+<h2 id="orgfd40ed8"><span class="section-number-2">1.</span> How</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Those scripts mentioned above are only on my ubuntu wsl, not on nixos(don't
-know how to put scripts into .bahrc on nixos build yet), but I am using the
-notes on nixos, not on ubuntu&#x2026; then I have think about where and at what
-stage are my notes between wsl's, then if they are on onedrive, then what about
-notes at work.. dude, too much! Better go back to the old and trusted
-solution - put the notes on onedrive, symlink to wsl and that's it. Yes, it
-will be slower to fetch, but the headache it will save..
+<code>tests.yml</code>:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">ln -s /mnt/c/Users/arvydas/OneDrive/Documents/GIT/notes/ notes
+<pre class="src src-yaml">name: Tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Tests
+        run: |
+          export SECRET_KEY="34234234234fsdfsdfsdffsdfsd24324dfsdfs"
+          coverage run manage.py test
+
+      - name: Check Test Coverage
+        run: |
+          COVERAGE_OUTPUT=$(coverage report --skip-covered)
+          COVERAGE_PERCENTAGE=$(echo "$COVERAGE_OUTPUT" | awk '/TOTAL/ {print $NF}')
+          echo "coverage percentage is $COVERAGE_PERCENTAGE"
+          echo COVERAGE_PERCENTAGE=$COVERAGE_PERCENTAGE &gt;&gt; $GITHUB_ENV
+
+      - name: Break job if coverage is not more than 95%
+        if: ${{ env.COVERAGE_PERCENTAGE &lt; '95%' }}
+        run: exit 1
 </pre>
 </div>
 
 <p>
-Thank you bye.
+Now try to run this action with <a href="20240530T153317--run-github-actions-locally-with-act__docker_emacs_git_nixos_windows.html">act locally</a> or with a github action and see
+this build break if the test coverage is lower than 95%.
 </p>
 </div>
 </div>
@@ -98,8 +110,8 @@ Thank you bye.
 	 </div>
 	 </div>
 	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:25</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 10:22</p>
-	 <p class="date">This org file is <u>created</u>: 2023-12-24 Sun 08:22</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 11:35</p>
+	 <p class="date">This org file is <u>created</u>: 2024-04-25 Thu 15:15</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>

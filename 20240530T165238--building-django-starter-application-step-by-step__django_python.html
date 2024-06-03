@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 11:16 -->
+<!-- 2024-06-03 Mon 13:25 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Building django_starter application step by step</title>
@@ -64,81 +64,81 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgbd2287a">1. Introduction</a></li>
-<li><a href="#orgf1f320b">2. Set up virtual environment</a></li>
-<li><a href="#orgb227e45">3. Create a base project</a>
+<li><a href="#orge594e42">1. Introduction</a></li>
+<li><a href="#org010c10f">2. Set up virtual environment</a></li>
+<li><a href="#org430da59">3. Create a base project</a>
 <ul>
-<li><a href="#org9fb6578">3.1. Start a Django project</a></li>
-<li><a href="#org8756d8a">3.2. Create a basic view in <code>views.py</code></a></li>
-<li><a href="#orgcc9c82f">3.3. Update <code>urls.py</code></a></li>
-<li><a href="#org2772e86">3.4. Set up templates in <code>settings.py</code></a></li>
-<li><a href="#org39c3499">3.5. Create an <code>index.html</code> for the project</a></li>
-<li><a href="#orge27f7be">3.6. Run the project for the first time</a></li>
-<li><a href="#orgd0b9c9e">3.7. Create a <code>base.html</code> template for nav and footer</a></li>
-<li><a href="#orgc3df71f">3.8. Add MISC items (Add css, js, images, debug toolbar)</a>
+<li><a href="#orgf5d8d1d">3.1. Start a Django project</a></li>
+<li><a href="#org36967d0">3.2. Create a basic view in <code>views.py</code></a></li>
+<li><a href="#org32e6866">3.3. Update <code>urls.py</code></a></li>
+<li><a href="#org6d19db9">3.4. Set up templates in <code>settings.py</code></a></li>
+<li><a href="#orged3e7a2">3.5. Create an <code>index.html</code> for the project</a></li>
+<li><a href="#org7dbd2e4">3.6. Run the project for the first time</a></li>
+<li><a href="#orgdaaef03">3.7. Create a <code>base.html</code> template for nav and footer</a></li>
+<li><a href="#org66ab2a9">3.8. Add MISC items (Add css, js, images, debug toolbar)</a>
 <ul>
-<li><a href="#orge2bf599">3.8.1. Add css</a></li>
-<li><a href="#org4bd7fe4">3.8.2. Add js</a></li>
-<li><a href="#orgbefadff">3.8.3. Add images</a></li>
+<li><a href="#org5f1dcac">3.8.1. Add css</a></li>
+<li><a href="#orgf5359dc">3.8.2. Add js</a></li>
+<li><a href="#orgbc82f6c">3.8.3. Add images</a></li>
 </ul>
 </li>
-<li><a href="#org94d7342">3.9. Add bootstrap styling</a></li>
-<li><a href="#org90e33ca">3.10. HTML templates for error messages</a></li>
-<li><a href="#orgcdb7c2c">3.11. Environment variables</a></li>
+<li><a href="#orga410459">3.9. Add bootstrap styling</a></li>
+<li><a href="#org7f2e312">3.10. HTML templates for error messages</a></li>
+<li><a href="#orgc543fb6">3.11. Environment variables</a></li>
 </ul>
 </li>
-<li><a href="#org0c272dd">4. Authentication</a>
+<li><a href="#org08aadf7">4. Authentication</a>
 <ul>
-<li><a href="#org9ce6f7d">4.1. Django allauth</a>
+<li><a href="#orgad9fa42">4.1. Django allauth</a>
 <ul>
-<li><a href="#orgd8faec8">4.1.1. Installation</a></li>
+<li><a href="#org3df8246">4.1.1. Installation</a></li>
 </ul>
 </li>
-<li><a href="#orga18c8b3">4.2. Style allauth templates, Implement crispy forms</a></li>
-<li><a href="#org76bd108">4.3. Create a user dashboard</a></li>
-<li><a href="#orga5d3f2a">4.4. Enable social login with Google</a>
+<li><a href="#orgc9d5ba4">4.2. Style allauth templates, Implement crispy forms</a></li>
+<li><a href="#org6b0e1a5">4.3. Create a user dashboard</a></li>
+<li><a href="#org9e39648">4.4. Enable social login with Google</a>
 <ul>
-<li><a href="#org9b70878">4.4.1. Add social application in django-admin</a></li>
-<li><a href="#org02eee9e">4.4.2. Attempt to register</a></li>
-<li><a href="#orgd1be533">4.4.3. Modify the templates to accommodate third party buttons</a></li>
-<li><a href="#org469acf9">4.4.4. Signals</a></li>
+<li><a href="#orgf609925">4.4.1. Add social application in django-admin</a></li>
+<li><a href="#org9d6e0b0">4.4.2. Attempt to register</a></li>
+<li><a href="#org97c5fc6">4.4.3. Modify the templates to accommodate third party buttons</a></li>
+<li><a href="#org0a24664">4.4.4. Signals</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org6bc1e0b">5. Nice to haves</a>
+<li><a href="#org2232360">5. Nice to haves</a>
 <ul>
-<li><a href="#orgb0063fa">5.1. Set up Makefile</a></li>
-<li><a href="#org60f5f4e">5.2. Django-debug-toolbar</a></li>
-<li><a href="#orgf1226c6">5.3. Basic tests</a></li>
-<li><a href="#orgaea6010">5.4. Github actions</a></li>
-<li><a href="#org9cf14e9">5.5. Black formatter</a></li>
-<li><a href="#org9d048ea">5.6. For security reasons, rename /admin to something else</a></li>
+<li><a href="#org1138d61">5.1. Set up Makefile</a></li>
+<li><a href="#org2b5830a">5.2. Django-debug-toolbar</a></li>
+<li><a href="#org4ab18c0">5.3. Basic tests</a></li>
+<li><a href="#org9190f16">5.4. Github actions</a></li>
+<li><a href="#orgf0fafb3">5.5. Black formatter</a></li>
+<li><a href="#orgac0739d">5.6. For security reasons, rename /admin to something else</a></li>
 </ul>
 </li>
-<li><a href="#org4f9aa91">6. Other TODO's</a>
+<li><a href="#orgcf9fb10">6. Other TODO's</a>
 <ul>
-<li><a href="#orgd8f6cd8">6.1. <span class="todo TODO">TODO</span> Improve the project</a>
+<li><a href="#orgd656f1b">6.1. <span class="todo TODO">TODO</span> Improve the project</a>
 <ul>
-<li><a href="#org5aa6f61">6.1.1. add messages support</a></li>
-<li><a href="#org0279470">6.1.2. Images for production</a></li>
+<li><a href="#org06191b1">6.1.1. add messages support</a></li>
+<li><a href="#org1f321ce">6.1.2. Images for production</a></li>
 </ul>
 </li>
-<li><a href="#org6d64746">6.2. <span class="todo TODO">TODO</span> Pro Django tutorials by thenewboston</a></li>
-<li><a href="#orga25f0ba">6.3. <span class="todo TODO">TODO</span> CRUD functionality with HTMX</a></li>
-<li><a href="#orgab48950">6.4. <span class="todo TODO">TODO</span> Dockerfile (in the far future)</a></li>
-<li><a href="#org6cc7a74">6.5. <span class="todo TODO">TODO</span> check health</a></li>
-<li><a href="#org2c7a9e0">6.6. <span class="todo TODO">TODO</span> Run as docker image, create an image for it.</a></li>
-<li><a href="#org90c4438">6.7. <span class="todo TODO">TODO</span> add management commands, create some dummy data maybe?</a></li>
-<li><a href="#org3ebbfad">6.8. <span class="todo TODO">TODO</span> create the clean migrations script</a></li>
+<li><a href="#org31e7b2e">6.2. <span class="todo TODO">TODO</span> Pro Django tutorials by thenewboston</a></li>
+<li><a href="#org1e5e73e">6.3. <span class="todo TODO">TODO</span> CRUD functionality with HTMX</a></li>
+<li><a href="#org31e9f1a">6.4. <span class="todo TODO">TODO</span> Dockerfile (in the far future)</a></li>
+<li><a href="#orgb552a76">6.5. <span class="todo TODO">TODO</span> check health</a></li>
+<li><a href="#org8bb1ccd">6.6. <span class="todo TODO">TODO</span> Run as docker image, create an image for it.</a></li>
+<li><a href="#orgf01a737">6.7. <span class="todo TODO">TODO</span> add management commands, create some dummy data maybe?</a></li>
+<li><a href="#org0214c36">6.8. <span class="todo TODO">TODO</span> create the clean migrations script</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgbd2287a" class="outline-2">
-<h2 id="orgbd2287a"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-orge594e42" class="outline-2">
+<h2 id="orge594e42"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This is a Django app that I use at the beginning of every new Django project.
@@ -146,8 +146,8 @@ This is a Django app that I use at the beginning of every new Django project.
 </div>
 </div>
 
-<div id="outline-container-orgf1f320b" class="outline-2">
-<h2 id="orgf1f320b"><span class="section-number-2">2.</span> Set up virtual environment</h2>
+<div id="outline-container-org010c10f" class="outline-2">
+<h2 id="org010c10f"><span class="section-number-2">2.</span> Set up virtual environment</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 On windows, we will user virtualenvwrapper -
@@ -166,12 +166,12 @@ pip freeze &gt; requirements.txt
 </div>
 </div>
 
-<div id="outline-container-orgb227e45" class="outline-2">
-<h2 id="orgb227e45"><span class="section-number-2">3.</span> Create a base project</h2>
+<div id="outline-container-org430da59" class="outline-2">
+<h2 id="org430da59"><span class="section-number-2">3.</span> Create a base project</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org9fb6578" class="outline-3">
-<h3 id="org9fb6578"><span class="section-number-3">3.1.</span> Start a Django project</h3>
+<div id="outline-container-orgf5d8d1d" class="outline-3">
+<h3 id="orgf5d8d1d"><span class="section-number-3">3.1.</span> Start a Django project</h3>
 <div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
 <pre class="src src-bash">django-admin startproject project .
@@ -188,8 +188,8 @@ create a custom user model).
 </div>
 </div>
 
-<div id="outline-container-org8756d8a" class="outline-3">
-<h3 id="org8756d8a"><span class="section-number-3">3.2.</span> Create a basic view in <code>views.py</code></h3>
+<div id="outline-container-org36967d0" class="outline-3">
+<h3 id="org36967d0"><span class="section-number-3">3.2.</span> Create a basic view in <code>views.py</code></h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Create a <code>views.py</code> in project folder and add this content:
@@ -211,8 +211,8 @@ Create a <code>views.py</code> in project folder and add this content:
 </div>
 </div>
 
-<div id="outline-container-orgcc9c82f" class="outline-3">
-<h3 id="orgcc9c82f"><span class="section-number-3">3.3.</span> Update <code>urls.py</code></h3>
+<div id="outline-container-org32e6866" class="outline-3">
+<h3 id="org32e6866"><span class="section-number-3">3.3.</span> Update <code>urls.py</code></h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 Create <code>urls.py</code> in project folder and add this content:
@@ -235,8 +235,8 @@ Create <code>urls.py</code> in project folder and add this content:
 </div>
 </div>
 
-<div id="outline-container-org2772e86" class="outline-3">
-<h3 id="org2772e86"><span class="section-number-3">3.4.</span> Set up templates in <code>settings.py</code></h3>
+<div id="outline-container-org6d19db9" class="outline-3">
+<h3 id="org6d19db9"><span class="section-number-3">3.4.</span> Set up templates in <code>settings.py</code></h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 For django to be able to find our html files, let's tell django about their
@@ -250,8 +250,8 @@ location in <code>settings.py</code>, make a modification to the TEMPLATES varia
 </div>
 </div>
 
-<div id="outline-container-org39c3499" class="outline-3">
-<h3 id="org39c3499"><span class="section-number-3">3.5.</span> Create an <code>index.html</code> for the project</h3>
+<div id="outline-container-orged3e7a2" class="outline-3">
+<h3 id="orged3e7a2"><span class="section-number-3">3.5.</span> Create an <code>index.html</code> for the project</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 To be able to display the <code>index.html we have just defined in =views.py</code>
@@ -270,8 +270,8 @@ the content of it:
 </div>
 </div>
 
-<div id="outline-container-orge27f7be" class="outline-3">
-<h3 id="orge27f7be"><span class="section-number-3">3.6.</span> Run the project for the first time</h3>
+<div id="outline-container-org7dbd2e4" class="outline-3">
+<h3 id="org7dbd2e4"><span class="section-number-3">3.6.</span> Run the project for the first time</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 Do a <code>python manage.py runserver</code> now and you will be presented with the index
@@ -285,8 +285,8 @@ with some html, so it does not require a separate template.
 </div>
 </div>
 
-<div id="outline-container-orgd0b9c9e" class="outline-3">
-<h3 id="orgd0b9c9e"><span class="section-number-3">3.7.</span> Create a <code>base.html</code> template for nav and footer</h3>
+<div id="outline-container-orgdaaef03" class="outline-3">
+<h3 id="orgdaaef03"><span class="section-number-3">3.7.</span> Create a <code>base.html</code> template for nav and footer</h3>
 <div class="outline-text-3" id="text-3-7">
 <p>
 We want to display some sort of navigation and footer on ALL pages in our site.
@@ -354,12 +354,12 @@ Check how homepage(index.html) looks now.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc3df71f" class="outline-3">
-<h3 id="orgc3df71f"><span class="section-number-3">3.8.</span> Add MISC items (Add css, js, images, debug toolbar)</h3>
+<div id="outline-container-org66ab2a9" class="outline-3">
+<h3 id="org66ab2a9"><span class="section-number-3">3.8.</span> Add MISC items (Add css, js, images, debug toolbar)</h3>
 <div class="outline-text-3" id="text-3-8">
 </div>
-<div id="outline-container-orge2bf599" class="outline-4">
-<h4 id="orge2bf599"><span class="section-number-4">3.8.1.</span> Add css</h4>
+<div id="outline-container-org5f1dcac" class="outline-4">
+<h4 id="org5f1dcac"><span class="section-number-4">3.8.1.</span> Add css</h4>
 <div class="outline-text-4" id="text-3-8-1">
 <p>
 In project's root directory, create a folder called <code>static</code>. Inside of it,
@@ -422,8 +422,8 @@ have some styling as well!
 </div>
 </div>
 
-<div id="outline-container-org4bd7fe4" class="outline-4">
-<h4 id="org4bd7fe4"><span class="section-number-4">3.8.2.</span> Add js</h4>
+<div id="outline-container-orgf5359dc" class="outline-4">
+<h4 id="orgf5359dc"><span class="section-number-4">3.8.2.</span> Add js</h4>
 <div class="outline-text-4" id="text-3-8-2">
 <p>
 Create <code>static/js</code> folder and inside of it - <code>scripts.js</code> file.
@@ -465,8 +465,8 @@ Reload the page. Clicking on the button should trigger js code.
 </div>
 </div>
 
-<div id="outline-container-orgbefadff" class="outline-4">
-<h4 id="orgbefadff"><span class="section-number-4">3.8.3.</span> Add images</h4>
+<div id="outline-container-orgbc82f6c" class="outline-4">
+<h4 id="orgbc82f6c"><span class="section-number-4">3.8.3.</span> Add images</h4>
 <div class="outline-text-4" id="text-3-8-3">
 <p>
 Now let's say you want to serve an image from the <code>index.html</code> page.
@@ -503,8 +503,8 @@ Refresh the page, image should be displayed.
 </div>
 </div>
 
-<div id="outline-container-org94d7342" class="outline-3">
-<h3 id="org94d7342"><span class="section-number-3">3.9.</span> Add bootstrap styling</h3>
+<div id="outline-container-orga410459" class="outline-3">
+<h3 id="orga410459"><span class="section-number-3">3.9.</span> Add bootstrap styling</h3>
 <div class="outline-text-3" id="text-3-9">
 <ul class="org-ul">
 <li>Tailwind - needs node, bloats the html page</li>
@@ -554,8 +554,8 @@ Bootstrap should work now.
 </div>
 </div>
 
-<div id="outline-container-org90e33ca" class="outline-3">
-<h3 id="org90e33ca"><span class="section-number-3">3.10.</span> HTML templates for error messages</h3>
+<div id="outline-container-org7f2e312" class="outline-3">
+<h3 id="org7f2e312"><span class="section-number-3">3.10.</span> HTML templates for error messages</h3>
 <div class="outline-text-3" id="text-3-10">
 <p>
 Whenever the debug is True we will see the debug information and why certain
@@ -646,8 +646,8 @@ the templates are being read:
 </div>
 </div>
 
-<div id="outline-container-orgcdb7c2c" class="outline-3">
-<h3 id="orgcdb7c2c"><span class="section-number-3">3.11.</span> Environment variables</h3>
+<div id="outline-container-orgc543fb6" class="outline-3">
+<h3 id="orgc543fb6"><span class="section-number-3">3.11.</span> Environment variables</h3>
 <div class="outline-text-3" id="text-3-11">
 <p>
 We don't want to push secret variables to github.
@@ -727,8 +727,8 @@ Make sure this <code>.env</code> file is not being committed to git, add it to
 </div>
 </div>
 
-<div id="outline-container-org0c272dd" class="outline-2">
-<h2 id="org0c272dd"><span class="section-number-2">4.</span> Authentication</h2>
+<div id="outline-container-org08aadf7" class="outline-2">
+<h2 id="org08aadf7"><span class="section-number-2">4.</span> Authentication</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Biggest inspiration - <a href="https://learndjango.com/tutorials/django-login-and-logout-tutorial">here</a></li>
@@ -736,8 +736,8 @@ Make sure this <code>.env</code> file is not being committed to git, add it to
 </ul>
 </div>
 
-<div id="outline-container-org9ce6f7d" class="outline-3">
-<h3 id="org9ce6f7d"><span class="section-number-3">4.1.</span> Django allauth</h3>
+<div id="outline-container-orgad9fa42" class="outline-3">
+<h3 id="orgad9fa42"><span class="section-number-3">4.1.</span> Django allauth</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li><a href="https://www.youtube.com/watch?v=qqFCt0Yde40&amp;ab_channel=MattFreire">Nice quick rundown of the package</a></li>
@@ -777,8 +777,8 @@ for the future.
 </blockquote>
 </div>
 
-<div id="outline-container-orgd8faec8" class="outline-4">
-<h4 id="orgd8faec8"><span class="section-number-4">4.1.1.</span> Installation</h4>
+<div id="outline-container-org3df8246" class="outline-4">
+<h4 id="org3df8246"><span class="section-number-4">4.1.1.</span> Installation</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <p>
 <a href="https://docs.allauth.org/en/latest/installation/quickstart.html">https://docs.allauth.org/en/latest/installation/quickstart.html</a>
@@ -927,8 +927,8 @@ Try going to them and see how they look.
 </div>
 </div>
 
-<div id="outline-container-orga18c8b3" class="outline-3">
-<h3 id="orga18c8b3"><span class="section-number-3">4.2.</span> Style allauth templates, Implement crispy forms</h3>
+<div id="outline-container-orgc9d5ba4" class="outline-3">
+<h3 id="orgc9d5ba4"><span class="section-number-3">4.2.</span> Style allauth templates, Implement crispy forms</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 Crispy forms will allow us to style the forms nicer.
@@ -1190,8 +1190,8 @@ signup.html
 </div>
 </div>
 
-<div id="outline-container-org76bd108" class="outline-3">
-<h3 id="org76bd108"><span class="section-number-3">4.3.</span> Create a user dashboard</h3>
+<div id="outline-container-org6b0e1a5" class="outline-3">
+<h3 id="org6b0e1a5"><span class="section-number-3">4.3.</span> Create a user dashboard</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 By default, after successful login, allauth leads us to "accounts/profile/"
@@ -1303,8 +1303,8 @@ User dashboard should be reachable now.
 </div>
 </div>
 
-<div id="outline-container-orga5d3f2a" class="outline-3">
-<h3 id="orga5d3f2a"><span class="section-number-3">4.4.</span> Enable social login with Google</h3>
+<div id="outline-container-org9e39648" class="outline-3">
+<h3 id="org9e39648"><span class="section-number-3">4.4.</span> Enable social login with Google</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 Possible providers -
@@ -1327,8 +1327,8 @@ To <code>INSTALLED_APPS</code> add:
 </div>
 </div>
 
-<div id="outline-container-org9b70878" class="outline-4">
-<h4 id="org9b70878"><span class="section-number-4">4.4.1.</span> Add social application in django-admin</h4>
+<div id="outline-container-orgf609925" class="outline-4">
+<h4 id="orgf609925"><span class="section-number-4">4.4.1.</span> Add social application in django-admin</h4>
 <div class="outline-text-4" id="text-4-4-1">
 <p>
 Then go to <code>http://localhost:8000/admin/socialaccount/socialapp/add/</code> and add a
@@ -1354,8 +1354,8 @@ previously were on and save the application</li>
 </div>
 </div>
 
-<div id="outline-container-org02eee9e" class="outline-4">
-<h4 id="org02eee9e"><span class="section-number-4">4.4.2.</span> Attempt to register</h4>
+<div id="outline-container-org9d6e0b0" class="outline-4">
+<h4 id="org9d6e0b0"><span class="section-number-4">4.4.2.</span> Attempt to register</h4>
 <div class="outline-text-4" id="text-4-4-2">
 <p>
 Try to register an account with through google now (in signup page you should
@@ -1375,8 +1375,8 @@ see the account that has just been created.
 </div>
 </div>
 
-<div id="outline-container-orgd1be533" class="outline-4">
-<h4 id="orgd1be533"><span class="section-number-4">4.4.3.</span> Modify the templates to accommodate third party buttons</h4>
+<div id="outline-container-org97c5fc6" class="outline-4">
+<h4 id="org97c5fc6"><span class="section-number-4">4.4.3.</span> Modify the templates to accommodate third party buttons</h4>
 <div class="outline-text-4" id="text-4-4-3">
 <p>
 Modify sign up/login templates and Third-Party Login Failure template
@@ -1509,8 +1509,8 @@ modify the second AFTER sign up template
 </div>
 </div>
 
-<div id="outline-container-org469acf9" class="outline-4">
-<h4 id="org469acf9"><span class="section-number-4">4.4.4.</span> Signals</h4>
+<div id="outline-container-org0a24664" class="outline-4">
+<h4 id="org0a24664"><span class="section-number-4">4.4.4.</span> Signals</h4>
 <div class="outline-text-4" id="text-4-4-4">
 <p>
 Cool signals can be used - <a href="https://docs.allauth.org/en/latest/account/signals.html">https://docs.allauth.org/en/latest/account/signals.html</a>. Example how - <a href="https://www.youtube.com/watch?v=qqFCt0Yde40&amp;ab_channel=MattFreire">https://www.youtube.com/watch?v=qqFCt0Yde40&amp;ab_channel=MattFreire</a>
@@ -1520,12 +1520,12 @@ Cool signals can be used - <a href="https://docs.allauth.org/en/latest/account/s
 </div>
 </div>
 
-<div id="outline-container-org6bc1e0b" class="outline-2">
-<h2 id="org6bc1e0b"><span class="section-number-2">5.</span> Nice to haves</h2>
+<div id="outline-container-org2232360" class="outline-2">
+<h2 id="org2232360"><span class="section-number-2">5.</span> Nice to haves</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgb0063fa" class="outline-3">
-<h3 id="orgb0063fa"><span class="section-number-3">5.1.</span> Set up Makefile</h3>
+<div id="outline-container-org1138d61" class="outline-3">
+<h3 id="org1138d61"><span class="section-number-3">5.1.</span> Set up Makefile</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li><a href="https://www.youtube.com/watch?v=2nM6DBE0blA&amp;ab_channel=BoostMyTool">How to Fix Error Makefile</a></li>
@@ -1610,8 +1610,8 @@ described.
 </div>
 </div>
 
-<div id="outline-container-org60f5f4e" class="outline-3">
-<h3 id="org60f5f4e"><span class="section-number-3">5.2.</span> Django-debug-toolbar</h3>
+<div id="outline-container-org2b5830a" class="outline-3">
+<h3 id="org2b5830a"><span class="section-number-3">5.2.</span> Django-debug-toolbar</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Comes useful sometimes.
@@ -1684,8 +1684,8 @@ django-debug-toolbar button.
 </div>
 </div>
 
-<div id="outline-container-orgf1226c6" class="outline-3">
-<h3 id="orgf1226c6"><span class="section-number-3">5.3.</span> Basic tests</h3>
+<div id="outline-container-org4ab18c0" class="outline-3">
+<h3 id="org4ab18c0"><span class="section-number-3">5.3.</span> Basic tests</h3>
 <div class="outline-text-3" id="text-5-3">
 <ul class="org-ul">
 <li><a href="https://github.com/azegas/quotes/issues/4">https://github.com/azegas/quotes/issues/4</a></li>
@@ -1780,8 +1780,8 @@ coverage:
 </div>
 </div>
 
-<div id="outline-container-orgaea6010" class="outline-3">
-<h3 id="orgaea6010"><span class="section-number-3">5.4.</span> Github actions</h3>
+<div id="outline-container-org9190f16" class="outline-3">
+<h3 id="org9190f16"><span class="section-number-3">5.4.</span> Github actions</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li><a href="https://docs.github.com/en/actions/quickstart">official docs</a></li>
@@ -1907,8 +1907,8 @@ despite the additional resource usage.
 </div>
 </div>
 
-<div id="outline-container-org9cf14e9" class="outline-3">
-<h3 id="org9cf14e9"><span class="section-number-3">5.5.</span> Black formatter</h3>
+<div id="outline-container-orgf0fafb3" class="outline-3">
+<h3 id="orgf0fafb3"><span class="section-number-3">5.5.</span> Black formatter</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 This section is regarding the <code>pyproject.toml</code> file.
@@ -1942,8 +1942,8 @@ black:
 </div>
 </div>
 
-<div id="outline-container-org9d048ea" class="outline-3">
-<h3 id="org9d048ea"><span class="section-number-3">5.6.</span> For security reasons, rename /admin to something else</h3>
+<div id="outline-container-orgac0739d" class="outline-3">
+<h3 id="orgac0739d"><span class="section-number-3">5.6.</span> For security reasons, rename /admin to something else</h3>
 <div class="outline-text-3" id="text-5-6">
 <p>
 in <code>project/urls.py</code>
@@ -1952,16 +1952,16 @@ in <code>project/urls.py</code>
 </div>
 </div>
 
-<div id="outline-container-org4f9aa91" class="outline-2">
-<h2 id="org4f9aa91"><span class="section-number-2">6.</span> Other TODO's</h2>
+<div id="outline-container-orgcf9fb10" class="outline-2">
+<h2 id="orgcf9fb10"><span class="section-number-2">6.</span> Other TODO's</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgd8f6cd8" class="outline-3">
-<h3 id="orgd8f6cd8"><span class="section-number-3">6.1.</span> <span class="todo TODO">TODO</span> Improve the project</h3>
+<div id="outline-container-orgd656f1b" class="outline-3">
+<h3 id="orgd656f1b"><span class="section-number-3">6.1.</span> <span class="todo TODO">TODO</span> Improve the project</h3>
 <div class="outline-text-3" id="text-6-1">
 </div>
-<div id="outline-container-org5aa6f61" class="outline-4">
-<h4 id="org5aa6f61"><span class="section-number-4">6.1.1.</span> add messages support</h4>
+<div id="outline-container-org06191b1" class="outline-4">
+<h4 id="org06191b1"><span class="section-number-4">6.1.1.</span> add messages support</h4>
 <div class="outline-text-4" id="text-6-1-1">
 <p>
 for logging in/out, password change, etc
@@ -1969,8 +1969,8 @@ for logging in/out, password change, etc
 </div>
 </div>
 
-<div id="outline-container-org0279470" class="outline-4">
-<h4 id="org0279470"><span class="section-number-4">6.1.2.</span> Images for production</h4>
+<div id="outline-container-org1f321ce" class="outline-4">
+<h4 id="org1f321ce"><span class="section-number-4">6.1.2.</span> Images for production</h4>
 <div class="outline-text-4" id="text-6-1-2">
 <p>
 Go add this to your settings.py and when it's done run:
@@ -2022,24 +2022,24 @@ Add it to requirements.txt and follow <a href="http://whitenoise.evans.io/en/sta
 </div>
 </div>
 </div>
-<div id="outline-container-org6d64746" class="outline-3">
-<h3 id="org6d64746"><span class="section-number-3">6.2.</span> <span class="todo TODO">TODO</span> Pro Django tutorials by thenewboston</h3>
+<div id="outline-container-org31e7b2e" class="outline-3">
+<h3 id="org31e7b2e"><span class="section-number-3">6.2.</span> <span class="todo TODO">TODO</span> Pro Django tutorials by thenewboston</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 cehck them out, dariau CDP according to that one?
 </p>
 </div>
 </div>
-<div id="outline-container-orga25f0ba" class="outline-3">
-<h3 id="orga25f0ba"><span class="section-number-3">6.3.</span> <span class="todo TODO">TODO</span> CRUD functionality with HTMX</h3>
+<div id="outline-container-org1e5e73e" class="outline-3">
+<h3 id="org1e5e73e"><span class="section-number-3">6.3.</span> <span class="todo TODO">TODO</span> CRUD functionality with HTMX</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 Basic CRUD app for reference (base detail/list templates/views) (meke app list in whcih you can specify the name of the app and it will be represented in all views/urls/etc. Like app list. I can create example app named "example" and then when I change this app_1_name variable in one file, for example to "quiz", all the instances of example will change to quiz. context predessesor maybe?)
 </p>
 </div>
 </div>
-<div id="outline-container-orgab48950" class="outline-3">
-<h3 id="orgab48950"><span class="section-number-3">6.4.</span> <span class="todo TODO">TODO</span> Dockerfile (in the far future)</h3>
+<div id="outline-container-org31e9f1a" class="outline-3">
+<h3 id="org31e9f1a"><span class="section-number-3">6.4.</span> <span class="todo TODO">TODO</span> Dockerfile (in the far future)</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 inspiration from here - <a href="https://github.com/wsvincent/djangox/blob/main/Dockerfile">https://github.com/wsvincent/djangox/blob/main/Dockerfile</a>
@@ -2102,27 +2102,27 @@ $ docker-compose exec web python manage.py createsuperuser
 </p>
 </div>
 </div>
-<div id="outline-container-org6cc7a74" class="outline-3">
-<h3 id="org6cc7a74"><span class="section-number-3">6.5.</span> <span class="todo TODO">TODO</span> check health</h3>
+<div id="outline-container-orgb552a76" class="outline-3">
+<h3 id="orgb552a76"><span class="section-number-3">6.5.</span> <span class="todo TODO">TODO</span> check health</h3>
 <div class="outline-text-3" id="text-6-5">
 <p>
 python manage.py check &#x2013;deploy
 </p>
 </div>
 </div>
-<div id="outline-container-org2c7a9e0" class="outline-3">
-<h3 id="org2c7a9e0"><span class="section-number-3">6.6.</span> <span class="todo TODO">TODO</span> Run as docker image, create an image for it.</h3>
+<div id="outline-container-org8bb1ccd" class="outline-3">
+<h3 id="org8bb1ccd"><span class="section-number-3">6.6.</span> <span class="todo TODO">TODO</span> Run as docker image, create an image for it.</h3>
 <div class="outline-text-3" id="text-6-6">
 <p>
 check djangox and cookiecutter
 </p>
 </div>
 </div>
-<div id="outline-container-org90c4438" class="outline-3">
-<h3 id="org90c4438"><span class="section-number-3">6.7.</span> <span class="todo TODO">TODO</span> add management commands, create some dummy data maybe?</h3>
+<div id="outline-container-orgf01a737" class="outline-3">
+<h3 id="orgf01a737"><span class="section-number-3">6.7.</span> <span class="todo TODO">TODO</span> add management commands, create some dummy data maybe?</h3>
 </div>
-<div id="outline-container-org3ebbfad" class="outline-3">
-<h3 id="org3ebbfad"><span class="section-number-3">6.8.</span> <span class="todo TODO">TODO</span> create the clean migrations script</h3>
+<div id="outline-container-org0214c36" class="outline-3">
+<h3 id="org0214c36"><span class="section-number-3">6.8.</span> <span class="todo TODO">TODO</span> create the clean migrations script</h3>
 </div>
 </div>
 </div>
@@ -2134,7 +2134,7 @@ check djangox and cookiecutter
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 11:16</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:25</p>
 	 <p class="date">This org file is last <u>modified</u>: 2024-05-31 Fri 13:31</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-30 Thu 16:52</p>
 	 <div class="generated">

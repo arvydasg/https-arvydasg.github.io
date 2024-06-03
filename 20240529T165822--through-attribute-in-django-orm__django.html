@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 11:16 -->
+<!-- 2024-06-03 Mon 13:25 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Through attribute in django-orm</title>
@@ -23,7 +23,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-05-29 Wed 16:58</div>
+<div id="updated">Updated: 2024-06-03 Mon 13:16</div>
 </div>
 <div id="content" class="content">
 <header>
@@ -43,7 +43,7 @@ This is the basic m2m relationship:
         <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">self</span>.name
 
 
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Deal</span>(models.Model):        
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Deal</span>(models.Model):
     <span style="font-weight: bold; font-style: italic;">collateral</span> = models.ManyToManyField(
         Vessel,
         blank=<span style="font-weight: bold; text-decoration: underline;">True</span>,
@@ -54,7 +54,7 @@ This is the basic m2m relationship:
     )
     <span style="font-weight: bold; font-style: italic;">has_new</span> = models.BooleanField(
         default=<span style="font-weight: bold; text-decoration: underline;">True</span>,
-        null=<span style="font-weight: bold; text-decoration: underline;">True</span>   
+        null=<span style="font-weight: bold; text-decoration: underline;">True</span>
     )
 
     <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>) -&gt; <span style="font-weight: bold;">str</span>:
@@ -105,7 +105,7 @@ Will do that with <code>through</code> attribute:
         <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">self</span>.name
 
 
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Deal</span>(models.Model):        
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Deal</span>(models.Model):
     <span style="font-weight: bold; font-style: italic;">collaterals</span> = models.ManyToManyField(
         Vessel,
         blank=<span style="font-weight: bold; text-decoration: underline;">True</span>,
@@ -117,7 +117,7 @@ Will do that with <code>through</code> attribute:
     )
     <span style="font-weight: bold; font-style: italic;">has_new</span> = models.BooleanField(
         default=<span style="font-weight: bold; text-decoration: underline;">True</span>,
-        null=<span style="font-weight: bold; text-decoration: underline;">True</span>   
+        null=<span style="font-weight: bold; text-decoration: underline;">True</span>
     )
 
     <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__str__</span>(<span style="font-weight: bold;">self</span>) -&gt; <span style="font-weight: bold;">str</span>:
@@ -138,7 +138,7 @@ Will do that with <code>through</code> attribute:
         null=<span style="font-weight: bold; text-decoration: underline;">True</span>,
     )
     <span style="font-weight: bold; font-style: italic;">charfield</span> = models.CharField(max_length=255)
-    <span style="font-weight: bold; font-style: italic;">is_new</span> = models.BooleanField(        
+    <span style="font-weight: bold; font-style: italic;">is_new</span> = models.BooleanField(
         default=<span style="font-weight: bold; text-decoration: underline;">True</span>,
         blank=<span style="font-weight: bold; text-decoration: underline;">True</span>
     )
@@ -207,8 +207,8 @@ admin.site.register(Collateral)
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 11:16</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-05-29 Wed 16:58</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:25</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 13:16</p>
 	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 16:58</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

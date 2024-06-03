@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-06-03 Mon 13:25 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What is pre-commit</title>
+<meta name="author" content="Arvydas Gasparavicius" />
+<meta name="description" content="Welcome to my devnotes site" />
+<meta name="keywords" content="emacs django" />
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<div id="updated">Updated: 2024-06-03 Mon 13:15</div>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">What is pre-commit</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7171b60">1. Intro</a>
+<ul>
+<li><a href="#org2f388ee">1.1. Useful resources</a></li>
+<li><a href="#orgc257564">1.2. What is pre-commit</a></li>
+</ul>
+</li>
+<li><a href="#orgc382063">2. Set up</a></li>
+<li><a href="#orgb7ed695">3. Use</a>
+<ul>
+<li><a href="#org8edbbf2">3.1. Pre-commit commands</a></li>
+<li><a href="#orgbdcb411">3.2. Pre-commit examples:</a>
+<ul>
+<li><a href="#orgb5d43a7">3.2.1. pre-made pre-commit hooks</a></li>
+<li><a href="#org4707a1e">3.2.2. black - The uncompromising Python code formatter</a></li>
+<li><a href="#org14a0d15">3.2.3. isort - sort imports alphabetically, and automatically separated into sections and by type</a></li>
+<li><a href="#org4d595ee">3.2.4. pyupgrade - A tool to automatically upgrade syntax for newer versions</a></li>
+<li><a href="#org981f9b9">3.2.5. flake8 - Tool For Style Guide Enforcement</a></li>
+<li><a href="#org808cd31">3.2.6. pylint - linter and a static code analyzer</a></li>
+<li><a href="#orge0ff6d8">3.2.7. djlint-django - Looks for errors and inconsistencies in your HTML files.</a></li>
+<li><a href="#org67e92e3">3.2.8. bandit - a tool designed to find common security issues in Python code.</a></li>
+<li><a href="#orgd13b2d3">3.2.9. Run local Django tests</a></li>
+<li><a href="#org1a54ec5">3.2.10. Check for TODO keywords in your project with a custom pre-commit hook</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2a1342f">4. Extra</a>
+<ul>
+<li><a href="#org1cd8439">4.1. Why not to use pre-commits</a></li>
+<li><a href="#org381798b">4.2. Tips for VSCode on Windows</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org7171b60" class="outline-2">
+<h2 id="org7171b60"><span class="section-number-2">1.</span> Intro</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org2f388ee" class="outline-3">
+<h3 id="org2f388ee"><span class="section-number-3">1.1.</span> Useful resources</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li><a href="https://pre-commit.com/">Official docs</a></li>
+<li><a href="https://www.vantage-ai.com/blog/speed-up-your-python-development-workflow-with-pre-commit-and-makefile">Intro to pre-commit</a></li>
+<li><a href="https://pre-commit.com/hooks.html">Possible pre-commit hooks</a></li>
+<li><a href="https://builtwithdjango.com/blog/improve-your-code-with-pre-commit">Great resource</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc257564" class="outline-3">
+<h3 id="orgc257564"><span class="section-number-3">1.2.</span> What is pre-commit</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Pre-commit is exactly how it sounds. It is some action that happens before a
+git commit is formed. So for example you can write some python code. Then you
+might have a pre-commit setup that checks the linting and formatting in your
+python code. If it finds that it's not compliant, it will "break" the commit
+and ask you to do that needed changes so that those pre-commits would pass.
+When you fix them, when they pass, you can then form the commit again and this
+time the commit passes, you can push it to remote.
+</p>
+
+<p>
+You set it up, then everyone that is working on your repo will be forced to run
+these pre-commit checks. This way you can ensure that the code that is being
+pushed to your repo is formatted/linted/checked/tested the way you want, no
+matter who pushes it
+</p>
+
+<p>
+The pre-commit runs <code>only on the changed files</code>. So for example <code>isort</code> will
+only run on files changed in current commit, not ALL of the files in the
+project.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc382063" class="outline-2">
+<h2 id="orgc382063"><span class="section-number-2">2.</span> Set up</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Install a needed python package:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">pip install pre-commit
+</pre>
+</div>
+
+<p>
+Create <code>.pre-commit-config.yaml</code> file in your root directory. Add such content
+for a test:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml">exclude: .*migrations\/.*
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      - id: check-docstring-first
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+</pre>
+</div>
+
+<p>
+We basically ask to look at a particular repo that contains lots of hooks and
+tell to use a few of them.
+</p>
+
+<p>
+Now run <code>pre-commit install</code>. This command installs the pre-commit hook into
+your <code>.git/hooks/pre-commit</code> so that it will be automatically run before each
+commit
+</p>
+
+<blockquote>
+<p>
+<b><b>!!!! DON'T FORGET TO RUN <code>pre-commit install</code> COMMAND IN TERMINAL AFTER
+MAKING CHANGES TO THIS FILE !!!</b></b>
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgb7ed695" class="outline-2">
+<h2 id="orgb7ed695"><span class="section-number-2">3.</span> Use</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org8edbbf2" class="outline-3">
+<h3 id="org8edbbf2"><span class="section-number-3">3.1.</span> Pre-commit commands</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Run pre-commit manually on all files
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">pre-commit run --all-files
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbdcb411" class="outline-3">
+<h3 id="orgbdcb411"><span class="section-number-3">3.2.</span> Pre-commit examples:</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-orgb5d43a7" class="outline-4">
+<h4 id="orgb5d43a7"><span class="section-number-4">3.2.1.</span> pre-made pre-commit hooks</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+Simply choose from <a href="https://pre-commit.com/hooks.html">possible pre-commit hooks</a> and add them like so:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml">- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.4.0
+  hooks:
+    - id: check-docstring-first
+    - id: check-merge-conflict
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-yaml
+    - id: check-ast
+    - id: check-added-large-files
+    - id: check-symlinks
+    - id: debug-statements
+    - id: detect-private-key
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4707a1e" class="outline-4">
+<h4 id="org4707a1e"><span class="section-number-4">3.2.2.</span> black - The uncompromising Python code formatter</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<p>
+All the files that you want to commit will be checked for any inconsistencies
+and bad styling (based on PEP 8 standard).
+</p>
+
+<p>
+This hook will automatically fix those issues according to the standards
+</p>
+
+<ul class="org-ul">
+<li><a href="https://github.com/azegas/quotes/issues/4">Issue in quotes project</a></li>
+<li><a href="https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html">possible black args</a></li>
+<li><a href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#line-length">line length suggestions 79 vs 88</a></li>
+</ul>
+
+<p>
+Have some settings in <code>settings.json</code> of vscode related to black also.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml">- repo: https://github.com/ambv/black
+  rev: 24.4.0
+  hooks:
+    - id: black
+      args: ["--line-length", "79"] # "black-formatter.args": ["--line-length", "79"], in vscode
+</pre>
+</div>
+
+<p>
+Can use <code>pyproject.toml</code> file to store your black configs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org14a0d15" class="outline-4">
+<h4 id="org14a0d15"><span class="section-number-4">3.2.3.</span> isort - sort imports alphabetically, and automatically separated into sections and by type</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<ul class="org-ul">
+<li><a href="https://pycqa.github.io/isort/">Official docs</a></li>
+<li><a href="https://builtwithdjango.com/blog/improve-your-code-with-pre-commit#isort">https://builtwithdjango.com/blog/improve-your-code-with-pre-commit#isort</a></li>
+<li><a href="https://pycqa.github.io/isort/docs/configuration/profiles.html">Possible profiles to use</a></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-yaml">- repo: https://github.com/pycqa/isort
+  rev: 5.12.0
+  hooks:
+    - id: isort
+      name: isort (python)
+      args: ["--profile", "black"]
+</pre>
+</div>
+
+<p>
+Can use <code>pyproject.toml</code> file to store your isort configs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4d595ee" class="outline-4">
+<h4 id="org4d595ee"><span class="section-number-4">3.2.4.</span> pyupgrade - A tool to automatically upgrade syntax for newer versions</h4>
+<div class="outline-text-4" id="text-3-2-4">
+<ul class="org-ul">
+<li><a href="https://github.com/asottile/pyupgrade">Official docs</a></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-yaml">- repo: https://github.com/asottile/pyupgrade
+  rev: v3.15.2
+  hooks:
+  - id: pyupgrade
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org981f9b9" class="outline-4">
+<h4 id="org981f9b9"><span class="section-number-4">3.2.5.</span> flake8 - Tool For Style Guide Enforcement</h4>
+<div class="outline-text-4" id="text-3-2-5">
+<ul class="org-ul">
+<li><a href="https://flake8.pycqa.org/en/latest/">Official docs</a></li>
+</ul>
+
+<p>
+This plugin doesn't update the file for us you have to manually fix the code to
+the standard OR add an exception like "# noqa: E501" for example to the piece
+of code can create .flake8 file inside the repo to override some style
+requirements
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml">- repo: https://github.com/pycqa/flake8
+  rev: 6.0.0
+  hooks:
+    - id: flake8
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org808cd31" class="outline-4">
+<h4 id="org808cd31"><span class="section-number-4">3.2.6.</span> pylint - linter and a static code analyzer</h4>
+<div class="outline-text-4" id="text-3-2-6">
+<ul class="org-ul">
+<li><a href="https://github.com/pylint-dev/pylint/blob/main/pylintrc">defaults</a></li>
+</ul>
+
+<p>
+Pylint is just like flake8. It will check your code for any formatting issues
+as well as any performance issues.
+</p>
+
+<p>
+The difference is that pylint is a little more thorough and more customizable.
+</p>
+
+<p>
+Those two complement each other (so if you need to ignore something, you will
+have to ignore it twice.
+</p>
+
+<p>
+For flake ignore a line with (# noqa: E501), for pylint ignore a single line
+with (pylint: disable=C0301).
+</p>
+
+<p>
+You don't have to set both of them up, but I sleep better when I know that two
+unrelated programs checked my code :)
+</p>
+
+<p>
+created .pylintrc, added some of my own configs to it
+</p>
+
+<p>
+if you don't like the score or something, can run pylint manually with "make
+lint" depends on a local pylint installation, not a github repo, like the rest
+</p>
+
+<p>
+Have an extension pylint installed in VsCode to do the linting automatically,
+but this is for "just in case", to see those 10.00/10 ;)
+</p>
+
+<p>
+My current <code>.pylintrc</code> (some rules that we want to ignore, we put them in
+.pylintrc file):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">my simple .pylintrc</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">decided not to add all defaults from https://github.com/pylint-dev/pylint/blob/main/pylintrc, cuz basic rules like docstrings and length's are not warned about then</span>
+
+[MASTER]
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">let's not pylint the migrations folder</span>
+<span style="font-weight: bold; font-style: italic;">ignore</span>=migrations
+
+[MESSAGES CONTROL]
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">this makes sure that lines like such "quotes = Quote.objects.all()"</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">don't throw errors like such "apps\quotes\views.py:82:20: E1101: Class 'Quote' has no 'objects' member (no-member)"</span>
+<span style="font-weight: bold; font-style: italic;">disable</span>=no-member
+
+[DESIGN]
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">"class AuthorCreateView(CreateView):" such class declarations would throw R0901: Too many ancestors (10/7) (too-many-ancestors) warning from pylint.</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">indicates that your class, AuthorCreateView, is inheriting (directly or indirectly) from more than the default allowed number of ancestor classes.</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">By default, pylint sets this limit to 7, which is often exceeded in Django projects, especially when using class-based views (CBVs) that inherit from</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Django's generic views and mixins, which themselves have multiple layers of inheritance.</span>
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">This warning is a part of the pylint design checker, which aims to identify potential design issues in your code. However, in the context of Django,</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">especially with CBVs, having more than 7 ancestors is not uncommon and is typically not a sign of bad design. Django's CBVs are designed to be extended</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">and composed through inheritance.</span>
+max-parents=10
+
+[FORMAT]
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Maximum number of characters on a single line.</span>
+max-line-length=79
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-yaml">- repo: local
+  hooks:
+    - id: pylint
+      name: pylint
+      entry: pylint
+      language: system
+      types: [python]
+      args:
+        [
+          "-rn", # Only display messages (warnings)
+          "-sn", # Don't display the score
+          "--rcfile=.pylintrc", # Link to config file. Tested. It is taken into consideration
+        ]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge0ff6d8" class="outline-4">
+<h4 id="orge0ff6d8"><span class="section-number-4">3.2.7.</span> djlint-django - Looks for errors and inconsistencies in your HTML files.</h4>
+<div class="outline-text-4" id="text-3-2-7">
+<ul class="org-ul">
+<li><a href="https://djlint.com/docs/configuration/">Official docs</a></li>
+</ul>
+
+<p>
+Seems unmaintained. Will try to use it anyway for now.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml">- repo: https://github.com/Riverside-Healthcare/djLint
+  rev: v1.34.1
+  hooks:
+    - id: djlint-django
+</pre>
+</div>
+
+<p>
+Can use <code>pyproject.toml</code> file to store your djlint configs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org67e92e3" class="outline-4">
+<h4 id="org67e92e3"><span class="section-number-4">3.2.8.</span> bandit - a tool designed to find common security issues in Python code.</h4>
+<div class="outline-text-4" id="text-3-2-8">
+<ul class="org-ul">
+<li><a href="https://github.com/PyCQA/bandit">Official docs</a></li>
+</ul>
+
+<p>
+Reminds that you should hide secret_keys and similar
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml">- repo: https://github.com/PyCQA/bandit
+  rev: 1.7.8
+  hooks:
+    - id: bandit
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd13b2d3" class="outline-4">
+<h4 id="orgd13b2d3"><span class="section-number-4">3.2.9.</span> Run local Django tests</h4>
+<div class="outline-text-4" id="text-3-2-9">
+<p>
+On windows:
+</p>
+
+<p>
+For some reason, when running pre-commit over vscode's github window, it does
+not look into the virtual env where dotenv and psycopg2 is installed.
+</p>
+
+<p>
+To fix it, I installed dotenv and psycopg2 and mysqlclient locally&#x2026; not the
+best idea, but good enough for now
+</p>
+
+<p>
+On devcontainers:
+</p>
+
+<p>
+Above comments got fixed when using devcontainers. I can remove dotenv,
+psycopg2 and mysqlclient from global installation and it all works
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml">- repo: local
+  hooks:
+    - id: local unit tests
+      name: local unit tests
+      entry: python manage.py test
+      language: system
+      pass_filenames: false # this hook will not receive the filenames of the files being committed as arguments. It will simply run the command python manage.py test without any file context. Just as we want.
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1a54ec5" class="outline-4">
+<h4 id="org1a54ec5"><span class="section-number-4">3.2.10.</span> Check for TODO keywords in your project with a custom pre-commit hook</h4>
+<div class="outline-text-4" id="text-3-2-10">
+<p>
+TODO keyword indicates that there is something you did not do. Perhaps you want
+to be reminded about that before you commit/push. That is what this hook here
+is for.
+</p>
+
+<p>
+<a href="https://dev.to/techishdeep/maximize-your-python-efficiency-with-pre-commit-a-complete-but-concise-guide-39a5">Inspiration for such pre-commit hook</a>
+</p>
+
+<blockquote>
+<p>
+NOTE: did not manage to implement it. I'd say too low of a value to put more effort in
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2a1342f" class="outline-2">
+<h2 id="org2a1342f"><span class="section-number-2">4.</span> Extra</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org1cd8439" class="outline-3">
+<h3 id="org1cd8439"><span class="section-number-3">4.1.</span> Why not to use pre-commits</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+You want to commit quick.. without disturbances.. If on each commit you are
+forced to run tests or some build command that takes ~1min or so, you will get
+mad. Make commits quick, inform the users about broken tests, etc (actions that
+take longer than a few seconds) with github actions. Also, a good on this topic
+here - <a href="https://www.youtube.com/watch?v=RAelLqnnOp0&amp;ab_channel=Theo-t3%E2%80%A4gg">why not to use pre-commits (valid points)</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org381798b" class="outline-3">
+<h3 id="org381798b"><span class="section-number-3">4.2.</span> Tips for VSCode on Windows</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+By default in vscode you do not see the <code>.git</code> folder. It is useful to see it
+so you know if your pre-commit was installed or not.
+</p>
+
+<p>
+To make the <code>.git</code> folder visible in vscode, go <code>file -&gt; preferences -&gt; settings -&gt; files.exclude</code> and uncheck <code>.git</code> folder (then hide it again, so it does not show up in the searches).
+</p>
+
+<p>
+Can make the commit from the terminal, OR can use source-control tab in VsCode
+and a "commit" button. Both will run the pre-commit. Can see the output in the
+terminal.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <div class="copyright-container">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 13:25</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 13:15</p>
+	 <p class="date">This org file is <u>created</u>: 2024-06-03 Mon 11:41</p>
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.3 (<a href="https://orgmode.org">Org</a> mode 9.6.15) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/test.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>
