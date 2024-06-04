@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 08:03 -->
+<!-- 2024-06-04 Tue 08:05 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cronjob test job</title>
@@ -26,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-04 Tue 08:03</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 08:05</div> -->
 </div>
 <div id="content">
 <header>
@@ -35,9 +35,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org867927b">1. fix serve time</a></li>
-<li><a href="#org918aaf5">2. create a python file</a></li>
-<li><a href="#orgcffac21">3. create a cronjob</a></li>
+<li><a href="#orge67d461">1. fix serve time</a></li>
+<li><a href="#org0eebd9d">2. create a python file</a></li>
+<li><a href="#org1eefde8">3. create a cronjob</a></li>
 </ul>
 </div>
 </nav>
@@ -49,8 +49,8 @@ Read info about cron: <code>vim /etc/crontab</code>
 cron helper - <code>Crontab.guru</code> - The cron schedule expression editor
 </p>
 
-<div id="outline-container-org867927b" class="outline-2">
-<h2 id="org867927b"><span class="section-number-2">1</span> fix serve time</h2>
+<div id="outline-container-orge67d461" class="outline-2">
+<h2 id="orge67d461"><span class="section-number-2">1</span> fix serve time</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="file:///home/runner/GIT/devnotes/20240104T082156--set-the-correct-server-time__linux.html">set the correct server time</a>
@@ -58,8 +58,8 @@ cron helper - <code>Crontab.guru</code> - The cron schedule expression editor
 </div>
 </div>
 
-<div id="outline-container-org918aaf5" class="outline-2">
-<h2 id="org918aaf5"><span class="section-number-2">2</span> create a python file</h2>
+<div id="outline-container-org0eebd9d" class="outline-2">
+<h2 id="org0eebd9d"><span class="section-number-2">2</span> create a python file</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">import</span> datetime
@@ -85,8 +85,8 @@ Make it executable
 </div>
 </div>
 
-<div id="outline-container-orgcffac21" class="outline-2">
-<h2 id="orgcffac21"><span class="section-number-2">3</span> create a cronjob</h2>
+<div id="outline-container-org1eefde8" class="outline-2">
+<h2 id="org1eefde8"><span class="section-number-2">3</span> create a cronjob</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-bash">crontab -e
@@ -117,8 +117,8 @@ This is a test cron job. Current time: 2023-07-11 12:34:01.576551
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 08:03</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 08:03</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 08:05</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 08:05</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-01-04 Thu 08:25</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
