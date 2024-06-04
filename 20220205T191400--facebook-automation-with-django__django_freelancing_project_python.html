@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 04:46 -->
+<!-- 2024-06-04 Tue 07:10 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Facebook automation with Django</title>
@@ -13,7 +13,6 @@
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
-<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
 <link rel="icon" href="./static/ag.ico">
@@ -24,7 +23,9 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-06-04 Tue 04:46</div>
+
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 07:09</div> -->
 </div>
 <div id="content">
 <header>
@@ -33,11 +34,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf52634f">1. Intro</a></li>
-<li><a href="#org8830e87">2. What is it for</a></li>
-<li><a href="#org22d3aa6">3. How it works</a></li>
-<li><a href="#org2b01e02">4. Cons</a></li>
-<li><a href="#org1c8e898">5. What to fix</a></li>
+<li><a href="#orga57088c">1. Intro</a></li>
+<li><a href="#org72dea9c">2. What is it for</a></li>
+<li><a href="#org35e7db1">3. How it works</a></li>
+<li><a href="#org8825f6d">4. Cons</a></li>
+<li><a href="#org43c3cff">5. What to fix</a></li>
 </ul>
 </div>
 </nav>
@@ -51,8 +52,8 @@
 Link - <a href="https://github.com/azegas/facebook_django">https://github.com/azegas/facebook_django</a>
 </p>
 
-<div id="outline-container-orgf52634f" class="outline-2">
-<h2 id="orgf52634f"><span class="section-number-2">1</span> Intro</h2>
+<div id="outline-container-orga57088c" class="outline-2">
+<h2 id="orga57088c"><span class="section-number-2">1</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 A Django web app that posts your desired content to the chosen Facebook groups
@@ -61,8 +62,8 @@ for you!
 </div>
 </div>
 
-<div id="outline-container-org8830e87" class="outline-2">
-<h2 id="org8830e87"><span class="section-number-2">2</span> What is it for</h2>
+<div id="outline-container-org72dea9c" class="outline-2">
+<h2 id="org72dea9c"><span class="section-number-2">2</span> What is it for</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 A recently started smoothie drink powder business that is testing itself out in
@@ -82,8 +83,8 @@ myself.
 </div>
 </div>
 
-<div id="outline-container-org22d3aa6" class="outline-2">
-<h2 id="org22d3aa6"><span class="section-number-2">3</span> How it works</h2>
+<div id="outline-container-org35e7db1" class="outline-2">
+<h2 id="org35e7db1"><span class="section-number-2">3</span> How it works</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 All the user need is a link to the facebook post and a call to action message.
@@ -97,8 +98,8 @@ app has done.
 </div>
 </div>
 
-<div id="outline-container-org2b01e02" class="outline-2">
-<h2 id="org2b01e02"><span class="section-number-2">4</span> Cons</h2>
+<div id="outline-container-org8825f6d" class="outline-2">
+<h2 id="org8825f6d"><span class="section-number-2">4</span> Cons</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 There are a few cons of using this script.
@@ -118,8 +119,8 @@ you are risking to get a temporary ban by facebook.</li>
 </div>
 </div>
 
-<div id="outline-container-org1c8e898" class="outline-2">
-<h2 id="org1c8e898"><span class="section-number-2">5</span> What to fix</h2>
+<div id="outline-container-org43c3cff" class="outline-2">
+<h2 id="org43c3cff"><span class="section-number-2">5</span> What to fix</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>if the script breaks - take a screenshot of the whole screen (easier to debug
@@ -135,14 +136,16 @@ track the activity)</li>
 <div id="postamble" class="status">
 <hr/>
 	 <footer>
-	 <div class="copyright-container">
+	 <p class="date generated">This note is <u>first written</u>: 2022-02-05 Sat 19:14</p>
+	 <div class="copyright-container generated">
 	 <div class="copyright">
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 04:46</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 04:46</p>
-	 <p class="date">This org file is <u>created</u>: 2022-02-05 Sat 19:14</p>
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 07:10</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 07:09</p> -->
+	 <!-- <p class="date">This org file is <u>created</u>: 2022-02-05 Sat 19:14</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
@@ -151,7 +154,6 @@ track the activity)</li>
 	 <script src="./static/js/generic.js"></script>
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
-	 <script src="./static/js/test.js"></script>
 	 <script src="./static/js/search.js"></script>
 </div>
 </body>

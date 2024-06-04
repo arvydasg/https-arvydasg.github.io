@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 04:46 -->
+<!-- 2024-06-04 Tue 07:10 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Django management commands and an example with recreating migrations</title>
@@ -13,7 +13,6 @@
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
-<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
 <link rel="icon" href="./static/ag.ico">
@@ -24,7 +23,9 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-06-04 Tue 04:46</div>
+
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 07:09</div> -->
 </div>
 <div id="content">
 <header>
@@ -33,16 +34,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9199198">1. Quick summary</a></li>
-<li><a href="#orge4ebc88">2. Step 1 - create <code>cleanup.cmd</code> file</a></li>
-<li><a href="#org414cc25">3. Step 2 - create <code>empty_migration_folder.cmd</code> file</a></li>
-<li><a href="#orga633a62">4. Step 3 - create create <code>create_root_user.py</code> file</a></li>
+<li><a href="#org0d92f84">1. Quick summary</a></li>
+<li><a href="#org7e8207a">2. Step 1 - create <code>cleanup.cmd</code> file</a></li>
+<li><a href="#orgde45643">3. Step 2 - create <code>empty_migration_folder.cmd</code> file</a></li>
+<li><a href="#org6a161b1">4. Step 3 - create create <code>create_root_user.py</code> file</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org9199198" class="outline-2">
-<h2 id="org9199198"><span class="section-number-2">1</span> Quick summary</h2>
+<div id="outline-container-org0d92f84" class="outline-2">
+<h2 id="org0d92f84"><span class="section-number-2">1</span> Quick summary</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Outside of your project directory, create a folder called helpers</li>
@@ -52,8 +53,8 @@
 </div>
 </div>
 
-<div id="outline-container-orge4ebc88" class="outline-2">
-<h2 id="orge4ebc88"><span class="section-number-2">2</span> Step 1 - create <code>cleanup.cmd</code> file</h2>
+<div id="outline-container-org7e8207a" class="outline-2">
+<h2 id="org7e8207a"><span class="section-number-2">2</span> Step 1 - create <code>cleanup.cmd</code> file</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -88,8 +89,8 @@ echo ======================#  Finished
 </div>
 </div>
 
-<div id="outline-container-org414cc25" class="outline-2">
-<h2 id="org414cc25"><span class="section-number-2">3</span> Step 2 - create <code>empty_migration_folder.cmd</code> file</h2>
+<div id="outline-container-orgde45643" class="outline-2">
+<h2 id="orgde45643"><span class="section-number-2">3</span> Step 2 - create <code>empty_migration_folder.cmd</code> file</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -115,8 +116,8 @@ for /d %%D in ("%folder%\*") do (
 </div>
 </div>
 
-<div id="outline-container-orga633a62" class="outline-2">
-<h2 id="orga633a62"><span class="section-number-2">4</span> Step 3 - create create <code>create_root_user.py</code> file</h2>
+<div id="outline-container-org6a161b1" class="outline-2">
+<h2 id="org6a161b1"><span class="section-number-2">4</span> Step 3 - create create <code>create_root_user.py</code> file</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -154,14 +155,16 @@ Inside of the  <code>app/management/commands</code> directory.
 <div id="postamble" class="status">
 <hr/>
 	 <footer>
-	 <div class="copyright-container">
+	 <p class="date generated">This note is <u>first written</u>: 2024-05-29 Wed 14:13</p>
+	 <div class="copyright-container generated">
 	 <div class="copyright">
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 04:46</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 04:46</p>
-	 <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 14:13</p>
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 07:10</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 07:09</p> -->
+	 <!-- <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 14:13</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
@@ -170,7 +173,6 @@ Inside of the  <code>app/management/commands</code> directory.
 	 <script src="./static/js/generic.js"></script>
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
-	 <script src="./static/js/test.js"></script>
 	 <script src="./static/js/search.js"></script>
 </div>
 </body>

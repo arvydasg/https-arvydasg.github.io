@@ -29,3 +29,10 @@ code {
     background-color: #6e7681;
     border-radius: 6px;
 }
+
+#text-table-of-contents ul,
+#text-table-of-contents ol {
+    list-style-type: none; /* Removes the dots (markers) */
+    /* padding-left: 0;       /\* Removes the default left padding *\/ */
+    /* margin-left: 0;        /\* Removes the default left margin *\/ */
+}

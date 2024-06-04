@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 04:46 -->
+<!-- 2024-06-04 Tue 07:10 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>What is coverage</title>
@@ -13,7 +13,6 @@
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
-<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
 <link rel="icon" href="./static/ag.ico">
@@ -24,7 +23,9 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-06-04 Tue 04:46</div>
+
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 07:09</div> -->
 </div>
 <div id="content">
 <header>
@@ -33,15 +34,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org640aad9">1. Intro</a></li>
-<li><a href="#orgc41f823">2. Run coverage before each commit with pre-commit</a></li>
-<li><a href="#org62a88ea">3. Run coverage after each commit with github actions</a></li>
+<li><a href="#orgb2cb1f3">1. Intro</a></li>
+<li><a href="#org2abfbd6">2. Run coverage before each commit with pre-commit</a></li>
+<li><a href="#orgf8098b5">3. Run coverage after each commit with github actions</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org640aad9" class="outline-2">
-<h2 id="org640aad9"><span class="section-number-2">1</span> Intro</h2>
+<div id="outline-container-orgb2cb1f3" class="outline-2">
+<h2 id="orgb2cb1f3"><span class="section-number-2">1</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 When building a Django app, It's nice to know which of your files miss testing.
@@ -72,8 +73,8 @@ Now you can check the html folder content to see your coverage results.
 </div>
 </div>
 
-<div id="outline-container-orgc41f823" class="outline-2">
-<h2 id="orgc41f823"><span class="section-number-2">2</span> Run coverage before each commit with pre-commit</h2>
+<div id="outline-container-org2abfbd6" class="outline-2">
+<h2 id="org2abfbd6"><span class="section-number-2">2</span> Run coverage before each commit with pre-commit</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Later, if you want to force yourself to write tests for each new feature, to
@@ -93,8 +94,8 @@ Run a github action instead and be notified if something breaks with an email.
 </div>
 </div>
 
-<div id="outline-container-org62a88ea" class="outline-2">
-<h2 id="org62a88ea"><span class="section-number-2">3</span> Run coverage after each commit with github actions</h2>
+<div id="outline-container-orgf8098b5" class="outline-2">
+<h2 id="orgf8098b5"><span class="section-number-2">3</span> Run coverage after each commit with github actions</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Wrote a separate post about this - <a href="20240425T151500--fail-a-github-action-if-coverage-requirements-are-not-met__git.html">here</a>.
@@ -105,14 +106,16 @@ Wrote a separate post about this - <a href="20240425T151500--fail-a-github-actio
 <div id="postamble" class="status">
 <hr/>
 	 <footer>
-	 <div class="copyright-container">
+	 <p class="date generated">This note is <u>first written</u>: 2024-04-25 Thu 14:14</p>
+	 <div class="copyright-container generated">
 	 <div class="copyright">
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 04:46</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 04:46</p>
-	 <p class="date">This org file is <u>created</u>: 2024-04-25 Thu 14:14</p>
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 07:10</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 07:09</p> -->
+	 <!-- <p class="date">This org file is <u>created</u>: 2024-04-25 Thu 14:14</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
@@ -121,7 +124,6 @@ Wrote a separate post about this - <a href="20240425T151500--fail-a-github-actio
 	 <script src="./static/js/generic.js"></script>
 	 <script src="./static/js/scroll-to-top.js"></script>
 	 <script src="./static/js/lightbox.js"></script>
-	 <script src="./static/js/test.js"></script>
 	 <script src="./static/js/search.js"></script>
 </div>
 </body>
