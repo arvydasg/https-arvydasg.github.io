@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 08:05 -->
+<!-- 2024-06-04 Tue 08:15 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Docker test container</title>
@@ -26,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-04 Tue 08:05</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 08:15</div> -->
 </div>
 <div id="content">
 <header>
@@ -35,15 +35,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org512f58e">1. Create Needed files</a>
+<li><a href="#org75be7da">1. Create Needed files</a>
 <ul>
-<li><a href="#org8d6d3ed">1.1. <code>Dockerfile</code> content</a></li>
-<li><a href="#orgba37660">1.2. <code>server.py</code> content</a></li>
-<li><a href="#org06bc23a">1.3. <code>helloworld.html</code> content</a></li>
+<li><a href="#orgbea6980">1.1. <code>Dockerfile</code> content</a></li>
+<li><a href="#org6d595ad">1.2. <code>server.py</code> content</a></li>
+<li><a href="#orgaa5c286">1.3. <code>helloworld.html</code> content</a></li>
 </ul>
 </li>
-<li><a href="#org50edfcc">2. Build the image</a></li>
-<li><a href="#orgee92659">3. Run the image</a></li>
+<li><a href="#org3f26433">2. Build the image</a></li>
+<li><a href="#orgd63b235">3. Run the image</a></li>
 </ul>
 </div>
 </nav>
@@ -51,8 +51,8 @@
 An example of a Docker container that runs a flask web app inside of it.
 </p>
 
-<div id="outline-container-org512f58e" class="outline-2">
-<h2 id="org512f58e"><span class="section-number-2">1</span> Create Needed files</h2>
+<div id="outline-container-org75be7da" class="outline-2">
+<h2 id="org75be7da"><span class="section-number-2">1</span> Create Needed files</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Create a directory in which you will put 3 files:
@@ -65,8 +65,8 @@ Create a directory in which you will put 3 files:
 </ul>
 </div>
 
-<div id="outline-container-org8d6d3ed" class="outline-3">
-<h3 id="org8d6d3ed"><span class="section-number-3">1.1</span> <code>Dockerfile</code> content</h3>
+<div id="outline-container-orgbea6980" class="outline-3">
+<h3 id="orgbea6980"><span class="section-number-3">1.1</span> <code>Dockerfile</code> content</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-bash">FROM python:3.9-slim
@@ -80,8 +80,8 @@ CMD [<span style="font-style: italic;">"python3"</span>, <span style="font-style
 </div>
 </div>
 
-<div id="outline-container-orgba37660" class="outline-3">
-<h3 id="orgba37660"><span class="section-number-3">1.2</span> <code>server.py</code> content</h3>
+<div id="outline-container-org6d595ad" class="outline-3">
+<h3 id="org6d595ad"><span class="section-number-3">1.2</span> <code>server.py</code> content</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">import</span> http.server
@@ -114,8 +114,8 @@ CMD [<span style="font-style: italic;">"python3"</span>, <span style="font-style
 </div>
 </div>
 
-<div id="outline-container-org06bc23a" class="outline-3">
-<h3 id="org06bc23a"><span class="section-number-3">1.3</span> <code>helloworld.html</code> content</h3>
+<div id="outline-container-orgaa5c286" class="outline-3">
+<h3 id="orgaa5c286"><span class="section-number-3">1.3</span> <code>helloworld.html</code> content</h3>
 <div class="outline-text-3" id="text-1-3">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
@@ -133,8 +133,8 @@ CMD [<span style="font-style: italic;">"python3"</span>, <span style="font-style
 </div>
 </div>
 
-<div id="outline-container-org50edfcc" class="outline-2">
-<h2 id="org50edfcc"><span class="section-number-2">2</span> Build the image</h2>
+<div id="outline-container-org3f26433" class="outline-2">
+<h2 id="org3f26433"><span class="section-number-2">2</span> Build the image</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 While in the same directory as the previous 3 files, run:
@@ -152,8 +152,8 @@ image called <code>test</code>
 </div>
 </div>
 
-<div id="outline-container-orgee92659" class="outline-2">
-<h2 id="orgee92659"><span class="section-number-2">3</span> Run the image</h2>
+<div id="outline-container-orgd63b235" class="outline-2">
+<h2 id="orgd63b235"><span class="section-number-2">3</span> Run the image</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-bash">docker run -it - p 5009:8082 test
@@ -190,8 +190,8 @@ Just <code>C-c C-c</code> to stop the image from running.
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 08:05</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 08:05</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 08:15</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 08:15</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-01-03 Wed 13:23</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
