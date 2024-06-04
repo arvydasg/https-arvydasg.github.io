@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 07:29 -->
+<!-- 2024-06-04 Tue 07:32 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Remove an app from django project</title>
@@ -26,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-04 Tue 07:28</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 07:31</div> -->
 </div>
 <div id="content">
 <header>
@@ -35,10 +35,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org34fad9f">1. 1. making the app invisible from the UI</a></li>
-<li><a href="#org1130b29">2. 2. Dealing with the DB table</a></li>
-<li><a href="#org203235f">3. 3. In PROD</a></li>
-<li><a href="#orgbeee5e8">4. 4. Delete the app folder</a></li>
+<li><a href="#orgd4d91a3">1. 1. making the app invisible from the UI</a></li>
+<li><a href="#org50dbed3">2. 2. Dealing with the DB table</a></li>
+<li><a href="#org02bbf6b">3. 3. In PROD</a></li>
+<li><a href="#org1b522cd">4. 4. Delete the app folder</a></li>
 </ul>
 </div>
 </nav>
@@ -62,8 +62,8 @@ And below are the steps I took:
 Each heading can be a single commit. Do this step by step.
 </p>
 
-<div id="outline-container-org34fad9f" class="outline-2">
-<h2 id="org34fad9f"><span class="section-number-2">1</span> 1. making the app invisible from the UI</h2>
+<div id="outline-container-orgd4d91a3" class="outline-2">
+<h2 id="orgd4d91a3"><span class="section-number-2">1</span> 1. making the app invisible from the UI</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Hiding the links to the app (base.html, etc), removing it from project's
@@ -76,8 +76,8 @@ When you navigate in the page - you should not get any errors.
 </div>
 </div>
 
-<div id="outline-container-org1130b29" class="outline-2">
-<h2 id="org1130b29"><span class="section-number-2">2</span> 2. Dealing with the DB table</h2>
+<div id="outline-container-org50dbed3" class="outline-2">
+<h2 id="org50dbed3"><span class="section-number-2">2</span> 2. Dealing with the DB table</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Luckily my app did not have dependencies to other apps at this time. So it's quite simple.
@@ -116,8 +116,8 @@ Commit those changes.
 </div>
 </div>
 
-<div id="outline-container-org203235f" class="outline-2">
-<h2 id="org203235f"><span class="section-number-2">3</span> 3. In PROD</h2>
+<div id="outline-container-org02bbf6b" class="outline-2">
+<h2 id="org02bbf6b"><span class="section-number-2">3</span> 3. In PROD</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Pull the most recent repo changes, run <code>migrate</code> (since the newest deletion
@@ -146,8 +146,8 @@ Tables should no longer be there.
 </div>
 </div>
 
-<div id="outline-container-orgbeee5e8" class="outline-2">
-<h2 id="orgbeee5e8"><span class="section-number-2">4</span> 4. Delete the app folder</h2>
+<div id="outline-container-org1b522cd" class="outline-2">
+<h2 id="org1b522cd"><span class="section-number-2">4</span> 4. Delete the app folder</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Delete and commit.
@@ -165,8 +165,8 @@ Delete and commit.
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 07:29</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 07:28</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 07:32</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 07:31</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-01-27 Sat 14:07</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
