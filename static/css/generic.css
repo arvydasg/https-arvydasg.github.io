@@ -36,3 +36,16 @@ code {
     /* padding-left: 0;       /\* Removes the default left padding *\/ */
     /* margin-left: 0;        /\* Removes the default left margin *\/ */
 }
+
+.generated {
+    font-family: monospace;
+    text-align: center;
+}
+
+.copyright-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 0.5ex;
+}
