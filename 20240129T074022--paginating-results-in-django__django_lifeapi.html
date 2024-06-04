@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 07:10 -->
+<!-- 2024-06-04 Tue 07:13 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paginating results in django</title>
@@ -25,7 +25,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-04 Tue 07:09</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 07:12</div> -->
 </div>
 <div id="content">
 <header>
@@ -34,11 +34,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0293e18">1. With smaller amount of queries, in  1.49ms</a></li>
-<li><a href="#orgeaec864">2. This is my current query 250-300ms:</a></li>
-<li><a href="#orgd17e9b5">3. After applying pagination like such:</a></li>
-<li><a href="#org355a816">4. BUT</a></li>
-<li><a href="#orgc75332f">5. Probably it's a good idea to look into the database, pagination itself won't help</a></li>
+<li><a href="#orgf56d7cb">1. With smaller amount of queries, in  1.49ms</a></li>
+<li><a href="#orgbebe15d">2. This is my current query 250-300ms:</a></li>
+<li><a href="#org9bf3cd1">3. After applying pagination like such:</a></li>
+<li><a href="#org898112f">4. BUT</a></li>
+<li><a href="#org0c2e535">5. Probably it's a good idea to look into the database, pagination itself won't help</a></li>
 </ul>
 </div>
 </nav>
@@ -46,8 +46,8 @@
 <a href="https://docs.djangoproject.com/en/5.0/topics/pagination/">https://docs.djangoproject.com/en/5.0/topics/pagination/</a>
 </p>
 
-<div id="outline-container-org0293e18" class="outline-2">
-<h2 id="org0293e18"><span class="section-number-2">1</span> With smaller amount of queries, in  1.49ms</h2>
+<div id="outline-container-orgf56d7cb" class="outline-2">
+<h2 id="orgf56d7cb"><span class="section-number-2">1</span> With smaller amount of queries, in  1.49ms</h2>
 <div class="outline-text-2" id="text-1">
 
 <figure>
@@ -57,8 +57,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgeaec864" class="outline-2">
-<h2 id="orgeaec864"><span class="section-number-2">2</span> This is my current query 250-300ms:</h2>
+<div id="outline-container-orgbebe15d" class="outline-2">
+<h2 id="orgbebe15d"><span class="section-number-2">2</span> This is my current query 250-300ms:</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-html">$("#data_table").DataTable({
@@ -161,8 +161,8 @@ have 'pagination'.
 </div>
 </div>
 
-<div id="outline-container-orgd17e9b5" class="outline-2">
-<h2 id="orgd17e9b5"><span class="section-number-2">3</span> After applying pagination like such:</h2>
+<div id="outline-container-org9bf3cd1" class="outline-2">
+<h2 id="org9bf3cd1"><span class="section-number-2">3</span> After applying pagination like such:</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold; text-decoration: underline;">@login_required</span>
@@ -266,8 +266,8 @@ Then add this to html and you are done.
 </div>
 </div>
 
-<div id="outline-container-org355a816" class="outline-2">
-<h2 id="org355a816"><span class="section-number-2">4</span> BUT</h2>
+<div id="outline-container-org898112f" class="outline-2">
+<h2 id="org898112f"><span class="section-number-2">4</span> BUT</h2>
 <div class="outline-text-2" id="text-4">
 <blockquote>
 <p>
@@ -283,8 +283,8 @@ I have noticed that.
 </div>
 </div>
 
-<div id="outline-container-orgc75332f" class="outline-2">
-<h2 id="orgc75332f"><span class="section-number-2">5</span> Probably it's a good idea to look into the database, pagination itself won't help</h2>
+<div id="outline-container-org0c2e535" class="outline-2">
+<h2 id="org0c2e535"><span class="section-number-2">5</span> Probably it's a good idea to look into the database, pagination itself won't help</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Now that I know how pagination works and what it does, let's try to fix this
@@ -303,8 +303,8 @@ problem another way - <a href="20240129T081456--optimizing-database-queries__dja
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 07:10</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 07:09</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 07:13</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 07:12</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-01-29 Mon 07:40</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

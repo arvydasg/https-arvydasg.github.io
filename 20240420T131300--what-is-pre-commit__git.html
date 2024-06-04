@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 07:10 -->
+<!-- 2024-06-04 Tue 07:13 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>What is pre-commit</title>
@@ -25,7 +25,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-04 Tue 07:09</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 07:12</div> -->
 </div>
 <div id="content">
 <header>
@@ -34,48 +34,48 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb204e7b">1. Intro</a>
+<li><a href="#org3d63fc6">1. Intro</a>
 <ul>
-<li><a href="#org1bb46e0">1.1. Useful resources</a></li>
-<li><a href="#org02ddf44">1.2. What is pre-commit</a></li>
+<li><a href="#org921a843">1.1. Useful resources</a></li>
+<li><a href="#orgd04cf87">1.2. What is pre-commit</a></li>
 </ul>
 </li>
-<li><a href="#orgeb298a0">2. Set up</a></li>
-<li><a href="#org02d9fd3">3. Use</a>
+<li><a href="#org9297428">2. Set up</a></li>
+<li><a href="#org75370bb">3. Use</a>
 <ul>
-<li><a href="#orgef31b29">3.1. Pre-commit commands</a></li>
-<li><a href="#org0cfde3b">3.2. Pre-commit examples:</a>
+<li><a href="#orgd6b6662">3.1. Pre-commit commands</a></li>
+<li><a href="#orgdb4b1cb">3.2. Pre-commit examples:</a>
 <ul>
-<li><a href="#org1fdc092">3.2.1. pre-made pre-commit hooks</a></li>
-<li><a href="#org9ee5df5">3.2.2. black - The uncompromising Python code formatter</a></li>
-<li><a href="#orgd0e5851">3.2.3. isort - sort imports alphabetically, and automatically separated into sections and by type</a></li>
-<li><a href="#org29e69f9">3.2.4. pyupgrade - A tool to automatically upgrade syntax for newer versions</a></li>
-<li><a href="#orgeda6dcc">3.2.5. flake8 - Tool For Style Guide Enforcement</a></li>
-<li><a href="#org3c2fcdd">3.2.6. pylint - linter and a static code analyzer</a></li>
-<li><a href="#org5eb370b">3.2.7. djlint-django - Looks for errors and inconsistencies in your HTML files.</a></li>
-<li><a href="#org2842122">3.2.8. bandit - a tool designed to find common security issues in Python code.</a></li>
-<li><a href="#org5eae12e">3.2.9. Run local Django tests</a></li>
-<li><a href="#org2240e1a">3.2.10. Check for TODO keywords in your project with a custom pre-commit hook</a></li>
+<li><a href="#orgd9d1614">3.2.1. pre-made pre-commit hooks</a></li>
+<li><a href="#org8801ac7">3.2.2. black - The uncompromising Python code formatter</a></li>
+<li><a href="#org70787bb">3.2.3. isort - sort imports alphabetically, and automatically separated into sections and by type</a></li>
+<li><a href="#org41cc276">3.2.4. pyupgrade - A tool to automatically upgrade syntax for newer versions</a></li>
+<li><a href="#org54720f0">3.2.5. flake8 - Tool For Style Guide Enforcement</a></li>
+<li><a href="#org37594bc">3.2.6. pylint - linter and a static code analyzer</a></li>
+<li><a href="#orgd3c2986">3.2.7. djlint-django - Looks for errors and inconsistencies in your HTML files.</a></li>
+<li><a href="#orgacdb5c7">3.2.8. bandit - a tool designed to find common security issues in Python code.</a></li>
+<li><a href="#org5858c92">3.2.9. Run local Django tests</a></li>
+<li><a href="#orgbadeb8a">3.2.10. Check for TODO keywords in your project with a custom pre-commit hook</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org79406c0">4. Extra</a>
+<li><a href="#org4913d46">4. Extra</a>
 <ul>
-<li><a href="#org84dc9db">4.1. Why not to use pre-commits</a></li>
-<li><a href="#org085916b">4.2. Tips for VSCode on Windows</a></li>
+<li><a href="#org8d9127e">4.1. Why not to use pre-commits</a></li>
+<li><a href="#orgd7817e7">4.2. Tips for VSCode on Windows</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgb204e7b" class="outline-2">
-<h2 id="orgb204e7b"><span class="section-number-2">1</span> Intro</h2>
+<div id="outline-container-org3d63fc6" class="outline-2">
+<h2 id="org3d63fc6"><span class="section-number-2">1</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org1bb46e0" class="outline-3">
-<h3 id="org1bb46e0"><span class="section-number-3">1.1</span> Useful resources</h3>
+<div id="outline-container-org921a843" class="outline-3">
+<h3 id="org921a843"><span class="section-number-3">1.1</span> Useful resources</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li><a href="https://pre-commit.com/">Official docs</a></li>
@@ -86,8 +86,8 @@
 </div>
 </div>
 
-<div id="outline-container-org02ddf44" class="outline-3">
-<h3 id="org02ddf44"><span class="section-number-3">1.2</span> What is pre-commit</h3>
+<div id="outline-container-orgd04cf87" class="outline-3">
+<h3 id="orgd04cf87"><span class="section-number-3">1.2</span> What is pre-commit</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Pre-commit is exactly how it sounds. It is some action that happens before a
@@ -122,8 +122,8 @@ prevents me from committing it.
 </div>
 </div>
 
-<div id="outline-container-orgeb298a0" class="outline-2">
-<h2 id="orgeb298a0"><span class="section-number-2">2</span> Set up</h2>
+<div id="outline-container-org9297428" class="outline-2">
+<h2 id="org9297428"><span class="section-number-2">2</span> Set up</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Install a needed python package:
@@ -172,12 +172,12 @@ MAKING CHANGES TO THIS FILE !!!</b></b>
 </div>
 </div>
 
-<div id="outline-container-org02d9fd3" class="outline-2">
-<h2 id="org02d9fd3"><span class="section-number-2">3</span> Use</h2>
+<div id="outline-container-org75370bb" class="outline-2">
+<h2 id="org75370bb"><span class="section-number-2">3</span> Use</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgef31b29" class="outline-3">
-<h3 id="orgef31b29"><span class="section-number-3">3.1</span> Pre-commit commands</h3>
+<div id="outline-container-orgd6b6662" class="outline-3">
+<h3 id="orgd6b6662"><span class="section-number-3">3.1</span> Pre-commit commands</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Run pre-commit manually on all files
@@ -189,12 +189,12 @@ Run pre-commit manually on all files
 </div>
 </div>
 
-<div id="outline-container-org0cfde3b" class="outline-3">
-<h3 id="org0cfde3b"><span class="section-number-3">3.2</span> Pre-commit examples:</h3>
+<div id="outline-container-orgdb4b1cb" class="outline-3">
+<h3 id="orgdb4b1cb"><span class="section-number-3">3.2</span> Pre-commit examples:</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org1fdc092" class="outline-4">
-<h4 id="org1fdc092"><span class="section-number-4">3.2.1</span> pre-made pre-commit hooks</h4>
+<div id="outline-container-orgd9d1614" class="outline-4">
+<h4 id="orgd9d1614"><span class="section-number-4">3.2.1</span> pre-made pre-commit hooks</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 Simply choose from <a href="https://pre-commit.com/hooks.html">possible pre-commit hooks</a> and add them like so:
@@ -219,8 +219,8 @@ Simply choose from <a href="https://pre-commit.com/hooks.html">possible pre-comm
 </div>
 </div>
 
-<div id="outline-container-org9ee5df5" class="outline-4">
-<h4 id="org9ee5df5"><span class="section-number-4">3.2.2</span> black - The uncompromising Python code formatter</h4>
+<div id="outline-container-org8801ac7" class="outline-4">
+<h4 id="org8801ac7"><span class="section-number-4">3.2.2</span> black - The uncompromising Python code formatter</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 All the files that you want to commit will be checked for any inconsistencies
@@ -256,8 +256,8 @@ Can use <code>pyproject.toml</code> file to store your black configs.
 </div>
 </div>
 
-<div id="outline-container-orgd0e5851" class="outline-4">
-<h4 id="orgd0e5851"><span class="section-number-4">3.2.3</span> isort - sort imports alphabetically, and automatically separated into sections and by type</h4>
+<div id="outline-container-org70787bb" class="outline-4">
+<h4 id="org70787bb"><span class="section-number-4">3.2.3</span> isort - sort imports alphabetically, and automatically separated into sections and by type</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <ul class="org-ul">
 <li><a href="https://pycqa.github.io/isort/">Official docs</a></li>
@@ -281,8 +281,8 @@ Can use <code>pyproject.toml</code> file to store your isort configs.
 </div>
 </div>
 
-<div id="outline-container-org29e69f9" class="outline-4">
-<h4 id="org29e69f9"><span class="section-number-4">3.2.4</span> pyupgrade - A tool to automatically upgrade syntax for newer versions</h4>
+<div id="outline-container-org41cc276" class="outline-4">
+<h4 id="org41cc276"><span class="section-number-4">3.2.4</span> pyupgrade - A tool to automatically upgrade syntax for newer versions</h4>
 <div class="outline-text-4" id="text-3-2-4">
 <ul class="org-ul">
 <li><a href="https://github.com/asottile/pyupgrade">Official docs</a></li>
@@ -298,8 +298,8 @@ Can use <code>pyproject.toml</code> file to store your isort configs.
 </div>
 </div>
 
-<div id="outline-container-orgeda6dcc" class="outline-4">
-<h4 id="orgeda6dcc"><span class="section-number-4">3.2.5</span> flake8 - Tool For Style Guide Enforcement</h4>
+<div id="outline-container-org54720f0" class="outline-4">
+<h4 id="org54720f0"><span class="section-number-4">3.2.5</span> flake8 - Tool For Style Guide Enforcement</h4>
 <div class="outline-text-4" id="text-3-2-5">
 <ul class="org-ul">
 <li><a href="https://flake8.pycqa.org/en/latest/">Official docs</a></li>
@@ -322,8 +322,8 @@ requirements
 </div>
 </div>
 
-<div id="outline-container-org3c2fcdd" class="outline-4">
-<h4 id="org3c2fcdd"><span class="section-number-4">3.2.6</span> pylint - linter and a static code analyzer</h4>
+<div id="outline-container-org37594bc" class="outline-4">
+<h4 id="org37594bc"><span class="section-number-4">3.2.6</span> pylint - linter and a static code analyzer</h4>
 <div class="outline-text-4" id="text-3-2-6">
 <ul class="org-ul">
 <li><a href="https://github.com/pylint-dev/pylint/blob/main/pylintrc">defaults</a></li>
@@ -425,8 +425,8 @@ max-line-length=79
 </div>
 </div>
 
-<div id="outline-container-org5eb370b" class="outline-4">
-<h4 id="org5eb370b"><span class="section-number-4">3.2.7</span> djlint-django - Looks for errors and inconsistencies in your HTML files.</h4>
+<div id="outline-container-orgd3c2986" class="outline-4">
+<h4 id="orgd3c2986"><span class="section-number-4">3.2.7</span> djlint-django - Looks for errors and inconsistencies in your HTML files.</h4>
 <div class="outline-text-4" id="text-3-2-7">
 <ul class="org-ul">
 <li><a href="https://djlint.com/docs/configuration/">Official docs</a></li>
@@ -450,8 +450,8 @@ Can use <code>pyproject.toml</code> file to store your djlint configs.
 </div>
 </div>
 
-<div id="outline-container-org2842122" class="outline-4">
-<h4 id="org2842122"><span class="section-number-4">3.2.8</span> bandit - a tool designed to find common security issues in Python code.</h4>
+<div id="outline-container-orgacdb5c7" class="outline-4">
+<h4 id="orgacdb5c7"><span class="section-number-4">3.2.8</span> bandit - a tool designed to find common security issues in Python code.</h4>
 <div class="outline-text-4" id="text-3-2-8">
 <ul class="org-ul">
 <li><a href="https://github.com/PyCQA/bandit">Official docs</a></li>
@@ -471,8 +471,8 @@ Reminds that you should hide secret_keys and similar
 </div>
 </div>
 
-<div id="outline-container-org5eae12e" class="outline-4">
-<h4 id="org5eae12e"><span class="section-number-4">3.2.9</span> Run local Django tests</h4>
+<div id="outline-container-org5858c92" class="outline-4">
+<h4 id="org5858c92"><span class="section-number-4">3.2.9</span> Run local Django tests</h4>
 <div class="outline-text-4" id="text-3-2-9">
 <p>
 On windows:
@@ -510,8 +510,8 @@ psycopg2 and mysqlclient from global installation and it all works
 </div>
 </div>
 
-<div id="outline-container-org2240e1a" class="outline-4">
-<h4 id="org2240e1a"><span class="section-number-4">3.2.10</span> Check for TODO keywords in your project with a custom pre-commit hook</h4>
+<div id="outline-container-orgbadeb8a" class="outline-4">
+<h4 id="orgbadeb8a"><span class="section-number-4">3.2.10</span> Check for TODO keywords in your project with a custom pre-commit hook</h4>
 <div class="outline-text-4" id="text-3-2-10">
 <p>
 TODO keyword indicates that there is something you did not do. Perhaps you want
@@ -533,12 +533,12 @@ NOTE: did not manage to implement it. I'd say too low of a value to put more eff
 </div>
 </div>
 
-<div id="outline-container-org79406c0" class="outline-2">
-<h2 id="org79406c0"><span class="section-number-2">4</span> Extra</h2>
+<div id="outline-container-org4913d46" class="outline-2">
+<h2 id="org4913d46"><span class="section-number-2">4</span> Extra</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org84dc9db" class="outline-3">
-<h3 id="org84dc9db"><span class="section-number-3">4.1</span> Why not to use pre-commits</h3>
+<div id="outline-container-org8d9127e" class="outline-3">
+<h3 id="org8d9127e"><span class="section-number-3">4.1</span> Why not to use pre-commits</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 You want to commit quick.. without disturbances.. If on each commit you are
@@ -550,8 +550,8 @@ here - <a href="https://www.youtube.com/watch?v=RAelLqnnOp0&amp;ab_channel=Theo-
 </div>
 </div>
 
-<div id="outline-container-org085916b" class="outline-3">
-<h3 id="org085916b"><span class="section-number-3">4.2</span> Tips for VSCode on Windows</h3>
+<div id="outline-container-orgd7817e7" class="outline-3">
+<h3 id="orgd7817e7"><span class="section-number-3">4.2</span> Tips for VSCode on Windows</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 By default in vscode you do not see the <code>.git</code> folder. It is useful to see it
@@ -581,8 +581,8 @@ terminal.
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 07:10</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 07:09</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 07:13</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 07:12</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-04-20 Sat 13:13</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
