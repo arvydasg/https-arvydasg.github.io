@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 07:13 -->
+<!-- 2024-06-04 Tue 07:29 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Random queries of django-orm</title>
@@ -13,6 +13,7 @@
 
 <link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
 <link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
 <link rel="icon" href="./static/ag.ico">
@@ -25,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-04 Tue 07:13</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 07:28</div> -->
 </div>
 <div id="content">
 <header>
@@ -34,19 +35,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2d7dd5c">1. Random queries</a></li>
-<li><a href="#org5888cdd">2. Modify a record in db with python example</a>
+<li><a href="#org145e031">1. Random queries</a></li>
+<li><a href="#orgaaf9148">2. Modify a record in db with python example</a>
 <ul>
-<li><a href="#org600a71e">2.1. Method 1</a></li>
-<li><a href="#orgcb9632d">2.2. Method 2</a></li>
+<li><a href="#org78218e1">2.1. Method 1</a></li>
+<li><a href="#org1c3585e">2.2. Method 2</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org2d7dd5c" class="outline-2">
-<h2 id="org2d7dd5c"><span class="section-number-2">1</span> Random queries</h2>
+<div id="outline-container-org145e031" class="outline-2">
+<h2 id="org145e031"><span class="section-number-2">1</span> Random queries</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> vessel.models <span style="font-weight: bold;">import</span> Vessel
@@ -88,12 +89,12 @@ deal1.save()
 </div>
 </div>
 </div>
-<div id="outline-container-org5888cdd" class="outline-2">
-<h2 id="org5888cdd"><span class="section-number-2">2</span> Modify a record in db with python example</h2>
+<div id="outline-container-orgaaf9148" class="outline-2">
+<h2 id="orgaaf9148"><span class="section-number-2">2</span> Modify a record in db with python example</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org600a71e" class="outline-3">
-<h3 id="org600a71e"><span class="section-number-3">2.1</span> Method 1</h3>
+<div id="outline-container-org78218e1" class="outline-3">
+<h3 id="org78218e1"><span class="section-number-3">2.1</span> Method 1</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-bash">(venv) arvy@DESKTOP-AUDMJ7D:~/src/lifeapi$ python manage.py shell --settings=settings.development
@@ -122,8 +123,8 @@ questions = Question.objects.all()
 </div>
 </div>
 
-<div id="outline-container-orgcb9632d" class="outline-3">
-<h3 id="orgcb9632d"><span class="section-number-3">2.2</span> Method 2</h3>
+<div id="outline-container-org1c3585e" class="outline-3">
+<h3 id="org1c3585e"><span class="section-number-3">2.2</span> Method 2</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 start by this, do whatever you want then
@@ -191,8 +192,8 @@ Answer.objects.<span style="font-weight: bold;">filter</span>(question=question)
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 07:13</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 07:13</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 07:29</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 07:28</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 16:59</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

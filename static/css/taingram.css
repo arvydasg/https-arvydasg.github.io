@@ -71,15 +71,6 @@ p {
     border-top: 0;
 }
 
-#updated {
-    font-size: 90%;
-    font-family: monospace;
-    color: var(--color-secondary);
-    padding: 1.5em 1em 0.75em;
-    border-bottom: 1px dotted var(--color-secondary);
-    float: right;
-}
-
 nav li {
     padding: 0.5ex 0;
 }
@@ -218,7 +209,7 @@ footer {
 
 .copyright-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin: 0 0.5ex;
