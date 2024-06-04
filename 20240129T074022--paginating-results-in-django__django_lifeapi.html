@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 19:38 -->
+<!-- 2024-06-04 Tue 04:30 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paginating results in django</title>
@@ -24,7 +24,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-06-03 Mon 19:38</div>
+<div id="updated">Updated: 2024-06-04 Tue 04:29</div>
 </div>
 <div id="content">
 <header>
@@ -33,11 +33,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4373cb3">1. With smaller amount of queries, in  1.49ms</a></li>
-<li><a href="#org22683aa">2. This is my current query 250-300ms:</a></li>
-<li><a href="#orgbd6ddbc">3. After applying pagination like such:</a></li>
-<li><a href="#org8a14320">4. BUT</a></li>
-<li><a href="#org4581084">5. Probably it's a good idea to look into the database, pagination itself won't help</a></li>
+<li><a href="#orgff6ee65">1. With smaller amount of queries, in  1.49ms</a></li>
+<li><a href="#orgea901cd">2. This is my current query 250-300ms:</a></li>
+<li><a href="#orgcccdffb">3. After applying pagination like such:</a></li>
+<li><a href="#org4829eda">4. BUT</a></li>
+<li><a href="#org2474413">5. Probably it's a good idea to look into the database, pagination itself won't help</a></li>
 </ul>
 </div>
 </nav>
@@ -45,8 +45,8 @@
 <a href="https://docs.djangoproject.com/en/5.0/topics/pagination/">https://docs.djangoproject.com/en/5.0/topics/pagination/</a>
 </p>
 
-<div id="outline-container-org4373cb3" class="outline-2">
-<h2 id="org4373cb3"><span class="section-number-2">1</span> With smaller amount of queries, in  1.49ms</h2>
+<div id="outline-container-orgff6ee65" class="outline-2">
+<h2 id="orgff6ee65"><span class="section-number-2">1</span> With smaller amount of queries, in  1.49ms</h2>
 <div class="outline-text-2" id="text-1">
 
 <figure>
@@ -56,8 +56,8 @@
 </div>
 </div>
 
-<div id="outline-container-org22683aa" class="outline-2">
-<h2 id="org22683aa"><span class="section-number-2">2</span> This is my current query 250-300ms:</h2>
+<div id="outline-container-orgea901cd" class="outline-2">
+<h2 id="orgea901cd"><span class="section-number-2">2</span> This is my current query 250-300ms:</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-html">$("#data_table").DataTable({
@@ -160,8 +160,8 @@ have 'pagination'.
 </div>
 </div>
 
-<div id="outline-container-orgbd6ddbc" class="outline-2">
-<h2 id="orgbd6ddbc"><span class="section-number-2">3</span> After applying pagination like such:</h2>
+<div id="outline-container-orgcccdffb" class="outline-2">
+<h2 id="orgcccdffb"><span class="section-number-2">3</span> After applying pagination like such:</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold; text-decoration: underline;">@login_required</span>
@@ -265,8 +265,8 @@ Then add this to html and you are done.
 </div>
 </div>
 
-<div id="outline-container-org8a14320" class="outline-2">
-<h2 id="org8a14320"><span class="section-number-2">4</span> BUT</h2>
+<div id="outline-container-org4829eda" class="outline-2">
+<h2 id="org4829eda"><span class="section-number-2">4</span> BUT</h2>
 <div class="outline-text-2" id="text-4">
 <blockquote>
 <p>
@@ -282,8 +282,8 @@ I have noticed that.
 </div>
 </div>
 
-<div id="outline-container-org4581084" class="outline-2">
-<h2 id="org4581084"><span class="section-number-2">5</span> Probably it's a good idea to look into the database, pagination itself won't help</h2>
+<div id="outline-container-org2474413" class="outline-2">
+<h2 id="org2474413"><span class="section-number-2">5</span> Probably it's a good idea to look into the database, pagination itself won't help</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Now that I know how pagination works and what it does, let's try to fix this
@@ -300,8 +300,8 @@ problem another way - <a href="20240129T081456--optimizing-database-queries__dja
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:38</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:38</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 04:30</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 04:29</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-29 Mon 07:40</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

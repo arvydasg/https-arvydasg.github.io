@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 19:39 -->
+<!-- 2024-06-04 Tue 04:30 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ssh into gcp server</title>
@@ -24,7 +24,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-06-03 Mon 19:38</div>
+<div id="updated">Updated: 2024-06-04 Tue 04:29</div>
 </div>
 <div id="content">
 <header>
@@ -33,19 +33,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7724a1a">1. Networking -&gt; VPC network -&gt; Firewall</a></li>
-<li><a href="#org17f5882">2. Compute Engine -&gt; Virtual Machines -&gt; VM instances</a></li>
-<li><a href="#orgc7ea5e0">3. Generate public/private key pair</a>
+<li><a href="#org7857fcd">1. Networking -&gt; VPC network -&gt; Firewall</a></li>
+<li><a href="#org532320c">2. Compute Engine -&gt; Virtual Machines -&gt; VM instances</a></li>
+<li><a href="#orgeb7e507">3. Generate public/private key pair</a>
 <ul>
-<li><a href="#orgda0c3e7">3.1. Generate key pair over PuTTYgen</a></li>
-<li><a href="#org6db46db">3.2. Generate key pair over WSL</a></li>
+<li><a href="#org889f169">3.1. Generate key pair over PuTTYgen</a></li>
+<li><a href="#org881e874">3.2. Generate key pair over WSL</a></li>
 </ul>
 </li>
-<li><a href="#orgc9d62d3">4. Add the <code>public</code> key to your GCP project:</a></li>
-<li><a href="#orgeef664c">5. Connect to the GCP VM using the new SSH key</a>
+<li><a href="#org20f31eb">4. Add the <code>public</code> key to your GCP project:</a></li>
+<li><a href="#orgfa9bf3b">5. Connect to the GCP VM using the new SSH key</a>
 <ul>
-<li><a href="#org65ca3c4">5.1. Over putty</a></li>
-<li><a href="#org6d1fe27">5.2. Over wsl</a></li>
+<li><a href="#org0aa7af8">5.1. Over putty</a></li>
+<li><a href="#org2540e21">5.2. Over wsl</a></li>
 </ul>
 </li>
 </ul>
@@ -59,8 +59,8 @@ This video explains it well - <a href="https://www.youtube.com/watch?v=fmh94mNQH
 When you have your instance running, first thing is make sure firewall rules accept the traffic.
 </p>
 
-<div id="outline-container-org7724a1a" class="outline-2">
-<h2 id="org7724a1a"><span class="section-number-2">1</span> Networking -&gt; VPC network -&gt; Firewall</h2>
+<div id="outline-container-org7857fcd" class="outline-2">
+<h2 id="org7857fcd"><span class="section-number-2">1</span> Networking -&gt; VPC network -&gt; Firewall</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 If you did not create any rules yet, there should be one named "default-allow-ssh". Port 22 on protocol tcp is open to the internet.
@@ -72,8 +72,8 @@ If it's done once, you don't have to do it again for each machine
 </div>
 </div>
 
-<div id="outline-container-org17f5882" class="outline-2">
-<h2 id="org17f5882"><span class="section-number-2">2</span> Compute Engine -&gt; Virtual Machines -&gt; VM instances</h2>
+<div id="outline-container-org532320c" class="outline-2">
+<h2 id="org532320c"><span class="section-number-2">2</span> Compute Engine -&gt; Virtual Machines -&gt; VM instances</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Get the external ip and try to connect via putty.
@@ -92,12 +92,12 @@ authenticate.
 </div>
 </div>
 
-<div id="outline-container-orgc7ea5e0" class="outline-2">
-<h2 id="orgc7ea5e0"><span class="section-number-2">3</span> Generate public/private key pair</h2>
+<div id="outline-container-orgeb7e507" class="outline-2">
+<h2 id="orgeb7e507"><span class="section-number-2">3</span> Generate public/private key pair</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgda0c3e7" class="outline-3">
-<h3 id="orgda0c3e7"><span class="section-number-3">3.1</span> Generate key pair over PuTTYgen</h3>
+<div id="outline-container-org889f169" class="outline-3">
+<h3 id="org889f169"><span class="section-number-3">3.1</span> Generate key pair over PuTTYgen</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Open <code>PuTTY Key Generator</code> or <code>PuTTYgen</code> to generate one <code>RSA key 2048 bits</code>.
@@ -118,8 +118,8 @@ Key comment - this is your USERNAME! you want to use to connect to your machine
 </div>
 </div>
 
-<div id="outline-container-org6db46db" class="outline-3">
-<h3 id="org6db46db"><span class="section-number-3">3.2</span> Generate key pair over WSL</h3>
+<div id="outline-container-org881e874" class="outline-3">
+<h3 id="org881e874"><span class="section-number-3">3.2</span> Generate key pair over WSL</h3>
 <div class="outline-text-3" id="text-3-2">
 <blockquote>
 <p>
@@ -145,8 +145,8 @@ Copy the entire contents of the public key that is displayed in the terminal.
 </div>
 </div>
 
-<div id="outline-container-orgc9d62d3" class="outline-2">
-<h2 id="orgc9d62d3"><span class="section-number-2">4</span> Add the <code>public</code> key to your GCP project:</h2>
+<div id="outline-container-org20f31eb" class="outline-2">
+<h2 id="org20f31eb"><span class="section-number-2">4</span> Add the <code>public</code> key to your GCP project:</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Go to the GCP Console</li>
@@ -166,12 +166,12 @@ username and add the ssh key. (can check this in logs, the same ssh page)
 </div>
 </div>
 
-<div id="outline-container-orgeef664c" class="outline-2">
-<h2 id="orgeef664c"><span class="section-number-2">5</span> Connect to the GCP VM using the new SSH key</h2>
+<div id="outline-container-orgfa9bf3b" class="outline-2">
+<h2 id="orgfa9bf3b"><span class="section-number-2">5</span> Connect to the GCP VM using the new SSH key</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org65ca3c4" class="outline-3">
-<h3 id="org65ca3c4"><span class="section-number-3">5.1</span> Over putty</h3>
+<div id="outline-container-org0aa7af8" class="outline-3">
+<h3 id="org0aa7af8"><span class="section-number-3">5.1</span> Over putty</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li>Take the external ip, put it into the Host Name field in putty, port 22.</li>
@@ -185,8 +185,8 @@ username and add the ssh key. (can check this in logs, the same ssh page)
 </div>
 </div>
 
-<div id="outline-container-org6d1fe27" class="outline-3">
-<h3 id="org6d1fe27"><span class="section-number-3">5.2</span> Over wsl</h3>
+<div id="outline-container-org2540e21" class="outline-3">
+<h3 id="org2540e21"><span class="section-number-3">5.2</span> Over wsl</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 In your WSL terminal, use the ssh command followed by the username and IP
@@ -261,8 +261,8 @@ Adding set mouse=a might have helped for vim also. cool.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:39</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:38</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 04:30</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 04:29</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-04 Thu 07:09</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

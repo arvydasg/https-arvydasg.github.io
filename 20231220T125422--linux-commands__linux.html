@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-03 Mon 19:38 -->
+<!-- 2024-06-04 Tue 04:30 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Linux commands</title>
@@ -24,7 +24,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-06-03 Mon 19:38</div>
+<div id="updated">Updated: 2024-06-04 Tue 04:29</div>
 </div>
 <div id="content">
 <header>
@@ -33,45 +33,45 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org64b1abb">1. Secret management with temporary variables</a></li>
-<li><a href="#orgbeac747">2. LDAP</a></li>
-<li><a href="#orgfdcc892">3. Access management</a></li>
-<li><a href="#org3a193db">4. Server information</a></li>
-<li><a href="#org5933e7d">5. Search</a></li>
-<li><a href="#orge8b03af">6. File</a></li>
-<li><a href="#org8e14ec6">7. Processes</a>
+<li><a href="#org0baadc8">1. Secret management with temporary variables</a></li>
+<li><a href="#orgc26e363">2. LDAP</a></li>
+<li><a href="#org07a21b7">3. Access management</a></li>
+<li><a href="#orgb6b1922">4. Server information</a></li>
+<li><a href="#org064e464">5. Search</a></li>
+<li><a href="#org6b4fc9a">6. File</a></li>
+<li><a href="#org44a9394">7. Processes</a>
 <ul>
-<li><a href="#org0bd1e09">7.1. htop</a></li>
+<li><a href="#orga946cc8">7.1. htop</a></li>
 </ul>
 </li>
-<li><a href="#org23b9048">8. Network</a></li>
-<li><a href="#orgf80a7ee">9. Logs</a></li>
-<li><a href="#org9188e3f">10. Yum</a></li>
-<li><a href="#orgb6bdca8">11. Cron</a></li>
-<li><a href="#org9fd579f">12. zip</a></li>
-<li><a href="#org59e1840">13. NAS</a></li>
-<li><a href="#org3cf4501">14. odbc</a></li>
-<li><a href="#orgf4d5b93">15. Tmux commands</a>
+<li><a href="#org2e3ffcf">8. Network</a></li>
+<li><a href="#org01cb02d">9. Logs</a></li>
+<li><a href="#org95643e1">10. Yum</a></li>
+<li><a href="#orgdcf52b7">11. Cron</a></li>
+<li><a href="#org63db7c9">12. zip</a></li>
+<li><a href="#orge90a3c9">13. NAS</a></li>
+<li><a href="#orgd916bb3">14. odbc</a></li>
+<li><a href="#org01a2259">15. Tmux commands</a>
 <ul>
-<li><a href="#orgb617b5e">15.1. <span class="priority">[A]</span> List all shortcuts</a></li>
-<li><a href="#org2a86ff4">15.2. Sessions</a></li>
-<li><a href="#org2226c15">15.3. Windows (tabs)</a></li>
-<li><a href="#orgb1a1262">15.4. Panes (splits)</a></li>
-<li><a href="#orge680f7c">15.5. Sync Panes</a></li>
-<li><a href="#orgb5ba5e1">15.6. Resizing Panes</a></li>
-<li><a href="#org736a20a">15.7. Copy mode:</a></li>
-<li><a href="#orga74b1c5">15.8. Misc</a></li>
-<li><a href="#org63c258f">15.9. Configurations Options:</a></li>
+<li><a href="#orgb3bcc42">15.1. <span class="priority">[A]</span> List all shortcuts</a></li>
+<li><a href="#orgb1010f2">15.2. Sessions</a></li>
+<li><a href="#orga7c7721">15.3. Windows (tabs)</a></li>
+<li><a href="#orge00b376">15.4. Panes (splits)</a></li>
+<li><a href="#orgf320467">15.5. Sync Panes</a></li>
+<li><a href="#org1f425d2">15.6. Resizing Panes</a></li>
+<li><a href="#orga8f6e63">15.7. Copy mode:</a></li>
+<li><a href="#org28b92bb">15.8. Misc</a></li>
+<li><a href="#org5d22aeb">15.9. Configurations Options:</a></li>
 </ul>
 </li>
-<li><a href="#org3bafb20">16. vim</a></li>
-<li><a href="#org80baabf">17. ansible</a></li>
+<li><a href="#orgf878d88">16. vim</a></li>
+<li><a href="#org56b8413">17. ansible</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org64b1abb" class="outline-2">
-<h2 id="org64b1abb"><span class="section-number-2">1</span> Secret management with temporary variables</h2>
+<div id="outline-container-org0baadc8" class="outline-2">
+<h2 id="org0baadc8"><span class="section-number-2">1</span> Secret management with temporary variables</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 NOT TO HAVE passwords in linux command history(<code>.bash_history</code>:), do this:
@@ -99,8 +99,8 @@ check if the variables contain the info
 </div>
 </div>
 
-<div id="outline-container-orgbeac747" class="outline-2">
-<h2 id="orgbeac747"><span class="section-number-2">2</span> LDAP</h2>
+<div id="outline-container-orgc26e363" class="outline-2">
+<h2 id="orgc26e363"><span class="section-number-2">2</span> LDAP</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Retrieve entries from administrative databases such as passwd and group</span>
@@ -122,8 +122,8 @@ getent netgroup servername | grep username
 </div>
 </div>
 
-<div id="outline-container-orgfdcc892" class="outline-2">
-<h2 id="orgfdcc892"><span class="section-number-2">3</span> Access management</h2>
+<div id="outline-container-org07a21b7" class="outline-2">
+<h2 id="org07a21b7"><span class="section-number-2">3</span> Access management</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Show last logged in users</span>
@@ -151,8 +151,8 @@ setfacl -Rm g:quant:rwX -m d:g:quant:rwX -m m:rwx /[directory of choice]
 </div>
 </div>
 
-<div id="outline-container-org3a193db" class="outline-2">
-<h2 id="org3a193db"><span class="section-number-2">4</span> Server information</h2>
+<div id="outline-container-orgb6b1922" class="outline-2">
+<h2 id="orgb6b1922"><span class="section-number-2">4</span> Server information</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">display kernel ring buffer messages</span>
@@ -175,8 +175,8 @@ rpm -qa -last | more
 </div>
 </div>
 
-<div id="outline-container-org5933e7d" class="outline-2">
-<h2 id="org5933e7d"><span class="section-number-2">5</span> Search</h2>
+<div id="outline-container-org064e464" class="outline-2">
+<h2 id="org064e464"><span class="section-number-2">5</span> Search</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">look for a word "mas" in ALL files(their content)</span>
@@ -188,8 +188,8 @@ find / -type f -name <span style="font-style: italic;">"viya-services-status.yml
 </div>
 </div>
 
-<div id="outline-container-orge8b03af" class="outline-2">
-<h2 id="orge8b03af"><span class="section-number-2">6</span> File</h2>
+<div id="outline-container-org6b4fc9a" class="outline-2">
+<h2 id="org6b4fc9a"><span class="section-number-2">6</span> File</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">creates a symbolic link(symlink) named "html" in the current directory that points to the "/opt/app/html" directory.</span>
@@ -223,8 +223,8 @@ du -h /home | sort -rh | head -n 10
 </div>
 </div>
 
-<div id="outline-container-org8e14ec6" class="outline-2">
-<h2 id="org8e14ec6"><span class="section-number-2">7</span> Processes</h2>
+<div id="outline-container-org44a9394" class="outline-2">
+<h2 id="org44a9394"><span class="section-number-2">7</span> Processes</h2>
 <div class="outline-text-2" id="text-7">
 <div class="org-src-container">
 <pre class="src src-bash">fuser -c /opt/app/
@@ -260,8 +260,8 @@ sudo systemctl stop sas-viya-*  <span style="font-weight: bold; font-style: ital
 </div>
 </div>
 
-<div id="outline-container-org0bd1e09" class="outline-3">
-<h3 id="org0bd1e09"><span class="section-number-3">7.1</span> htop</h3>
+<div id="outline-container-orga946cc8" class="outline-3">
+<h3 id="orga946cc8"><span class="section-number-3">7.1</span> htop</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 shortcuts - <a href="https://spin.atomicobject.com/2020/02/10/htop-guide/">https://spin.atomicobject.com/2020/02/10/htop-guide/</a>
@@ -290,8 +290,8 @@ loaded into memory once and used by multiple processes.
 </div>
 </div>
 
-<div id="outline-container-org23b9048" class="outline-2">
-<h2 id="org23b9048"><span class="section-number-2">8</span> Network</h2>
+<div id="outline-container-org2e3ffcf" class="outline-2">
+<h2 id="org2e3ffcf"><span class="section-number-2">8</span> Network</h2>
 <div class="outline-text-2" id="text-8">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">show the IP routing table</span>
@@ -334,8 +334,8 @@ pacias taisykles.
 </div>
 </div>
 
-<div id="outline-container-orgf80a7ee" class="outline-2">
-<h2 id="orgf80a7ee"><span class="section-number-2">9</span> Logs</h2>
+<div id="outline-container-org01cb02d" class="outline-2">
+<h2 id="org01cb02d"><span class="section-number-2">9</span> Logs</h2>
 <div class="outline-text-2" id="text-9">
 <div class="org-src-container">
 <pre class="src src-bash">journalctl -u jupyterhub -f
@@ -360,8 +360,8 @@ ansible-playbook site.yml -vvv 2&gt;&amp;1 | tee -a install_20230809_1500.txt
 </div>
 </div>
 
-<div id="outline-container-org9188e3f" class="outline-2">
-<h2 id="org9188e3f"><span class="section-number-2">10</span> Yum</h2>
+<div id="outline-container-org95643e1" class="outline-2">
+<h2 id="org95643e1"><span class="section-number-2">10</span> Yum</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 rpm official repo(yum, RHEL) commands - <a href="https://www.rpmfind.net/linux/RPM/ByName.html">https://www.rpmfind.net/linux/RPM/ByName.html</a>
@@ -399,8 +399,8 @@ sudo yum install <span style="font-style: italic;">'R-devel'</span> --enablerepo
 </div>
 </div>
 
-<div id="outline-container-orgb6bdca8" class="outline-2">
-<h2 id="orgb6bdca8"><span class="section-number-2">11</span> Cron</h2>
+<div id="outline-container-orgdcf52b7" class="outline-2">
+<h2 id="orgdcf52b7"><span class="section-number-2">11</span> Cron</h2>
 <div class="outline-text-2" id="text-11">
 <div class="org-src-container">
 <pre class="src src-bash">crontab -l                    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">view your own user's crontab</span>
@@ -411,8 +411,8 @@ crontab -r                      <span style="font-weight: bold; font-style: ital
 </div>
 </div>
 
-<div id="outline-container-org9fd579f" class="outline-2">
-<h2 id="org9fd579f"><span class="section-number-2">12</span> zip</h2>
+<div id="outline-container-org63db7c9" class="outline-2">
+<h2 id="org63db7c9"><span class="section-number-2">12</span> zip</h2>
 <div class="outline-text-2" id="text-12">
 <div class="org-src-container">
 <pre class="src src-bash">tar -cvf archive_name.tar files_or_directories_to_archive
@@ -422,8 +422,8 @@ tar -cvf labas.tar .
 </div>
 </div>
 
-<div id="outline-container-org59e1840" class="outline-2">
-<h2 id="org59e1840"><span class="section-number-2">13</span> NAS</h2>
+<div id="outline-container-orge90a3c9" class="outline-2">
+<h2 id="orge90a3c9"><span class="section-number-2">13</span> NAS</h2>
 <div class="outline-text-2" id="text-13">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">list all drives?</span>
@@ -435,8 +435,8 @@ mount -l |grep sas-store
 </div>
 </div>
 
-<div id="outline-container-org3cf4501" class="outline-2">
-<h2 id="org3cf4501"><span class="section-number-2">14</span> odbc</h2>
+<div id="outline-container-orgd916bb3" class="outline-2">
+<h2 id="orgd916bb3"><span class="section-number-2">14</span> odbc</h2>
 <div class="outline-text-2" id="text-14">
 <p>
 For setting up ODBC connection you need temp root user. Add temp root
@@ -464,8 +464,8 @@ odbcinst -q -d
 </div>
 </div>
 
-<div id="outline-container-orgf4d5b93" class="outline-2">
-<h2 id="orgf4d5b93"><span class="section-number-2">15</span> Tmux commands</h2>
+<div id="outline-container-org01a2259" class="outline-2">
+<h2 id="org01a2259"><span class="section-number-2">15</span> Tmux commands</h2>
 <div class="outline-text-2" id="text-15">
 <p>
 scroll in tmux - ctrl+b+[ then emacs bindings up and down
@@ -496,8 +496,8 @@ In tmux, hit the prefix ctrl+b and then:
 </p>
 </div>
 
-<div id="outline-container-orgb617b5e" class="outline-3">
-<h3 id="orgb617b5e"><span class="section-number-3">15.1</span> <span class="priority">[A]</span> List all shortcuts</h3>
+<div id="outline-container-orgb3bcc42" class="outline-3">
+<h3 id="orgb3bcc42"><span class="section-number-3">15.1</span> <span class="priority">[A]</span> List all shortcuts</h3>
 <div class="outline-text-3" id="text-15-1">
 <p>
 to see all the shortcuts keys in tmux simply use the bind-key ? in my
@@ -506,8 +506,8 @@ case that would be <code>CTRL-B ?</code>
 </div>
 </div>
 
-<div id="outline-container-org2a86ff4" class="outline-3">
-<h3 id="org2a86ff4"><span class="section-number-3">15.2</span> Sessions</h3>
+<div id="outline-container-orgb1010f2" class="outline-3">
+<h3 id="orgb1010f2"><span class="section-number-3">15.2</span> Sessions</h3>
 <div class="outline-text-3" id="text-15-2">
 <div class="org-src-container">
 <pre class="src src-bash">:new&lt;CR&gt;  new session
@@ -519,8 +519,8 @@ $  kill session
 </div>
 </div>
 
-<div id="outline-container-org2226c15" class="outline-3">
-<h3 id="org2226c15"><span class="section-number-3">15.3</span> Windows (tabs)</h3>
+<div id="outline-container-orga7c7721" class="outline-3">
+<h3 id="orga7c7721"><span class="section-number-3">15.3</span> Windows (tabs)</h3>
 <div class="outline-text-3" id="text-15-3">
 <div class="org-src-container">
 <pre class="src src-bash">c  create window
@@ -535,8 +535,8 @@ f  find window
 </div>
 </div>
 
-<div id="outline-container-orgb1a1262" class="outline-3">
-<h3 id="orgb1a1262"><span class="section-number-3">15.4</span> Panes (splits)</h3>
+<div id="outline-container-orge00b376" class="outline-3">
+<h3 id="orge00b376"><span class="section-number-3">15.4</span> Panes (splits)</h3>
 <div class="outline-text-3" id="text-15-4">
 <div class="org-src-container">
 <pre class="src src-bash">%  vertical split
@@ -557,8 +557,8 @@ f  find window
 </div>
 </div>
 
-<div id="outline-container-orge680f7c" class="outline-3">
-<h3 id="orge680f7c"><span class="section-number-3">15.5</span> Sync Panes</h3>
+<div id="outline-container-orgf320467" class="outline-3">
+<h3 id="orgf320467"><span class="section-number-3">15.5</span> Sync Panes</h3>
 <div class="outline-text-3" id="text-15-5">
 <p>
 You can do this by switching to the appropriate window, typing your
@@ -581,8 +581,8 @@ command. tip source
 </div>
 </div>
 
-<div id="outline-container-orgb5ba5e1" class="outline-3">
-<h3 id="orgb5ba5e1"><span class="section-number-3">15.6</span> Resizing Panes</h3>
+<div id="outline-container-org1f425d2" class="outline-3">
+<h3 id="org1f425d2"><span class="section-number-3">15.6</span> Resizing Panes</h3>
 <div class="outline-text-3" id="text-15-6">
 <p>
 You can also resize panes if you don’t like the layout defaults. I
@@ -605,8 +605,8 @@ PREFIX : resize-pane -t 2 -L 20 (Resizes the pane with the id of 2 left by 20 ce
 </div>
 </div>
 
-<div id="outline-container-org736a20a" class="outline-3">
-<h3 id="org736a20a"><span class="section-number-3">15.7</span> Copy mode:</h3>
+<div id="outline-container-orga8f6e63" class="outline-3">
+<h3 id="orga8f6e63"><span class="section-number-3">15.7</span> Copy mode:</h3>
 <div class="outline-text-3" id="text-15-7">
 <p>
 Pressing PREFIX [ places us in Copy mode. We can then use our movement
@@ -678,8 +678,8 @@ Transpose chars                        C-t
 </div>
 </div>
 
-<div id="outline-container-orga74b1c5" class="outline-3">
-<h3 id="orga74b1c5"><span class="section-number-3">15.8</span> Misc</h3>
+<div id="outline-container-org28b92bb" class="outline-3">
+<h3 id="org28b92bb"><span class="section-number-3">15.8</span> Misc</h3>
 <div class="outline-text-3" id="text-15-8">
 <div class="org-src-container">
 <pre class="src src-bash">d  detach
@@ -691,8 +691,8 @@ t  big clock
 </div>
 </div>
 
-<div id="outline-container-org63c258f" class="outline-3">
-<h3 id="org63c258f"><span class="section-number-3">15.9</span> Configurations Options:</h3>
+<div id="outline-container-org5d22aeb" class="outline-3">
+<h3 id="org5d22aeb"><span class="section-number-3">15.9</span> Configurations Options:</h3>
 <div class="outline-text-3" id="text-15-9">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Mouse support - set to on if you want to use the mouse</span>
@@ -720,8 +720,8 @@ bind Down last-window <span style="font-style: italic;">\;</span> swap-pane -s t
 </div>
 </div>
 </div>
-<div id="outline-container-org3bafb20" class="outline-2">
-<h2 id="org3bafb20"><span class="section-number-2">16</span> vim</h2>
+<div id="outline-container-orgf878d88" class="outline-2">
+<h2 id="orgf878d88"><span class="section-number-2">16</span> vim</h2>
 <div class="outline-text-2" id="text-16">
 <div class="org-src-container">
 <pre class="src src-bash">:set paste
@@ -738,8 +738,8 @@ bind Down last-window <span style="font-style: italic;">\;</span> swap-pane -s t
 </div>
 </div>
 
-<div id="outline-container-org80baabf" class="outline-2">
-<h2 id="org80baabf"><span class="section-number-2">17</span> ansible</h2>
+<div id="outline-container-org56b8413" class="outline-2">
+<h2 id="org56b8413"><span class="section-number-2">17</span> ansible</h2>
 <div class="outline-text-2" id="text-17">
 <div class="org-src-container">
 <pre class="src src-bash">ansible-galaxy collection list
@@ -773,8 +773,8 @@ for example I deleted community.general by doing rm -rf community_old/ in
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-03 Mon 19:38</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-06-03 Mon 19:38</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 04:30</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 04:29</p>
 	 <p class="date">This org file is <u>created</u>: 2023-12-20 Wed 12:54</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
