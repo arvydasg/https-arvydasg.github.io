@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 04:43 -->
+<!-- 2024-06-04 Tue 04:46 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Remove an app from django project</title>
@@ -24,7 +24,7 @@
  
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="preamble" class="status">
-<div id="updated">Updated: 2024-06-04 Tue 04:42</div>
+<div id="updated">Updated: 2024-06-04 Tue 04:46</div>
 </div>
 <div id="content">
 <header>
@@ -33,10 +33,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4ca0b0e">1. 1. making the app invisible from the UI</a></li>
-<li><a href="#org27f6acb">2. 2. Dealing with the DB table</a></li>
-<li><a href="#org87e10b5">3. 3. In PROD</a></li>
-<li><a href="#orgd91f97f">4. 4. Delete the app folder</a></li>
+<li><a href="#org283d02c">1. 1. making the app invisible from the UI</a></li>
+<li><a href="#org18eed70">2. 2. Dealing with the DB table</a></li>
+<li><a href="#orgc1ad760">3. 3. In PROD</a></li>
+<li><a href="#orgeb725e9">4. 4. Delete the app folder</a></li>
 </ul>
 </div>
 </nav>
@@ -60,8 +60,8 @@ And below are the steps I took:
 Each heading can be a single commit. Do this step by step.
 </p>
 
-<div id="outline-container-org4ca0b0e" class="outline-2">
-<h2 id="org4ca0b0e"><span class="section-number-2">1</span> 1. making the app invisible from the UI</h2>
+<div id="outline-container-org283d02c" class="outline-2">
+<h2 id="org283d02c"><span class="section-number-2">1</span> 1. making the app invisible from the UI</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Hiding the links to the app (base.html, etc), removing it from project's
@@ -74,8 +74,8 @@ When you navigate in the page - you should not get any errors.
 </div>
 </div>
 
-<div id="outline-container-org27f6acb" class="outline-2">
-<h2 id="org27f6acb"><span class="section-number-2">2</span> 2. Dealing with the DB table</h2>
+<div id="outline-container-org18eed70" class="outline-2">
+<h2 id="org18eed70"><span class="section-number-2">2</span> 2. Dealing with the DB table</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Luckily my app did not have dependencies to other apps at this time. So it's quite simple.
@@ -114,8 +114,8 @@ Commit those changes.
 </div>
 </div>
 
-<div id="outline-container-org87e10b5" class="outline-2">
-<h2 id="org87e10b5"><span class="section-number-2">3</span> 3. In PROD</h2>
+<div id="outline-container-orgc1ad760" class="outline-2">
+<h2 id="orgc1ad760"><span class="section-number-2">3</span> 3. In PROD</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Pull the most recent repo changes, run <code>migrate</code> (since the newest deletion
@@ -144,8 +144,8 @@ Tables should no longer be there.
 </div>
 </div>
 
-<div id="outline-container-orgd91f97f" class="outline-2">
-<h2 id="orgd91f97f"><span class="section-number-2">4</span> 4. Delete the app folder</h2>
+<div id="outline-container-orgeb725e9" class="outline-2">
+<h2 id="orgeb725e9"><span class="section-number-2">4</span> 4. Delete the app folder</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Delete and commit.
@@ -161,8 +161,8 @@ Delete and commit.
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
-	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 04:43</p>
-	 <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 04:42</p>
+	 <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 04:46</p>
+	 <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 04:46</p>
 	 <p class="date">This org file is <u>created</u>: 2024-01-27 Sat 14:07</p>
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
