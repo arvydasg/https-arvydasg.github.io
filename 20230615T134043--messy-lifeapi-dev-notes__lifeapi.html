@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-06-04 Tue 10:43 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Messy lifeapi dev notes</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 10:43</div> -->
+</div>
+<div id="content">
+<header>
+<h1 class="title">Messy lifeapi dev notes</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7ab110b">1. 2024-03-05 Lifeapi has to close</a>
+<ul>
+<li><a href="#org6fca670">1.1. WHY</a></li>
+<li><a href="#org0896063">1.2. THINGS LEARNED</a></li>
+<li><a href="#org12a0c24">1.3. STEPS</a></li>
+</ul>
+</li>
+<li><a href="#org66e24cf">2. How to’s</a>
+<ul>
+<li><a href="#org29a678a">2.1. lifeapi ip change procedure</a></li>
+</ul>
+</li>
+<li><a href="#org18b4103">3. Intro</a></li>
+<li><a href="#org0f97e0c">4. Inspiration</a></li>
+<li><a href="#orgc4ad10e">5. Try to do the installation steps for a new gcp instance</a></li>
+<li><a href="#orgdb74338">6. Creating a separate branch for this</a></li>
+<li><a href="#orgc648d04">7. Creating a test docker container and running it locally</a></li>
+<li><a href="#orgaba204e">8. Create a test docker container and run it in GCP over gcp shell</a></li>
+<li><a href="#org5e67ac3">9. Run the locally created container in GCP</a></li>
+<li><a href="#org56d9611">10. step by step setup</a>
+<ul>
+<li><a href="#org9d4f5f7">10.1. Initial deployment</a>
+<ul>
+<li><a href="#orgb555cba">10.1.1. step by step deployment</a></li>
+<li><a href="#org81967c3">10.1.2. deployment to gcp</a></li>
+</ul>
+</li>
+<li><a href="#org0fea278">10.2. Second attempt</a>
+<ul>
+<li><a href="#org854359e">10.2.1. The plan</a></li>
+<li><a href="#orgd2a360c">10.2.2. Creating a new GCP instance</a></li>
+<li><a href="#orga0277bd">10.2.3. Connect to the machine over gcp console</a></li>
+<li><a href="#org0d5d204">10.2.4. Connect over ssh</a></li>
+</ul>
+</li>
+<li><a href="#orgbc5dd6a">10.3. weather fetch cron</a></li>
+<li><a href="#orgc0f838c">10.4. rescuetime fetch</a></li>
+<li><a href="#org0b792e5">10.5. make backup push to git cron</a></li>
+<li><a href="#orgbf5d830">10.6. daylt api implementation</a></li>
+<li><a href="#org8fe3cb9">10.7. implementing strava api</a></li>
+<li><a href="#org6c31504">10.8. applying the change from dev to PRD</a>
+<ul>
+<li><a href="#org7d2eece">10.8.1. Check services status</a></li>
+<li><a href="#org093e0b9">10.8.2. Fetch changes</a></li>
+</ul>
+</li>
+<li><a href="#org6910991">10.9. update master</a></li>
+<li><a href="#org97da8a9">10.10. git repo change remote</a></li>
+<li><a href="#orgfd8235e">10.11. user question answer implementation</a>
+<ul>
+<li><a href="#org451dc21">10.11.1. First created the models:</a></li>
+<li><a href="#orgc40fece">10.11.2. Then the views:</a></li>
+<li><a href="#org0526e8f">10.11.3. Then the urls:</a></li>
+<li><a href="#orgc78f10f">10.11.4. And forms:</a></li>
+</ul>
+</li>
+<li><a href="#org0defc66">10.12. And templates:</a>
+<ul>
+<li><a href="#orgd6fd946">10.12.1. quiz_app_add_question.html</a></li>
+<li><a href="#orgc0cce43">10.12.2. quiz_app_home.html</a></li>
+<li><a href="#orgd270a16">10.12.3. quiz_app_question.html</a></li>
+<li><a href="#orgeed87db">10.12.4. quiz_app_questions.html</a></li>
+<li><a href="#orgc421af3">10.12.5. quiz_app_ready.html</a></li>
+<li><a href="#org60a63c7">10.12.6. quiz_app_summary.html</a></li>
+<li><a href="#orga888c2a">10.12.7. Quiz looks like this:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9cf7617">11. code</a>
+<ul>
+<li><a href="#orgb533301">11.1. Step 1 Create a separate django app</a></li>
+<li><a href="#org4d4a155">11.2. Step 2 Storing entries from an api in db</a></li>
+<li><a href="#org91e7b2f">11.3. Step 3 Displaying from an api AND storing to db</a></li>
+<li><a href="#orgcb20849">11.4. Step 4 Automating fetching and storing into DB with cron</a></li>
+<li><a href="#orga0fa924">11.5. Step 5 creating cronjob</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<p>
+Some messy notes from Lifeapi project which is currently on hold.
+</p>
+
+<p>
+Instead of throwing them out, keeping it here for future reference.
+</p>
+
+<div id="outline-container-org7ab110b" class="outline-2">
+<h2 id="org7ab110b"><span class="section-number-2">1</span> 2024-03-05 Lifeapi has to close</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org6fca670" class="outline-3">
+<h3 id="org6fca670"><span class="section-number-3">1.1</span> WHY</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+This is a project that provides daily usage, but does not really provide a
+value.
+</p>
+
+<p>
+You kind of know if you are reading or if you are sick or if you had belly ache
+a few days in a row or something like this.
+</p>
+
+<p>
+But you log this stuff into the app. It is something you have to do on and on,
+day by day…
+</p>
+
+<p>
+And also fetching data from external resources.. Now each of my machine has to
+have rescuetime installed, we must wear certain watches.. That is too much
+dependency. Those things might change and look, we no longer have the data and
+the visualizations that I might build would break.
+</p>
+
+<p>
+Additional cost for electricity for magic mirror (if I would have one)
+</p>
+
+<p>
+Additional costs running the GCP instance.
+</p>
+
+<p>
+Also it's sad you can not take metrics from garmin app.
+</p>
+
+<p>
+But the most important is - <b><b>I have proved myself that I can do it, I have proved
+that it's possible, now time to move to another project.</b></b>
+</p>
+
+<p>
+Kind of better to just live life rather than trying to optimize it, like that
+quote.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0896063" class="outline-3">
+<h3 id="org0896063"><span class="section-number-3">1.2</span> THINGS LEARNED</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>How to fetch from an API</li>
+<li>Cronjobs</li>
+<li>GCP hosting</li>
+<li>Make it simple from the beginning for the user to use the app(should have
+added email reminders or smth, or create an app)</li>
+<li>Magicmirror attitude, built having this in mind</li>
+<li>How to work with backups</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org12a0c24" class="outline-3">
+<h3 id="org12a0c24"><span class="section-number-3">1.3</span> STEPS</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Make lifeapi repo private</li>
+<li>Stop the cronjobs</li>
+<li>Close gcp instance, cancel</li>
+<li>Remove card payment</li>
+<li>Lifeapi - CLOSED 2024-03-05</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org66e24cf" class="outline-2">
+<h2 id="org66e24cf"><span class="section-number-2">2</span> How to’s</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org29a678a" class="outline-3">
+<h3 id="org29a678a"><span class="section-number-3">2.1</span> lifeapi ip change procedure</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+When the server is turned off and then turned on again - the IP of it changes.
+</p>
+
+<p>
+might have to fix the ssh keys <a href="file:///home/runner/GIT/devnotes/20240104T070918--ssh-into-gcp-server__gcp_ssh.html">like mentioned here</a>
+</p>
+
+<p>
+Then will have to login to the server over putty
+</p>
+
+<p>
+change the IP in nginx config file
+</p>
+
+<p>
+change the allowed hosts file in <code>.env_prod</code> file
+</p>
+
+<p>
+restart the services
+</p>
+
+<p>
+login with username and pass, if can't find - check previous ip:
+</p>
+
+<p>
+first - 34.88.9.236
+second - 34.88.54.183
+<span class="timestamp-wrapper"><span class="timestamp">[2024-01-28 Sun] </span></span> - 35.228.228.106
+</p>
+
+<p>
+or go to "pasiukai" file and find the credentials here : "# lifeapi app"
+</p>
+
+<p>
+show Julyte how to use it, the new ip.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org18b4103" class="outline-2">
+<h2 id="org18b4103"><span class="section-number-2">3</span> Intro</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Dates in data_table were messed up. Installed updates on the server. Upgrade
+got stuck on gcp-cli package. Attempted to fix it unsuccessfully. Restarted the
+server - lifeapi does not start any longer. It's <span class="timestamp-wrapper"><span class="timestamp">[2024-01-09 Tue] </span></span> and lifeapi
+still does not work. Not cool. Thought it would be smart to dockerize the app
+so it would be simplier to launch it again in the future. Otherwise now I would
+have to do all the installation steps again.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0f97e0c" class="outline-2">
+<h2 id="org0f97e0c"><span class="section-number-2">4</span> Inspiration</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<a href="https://www.youtube.com/watch?v=_ZMGp-bSQhg&amp;ab_channel=ScalableScripts">https://www.youtube.com/watch?v=_ZMGp-bSQhg&amp;ab_channel=ScalableScripts</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc4ad10e" class="outline-2">
+<h2 id="orgc4ad10e"><span class="section-number-2">5</span> Try to do the installation steps for a new gcp instance</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+First try this, then dockerize in the free time maybe.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdb74338" class="outline-2">
+<h2 id="orgdb74338"><span class="section-number-2">6</span> Creating a separate branch for this</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Version of the Master branch before the changes -
+<a href="https://github.com/arvydasg/lifeapi/tree/c4ab5020140565ced6a62b167e5cdeadc1d07030">https://github.com/arvydasg/lifeapi/tree/c4ab5020140565ced6a62b167e5cdeadc1d07030</a>
+</p>
+
+<p>
+Dockerzing branch was created -
+<a href="https://github.com/arvydasg/lifeapi/tree/42266166e2f90a05583e796df3ed9d2798b73431">https://github.com/arvydasg/lifeapi/tree/42266166e2f90a05583e796df3ed9d2798b73431</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc648d04" class="outline-2">
+<h2 id="orgc648d04"><span class="section-number-2">7</span> Creating a test docker container and running it locally</h2>
+<div class="outline-text-2" id="text-7">
+<div class="org-src-container">
+<pre class="src src-bash">  FROM python:3.8-slim-buster
+
+  WORKDIR /app
+
+  COPY requirements.txt requirements.txt
+
+  RUN pip3 install -r requirements.txt
+
+  COPY . .
+n
+  CMD [<span style="font-style: italic;">"python3"</span>, <span style="font-style: italic;">"manage.py"</span>, <span style="font-style: italic;">"runserver"</span>, <span style="font-style: italic;">"0.0.0.0:8000"</span>]
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash">docker build -t django-docker-starter .
+docker run -p 8000:8000 django-docker-starter
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaba204e" class="outline-2">
+<h2 id="orgaba204e"><span class="section-number-2">8</span> Create a test docker container and run it in GCP over gcp shell</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+<a href="https://www.youtube.com/watch?v=H0kQL_KHt3o&amp;ab_channel=TechTrapture">https://www.youtube.com/watch?v=H0kQL_KHt3o&amp;ab_channel=TechTrapture</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5e67ac3" class="outline-2">
+<h2 id="org5e67ac3"><span class="section-number-2">9</span> Run the locally created container in GCP</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Enable <code>Artifact Registry API</code> service. Sorry, not this, but <code>Google
+  Container Registry API</code></li>
+</ul>
+
+<blockquote>
+<p>
+Container Registry is deprecated. After May 15, 2024. Artifact Registry will
+host images for the gcr.io domain in projects without previous Container
+Registry usage. If you use Container Registry, learn about the deprecation. To
+get started with managing containers on Google Cloud, use Artifact Registry.
+</p>
+
+<p>
+Starting January 8, 2024(today is <span class="timestamp-wrapper"><span class="timestamp">[2024-01-09 Tue]</span></span>), if your organization has
+not previously used Container Registry, new gcr.io repositories will be hosted
+on Artifact Registry by default. For more information on this change, see
+gcr.io hosted on Artifact Registry.
+</p>
+</blockquote>
+
+<ul class="org-ul">
+<li>So YEAH, sorry, Enable <code>Artifact Registry API</code> service and not =Google</li>
+</ul>
+<p>
+Container Registry API= :)
+</p>
+
+<ul class="org-ul">
+<li>Download and install google cloud SDK on your windows machine from here -
+<a href="https://cloud.google.com/sdk/docs/install">https://cloud.google.com/sdk/docs/install</a></li>
+<li>try run it from search menu by writing <code>SDK</code> (should add sdk to path somehow not to use this workaround)</li>
+<li>check if it's installed with <code>gcloud</code> command in cmd/powershell</li>
+<li>login to your gcp account with <code>gcloud auth login</code></li>
+<li><code>gcloud config get-value project</code></li>
+<li>Try to list all your services by <code>gcloud services list</code>. You should see
+<code>containerregistry.googleapis.com Container Registry API</code> in it</li>
+<li>You should have a docker container already in your docker desktop</li>
+<li>Tag your container with GCP stuff(over SDK)
+<ul class="org-ul">
+<li><code>docker tag django-docker-starter gcr.io/lifeapi-392202/django-docker-starter</code></li>
+<li>Explanations:
+<ul class="org-ul">
+<li>gcr.io - default</li>
+<li>lifeapi-392202 - this is the ID of the Lifeapi project in GCP</li>
+<li>/django-docker-starter - should be the same as your image</li>
+</ul></li>
+</ul></li>
+<li>After the container has been created, we can push it to GCP registry
+<ul class="org-ul">
+<li><code>docker push gcr.io/lifeapi-392202/django-docker-starter</code></li>
+</ul></li>
+<li><p>
+If you get an error saying
+</p>
+
+<blockquote>
+<p>
+unauthorized: You don't have the needed permissions to perform this
+operation, and you may have invalid credentials. To authenticate your
+request, follow the steps in:
+<a href="https://cloud.google.com/container-registry/docs/advanced-authentication">https://cloud.google.com/container-registry/docs/advanced-authentication</a>
+</p>
+</blockquote>
+
+<p>
+then run this command - <code>gcloud auth configure-docker</code> and click y.
+</p></li>
+
+<li>try to push again, image should now be in here - <a href="https://console.cloud.google.com/gcr/images">https://console.cloud.google.com/gcr/images</a></li>
+<li>Copy image url, f.x gcr.io/lifeapi-392202/django-docker-starter</li>
+<li>Go to <code>Cloud Run</code> - <a href="https://console.cloud.google.com/run">https://console.cloud.google.com/run</a></li>
+<li>Click Create service</li>
+<li>choose the image</li>
+<li>change port to 8000</li>
+<li>tick "Allow unauthenticated invocations"</li>
+</ul>
+
+<p>
+restarting lifeapi services
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">1</span>
+systemctl stop nginx
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">2</span>
+systemctl stop gunicorn.service
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">3</span>
+systemctl stop gunicorn.socket
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">TURN THEM ON AGAIN</span>
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">1</span>
+systemctl start gunicorn.socket
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">2</span>
+systemctl start gunicorn.service
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">3</span>
+systemctl start nginx
+</pre>
+</div>
+<p>
+local development on a new machine
+</p>
+
+<ul class="org-ul">
+<li>clone the repo</li>
+<li>create venv</li>
+<li>install packages from requirements.txt</li>
+<li>copy <code>.env_example</code> and name it .env_dev</li>
+<li><code>python manage.py createsuperuser --settings=settings.development</code> (arvy pass)</li>
+<li><code>python manage.py makemigrations --settings=settings.development</code></li>
+<li><code>python manage.py migrate --settings=settings.development</code></li>
+<li><code>python manage.py runserver --settings=settings.development</code></li>
+<li>visit development server at <code>http://127.0.0.1:8000/</code></li>
+<li>DB exist?</li>
+<li>Can add entries?</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org56d9611" class="outline-2">
+<h2 id="org56d9611"><span class="section-number-2">10</span> step by step setup</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-org9d4f5f7" class="outline-3">
+<h3 id="org9d4f5f7"><span class="section-number-3">10.1</span> Initial deployment</h3>
+<div class="outline-text-3" id="text-10-1">
+</div>
+<div id="outline-container-orgb555cba" class="outline-4">
+<h4 id="orgb555cba"><span class="section-number-4">10.1.1</span> step by step deployment</h4>
+<div class="outline-text-4" id="text-10-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="org6e34477"></a>ssh to the GCP server<br>
+<div class="outline-text-5" id="text-10-1-1-1">
+<p>
+First - <a href="file:///home/runner/GIT/devnotes/20240104T070918--ssh-into-gcp-server__gcp_ssh.html">ssh-into-gcp-server</a>
+</p>
+
+<p>
+Second(optional) - <a href="file:///home/runner/GIT/devnotes/20240104T075039--login-to-gcp-server-with-username-and-password__gcp_linux.html">login-to-gcp-server-with-username-and-password</a>
+</p>
+</div>
+</li>
+
+<li><a id="org2d5110c"></a>winscp to GCP server<br>
+<div class="outline-text-5" id="text-10-1-1-2">
+<p>
+add private key - connect
+</p>
+
+<p>
+private key ends in .pem?
+store that private key in such location, in wsl for example:
+</p>
+
+<p>
+\\wsl.localhost\Ubuntu\home\arvy\arvydas_privatekey_gcp.pem
+</p>
+
+<p>
+the file must remain there, otherwise the connection will not work
+</p>
+
+<p>
+<a href="https://winscp.net/eng/docs/guide_google_compute_engine">https://winscp.net/eng/docs/guide_google_compute_engine</a>
+</p>
+</div>
+</li>
+
+<li><a id="orgcbb9857"></a>setup virtual env/server modifications<br>
+<div class="outline-text-5" id="text-10-1-1-3">
+<p>
+sudo su -
+apt update
+apt upgrade
+apt install git
+mkdir /opt/app
+cd /opt/app
+git clone <a href="https://github.com/arvydasg/lifeapi.git">https://github.com/arvydasg/lifeapi.git</a>
+apt install python3-venv python3-pip python3-dev libpq-dev postgresql
+postgresql-contrib nginx curl
+</p>
+
+<p>
+inspiration for deployment -  -
+<a href="https://www.youtube.com/watch?v=bD75adrlkes&amp;ab_channel=TheCodrammers">https://www.youtube.com/watch?v=bD75adrlkes&amp;ab_channel=TheCodrammers</a>
+</p>
+
+<p>
+python3 -m venv venv
+source /venv/bin/activate
+</p>
+
+<p>
+pradedu ties situ commit - 7904e80430b7b0f54c869c3e4366b0eb02d2e2c9
+(Merge pull request #4 from arvydasg/DEV …) - <a href="https://github.com/arvydasg/lifeapi/commit/7904e80430b7b0f54c869c3e4366b0eb02d2e2c9">https://github.com/arvydasg/lifeapi/commit/7904e80430b7b0f54c869c3e4366b0eb02d2e2c9</a>
+</p>
+
+
+<p>
+python manage.py migrate &#x2013;settings=settings.production
+python manage.py createsuperuser &#x2013;settings=settings.production
+collectstatic
+</p>
+
+<p>
+python manage.py collectstatic &#x2013;settings=settings.production
+then git ignore collectstatic dir which is "staticfiles-cdn/"
+</p>
+
+<p>
+git pull origin master # on the server
+open 8000 port in server
+</p>
+
+<p>
+apt install ufw
+ufw allow 8000
+allow 8000 on gcp
+</p>
+
+<p>
+3 dots on server → view network details → default(under network) → firewalls → add firewall rule
+</p>
+
+<p>
+how it looks before:
+</p>
+
+<p>
+pictures how some firewall configuration was done in gcp
+</p>
+
+<p>
+cd /opt/app/lifeapi
+touch .env_prod
+vim .env_prod
+</p>
+
+<p>
+ALLOWED_HOSTS=34.88.9.23
+python manage.py runserver &#x2013;settings=settings.production 0.0.0.0:8000
+</p>
+</div>
+</li>
+
+<li><a id="org22fbbcf"></a>Okay why I am spending so much time on gunicorn and nginx<br>
+<div class="outline-text-5" id="text-10-1-1-4">
+<p>
+I was like dude if I can just run django in the terminal.. why bother.
+</p>
+
+<p>
+same like with the db. Why bother with postgresql if you can use sqlite and why
+bother with nginx/gunicorn if you can use simle process in systemd or just run
+in the terminal.
+</p>
+
+<p>
+Seems like there are some benefits… but still thinking about the simple
+solution. Its MVP after all dude!!!!
+</p>
+
+<p>
+Using Gunicorn and Nginx in combination with Django offers several benefits
+over running Django in the terminal. Here are some advantages:
+</p>
+
+<p>
+Improved performance and scalability: Gunicorn is a production-ready web server
+that can handle multiple concurrent requests efficiently, improving the overall
+performance of your Django application. It utilizes a pre-fork worker model and
+supports multiple worker processes, allowing it to handle high traffic loads.
+Nginx acts as a reverse proxy server, offloading some of the processing tasks
+from Gunicorn and efficiently serving static files, resulting in better
+scalability.
+</p>
+
+<p>
+Load balancing and high availability: By using Gunicorn and Nginx together, you
+can set up multiple Gunicorn worker processes and distribute incoming requests
+among them. Nginx can act as a load balancer, evenly distributing the requests
+across the available Gunicorn workers. This setup improves your application's
+availability and can handle more traffic without overwhelming a single server
+instance.
+</p>
+
+<p>
+Handling concurrent connections: Gunicorn's ability to handle multiple
+concurrent connections makes it more suitable for production environments
+compared to running Django in the terminal. It allows your application to serve
+multiple requests simultaneously, providing a better experience for your users.
+</p>
+
+<p>
+Separation of concerns: Nginx and Gunicorn serve different purposes in a
+typical Django deployment setup. Nginx specializes in serving static files,
+handling SSL termination, and acting as a reverse proxy server. On the other
+hand, Gunicorn focuses on running the Django application and managing the
+dynamic content. This separation allows each component to perform its task
+efficiently and enables easier troubleshooting and maintenance.
+</p>
+
+<p>
+Regarding the issue with displaying the CSS of the admin panel when using Nginx
+and Gunicorn, this problem is typically related to the configuration of Nginx.
+You need to ensure that Nginx is configured to correctly serve static files and
+that the appropriate static file directories are specified. By properly
+configuring Nginx, you should be able to resolve this issue and have the admin
+panel CSS displayed correctly.
+</p>
+
+<p>
+Gunicorn Translates the client requests from http to our python calls that our
+application can process
+</p>
+
+<p>
+webserver gateway interface module - wsgi
+</p>
+
+
+<p>
+pip install gunicorn (ADD THIS TO REQUIREMENTS.TXT)
+</p>
+
+<p>
+gunicorn &#x2013;bind 0.0.0.0:8000 project_name.wsgi
+</p>
+
+<p>
+gunicorn &#x2013;env DJANGO_SETTINGS_MODULE=settings.production &#x2013;bind 0.0.0.0:8000
+lifeapi_project.wsgi
+</p>
+
+<p>
+gunicorn.socket
+</p>
+
+
+<p>
+vim /etc/systemd/system/gunicorn.socket
+</p>
+
+<p>
+[Unit] Description=gunicorn.socket
+</p>
+
+<p>
+[Socket] ListenStream=/run/gunicorn.sock
+</p>
+
+<p>
+[Install] WantedBy=sockets.target gunicorn.service #file name should math. Can
+see that both are gunicorn.
+</p>
+
+
+
+<p>
+vim /etc/systemd/system/gunicorn.service
+</p>
+
+<p>
+[Unit] Description=gunicorn daemon Requires=gunicorn.socket
+After=network.target
+</p>
+
+<p>
+[Service] User=root Group=www-data WorkingDirectory=/opt/app/lifeapi
+ExecStart=/opt/app/lifeapi/venv/bin/gunicorn \ &#x2013;access-logfile - \ &#x2013;workers 3
+\ &#x2013;bind unix:/run/gunicorn.sock \ lifeapi_project.wsgi:application \ &#x2013;env
+DJANGO_SETTINGS_MODULE=settings.production
+</p>
+
+<p>
+[Install] WantedBy=multi-user.target systemctl start gunicorn.socket
+</p>
+
+<p>
+systemctl enable gunicorn.socket
+</p>
+
+<p>
+When a connection is made to gunicorn.socket systemd will automatically will
+start systemd.service to handle it.
+</p>
+
+<p>
+systemctl status gunicorn.socket - should be active
+</p>
+
+<p>
+systemctl status gunicorn.service- should be inactive (dead), since it did nto
+receive any connections
+</p>
+
+<p>
+test activation mechanism:
+</p>
+
+<p>
+curl &#x2013;unix-socket /run/gunicorn.sock localhost
+</p>
+
+<p>
+Should see some html outputted. For the dude in the video it was full html, for
+me some html and 400 errors.
+</p>
+
+<p>
+systemctl status gunicorn.service - now should be active
+</p>
+
+<p>
+nginx vim /etc/nginx/sites-available/lifeapi
+</p>
+
+
+
+<p>
+server { listen 80; server_name 34.88.9.236; location = <i>favicon.ico {
+        access_log off; log_not_found off; } location /static</i> { autoindex on;
+        alias <i>opt/app/lifeapi/staticfiles-cdn</i>; } location / { include
+        proxy_params; proxy_pass <a href="http://unix/run/gunicorn.sock">http://unix/run/gunicorn.sock</a>; }
+</p>
+
+<p>
+} sudo ln -s <i>etc/nginx/sites-available/lifeapi /etc/nginx/sites-enabled</i>
+</p>
+
+<p>
+check any syntax errors:
+</p>
+
+<p>
+nginx -t
+</p>
+
+<p>
+systemctl restart nginx
+</p>
+
+<p>
+open firewall for normal traffic on the port 80
+</p>
+
+<p>
+ufw allow ‘Nginx Full’
+</p>
+
+<p>
+We no longer need access to the development server (8000), so we can remove
+this firewall rule:
+</p>
+
+<p>
+ufw delete allow 8000
+</p>
+
+<p>
+go to the 34.88.9.236 without any ports. Should work.
+</p>
+</div>
+</li>
+
+<li><a id="org69493c9"></a>Configuring static files<br>
+<div class="outline-text-5" id="text-10-1-1-5">
+<p>
+this video inspiration - 74 - Static Files in Development - Python &amp;
+Django 3.2 Tutorial Series
+</p>
+
+<p>
+global styles are better if wanting to override all the app styles in
+one place. better for the future
+</p>
+
+<p>
+can override admin styles also and other django stylesheets
+</p>
+
+<p>
+remember to turn off caching in network panel browser
+</p>
+
+<p>
+debug on - takes from static folder debug off - collecstatic need
+</p>
+
+<p>
+in prod then do:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">python manage.py collectstatic --<span style="font-weight: bold; font-style: italic;">settings</span>=settings.production
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">126 static files copied to '/home/arvy/src/lifeapi/staticfiles-cdn'.</span>
+</pre>
+</div>
+
+<p>
+Ok we have stored mine and django’s static files in one location, but
+they are not used by anything now. When debug is true - django takes
+the static files from usual places, where we set them.
+</p>
+
+<p>
+But if we are in production and we ant them to be server, we need to
+do that with whitenoise.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">pip install whitenoise
+</pre>
+</div>
+
+<p>
+add middleware like in WhiteNoise 6.5.0 documentation . After the
+security one. At the top.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">MIDDLEWARE</span> = [
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">...</span>
+    <span style="font-style: italic;">"django.middleware.security.SecurityMiddleware"</span>,
+    <span style="font-style: italic;">"whitenoise.middleware.WhiteNoiseMiddleware"</span>,
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">...</span>
+]
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash">pip freeze &gt; requirements.txt
+</pre>
+</div>
+
+<p>
+Run the server again. Even with debug = false static files for admin
+panel should be displayed, as well as your global styles.
+</p>
+</div>
+</li>
+
+<li><a id="org96118db"></a>Running the server<br>
+<div class="outline-text-5" id="text-10-1-1-6">
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py runserver --settings=settings.production 0.0.0.0:8000
+python manage.py runserver --settings=settings.production
+python manage.py collectstatic --settings=settings.production
+</pre>
+</div>
+
+<p>
+in dev:
+</p>
+<ul class="org-ul">
+<li>change branch to dev</li>
+<li>create .env_dev file next to manage.py</li>
+<li><p>
+add this:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;">ALLOWED_HOSTS</span>=127.0.0.1,localhost
+<span style="font-weight: bold; font-style: italic;">DEBUG</span>=1
+</pre>
+</div></li>
+<li>python manage.py makemigrations &#x2013;settings=settings.dev</li>
+<li>python manage.py migrate &#x2013;settings=settings.dev</li>
+<li>python manage.py createsuperuser &#x2013;settings=settings.dev (root pass)</li>
+<li>python manage.py collectstatic &#x2013;settings=settings.dev</li>
+<li>python manage.py runserver &#x2013;settings=settings.dev</li>
+</ul>
+
+<p>
+or simply reuse the prod DB
+</p>
+</div>
+</li>
+
+<li><a id="org4a0419e"></a>Restarting the services<br>
+<div class="outline-text-5" id="text-10-1-1-7">
+<p>
+Link to the instructions - <a href="20240104T082011--restarting-lifeapi-services__lifeapi.html">Restarting the services</a>
+</p>
+</div>
+</li>
+
+<li><a id="orge3ce6fa"></a>Source venv on each login to root<br>
+<div class="outline-text-5" id="text-10-1-1-8">
+<div class="org-src-container">
+<pre class="src src-bash">sudo su -
+vim ~/.bashrc
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">add the following line</span>
+source /opt/app/lifeapi/venv/bin/activate
+:wq
+
+source ~/.bashrc
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org9ee297d"></a>Cron job to fetch data automatically<br>
+<div class="outline-text-5" id="text-10-1-1-9">
+<p>
+<a href="file:///home/runner/GIT/devnotes/20240104T082156--set-the-correct-server-time__linux.html">set the correct server time</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold;">cd</span> /opt/app/lifeapi
+chmod +x weather_job_prod.py
+crontab -e
+0 17 * * * /opt/app/lifeapi/venv/bin/python /opt/app/lifeapi/weather_job_prod.py &gt;&gt; /opt/app/lifeapi/weather_job_prod.log 2&gt;&amp;1
+</pre>
+</div>
+
+<p>
+This cron job now should run every day at 17:00.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org81967c3" class="outline-4">
+<h4 id="org81967c3"><span class="section-number-4">10.1.2</span> deployment to gcp</h4>
+<div class="outline-text-4" id="text-10-1-2">
+<p>
+Attempt2 - bare metal
+Firewall config - <a href="https://console.cloud.google.com/networking/firewalls/list?project=lifeapi-392202">https://console.cloud.google.com/networking/firewalls/list?project=lifeapi-392202</a>
+SSH key stuff - <a href="https://www.youtube.com/watch?v=fmh94mNQHQc&amp;ab_channel=storagefreak">https://www.youtube.com/watch?v=fmh94mNQHQc&amp;ab_channel=storagefreak</a>
+Logs - <a href="https://console.cloud.google.com/logs/">https://console.cloud.google.com/logs/</a>
+Attempt1 - deploy a django solution
+Created a project
+Linked billing account
+Set limits for billing 50 dolcu
+</p>
+
+<p>
+Enabling required API’s
+Enable required APIs The following APIs are required to deploy a VM product from Marketplace
+Compute Engine API Not enabled
+Cloud Deployment Manager V2 API Not enabled
+Cloud Runtime Configuration API Not enabled
+Software installed
+Software
+Operating systemDebian(11.6)
+SoftwareApache2(2.4.56)
+Django(4.1.7)
+Git(2.30.2)
+MySQL-Client(8.0.32)
+MySQL-Community-Client(8.0.32)
+MySQL-Community-Server(8.0.32)
+MySQL-Server(8.0.32)
+Conclusion
+The build failed. For some reason. Uck it. Will make it myself better.
+Just because it installs django and git for me I should use a premade
+component and not know exactly what’s hiding under the hood? No
+thanks.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0fea278" class="outline-3">
+<h3 id="org0fea278"><span class="section-number-3">10.2</span> Second attempt</h3>
+<div class="outline-text-3" id="text-10-2">
+</div>
+<div id="outline-container-org854359e" class="outline-4">
+<h4 id="org854359e"><span class="section-number-4">10.2.1</span> The plan</h4>
+<div class="outline-text-4" id="text-10-2-1">
+<ul class="org-ul">
+<li>create new instance, make it run</li>
+<li>reset the old instance to the beginning, make it run(to keep the same IP address)</li>
+<li><a href="20240109T072346--dockerizing-the-app__docker_lifeapi.html">Dockerize the app</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd2a360c" class="outline-4">
+<h4 id="orgd2a360c"><span class="section-number-4">10.2.2</span> Creating a new GCP instance</h4>
+<div class="outline-text-4" id="text-10-2-2">
+<p>
+Before clicking "Create", I copied the equivalent code.
+</p>
+
+<p>
+Don't choose e2-micro instance, since it will not be able to install needed
+packages during sudo apt upgrade -
+<a href="https://serverfault.com/questions/1134676/apt-upgrade-y-command-stuck-on-preparing-to-unpack-google-cloud-cli-436-0">https://serverfault.com/questions/1134676/apt-upgrade-y-command-stuck-on-preparing-to-unpack-google-cloud-cli-436-0</a>
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgd3a6710"></a>Code for creating instance<br>
+<div class="outline-text-5" id="text-10-2-2-1">
+<p>
+Can look at this code and know what settings I have chosen.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">gcloud compute instances create instance-2 <span style="font-style: italic;">\</span>
+    --project=lifeapi-392202 <span style="font-style: italic;">\</span>
+    --zone=us-central1-a <span style="font-style: italic;">\</span>
+    --machine-type=e2-micro <span style="font-style: italic;">\</span>
+    --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,<span style="font-weight: bold; font-style: italic;">subnet</span>=default <span style="font-style: italic;">\</span>
+    --maintenance-policy=MIGRATE <span style="font-style: italic;">\</span>
+    --provisioning-model=STANDARD <span style="font-style: italic;">\</span>
+    --service-account=46844210845-compute@developer.gserviceaccount.com <span style="font-style: italic;">\</span>
+    --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append <span style="font-style: italic;">\</span>
+    --tags=http-server,https-server,lb-health-check <span style="font-style: italic;">\</span>
+    --create-disk=auto-delete=yes,<span style="font-weight: bold; font-style: italic;">boot</span>=yes,device-name=instance-2,<span style="font-weight: bold; font-style: italic;">image</span>=projects/debian-cloud/global/images/debian-11-bullseye-v20231212,<span style="font-weight: bold; font-style: italic;">mode</span>=rw,<span style="font-weight: bold; font-style: italic;">size</span>=10,<span style="font-weight: bold; font-style: italic;">type</span>=projects/lifeapi-392202/zones/us-central1-a/diskTypes/pd-standard <span style="font-style: italic;">\</span>
+    --no-shielded-secure-boot <span style="font-style: italic;">\</span>
+    --shielded-vtpm <span style="font-style: italic;">\</span>
+    --shielded-integrity-monitoring <span style="font-style: italic;">\</span>
+    --labels=goog-ec-src=vm_add-gcloud <span style="font-style: italic;">\</span>
+    --reservation-affinity=any
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org619080f"></a>Pricing<br>
+<div class="outline-text-5" id="text-10-2-2-2">
+<p>
+Basically it's a e2-micro instance
+</p>
+
+<p>
+Monthly estimate
+</p>
+
+<p>
+US$6.51
+That's about US$0.01 hourly
+</p>
+
+<p>
+Pay for what you use: No upfront costs and per-second billing
+</p>
+
+<p>
+Item
+Monthly estimate
+2 vCPU + 1 GB memory
+US$6.11
+10 GB standard persistent disk
+US$0.40
+Total
+US$6.51
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orga0277bd" class="outline-4">
+<h4 id="orga0277bd"><span class="section-number-4">10.2.3</span> Connect to the machine over gcp console</h4>
+<div class="outline-text-4" id="text-10-2-3">
+<p>
+connect over the provided default console first. should log you in with
+arvydas_gaspa username.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0d5d204" class="outline-4">
+<h4 id="org0d5d204"><span class="section-number-4">10.2.4</span> Connect over ssh</h4>
+<div class="outline-text-4" id="text-10-2-4">
+<p>
+First - <a href="file:///home/runner/GIT/devnotes/20240104T070918--ssh-into-gcp-server__gcp_ssh.html">ssh-into-gcp-server</a>
+</p>
+
+<p>
+Second(optional) - <a href="file:///home/runner/GIT/devnotes/20240104T075039--login-to-gcp-server-with-username-and-password__gcp_linux.html">login-to-gcp-server-with-username-and-password</a>
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org350f32c"></a>ssh key info for instace2 (everything is no longer relevant here)<br>
+<div class="outline-text-5" id="text-10-2-4-1">
+<p>
+fingerprint
+</p>
+<blockquote>
+<p>
+ssh-rsa 2048 SHA256:9gdAeVoX567uowDrkLCSOFVGlziSlKnSbpZDVLLdHdU
+</p>
+</blockquote>
+
+<p>
+key comment(username)
+</p>
+<blockquote>
+<p>
+arvydas
+</p>
+</blockquote>
+
+<p>
+public_key
+</p>
+<blockquote>
+<p>
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCufZnGwCFbJyYGJtRULgEBf1qDzb8jsCFoArSd8AkCUr9mAsEbHwvuxPKQ84w3BiIeizS/Y7w168ZHcaUheWAG/pSPYxhgGU6QknW5PAVVCHPIxiXb6p6LhUbrluahcE5Cq5+HYhFZXQQ+pftI7fG/OGvBAG6f9FoxuxFaUJMhvKrQ1DG1j65I6U1UMfWVdOtyqZTw0qMpXTMjgd3rKy5bTyxEqIXH+9PL6pmSCckQZOPXXeouAqQMBRQuoxKpsG28ctTgKbjDOMoyytW9YmAAHFzxoP9tLViQMHkScWBtPKuud95IyTEdgNbwjnjUD8SCfNbjBGFITFOdURgVQwgx arvydas
+</p>
+</blockquote>
+
+<p>
+private_key
+</p>
+<blockquote>
+<p>
+PuTTY-User-Key-File-3: ssh-rsa
+Encryption: none
+Comment: arvydas
+Public-Lines: 6
+AAAAB3NzaC1yc2EAAAADAQABAAABAQCufZnGwCFbJyYGJtRULgEBf1qDzb8jsCFo
+ArSd8AkCUr9mAsEbHwvuxPKQ84w3BiIeizS/Y7w168ZHcaUheWAG/pSPYxhgGU6Q
+knW5PAVVCHPIxiXb6p6LhUbrluahcE5Cq5+HYhFZXQQ+pftI7fG/OGvBAG6f9Fox
+uxFaUJMhvKrQ1DG1j65I6U1UMfWVdOtyqZTw0qMpXTMjgd3rKy5bTyxEqIXH+9PL
+6pmSCckQZOPXXeouAqQMBRQuoxKpsG28ctTgKbjDOMoyytW9YmAAHFzxoP9tLViQ
+MHkScWBtPKuud95IyTEdgNbwjnjUD8SCfNbjBGFITFOdURgVQwgx
+Private-Lines: 14
+AAABAFUBPUP034sflEeU7QWhb74CA9+IASDqsiuQfdsfT9RA6ZtRpi+HPXHxolX5
+QAqiQ0br/CNs/AistuihNZgMIDroFQmRdhOC4KJPp2g5FEPrnTRnS5RKRTilEfq9
+hdeJ9aZHI615mggV53Z5t+Q8fvPwEZZxlnL4QGRPxNFhxXu+NQWItmZ2Omkg3st7
+8oJhTgi1WuYvVnZcIzeNJhITf1pYdrOat4tFAL7J4QjMVIFa+KpKuK3Fa4DKY0XD
+r+KAZuigU3vFdQjdMRvi27oJqb1qnyL1G1Z2iR3cjYWFM3KFT7mewQ7X+FERDhBp
+APjQ9ac4NieojYoQNtrvL00uHX0AAACBAPIz8KqgrUW1OEbr1XH9PrTdmxPCgZEp
+mAUfETiqYfDvhBKGzJNxekS9nHSUxjVQXWWDiXJ6KePCPu0Y1H/oKcX4ntxin5Wk
+8CljbfbPHR+dvFC3jV0iGv8Gdctq8bp+eEp4ZCTU3YDWgO5tjeup3TarpooPFv2Y
+LwMZprbNZoyvAAAAgQC4bjVa1+BPCSpNZAiYOyUbXCv5mGWTbstyB+7dTqEOjCHy
+QEHdrtK8YoxmYY3ItJdjuoqKB0Souo9pSn7Vi/xN75DfapnSkF/JA1qIV5BHyuQG
+P6OyPLAY08PGqapxKqI0LEyFQ9WxcJBAoxUyCdQDvysO979Snr2oLVcdvV2xHwAA
+AIEA1tfFjfPQCHPzW40hhB/SA6l96lVRKykAtNQoDwNz7pv6Arg662yY6A8+RHRJ
+FuWeBwlmg/BHgAW40RSOYIkw95CFXqOF7YxH7XgnR1RDcMwyJKoJ71lJLKFOOJze
+RVLnm1zeO/BSSS2lKXEGEo6weH5ur4sNLYLi1aBKPTYAJMw=
+Private-MAC: 89ee5eb4d7113171bf86a39f453364f288e910bac34081acf1b4c117bf01a8f3
+</p>
+</blockquote>
+
+<p>
+cronjobs
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgbc5dd6a" class="outline-3">
+<h3 id="orgbc5dd6a"><span class="section-number-3">10.3</span> weather fetch cron</h3>
+<div class="outline-text-3" id="text-10-3">
+<div class="org-src-container">
+<pre class="src src-bash">0 18 * * * /opt/app/lifeapi/venv/bin/python /opt/app/lifeapi/weather_job_prod.py &gt;&gt; /opt/app/lifeapi/weather_job_prod.log 2&gt;&amp;1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc0f838c" class="outline-3">
+<h3 id="orgc0f838c"><span class="section-number-3">10.4</span> rescuetime fetch</h3>
+<div class="outline-text-3" id="text-10-4">
+<p>
+making the cronjob a bit later, like at 5am, because linux "date" command shows
+one time and python's datetime.now() shows a different time. Can make it equal
+with pytz, but no matter for now, lets see if it works with 5am.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0b792e5" class="outline-3">
+<h3 id="org0b792e5"><span class="section-number-3">10.5</span> make backup push to git cron</h3>
+<div class="outline-text-3" id="text-10-5">
+<div class="org-src-container">
+<pre class="src src-bash">0 0 * * * /opt/app/lifeapi_db_backups/backup_prd.sh &gt;&gt; /opt/app/lifeapi_db_backups/db_backups.log 2&gt;&amp;1
+</pre>
+</div>
+
+<p>
+rescuetime api implementation
+<a href="https://github.com/arvydasg/lifeapi/pull/65">https://github.com/arvydasg/lifeapi/pull/65</a>
+</p>
+
+<p>
+go to the site, get api key for each person
+</p>
+
+<p>
+AG api key is - xxxxxxxxxxxxx
+</p>
+
+<p>
+you can then make such queries - <a href="https://www.rescuetime.com/anapi/daily_summary_feed?key=B63fYDJzgZhrzaNAbRXRgMoQ1Qxowu3iHU3Ukrpw">https://www.rescuetime.com/anapi/daily_summary_feed?key=B63fYDJzgZhrzaNAbRXRgMoQ1Qxowu3iHU3Ukrpw</a>
+</p>
+
+<p>
+Then go to insomnia, add the key with API key auth, then you can make
+such queries then -
+<a href="https://www.rescuetime.com/anapi/daily_summary_feed">https://www.rescuetime.com/anapi/daily_summary_feed</a>
+</p>
+
+<p>
+here are some more examples -
+<a href="https://www.rescuetime.com/anapi/data?&amp;perspective=interval&amp;restrict_kind=productivity&amp;interval=hour&amp;restrict_begin=2023-10-10&amp;restrict_end=2023-10-13&amp;format=csv">https://www.rescuetime.com/anapi/data?&amp;perspective=interval&amp;restrict_kind=productivity&amp;interval=hour&amp;restrict_begin=2023-10-10&amp;restrict_end=2023-10-13&amp;format=csv</a>
+<a href="https://www.rescuetime.com/anapi/data?&amp;perspective=rank&amp;restrict_kind=overview&amp;restrict_begin=2023-10-12&amp;restrict_end=2023-10-13&amp;format=csv">https://www.rescuetime.com/anapi/data?&amp;perspective=rank&amp;restrict_kind=overview&amp;restrict_begin=2023-10-12&amp;restrict_end=2023-10-13&amp;format=csv</a>
+</p>
+
+<p>
+sadly you can not extract day values from daily summary, so we will
+have to do it like such:
+</p>
+
+<p>
+in this example I have my api keys in env variables.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> requests
+<span style="font-weight: bold;">import</span> django
+<span style="font-weight: bold;">import</span> os
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Set the DJANGO_SETTINGS_MODULE environment variable</span>
+os.environ.setdefault(<span style="font-style: italic;">"DJANGO_SETTINGS_MODULE"</span>, <span style="font-style: italic;">"settings.development"</span>)
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Configure Django settings</span>
+django.setup()
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Your RescueTime API key</span>
+<span style="font-weight: bold; font-style: italic;">api_key_ag</span> = os.getenv(<span style="font-style: italic;">"RESCUETIME_API_KEY_AG"</span>)
+<span style="font-weight: bold; font-style: italic;">api_key_js</span> = os.getenv(<span style="font-style: italic;">"RESCUETIME_API_KEY_JS"</span>)
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Define the API endpoint URL</span>
+<span style="font-weight: bold; font-style: italic;">api_url</span> = f<span style="font-style: italic;">"https://www.rescuetime.com/anapi/daily_summary_feed?key={api_key_ag}"</span>
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Make the API request</span>
+<span style="font-weight: bold; font-style: italic;">response</span> = requests.get(api_url)
+
+<span style="font-weight: bold;">if</span> response.status_code == 200:
+    <span style="font-weight: bold; font-style: italic;">data</span> = response.json()
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Define the date you want to filter for</span>
+    <span style="font-weight: bold; font-style: italic;">target_date</span> = <span style="font-style: italic;">"2023-10-14"</span>
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Filter the data for the specific date</span>
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">here we get a big json file, so this list comperhension takes what we need</span>
+    <span style="font-weight: bold; font-style: italic;">filtered_data</span> = [entry <span style="font-weight: bold;">for</span> entry <span style="font-weight: bold;">in</span> data <span style="font-weight: bold;">if</span> entry[<span style="font-style: italic;">'date'</span>] == target_date] <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">list comprehension</span>
+
+    <span style="font-weight: bold;">if</span> filtered_data:
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Process the filtered data as needed</span>
+<span style="font-weight: bold;">for</span> entry <span style="font-weight: bold;">in</span> filtered_data:
+    <span style="font-weight: bold;">print</span>(f<span style="font-style: italic;">"Date: {entry['date']}"</span>) <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">we're accessing the 'date' key in the dictionary called 'entry'</span>
+    <span style="font-weight: bold;">print</span>(f<span style="font-style: italic;">"Total hours: {entry['total_hours']}"</span>)
+    <span style="font-weight: bold;">print</span>(f<span style="font-style: italic;">"All productive hours: {entry['all_productive_hours']}"</span>)
+    <span style="font-weight: bold;">print</span>(f<span style="font-style: italic;">"All distracting hours: {entry['all_distracting_hours']}"</span>)
+    <span style="font-weight: bold;">else</span>:
+<span style="font-weight: bold;">print</span>(f<span style="font-style: italic;">"No data found for {target_date}"</span>)
+<span style="font-weight: bold;">else</span>:
+    <span style="font-weight: bold;">print</span>(f<span style="font-style: italic;">"Failed to retrieve data. Status code: {response.status_code}"</span>)
+</pre>
+</div>
+
+<p>
+but can also do it like such in view:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">def</span> <span style="font-weight: bold;">rescuetime_app_dsf</span>(request):
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">take the api key from environment variables</span>
+    <span style="font-weight: bold; font-style: italic;">rescuetime_api_key_ag</span> = os.getenv(<span style="font-style: italic;">"RESCUETIME_API_KEY_AG"</span>)
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Define the URL</span>
+    <span style="font-weight: bold; font-style: italic;">url</span> = f<span style="font-style: italic;">'https://www.rescuetime.com/anapi/daily_summary_feed?key={rescuetime_api_key_ag}'</span>
+    <span style="font-weight: bold; font-style: italic;">url2</span> = f<span style="font-style: italic;">'https://www.rescuetime.com/anapi/data?key={rescuetime_api_key_ag}&amp;perspective=rank&amp;restrict_kind=overview&amp;restrict_begin=2023-10-10&amp;restrict_end=2023-10-10&amp;format=json'</span>
+
+    <span style="font-weight: bold;">try</span>:
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Make an HTTP GET request to the URL</span>
+<span style="font-weight: bold; font-style: italic;">response</span> = requests.get(url)
+<span style="font-weight: bold; font-style: italic;">response2</span> = requests.get(url2)
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Check if the request was successful (status code 200)</span>
+<span style="font-weight: bold;">if</span> response.status_code == 200:
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Parse the JSON response</span>
+    <span style="font-weight: bold; font-style: italic;">data</span> = response.json()
+    <span style="font-weight: bold; font-style: italic;">data2</span> = response2.json()
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Pass the data to the template for rendering</span>
+
+    <span style="font-weight: bold; font-style: italic;">context</span> = {
+<span style="font-style: italic;">'data'</span>: data,
+<span style="font-style: italic;">'data2'</span>: data2
+    }
+
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'rescuetime_app_dsf.html'</span>, context)
+<span style="font-weight: bold;">else</span>:
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Handle any other status code (e.g., display an error)</span>
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'rescuetime_app_error.html'</span>, {<span style="font-style: italic;">'error_message'</span>: <span style="font-style: italic;">'Failed to fetch data'</span>})
+    <span style="font-weight: bold;">except</span> <span style="font-weight: bold; text-decoration: underline;">Exception</span> <span style="font-weight: bold;">as</span> e:
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Handle any exceptions (e.g., network issues, JSON parsing errors)</span>
+<span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'rescuetime_app_error.html'</span>, {<span style="font-style: italic;">'error_message'</span>: <span style="font-weight: bold;">str</span>(e)})
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbf5d830" class="outline-3">
+<h3 id="orgbf5d830"><span class="section-number-3">10.6</span> daylt api implementation</h3>
+<div class="outline-text-3" id="text-10-6">
+<p>
+Vardadieniai bei dienos informacija Tavo svetainėje!-
+<a href="https://day.lt/dienos_info_paaiskinimai.html">https://day.lt/dienos_info_paaiskinimai.html</a>
+</p>
+
+<p>
+Nothing to explain, its just too easy to implement. If it dies - it
+dies. If it runs - it runs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8fe3cb9" class="outline-3">
+<h3 id="org8fe3cb9"><span class="section-number-3">10.7</span> implementing strava api</h3>
+<div class="outline-text-3" id="text-10-7">
+<ul class="org-ul">
+<li>strava developers - <a href="https://developers.strava.com/">https://developers.strava.com/</a></li>
+<li>strava account - <a href="https://www.strava.com/dashboard?num_entries=60">https://www.strava.com/dashboard?num_entries=60</a></li>
+<li>strava everyone activity - <a href="https://www.strava.com/activities/9074302414">https://www.strava.com/activities/9074302414</a></li>
+<li>strava api section in account page - <a href="https://www.strava.com/settings/api">https://www.strava.com/settings/api</a></li>
+<li>strava api docs - <a href="https://developers.strava.com/docs/reference/#api-Activities-getActivityById">https://developers.strava.com/docs/reference/#api-Activities-getActivityById</a></li>
+<li>Getting Started with the Strava API -
+<a href="https://developers.strava.com/docs/getting-started/">https://developers.strava.com/docs/getting-started/</a></li>
+</ul>
+
+<p>
+lifeapi git work
+</p>
+</div>
+</div>
+<div id="outline-container-org6c31504" class="outline-3">
+<h3 id="org6c31504"><span class="section-number-3">10.8</span> applying the change from dev to PRD</h3>
+<div class="outline-text-3" id="text-10-8">
+</div>
+<div id="outline-container-org7d2eece" class="outline-4">
+<h4 id="org7d2eece"><span class="section-number-4">10.8.1</span> Check services status</h4>
+<div class="outline-text-4" id="text-10-8-1">
+<div class="org-src-container">
+<pre class="src src-bash">systemctl status gunicorn.socket
+systemctl status gunicorn.service
+systemctl status nginx
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org093e0b9" class="outline-4">
+<h4 id="org093e0b9"><span class="section-number-4">10.8.2</span> Fetch changes</h4>
+<div class="outline-text-4" id="text-10-8-2">
+<p>
+check if there are any changes upstream(on github repo on the web)
+</p>
+
+<p>
+git fetch
+</p>
+
+<p>
+Push changes to DEV
+</p>
+
+<p>
+Github site make pull request to master
+</p>
+
+<p>
+login to gcp server
+</p>
+
+<p>
+login as root user
+</p>
+
+<p>
+git pull origin master on gcp
+</p>
+
+<p>
+if some small change, maybe systemctl restart nginx is enough
+</p>
+
+<p>
+if change in css - need to do python manage.py collectstatic &#x2013;settings=settings.production
+</p>
+
+<p>
+if change in some templates - need to restart ir gunicorn systemctl
+restart gunicorn.service (gal ir socket?)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6910991" class="outline-3">
+<h3 id="org6910991"><span class="section-number-3">10.9</span> update master</h3>
+<div class="outline-text-3" id="text-10-9">
+<p>
+To login to MASTER branch on GCP - username "arvydas", ssh setup, so
+no need for password
+</p>
+
+<ol class="org-ol">
+<li>Login as root with - sudo su - . Should already be venv since
+bashrc is made</li>
+<li>git status</li>
+<li>cd <i>opt/app/lifeapi</i></li>
+<li>gipt fetch</li>
+<li>git pull origin master</li>
+<li>python manage.py collectstatic &#x2013;settings=settings.production</li>
+<li>systemctl restart nginx</li>
+<li>systemctl restart gunicorn.service</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org97da8a9" class="outline-3">
+<h3 id="org97da8a9"><span class="section-number-3">10.10</span> git repo change remote</h3>
+<div class="outline-text-3" id="text-10-10">
+<p>
+krc buvo taip. as parsiputes repo buvau su https. paskui pasetupinau
+ssh keys serveryje del lifeapi_db_backup. Su ssh keys viskas veikia
+toje repo, bet nustojo veikti lifeapi. Tai teko daryti situos
+zingsniu. Aciu dievui, kad pavyko sitaip, nereikejo reclone ir rebuild
+stuff&#x2026;
+</p>
+
+<p>
+It seems like you've set up SSH keys for your GitHub account but are
+still trying to access a repository using HTTPS, and you're
+encountering authentication issues. You don't need to re-clone the
+repository with SSH; you can update the remote URL for your existing
+repository to use SSH. Here's how you can do it:
+</p>
+
+<p>
+Open a terminal and navigate to your local repository.
+</p>
+
+<p>
+Check the current remote URL using the following command:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">git remote -v
+</pre>
+</div>
+
+<p>
+You'll see the remote URL for your repository, which should currently be in HTTPS format.
+</p>
+
+<p>
+To update the remote URL to use SSH, use the following command
+(replace username/repo with your actual repository path):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">git remote set-url origin git@github.com:username/repo.git
+</pre>
+</div>
+
+<p>
+After updating the remote URL, you can verify that it's using SSH by
+running git remote -v again. It should now show the SSH URL.
+</p>
+
+<p>
+Try performing any Git operation (e.g., git pull, git push, etc.) to
+confirm that you're no longer prompted for a username and password.
+data table creation
+commit - ba650b7
+</p>
+
+<p>
+Created data table · arvydasg/lifeapi@ba650b7 - <a href="https://github.com/arvydasg/lifeapi/commit/ba650b7b80596689d196be3a648904d9d63bb41f">https://github.com/arvydasg/lifeapi/commit/ba650b7b80596689d196be3a648904d9d63bb41f</a>
+</p>
+
+<p>
+This html template seems a bit complicated:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+
+{% block content %}
+    &lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Data Table</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+    &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"table-responsive"</span>&gt;
+&lt;<span style="font-weight: bold;">table</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"table table-striped"</span>&gt;
+    &lt;<span style="font-weight: bold;">thead</span>&gt;
+&lt;<span style="font-weight: bold;">tr</span>&gt;
+    &lt;<span style="font-weight: bold;">th</span>&gt;Date&lt;/<span style="font-weight: bold;">th</span>&gt;
+    &lt;<span style="font-weight: bold;">th</span>&gt;Temperature&lt;/<span style="font-weight: bold;">th</span>&gt;
+    {% for question in questions %}
+&lt;<span style="font-weight: bold;">th</span>&gt;{{question.description}}&lt;/<span style="font-weight: bold;">th</span>&gt;
+    {% endfor %}
+&lt;/<span style="font-weight: bold;">tr</span>&gt;
+    &lt;/<span style="font-weight: bold;">thead</span>&gt;
+    &lt;<span style="font-weight: bold;">tbody</span>&gt;
+{% for weather_entry in weather_entries|dictsortreversed:'date' %}
+    &lt;<span style="font-weight: bold;">tr</span>&gt;
+    &lt;<span style="font-weight: bold;">td</span>&gt;{{ weather_entry.date|date:"Y-m-d" }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+    &lt;<span style="font-weight: bold;">td</span>&gt;{{ weather_entry.temperature }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+{% for question in questions %}
+    {% for answer in question.answer_set.all %}
+{% if answer.date_added.date == weather_entry.date %}
+    &lt;<span style="font-weight: bold;">td</span>&gt;{{ answer.answer }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+{% endif %}
+    {% endfor %}
+{% endfor %}
+    &lt;/<span style="font-weight: bold;">tr</span>&gt;
+{% endfor %}
+    &lt;/<span style="font-weight: bold;">tbody</span>&gt;
+&lt;/<span style="font-weight: bold;">table</span>&gt;
+    &lt;/<span style="font-weight: bold;">div</span>&gt;
+{% endblock %}
+</pre>
+</div>
+
+<p>
+Here is an explanation:
+</p>
+
+<blockquote>
+<p>
+The nested loop you mentioned is used to populate the table rows (&lt;tr&gt;) with data from the weather_entries and questions. Let's break down the loop step by step:
+</p>
+
+<p>
+{% for weather_entry in weather_entries %}: This loop iterates over each weather_entry object in the weather_entries queryset. It represents each row in the table.
+</p>
+
+<p>
+&lt;tr&gt;: Starts a new table row for each weather_entry.
+</p>
+
+<p>
+&lt;td&gt;{{ weather_entry.date }}&lt;/td&gt;: Displays the date value of the current weather_entry object in a table cell. This corresponds to the "Date" column of the table.
+</p>
+
+<p>
+&lt;td&gt;{{ weather_entry.temperature }}&lt;/td&gt;: Displays the temperature value of the current weather_entry object in a table cell. This corresponds to the "Temperature" column of the table.
+</p>
+
+<p>
+{% for question in questions %}: This loop iterates over each question object in the questions queryset. It represents the columns for the questions in the table.
+</p>
+
+<p>
+{% for answer in question.answer_set.all %}: This loop iterates over each answer object related to the current question object. It retrieves all answers associated with the current question.
+</p>
+
+<p>
+{% if answer.date_added.date == weather_entry.date %}: This conditional statement checks if the date_added value of the current answer object is equal to the date value of the current weather_entry object. It ensures that the answer is associated with the correct date and should be displayed in the table.
+</p>
+
+<p>
+&lt;td&gt;{{ answer.answer }}&lt;/td&gt;: If the condition is met, it displays the answer value of the current answer object in a table cell. This corresponds to the answer for the specific question and date.
+</p>
+
+<p>
+By nesting the loops, the code checks each question and its associated answer objects for each weather_entry, allowing the table to display the relevant answers for each question and date.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgfd8235e" class="outline-3">
+<h3 id="orgfd8235e"><span class="section-number-3">10.11</span> user question answer implementation</h3>
+<div class="outline-text-3" id="text-10-11">
+</div>
+<div id="outline-container-org451dc21" class="outline-4">
+<h4 id="org451dc21"><span class="section-number-4">10.11.1</span> First created the models:</h4>
+<div class="outline-text-4" id="text-10-11-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
+<span style="font-weight: bold;">from</span> django.utils <span style="font-weight: bold;">import</span> timezone
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Create your models here.</span>
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Question</span>(models.Model):
+    <span style="font-weight: bold; font-style: italic;">description</span> = models.TextField()
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Answer</span>(models.Model):
+    <span style="font-weight: bold; font-style: italic;">question</span> = models.ForeignKey(Question, on_delete=models.CASCADE)
+    <span style="font-weight: bold; font-style: italic;">answer</span> = models.CharField(max_length=255, blank=<span style="font-weight: bold; text-decoration: underline;">False</span>)
+    <span style="font-weight: bold; font-style: italic;">date_added</span> = models.DateTimeField(default=timezone.now)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc40fece" class="outline-4">
+<h4 id="orgc40fece"><span class="section-number-4">10.11.2</span> Then the views:</h4>
+<div class="outline-text-4" id="text-10-11-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.shortcuts <span style="font-weight: bold;">import</span> render, redirect
+<span style="font-weight: bold;">from</span> .models <span style="font-weight: bold;">import</span> Question, Answer
+<span style="font-weight: bold;">from</span> django.http <span style="font-weight: bold;">import</span> HttpResponse
+<span style="font-weight: bold;">from</span> django.utils <span style="font-weight: bold;">import</span> timezone
+<span style="font-weight: bold;">from</span> datetime <span style="font-weight: bold;">import</span> date
+<span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> messages
+<span style="font-weight: bold;">from</span> .forms <span style="font-weight: bold;">import</span> QuestionForm
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">quiz_app_home</span>(request):
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'quiz_app_home.html'</span>)
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">quiz_questions</span>(request):
+    <span style="font-style: italic;">'''View to display all the questions'''</span>
+    <span style="font-weight: bold; font-style: italic;">questions</span> = Question.objects.<span style="font-weight: bold;">all</span>()
+    <span style="font-weight: bold; font-style: italic;">context</span> = {<span style="font-style: italic;">'questions'</span>: questions}
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'quiz_app_questions.html'</span>, context)
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">quiz_add_question</span>(request):
+    <span style="font-style: italic;">'''View to add a posibility to add new questions'''</span>
+    <span style="font-weight: bold;">if</span> request.method == <span style="font-style: italic;">'POST'</span>:
+<span style="font-weight: bold; font-style: italic;">form</span> = QuestionForm(request.POST)
+<span style="font-weight: bold;">if</span> form.is_valid():
+    form.save()
+    <span style="font-weight: bold;">return</span> redirect(<span style="font-style: italic;">'quiz_questions'</span>)
+    <span style="font-weight: bold;">else</span>:
+<span style="font-weight: bold; font-style: italic;">form</span> = QuestionForm()
+
+    <span style="font-weight: bold; font-style: italic;">context</span> = {<span style="font-style: italic;">'form'</span>: form}
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'quiz_app_add_question.html'</span>, context)
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">quiz_start</span>(request):
+    <span style="font-style: italic;">'''View to add a posibility to add new questions'''</span>
+    <span style="font-weight: bold;">if</span> request.method == <span style="font-style: italic;">'POST'</span>:
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Check if the user clicked the "Start Quiz" button</span>
+<span style="font-weight: bold;">if</span> <span style="font-style: italic;">'start_quiz'</span> <span style="font-weight: bold;">in</span> request.POST:
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Check if entries for today already exist</span>
+    <span style="font-weight: bold; font-style: italic;">today</span> = date.today()
+    <span style="font-weight: bold;">if</span> Answer.objects.<span style="font-weight: bold;">filter</span>(date_added__date=today).exists():
+messages.warning(request, <span style="font-style: italic;">"You have already answered the quiz for today."</span>)
+    <span style="font-weight: bold;">else</span>:
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Retrieve the first question from the database</span>
+<span style="font-weight: bold; font-style: italic;">first_question</span> = Question.objects.first()
+<span style="font-weight: bold; font-style: italic;">context</span> = {<span style="font-style: italic;">'question'</span>: first_question}
+
+<span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'quiz_app_question.html'</span>, context)
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Check if the user clicked the "Delete Answers" button</span>
+<span style="font-weight: bold;">elif</span> <span style="font-style: italic;">'delete_answers'</span> <span style="font-weight: bold;">in</span> request.POST:
+    <span style="font-weight: bold; font-style: italic;">today</span> = date.today()
+    Answer.objects.<span style="font-weight: bold;">filter</span>(date_added__date=today).delete()
+    messages.success(request, <span style="font-style: italic;">"Your answers for today have been deleted."</span>)
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Retrieve any flash messages and pass them to the template context</span>
+    <span style="font-weight: bold; font-style: italic;">messages_to_display</span> = messages.get_messages(request)
+    <span style="font-weight: bold; font-style: italic;">context</span> = {<span style="font-style: italic;">'messages'</span>: messages_to_display}
+
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'quiz_app_ready.html'</span>, context)
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">quiz_question</span>(request, question_id):
+    <span style="font-weight: bold;">if</span> request.method == <span style="font-style: italic;">'POST'</span>:
+<span style="font-weight: bold; font-style: italic;">question_id</span> = <span style="font-weight: bold;">int</span>(request.POST.get(<span style="font-style: italic;">'question_id'</span>))
+<span style="font-weight: bold; font-style: italic;">answer_text</span> = request.POST.get(<span style="font-style: italic;">'answer'</span>)
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Save the answer to the database</span>
+<span style="font-weight: bold; font-style: italic;">answer</span> = Answer(question_id=question_id, answer=answer_text)
+answer.save()
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Redirect to the next question or finish the quiz if all questions are answered</span>
+<span style="font-weight: bold; font-style: italic;">next_question_id</span> = question_id + 1
+<span style="font-weight: bold;">if</span> next_question_id &gt; Question.objects.count():
+    <span style="font-weight: bold;">return</span> redirect(<span style="font-style: italic;">'quiz_summary'</span>)  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Redirect to the quiz summary page</span>
+<span style="font-weight: bold;">else</span>:
+    <span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(<span style="font-weight: bold;">id</span>=next_question_id)
+    <span style="font-weight: bold; font-style: italic;">context</span> = {<span style="font-style: italic;">'question'</span>: question}
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'quiz_app_question.html'</span>, context)
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Retrieve the question based on the question_id</span>
+    <span style="font-weight: bold; font-style: italic;">question</span> = Question.objects.get(<span style="font-weight: bold;">id</span>=question_id)
+    <span style="font-weight: bold; font-style: italic;">context</span> = {<span style="font-style: italic;">'question'</span>: question}
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'quiz_app_question.html'</span>, context)
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">quiz_summary</span>(request):
+    <span style="font-style: italic;">'''View to display all entries of answers table'''</span>
+    <span style="font-weight: bold; font-style: italic;">answers</span> = Answer.objects.<span style="font-weight: bold;">all</span>()
+    <span style="font-weight: bold; font-style: italic;">context</span> = {<span style="font-style: italic;">'answers'</span>: answers}
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">'quiz_app_summary.html'</span>, context)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0526e8f" class="outline-4">
+<h4 id="org0526e8f"><span class="section-number-4">10.11.3</span> Then the urls:</h4>
+<div class="outline-text-4" id="text-10-11-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> path
+<span style="font-weight: bold;">from</span> . <span style="font-weight: bold;">import</span> views
+
+<span style="font-weight: bold; font-style: italic;">urlpatterns</span> = [
+    path(<span style="font-style: italic;">""</span>, views.quiz_app_home, name=<span style="font-style: italic;">"quiz_app_home"</span>),
+    path(<span style="font-style: italic;">'start_quiz/'</span>, views.quiz_start, name=<span style="font-style: italic;">'quiz_start'</span>),
+    path(<span style="font-style: italic;">"quiz/questions/"</span>, views.quiz_questions, name=<span style="font-style: italic;">"quiz_questions"</span>),
+    path(<span style="font-style: italic;">'quiz/&lt;int:question_id&gt;/'</span>, views.quiz_question, name=<span style="font-style: italic;">'quiz_question'</span>),
+    path(<span style="font-style: italic;">'quiz/summary/'</span>, views.quiz_summary, name=<span style="font-style: italic;">'quiz_summary'</span>),
+    path(<span style="font-style: italic;">'add-question/'</span>, views.quiz_add_question, name=<span style="font-style: italic;">'quiz_add_question'</span>),
+]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc78f10f" class="outline-4">
+<h4 id="orgc78f10f"><span class="section-number-4">10.11.4</span> And forms:</h4>
+<div class="outline-text-4" id="text-10-11-4">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django <span style="font-weight: bold;">import</span> forms
+<span style="font-weight: bold;">from</span> .models <span style="font-weight: bold;">import</span> Question
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">QuestionForm</span>(forms.ModelForm):
+    <span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Meta</span>:
+<span style="font-weight: bold; font-style: italic;">model</span> = Question
+<span style="font-weight: bold; font-style: italic;">fields</span> = [<span style="font-style: italic;">'description'</span>]
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0defc66" class="outline-3">
+<h3 id="org0defc66"><span class="section-number-3">10.12</span> And templates:</h3>
+<div class="outline-text-3" id="text-10-12">
+</div>
+<div id="outline-container-orgd6fd946" class="outline-4">
+<h4 id="orgd6fd946"><span class="section-number-4">10.12.1</span> quiz_app_add_question.html</h4>
+<div class="outline-text-4" id="text-10-12-1">
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+
+{% block content %}
+    &lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Add Question</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+    &lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"POST"</span>&gt;
+{% csrf_token %}
+{{ form.as_p }}
+&lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Add&lt;/<span style="font-weight: bold;">button</span>&gt;
+    &lt;/<span style="font-weight: bold;">form</span>&gt;
+{% endblock %}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc0cce43" class="outline-4">
+<h4 id="orgc0cce43"><span class="section-number-4">10.12.2</span> quiz_app_home.html</h4>
+<div class="outline-text-4" id="text-10-12-2">
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+
+{% block content %}
+    &lt;<span style="font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Welcome to My QUIZ APP</span>&lt;/<span style="font-weight: bold;">h1</span>&gt;
+    &lt;<span style="font-weight: bold;">p</span>&gt;Here you can answer some questions bla.&lt;/<span style="font-weight: bold;">p</span>&gt;
+    &lt;<span style="font-weight: bold;">p</span>&gt;Quiz is here - &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'quiz_start' %}"</span>&gt;Here&lt;/<span style="font-weight: bold;">a</span>&gt;&lt;/<span style="font-weight: bold;">p</span>&gt;
+    &lt;<span style="font-weight: bold;">p</span>&gt;all questions can see - &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'quiz_questions' %}"</span>&gt;Here&lt;/<span style="font-weight: bold;">a</span>&gt;&lt;/<span style="font-weight: bold;">p</span>&gt;
+{% endblock %}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd270a16" class="outline-4">
+<h4 id="orgd270a16"><span class="section-number-4">10.12.3</span> quiz_app_question.html</h4>
+<div class="outline-text-4" id="text-10-12-3">
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+
+{% block content %}
+    &lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Question:</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+    &lt;<span style="font-weight: bold;">p</span>&gt;{{ question.description }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+    &lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">"{% url 'quiz_question' question_id=question.id %}"</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"POST"</span>&gt;
+{% csrf_token %}
+&lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"hidden"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"question_id"</span> <span style="font-weight: bold; font-style: italic;">value</span>=<span style="font-style: italic;">"{{ question.id }}"</span>&gt;
+&lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"text"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"answer"</span> <span style="font-weight: bold; font-style: italic;">placeholder</span>=<span style="font-style: italic;">"Enter your answer"</span> required&gt;
+&lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span>&gt;Submit&lt;/<span style="font-weight: bold;">button</span>&gt;
+    &lt;/<span style="font-weight: bold;">form</span>&gt;
+{% endblock %}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeed87db" class="outline-4">
+<h4 id="orgeed87db"><span class="section-number-4">10.12.4</span> quiz_app_questions.html</h4>
+<div class="outline-text-4" id="text-10-12-4">
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+
+{% block content %}
+    &lt;<span style="font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Questions</span>&lt;/<span style="font-weight: bold;">h1</span>&gt;
+    &lt;<span style="font-weight: bold;">table</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"table"</span>&gt;
+&lt;<span style="font-weight: bold;">thead</span>&gt;
+    &lt;<span style="font-weight: bold;">tr</span>&gt;
+&lt;<span style="font-weight: bold;">th</span>&gt;ID&lt;/<span style="font-weight: bold;">th</span>&gt;
+&lt;<span style="font-weight: bold;">th</span>&gt;Description&lt;/<span style="font-weight: bold;">th</span>&gt;
+    &lt;/<span style="font-weight: bold;">tr</span>&gt;
+&lt;/<span style="font-weight: bold;">thead</span>&gt;
+&lt;<span style="font-weight: bold;">tbody</span>&gt;
+    {% for question in questions %}
+&lt;<span style="font-weight: bold;">tr</span>&gt;
+    &lt;<span style="font-weight: bold;">td</span>&gt;{{ question.id }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+    &lt;<span style="font-weight: bold;">td</span>&gt;{{ question.description }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+&lt;/<span style="font-weight: bold;">tr</span>&gt;
+    {% endfor %}
+&lt;/<span style="font-weight: bold;">tbody</span>&gt;
+    &lt;/<span style="font-weight: bold;">table</span>&gt;
+
+    &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"{% url 'quiz_add_question' %}"</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-primary"</span>&gt;Add Question&lt;/<span style="font-weight: bold;">a</span>&gt;
+{% endblock %}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc421af3" class="outline-4">
+<h4 id="orgc421af3"><span class="section-number-4">10.12.5</span> quiz_app_ready.html</h4>
+<div class="outline-text-4" id="text-10-12-5">
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+
+{% block content %}
+    &lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Ready to start the quiz?</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+    &lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">"{% url 'quiz_start' %}"</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"POST"</span>&gt;
+{% csrf_token %}
+&lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"start_quiz"</span>&gt;Start Quiz&lt;/<span style="font-weight: bold;">button</span>&gt;
+    &lt;/<span style="font-weight: bold;">form</span>&gt;
+
+    &lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">"{% url 'quiz_start' %}"</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"POST"</span>&gt;
+{% csrf_token %}
+&lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"delete_answers"</span>&gt;Delete My Answers for Today&lt;/<span style="font-weight: bold;">button</span>&gt;
+    &lt;/<span style="font-weight: bold;">form</span>&gt;
+
+    {% for message in messages %}
+&lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"flash-message"</span>&gt;{{ message }}&lt;/<span style="font-weight: bold;">div</span>&gt;
+    {% endfor %}
+{% endblock %}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org60a63c7" class="outline-4">
+<h4 id="org60a63c7"><span class="section-number-4">10.12.6</span> quiz_app_summary.html</h4>
+<div class="outline-text-4" id="text-10-12-6">
+<div class="org-src-container">
+<pre class="src src-html">{% extends 'base.html' %}
+
+{% block content %}
+    &lt;<span style="font-weight: bold;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Quiz Summary</span>&lt;/<span style="font-weight: bold;">h2</span>&gt;
+    &lt;<span style="font-weight: bold;">table</span>&gt;
+&lt;<span style="font-weight: bold;">thead</span>&gt;
+    &lt;<span style="font-weight: bold;">tr</span>&gt;
+&lt;<span style="font-weight: bold;">th</span>&gt;Question&lt;/<span style="font-weight: bold;">th</span>&gt;
+&lt;<span style="font-weight: bold;">th</span>&gt;Answer&lt;/<span style="font-weight: bold;">th</span>&gt;
+    &lt;/<span style="font-weight: bold;">tr</span>&gt;
+&lt;/<span style="font-weight: bold;">thead</span>&gt;
+&lt;<span style="font-weight: bold;">tbody</span>&gt;
+    {% for answer in answers %}
+    &lt;<span style="font-weight: bold;">tr</span>&gt;
+&lt;<span style="font-weight: bold;">td</span>&gt;{{ answer.question.description }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+&lt;<span style="font-weight: bold;">td</span>&gt;{{ answer.answer }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+    &lt;/<span style="font-weight: bold;">tr</span>&gt;
+    {% endfor %}
+&lt;/<span style="font-weight: bold;">tbody</span>&gt;
+    &lt;/<span style="font-weight: bold;">table</span>&gt;
+{% endblock %}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga888c2a" class="outline-4">
+<h4 id="orga888c2a"><span class="section-number-4">10.12.7</span> Quiz looks like this:</h4>
+<div class="outline-text-4" id="text-10-12-7">
+<p>
+If there are answers to the quiz already for today - you won’t be able to do
+the quiz. You can delete the entries before that. Weather api implementation
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9cf7617" class="outline-2">
+<h2 id="org9cf7617"><span class="section-number-2">11</span> code</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+Using this as an api - Meteo.lt API
+</p>
+
+<p>
+Display data from an api in html.
+</p>
+</div>
+
+<div id="outline-container-orgb533301" class="outline-3">
+<h3 id="orgb533301"><span class="section-number-3">11.1</span> Step 1 Create a separate django app</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+add it to the project. Inside the app’s views.py write such code:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> requests
+<span style="font-weight: bold;">from</span> django.shortcuts <span style="font-weight: bold;">import</span> render
+<span style="font-weight: bold;">from</span> datetime <span style="font-weight: bold;">import</span> datetime, timedelta
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Create your views here.</span>
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">weather_view</span>(request):
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Get yesterday's date</span>
+    <span style="font-weight: bold; font-style: italic;">yesterday</span> = datetime.now() - timedelta(days=5)
+    <span style="font-weight: bold; font-style: italic;">date_str</span> = yesterday.strftime(<span style="font-style: italic;">"%Y-%m-%d"</span>)
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Make the API request</span>
+    <span style="font-weight: bold; font-style: italic;">response</span> = requests.get(
+        f<span style="font-style: italic;">"https://api.meteo.lt/v1/stations/vilniaus-ams/observations/{date_str}"</span>
+    )
+    <span style="font-weight: bold; font-style: italic;">data</span> = response.json()
+
+    <span style="font-weight: bold;">print</span>(data)
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Find the desired observation</span>
+    <span style="font-weight: bold; font-style: italic;">desired_observation</span> = <span style="font-weight: bold; text-decoration: underline;">None</span>
+    <span style="font-weight: bold;">for</span> x <span style="font-weight: bold;">in</span> data[<span style="font-style: italic;">"observations"</span>]:
+        <span style="font-weight: bold;">if</span> x[<span style="font-style: italic;">"observationTimeUtc"</span>] == f<span style="font-style: italic;">"{date_str} 12:00:00"</span>:
+            <span style="font-weight: bold; font-style: italic;">desired_observation</span> = x
+            <span style="font-weight: bold;">break</span>
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">assign the desired_observation to context</span>
+    <span style="font-weight: bold; font-style: italic;">context</span> = {
+        <span style="font-style: italic;">"observation"</span>: desired_observation,
+    }
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">pass that context to the template and render it</span>
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">"weather/weather_template.html"</span>, context)
+</pre>
+</div>
+
+<p>
+Then /templates/weather/weather_template.html can be like such:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
+&lt;<span style="font-weight: bold;">html</span>&gt;
+&lt;<span style="font-weight: bold;">head</span>&gt;
+    &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Weather Information</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
+&lt;/<span style="font-weight: bold;">head</span>&gt;
+&lt;<span style="font-weight: bold;">body</span>&gt;
+    &lt;<span style="font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Weather Information</span>&lt;/<span style="font-weight: bold;">h1</span>&gt;
+    {% if observation %}
+        &lt;<span style="font-weight: bold;">p</span>&gt;Observation Time: {{ observation.observationTimeUtc }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Air Temperature: {{ observation.airTemperature }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Feels Like Temperature: {{ observation.feelsLikeTemperature }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Wind Speed: {{ observation.windSpeed }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Wind Gust: {{ observation.windGust }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Wind Direction: {{ observation.windDirection }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Cloud Cover: {{ observation.cloudCover }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Sea Level Pressure: {{ observation.seaLevelPressure }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Relative Humidity: {{ observation.relativeHumidity }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Precipitation: {{ observation.precipitation }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Condition Code: {{ observation.conditionCode }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+    {% else %}
+        &lt;<span style="font-weight: bold;">p</span>&gt;No observation found for the specified time.&lt;/<span style="font-weight: bold;">p</span>&gt;
+    {% endif %}
+&lt;/<span style="font-weight: bold;">body</span>&gt;
+&lt;/<span style="font-weight: bold;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4d4a155" class="outline-3">
+<h3 id="org4d4a155"><span class="section-number-3">11.2</span> Step 2 Storing entries from an api in db</h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+Let’s create a DB first. Inside app/model.py file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Create your models here.</span>
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Weather</span>(models.Model):
+    <span style="font-weight: bold; font-style: italic;">date</span> = models.DateField()
+    <span style="font-weight: bold; font-style: italic;">temperature</span> = models.DecimalField(max_digits=5, decimal_places=2)
+</pre>
+</div>
+
+<p>
+then in terminal:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+</pre>
+</div>
+
+<p>
+Now update the view function to include:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> . models <span style="font-weight: bold;">import</span> Weather
+<span style="font-weight: bold; font-style: italic;">weather</span> = Weather(date=date_str, temperature=desired_observation.get(<span style="font-style: italic;">"airTemperature"</span>, <span style="font-style: italic;">""</span>))
+weather.save()
+</pre>
+</div>
+
+<p>
+Now whenever you visit the <a href="http://127.0.0.1:8000/weather/">http://127.0.0.1:8000/weather/</a> page, the
+data will be fetched and stored in the DB.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org91e7b2f" class="outline-3">
+<h3 id="org91e7b2f"><span class="section-number-3">11.3</span> Step 3 Displaying from an api AND storing to db</h3>
+<div class="outline-text-3" id="text-11-3">
+<p>
+Its possible to do this in one single views.py file. We must have
+models and urls set up like so:
+</p>
+
+<p>
+models
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Create your models here.</span>
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">Weather</span>(models.Model):
+    <span style="font-weight: bold; font-style: italic;">date</span> = models.DateField()
+    <span style="font-weight: bold; font-style: italic;">temperature</span> = models.DecimalField(max_digits=5, decimal_places=2)
+</pre>
+</div>
+
+<p>
+urls
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> path
+<span style="font-weight: bold;">from</span> . <span style="font-weight: bold;">import</span> views
+
+<span style="font-weight: bold; font-style: italic;">urlpatterns</span> = [
+    path(<span style="font-style: italic;">""</span>, views.weather_view, name=<span style="font-style: italic;">"weather_view"</span>),
+]
+</pre>
+</div>
+
+<p>
+views
+</p>
+<div class="org-src-container">
+<pre class="src src-python">
+<span style="font-weight: bold;">import</span> requests
+<span style="font-weight: bold;">from</span> django.shortcuts <span style="font-weight: bold;">import</span> render
+<span style="font-weight: bold;">from</span> datetime <span style="font-weight: bold;">import</span> datetime, timedelta
+<span style="font-weight: bold;">from</span> .models <span style="font-weight: bold;">import</span> Weather
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">weather_view</span>(request):
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Get yesterday's date</span>
+    <span style="font-weight: bold; font-style: italic;">yesterday</span> = datetime.now() - timedelta(days=1)
+    <span style="font-weight: bold; font-style: italic;">date_str</span> = yesterday.strftime(<span style="font-style: italic;">"%Y-%m-%d"</span>)
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Make the API request to fetch weather data</span>
+    <span style="font-weight: bold; font-style: italic;">api_url</span> = f<span style="font-style: italic;">"https://api.meteo.lt/v1/stations/vilniaus-ams/observations/{date_str}"</span>
+    <span style="font-weight: bold; font-style: italic;">response</span> = requests.get(api_url)
+    <span style="font-weight: bold; font-style: italic;">data_fetched_from_api</span> = response.json()
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Retrieve desired observation from the fetched data</span>
+    <span style="font-weight: bold; font-style: italic;">desired_observation</span> = <span style="font-weight: bold; text-decoration: underline;">None</span>
+    <span style="font-weight: bold;">for</span> observation <span style="font-weight: bold;">in</span> data_fetched_from_api[<span style="font-style: italic;">"observations"</span>]:
+        <span style="font-weight: bold;">if</span> observation[<span style="font-style: italic;">"observationTimeUtc"</span>] == f<span style="font-style: italic;">"{date_str} 12:00:00"</span>:
+            <span style="font-weight: bold; font-style: italic;">desired_observation</span> = observation
+            <span style="font-weight: bold;">break</span>
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Save the weather data to the database</span>
+    save_weather_to_db(date_str, desired_observation)
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Retrieve the latest weather data from the database</span>
+    <span style="font-weight: bold; font-style: italic;">weather_from_db</span> = retrieve_latest_weather()
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Prepare the context to pass to the template</span>
+    <span style="font-weight: bold; font-style: italic;">context</span> = {
+        <span style="font-style: italic;">"observation"</span>: desired_observation,
+        <span style="font-style: italic;">"weather_from_db"</span>: weather_from_db,
+    }
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Render the template with the context</span>
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">"weather/weather_template.html"</span>, context)
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">save_weather_to_db</span>(date_str, desired_observation):
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Save the weather data to the database</span>
+    <span style="font-weight: bold; font-style: italic;">weather</span> = Weather(
+        date=date_str,
+        temperature=desired_observation.get(<span style="font-style: italic;">"airTemperature"</span>, <span style="font-style: italic;">""</span>)
+    )
+    weather.save()
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">retrieve_latest_weather</span>():
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Retrieve the latest weather data from the database</span>
+    <span style="font-weight: bold; font-style: italic;">weather_from_db</span> = Weather.objects.last()
+    <span style="font-weight: bold;">return</span> weather_from_db
+</pre>
+</div>
+
+
+<p>
+html template
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
+&lt;<span style="font-weight: bold;">html</span>&gt;
+&lt;<span style="font-weight: bold;">head</span>&gt;
+    &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Weather Information</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
+&lt;/<span style="font-weight: bold;">head</span>&gt;
+&lt;<span style="font-weight: bold;">body</span>&gt;
+    <span style="font-weight: bold; font-style: italic;">&lt;!-- </span><span style="font-weight: bold; font-style: italic;">data that is fetched from an api  </span><span style="font-weight: bold; font-style: italic;">--&gt;</span>
+    &lt;<span style="font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Weather Information</span>&lt;/<span style="font-weight: bold;">h1</span>&gt;
+    {% if observation %}
+        &lt;<span style="font-weight: bold;">p</span>&gt;Observation Time: {{ observation.observationTimeUtc }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Air Temperature: {{ observation.airTemperature }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Feels Like Temperature: {{ observation.feelsLikeTemperature }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Wind Speed: {{ observation.windSpeed }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Wind Gust: {{ observation.windGust }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Wind Direction: {{ observation.windDirection }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Cloud Cover: {{ observation.cloudCover }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Sea Level Pressure: {{ observation.seaLevelPressure }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Relative Humidity: {{ observation.relativeHumidity }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Precipitation: {{ observation.precipitation }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Condition Code: {{ observation.conditionCode }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+    {% else %}
+        &lt;<span style="font-weight: bold;">p</span>&gt;No observation found for the specified time.&lt;/<span style="font-weight: bold;">p</span>&gt;
+    {% endif %}
+
+    <span style="font-weight: bold; font-style: italic;">&lt;!-- </span><span style="font-weight: bold; font-style: italic;">data fetched from the db an api  </span><span style="font-weight: bold; font-style: italic;">--&gt;</span>
+    {% if weather_from_db %}
+        &lt;<span style="font-weight: bold;">p</span>&gt;Observation Time: {{ weather_from_db.date|date:"Y-m-d" }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+        &lt;<span style="font-weight: bold;">p</span>&gt;Temperature: {{ weather_from_db.temperature }}&lt;/<span style="font-weight: bold;">p</span>&gt;
+    {% else %}
+        &lt;<span style="font-weight: bold;">p</span>&gt;No observation found.&lt;/<span style="font-weight: bold;">p</span>&gt;
+    {% endif %}
+&lt;/<span style="font-weight: bold;">body</span>&gt;
+&lt;/<span style="font-weight: bold;">html</span>&gt;
+</pre>
+</div>
+
+<p>
+Now upon each refresh we will get data displayed in html template from
+an api and also from the db.
+</p>
+
+<p>
+DB will populate like so:
+</p>
+
+<p>
+Using this DB viewer - SQLite Viewer Web App
+</p>
+
+<p>
+And will be displayed like so:
+</p>
+
+
+<p>
+Now have to separate those processes and make it so that ONLY the data
+from the DB is displayed and the fetch from api and store to db action
+happens not on each page refresh but at specific times, without my
+intervention.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcb20849" class="outline-3">
+<h3 id="orgcb20849"><span class="section-number-3">11.4</span> Step 4 Automating fetching and storing into DB with cron</h3>
+<div class="outline-text-3" id="text-11-4">
+<p>
+So since we don’t want fetch and storing to DB happen each time we
+open /website tab, lets clean up the views.py to contain only the
+information needed for information display.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> django.shortcuts <span style="font-weight: bold;">import</span> render
+<span style="font-weight: bold;">from</span> .models <span style="font-weight: bold;">import</span> Weather
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">weather_view</span>(request):
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Retrieve the latest weather data from the database</span>
+    <span style="font-weight: bold; font-style: italic;">weather_from_db</span> = retrieve_latest_weather()
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Prepare the context to pass to the template</span>
+    <span style="font-weight: bold; font-style: italic;">context</span> = {
+        <span style="font-style: italic;">"weather_from_db"</span>: weather_from_db,
+    }
+
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Render the template with the context</span>
+    <span style="font-weight: bold;">return</span> render(request, <span style="font-style: italic;">"weather/weather_template.html"</span>, context)
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">retrieve_latest_weather</span>():
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Retrieve the latest weather data from the database</span>
+    <span style="font-weight: bold; font-style: italic;">weather_from_db</span> = Weather.objects.last()
+    <span style="font-weight: bold;">return</span> weather_from_db
+</pre>
+</div>
+
+<p>
+Let’s add the content from from views.py file to another file called
+job_weather.py that should be located in the same directory as
+manage.py
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> requests
+<span style="font-weight: bold;">from</span> datetime <span style="font-weight: bold;">import</span> datetime, timedelta
+<span style="font-weight: bold;">from</span> weather.models <span style="font-weight: bold;">import</span> Weather
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">save_weather_to_db</span>(date_str, desired_observation):
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Save the weather data to the database</span>
+    <span style="font-weight: bold; font-style: italic;">weather</span> = Weather(
+        date=date_str,
+        temperature=desired_observation.get(<span style="font-style: italic;">"airTemperature"</span>, <span style="font-style: italic;">""</span>)
+    )
+    weather.save()
+    <span style="font-weight: bold;">print</span>(f<span style="font-style: italic;">"{date_str} and {desired_observation.get('airTemperature', '')} are saved to the database"</span>)
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Get yesterday's date</span>
+<span style="font-weight: bold; font-style: italic;">yesterday</span> = datetime.now() - timedelta(days=1)
+<span style="font-weight: bold; font-style: italic;">date_str</span> = yesterday.strftime(<span style="font-style: italic;">"%Y-%m-%d"</span>)
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Make the API request to fetch weather data</span>
+<span style="font-weight: bold; font-style: italic;">api_url</span> = f<span style="font-style: italic;">"https://api.meteo.lt/v1/stations/vilniaus-ams/observations/{date_str}"</span>
+<span style="font-weight: bold; font-style: italic;">response</span> = requests.get(api_url)
+<span style="font-weight: bold; font-style: italic;">data_fetched_from_api</span> = response.json()
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Retrieve desired observation from the fetched data</span>
+<span style="font-weight: bold; font-style: italic;">desired_observation</span> = <span style="font-weight: bold; text-decoration: underline;">None</span>
+<span style="font-weight: bold;">for</span> observation <span style="font-weight: bold;">in</span> data_fetched_from_api[<span style="font-style: italic;">"observations"</span>]:
+    <span style="font-weight: bold;">if</span> observation[<span style="font-style: italic;">"observationTimeUtc"</span>] == f<span style="font-style: italic;">"{date_str} 12:00:00"</span>:
+        <span style="font-weight: bold; font-style: italic;">desired_observation</span> = observation
+        <span style="font-weight: bold;">break</span>
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Save the weather data to the database</span>
+save_weather_to_db(date_str, desired_observation)
+</pre>
+</div>
+
+<p>
+If we try to run this file now, we get an error saying:
+</p>
+
+<p>
+ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings
+are not configured. You must either define the environment variable
+DJANGO_SETTINGS_MODULE or call settings.configure() before accessing
+settings.
+</p>
+
+<p>
+This means that this newly created file can not make calls and operate
+PUT operations to our DJANGO database. We need to configure Django
+settings for script execution outside of a Django project. This
+enables the proper functioning of Django-related features, including
+database access via models. Okay, so the solution is to add this a the
+top of the file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> os
+<span style="font-weight: bold;">import</span> django
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Set the DJANGO_SETTINGS_MODULE environment variable</span>
+os.environ.setdefault(<span style="font-style: italic;">"DJANGO_SETTINGS_MODULE"</span>, <span style="font-style: italic;">"lifeapi.settings"</span>)
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Configure Django settings</span>
+django.setup()
+</pre>
+</div>
+
+<p>
+Now when we run this python file, the outcome should be:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">(venv) arvy@DESKTOP-AUDMJ7D:~/src/lifeapi/lifeapi$ python job_weather.py
+2023-06-20 and 25.9 are saved to the database
+</pre>
+</div>
+
+<p>
+Check the DB to confirm that additional line was added.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga0fa924" class="outline-3">
+<h3 id="orga0fa924"><span class="section-number-3">11.5</span> Step 5 creating cronjob</h3>
+<div class="outline-text-3" id="text-11-5">
+<p>
+We don’t want to run this command manually daily, so let’s create a
+cron job to do this for us once every one minute(make once every
+24hours later).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">open cron editor</span>
+crontab -e
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">add this line at the end of it:</span>
+*/1 * * * * /home/arvy/src/lifeapi/venv/bin/python /home/arvy/src/lifeapi/lifeapi/job_weather.py
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">close the file</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">make it executable</span>
+chmod +x job_weather.py
+</pre>
+</div>
+
+<p>
+Now our cron job is created, it will use python with all the
+dependencies from the environment that we have provided and run the
+job_weather.py file for us each minute.
+</p>
+
+<p>
+Great!!
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <p class="date generated">This note is <u>first written</u>: 2023-06-15 Thu 13:40</p>
+	 <div class="copyright-container generated">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 10:43</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 10:43</p> -->
+	 <!-- <p class="date">This org file is <u>created</u>: 2023-06-15 Thu 13:40</p> -->
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>
