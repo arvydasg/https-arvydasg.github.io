@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 10:43 -->
+<!-- 2024-06-04 Tue 13:20 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Notes</title>
@@ -26,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-04 Tue 10:43</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 13:20</div> -->
 </div>
 <div id="content">
 <header>
@@ -67,8 +67,10 @@
 <li><span class="timestamp">[2024-05-29]</span> <a href="20240529T090313--capitalize-each-blog-post-title-with-elisp__denote_elisp_emacs.html">Capitalize each blog post title with elisp</a></li>
 <li><span class="timestamp">[2024-05-29]</span> <a href="20240529T090108--attempt-to-modify-denote-links-to-suite-ox-publish__denote_elisp_emacs.html">attempt to modify denote links to suite ox-publish</a></li>
 <li><span class="timestamp">[2024-05-27]</span> <a href="20240527T150432--trying-out-devcontainers-in-vscode__vscode.html">Trying out devcontainers in vscode</a></li>
+<li><span class="timestamp">[2024-05-01]</span> <a href="20240501T140034--customize-logging-in-django__django.html">Customize logging in django</a></li>
 <li><span class="timestamp">[2024-04-25]</span> <a href="20240425T151500--fail-a-github-action-if-coverage-requirements-are-not-met__git.html">Fail a github action if coverage requirements are not met</a></li>
 <li><span class="timestamp">[2024-04-25]</span> <a href="20240425T141400--what-is-coverage__django.html">What is coverage</a></li>
+<li><span class="timestamp">[2024-04-20]</span> <a href="20240420T140757--use-postgresql-in-django-project__django_sql.html">Use PostgreSQL in django project</a></li>
 <li><span class="timestamp">[2024-04-20]</span> <a href="20240420T131300--what-is-pre-commit__git.html">What is pre-commit</a></li>
 <li><span class="timestamp">[2024-02-24]</span> <a href="20240224T095911--2024-02-fighting-with-django-admin__statusupdate.html">2024 02 fighting with django admin</a></li>
 <li><span class="timestamp">[2024-02-05]</span> <a href="20240205T200953--debugging-a-django-app-with-emacs-and-dap-mode__django_emacs.html">Debugging a Django app with Emacs and dap-mode</a></li>
@@ -115,7 +117,6 @@
 <li><span class="timestamp">[2023-12-15]</span> <a href="20231215T140448--why-build-a-website-with-emacs-and-not-with-something-else__emacs_websites.html">Why build a website with emacs and not with something else</a></li>
 <li><span class="timestamp">[2023-12-15]</span> <a href="20231215T101410--create-a-blog-with-emacs-easy-hugo__emacs_hugo_websites.html">Create a blog with emacs-easy-hugo</a></li>
 <li><span class="timestamp">[2023-12-15]</span> <a href="20231215T055820--add-ckeditor-into-django-app__django.html">Add ckeditor into django app</a></li>
-<li><span class="timestamp">[2023-12-15]</span> <a href="20231215T055742--use-postgres-db-instead-of-sqlite__django_sql.html">Use postgres db instead of sqlite</a></li>
 <li><span class="timestamp">[2023-12-15]</span> <a href="20231215T055647--deploy-django-app__django_python.html">Deploy django app</a></li>
 <li><span class="timestamp">[2023-12-15]</span> <a href="20231215T055535--deploy-django-app-on-railway__django_railway.html">Deploy django app on railway</a></li>
 <li><span class="timestamp">[2023-12-14]</span> <a href="20231214T171810--using-emacs-together-with-vscode__angular_emacs_vscode.html">Using emacs together with vscode</a></li>
@@ -123,7 +124,6 @@
 <li><span class="timestamp">[2023-12-14]</span> <a href="20231214T142532--enable-wsl-on-windows__windows_wsl.html">Enable wsl on windows</a></li>
 <li><span class="timestamp">[2023-12-14]</span> <a href="my-dev-environment.html">My Dev Environment</a></li>
 <li><span class="timestamp">[2023-12-14]</span> <a href="20231214T094426--setup-custom-domain-for-github-pages__git_websites.html">Setup custom domain for github pages</a></li>
-<li><span class="timestamp">[2023-12-14]</span> <a href="20231214T061312--authenticate-to-git-with-gpg-key__git_gpg.html">Authenticate to git with gpg key</a></li>
 <li><span class="timestamp">[2023-12-14]</span> <a href="20231214T060637--authenticate-to-git-with-personal-access-token__git.html">Authenticate to git with personal access token</a></li>
 <li><span class="timestamp">[2023-12-14]</span> <a href="20231214T060558--authenticate-to-git-with-ssh__git_ssh.html">Authenticate to git with ssh</a></li>
 <li><span class="timestamp">[2023-12-12]</span> <a href="20231212T123552--deploy-a-static-website-with-github-pages__git_websites.html">Deploy a static website with github pages</a></li>
@@ -252,8 +252,8 @@
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 10:43</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 10:43</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 13:20</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 13:20</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: </p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

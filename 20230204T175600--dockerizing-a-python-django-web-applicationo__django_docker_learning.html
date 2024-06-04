@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 10:43 -->
+<!-- 2024-06-04 Tue 13:20 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dockerizing a Python Django Web Application</title>
@@ -26,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-04 Tue 10:43</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 13:19</div> -->
 </div>
 <div id="content">
 <header>
@@ -35,20 +35,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org548f39a">1. Create and Dockerize a Django Application</a>
+<li><a href="#orga7ffdd3">1. Create and Dockerize a Django Application</a>
 <ul>
-<li><a href="#org02c4201">1.1. <code>Install</code> Docker and Docker Desktop</a></li>
-<li><a href="#org57f2f3d">1.2. Create a Django <code>app</code></a></li>
-<li><a href="#orgdeb056c">1.3. Create a Docker <code>image</code></a></li>
-<li><a href="#org28dda72">1.4. Create a Docker <code>container</code></a></li>
+<li><a href="#orgdc862e8">1.1. <code>Install</code> Docker and Docker Desktop</a></li>
+<li><a href="#orgadf49bf">1.2. Create a Django <code>app</code></a></li>
+<li><a href="#org8f1d9b5">1.3. Create a Docker <code>image</code></a></li>
+<li><a href="#org35087d8">1.4. Create a Docker <code>container</code></a></li>
 </ul>
 </li>
-<li><a href="#org5a560cc">2. Upload Docker Image to Docker Hub</a></li>
-<li><a href="#orgd2f7b04">3. Deploy with Docker on Linode</a>
+<li><a href="#orgcb475c4">2. Upload Docker Image to Docker Hub</a></li>
+<li><a href="#org8707947">3. Deploy with Docker on Linode</a>
 <ul>
-<li><a href="#org27b0611">3.1. Creating a platform to work on</a></li>
-<li><a href="#orgf2ed589">3.2. Run the container</a></li>
-<li><a href="#org0937be5">3.3. Some other Docker commands</a></li>
+<li><a href="#orgbaf3acb">3.1. Creating a platform to work on</a></li>
+<li><a href="#org1522ddf">3.2. Run the container</a></li>
+<li><a href="#org63d1630">3.3. Some other Docker commands</a></li>
 </ul>
 </li>
 </ul>
@@ -61,12 +61,12 @@ clients or employers. Not a coincidence that I learned <a href="https://arvydas.
 will come in handy.
 </p>
 
-<div id="outline-container-org548f39a" class="outline-2">
-<h2 id="org548f39a"><span class="section-number-2">1</span> Create and Dockerize a Django Application</h2>
+<div id="outline-container-orga7ffdd3" class="outline-2">
+<h2 id="orga7ffdd3"><span class="section-number-2">1</span> Create and Dockerize a Django Application</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org02c4201" class="outline-3">
-<h3 id="org02c4201"><span class="section-number-3">1.1</span> <code>Install</code> Docker and Docker Desktop</h3>
+<div id="outline-container-orgdc862e8" class="outline-3">
+<h3 id="orgdc862e8"><span class="section-number-3">1.1</span> <code>Install</code> Docker and Docker Desktop</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Follow <a href="https://www.youtube.com/watch?v=Vplj9b0L_1Y&amp;ab_channel=Abstractprogrammer">this</a> tutorial or <a href="https://docs.docker.com/get-docker/">the docs</a>.
@@ -74,8 +74,8 @@ Follow <a href="https://www.youtube.com/watch?v=Vplj9b0L_1Y&amp;ab_channel=Abstr
 </div>
 </div>
 
-<div id="outline-container-org57f2f3d" class="outline-3">
-<h3 id="org57f2f3d"><span class="section-number-3">1.2</span> Create a Django <code>app</code></h3>
+<div id="outline-container-orgadf49bf" class="outline-3">
+<h3 id="orgadf49bf"><span class="section-number-3">1.2</span> Create a Django <code>app</code></h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 If you don't want to setup basic Django app together - clone mine from <a href="https://github.com/arvydasg/django-docker-starter">here</a>.
@@ -102,8 +102,8 @@ pip freeze &gt; requirements.txt
 </div>
 </div>
 
-<div id="outline-container-orgdeb056c" class="outline-3">
-<h3 id="orgdeb056c"><span class="section-number-3">1.3</span> Create a Docker <code>image</code></h3>
+<div id="outline-container-org8f1d9b5" class="outline-3">
+<h3 id="org8f1d9b5"><span class="section-number-3">1.3</span> Create a Docker <code>image</code></h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Create <code>Dockerfile</code> (without any file extensions, and with the D being capital)
@@ -178,8 +178,8 @@ app.
 </div>
 </div>
 
-<div id="outline-container-org28dda72" class="outline-3">
-<h3 id="org28dda72"><span class="section-number-3">1.4</span> Create a Docker <code>container</code></h3>
+<div id="outline-container-org35087d8" class="outline-3">
+<h3 id="org35087d8"><span class="section-number-3">1.4</span> Create a Docker <code>container</code></h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 A single command will do it.
@@ -217,8 +217,8 @@ to a browser, <code>127.0.0.1:8000</code> to see your django app running.
 </div>
 </div>
 </div>
-<div id="outline-container-org5a560cc" class="outline-2">
-<h2 id="org5a560cc"><span class="section-number-2">2</span> Upload Docker Image to Docker Hub</h2>
+<div id="outline-container-orgcb475c4" class="outline-2">
+<h2 id="orgcb475c4"><span class="section-number-2">2</span> Upload Docker Image to Docker Hub</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Go to <a href="https://hub.docker.com/">Docker hub</a> and create an account there.</li>
@@ -267,12 +267,12 @@ docker push arvydasg/django-docker-starter
 </div>
 </div>
 
-<div id="outline-container-orgd2f7b04" class="outline-2">
-<h2 id="orgd2f7b04"><span class="section-number-2">3</span> Deploy with Docker on Linode</h2>
+<div id="outline-container-org8707947" class="outline-2">
+<h2 id="org8707947"><span class="section-number-2">3</span> Deploy with Docker on Linode</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org27b0611" class="outline-3">
-<h3 id="org27b0611"><span class="section-number-3">3.1</span> Creating a platform to work on</h3>
+<div id="outline-container-orgbaf3acb" class="outline-3">
+<h3 id="orgbaf3acb"><span class="section-number-3">3.1</span> Creating a platform to work on</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Create the machine.
@@ -287,8 +287,8 @@ for it, choose any other provider you want). In my case I have chosen Linode
 </div>
 </div>
 
-<div id="outline-container-orgf2ed589" class="outline-3">
-<h3 id="orgf2ed589"><span class="section-number-3">3.2</span> Run the container</h3>
+<div id="outline-container-org1522ddf" class="outline-3">
+<h3 id="org1522ddf"><span class="section-number-3">3.2</span> Run the container</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Let's pull the <a href="https://hub.docker.com/r/arvydasg/django-docker-starter/tags">container</a> we have created and pushed to Docker Hub in
@@ -350,8 +350,8 @@ package. And you can run it on any linux machine.
 </div>
 </div>
 
-<div id="outline-container-org0937be5" class="outline-3">
-<h3 id="org0937be5"><span class="section-number-3">3.3</span> Some other Docker commands</h3>
+<div id="outline-container-org63d1630" class="outline-3">
+<h3 id="org63d1630"><span class="section-number-3">3.3</span> Some other Docker commands</h3>
 <div class="outline-text-3" id="text-3-3">
 <div class="org-src-container">
 <pre class="src src-bash">docker ps -a
@@ -387,8 +387,8 @@ docker volume prune
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 10:43</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 10:43</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 13:20</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 13:19</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2023-02-04 Sat 17:56</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

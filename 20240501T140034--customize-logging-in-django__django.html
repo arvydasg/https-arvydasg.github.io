@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-06-04 Tue 13:20 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customize logging in django</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 13:19</div> -->
+</div>
+<div id="content">
+<header>
+<h1 class="title">Customize logging in django</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org137b1bf">1. Add logging to the django app</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org137b1bf" class="outline-2">
+<h2 id="org137b1bf"><span class="section-number-2">1</span> Add logging to the django app</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=XSwIUnGXrwY&amp;ab_channel=BetterStack">Best logging tut</a></li>
+<li><a href="https://www.youtube.com/watch?v=ziegOuE7M4A&amp;t=1200s&amp;ab_channel=DjangoConUS">DjangoCon 2019 talk about logging</a></li>
+<li>Find all of the loggers <a href="https://docs.djangoproject.com/en/5.0/ref/logging/#django-logging-extensions">here</a>. Get to know to root logger - "django", then db logger - "django.db.backends" and similar.</li>
+<li><a href="https://github.com/azegas/quotes/commit/c9070b35a2e0b36e64fc9c3abc9588ea8f9eaa36">Example how I added logging in quotes app</a></li>
+</ul>
+
+<blockquote>
+<p>
+Nobody is paying us to log, but it is needed, just as tests.
+</p>
+</blockquote>
+
+<p>
+FIND and REPLACE all your print() with logger.info() or logger.debu().
+</p>
+
+<p>
+Whenever you have shippable code, don't remove the debug logs.. no developer
+will run your code with debug logs on. And if there is a need for that - they
+will be glad that there are some debug logs in the code, that can act as a
+reminder and a great help to debug.
+</p>
+
+<p>
+You can log your own log messages or log django's log messages as well. These
+are two different things.
+</p>
+
+<blockquote>
+<p>
+<b><b>Loggers</b></b> - what to log
+</p>
+
+<p>
+<b><b>Handlers</b></b> - how to log those logged logs
+</p>
+
+<p>
+<b><b>Formatters</b></b> - how to display the logged logs
+</p>
+</blockquote>
+
+<p>
+For example here is how to log out to a file your own log message. Add the
+logging configuration below to your `settings.py` file:
+</p>
+
+<p>
+First let's make sure the logging directory exists:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">LOGGING START</span>
+
+<span style="font-weight: bold; font-style: italic;">LOGS_DIR</span> = os.path.join(BASE_DIR, <span style="font-style: italic;">"logs"</span>)
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">not</span> os.path.exists(LOGS_DIR):
+    os.makedirs(LOGS_DIR)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">LOGGING</span> = {
+    <span style="font-style: italic;">"version"</span>: 1,
+    <span style="font-style: italic;">"disable_existing_loggers"</span>: <span style="font-weight: bold; text-decoration: underline;">False</span>,
+    <span style="font-style: italic;">"handlers"</span>: {
+        <span style="font-style: italic;">"file_handler"</span>: {
+            <span style="font-style: italic;">"class"</span>: <span style="font-style: italic;">"logging.FileHandler"</span>,
+            <span style="font-style: italic;">"filename"</span>: os.path.join(LOGS_DIR, <span style="font-style: italic;">"logs.log"</span>),
+            <span style="font-style: italic;">"level"</span>: <span style="font-style: italic;">"DEBUG"</span>,
+            <span style="font-style: italic;">"formatter"</span>: <span style="font-style: italic;">"verbose"</span>,
+        },
+    },
+    <span style="font-style: italic;">"loggers"</span>: {
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">unmapped aka root logger, catch logs from ALL modules (files)</span>
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">this would show all of my written logs, like logger.error("hello!")</span>
+        <span style="font-style: italic;">""</span>: {
+            <span style="font-style: italic;">"level"</span>: <span style="font-style: italic;">"DEBUG"</span>,
+            <span style="font-style: italic;">"handlers"</span>: [<span style="font-style: italic;">"file_handler"</span>],
+        }
+    },
+    <span style="font-style: italic;">"formatters"</span>: {
+        <span style="font-style: italic;">"simple"</span>: {
+            <span style="font-style: italic;">"format"</span>: <span style="font-style: italic;">"{asctime}: {levelname} {message}"</span>,
+            <span style="font-style: italic;">"style"</span>: <span style="font-style: italic;">"{"</span>,
+        },
+        <span style="font-style: italic;">"verbose"</span>: {
+            <span style="font-style: italic;">"format"</span>: <span style="font-style: italic;">"{asctime}: {levelname} - {name} {module}.py (line {lineno:d}). {message}"</span>,
+            <span style="font-style: italic;">"style"</span>: <span style="font-style: italic;">"{"</span>,
+        },
+    },
+}
+</pre>
+</div>
+
+<p>
+Now for test the above logger, see if anything is written to `debug_up.log`
+file, let's add this anywhere in our project:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> logging
+<span style="font-weight: bold; font-style: italic;">logger</span> = logging.getLogger(<span style="font-weight: bold;">__name__</span>)
+logger.debug(<span style="font-style: italic;">"hello!"</span>)
+logger.info(<span style="font-style: italic;">"hello!"</span>)
+logger.warning(<span style="font-style: italic;">"hello!"</span>)
+logger.error(<span style="font-style: italic;">"hello!"</span>)
+logger.critical(<span style="font-style: italic;">"hello!"</span>)
+</pre>
+</div>
+
+<p>
+You will see this in the terminal:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">2024-05-01 08:55:44,301: DEBUG - apps.authors.models models.py (line 20). hello!
+2024-05-01 08:55:44,302: INFO - apps.authors.models models.py (line 21). hello!
+2024-05-01 08:55:44,303: WARNING - apps.authors.models models.py (line 22). hello!
+2024-05-01 08:55:44,304: ERROR - apps.authors.models models.py (line 23). hello!
+2024-05-01 08:55:44,305: CRITICAL - apps.authors.models models.py (line 24). hello!
+</pre>
+</div>
+
+<p>
+Now if you also want to display the same logs in the console(terminal), do
+this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">LOGGING</span> = {
+    <span style="font-style: italic;">"version"</span>: 1,
+    <span style="font-style: italic;">"disable_existing_loggers"</span>: <span style="font-weight: bold; text-decoration: underline;">False</span>,
+    <span style="font-style: italic;">"handlers"</span>: {
+        <span style="font-style: italic;">"file_handler"</span>: {
+            <span style="font-style: italic;">"class"</span>: <span style="font-style: italic;">"logging.FileHandler"</span>,
+            <span style="font-style: italic;">"filename"</span>: os.path.join(LOGS_DIR, <span style="font-style: italic;">"logs.log"</span>),
+            <span style="font-style: italic;">"level"</span>: <span style="font-style: italic;">"DEBUG"</span>,
+            <span style="font-style: italic;">"formatter"</span>: <span style="font-style: italic;">"verbose"</span>,
+        },
+        <span style="font-style: italic;">"console_handler"</span>: { <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+            <span style="font-style: italic;">"class"</span>: <span style="font-style: italic;">"logging.StreamHandler"</span>, <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+            <span style="font-style: italic;">"level"</span>: <span style="font-style: italic;">"DEBUG"</span>, <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+            <span style="font-style: italic;">"formatter"</span>: <span style="font-style: italic;">"simple"</span>, <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+        },
+    },
+    <span style="font-style: italic;">"loggers"</span>: {
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">unmapped aka root logger, catch logs from ALL modules (files)</span>
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">this would show all of my written logs, like logger.info("Index view accessed by user: %s", request.user.username)</span>
+
+        <span style="font-style: italic;">""</span>: {
+            <span style="font-style: italic;">"level"</span>: <span style="font-style: italic;">"DEBUG"</span>,
+            <span style="font-style: italic;">"handlers"</span>: [
+                <span style="font-style: italic;">"file_handler"</span>,
+                <span style="font-style: italic;">"console_handler"</span>, <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">new</span>
+            ],
+        },
+    },
+    <span style="font-style: italic;">"formatters"</span>: {
+        <span style="font-style: italic;">"simple"</span>: {
+            <span style="font-style: italic;">"format"</span>: <span style="font-style: italic;">"{asctime}: {levelname} {message}"</span>,
+            <span style="font-style: italic;">"style"</span>: <span style="font-style: italic;">"{"</span>,
+        },
+        <span style="font-style: italic;">"verbose"</span>: {
+            <span style="font-style: italic;">"format"</span>: <span style="font-style: italic;">"{asctime}: {levelname} - {name} {module}.py (line {lineno:d}). {message}"</span>,
+            <span style="font-style: italic;">"style"</span>: <span style="font-style: italic;">"{"</span>,
+        },
+    },
+}
+</pre>
+</div>
+
+<p>
+If I wanted to see django's logs, similar to debug toolbar, I would have to
+play with the loggers, instead of "", I could for example write "django", then
+create another file for those logs. Have not played much, but it should work.
+</p>
+
+<p>
+Also be aware of <a href="https://docs.djangoproject.com/en/5.0/howto/logging/#use-logger-namespacing">logger namespacing</a>, as well as <a href="https://docs.djangoproject.com/en/5.0/howto/logging/#using-logger-hierarchies-and-propagation">logger hierarchies and propagation</a>.
+</p>
+
+<p>
+It also might be a good idea to store the debug levels, filenames and similar
+info to environment variables.
+</p>
+
+<p>
+Can also later look into "log aggregation", store your logs and visualize in
+"prometheus" or "better stack"
+</p>
+
+<p>
+It is also possible to add colors to logging, like so (have to `pip install
+colorlog` first). Add it to formatters, then use as a regular formatter in the
+console:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-style: italic;">"colored"</span>: {
+    <span style="font-style: italic;">"()"</span>: <span style="font-style: italic;">"colorlog.ColoredFormatter"</span>,
+    <span style="font-style: italic;">"format"</span>: <span style="font-style: italic;">"%(log_color)s %(asctime)s: [%(levelname)s] - %(name)s %(module)s.py (line %(lineno)s). :: %(message)s"</span>,
+},
+</pre>
+</div>
+
+<p>
+If you want "rotating" logs, can add such configuration:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-style: italic;">"handlers"</span>: {
+    <span style="font-style: italic;">"rotating_file_handler"</span>: {
+        <span style="font-style: italic;">"class"</span>: <span style="font-style: italic;">"logging.handlers.RotatingFileHandler"</span>,
+            <span style="font-style: italic;">"filename"</span>: os.path.join(LOGS_DIR, <span style="font-style: italic;">"logs.log"</span>),
+        <span style="font-style: italic;">"mode"</span>: <span style="font-style: italic;">"a"</span>,
+        <span style="font-style: italic;">"encoding"</span>: <span style="font-style: italic;">"utf-8"</span>,
+        <span style="font-style: italic;">"formatter"</span>: <span style="font-style: italic;">"verbose"</span>,
+        <span style="font-style: italic;">"backupCount"</span>: 5,
+        <span style="font-style: italic;">"maxBytes"</span>: 10485760,
+    },
+}
+</pre>
+</div>
+
+<p>
+If you want to see the SQL statements of each request, can add such logger:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">## </span><span style="font-weight: bold; font-style: italic;">catch all the SQL that is generated by django's ORM</span>
+<span style="font-style: italic;">"django.db.backends"</span>: {
+    <span style="font-style: italic;">"level"</span>: <span style="font-style: italic;">"DEBUG"</span>,
+    <span style="font-style: italic;">"handlers"</span>: [
+        <span style="font-style: italic;">"console_handler"</span>,
+        <span style="font-style: italic;">"rotating_file_handler"</span>,
+    ],
+},
+</pre>
+</div>
+
+<p>
+If you want to see django's logs, all logs, create such logger:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">catch logs from django (make this DEBUG to get loads of info)</span>
+<span style="font-style: italic;">"django"</span>: {
+    <span style="font-style: italic;">"level"</span>: <span style="font-style: italic;">"INFO"</span>,
+    <span style="font-style: italic;">"handlers"</span>: [
+        <span style="font-style: italic;">"console_handler"</span>,
+        <span style="font-style: italic;">"rotating_file_handler"</span>,
+    ],
+    <span style="font-style: italic;">"propagate"</span>: <span style="font-weight: bold; text-decoration: underline;">False</span>,
+},
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <p class="date generated">This note is <u>first written</u>: 2024-05-01 Wed 14:00</p>
+	 <div class="copyright-container generated">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 13:20</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 13:19</p> -->
+	 <!-- <p class="date">This org file is <u>created</u>: 2024-05-01 Wed 14:00</p> -->
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>

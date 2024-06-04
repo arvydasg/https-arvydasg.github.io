@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 10:44 -->
+<!-- 2024-06-04 Tue 13:20 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Random queries of django-orm</title>
@@ -26,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-04 Tue 10:43</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 13:19</div> -->
 </div>
 <div id="content">
 <header>
@@ -35,19 +35,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org83c1f2d">1. Random queries</a></li>
-<li><a href="#orgda1212d">2. Modify a record in db with python example</a>
+<li><a href="#org95feeb8">1. Random queries</a></li>
+<li><a href="#orgcc61b55">2. Modify a record in db with python example</a>
 <ul>
-<li><a href="#org5984e8f">2.1. Method 1</a></li>
-<li><a href="#org3d0c4e7">2.2. Method 2</a></li>
+<li><a href="#org65f9991">2.1. Method 1</a></li>
+<li><a href="#org08baf20">2.2. Method 2</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org83c1f2d" class="outline-2">
-<h2 id="org83c1f2d"><span class="section-number-2">1</span> Random queries</h2>
+<div id="outline-container-org95feeb8" class="outline-2">
+<h2 id="org95feeb8"><span class="section-number-2">1</span> Random queries</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> vessel.models <span style="font-weight: bold;">import</span> Vessel
@@ -89,12 +89,12 @@ deal1.save()
 </div>
 </div>
 </div>
-<div id="outline-container-orgda1212d" class="outline-2">
-<h2 id="orgda1212d"><span class="section-number-2">2</span> Modify a record in db with python example</h2>
+<div id="outline-container-orgcc61b55" class="outline-2">
+<h2 id="orgcc61b55"><span class="section-number-2">2</span> Modify a record in db with python example</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org5984e8f" class="outline-3">
-<h3 id="org5984e8f"><span class="section-number-3">2.1</span> Method 1</h3>
+<div id="outline-container-org65f9991" class="outline-3">
+<h3 id="org65f9991"><span class="section-number-3">2.1</span> Method 1</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-bash">(venv) arvy@DESKTOP-AUDMJ7D:~/src/lifeapi$ python manage.py shell --settings=settings.development
@@ -123,8 +123,8 @@ questions = Question.objects.all()
 </div>
 </div>
 
-<div id="outline-container-org3d0c4e7" class="outline-3">
-<h3 id="org3d0c4e7"><span class="section-number-3">2.2</span> Method 2</h3>
+<div id="outline-container-org08baf20" class="outline-3">
+<h3 id="org08baf20"><span class="section-number-3">2.2</span> Method 2</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 start by this, do whatever you want then
@@ -192,8 +192,8 @@ Answer.objects.<span style="font-weight: bold;">filter</span>(question=question)
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 10:44</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 10:43</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 13:20</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 13:19</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 16:59</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

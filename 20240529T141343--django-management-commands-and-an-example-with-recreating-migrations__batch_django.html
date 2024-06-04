@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 10:43 -->
+<!-- 2024-06-04 Tue 13:20 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Django management commands and an example with recreating migrations</title>
@@ -26,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-04 Tue 10:43</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 13:19</div> -->
 </div>
 <div id="content">
 <header>
@@ -35,16 +35,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbcdf2c1">1. Quick summary</a></li>
-<li><a href="#org5d75985">2. Step 1 - create <code>cleanup.cmd</code> file</a></li>
-<li><a href="#orgcdb9dc2">3. Step 2 - create <code>empty_migration_folder.cmd</code> file</a></li>
-<li><a href="#org8362927">4. Step 3 - create create <code>create_root_user.py</code> file</a></li>
+<li><a href="#org43d638c">1. Quick summary</a></li>
+<li><a href="#org0ce5c07">2. Step 1 - create <code>cleanup.cmd</code> file</a></li>
+<li><a href="#org6bf035c">3. Step 2 - create <code>empty_migration_folder.cmd</code> file</a></li>
+<li><a href="#org2d62227">4. Step 3 - create create <code>create_root_user.py</code> file</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgbcdf2c1" class="outline-2">
-<h2 id="orgbcdf2c1"><span class="section-number-2">1</span> Quick summary</h2>
+<div id="outline-container-org43d638c" class="outline-2">
+<h2 id="org43d638c"><span class="section-number-2">1</span> Quick summary</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Outside of your project directory, create a folder called helpers</li>
@@ -54,8 +54,8 @@
 </div>
 </div>
 
-<div id="outline-container-org5d75985" class="outline-2">
-<h2 id="org5d75985"><span class="section-number-2">2</span> Step 1 - create <code>cleanup.cmd</code> file</h2>
+<div id="outline-container-org0ce5c07" class="outline-2">
+<h2 id="org0ce5c07"><span class="section-number-2">2</span> Step 1 - create <code>cleanup.cmd</code> file</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -90,8 +90,8 @@ echo ======================#  Finished
 </div>
 </div>
 
-<div id="outline-container-orgcdb9dc2" class="outline-2">
-<h2 id="orgcdb9dc2"><span class="section-number-2">3</span> Step 2 - create <code>empty_migration_folder.cmd</code> file</h2>
+<div id="outline-container-org6bf035c" class="outline-2">
+<h2 id="org6bf035c"><span class="section-number-2">3</span> Step 2 - create <code>empty_migration_folder.cmd</code> file</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -117,8 +117,8 @@ for /d %%D in ("%folder%\*") do (
 </div>
 </div>
 
-<div id="outline-container-org8362927" class="outline-2">
-<h2 id="org8362927"><span class="section-number-2">4</span> Step 3 - create create <code>create_root_user.py</code> file</h2>
+<div id="outline-container-org2d62227" class="outline-2">
+<h2 id="org2d62227"><span class="section-number-2">4</span> Step 3 - create create <code>create_root_user.py</code> file</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -163,8 +163,8 @@ Inside of the  <code>app/management/commands</code> directory.
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 10:43</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 10:43</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 13:20</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 13:19</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 14:13</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

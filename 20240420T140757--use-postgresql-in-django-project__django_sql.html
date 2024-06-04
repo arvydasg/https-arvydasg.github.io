@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-06-04 Tue 13:20 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Use PostgreSQL in django project</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="sitemap.html">NOTES </a>
+ 
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="preamble" class="status">
+
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <div id="updated">Updated: 2024-06-04 Tue 13:19</div> -->
+</div>
+<div id="content">
+<header>
+<h1 class="title">Use PostgreSQL in django project</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org95ea27c">1. Set up other DB's</a>
+<ul>
+<li><a href="#org39b1dbf">1.1. Set up PostgreSQL DB locally</a>
+<ul>
+<li><a href="#org910eaca">1.1.1. Create postgresql db over pgAdmin</a></li>
+<li><a href="#org26bbf9c">1.1.2. Install psycopg2 python package</a></li>
+<li><a href="#orgc772221">1.1.3. Modify <code>settings.py</code> of the Django app</a></li>
+<li><a href="#org2fd463a">1.1.4. Set up the .env file:</a></li>
+<li><a href="#org79c5201">1.1.5. Run the Django app with postgresql db</a></li>
+<li><a href="#orgeabaec7">1.1.6. Connect to the postgresql db over windows terminal</a></li>
+</ul>
+</li>
+<li><a href="#orgc70beea">1.2. Set up PostgreSQL DB remotely on Railway</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org95ea27c" class="outline-2">
+<h2 id="org95ea27c"><span class="section-number-2">1</span> Set up other DB's</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+When you want to use something else than the default SQLite db that django
+provides and runs perfectly on.
+</p>
+
+<p>
+Maybe your needs have increased. More production like dev environment.
+</p>
+</div>
+
+<div id="outline-container-org39b1dbf" class="outline-3">
+<h3 id="org39b1dbf"><span class="section-number-3">1.1</span> Set up PostgreSQL DB locally</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li><a href="https://github.com/azegas/quotes/issues/31">Quotes app implementation task</a></li>
+<li><a href="https://stackpython.medium.com/how-to-start-django-project-with-a-database-postgresql-aaa1d74659d8">Inspiration link</a></li>
+<li><a href="https://docs.djangoproject.com/en/5.0/ref/databases/#postgresql-notes">Official documentation</a></li>
+<li><a href="https://docs.djangoproject.com/en/5.0/topics/db/multi-db/">Official docs for setting up db's/having more than one db</a></li>
+<li><a href="https://stackpython.medium.com/how-to-start-django-project-with-a-database-postgresql-aaa1d74659d8">https://stackpython.medium.com/how-to-start-django-project-with-a-database-postgresql-aaa1d74659d8</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org910eaca" class="outline-4">
+<h4 id="org910eaca"><span class="section-number-4">1.1.1</span> Create postgresql db over pgAdmin</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Download "pgADmin 4"(or the newest) tool.
+</p>
+
+<p>
+Open the app, create a server like shown here -
+<a href="https://www.youtube.com/watch?v=oWsAYx2R9RI">https://www.youtube.com/watch?v=oWsAYx2R9RI</a>
+</p>
+
+<p>
+<b><b>Take note</b></b> of these variables when you are creating the server:
+</p>
+
+<blockquote>
+<p>
+host name/address - localhost
+port - 5432
+username - postgres
+password - yourStrongPassword1
+</p>
+</blockquote>
+
+<p>
+Try to runserver, it should work! Django app should be connected to postgresql
+db.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org26bbf9c" class="outline-4">
+<h4 id="org26bbf9c"><span class="section-number-4">1.1.2</span> Install psycopg2 python package</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Different on windows and linux because of this -
+<a href="https://stackoverflow.com/questions/35104097/how-to-install-psycopg2-with-pg-config-error">https://stackoverflow.com/questions/35104097/how-to-install-psycopg2-with-pg-config-error</a>
+</p>
+
+<p>
+On windows:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">pip install psycopg2
+</pre>
+</div>
+
+<p>
+On linux:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">pip install psycopg2-binary
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc772221" class="outline-4">
+<h4 id="orgc772221"><span class="section-number-4">1.1.3</span> Modify <code>settings.py</code> of the Django app</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Add postgresql entry next to the default sqlite database:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">DATABASES</span> = {
+    <span style="font-style: italic;">"default"</span>: {
+        <span style="font-style: italic;">"ENGINE"</span>: <span style="font-style: italic;">"django.db.backends.sqlite3"</span>,
+        <span style="font-style: italic;">"NAME"</span>: BASE_DIR / <span style="font-style: italic;">"db.sqlite3"</span>,
+    }
+}
+</pre>
+</div>
+
+<p>
+Like so:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">DATABASES</span> = {
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">"default": {</span>
+    <span style="font-weight: bold; font-style: italic;">#     </span><span style="font-weight: bold; font-style: italic;">"ENGINE": "django.db.backends.sqlite3",</span>
+    <span style="font-weight: bold; font-style: italic;">#     </span><span style="font-weight: bold; font-style: italic;">"NAME": BASE_DIR / "db.sqlite3",</span>
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">},</span>
+    <span style="font-style: italic;">"default"</span>: {
+        <span style="font-style: italic;">"ENGINE"</span>: <span style="font-style: italic;">"django.db.backends.postgresql"</span>,
+        <span style="font-style: italic;">"NAME"</span>: os.getenv(<span style="font-style: italic;">"POSTGRESQL_LOCAL_DB_NAME"</span>),
+        <span style="font-style: italic;">"USER"</span>: os.getenv(<span style="font-style: italic;">"POSTGRESQL_LOCAL_DB_USER"</span>),
+        <span style="font-style: italic;">"PASSWORD"</span>: os.getenv(<span style="font-style: italic;">"POSTGRESQL_LOCAL_DB_PASSWORD"</span>),
+        <span style="font-style: italic;">"HOST"</span>: os.getenv(<span style="font-style: italic;">"POSTGRESQL_LOCAL_DB_HOST"</span>),
+        <span style="font-style: italic;">"PORT"</span>: os.getenv(<span style="font-style: italic;">"POSTGRESQL_LOCAL_DB_PORT"</span>),
+    },
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2fd463a" class="outline-4">
+<h4 id="org2fd463a"><span class="section-number-4">1.1.4</span> Set up the .env file:</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+Make sure you write the correct values of the database from the step above into
+your <code>.env</code> file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;">POSTGRESQL_LOCAL_DB_NAME</span>=<span style="font-style: italic;">"django_starter"</span>
+<span style="font-weight: bold; font-style: italic;">POSTGRESQL_LOCAL_DB_USER</span>=<span style="font-style: italic;">"postgres"</span>
+<span style="font-weight: bold; font-style: italic;">POSTGRESQL_LOCAL_DB_PASSWORD</span>=<span style="font-style: italic;">"yourStrongPassword1"</span>
+<span style="font-weight: bold; font-style: italic;">POSTGRESQL_LOCAL_DB_HOST</span>=<span style="font-style: italic;">"localhost"</span>
+<span style="font-weight: bold; font-style: italic;">POSTGRESQL_LOCAL_DB_PORT</span>=<span style="font-style: italic;">"5432"</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org79c5201" class="outline-4">
+<h4 id="org79c5201"><span class="section-number-4">1.1.5</span> Run the Django app with postgresql db</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<p>
+On windows it's easy, since pgadmin4 is installed on windows - you will connect
+to it easily, because db_host is specified as <b><b>localhost</b></b>.
+</p>
+
+<p>
+But over wsl and nixos, I am not able to say that my posgresql db is running on
+<b><b>localhost</b></b> since it's not true. If I try to use windows ip instead - still does not work.
+</p>
+
+<p>
+Tried to connect to railway instead from nixos - worked! So that means that
+nixos is configured correctly, is able to connect to postgresql db. (added
+postgresql to installed apps).
+</p>
+
+<p>
+So now the question is how to reach the posgresql db that is running on windows
+localhost over nixos.
+</p>
+
+<p>
+Getting <a href="https://www.pgadmin.org/docs/pgadmin4/8.5/connect_error.html">such</a> error:
+</p>
+
+<blockquote>
+<p>
+django.db.utils.OperationalError: connection to server at "172.21.32.1", port 5432 failed: Connection timed out
+        Is the server running on that host and accepting TCP/IP connections?
+</p>
+</blockquote>
+
+<p>
+Checked <code>C:\Program Files\PostgreSQL\16\data\posgresql.conf</code>, it already has
+<code>listen_addresses = '*'</code> set there.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeabaec7" class="outline-4">
+<h4 id="orgeabaec7"><span class="section-number-4">1.1.6</span> Connect to the postgresql db over windows terminal</h4>
+<div class="outline-text-4" id="text-1-1-6">
+<p>
+The db can be locally running.
+</p>
+
+<p>
+Go to postgresql installation folder, here - <code>C:\Program
+Files\PostgreSQL\16\bin</code>, you should see <code>psql.exe</code> here.
+</p>
+
+<p>
+Open cmd in this windows and then type:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">psql -h localhost -U db_user -d db_name
+</pre>
+</div>
+
+<p>
+You will get prompted for your windows password. Then might ask db_user password also.
+</p>
+
+<p>
+Enter them and you will be in!
+</p>
+
+<p>
+Run a few commands, then quit.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">\c
+SELECT * FROM pg_catalog.pg_tables;
+\q
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc70beea" class="outline-3">
+<h3 id="orgc70beea"><span class="section-number-3">1.2</span> Set up PostgreSQL DB remotely on Railway</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Did not find any simpler remote development than this - <a href="https://railway.app/">https://railway.app/</a>
+</p>
+
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=HEV1PWycOuQ&amp;t=264s&amp;ab_channel=DennisIvy">PostgreSQL on railway tutorial</a></li>
+</ul>
+
+<blockquote>
+<p>
+Their "Hobby Plan" includes $5 for free usage every month.
+</p>
+</blockquote>
+
+<p>
+In short:
+</p>
+
+<ul class="org-ul">
+<li>pip install psycopg2-binary (on nixos) or psycopg2(windows) to your virutal environment</li>
+<li>Create a postgresql service on railway</li>
+<li>Copy the dbname, username, password, host, port</li>
+<li>Add them to your environment variables</li>
+<li>Fetch them from the settings</li>
+<li>Run server</li>
+<li>Should run, runs both on windows and on nixos</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <p class="date generated">This note is <u>first written</u>: 2024-04-20 Sat 14:07</p>
+	 <div class="copyright-container generated">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 13:20</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 13:19</p> -->
+	 <!-- <p class="date">This org file is <u>created</u>: 2024-04-20 Sat 14:07</p> -->
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/search.js"></script>
+</div>
+</body>
+</html>
