@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-04 Tue 13:20 -->
+<!-- 2024-06-05 Wed 12:37 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Run github actions locally with act</title>
@@ -26,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-04 Tue 13:19</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-05 Wed 12:37</div> -->
 </div>
 <div id="content">
 <header>
@@ -35,22 +35,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd1baa9c">1. Routine that caused me to look for something better</a></li>
-<li><a href="#org64a440d">2. <code>Act</code> installation</a>
+<li><a href="#orgb10c075">1. Routine that caused me to look for something better</a></li>
+<li><a href="#orgdff4ac5">2. <code>Act</code> installation</a>
 <ul>
-<li><a href="#org35c0bc4">2.1. On NixOS</a></li>
-<li><a href="#orgcc89a22">2.2. On Windows</a></li>
+<li><a href="#org354b216">2.1. On NixOS</a></li>
+<li><a href="#orgf49f947">2.2. On Windows</a></li>
 </ul>
 </li>
-<li><a href="#orgd705106">3. Create a demo action</a></li>
-<li><a href="#org6fa3fdf">4. Run the action</a></li>
-<li><a href="#org0134aa9">5. Github action status badge</a></li>
+<li><a href="#org8ef764e">3. Create a demo action</a></li>
+<li><a href="#org2757850">4. Run the action</a></li>
+<li><a href="#org2171807">5. Github action status badge</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgd1baa9c" class="outline-2">
-<h2 id="orgd1baa9c"><span class="section-number-2">1</span> Routine that caused me to look for something better</h2>
+<div id="outline-container-orgb10c075" class="outline-2">
+<h2 id="orgb10c075"><span class="section-number-2">1</span> Routine that caused me to look for something better</h2>
 <div class="outline-text-2" id="text-1">
 <blockquote>
 <ul class="org-ul">
@@ -83,12 +83,12 @@ coverage requirements are not met</a>.
 </div>
 </div>
 
-<div id="outline-container-org64a440d" class="outline-2">
-<h2 id="org64a440d"><span class="section-number-2">2</span> <code>Act</code> installation</h2>
+<div id="outline-container-orgdff4ac5" class="outline-2">
+<h2 id="orgdff4ac5"><span class="section-number-2">2</span> <code>Act</code> installation</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org35c0bc4" class="outline-3">
-<h3 id="org35c0bc4"><span class="section-number-3">2.1</span> On NixOS</h3>
+<div id="outline-container-org354b216" class="outline-3">
+<h3 id="org354b216"><span class="section-number-3">2.1</span> On NixOS</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>First have to <a href="20240603T101200--use-docker-on-nixos__docker_nixos.html">install docker</a></li>
@@ -98,8 +98,8 @@ coverage requirements are not met</a>.
 </div>
 </div>
 
-<div id="outline-container-orgcc89a22" class="outline-3">
-<h3 id="orgcc89a22"><span class="section-number-3">2.2</span> On Windows</h3>
+<div id="outline-container-orgf49f947" class="outline-3">
+<h3 id="orgf49f947"><span class="section-number-3">2.2</span> On Windows</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Tutorial -
@@ -114,8 +114,8 @@ Tutorial -
 </div>
 </div>
 
-<div id="outline-container-orgd705106" class="outline-2">
-<h2 id="orgd705106"><span class="section-number-2">3</span> Create a demo action</h2>
+<div id="outline-container-org8ef764e" class="outline-2">
+<h2 id="org8ef764e"><span class="section-number-2">3</span> Create a demo action</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>Create <code>.github</code> folder in your repo</li>
@@ -150,8 +150,8 @@ jobs:
 </div>
 </div>
 
-<div id="outline-container-org6fa3fdf" class="outline-2">
-<h2 id="org6fa3fdf"><span class="section-number-2">4</span> Run the action</h2>
+<div id="outline-container-org2757850" class="outline-2">
+<h2 id="org2757850"><span class="section-number-2">4</span> Run the action</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Make sure docker is running</li>
@@ -165,8 +165,8 @@ in a similar way <code>"${{ secrets.SECRET_KEY }}"</code></li>
 </div>
 </div>
 
-<div id="outline-container-org0134aa9" class="outline-2">
-<h2 id="org0134aa9"><span class="section-number-2">5</span> Github action status badge</h2>
+<div id="outline-container-org2171807" class="outline-2">
+<h2 id="org2171807"><span class="section-number-2">5</span> Github action status badge</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 If you like, you can <a href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge">add a badge</a> to your repo do show your action status.
@@ -184,8 +184,8 @@ If you like, you can <a href="https://docs.github.com/en/actions/monitoring-and-
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-04 Tue 13:20</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-04 Tue 13:19</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-05 Wed 12:37</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-05 Wed 12:37</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-05-30 Thu 15:33</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
