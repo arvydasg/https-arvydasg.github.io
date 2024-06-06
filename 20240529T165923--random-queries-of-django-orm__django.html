@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-06 Thu 09:51 -->
+<!-- 2024-06-06 Thu 13:02 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Random queries of django-orm</title>
@@ -20,13 +20,15 @@
 </head>
 <body>
 <div id="org-div-home-and-up">
- <a accesskey="h" href="sitemap.html">NOTES </a>
+ <a href="projects.html"> PROJECTS </a>
+ <a href="sitemap.html">NOTES </a>
  
- <a accesskey="H" href="index.html"> HOME </a>
-</div><div id="preamble" class="status">
+
+<a href="index.html"> HOME </a>
+ </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-06 Thu 09:50</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:01</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
@@ -36,19 +38,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org61b461d">1. Random queries</a></li>
-<li><a href="#org579de5f">2. Modify a record in db with python example</a>
+<li><a href="#org877c32d">1. Random queries</a></li>
+<li><a href="#org70bff04">2. Modify a record in db with python example</a>
 <ul>
-<li><a href="#org75661e2">2.1. Method 1</a></li>
-<li><a href="#orge905bf4">2.2. Method 2</a></li>
+<li><a href="#org265f1f0">2.1. Method 1</a></li>
+<li><a href="#org23bd19f">2.2. Method 2</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org61b461d" class="outline-2">
-<h2 id="org61b461d"><span class="section-number-2">1</span> Random queries</h2>
+<div id="outline-container-org877c32d" class="outline-2">
+<h2 id="org877c32d"><span class="section-number-2">1</span> Random queries</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> vessel.models <span style="font-weight: bold;">import</span> Vessel
@@ -90,12 +92,12 @@ deal1.save()
 </div>
 </div>
 </div>
-<div id="outline-container-org579de5f" class="outline-2">
-<h2 id="org579de5f"><span class="section-number-2">2</span> Modify a record in db with python example</h2>
+<div id="outline-container-org70bff04" class="outline-2">
+<h2 id="org70bff04"><span class="section-number-2">2</span> Modify a record in db with python example</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org75661e2" class="outline-3">
-<h3 id="org75661e2"><span class="section-number-3">2.1</span> Method 1</h3>
+<div id="outline-container-org265f1f0" class="outline-3">
+<h3 id="org265f1f0"><span class="section-number-3">2.1</span> Method 1</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-bash">(venv) arvy@DESKTOP-AUDMJ7D:~/src/lifeapi$ python manage.py shell --settings=settings.development
@@ -124,8 +126,8 @@ questions = Question.objects.all()
 </div>
 </div>
 
-<div id="outline-container-orge905bf4" class="outline-3">
-<h3 id="orge905bf4"><span class="section-number-3">2.2</span> Method 2</h3>
+<div id="outline-container-org23bd19f" class="outline-3">
+<h3 id="org23bd19f"><span class="section-number-3">2.2</span> Method 2</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 start by this, do whatever you want then
@@ -193,8 +195,8 @@ Answer.objects.<span style="font-weight: bold;">filter</span>(question=question)
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 09:51</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 09:50</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:02</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:01</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 16:59</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

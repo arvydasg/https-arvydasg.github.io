@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2024-06-06 Thu 13:02 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Make sure google knows about all pages of your site</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Arvydas Gasparavicius">
+<meta name="description" content="Welcome to my devnotes site"
+>
+<meta name="keywords" content="emacs django">
+
+<link rel="stylesheet" href="./static/css/org-html-style-default.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/generic.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/taingram.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/lightbox.css" type="text/css"/>
+<link rel="stylesheet" href="./static/css/scroll-to-top.css" type="text/css"/>
+<link rel="icon" href="./static/ag.ico">
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a href="projects.html"> PROJECTS </a>
+ <a href="sitemap.html">NOTES </a>
+ 
+
+<a href="index.html"> HOME </a>
+ </div><div id="preamble" class="status">
+
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:01</div> -->
+	  <div id="google_translate_element" style="float:right;"></div>
+</div>
+<div id="content">
+<header>
+<h1 class="title">Make sure google knows about all pages of your site</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org2cfc8c5">1. Intro</a></li>
+<li><a href="#orgd5a5b5b">2. Verify Your Site is Indexed by Google</a></li>
+<li><a href="#org4d5ff43">3. Indexing your site</a></li>
+<li><a href="#orge5a609e">4. Create a Sitemap</a>
+<ul>
+<li><a href="#org5d55de6">4.1. <span class="todo TODO">TODO</span> Automatically genrerate sitemap.xml with each run</a></li>
+</ul>
+</li>
+<li><a href="#org51f9861">5. Ensure Your Pages are Crawlable</a></li>
+<li><a href="#org01d51c7">6. Implement Meta Tags</a></li>
+<li><a href="#org43d0929">7. Wait for Indexing</a></li>
+<li><a href="#orgc3d1936">8. <span class="todo TODO">TODO</span> What are the results after indexing</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org2cfc8c5" class="outline-2">
+<h2 id="org2cfc8c5"><span class="section-number-2">1</span> Intro</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Noticed this when trying to implement "<a href="20240605T095450--add-programmable-search-engine-to-your-site__google.html">programmable search</a>" into my site.
+</p>
+
+<p>
+You can not search the files of a website if google does not know about all the
+possible routes(pages) in your site.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd5a5b5b" class="outline-2">
+<h2 id="orgd5a5b5b"><span class="section-number-2">2</span> Verify Your Site is Indexed by Google</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Go to Google and type <code>site:your-website.com</code> in the search bar.</li>
+<li>If no results appear, it means Google hasn't indexed your site.</li>
+<li>Pages that aren’t indexed can’t be served on Google</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4d5ff43" class="outline-2">
+<h2 id="org4d5ff43"><span class="section-number-2">3</span> Indexing your site</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Go to Google Search Console.</li>
+<li>Add your website to the Search Console.</li>
+<li>Verify the domain name by taking the provided link and going to iv.lt in my
+case, adding a new @ TXT record with the value. Like <a href="https://www.youtube.com/watch?v=W4HlPpOZXyA&amp;ab_channel=TauseefAhmed">here</a></li>
+<li>Note: DNS changes may take some time to apply. If Search Console doesn’t find
+the record immediately, wait a day and then try to verify again</li>
+<li>After 15min it was verified</li>
+<li>Once verified, you can submit a sitemap to help Google index your site more
+efficiently.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge5a609e" class="outline-2">
+<h2 id="orge5a609e"><span class="section-number-2">4</span> Create a Sitemap</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+If you don't already have a sitemap, you can create one. For static websites, a
+simple way is to use an online sitemap generator:
+</p>
+
+<ul class="org-ul">
+<li>Use a tool like <a href="https://www.xml-sitemaps.com/">https://www.xml-sitemaps.com/</a> to generate a sitemap.</li>
+<li>Upload the generated <code>sitemap.xml</code> to the root directory of your website.</li>
+<li>Submit the sitemap url in Google Search Console</li>
+<li>Google will periodically process it and look for changes. You will be
+notified if anything goes wrong with it in the future.</li>
+</ul>
+</div>
+
+<div id="outline-container-org5d55de6" class="outline-3">
+<h3 id="org5d55de6"><span class="section-number-3">4.1</span> <span class="todo TODO">TODO</span> Automatically genrerate sitemap.xml with each run</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Now sitemap has to be updated each time the site changes.
+</p>
+
+<p>
+Use emacs lisp to understand it better
+</p>
+
+<p>
+Find a way to autogenerate sitemap, maybe during github actions step? Or
+rather better during build.sh, not necessarily in elisp, but during the build.
+</p>
+
+<p>
+Seeing that the most common values are, like in pnvz site - <a href="https://panevezys.lt/sitemap.xml">https://panevezys.lt/sitemap.xml</a>:
+</p>
+
+<ul class="org-ul">
+<li>url</li>
+<li>loc</li>
+<li>lastmob</li>
+<li>changefreq</li>
+<li>priority (0.5 most of the times)</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-sh">&lt;url&gt;
+&lt;loc&gt;https://panevezys.lt/lt/veiklos-sritys/architekturos-ir-urbanistikos-skyrius/teritoriju-planavimas-1985/parengti-detalieji-planai.html&lt;/loc&gt;
+&lt;lastmod&gt;2014-06-19&lt;/lastmod&gt;
+&lt;changefreq&gt;weekly&lt;/changefreq&gt;
+&lt;priority&gt;0.50&lt;/priority&gt;
+&lt;/url&gt;
+</pre>
+</div>
+
+<p>
+Here lastmod is in a completely different format - <a href="https://www.lexus.lt/sitemap.xml">https://www.lexus.lt/sitemap.xml</a>
+</p>
+
+<p>
+Other sites use only loc and lastmod, like here - <a href="https://www.kaunas.lt/sitemap.xml">https://www.kaunas.lt/sitemap.xml</a>
+</p>
+
+<p>
+Vilnius has a clean one, seems like priority rating is different for some pages - <a href="https://vilnius.lt/sitemap.xml">https://vilnius.lt/sitemap.xml</a>
+</p>
+
+<p>
+Not going to lie, used chatgpt help for this, learned cool things, like:
+</p>
+
+<ul class="org-ul">
+<li>How for loops work</li>
+<li>Build in functions to do anything you want with files/directories in your system</li>
+<li>Lots of C code in emacs source code (<a href="https://github.com/emacs-mirror/emacs/blob/master/src/dired.c">dired.c</a> for example)</li>
+</ul>
+
+<p>
+Here is the full code (<a href="https://github.com/azegas/devnotes/blob/master/build/generate-sitemap-xml.el">current version of it</a>):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">ag-generate-xml-head</span> ()
+  <span style="font-style: italic;">"Generate the head part of the XML."</span>
+  (concat <span style="font-style: italic;">"&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n"</span>
+          <span style="font-style: italic;">"&lt;urlset\n"</span>
+          <span style="font-style: italic;">"    xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"\n"</span>
+          <span style="font-style: italic;">"    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"</span>
+          <span style="font-style: italic;">"    xsi:schemaLocation=\"http://www.sitemaps.org/schemas/sitemap/0.9\n"</span>
+          <span style="font-style: italic;">"          http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd\"&gt;\n"</span>
+          <span style="font-style: italic;">"\n\n"</span>))
+
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">ag-generate-first-sitemap-entry</span> (timestamp)
+  <span style="font-style: italic;">"Generate the first entry of the sitemap XML with the given TIMESTAMP."</span>
+  (concat <span style="font-style: italic;">"&lt;url&gt;\n"</span>
+          <span style="font-style: italic;">"  &lt;loc&gt;http://arvydas.dev/&lt;/loc&gt;\n"</span>
+          <span style="font-style: italic;">"  &lt;lastmod&gt;"</span> timestamp <span style="font-style: italic;">"&lt;/lastmod&gt;\n"</span>
+          <span style="font-style: italic;">"  &lt;priority&gt;1.00&lt;/priority&gt;\n"</span>
+          <span style="font-style: italic;">"&lt;/url&gt;\n"</span>))
+
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">ag-generate-sitemap-entry</span> (filename timestamp)
+  <span style="font-style: italic;">"Generate a sitemap entry for a given FILENAME with the given TIMESTAMP."</span>
+  (concat <span style="font-style: italic;">"&lt;url&gt;\n"</span>
+          <span style="font-style: italic;">"  &lt;loc&gt;http://arvydas.dev/"</span> filename <span style="font-style: italic;">"&lt;/loc&gt;\n"</span>
+          <span style="font-style: italic;">"  &lt;lastmod&gt;"</span> timestamp <span style="font-style: italic;">"&lt;/lastmod&gt;\n"</span>
+          <span style="font-style: italic;">"  &lt;priority&gt;0.80&lt;/priority&gt;\n"</span>
+          <span style="font-style: italic;">"&lt;/url&gt;\n"</span>))
+
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">ag-generate-sitemap-dot-xml</span> (directory)
+  <span style="font-style: italic;">"Generate an XML file with the names of HTML files in the specified DIRECTORY."</span>
+  (message <span style="font-style: italic;">"Generation of sitemap.xml START"</span>)
+  (<span style="font-weight: bold;">let</span> ((files (reverse (directory-files directory t <span style="font-style: italic;">"\\.html$"</span>)))
+        (xml-file (expand-file-name <span style="font-style: italic;">"sitemap.xml"</span> directory))
+        (timestamp (format-time-string <span style="font-style: italic;">"%Y-%m-%dT%H:%M:%S%z"</span>)))
+    (<span style="font-weight: bold;">with-temp-file</span> xml-file
+      (insert (ag-generate-xml-head))
+      (insert (ag-generate-first-sitemap-entry timestamp))
+      (<span style="font-weight: bold;">dolist</span> (file files)
+        (<span style="font-weight: bold;">let</span> ((filename (file-name-nondirectory file)))
+          (insert (ag-generate-sitemap-entry filename timestamp))))
+      (insert <span style="font-style: italic;">"&lt;/urlset&gt;\n\n"</span>)) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Add the two newlines here</span>
+    (message <span style="font-style: italic;">"Generated %s"</span> xml-file)
+    (message <span style="font-style: italic;">"Generation of sitemap.xml END"</span>)))
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">call out function</span>
+(ag-generate-sitemap-dot-xml <span style="font-style: italic;">"../../arvydasg.github.io"</span>)
+</pre>
+</div>
+
+<p>
+And here is a cute little script to list all the files in a directory, just for
+reference:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">generate-xml</span> (directory)
+  <span style="font-style: italic;">"Print the names of HTML files in the specified DIRECTORY."</span>
+  (<span style="font-weight: bold;">let</span> ((files (directory-files directory t <span style="font-style: italic;">"\\.html$"</span>)))
+    (<span style="font-weight: bold;">dolist</span> (file files)
+      (<span style="font-weight: bold;">let</span> ((filename (file-name-nondirectory file)))
+        (message <span style="font-style: italic;">"%s"</span> filename)))))
+
+(generate-xml <span style="font-style: italic;">"/home/nixos/GIT/arvydasg.github.io"</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org51f9861" class="outline-2">
+<h2 id="org51f9861"><span class="section-number-2">5</span> Ensure Your Pages are Crawlable</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Make sure your pages are not blocked by <code>robots.txt</code>:
+</p>
+
+<ul class="org-ul">
+<li>Check the robots.txt file at your-website.com/robots.txt.</li>
+<li>Ensure there are no disallow rules that prevent Google from crawling your
+pages.</li>
+</ul>
+
+<p>
+Example of a permissive <code>robots.txt</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-txt">User-agent: *
+Disallow:
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org01d51c7" class="outline-2">
+<h2 id="org01d51c7"><span class="section-number-2">6</span> Implement Meta Tags</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Ensure each page has relevant meta tags, particularly the meta description tag,
+to help Google understand the content of your pages.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org43d0929" class="outline-2">
+<h2 id="org43d0929"><span class="section-number-2">7</span> Wait for Indexing</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+After completing the steps above, it might take some time for Google to index
+your site. You can check the indexing status in Google Search Console. Also can
+check by going to <code>site:your-website.com</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc3d1936" class="outline-2">
+<h2 id="orgc3d1936"><span class="section-number-2">8</span> <span class="todo TODO">TODO</span> What are the results after indexing</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+	 <footer>
+	 <p class="date generated">This note is <u>first written</u>: 2024-06-05 Wed 15:48</p>
+	 <div class="copyright-container generated">
+	 <div class="copyright">
+	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
+	 </div>
+	 </div>
+	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:02</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:01</p> -->
+	 <!-- <p class="date">This org file is <u>created</u>: 2024-06-05 Wed 15:48</p> -->
+	 <div class="generated">
+	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
+	</div>
+	</footer>
+	 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	 <script src="./static/js/generic.js"></script>
+	 <script src="./static/js/scroll-to-top.js"></script>
+	 <script src="./static/js/lightbox.js"></script>
+	 <script src="./static/js/search.js"></script>
+	 <script src="./static/js/google-translate.js"></script>
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-06 Thu 09:51 -->
+<!-- 2024-06-06 Thu 13:02 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Black Box Machine Learning</title>
@@ -20,13 +20,15 @@
 </head>
 <body>
 <div id="org-div-home-and-up">
- <a accesskey="h" href="sitemap.html">NOTES </a>
+ <a href="projects.html"> PROJECTS </a>
+ <a href="sitemap.html">NOTES </a>
  
- <a accesskey="H" href="index.html"> HOME </a>
-</div><div id="preamble" class="status">
+
+<a href="index.html"> HOME </a>
+ </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-06 Thu 09:50</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:01</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
@@ -36,36 +38,36 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1ecc6a1">1. Classification algorithms</a>
+<li><a href="#org1d1c3b1">1. Classification algorithms</a>
 <ul>
-<li><a href="#org16d5bba">1.1. Decision Tree</a></li>
-<li><a href="#orgcdb3f23">1.2. Naive Bayes</a></li>
-<li><a href="#orga2b8beb">1.3. Artificial Neuraul Networks</a></li>
-<li><a href="#org766aeda">1.4. k-Nearest Neighbor (KNN)</a></li>
+<li><a href="#org62af860">1.1. Decision Tree</a></li>
+<li><a href="#org67a16da">1.2. Naive Bayes</a></li>
+<li><a href="#org5d96e7c">1.3. Artificial Neuraul Networks</a></li>
+<li><a href="#orgb15548c">1.4. k-Nearest Neighbor (KNN)</a></li>
 </ul>
 </li>
-<li><a href="#orgc30ec8b">2. Evaluating a classifier</a>
+<li><a href="#org621d732">2. Evaluating a classifier</a>
 <ul>
-<li><a href="#org1a2c631">2.1. Holdout method</a></li>
-<li><a href="#orgb8fa992">2.2. Cross-validation</a></li>
-<li><a href="#org14ae87c">2.3. Precision and Recall</a></li>
-<li><a href="#org7b8014b">2.4. ROC curve Receiver Operatning Characteristics</a></li>
+<li><a href="#orga0e295d">2.1. Holdout method</a></li>
+<li><a href="#orgd436003">2.2. Cross-validation</a></li>
+<li><a href="#org0021640">2.3. Precision and Recall</a></li>
+<li><a href="#orge715eb4">2.4. ROC curve Receiver Operatning Characteristics</a></li>
 </ul>
 </li>
-<li><a href="#orga852adf">3. SVM (Support Vector Machine)</a>
+<li><a href="#org2aaaa64">3. SVM (Support Vector Machine)</a>
 <ul>
-<li><a href="#orge3b9e9e">3.1. Hyperplanes and Support Vectors</a></li>
-<li><a href="#org823730c">3.2. Logistic Regression</a></li>
-<li><a href="#org60954b7">3.3. K-means Clustering</a></li>
-<li><a href="#orga54a436">3.4. k-fold Cross-Validation</a></li>
+<li><a href="#orga8ec73d">3.1. Hyperplanes and Support Vectors</a></li>
+<li><a href="#orgdea31e0">3.2. Logistic Regression</a></li>
+<li><a href="#orgaa624ce">3.3. K-means Clustering</a></li>
+<li><a href="#orgbfebeaa">3.4. k-fold Cross-Validation</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org1ecc6a1" class="outline-2">
-<h2 id="org1ecc6a1"><span class="section-number-2">1</span> Classification algorithms</h2>
+<div id="outline-container-org1d1c3b1" class="outline-2">
+<h2 id="org1d1c3b1"><span class="section-number-2">1</span> Classification algorithms</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 There is a lot of classification algorithms available now but it is
@@ -77,8 +79,8 @@ models and vice versa.
 </p>
 </div>
 
-<div id="outline-container-org16d5bba" class="outline-3">
-<h3 id="org16d5bba"><span class="section-number-3">1.1</span> Decision Tree</h3>
+<div id="outline-container-org62af860" class="outline-3">
+<h3 id="org62af860"><span class="section-number-3">1.1</span> Decision Tree</h3>
 <div class="outline-text-3" id="text-1-1">
 
 <figure>
@@ -118,8 +120,8 @@ What?
 </div>
 </div>
 
-<div id="outline-container-orgcdb3f23" class="outline-3">
-<h3 id="orgcdb3f23"><span class="section-number-3">1.2</span> Naive Bayes</h3>
+<div id="outline-container-org67a16da" class="outline-3">
+<h3 id="org67a16da"><span class="section-number-3">1.2</span> Naive Bayes</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Naive Bayes is a probabilistic classifier inspired by the Bayes
@@ -149,8 +151,8 @@ explicitly using a Laplacian estimator?.
 </div>
 </div>
 
-<div id="outline-container-orga2b8beb" class="outline-3">
-<h3 id="orga2b8beb"><span class="section-number-3">1.3</span> Artificial Neuraul Networks</h3>
+<div id="outline-container-org5d96e7c" class="outline-3">
+<h3 id="org5d96e7c"><span class="section-number-3">1.3</span> Artificial Neuraul Networks</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Artificial Neural Network is a set of connected input/output units
@@ -200,8 +202,8 @@ prediction later.
 </div>
 </div>
 
-<div id="outline-container-org766aeda" class="outline-3">
-<h3 id="org766aeda"><span class="section-number-3">1.4</span> k-Nearest Neighbor (KNN)</h3>
+<div id="outline-container-orgb15548c" class="outline-3">
+<h3 id="orgb15548c"><span class="section-number-3">1.4</span> k-Nearest Neighbor (KNN)</h3>
 <div class="outline-text-3" id="text-1-4">
 
 <figure>
@@ -231,8 +233,8 @@ nice
 </div>
 </div>
 
-<div id="outline-container-orgc30ec8b" class="outline-2">
-<h2 id="orgc30ec8b"><span class="section-number-2">2</span> Evaluating a classifier</h2>
+<div id="outline-container-org621d732" class="outline-2">
+<h2 id="org621d732"><span class="section-number-2">2</span> Evaluating a classifier</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 After training the model the most important part is to evaluate the
@@ -240,8 +242,8 @@ classifier to verify its applicability
 </p>
 </div>
 
-<div id="outline-container-org1a2c631" class="outline-3">
-<h3 id="org1a2c631"><span class="section-number-3">2.1</span> Holdout method</h3>
+<div id="outline-container-orga0e295d" class="outline-3">
+<h3 id="orga0e295d"><span class="section-number-3">2.1</span> Holdout method</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 There are several methods exists and the most common method is the
@@ -253,8 +255,8 @@ data, I see now) will be used to test its predictive power.
 </div>
 </div>
 
-<div id="outline-container-orgb8fa992" class="outline-3">
-<h3 id="orgb8fa992"><span class="section-number-3">2.2</span> Cross-validation</h3>
+<div id="outline-container-orgd436003" class="outline-3">
+<h3 id="orgd436003"><span class="section-number-3">2.2</span> Cross-validation</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Over-fitting is a common problem in machine learning which can occur
@@ -268,8 +270,8 @@ folds.Sorry what?
 </div>
 </div>
 
-<div id="outline-container-org14ae87c" class="outline-3">
-<h3 id="org14ae87c"><span class="section-number-3">2.3</span> Precision and Recall</h3>
+<div id="outline-container-org0021640" class="outline-3">
+<h3 id="org0021640"><span class="section-number-3">2.3</span> Precision and Recall</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Precision is the fraction of relevant instances among the retrieved
@@ -281,8 +283,8 @@ relevance.Hmmm&#x2026;
 </div>
 </div>
 
-<div id="outline-container-org7b8014b" class="outline-3">
-<h3 id="org7b8014b"><span class="section-number-3">2.4</span> ROC curve Receiver Operatning Characteristics</h3>
+<div id="outline-container-orge715eb4" class="outline-3">
+<h3 id="orge715eb4"><span class="section-number-3">2.4</span> ROC curve Receiver Operatning Characteristics</h3>
 <div class="outline-text-3" id="text-2-4">
 
 <figure>
@@ -307,8 +309,8 @@ familiar with in my curriculum.
 </div>
 </div>
 
-<div id="outline-container-orga852adf" class="outline-2">
-<h2 id="orga852adf"><span class="section-number-2">3</span> SVM (Support Vector Machine)</h2>
+<div id="outline-container-org2aaaa64" class="outline-2">
+<h2 id="org2aaaa64"><span class="section-number-2">3</span> SVM (Support Vector Machine)</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 <a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47">Link</a>
@@ -349,8 +351,8 @@ confidence.
 </p>
 </div>
 
-<div id="outline-container-orge3b9e9e" class="outline-3">
-<h3 id="orge3b9e9e"><span class="section-number-3">3.1</span> Hyperplanes and Support Vectors</h3>
+<div id="outline-container-orga8ec73d" class="outline-3">
+<h3 id="orga8ec73d"><span class="section-number-3">3.1</span> Hyperplanes and Support Vectors</h3>
 <div class="outline-text-3" id="text-3-1">
 
 <figure>
@@ -395,8 +397,8 @@ image, cool. Don't really use them, but why not, I might start to
 </div>
 </div>
 
-<div id="outline-container-org823730c" class="outline-3">
-<h3 id="org823730c"><span class="section-number-3">3.2</span> Logistic Regression</h3>
+<div id="outline-container-orgdea31e0" class="outline-3">
+<h3 id="orgdea31e0"><span class="section-number-3">3.2</span> Logistic Regression</h3>
 <div class="outline-text-3" id="text-3-2">
 
 <figure>
@@ -424,8 +426,8 @@ regression model for classification problems
 </div>
 </div>
 
-<div id="outline-container-org60954b7" class="outline-3">
-<h3 id="org60954b7"><span class="section-number-3">3.3</span> K-means Clustering</h3>
+<div id="outline-container-orgaa624ce" class="outline-3">
+<h3 id="orgaa624ce"><span class="section-number-3">3.3</span> K-means Clustering</h3>
 <div class="outline-text-3" id="text-3-3">
 
 <figure>
@@ -460,8 +462,8 @@ the in-cluster sum of squares? Hm?
 </div>
 </div>
 
-<div id="outline-container-orga54a436" class="outline-3">
-<h3 id="orga54a436"><span class="section-number-3">3.4</span> k-fold Cross-Validation</h3>
+<div id="outline-container-orgbfebeaa" class="outline-3">
+<h3 id="orgbfebeaa"><span class="section-number-3">3.4</span> k-fold Cross-Validation</h3>
 <div class="outline-text-3" id="text-3-4">
 
 <figure>
@@ -506,8 +508,8 @@ but damn.
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 09:51</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 09:50</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:02</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:01</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2021-03-16 Tue 10:58</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

@@ -4,7 +4,7 @@
 <!-- 2024-06-06 Thu 13:02 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Org agenda</title>
+<title>Add programmable search engine to your site</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Arvydas Gasparavicius">
 <meta name="description" content="Welcome to my devnotes site"
@@ -33,48 +33,74 @@
 </div>
 <div id="content">
 <header>
-<h1 class="title">Org agenda</h1>
+<h1 class="title">Add programmable search engine to your site</h1>
 </header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org296073b">1. tips</a></li>
-<li><a href="#org60ca6e3">2. advanced agenda</a></li>
-<li><a href="#org55ea8f1">3. org agenda filtering</a></li>
+<li><a href="#org0057995">1. Intro</a></li>
+<li><a href="#org5daf4cc">2. Implementation</a></li>
+<li><a href="#org13060dd">3. <span class="todo TODO">TODO</span> Write how to implement when site is indexed</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org296073b" class="outline-2">
-<h2 id="org296073b"><span class="section-number-2">1</span> tips</h2>
+<div id="outline-container-org0057995" class="outline-2">
+<h2 id="org0057995"><span class="section-number-2">1</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
-</div>
-</div>
-
-<div id="outline-container-org60ca6e3" class="outline-2">
-<h2 id="org60ca6e3"><span class="section-number-2">2</span> advanced agenda</h2>
-<div class="outline-text-2" id="text-2">
-<ul class="org-ul">
-<li>advanced searching - <a href="https://orgmode.org/worg/org-tutorials/advanced-searching.html">https://orgmode.org/worg/org-tutorials/advanced-searching.html</a></li>
-<li>special agenda views - <a href="https://orgmode.org/manual/Special-Agenda-Views.html">https://orgmode.org/manual/Special-Agenda-Views.html</a></li>
-<li>agenda- commands <a href="https://orgmode.org/manual/Agenda-Commands.html">https://orgmode.org/manual/Agenda-Commands.html</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org55ea8f1" class="outline-2">
-<h2 id="org55ea8f1"><span class="section-number-2">3</span> <a href="https://orgmode.org/worg/doc.html">org agenda filtering</a></h2>
-<div class="outline-text-2" id="text-3">
 <p>
-was useful when needed to filter by effor. use this- _
+Noticed such search functionality on this site - <a href="https://skybert.net/">https://skybert.net/</a>
+</p>
+
+<p>
+It is so cool that you can have search without actually implementing search
+with code. You can of course code to implement your own search, but it's so
+cool to use already existing tool.
 </p>
 </div>
+</div>
+
+<div id="outline-container-org5daf4cc" class="outline-2">
+<h2 id="org5daf4cc"><span class="section-number-2">2</span> Implementation</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Go here and create a <code>programmable search engine</code> -
+<a href="https://programmablesearchengine.google.com/about/">https://programmablesearchengine.google.com/about/</a>. It should take no longer
+than 1 minute.
+</p>
+
+<p>
+You will get something like this to add to your site. Copy it:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">script</span> async <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"https://cse.google.com/cse.js?cx=627750554da24428b"</span>&gt;
+&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"gcse-search"</span>&gt;&lt;/<span style="font-weight: bold;">div</span>&gt;
+</pre>
+</div>
+
+<p>
+There is going to be "preview" button also, click on it. Then check
+<code>site:your-website.com</code> in google search. If it shows only one entry, your main
+page - that's not good, google does not know a bout the rest of the pages on
+your site.
+</p>
+
+<p>
+Let's fix that with - <a href="20240605T154819--make-sure-google-knows-about-all-pages-of-your-site__emacs_google.html">Make sure google knows about all pages of your site</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org13060dd" class="outline-2">
+<h2 id="org13060dd"><span class="section-number-2">3</span> <span class="todo TODO">TODO</span> Write how to implement when site is indexed</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <hr/>
 	 <footer>
-	 <p class="date generated">This note is <u>first written</u>: 2023-11-26 Sun 00:52</p>
+	 <p class="date generated">This note is <u>first written</u>: 2024-06-05 Wed 09:54</p>
 	 <div class="copyright-container generated">
 	 <div class="copyright">
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
@@ -83,7 +109,7 @@ was useful when needed to filter by effor. use this- _
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
 	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:02</p> -->
 	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:01</p> -->
-	 <!-- <p class="date">This org file is <u>created</u>: 2023-11-26 Sun 00:52</p> -->
+	 <!-- <p class="date">This org file is <u>created</u>: 2024-06-05 Wed 09:54</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>

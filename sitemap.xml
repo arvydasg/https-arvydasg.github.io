@@ -8,1032 +8,1022 @@
 
 <url>
   <loc>http://arvydas.dev/</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://arvydas.dev/statusupdates.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>http://arvydas.dev/sitemap.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/projects.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/my-dev-environment.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/index.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/contact.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/about.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240606T124256--add-google-translate-button-to-your-site__emacs_google.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://arvydas.dev/20240605T154819--make-sure-google-knows-about-all-pages-of-your-site__emacs_google.html</loc>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://arvydas.dev/20240605T095450--add-programmable-search-engine-to-your-site__google.html</loc>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240603T163640--ssh-into-your-github-action-worker-in-the-middle-of-workflow-run__git.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240603T101200--use-docker-on-nixos__docker_nixos.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240602T205141--django-starter-application__django_project_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240531T084619--creating-a-custom-user-model-in-django__django_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240531T084241--getting-to-know-to-built-in-django-authentication-system__django_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240530T165238--building-django-starter-application-step-by-step__django_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240530T153317--run-github-actions-locally-with-act__docker_emacs_git_nixos_windows.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T172123--renaming-django-project__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T171659--print-that-info-tips-for-debugging-django-with-print-statements__django_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T171346--debugging-python-and-django-app-with-pdb__django_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T170953--run-django-orm-queries-over-jupyter-notebook-with-django-extensions-package__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T165923--random-queries-of-django-orm__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T165822--through-attribute-in-django-orm__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T165703--django-orm-learning-resources__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T165404--django-admin-learning-resources__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T164939--move-django-admin-inline-with-a-little-bit-of-javascript__django_javascript.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T164812--valid-points-for-not-using-django-admin-as-a-primary-ui-for-your-project__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T164703--django-commands__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T164434--django-forms-learning-resources__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T164312--django-cbv-learning-resources__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T163810--class-based-views-vs-function-based-views-in-django__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T163741--django-mixins-examples__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T143655--lifeapi-daily-habitstatusesmetrics-tracker__api_django_lifeapi_project.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T142849--django-rights-application-for-internal-access-management__django_project.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T142657--django-context-processors__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T141343--django-management-commands-and-an-example-with-recreating-migrations__batch_django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T140210--dynamically-generate-a-menu-with-links-in-django-templates-with-context-processors__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T090313--capitalize-each-blog-post-title-with-elisp__denote_elisp_emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240529T090108--attempt-to-modify-denote-links-to-suite-ox-publish__denote_elisp_emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240527T150432--trying-out-devcontainers-in-vscode__vscode.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240501T140034--customize-logging-in-django__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240425T151500--fail-a-github-action-if-coverage-requirements-are-not-met__git.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240425T141400--what-is-coverage__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240420T140757--use-postgresql-in-django-project__django_nixos_sql.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240420T131300--what-is-pre-commit__git.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240224T095911--2024-02-fighting-with-django-admin__statusupdate.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240205T200953--debugging-a-django-app-with-emacs-and-dap-mode__django_emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240202T040754--2024-02-oop-and-debugging-growing-as-developer__statusupdate.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240202T040536--debugging-python-and-django-app-in-vscode__django_emacs_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240129T081456--optimizing-database-queries__django_lifeapi.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240129T074022--paginating-results-in-django__django_lifeapi.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240127T140708--remove-an-app-from-django-project__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240127T140622--recreate-manually-deleted-table-in-django__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240127T105252--convert-denote-links-to-org-links-for-html-export__denote_emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240127T100325--2024-01-first-month-as-developer__statusupdate.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240127T082005--fix-characters-appearing-in-org-files__emacs_git.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240126T083226--no-username-in-commits__git.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240115T162144--nixos-commands__nixos.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240114T154813--never-ending-task-and-notes-capturerefilearchive-question__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240104T082517--cronjob-test-job__crontab_linux.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240104T082156--set-the-correct-server-time__linux.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240104T075039--login-to-gcp-server-with-username-and-password__gcp_linux.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240104T070918--ssh-into-gcp-server__gcp_ssh.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240103T132335--docker-test-container__docker.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240102T100605--reach-django-project-from-anywhere__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240102T092438--connect-to-a-remote-server-over-emacs-and-tramp__emacs_ssh.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20240102T090513--connect-to-a-remote-server-over-vscode__ssh_vscode.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231230T064618--2023-12-changing-teams__statusupdate.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231224T082240--the-less-mess-with-notes-the-better__denote_git_notes.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231220T133502--sql-commands__sql.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231220T125422--linux-commands__linux.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231220T110716--sas-commands__sas.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231219T172622--scroll-to-top-button__javascript_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://arvydas.dev/20231219T153712--add-website-analytics-with-google-tag-manager__websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://arvydas.dev/20231219T153629--add-website-analytics-with-plausible__websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231219T091704--add-a-lightbox-effect-for-images-in-html__javascript_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231219T090909--using-org-download-package-in-wsl__emacs_nixos_windows_wsl.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231219T051943--build-a-website-with-emacs-and-org-static-blog__emacs_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231218T052730--creating-a-simple-emacs-package__elisp_emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231217T165830--github-copilot__git.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231217T064942--build-a-website-with-emacs-and-ox-publish__emacs_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231215T203400--create-a-website-with-ox-hugo__emacs_hugo_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231215T182523--building-a-development-notes-blog-with-denote-and-org-publish__denote_emacs_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231215T182233--building-a-website-with-docutils__websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231215T140448--why-build-a-website-with-emacs-and-not-with-something-else__emacs_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231215T101410--create-a-blog-with-emacs-easy-hugo__emacs_hugo_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231215T055820--add-ckeditor-into-django-app__django.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231215T055647--deploy-django-app__django_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231215T055535--deploy-django-app-on-railway__django_railway.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231214T171810--using-emacs-together-with-vscode__angular_emacs_vscode.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231214T150411--inspirational-websites__emacs_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231214T142532--enable-wsl-on-windows__windows_wsl.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231214T094426--setup-custom-domain-for-github-pages__git_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231214T060637--authenticate-to-git-with-personal-access-token__git.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231214T060558--authenticate-to-git-with-ssh__git_ssh.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231212T123552--deploy-a-static-website-with-github-pages__git_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231211T161252--introduce-yourself-to-git__git.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231211T151427--first-nixos-installation__nixos.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231209T200922--wsl-clock-is-out-of-sync-with-windows__windows_wsl.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231209T181842--perspective-and-denote-conflict__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231209T093750--freshsetup__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231209T080431--moving-emacsd-into-dotfiles-repo__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231130T203401--seb-nixos-installation__linux_nixos_wsl.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231130T065309--fetch-and-pull-changes-automatically__git_wsl.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T175614--dockerfile-example-of-emacs-installation__docker_emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T172943--docker-commands__docker.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T172125--wsl-commands__wsl.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T165324--install-linux-distro-over-wsl__windows_wsl.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T164359--wsl-glitches-in-gui-applications__wsl.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T145249--consult-package-benefits__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T133020--create-a-blog-with-hugo__hugo_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T132920--windows-commands__windows.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T132809--emacs-commands__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T132521--move-models-from-one-app-to-another__django_sql.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T132126--django-reduce-number-of-queries-to-db__django_sql.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T131429--install-docker-on-windows__docker_windows.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T131156--install-emacs-on-linux__emacs_linux.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T130604--emacs-setup-on-digitalocean-with-dropbox__cloud_emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T130520--ivy-new-file-creation-completion-candidates-bug__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T130237--linux-ubuntu-install__linux.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T130210--printing-with-cups-in-ubuntu__linux.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T130148--manjaro-installation__linux.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231128T130129--alpine-installation__alpine_linux.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T014740--python-development-in-emacs__emacs_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T014659--how-to-run-a-flask-app__flask_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T012052--make-denote-faster-on-wsl__emacs_rsync_scripting_wsl.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T005654--emacs-hooks-explanation__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T005615--javascript-in-emacs__emacs_js.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T005538--run-sql-from-emacs__emacs_sql.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T005411--org-clock-report__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T005253--org-agenda__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T005026--byte-compile-emacs-packages__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T004316--swap-ctrl-with-capslock__emacs_linux_windows.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T004115--install-emacs-on-windows__emacs_windows.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T004018--emacs-colors-in-tmux__emacs_tmux.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T003942--emacs-in-daemon-mode__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T003911--emacs-init-time__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T003848--org-roam__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T003746--images-in-org-files__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T003353--why-certain-shortcuts-dont-work-in-emacs-terminal__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T003317--login-to-another-server-over-ssh__emacs_ssh.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T003218--manually-install-emacs-package-from-git__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T003030--why-i-am-using-emacs__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T001417--magic-mirror-setup__raspberrypi.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231126T001334--raspberrypi-first-setup__raspberrypi.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231125T235251--api-tools__api.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231125T221653--reset-changes__git.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231125T220943--seq-keep-error-message-in-emacs__emacs_magit.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231125T220901--partial-clone__git_magit.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231125T220538--copy-a-repo-with-all-commit-history__git.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231125T214132--revert-a-commit__git_magit.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231125T212326--denote-features__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231125T211812--why-i-use-denote__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231125T190641--split-a-github-repository-into-multiple__git.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231125T184606--angular-installation__angular.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231125T181008--vscode__vscode.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20231125T180911--vim__vim.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20230615T134043--messy-lifeapi-dev-notes__lifeapi.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20230501T203200--a-switch-from-linux-to-windows__linux_windows.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20230303T164000--deploying-flask-application-on-ubuntu-vps-using-nginx__flask_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20230209T050900--python-discoveries__learning_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20230206T053900--run-multiple-flask-applications-from-the-same-server__flask.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20230204T175600--dockerizing-a-python-django-web-applicationo__django_docker_learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20230202T065300--one-of-the-best-ways-to-learn-programming-is-to-blog__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20230202T042100--google-tag-manager-and-google-analytics__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20230131T100000--what-is-docker__docker_learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20230128T054100--labor-market-overview__personal.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20221013T182700--skelbiult-clone-with-get-post-delete__javascript_project_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20221003T181800--vba-barcode-checker__project_vba.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20220920T202900--first-javascript-test__javascript.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20220827T195600--inventorization-power-app__powerapp_project.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20220731T193200--python-data-cleaner__project_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://arvydas.dev/20220722T201700--my-it-journay-so-far__learning_personal.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://arvydas.dev/20220712T194600--calendar-over-magicmirror-on-raspberrypi__raspberrypi.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <loc>http://arvydas.dev/20220712T194600--display-google-calendar-over-magicmirror__google_raspberrypi.html</loc>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20220703T191800--2022-07-first-month-as-it-technician__statusupdate.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20220619T202600--tags-in-a-django-blog-site__django_python_websites.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20220619T200400--attempts-to-blog__emacs_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20220619T183700--dired-diff-hl__emacs.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20220524T192700--pkc-company-wiki__emacs_project.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20220410T200100--automated-backups-with-python-and-selenium__freelancing_project_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20220208T184100--crud-django-app-for-dpd__django_freelancing_project_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20220205T191400--facebook-automation-with-django__django_freelancing_project_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20211108T192300--smutifruti-e-shop__freelancing_project_wordpress.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210805T195300--julija-consulting__freelancing_project_wordpress.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210604T203800--sim-card-back__personal_productivity.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210604T113000--little-by-little__personal_productivity.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210603T082200--modifying-wordpress-source-php__php_wordpress.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210602T203100--confused-internet-linux__linux_personal.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210525T154700--javascript-crypto-busyness__javascript_personal.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210521T201900--renaming-files-with-python__python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210517T071100--python-in-browser__python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210516T151600--focus-on-whats-important__javascript_personal_php_python.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210511T070700--2021-05-learning-python-and-building-first-eccomerce-site__statusupdate.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210414T193500--obelsdumas-e-shop__freelancing_project_wordpress.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210330T071300--black-box-statistics__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210328T155000--illusions-of-competence__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210325T150800--fan-wow-excel__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210324T163900--learn-summary-mod-2__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210324T162000--sleep-and-exercise__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210324T160900--take-it-slow__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210316T105800--black-box-machine-learning__learning_ml.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210315T181800--vim-hardcore__vim.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210315T165500--black-box-method__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210315T165100--excel-stuff__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210315T164900--thoughts-on-achieving-goals__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210314T170000--addict__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://arvydas.dev/20210313T170500--focused-and-difused-learning__learning.html</loc>
-  <lastmod>2024-06-06T09:51:27+0000</lastmod>
+  <lastmod>2024-06-06T13:02:15+0000</lastmod>
   <priority>0.80</priority>
 </url>
 </urlset>

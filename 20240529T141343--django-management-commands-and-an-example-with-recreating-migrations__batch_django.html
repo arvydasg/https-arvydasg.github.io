@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-06 Thu 09:51 -->
+<!-- 2024-06-06 Thu 13:02 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Django management commands and an example with recreating migrations</title>
@@ -20,13 +20,15 @@
 </head>
 <body>
 <div id="org-div-home-and-up">
- <a accesskey="h" href="sitemap.html">NOTES </a>
+ <a href="projects.html"> PROJECTS </a>
+ <a href="sitemap.html">NOTES </a>
  
- <a accesskey="H" href="index.html"> HOME </a>
-</div><div id="preamble" class="status">
+
+<a href="index.html"> HOME </a>
+ </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-06 Thu 09:50</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:01</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
@@ -36,16 +38,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0aaed32">1. Quick summary</a></li>
-<li><a href="#orgeabd0d5">2. Step 1 - create <code>cleanup.cmd</code> file</a></li>
-<li><a href="#org15ee8e9">3. Step 2 - create <code>empty_migration_folder.cmd</code> file</a></li>
-<li><a href="#org99062e2">4. Step 3 - create create <code>create_root_user.py</code> file</a></li>
+<li><a href="#org86f5a8a">1. Quick summary</a></li>
+<li><a href="#org87c2fb8">2. Step 1 - create <code>cleanup.cmd</code> file</a></li>
+<li><a href="#org9e95791">3. Step 2 - create <code>empty_migration_folder.cmd</code> file</a></li>
+<li><a href="#orgdeb96b6">4. Step 3 - create create <code>create_root_user.py</code> file</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org0aaed32" class="outline-2">
-<h2 id="org0aaed32"><span class="section-number-2">1</span> Quick summary</h2>
+<div id="outline-container-org86f5a8a" class="outline-2">
+<h2 id="org86f5a8a"><span class="section-number-2">1</span> Quick summary</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Outside of your project directory, create a folder called helpers</li>
@@ -55,8 +57,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgeabd0d5" class="outline-2">
-<h2 id="orgeabd0d5"><span class="section-number-2">2</span> Step 1 - create <code>cleanup.cmd</code> file</h2>
+<div id="outline-container-org87c2fb8" class="outline-2">
+<h2 id="org87c2fb8"><span class="section-number-2">2</span> Step 1 - create <code>cleanup.cmd</code> file</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -91,8 +93,8 @@ echo ======================#  Finished
 </div>
 </div>
 
-<div id="outline-container-org15ee8e9" class="outline-2">
-<h2 id="org15ee8e9"><span class="section-number-2">3</span> Step 2 - create <code>empty_migration_folder.cmd</code> file</h2>
+<div id="outline-container-org9e95791" class="outline-2">
+<h2 id="org9e95791"><span class="section-number-2">3</span> Step 2 - create <code>empty_migration_folder.cmd</code> file</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -118,8 +120,8 @@ for /d %%D in ("%folder%\*") do (
 </div>
 </div>
 
-<div id="outline-container-org99062e2" class="outline-2">
-<h2 id="org99062e2"><span class="section-number-2">4</span> Step 3 - create create <code>create_root_user.py</code> file</h2>
+<div id="outline-container-orgdeb96b6" class="outline-2">
+<h2 id="orgdeb96b6"><span class="section-number-2">4</span> Step 3 - create create <code>create_root_user.py</code> file</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Inside of the  <code>app/management/commands</code> directory.
@@ -164,8 +166,8 @@ Inside of the  <code>app/management/commands</code> directory.
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 09:51</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 09:50</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:02</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:01</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 14:13</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
