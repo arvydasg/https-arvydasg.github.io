@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-05 Wed 12:37 -->
+<!-- 2024-06-06 Thu 08:14 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Deploying Flask Application on Ubuntu VPS using Nginx</title>
@@ -26,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-05 Wed 12:37</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-06 Thu 08:13</div> -->
 </div>
 <div id="content">
 <header>
@@ -35,14 +35,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9d05a71">1. Apache vs nginx</a></li>
-<li><a href="#org1c288cd">2. Get yourself a virtual private server(VPS)</a></li>
-<li><a href="#orgb0240e3">3. Install nginx</a></li>
-<li><a href="#orga2d0670">4. Let's run project</a></li>
-<li><a href="#org6f04c1c">5. Gunicorn</a></li>
-<li><a href="#org9491bb9">6. Dealing with secret files</a>
+<li><a href="#orgd20691d">1. Apache vs nginx</a></li>
+<li><a href="#org4b0812a">2. Get yourself a virtual private server(VPS)</a></li>
+<li><a href="#orge5795a8">3. Install nginx</a></li>
+<li><a href="#org5c97847">4. Let's run project</a></li>
+<li><a href="#org6486492">5. Gunicorn</a></li>
+<li><a href="#orga64bdfa">6. Dealing with secret files</a>
 <ul>
-<li><a href="#orgf6927bb">6.1. config.json method</a></li>
+<li><a href="#orgeb2591e">6.1. config.json method</a></li>
 </ul>
 </li>
 </ul>
@@ -59,8 +59,8 @@ live. For that I need to host it.
 Will share with you how I did it.
 </p>
 
-<div id="outline-container-org9d05a71" class="outline-2">
-<h2 id="org9d05a71"><span class="section-number-2">1</span> Apache vs nginx</h2>
+<div id="outline-container-orgd20691d" class="outline-2">
+<h2 id="orgd20691d"><span class="section-number-2">1</span> Apache vs nginx</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Will just leave it here.
@@ -77,8 +77,8 @@ is not as vulnerable as Apache, and it is also very easy to set up.
 </div>
 </div>
 
-<div id="outline-container-org1c288cd" class="outline-2">
-<h2 id="org1c288cd"><span class="section-number-2">2</span> Get yourself a virtual private server(VPS)</h2>
+<div id="outline-container-org4b0812a" class="outline-2">
+<h2 id="org4b0812a"><span class="section-number-2">2</span> Get yourself a virtual private server(VPS)</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 This time I was using Linode, since I got some free credits with it,
@@ -120,8 +120,8 @@ have set up for it. And you should now be inside your server!
 </div>
 </div>
 
-<div id="outline-container-orgb0240e3" class="outline-2">
-<h2 id="orgb0240e3"><span class="section-number-2">3</span> Install nginx</h2>
+<div id="outline-container-orge5795a8" class="outline-2">
+<h2 id="orge5795a8"><span class="section-number-2">3</span> Install nginx</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install nginx
@@ -175,8 +175,8 @@ running there. That is why we will user <a href="https://gunicorn.org/#quickstar
 </div>
 </div>
 
-<div id="outline-container-orga2d0670" class="outline-2">
-<h2 id="orga2d0670"><span class="section-number-2">4</span> Let's run project</h2>
+<div id="outline-container-org5c97847" class="outline-2">
+<h2 id="org5c97847"><span class="section-number-2">4</span> Let's run project</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install python3-pip
@@ -205,8 +205,8 @@ Now it works! Your application is live! Magic!
 </div>
 </div>
 
-<div id="outline-container-org6f04c1c" class="outline-2">
-<h2 id="org6f04c1c"><span class="section-number-2">5</span> Gunicorn</h2>
+<div id="outline-container-org6486492" class="outline-2">
+<h2 id="org6486492"><span class="section-number-2">5</span> Gunicorn</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 "This is currently a development server and not good for production
@@ -254,12 +254,12 @@ sudo pkill -f gunicorn3
 </div>
 </div>
 
-<div id="outline-container-org9491bb9" class="outline-2">
-<h2 id="org9491bb9"><span class="section-number-2">6</span> Dealing with secret files</h2>
+<div id="outline-container-orga64bdfa" class="outline-2">
+<h2 id="orga64bdfa"><span class="section-number-2">6</span> Dealing with secret files</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgf6927bb" class="outline-3">
-<h3 id="orgf6927bb"><span class="section-number-3">6.1</span> config.json method</h3>
+<div id="outline-container-orgeb2591e" class="outline-3">
+<h3 id="orgeb2591e"><span class="section-number-3">6.1</span> config.json method</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 We will try to hide the:
@@ -411,8 +411,8 @@ should find config.json file.
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-05 Wed 12:37</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-05 Wed 12:37</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 08:14</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 08:13</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2023-03-03 Fri 16:40</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

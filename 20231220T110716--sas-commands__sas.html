@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-05 Wed 12:37 -->
+<!-- 2024-06-06 Thu 08:14 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sas commands</title>
@@ -26,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-05 Wed 12:37</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-06 Thu 08:13</div> -->
 </div>
 <div id="content">
 <header>
@@ -35,25 +35,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org37bdebf">1. SAS oracle conenction string(libname)</a></li>
-<li><a href="#orgb8e82db">2. Map library</a></li>
-<li><a href="#org5581300">3. Find current user name</a></li>
-<li><a href="#org154e71f">4. Check SAS Viya license</a></li>
-<li><a href="#org6d6ca17">5. Find ALL information about a library</a></li>
-<li><a href="#orgc475351">6. Compare contents of the table</a></li>
-<li><a href="#orgfc61a2e">7. Compare two tables from different schemas</a></li>
-<li><a href="#org2394c5f">8. Copy table from one schema to another</a></li>
-<li><a href="#orgad6d2fc">9. Check lengths and encoding</a></li>
-<li><a href="#orga2589d9">10. Include external file</a></li>
-<li><a href="#orgf958864">11. Include internal file</a></li>
-<li><a href="#org9869f2f">12. Encode a password</a></li>
-<li><a href="#orgcfc4373">13. count all rows in a table</a></li>
+<li><a href="#org698ad0d">1. SAS oracle conenction string(libname)</a></li>
+<li><a href="#orgd3615dd">2. Map library</a></li>
+<li><a href="#org787afce">3. Find current user name</a></li>
+<li><a href="#orgc2a69ea">4. Check SAS Viya license</a></li>
+<li><a href="#org8e3d6a7">5. Find ALL information about a library</a></li>
+<li><a href="#org1ac5afd">6. Compare contents of the table</a></li>
+<li><a href="#org51a5538">7. Compare two tables from different schemas</a></li>
+<li><a href="#org2d1c7e2">8. Copy table from one schema to another</a></li>
+<li><a href="#org6dccc3d">9. Check lengths and encoding</a></li>
+<li><a href="#orga5701af">10. Include external file</a></li>
+<li><a href="#orgda7c78f">11. Include internal file</a></li>
+<li><a href="#orgdd1bd02">12. Encode a password</a></li>
+<li><a href="#org3ad8a4a">13. count all rows in a table</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org37bdebf" class="outline-2">
-<h2 id="org37bdebf"><span class="section-number-2">1</span> SAS oracle conenction string(libname)</h2>
+<div id="outline-container-org698ad0d" class="outline-2">
+<h2 id="org698ad0d"><span class="section-number-2">1</span> SAS oracle conenction string(libname)</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-sas">libname TESTS oracle path="BIXXXP1" schema="XXX_DST"
@@ -64,8 +64,8 @@ DBCLIENT_MAX_BYTES=1 encoding='utf-8';
 </div>
 </div>
 
-<div id="outline-container-orgb8e82db" class="outline-2">
-<h2 id="orgb8e82db"><span class="section-number-2">2</span> Map library</h2>
+<div id="outline-container-orgd3615dd" class="outline-2">
+<h2 id="orgd3615dd"><span class="section-number-2">2</span> Map library</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 No second quotes!
@@ -78,8 +78,8 @@ No second quotes!
 </div>
 </div>
 
-<div id="outline-container-org5581300" class="outline-2">
-<h2 id="org5581300"><span class="section-number-2">3</span> Find current user name</h2>
+<div id="outline-container-org787afce" class="outline-2">
+<h2 id="org787afce"><span class="section-number-2">3</span> Find current user name</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-sas">%put &amp;SYSUSERID;
@@ -88,8 +88,8 @@ No second quotes!
 </div>
 </div>
 
-<div id="outline-container-org154e71f" class="outline-2">
-<h2 id="org154e71f"><span class="section-number-2">4</span> Check SAS Viya license</h2>
+<div id="outline-container-orgc2a69ea" class="outline-2">
+<h2 id="orgc2a69ea"><span class="section-number-2">4</span> Check SAS Viya license</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-sas">proc setinit;
@@ -98,8 +98,8 @@ No second quotes!
 </div>
 </div>
 
-<div id="outline-container-org6d6ca17" class="outline-2">
-<h2 id="org6d6ca17"><span class="section-number-2">5</span> Find ALL information about a library</h2>
+<div id="outline-container-org8e3d6a7" class="outline-2">
+<h2 id="org8e3d6a7"><span class="section-number-2">5</span> Find ALL information about a library</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 List the library path for a specific library.
@@ -113,8 +113,8 @@ run;
 </div>
 </div>
 
-<div id="outline-container-orgc475351" class="outline-2">
-<h2 id="orgc475351"><span class="section-number-2">6</span> Compare contents of the table</h2>
+<div id="outline-container-org1ac5afd" class="outline-2">
+<h2 id="org1ac5afd"><span class="section-number-2">6</span> Compare contents of the table</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Library.Table
@@ -147,8 +147,8 @@ run;
 </div>
 </div>
 
-<div id="outline-container-orgfc61a2e" class="outline-2">
-<h2 id="orgfc61a2e"><span class="section-number-2">7</span> Compare two tables from different schemas</h2>
+<div id="outline-container-org51a5538" class="outline-2">
+<h2 id="org51a5538"><span class="section-number-2">7</span> Compare two tables from different schemas</h2>
 <div class="outline-text-2" id="text-7">
 <div class="org-src-container">
 <pre class="src src-bash">proc compare <span style="font-weight: bold; font-style: italic;">base</span>=YOUR_BANK.POSTAL <span style="font-weight: bold; font-style: italic;">compare</span>=YOUR_BANK2.POSTAL <span style="font-weight: bold; font-style: italic;">out</span>=comparison_result outnoequal;
@@ -159,8 +159,8 @@ run;
 </div>
 </div>
 
-<div id="outline-container-org2394c5f" class="outline-2">
-<h2 id="org2394c5f"><span class="section-number-2">8</span> Copy table from one schema to another</h2>
+<div id="outline-container-org2d1c7e2" class="outline-2">
+<h2 id="org2d1c7e2"><span class="section-number-2">8</span> Copy table from one schema to another</h2>
 <div class="outline-text-2" id="text-8">
 <div class="org-src-container">
 <pre class="src src-sas">data work.POSTAL;
@@ -175,8 +175,8 @@ run;
 </div>
 </div>
 
-<div id="outline-container-orgad6d2fc" class="outline-2">
-<h2 id="orgad6d2fc"><span class="section-number-2">9</span> Check lengths and encoding</h2>
+<div id="outline-container-org6dccc3d" class="outline-2">
+<h2 id="org6dccc3d"><span class="section-number-2">9</span> Check lengths and encoding</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2023-10-19 Thu] </span></span> meeting with A and SAS Support.
@@ -197,8 +197,8 @@ run;
 </div>
 </div>
 
-<div id="outline-container-orga2589d9" class="outline-2">
-<h2 id="orga2589d9"><span class="section-number-2">10</span> Include external file</h2>
+<div id="outline-container-orga5701af" class="outline-2">
+<h2 id="orga5701af"><span class="section-number-2">10</span> Include external file</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 Physical on the server
@@ -223,8 +223,8 @@ Physical on the server
 </div>
 </div>
 
-<div id="outline-container-orgf958864" class="outline-2">
-<h2 id="orgf958864"><span class="section-number-2">11</span> Include internal file</h2>
+<div id="outline-container-orgda7c78f" class="outline-2">
+<h2 id="orgda7c78f"><span class="section-number-2">11</span> Include internal file</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 In SAS Viya
@@ -241,8 +241,8 @@ filename sasFile clear;
 </div>
 </div>
 
-<div id="outline-container-org9869f2f" class="outline-2">
-<h2 id="org9869f2f"><span class="section-number-2">12</span> Encode a password</h2>
+<div id="outline-container-orgdd1bd02" class="outline-2">
+<h2 id="orgdd1bd02"><span class="section-number-2">12</span> Encode a password</h2>
 <div class="outline-text-2" id="text-12">
 <div class="org-src-container">
 <pre class="src src-bash">proc pwencode <span style="font-weight: bold; font-style: italic;">in</span>=<span style="font-style: italic;">'my password'</span>;
@@ -252,8 +252,8 @@ run;
 </div>
 </div>
 
-<div id="outline-container-orgcfc4373" class="outline-2">
-<h2 id="orgcfc4373"><span class="section-number-2">13</span> count all rows in a table</h2>
+<div id="outline-container-org3ad8a4a" class="outline-2">
+<h2 id="org3ad8a4a"><span class="section-number-2">13</span> count all rows in a table</h2>
 <div class="outline-text-2" id="text-13">
 <div class="org-src-container">
 <pre class="src src-bash">proc sql;
@@ -275,8 +275,8 @@ quit;
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-05 Wed 12:37</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-05 Wed 12:37</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 08:14</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 08:13</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2023-12-20 Wed 11:07</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

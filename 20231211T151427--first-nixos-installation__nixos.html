@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-05 Wed 12:37 -->
+<!-- 2024-06-06 Thu 08:14 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>First nixos installation</title>
@@ -26,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-05 Wed 12:37</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-06 Thu 08:13</div> -->
 </div>
 <div id="content">
 <header>
@@ -35,27 +35,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd580946">1. Why NixOS</a></li>
-<li><a href="#orgf374569">2. Why NixOS by others</a></li>
-<li><a href="#org3941019">3. Documentation</a></li>
-<li><a href="#orgb93f585">4. Installation on WSL</a>
+<li><a href="#orgb0e010d">1. Why NixOS</a></li>
+<li><a href="#org31d2838">2. Why NixOS by others</a></li>
+<li><a href="#org8a09ca3">3. Documentation</a></li>
+<li><a href="#orgb7d36c6">4. Installation on WSL</a>
 <ul>
-<li><a href="#org0c2b8e8">4.1. Check if NixOS is not already installed</a></li>
-<li><a href="#org13573a0">4.2. Install</a></li>
+<li><a href="#org99ebffd">4.1. Check if NixOS is not already installed</a></li>
+<li><a href="#org3d0d94a">4.2. Install</a></li>
 </ul>
 </li>
-<li><a href="#org960bb15">5. Configure NixOS installation over Emacs</a></li>
-<li><a href="#orgf697023">6. Authenticate to git</a></li>
-<li><a href="#orgf43f41b">7. Clone the dotfiles repo</a></li>
-<li><a href="#org95df7f6">8. Using your own custom nixos configuration file</a></li>
-<li><a href="#org00620a1">9. Using your own custom Emacs config</a></li>
-<li><a href="#org901d5e7">10. GUI glitch</a></li>
+<li><a href="#orgb8f8926">5. Configure NixOS installation over Emacs</a></li>
+<li><a href="#org295021f">6. Authenticate to git</a></li>
+<li><a href="#orgb06c7f6">7. Clone the dotfiles repo</a></li>
+<li><a href="#org5fc1969">8. Using your own custom nixos configuration file</a></li>
+<li><a href="#org4d20eaf">9. Using your own custom Emacs config</a></li>
+<li><a href="#org823a308">10. GUI glitch</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgd580946" class="outline-2">
-<h2 id="orgd580946"><span class="section-number-2">1</span> Why NixOS</h2>
+<div id="outline-container-orgb0e010d" class="outline-2">
+<h2 id="orgb0e010d"><span class="section-number-2">1</span> Why NixOS</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 AFTER you reinstall your machine - to install the DEV environment, all you
@@ -73,8 +73,8 @@ again.
 </div>
 </div>
 
-<div id="outline-container-orgf374569" class="outline-2">
-<h2 id="orgf374569"><span class="section-number-2">2</span> Why NixOS by others</h2>
+<div id="outline-container-org31d2838" class="outline-2">
+<h2 id="org31d2838"><span class="section-number-2">2</span> Why NixOS by others</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="https://github.com/hlissner/dotfiles">https://github.com/hlissner/dotfiles</a></li>
@@ -83,8 +83,8 @@ again.
 </div>
 </div>
 
-<div id="outline-container-org3941019" class="outline-2">
-<h2 id="org3941019"><span class="section-number-2">3</span> Documentation</h2>
+<div id="outline-container-org8a09ca3" class="outline-2">
+<h2 id="org8a09ca3"><span class="section-number-2">3</span> Documentation</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>nixos github repo - <a href="https://github.com/nix-community/NixOS-WSL">https://github.com/nix-community/NixOS-WSL</a></li>
@@ -93,8 +93,8 @@ again.
 </div>
 </div>
 
-<div id="outline-container-orgb93f585" class="outline-2">
-<h2 id="orgb93f585"><span class="section-number-2">4</span> Installation on WSL</h2>
+<div id="outline-container-orgb7d36c6" class="outline-2">
+<h2 id="orgb7d36c6"><span class="section-number-2">4</span> Installation on WSL</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Steps described here:
@@ -105,8 +105,8 @@ Steps described here:
 </p>
 </div>
 
-<div id="outline-container-org0c2b8e8" class="outline-3">
-<h3 id="org0c2b8e8"><span class="section-number-3">4.1</span> Check if NixOS is not already installed</h3>
+<div id="outline-container-org99ebffd" class="outline-3">
+<h3 id="org99ebffd"><span class="section-number-3">4.1</span> Check if NixOS is not already installed</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Run the commands in windows cmd or powershell.
@@ -122,8 +122,8 @@ wsl --list --verbose
 </div>
 </div>
 
-<div id="outline-container-org13573a0" class="outline-3">
-<h3 id="org13573a0"><span class="section-number-3">4.2</span> Install</h3>
+<div id="outline-container-org3d0d94a" class="outline-3">
+<h3 id="org3d0d94a"><span class="section-number-3">4.2</span> Install</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 If it does not exist(<code>wsl --list --verbose</code> does not yield result with nixos ),
@@ -168,8 +168,8 @@ sudo nix-channel --update
 </div>
 </div>
 
-<div id="outline-container-org960bb15" class="outline-2">
-<h2 id="org960bb15"><span class="section-number-2">5</span> Configure NixOS installation over Emacs</h2>
+<div id="outline-container-orgb8f8926" class="outline-2">
+<h2 id="orgb8f8926"><span class="section-number-2">5</span> Configure NixOS installation over Emacs</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Enter <code>nix-shell</code> to use Emacs(it does not get installed on the system, just
@@ -240,8 +240,8 @@ git status
 </div>
 </div>
 
-<div id="outline-container-orgf697023" class="outline-2">
-<h2 id="orgf697023"><span class="section-number-2">6</span> Authenticate to git</h2>
+<div id="outline-container-org295021f" class="outline-2">
+<h2 id="org295021f"><span class="section-number-2">6</span> Authenticate to git</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Some of our config repos are private, so for that we need to authenticate to
@@ -266,8 +266,8 @@ Then one of these:
 </div>
 </div>
 
-<div id="outline-container-orgf43f41b" class="outline-2">
-<h2 id="orgf43f41b"><span class="section-number-2">7</span> Clone the dotfiles repo</h2>
+<div id="outline-container-orgb06c7f6" class="outline-2">
+<h2 id="orgb06c7f6"><span class="section-number-2">7</span> Clone the dotfiles repo</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 It consists both emacs and nixos config, we will need both in the next steps.
@@ -282,8 +282,8 @@ git clone https://github.com/arvydasg/dotfiles
 </div>
 </div>
 
-<div id="outline-container-org95df7f6" class="outline-2">
-<h2 id="org95df7f6"><span class="section-number-2">8</span> Using your own custom nixos configuration file</h2>
+<div id="outline-container-org5fc1969" class="outline-2">
+<h2 id="org5fc1969"><span class="section-number-2">8</span> Using your own custom nixos configuration file</h2>
 <div class="outline-text-2" id="text-8">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">delete current nixos directory</span>
@@ -340,8 +340,8 @@ want to install.
 </div>
 </div>
 
-<div id="outline-container-org00620a1" class="outline-2">
-<h2 id="org00620a1"><span class="section-number-2">9</span> Using your own custom Emacs config</h2>
+<div id="outline-container-org4d20eaf" class="outline-2">
+<h2 id="org4d20eaf"><span class="section-number-2">9</span> Using your own custom Emacs config</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 After we have all the "OS" dependencies installed, we can install Emacs
@@ -385,8 +385,8 @@ Try to launch emacs for all the packages to be installed.
 </div>
 </div>
 
-<div id="outline-container-org901d5e7" class="outline-2">
-<h2 id="org901d5e7"><span class="section-number-2">10</span> GUI glitch</h2>
+<div id="outline-container-org823a308" class="outline-2">
+<h2 id="org823a308"><span class="section-number-2">10</span> GUI glitch</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 Reported it here  - <a href="https://github.com/microsoft/wslg/issues/1148">https://github.com/microsoft/wslg/issues/1148</a>
@@ -408,8 +408,8 @@ Possible fix(questionable) .wslgconfig(as explained in the comments of the issue
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-05 Wed 12:37</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-05 Wed 12:37</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 08:14</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 08:13</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2023-12-11 Mon 15:14</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

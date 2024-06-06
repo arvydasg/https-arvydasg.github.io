@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-05 Wed 12:37 -->
+<!-- 2024-06-06 Thu 08:14 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Use PostgreSQL in django project</title>
@@ -26,7 +26,7 @@
 </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-05 Wed 12:37</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-06 Thu 08:13</div> -->
 </div>
 <div id="content">
 <header>
@@ -35,41 +35,34 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1a2d321">1. Set up other DB's</a>
+<li><a href="#orgeb2465f">1. Create a local postgresql db instance over pgAdmin</a></li>
+<li><a href="#org32a6d0c">2. Preparation for connection for both Linux and Windows</a>
 <ul>
-<li><a href="#org9f5099a">1.1. Set up PostgreSQL DB locally</a>
-<ul>
-<li><a href="#org5baa357">1.1.1. Create postgresql db over pgAdmin</a></li>
-<li><a href="#org0b99726">1.1.2. Install psycopg2 python package</a></li>
-<li><a href="#org90ceaec">1.1.3. Modify <code>settings.py</code> of the Django app</a></li>
-<li><a href="#org677162b">1.1.4. Set up the .env file:</a></li>
-<li><a href="#orgbe4fc19">1.1.5. Run the Django app with postgresql db</a></li>
-<li><a href="#org9a58416">1.1.6. Connect to the postgresql db over windows terminal</a></li>
+<li><a href="#org0282580">2.1. Install psycopg2 python package</a></li>
+<li><a href="#org6781324">2.2. Modify <code>settings.py</code> of the Django app</a></li>
+<li><a href="#org6be5206">2.3. Set up the .env file:</a></li>
 </ul>
 </li>
-<li><a href="#orgbfccb74">1.2. Set up PostgreSQL DB remotely on Railway</a></li>
+<li><a href="#org43c1f2e">3. Connect to a local PostgreSQL instance over Windows</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgd137041">3.0.1. Connect to the postgresql db over windows terminal</a></li>
+<li><a href="#org528ac80">3.0.2. Run a Django app</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#orgf2c5d5b">4. Connect to a local PostgreSQL instance over Linux(NixOS)</a></li>
+<li><a href="#org40ee52b">5. Connect to a remote PostgreSQL instance that runs on Railway</a></li>
 </ul>
 </div>
 </nav>
-
-<div id="outline-container-org1a2d321" class="outline-2">
-<h2 id="org1a2d321"><span class="section-number-2">1</span> Set up other DB's</h2>
-<div class="outline-text-2" id="text-1">
 <p>
-When you want to use something else than the default SQLite db that django
-provides and runs perfectly on.
+Django provides default sqlite db, but it is not recommended for production.
+PostgreSQL is recommended database for production Django project.
 </p>
 
-<p>
-Maybe your needs have increased. More production like dev environment.
-</p>
-</div>
-
-<div id="outline-container-org9f5099a" class="outline-3">
-<h3 id="org9f5099a"><span class="section-number-3">1.1</span> Set up PostgreSQL DB locally</h3>
-<div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li><a href="https://github.com/azegas/quotes/issues/31">Quotes app implementation task</a></li>
 <li><a href="https://stackpython.medium.com/how-to-start-django-project-with-a-database-postgresql-aaa1d74659d8">Inspiration link</a></li>
@@ -77,13 +70,12 @@ Maybe your needs have increased. More production like dev environment.
 <li><a href="https://docs.djangoproject.com/en/5.0/topics/db/multi-db/">Official docs for setting up db's/having more than one db</a></li>
 <li><a href="https://stackpython.medium.com/how-to-start-django-project-with-a-database-postgresql-aaa1d74659d8">https://stackpython.medium.com/how-to-start-django-project-with-a-database-postgresql-aaa1d74659d8</a></li>
 </ul>
-</div>
 
-<div id="outline-container-org5baa357" class="outline-4">
-<h4 id="org5baa357"><span class="section-number-4">1.1.1</span> Create postgresql db over pgAdmin</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-orgeb2465f" class="outline-2">
+<h2 id="orgeb2465f"><span class="section-number-2">1</span> Create a local postgresql db instance over pgAdmin</h2>
+<div class="outline-text-2" id="text-1">
 <p>
-Download "pgADmin 4"(or the newest) tool.
+Download "pgADmin 4"(or the newest version) tool.
 </p>
 
 <p>
@@ -103,17 +95,16 @@ username - postgres
 password - yourStrongPassword1
 </p>
 </blockquote>
-
-<p>
-Try to runserver, it should work! Django app should be connected to postgresql
-db.
-</p>
 </div>
 </div>
 
-<div id="outline-container-org0b99726" class="outline-4">
-<h4 id="org0b99726"><span class="section-number-4">1.1.2</span> Install psycopg2 python package</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-org32a6d0c" class="outline-2">
+<h2 id="org32a6d0c"><span class="section-number-2">2</span> Preparation for connection for both Linux and Windows</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org0282580" class="outline-3">
+<h3 id="org0282580"><span class="section-number-3">2.1</span> Install psycopg2 python package</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 Different on windows and linux because of this -
 <a href="https://stackoverflow.com/questions/35104097/how-to-install-psycopg2-with-pg-config-error">https://stackoverflow.com/questions/35104097/how-to-install-psycopg2-with-pg-config-error</a>
@@ -137,9 +128,9 @@ On linux:
 </div>
 </div>
 
-<div id="outline-container-org90ceaec" class="outline-4">
-<h4 id="org90ceaec"><span class="section-number-4">1.1.3</span> Modify <code>settings.py</code> of the Django app</h4>
-<div class="outline-text-4" id="text-1-1-3">
+<div id="outline-container-org6781324" class="outline-3">
+<h3 id="org6781324"><span class="section-number-3">2.2</span> Modify <code>settings.py</code> of the Django app</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 Add postgresql entry next to the default sqlite database:
 </p>
@@ -178,9 +169,9 @@ Like so:
 </div>
 </div>
 
-<div id="outline-container-org677162b" class="outline-4">
-<h4 id="org677162b"><span class="section-number-4">1.1.4</span> Set up the .env file:</h4>
-<div class="outline-text-4" id="text-1-1-4">
+<div id="outline-container-org6be5206" class="outline-3">
+<h3 id="org6be5206"><span class="section-number-3">2.3</span> Set up the .env file:</h3>
+<div class="outline-text-3" id="text-2-3">
 <p>
 Make sure you write the correct values of the database from the step above into
 your <code>.env</code> file:
@@ -196,52 +187,15 @@ your <code>.env</code> file:
 </div>
 </div>
 </div>
-
-<div id="outline-container-orgbe4fc19" class="outline-4">
-<h4 id="orgbe4fc19"><span class="section-number-4">1.1.5</span> Run the Django app with postgresql db</h4>
-<div class="outline-text-4" id="text-1-1-5">
-<p>
-On windows it's easy, since pgadmin4 is installed on windows - you will connect
-to it easily, because db_host is specified as <b><b>localhost</b></b>.
-</p>
-
-<p>
-But over wsl and nixos, I am not able to say that my posgresql db is running on
-<b><b>localhost</b></b> since it's not true. If I try to use windows ip instead - still does not work.
-</p>
-
-<p>
-Tried to connect to railway instead from nixos - worked! So that means that
-nixos is configured correctly, is able to connect to postgresql db. (added
-postgresql to installed apps).
-</p>
-
-<p>
-So now the question is how to reach the posgresql db that is running on windows
-localhost over nixos.
-</p>
-
-<p>
-Getting <a href="https://www.pgadmin.org/docs/pgadmin4/8.5/connect_error.html">such</a> error:
-</p>
-
-<blockquote>
-<p>
-django.db.utils.OperationalError: connection to server at "172.21.32.1", port 5432 failed: Connection timed out
-        Is the server running on that host and accepting TCP/IP connections?
-</p>
-</blockquote>
-
-<p>
-Checked <code>C:\Program Files\PostgreSQL\16\data\posgresql.conf</code>, it already has
-<code>listen_addresses = '*'</code> set there.
-</p>
-</div>
 </div>
 
-<div id="outline-container-org9a58416" class="outline-4">
-<h4 id="org9a58416"><span class="section-number-4">1.1.6</span> Connect to the postgresql db over windows terminal</h4>
-<div class="outline-text-4" id="text-1-1-6">
+<div id="outline-container-org43c1f2e" class="outline-2">
+<h2 id="org43c1f2e"><span class="section-number-2">3</span> Connect to a local PostgreSQL instance over Windows</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgd137041" class="outline-4">
+<h4 id="orgd137041"><span class="section-number-4">3.0.1</span> Connect to the postgresql db over windows terminal</h4>
+<div class="outline-text-4" id="text-3-0-1">
 <p>
 The db can be locally running.
 </p>
@@ -280,11 +234,171 @@ SELECT * FROM pg_catalog.pg_tables;
 </div>
 </div>
 </div>
+
+<div id="outline-container-org528ac80" class="outline-4">
+<h4 id="org528ac80"><span class="section-number-4">3.0.2</span> Run a Django app</h4>
+<div class="outline-text-4" id="text-3-0-2">
+<p>
+On windows it's easy, since pgadmin4 is installed on windows - you will connect
+to it easily, because db_host is specified as <b><b>localhost</b></b>.
+</p>
+
+<p>
+If the above connection works, running Django app should work just fine also.
+</p>
+</div>
+</div>
 </div>
 
-<div id="outline-container-orgbfccb74" class="outline-3">
-<h3 id="orgbfccb74"><span class="section-number-3">1.2</span> Set up PostgreSQL DB remotely on Railway</h3>
-<div class="outline-text-3" id="text-1-2">
+
+<div id="outline-container-orgf2c5d5b" class="outline-2">
+<h2 id="orgf2c5d5b"><span class="section-number-2">4</span> Connect to a local PostgreSQL instance over Linux(NixOS)</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+First, add <code>postgresql</code> to installed apps of NixOS.
+</p>
+
+<p>
+Over WSL and NixOS, I am not able to say(in the <code>.env</code> file) that my posgresql
+db is running on <b><b>localhost</b></b> since it's not true. If I try to use windows ip
+instead - it still does not work.
+</p>
+
+<p>
+Tried to connect to railway instead from nixos - worked! So that means that
+nixos is installed correctly, is able to connect to postgresql db.
+</p>
+
+<p>
+So now the question is how to reach the posgresql db that is running on WSL
+host - Windows, over NixOS.
+</p>
+
+<p>
+Modify the <code>.env</code> file the, change the DB_HOST to the windows host ip
+<code>POSTGRESQL_LOCAL_DB_HOST="172.21.32.1"</code>
+</p>
+
+<p>
+If I try to run Django app now from wsl, I am getting <a href="https://www.pgadmin.org/docs/pgadmin4/8.5/connect_error.html">such</a> error:
+</p>
+
+<blockquote>
+<p>
+django.db.utils.OperationalError: connection to server at "172.21.32.1", port 5432 failed: Connection timed out
+        Is the server running on that host and accepting TCP/IP connections?
+</p>
+</blockquote>
+
+<p>
+Checked <code>C:\Program Files\PostgreSQL\16\data\posgresql.conf</code>, it already has
+<code>listen_addresses = '*'</code> set there.
+</p>
+
+<p>
+Tried pinging to windows from linux, it could not, same like here -
+<a href="https://github.com/microsoft/WSL/issues/4171">https://github.com/microsoft/WSL/issues/4171</a>
+</p>
+
+<p>
+Solution to ping problem is here -
+<a href="https://github.com/microsoft/WSL/issues/4171#issuecomment-942203237">https://github.com/microsoft/WSL/issues/4171#issuecomment-942203237</a>
+</p>
+
+<blockquote>
+<p>
+After enabling the firewall rule "Virtual Machine Monitoring(Echo
+Request-ICMPv4-In)", I can ping host from wsl2 now.
+</p>
+</blockquote>
+
+<p>
+Okay, I can now ping to Windows from Linux. What happens when I try to run
+Django app now that is configured to use the PostgreSQL db that runs on the
+host windows machine?
+</p>
+
+<p>
+Getting the same error:
+</p>
+
+<blockquote>
+<p>
+django.db.utils.OperationalError: connection to server at "172.21.32.1", port 5432 failed: Connection timed out
+        Is the server running on that host and accepting TCP/IP connections?
+</p>
+</blockquote>
+
+<p>
+Tried to do <code>telnet 172.21.32.1 543</code> and it did not work, connection timed out.
+</p>
+
+<ol class="org-ol">
+<li>Make sure <code>C:\Program Files\PostgreSQL\16\data\posgresql.conf</code>, it already
+has <code>listen_addresses = '*'</code> set there</li>
+<li><p>
+Ensure that your Windows Firewall is not blocking the connection to
+PostgreSQL. Follow these steps to allow traffic on port 5432:
+</p>
+
+<blockquote>
+<ol class="org-ol">
+<li>Open the Windows Control Panel.</li>
+<li>Go to "System and Security" &gt; "Windows Defender Firewall" &gt; "Advanced settings".</li>
+<li>In the left pane, click on "Inbound Rules".</li>
+<li>In the right pane, click "New Rule&#x2026;".</li>
+<li>Select "Port" and click "Next".</li>
+<li>Choose "TCP" and specify port 5432.</li>
+<li>Allow the connection and click "Next".</li>
+<li>Select when this rule applies (Domain, Private, Public) and click "Next".</li>
+<li>Name your rule (e.g., "Allow PostgreSQL") and click "Finish".</li>
+</ol>
+</blockquote></li>
+<li>Try to do <code>telnet 172.21.32.1 543</code> again, should work, great</li>
+</ol>
+
+<p>
+Finally a different error:
+</p>
+
+<blockquote>
+<p>
+django.db.utils.OperationalError: connection to server at "172.21.32.1", port 5432 failed: FATAL:  no pg_hba.conf entry for host "172.21.43.187", user "postgres", database "django_starter", no encryption
+</p>
+</blockquote>
+
+<p>
+Add an entry to <code>C:\Program Files\PostgreSQL\&lt;version&gt;\data\pg_hba.conf</code>, this
+covers the range of our WSL:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Allow connections from the specific IP address</span>
+host    all             all             172.21.43.187/32           md5
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Or allow connections from a range of IP addresses</span>
+host    all             all             172.21.43.0/24             md5
+</pre>
+</div>
+
+<p>
+I chose to add for a range of IP addresses.
+</p>
+
+<p>
+Restart postgresql over Services in windows. Stop it, start it again.
+</p>
+
+<p>
+Now if you do <code>runserver</code>, your Django app should start WHILE connected to
+postgresql db that runs on WSL host machine - Windows.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org40ee52b" class="outline-2">
+<h2 id="org40ee52b"><span class="section-number-2">5</span> Connect to a remote PostgreSQL instance that runs on Railway</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 Did not find any simpler remote development than this - <a href="https://railway.app/">https://railway.app/</a>
 </p>
@@ -304,7 +418,8 @@ In short:
 </p>
 
 <ul class="org-ul">
-<li>pip install psycopg2-binary (on nixos) or psycopg2(windows) to your virutal environment</li>
+<li><code>pip install psycopg2-binary</code> (on nixos) or <code>psycopg2</code> (windows) to your
+virutal environment</li>
 <li>Create a postgresql service on railway</li>
 <li>Copy the dbname, username, password, host, port</li>
 <li>Add them to your environment variables</li>
@@ -312,7 +427,6 @@ In short:
 <li>Run server</li>
 <li>Should run, runs both on windows and on nixos</li>
 </ul>
-</div>
 </div>
 </div>
 </div>
@@ -326,8 +440,8 @@ In short:
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-05 Wed 12:37</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-05 Wed 12:37</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 08:14</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 08:13</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-04-20 Sat 14:07</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
