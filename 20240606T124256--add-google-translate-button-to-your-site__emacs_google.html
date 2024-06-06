@@ -4,7 +4,7 @@
 <!-- 2024-06-06 Thu 09:51 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Github copilot</title>
+<title>Add google translate button to your site</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Arvydas Gasparavicius">
 <meta name="description" content="Welcome to my devnotes site"
@@ -31,27 +31,61 @@
 </div>
 <div id="content">
 <header>
-<h1 class="title">Github copilot</h1>
+<h1 class="title">Add google translate button to your site</h1>
 </header><p>
-2023 November, I bought it for a month, barely used, so no comments.
+Saw the translate button for the first time in this site - <a href="https://srghma.github.io/">https://srghma.github.io/</a>.
 </p>
 
 <p>
-Just some commands:
+Thought it is super cool. Wanted to add it to my site as well.
 </p>
-<ul class="org-ul">
-<li>accept suggestion <code>C + /</code></li>
-<li>next suggestion <code>alt + J</code></li>
-<li>previous suggestion <code>alt + [</code></li>
-<li>open panel <code>ctrl +enter</code></li>
-<li>suggested terminal command <code>ctrl + I</code></li>
-<li>trigger inline suggestion <code>alt +\</code></li>
-</ul>
+
+<p>
+Google translate will only keep improving, to be able to have my site in any
+language the reader wants - is also invaluable.
+</p>
+
+<p>
+Asked the author of the site how he did it, he referred me here -
+<a href="https://www.geeksforgeeks.org/add-google-translate-button-webpage/">https://www.geeksforgeeks.org/add-google-translate-button-webpage/</a>
+</p>
+
+<p>
+And this is my implementation <code>google-translate.js</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="font-weight: bold;">function</span> <span style="font-weight: bold;">googleTranslateElementInit</span>() {
+    <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">google.translate.TranslateElement</span>(
+        { pageLanguage: <span style="font-style: italic;">'en'</span> },
+        <span style="font-style: italic;">'google_translate_element'</span>
+    );
+}
+
+<span style="font-weight: bold;">const</span> <span style="font-weight: bold; font-style: italic;">script</span> = document.createElement(<span style="font-style: italic;">'script'</span>);
+script.type = <span style="font-style: italic;">'text/javascript'</span>;
+script.src = <span style="font-style: italic;">'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'</span>;
+document.head.appendChild(script);
+</pre>
+</div>
+
+<p>
+Added a piece in html:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"google_translate_element"</span> <span style="font-weight: bold; font-style: italic;">style</span>=<span style="font-style: italic;">"float:right;"</span>&gt;&lt;/<span style="font-weight: bold;">div</span>&gt;"
+</pre>
+</div>
+
+<p>
+And it works! Cool!
+</p>
 </div>
 <div id="postamble" class="status">
 <hr/>
 	 <footer>
-	 <p class="date generated">This note is <u>first written</u>: 2023-12-17 Sun 16:58</p>
+	 <p class="date generated">This note is <u>first written</u>: 2024-06-06 Thu 12:42</p>
 	 <div class="copyright-container generated">
 	 <div class="copyright">
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
@@ -60,7 +94,7 @@ Just some commands:
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
 	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 09:51</p> -->
 	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 09:50</p> -->
-	 <!-- <p class="date">This org file is <u>created</u>: 2023-12-17 Sun 16:58</p> -->
+	 <!-- <p class="date">This org file is <u>created</u>: 2024-06-06 Thu 12:42</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
