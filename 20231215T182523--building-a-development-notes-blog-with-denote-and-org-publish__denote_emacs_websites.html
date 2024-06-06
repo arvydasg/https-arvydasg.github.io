@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-06 Thu 13:14 -->
+<!-- 2024-06-06 Thu 13:28 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Building a development notes blog with denote and org-publish Notes</title>
@@ -28,43 +28,34 @@
  </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:13</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:28</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
 <header>
 <h1 class="title">Building a development notes blog with denote and org-publish Notes</h1>
-</header>
-<div id="outline-container-orga4b8cb8" class="outline-2">
-<h2 id="orga4b8cb8"><span class="section-number-2">1</span> QUICK: Generate/update the blog step by step</h2>
+</header><p>
+Building a blog with Emacs, customizing it, etc, can be quite confusing for the
+first timer.
+</p>
+
+<p>
+It can also be little bit confusing for me as well, after I come back to it
+after a year or so.
+</p>
+
+<p>
+That is why I have built this step by step documentation of how this blog was
+built. If others find benefit in this - even better.
+</p>
+
+<div id="outline-container-org89789be" class="outline-2">
+<h2 id="org89789be"><span class="section-number-2">1</span> Why</h2>
 <div class="outline-text-2" id="text-1">
-<p>
-This section basically is a reminder of the steps needed.
-</p>
-
-<ul class="org-ul">
-<li>Update/create an org file in devnotes directory</li>
-<li>Run build command in the terminal to export org to html</li>
-<li>Check the .html in the browser, confirm all is good</li>
-<li>Commit the org files</li>
-<li>Commit ALL html files that have changed during the export (all might change,
-have to take into consideration the new file to TOC or somilar)</li>
-<li>Publish arvydas.github.io repo changes to see them on <a href="https://arvydas.dev">https://arvydas.dev</a></li>
-</ul>
-
-<p>
-Please check the in-depth view of how the blog is built
-</p>
 </div>
-</div>
-
-<div id="outline-container-orgfddefc4" class="outline-2">
-<h2 id="orgfddefc4"><span class="section-number-2">2</span> Research</h2>
-<div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-orgead36a7" class="outline-3">
-<h3 id="orgead36a7"><span class="section-number-3">2.1</span> Why build a website for development notes anyway</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-orgc39e5b6" class="outline-3">
+<h3 id="orgc39e5b6"><span class="section-number-3">1.1</span> Why build a website for development notes anyway</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 I have a lot of notes. Over a few systems(at home, at work, under descriptions
 of various projects).
@@ -81,8 +72,8 @@ forget).
 </p>
 
 <p>
-Also, of my notes are in .org files written in emacs, so of course my website
-will also be written in Emacs
+Also, all of my notes are in .org files written in emacs, so of course my
+website will also be written in Emacs.
 </p>
 
 <p>
@@ -99,18 +90,23 @@ readable html format in a form of a blog). I am in.
 </div>
 </div>
 
-<div id="outline-container-org7e2e99d" class="outline-3">
-<h3 id="org7e2e99d"><span class="section-number-3">2.2</span> Why use emacs for it</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-orgbfe1848" class="outline-3">
+<h3 id="orgbfe1848"><span class="section-number-3">1.2</span> Why use emacs for it</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 <a href="20231215T140448--why-build-a-website-with-emacs-and-not-with-something-else__emacs_websites.html">Why build a website with emacs and not with something else</a>
 </p>
 </div>
 </div>
+</div>
 
-<div id="outline-container-org038a8b1" class="outline-3">
-<h3 id="org038a8b1"><span class="section-number-3">2.3</span> Choosing an Emacs tool to build such website</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-orgc2d58de" class="outline-2">
+<h2 id="orgc2d58de"><span class="section-number-2">2</span> How</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgba1ef4f" class="outline-3">
+<h3 id="orgba1ef4f"><span class="section-number-3">2.1</span> Choosing an Emacs tool to build such website</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 Emacs has both built in and external packages that help you to generate .html
 files from .org note files.
@@ -131,9 +127,9 @@ Some of them are:
 </div>
 </div>
 
-<div id="outline-container-orgdb937dd" class="outline-3">
-<h3 id="orgdb937dd"><span class="section-number-3">2.4</span> ox-publish VS org-static-blog</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-org42fb548" class="outline-3">
+<h3 id="org42fb548"><span class="section-number-3">2.2</span> ox-publish VS org-static-blog</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 At first(<span class="timestamp-wrapper"><span class="timestamp">[2023-12-15 Fri]</span></span>) I was thinking to write the website with
 <code>org-static-blog</code>, almost had the blog setup and ready, converted around 50
@@ -321,11 +317,10 @@ easy to do that on the web - so be it. I will work on that later.
 </p>
 </div>
 </div>
-</div>
 
-<div id="outline-container-orgcde776e" class="outline-2">
-<h2 id="orgcde776e"><span class="section-number-2">3</span> What is <code>ox-publish</code></h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org7a0b13e" class="outline-3">
+<h3 id="org7a0b13e"><span class="section-number-3">2.3</span> What is "ox-publish"</h3>
+<div class="outline-text-3" id="text-2-3">
 <p>
 Best description in a video format is <a href="https://www.youtube.com/watch?v=AfkrzFodoNw&amp;t=1612s&amp;ab_channel=SystemCrafters">here</a>.
 </p>
@@ -363,23 +358,23 @@ IF you want to add html into an org file (not code block), can do it like such:
 </ul>
 </div>
 </div>
-
-<div id="outline-container-org6e01bd9" class="outline-2">
-<h2 id="org6e01bd9"><span class="section-number-2">4</span> Installation of <code>ox-publish</code></h2>
-<div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org408fc2f" class="outline-3">
-<h3 id="org408fc2f"><span class="section-number-3">4.1</span> Install the package</h3>
-<div class="outline-text-3" id="text-4-1">
+
+<div id="outline-container-org0a71e50" class="outline-2">
+<h2 id="org0a71e50"><span class="section-number-2">3</span> Build</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org193d9f8" class="outline-3">
+<h3 id="org193d9f8"><span class="section-number-3">3.1</span> Installation of "ox-publish"</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
-It is already installed with Emacs by default.
+This package is already installed with Emacs by default.
 </p>
 </div>
-</div>
 
-<div id="outline-container-orga13498a" class="outline-3">
-<h3 id="orga13498a"><span class="section-number-3">4.2</span> Decide where to place the configuration</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-orge43aba9" class="outline-4">
+<h4 id="orge43aba9"><span class="section-number-4">3.1.1</span> Decide where to place the configuration</h4>
+<div class="outline-text-4" id="text-3-1-1">
 <p>
 Ox-publish configuration might get large if you start modifying the head,
 preamble, postamble.. Also if you have multiple blogs/websites that you want to
@@ -428,14 +423,13 @@ complete!"
 </div>
 </div>
 </div>
-
-<div id="outline-container-org5ca20b0" class="outline-2">
-<h2 id="org5ca20b0"><span class="section-number-2">5</span> Creating .org files to be rendered</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orga6afc4c" class="outline-3">
+<h3 id="orga6afc4c"><span class="section-number-3">3.2</span> Creating .org files to be rendered</h3>
+<div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-orgb25ef6d" class="outline-3">
-<h3 id="orgb25ef6d"><span class="section-number-3">5.1</span> Separate repositories</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-orgb75de01" class="outline-4">
+<h4 id="orgb75de01"><span class="section-number-4">3.2.1</span> Separate repositories</h4>
+<div class="outline-text-4" id="text-3-2-1">
 <p>
 We have one dir/repo for source files, another for exported html files. Having
 them in separate repos allows us to use ripgrep search easier, allows us to use
@@ -455,9 +449,9 @@ drwxr-xr-x 6 nixos users  20480 May 28 15:30 devnotes <span style="font-weight: 
 </div>
 </div>
 
-<div id="outline-container-orgb0825c0" class="outline-3">
-<h3 id="orgb0825c0"><span class="section-number-3">5.2</span> Folder structure of source dir</h3>
-<div class="outline-text-3" id="text-5-2">
+<div id="outline-container-orgc5e8365" class="outline-4">
+<h4 id="orgc5e8365"><span class="section-number-4">3.2.2</span> Folder structure of source dir</h4>
+<div class="outline-text-4" id="text-3-2-2">
 <p>
 When we have at least one .org file in the source directory, we can think about
 exporting it to .html.
@@ -493,9 +487,9 @@ drwxr-xr-x 4 nixos users  4096 May 27 15:00 static <span style="font-weight: bol
 </div>
 </div>
 
-<div id="outline-container-org6f22d38" class="outline-3">
-<h3 id="org6f22d38"><span class="section-number-3">5.3</span> Creating new notes with Denote</h3>
-<div class="outline-text-3" id="text-5-3">
+<div id="outline-container-org7c6b513" class="outline-4">
+<h4 id="org7c6b513"><span class="section-number-4">3.2.3</span> Creating new notes with Denote</h4>
+<div class="outline-text-4" id="text-3-2-3">
 <p>
 I am using Denote package, so I can use it's functionality to create a new
 entry. Here are some <a href="20231125T212326--denote-features__emacs.html">denote features</a>.
@@ -508,14 +502,13 @@ development note taking. Win win.
 </div>
 </div>
 </div>
-
-<div id="outline-container-org24712ec" class="outline-2">
-<h2 id="org24712ec"><span class="section-number-2">6</span> The build process</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-org0809226" class="outline-3">
+<h3 id="org0809226"><span class="section-number-3">3.3</span> The build process</h3>
+<div class="outline-text-3" id="text-3-3">
 </div>
-<div id="outline-container-org69dad4f" class="outline-3">
-<h3 id="org69dad4f"><span class="section-number-3">6.1</span> <code>ox-publish</code> config file itself</h3>
-<div class="outline-text-3" id="text-6-1">
+<div id="outline-container-org437fdb4" class="outline-4">
+<h4 id="org437fdb4"><span class="section-number-4">3.3.1</span> "ox-publish" config file itself</h4>
+<div class="outline-text-4" id="text-3-3-1">
 <p>
 Now since we have this list of files and folders, we are ready to export them to .html.
 </p>
@@ -779,9 +772,9 @@ images and css/js files, etc&#x2026;.
 </div>
 </div>
 
-<div id="outline-container-orga3d3740" class="outline-3">
-<h3 id="orga3d3740"><span class="section-number-3">6.2</span> Running the build (generating the .html files from .org files)</h3>
-<div class="outline-text-3" id="text-6-2">
+<div id="outline-container-org1a4592c" class="outline-4">
+<h4 id="org1a4592c"><span class="section-number-4">3.3.2</span> Running the build (generating the .html files from .org files)</h4>
+<div class="outline-text-4" id="text-3-3-2">
 <p>
 After you have studied the config file and you understand what's happening, we
 can now launch this script while in <code>/home/nixos/GIT/devnotes/build</code>. Write
@@ -807,9 +800,9 @@ modify the build script if not happy.
 </div>
 </div>
 
-<div id="outline-container-org77343cd" class="outline-3">
-<h3 id="org77343cd"><span class="section-number-3">6.3</span> Previewing the generated site</h3>
-<div class="outline-text-3" id="text-6-3">
+<div id="outline-container-org0c0f764" class="outline-4">
+<h4 id="org0c0f764"><span class="section-number-4">3.3.3</span> Previewing the generated site</h4>
+<div class="outline-text-4" id="text-3-3-3">
 <p>
 Now that we have a few .org file notes in our directory and we have exported
 them into html, we can preview them. Open the .html file and it will open in
@@ -817,9 +810,9 @@ the browser.
 </p>
 </div>
 
-<div id="outline-container-orgbc14000" class="outline-4">
-<h4 id="orgbc14000"><span class="section-number-4">6.3.1</span> Preview the html file in the browser</h4>
-<div class="outline-text-4" id="text-6-3-1">
+<ol class="org-ol">
+<li><a id="org2148e22"></a>Preview the html file in the browser<br>
+<div class="outline-text-5" id="text-3-3-3-1">
 <p>
 If the file on my wsl lies here:
 </p>
@@ -837,11 +830,10 @@ how to implement - here
 <a href="https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/">https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/</a>
 </p>
 </div>
-</div>
+</li>
 
-<div id="outline-container-org87616bf" class="outline-4">
-<h4 id="org87616bf"><span class="section-number-4">6.3.2</span> Preview with simple-httpd</h4>
-<div class="outline-text-4" id="text-6-3-2">
+<li><a id="orga21d9a7"></a>Preview with simple-httpd<br>
+<div class="outline-text-5" id="text-3-3-3-2">
 <p>
 Or you can use <code>simple-httpd</code>. It's a package that can host your files as a
 website on your local machine so that you can pull it up in your browser.
@@ -877,13 +869,14 @@ result of changes you made! (if you need to do a refresh, then it's the same as
 opening in the browser&#x2026;). That's why I don't bother with simple-httpd.
 </p>
 </div>
+</li>
+</ol>
 </div>
 </div>
 </div>
-
-<div id="outline-container-orgdb917e4" class="outline-2">
-<h2 id="orgdb917e4"><span class="section-number-2">7</span> Publishing process</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-org9140bee" class="outline-2">
+<h2 id="org9140bee"><span class="section-number-2">4</span> Publish</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 I am using github pages. It is possible to host static html pages from it for
 free. Here is a tutorial how it is done - <a href="20231212T123552--deploy-a-static-website-with-github-pages__git_websites.html">deploy a static website with github
@@ -896,9 +889,9 @@ for github pages</a>
 </p>
 </div>
 
-<div id="outline-container-org293588c" class="outline-3">
-<h3 id="org293588c"><span class="section-number-3">7.1</span> Manual workflow</h3>
-<div class="outline-text-3" id="text-7-1">
+<div id="outline-container-org5b2dcf4" class="outline-3">
+<h3 id="org5b2dcf4"><span class="section-number-3">4.1</span> Manual workflow</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 Good if you want to preview the changes locally first, only then commit.
 </p>
@@ -932,9 +925,9 @@ Here is how I made it:
 </div>
 </div>
 
-<div id="outline-container-orgdc8960b" class="outline-3">
-<h3 id="orgdc8960b"><span class="section-number-3">7.2</span> Automated workflow with github actions</h3>
-<div class="outline-text-3" id="text-7-2">
+<div id="outline-container-orga84d9df" class="outline-3">
+<h3 id="orga84d9df"><span class="section-number-3">4.2</span> Automated workflow with github actions</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 Took me the whole day today (<span class="timestamp-wrapper"><span class="timestamp">[2024-06-03 Mon]</span></span>) to figure this one out&#x2026;
 </p>
@@ -1043,9 +1036,9 @@ changes ready.
 </div>
 </div>
 
-<div id="outline-container-org5041852" class="outline-3">
-<h3 id="org5041852"><span class="section-number-3">7.3</span> Fix commit message</h3>
-<div class="outline-text-3" id="text-7-3">
+<div id="outline-container-orgdf3931d" class="outline-3">
+<h3 id="orgdf3931d"><span class="section-number-3">4.3</span> Fix commit message</h3>
+<div class="outline-text-3" id="text-4-3">
 <p>
 I want to make the <code>devnotes</code> repo commit link to show in <code>arvydasg.github.io</code>
 repo commit that was automatically made with github action.
@@ -1103,9 +1096,9 @@ Added this to my main config.
 </div>
 </div>
 
-<div id="outline-container-orga1570e2" class="outline-3">
-<h3 id="orga1570e2"><span class="section-number-3">7.4</span> Problem with "date modified"</h3>
-<div class="outline-text-3" id="text-7-4">
+<div id="outline-container-org877cc25" class="outline-3">
+<h3 id="org877cc25"><span class="section-number-3">4.4</span> Problem with "date modified"</h3>
+<div class="outline-text-3" id="text-4-4">
 <p>
 Commit that did this change -
 <a href="https://github.com/azegas/devnotes/commit/f5471491056b4e055fbc8a9556d18fc141ffd2f5">https://github.com/azegas/devnotes/commit/f5471491056b4e055fbc8a9556d18fc141ffd2f5</a>
@@ -1143,9 +1136,9 @@ Basically the last point is the main reason why I have to remove this feature.
 </p>
 </div>
 
-<div id="outline-container-org628f868" class="outline-4">
-<h4 id="org628f868"><span class="section-number-4">7.4.1</span> Workflow before github actions</h4>
-<div class="outline-text-4" id="text-7-4-1">
+<div id="outline-container-org57152bd" class="outline-4">
+<h4 id="org57152bd"><span class="section-number-4">4.4.1</span> Workflow before github actions</h4>
+<div class="outline-text-4" id="text-4-4-1">
 <p>
 Before github actions, only the pages that have changed would get regenerated.
 </p>
@@ -1165,31 +1158,22 @@ who are interested and remove everything else.
 </div>
 </div>
 
-<div id="outline-container-org69013bc" class="outline-2">
-<h2 id="org69013bc"><span class="section-number-2">8</span> Nice to haves</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-orga0923e0" class="outline-2">
+<h2 id="orga0923e0"><span class="section-number-2">5</span> Bits and pieces</h2>
+<div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgb6b975b" class="outline-3">
-<h3 id="orgb6b975b"><span class="section-number-3">8.1</span> Include a portion of another file in an org file</h3>
-<div class="outline-text-3" id="text-8-1">
+<div id="outline-container-orgbf57514" class="outline-3">
+<h3 id="orgbf57514"><span class="section-number-3">5.1</span> Add a "google translate" button to the site</h3>
+<div class="outline-text-3" id="text-5-1">
 <p>
-A single line does this - <code>#+INCLUDE: "sitemap.org" :lines "12-20"</code>
-</p>
-
-<p>
-This will include 12-20th lines of the <code>sitemap.org</code> page. Can simply open
-sitemap.org page to check what lines you want to include.
-</p>
-
-<p>
-Useful when you want to add a list of sitemap in index.html page for example.
+<a href="20240606T124256--add-google-translate-button-to-your-site__emacs_google.html">Add google translate button to your site</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org84fb58d" class="outline-3">
-<h3 id="org84fb58d"><span class="section-number-3">8.2</span> Individual files customization options</h3>
-<div class="outline-text-3" id="text-8-2">
+<div id="outline-container-org4abcedb" class="outline-3">
+<h3 id="org4abcedb"><span class="section-number-3">5.2</span> Individual files customization options</h3>
+<div class="outline-text-3" id="text-5-2">
 <p>
 We are specifying all the configuration in the <code>build-site.el</code> file, however,
 you can still make some changes to the individual files.
@@ -1215,28 +1199,34 @@ Here are the things you can modify:
 </div>
 </div>
 
-<div id="outline-container-org100475d" class="outline-3">
-<h3 id="org100475d"><span class="section-number-3">8.3</span> Generating pages with code blocks</h3>
-<div class="outline-text-3" id="text-8-3">
+<div id="outline-container-org4dc7443" class="outline-3">
+<h3 id="org4dc7443"><span class="section-number-3">5.3</span> Generating pages with code blocks</h3>
+<div class="outline-text-3" id="text-5-3">
 <p>
-So far we've been looking at a very simple example page that doesn't really have much on it. What happens when we try to generate a more elaborate Org file containing code blocks?
+So far we've been looking at a very simple example page that doesn't really
+have much on it. What happens when we try to generate a more elaborate Org file
+containing code blocks?
 </p>
 
 <p>
-Let's try it out with another file, a version of my literate Emacs configuration called Emacs.org!
+Let's try it out with another file, a version of my literate Emacs
+configuration called Emacs.org!
 </p>
 
 <p>
-If you're generating a site that features code blocks like a coding blog or a literate Emacs configuration, you'll probably see an error like this when you generate the site:
+If you're generating a site that features code blocks like a coding blog or a
+literate Emacs configuration, you'll probably see an error like this when you
+generate the site:
 </p>
-
 
 <p>
 Cannot fontify source block (htmlize.el &gt;= 1.34 required)
 </p>
 
 <p>
-To resolve this issue, you will need to install the htmlize package from MELPA. We can automate the process of installing this package by adding the following snippet to our build-site.el file:
+To resolve this issue, you will need to install the htmlize package from MELPA.
+We can automate the process of installing this package by adding the following
+snippet to our build-site.el file:
 </p>
 
 <div class="org-src-container">
@@ -1278,9 +1268,9 @@ used in the theme!
 </div>
 </div>
 
-<div id="outline-container-org86f8882" class="outline-3">
-<h3 id="org86f8882"><span class="section-number-3">8.4</span> Important information about linking between .org files</h3>
-<div class="outline-text-3" id="text-8-4">
+<div id="outline-container-orga90204c" class="outline-3">
+<h3 id="orga90204c"><span class="section-number-3">5.4</span> Important information about linking between .org files</h3>
+<div class="outline-text-3" id="text-5-4">
 <p>
 Github link to issue - <a href="https://github.com/protesilaos/denote/issues/369">https://github.com/protesilaos/denote/issues/369</a>
 </p>
@@ -1302,7 +1292,8 @@ to stop, you can add this in your config:
 
 <p>
 You will simply see this in your html page(I prefer to know that there are
-broken links during the html compilation, so I don't put the code above in my config).
+broken links during the html compilation, so I don't put the code above in my
+config).
 </p>
 
 <blockquote>
@@ -1327,9 +1318,9 @@ Example taken from here - <a href="https://orgmode.org/manual/Links-in-HTML-expo
 </div>
 </div>
 
-<div id="outline-container-orgd6fe28a" class="outline-3">
-<h3 id="orgd6fe28a"><span class="section-number-3">8.5</span> CSS support in HTML export</h3>
-<div class="outline-text-3" id="text-8-5">
+<div id="outline-container-org55ed7f6" class="outline-3">
+<h3 id="org55ed7f6"><span class="section-number-3">5.5</span> CSS support in HTML export</h3>
+<div class="outline-text-3" id="text-5-5">
 <p>
 Official docs for css support in HTML export - <a href="https://orgmode.org/manual/CSS-support.html">https://orgmode.org/manual/CSS-support.html</a>
 </p>
@@ -1340,9 +1331,9 @@ with Emacs.
 </p>
 </div>
 
-<div id="outline-container-orgaf68579" class="outline-4">
-<h4 id="orgaf68579"><span class="section-number-4">8.5.1</span> Use the default styles from ox-html</h4>
-<div class="outline-text-4" id="text-8-5-1">
+<div id="outline-container-org954a12d" class="outline-4">
+<h4 id="org954a12d"><span class="section-number-4">5.5.1</span> Use the default styles from ox-html</h4>
+<div class="outline-text-4" id="text-5-5-1">
 <p>
 You have to do nothing, <code>ox-html</code> - <code>org-html-style-default</code> got you covered.
 And it looks pretty good already by default.
@@ -1361,18 +1352,18 @@ than somewhere deep in the emacs docs.
 </div>
 </div>
 
-<div id="outline-container-orgb012348" class="outline-4">
-<h4 id="orgb012348"><span class="section-number-4">8.5.2</span> Add custom classes to blocks of text/code</h4>
-<div class="outline-text-4" id="text-8-5-2">
+<div id="outline-container-org61bffd6" class="outline-4">
+<h4 id="org61bffd6"><span class="section-number-4">5.5.2</span> Add custom classes to blocks of text/code</h4>
+<div class="outline-text-4" id="text-5-5-2">
 <p>
 <a href="https://orgmode.org/manual/HTML-doctypes.html">https://orgmode.org/manual/HTML-doctypes.html</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org180210a" class="outline-4">
-<h4 id="org180210a"><span class="section-number-4">8.5.3</span> import custom css</h4>
-<div class="outline-text-4" id="text-8-5-3">
+<div id="outline-container-orgeec29f8" class="outline-4">
+<h4 id="orgeec29f8"><span class="section-number-4">5.5.3</span> import custom css</h4>
+<div class="outline-text-4" id="text-5-5-3">
 <p>
 Default html export engine already has us covered with basic css, you can
 enable/disable it like so:
@@ -1411,9 +1402,9 @@ Use your own config from another website/blog for example:
 </div>
 </div>
 
-<div id="outline-container-orge920025" class="outline-4">
-<h4 id="orge920025"><span class="section-number-4">8.5.4</span> org-html-themes</h4>
-<div class="outline-text-4" id="text-8-5-4">
+<div id="outline-container-org2df5218" class="outline-4">
+<h4 id="org2df5218"><span class="section-number-4">5.5.4</span> org-html-themes</h4>
+<div class="outline-text-4" id="text-5-5-4">
 <p>
 ORRR last thing that you can try when it comes to styling your website, try
 using one of these, <a href="https://github.com/fniessen/org-html-themes">org-html-themes</a>.
@@ -1445,9 +1436,9 @@ using my own custom stylesheet.
 </div>
 </div>
 
-<div id="outline-container-org5a48cb4" class="outline-4">
-<h4 id="org5a48cb4"><span class="section-number-4">8.5.5</span> Note to self</h4>
-<div class="outline-text-4" id="text-8-5-5">
+<div id="outline-container-orgbf2f63e" class="outline-4">
+<h4 id="orgbf2f63e"><span class="section-number-4">5.5.5</span> Note to self</h4>
+<div class="outline-text-4" id="text-5-5-5">
 <p>
 Some css examples here(built with ox-publish though) -
 <a href="https://github.com/arvydasg/emacs_blog/blob/master/css/style.css">https://github.com/arvydasg/emacs_blog/blob/master/css/style.css</a>
@@ -1455,9 +1446,9 @@ Some css examples here(built with ox-publish though) -
 </div>
 </div>
 </div>
-<div id="outline-container-org3138c76" class="outline-3">
-<h3 id="org3138c76"><span class="section-number-3">8.6</span> Javascript support in HTML export</h3>
-<div class="outline-text-3" id="text-8-6">
+<div id="outline-container-orgb56f35a" class="outline-3">
+<h3 id="orgb56f35a"><span class="section-number-3">5.6</span> Javascript support in HTML export</h3>
+<div class="outline-text-3" id="text-5-6">
 <p>
 Official docs - <a href="https://orgmode.org/manual/JavaScript-support.html">https://orgmode.org/manual/JavaScript-support.html</a>
 </p>
@@ -1468,13 +1459,13 @@ Add the .js files the same way as you would add .css file.
 </div>
 </div>
 
-<div id="outline-container-orgb8a37f8" class="outline-3">
-<h3 id="orgb8a37f8"><span class="section-number-3">8.7</span> Images in HTML export</h3>
-<div class="outline-text-3" id="text-8-7">
+<div id="outline-container-org78dfcaf" class="outline-3">
+<h3 id="org78dfcaf"><span class="section-number-3">5.7</span> Images in HTML export</h3>
+<div class="outline-text-3" id="text-5-7">
 </div>
-<div id="outline-container-org02c5c7d" class="outline-4">
-<h4 id="org02c5c7d"><span class="section-number-4">8.7.1</span> Display images</h4>
-<div class="outline-text-4" id="text-8-7-1">
+<div id="outline-container-orgc0f9e28" class="outline-4">
+<h4 id="orgc0f9e28"><span class="section-number-4">5.7.1</span> Display images</h4>
+<div class="outline-text-4" id="text-5-7-1">
 <p>
 NOTE: gif's are not rendered in github pages for some reason (julijaconsulting
 and facebook project gif's)
@@ -1487,9 +1478,9 @@ My docs - <a href="20231126T003746--images-in-org-files__emacs.html">images in o
 </div>
 </div>
 
-<div id="outline-container-org1436fa4" class="outline-4">
-<h4 id="org1436fa4"><span class="section-number-4">8.7.2</span> One option is to add images as plain html</h4>
-<div class="outline-text-4" id="text-8-7-2">
+<div id="outline-container-org8a9f6bc" class="outline-4">
+<h4 id="org8a9f6bc"><span class="section-number-4">5.7.2</span> One option is to add images as plain html</h4>
+<div class="outline-text-4" id="text-5-7-2">
 <p>
 But then you can not change the size of it in lightbox.
 </p>
@@ -1500,9 +1491,9 @@ But then you can not change the size of it in lightbox.
 </div>
 </div>
 
-<div id="outline-container-orgdc51b12" class="outline-4">
-<h4 id="orgdc51b12"><span class="section-number-4">8.7.3</span> Another option is to include a link to a file(the usual way)</h4>
-<div class="outline-text-4" id="text-8-7-3">
+<div id="outline-container-orga0ddad3" class="outline-4">
+<h4 id="orga0ddad3"><span class="section-number-4">5.7.3</span> Another option is to include a link to a file(the usual way)</h4>
+<div class="outline-text-4" id="text-5-7-3">
 <p>
 To toggle the images(show/hide), use <code>org-toggle-inline-images</code>.
 </p>
@@ -1520,18 +1511,18 @@ bound to <code>img</code>) and then I can drop images wherever.
 </div>
 </div>
 
-<div id="outline-container-orgad095bc" class="outline-4">
-<h4 id="orgad095bc"><span class="section-number-4">8.7.4</span> Org download package for inserting images in org files</h4>
-<div class="outline-text-4" id="text-8-7-4">
+<div id="outline-container-org9dcab04" class="outline-4">
+<h4 id="org9dcab04"><span class="section-number-4">5.7.4</span> Org download package for inserting images in org files</h4>
+<div class="outline-text-4" id="text-5-7-4">
 <p>
 Optional, does not really work if in WSL - <a href="20231219T090909--using-org-download-package-in-wsl__emacs_windows_wsl.html">using org download package in WSL</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org139669d" class="outline-4">
-<h4 id="org139669d"><span class="section-number-4">8.7.5</span> Add a lightbox effect on the images</h4>
-<div class="outline-text-4" id="text-8-7-5">
+<div id="outline-container-org8f4bb2c" class="outline-4">
+<h4 id="org8f4bb2c"><span class="section-number-4">5.7.5</span> Add a lightbox effect on the images</h4>
+<div class="outline-text-4" id="text-5-7-5">
 <p>
 Follow - <a href="20231219T091704--add-a-lightbox-effect-for-images-in-html__javascript_websites.html">add a lightbox effect for images in html</a>
 </p>
@@ -1539,9 +1530,9 @@ Follow - <a href="20231219T091704--add-a-lightbox-effect-for-images-in-html__jav
 </div>
 </div>
 
-<div id="outline-container-org58cdbd6" class="outline-3">
-<h3 id="org58cdbd6"><span class="section-number-3">8.8</span> Preamble(nav) and postamble(footer)</h3>
-<div class="outline-text-3" id="text-8-8">
+<div id="outline-container-org78fad67" class="outline-3">
+<h3 id="org78fad67"><span class="section-number-3">5.8</span> Preamble(nav) and postamble(footer)</h3>
+<div class="outline-text-3" id="text-5-8">
 <p>
 Docs about them -  <a href="https://orgmode.org/manual/HTML-preamble-and-postamble.html">https://orgmode.org/manual/HTML-preamble-and-postamble.html</a>
 </p>
@@ -1563,9 +1554,9 @@ Then simply modify - :html-preamble and :html-postamble in your config.
 </div>
 </div>
 
-<div id="outline-container-org6ba29cb" class="outline-3">
-<h3 id="org6ba29cb"><span class="section-number-3">8.9</span> Add a search to the <code>sitemap.org</code></h3>
-<div class="outline-text-3" id="text-8-9">
+<div id="outline-container-orge58aff2" class="outline-3">
+<h3 id="orge58aff2"><span class="section-number-3">5.9</span> Add a search to the <code>sitemap.org</code></h3>
+<div class="outline-text-3" id="text-5-9">
 <p>
 So my thought was that&#x2026; if I create lots of small files and all of those
 small files are listed in one list in <code>sitemap.org</code>, then it will be difficult
@@ -1581,9 +1572,9 @@ filter the list results by the words I write in the search bar?
 </p>
 </div>
 
-<div id="outline-container-orga975cd4" class="outline-4">
-<h4 id="orga975cd4"><span class="section-number-4">8.9.1</span> Print "hello world" first in the sitemap.org</h4>
-<div class="outline-text-4" id="text-8-9-1">
+<div id="outline-container-org0813686" class="outline-4">
+<h4 id="org0813686"><span class="section-number-4">5.9.1</span> Print "hello world" first in the sitemap.org</h4>
+<div class="outline-text-4" id="text-5-9-1">
 <p>
 Sounds good, but the problem is that I do not control the behavior of the
 <code>sitemap.org</code> generation. At least not originally. But it's emacs, so I can.
@@ -1659,9 +1650,9 @@ ag-org-publish-sitemap-default
 </div>
 </div>
 
-<div id="outline-container-org6b1998c" class="outline-4">
-<h4 id="org6b1998c"><span class="section-number-4">8.9.2</span> Add the search bar in plain html</h4>
-<div class="outline-text-4" id="text-8-9-2">
+<div id="outline-container-org5ab462a" class="outline-4">
+<h4 id="org5ab462a"><span class="section-number-4">5.9.2</span> Add the search bar in plain html</h4>
+<div class="outline-text-4" id="text-5-9-2">
 <blockquote>
 <p>
 To include an HTML search bar in the <code>sitemap.org</code> file generated by our custom
@@ -1742,17 +1733,17 @@ Rebuild the site. Search should work.
 </div>
 </div>
 
-<div id="outline-container-org4ec8c9b" class="outline-3">
-<h3 id="org4ec8c9b"><span class="section-number-3">8.10</span> Extra's</h3>
-<div class="outline-text-3" id="text-8-10">
+<div id="outline-container-orgd07a9ac" class="outline-3">
+<h3 id="orgd07a9ac"><span class="section-number-3">5.10</span> Extra's</h3>
+<div class="outline-text-3" id="text-5-10">
 <p>
 Extra tips:
 </p>
 </div>
 
-<div id="outline-container-org68bd471" class="outline-4">
-<h4 id="org68bd471"><span class="section-number-4">8.10.1</span> You can also include other content from other files!</h4>
-<div class="outline-text-4" id="text-8-10-1">
+<div id="outline-container-org06b82f8" class="outline-4">
+<h4 id="org06b82f8"><span class="section-number-4">5.10.1</span> You can also include other content from other files!</h4>
+<div class="outline-text-4" id="text-5-10-1">
 <p>
 Like such - <a href="https://orgmode.org/manual/Include-Files.html">https://orgmode.org/manual/Include-Files.html</a>
 </p>
@@ -1763,9 +1754,9 @@ I have done this to include recent posts into index.org page.
 </div>
 </div>
 
-<div id="outline-container-org6809c49" class="outline-4">
-<h4 id="org6809c49"><span class="section-number-4">8.10.2</span> Creating a HTML page with my .emacs configuration</h4>
-<div class="outline-text-4" id="text-8-10-2">
+<div id="outline-container-org2700538" class="outline-4">
+<h4 id="org2700538"><span class="section-number-4">5.10.2</span> Creating a HTML page with my .emacs configuration</h4>
+<div class="outline-text-4" id="text-5-10-2">
 <p>
 Simply made a symlink to my .org configuration file and it renders it together
 with the rest of the .org files.
@@ -1794,9 +1785,9 @@ this site on another platform - I might try this workaround again.
 </div>
 </div>
 
-<div id="outline-container-org15b7927" class="outline-4">
-<h4 id="org15b7927"><span class="section-number-4">8.10.3</span> Adding a date to post title in sitemap</h4>
-<div class="outline-text-4" id="text-8-10-3">
+<div id="outline-container-orgb26ab9e" class="outline-4">
+<h4 id="orgb26ab9e"><span class="section-number-4">5.10.3</span> Adding a date to post title in sitemap</h4>
+<div class="outline-text-4" id="text-5-10-3">
 <p>
 Inspiration here - <a href="https://taingram.org/blog/org-mode-blog.html">https://taingram.org/blog/org-mode-blog.html</a>
 </p>
@@ -1856,6 +1847,111 @@ done as a macro as otherwise Org escapes the HTML tags. The results are:
 </div>
 </div>
 </div>
+
+<div id="outline-container-org8629fcd" class="outline-2">
+<h2 id="org8629fcd"><span class="section-number-2">6</span> Customize the automated build</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+I want to remember the ways it's possible to modify the export process.
+</p>
+
+<ul class="org-ul">
+<li>Official docs - <a href="https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html">https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html</a></li>
+<li><p>
+A single line does this - <code>#+INCLUDE: "sitemap.org" :lines "12-20"</code>
+</p>
+
+<p>
+This will include 12-20th lines of the <code>sitemap.org</code> page. Can simply open
+sitemap.org page to check what lines you want to include.
+</p>
+
+<p>
+Useful when you want to add a list of sitemap in index.html page for example.
+</p>
+<div class="org-src-container">
+<pre class="src src-org"><span style="font-weight: bold; font-style: italic;">#+INCLUDE: "sitemap.org" :lines "-6"</span>
+</pre>
+</div></li>
+<li><p>
+See a default suggested template <code>C-c C-e # (org-export-dispatch)</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-org">
+<span style="font-weight: bold; font-style: italic;"># html template:</span>
+<span style="font-weight: bold; font-style: italic;">#+options: html-link-use-abs-url:nil html-postamble:auto html-preamble:t</span>
+<span style="font-weight: bold; font-style: italic;">#+options: html-scripts:nil html-style:t html5-fancy:nil tex:t</span>
+<span style="font-weight: bold; font-style: italic;">#+html_doctype: xhtml-strict</span>
+<span style="font-weight: bold; font-style: italic;">#+html_container: div</span>
+<span style="font-weight: bold; font-style: italic;">#+html_content_class: content</span>
+<span style="font-weight: bold; font-style: italic;">#+description:</span>
+<span style="font-weight: bold; font-style: italic;">#+keywords:</span>
+<span style="font-weight: bold; font-style: italic;">#+html_link_home:</span>
+<span style="font-weight: bold; font-style: italic;">#+html_link_up:</span>
+<span style="font-weight: bold; font-style: italic;">#+html_mathjax:</span>
+<span style="font-weight: bold; font-style: italic;">#+html_equation_reference_format: \eqref{%s}</span>
+<span style="font-weight: bold; font-style: italic;">#+html_head:</span>
+<span style="font-weight: bold; font-style: italic;">#+html_head_extra:</span>
+<span style="font-weight: bold; font-style: italic;">#+subtitle:</span>
+<span style="font-weight: bold; font-style: italic;">#+infojs_opt:</span>
+<span style="font-weight: bold; font-style: italic;">#+creator: &lt;a href="<a href="https://www.gnu.org/software/emacs/">https://www.gnu.org/software/emacs/</a>"&gt;Emacs&lt;/a&gt; 29.3 (&lt;a href="<a href="https://orgmode.org">https://orgmode.org</a>"&gt;Org&lt;/a&gt; mode 9.6.15)</span>
+<span style="font-weight: bold; font-style: italic;">#+latex_header:</span>
+
+<span style="font-weight: bold; font-style: italic;"> # Default template</span>
+<span style="font-weight: bold; font-style: italic;">#+options: ':nil *:t -:t ::t &lt;:t H:3 \n:nil ^:t arch:headline author:t</span>
+<span style="font-weight: bold; font-style: italic;">#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t</span>
+<span style="font-weight: bold; font-style: italic;">#+options: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t tags:t</span>
+<span style="font-weight: bold; font-style: italic;">#+options: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t</span>
+#+title: <span style="font-weight: bold;">*Org Src 20231215T182523--building-a-development-notes-blog-with-denote-and-org-publish__denote_emacs_websites.org[ org ]*</span>
+#+date: &lt;2024-06-06 Thu&gt;
+#+author: nixos
+#+email: nixos@nixos
+<span style="font-weight: bold; font-style: italic;">#+language: en</span>
+<span style="font-weight: bold; font-style: italic;">#+select_tags: export</span>
+<span style="font-weight: bold; font-style: italic;">#+exclude_tags: noexport</span>
+<span style="font-weight: bold; font-style: italic;">#+creator: Emacs 29.3 (Org mode 9.6.15)</span>
+<span style="font-weight: bold; font-style: italic;">#+cite_export:</span>
+</pre>
+</div></li>
+<li>Export settings - <a href="https://orgmode.org/manual/Export-Settings.html">https://orgmode.org/manual/Export-Settings.html</a></li>
+<li>HTML specific export settings - <a href="https://orgmode.org/manual/HTML-specific-export-settings.html">https://orgmode.org/manual/HTML-specific-export-settings.html</a></li>
+<li><p>
+Source code:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">/org/ox-html.el.gz
+/org/ox-publish.el.gz
+</pre>
+</div></li>
+<li><code>org-html-preamble-format</code> some useful %a %c %T functions</li>
+<li><p>
+IF you want to add html into an org file (not code block), can do it like such:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="font-weight: bold; font-style: italic;">#+HTML: &lt;div"&gt;Updated:</span>
+<span style="font-weight: bold; font-style: italic;">#+HTML: hello</span>
+<span style="font-weight: bold; font-style: italic;">#+HTML: &lt;/div&gt;</span>
+</pre>
+</div></li>
+
+<li><p>
+Create editable text areas
+Docs - <a href="https://orgmode.org/manual/Text-areas-in-HTML-export.html">https://orgmode.org/manual/Text-areas-in-HTML-export.html</a>
+</p>
+
+<p>
+If you ever want to try using this feature, here is an example:
+</p>
+<p>
+<textarea cols="40" rows="3">
+(defun org-xor (a b)
+   "Exclusive or."
+   (if a (not b) b))</textarea>
+</p></li>
+</ul>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <hr/>
@@ -1867,8 +1963,8 @@ done as a macro as otherwise Org escapes the HTML tags. The results are:
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:14</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:13</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:28</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:28</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2023-12-15 Fri 18:25</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

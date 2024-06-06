@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-06 Thu 13:14 -->
+<!-- 2024-06-06 Thu 13:28 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Messy lifeapi dev notes</title>
@@ -50,7 +50,7 @@
  </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:13</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:28</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
@@ -60,82 +60,82 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4505b55">1. 2024-03-05 Lifeapi has to close</a>
+<li><a href="#orge23a061">1. 2024-03-05 Lifeapi has to close</a>
 <ul>
-<li><a href="#org7f020df">1.1. WHY</a></li>
-<li><a href="#orgbf3c00e">1.2. THINGS LEARNED</a></li>
-<li><a href="#org1a510bb">1.3. STEPS</a></li>
+<li><a href="#orgcfcf97e">1.1. WHY</a></li>
+<li><a href="#orgcc92153">1.2. THINGS LEARNED</a></li>
+<li><a href="#orgb6e39b2">1.3. STEPS</a></li>
 </ul>
 </li>
-<li><a href="#org11aaa94">2. How to’s</a>
+<li><a href="#orga378e5c">2. How to’s</a>
 <ul>
-<li><a href="#org987c23c">2.1. lifeapi ip change procedure</a></li>
+<li><a href="#orgb4bdee9">2.1. lifeapi ip change procedure</a></li>
 </ul>
 </li>
-<li><a href="#org4877bc4">3. Intro</a></li>
-<li><a href="#org1c33d66">4. Inspiration</a></li>
-<li><a href="#org7cdac26">5. Try to do the installation steps for a new gcp instance</a></li>
-<li><a href="#org0ed8748">6. Creating a separate branch for this</a></li>
-<li><a href="#org164038d">7. Creating a test docker container and running it locally</a></li>
-<li><a href="#org5befe4a">8. Create a test docker container and run it in GCP over gcp shell</a></li>
-<li><a href="#org603748a">9. Run the locally created container in GCP</a></li>
-<li><a href="#orge09d533">10. step by step setup</a>
+<li><a href="#org5f90860">3. Intro</a></li>
+<li><a href="#org8b04c15">4. Inspiration</a></li>
+<li><a href="#org12357c9">5. Try to do the installation steps for a new gcp instance</a></li>
+<li><a href="#org42ad2cd">6. Creating a separate branch for this</a></li>
+<li><a href="#orgd10c4f7">7. Creating a test docker container and running it locally</a></li>
+<li><a href="#orge469da0">8. Create a test docker container and run it in GCP over gcp shell</a></li>
+<li><a href="#org066e40e">9. Run the locally created container in GCP</a></li>
+<li><a href="#org9facf39">10. step by step setup</a>
 <ul>
-<li><a href="#org7c22e71">10.1. Initial deployment</a>
+<li><a href="#org6d55e1a">10.1. Initial deployment</a>
 <ul>
-<li><a href="#org26ee92c">10.1.1. step by step deployment</a></li>
-<li><a href="#org659a9a2">10.1.2. deployment to gcp</a></li>
+<li><a href="#orgf1b54b2">10.1.1. step by step deployment</a></li>
+<li><a href="#org73752f1">10.1.2. deployment to gcp</a></li>
 </ul>
 </li>
-<li><a href="#org5b5f61e">10.2. Second attempt</a>
+<li><a href="#orga09a87e">10.2. Second attempt</a>
 <ul>
-<li><a href="#orgb84cf22">10.2.1. The plan</a></li>
-<li><a href="#org0c014b6">10.2.2. Creating a new GCP instance</a></li>
-<li><a href="#orgd9d1157">10.2.3. Connect to the machine over gcp console</a></li>
-<li><a href="#orgb665e6e">10.2.4. Connect over ssh</a></li>
+<li><a href="#orgc061e68">10.2.1. The plan</a></li>
+<li><a href="#org3bba192">10.2.2. Creating a new GCP instance</a></li>
+<li><a href="#org5640dd2">10.2.3. Connect to the machine over gcp console</a></li>
+<li><a href="#org5a57dcd">10.2.4. Connect over ssh</a></li>
 </ul>
 </li>
-<li><a href="#orge40f308">10.3. weather fetch cron</a></li>
-<li><a href="#org0a37a1a">10.4. rescuetime fetch</a></li>
-<li><a href="#org8445c75">10.5. make backup push to git cron</a></li>
-<li><a href="#org61415a6">10.6. daylt api implementation</a></li>
-<li><a href="#org9cace9e">10.7. implementing strava api</a></li>
-<li><a href="#org467f395">10.8. applying the change from dev to PRD</a>
+<li><a href="#org0809858">10.3. weather fetch cron</a></li>
+<li><a href="#org2736309">10.4. rescuetime fetch</a></li>
+<li><a href="#orgaef11e0">10.5. make backup push to git cron</a></li>
+<li><a href="#org3732647">10.6. daylt api implementation</a></li>
+<li><a href="#org91799e2">10.7. implementing strava api</a></li>
+<li><a href="#orgff0d4fb">10.8. applying the change from dev to PRD</a>
 <ul>
-<li><a href="#orgd4921ba">10.8.1. Check services status</a></li>
-<li><a href="#org01f432a">10.8.2. Fetch changes</a></li>
+<li><a href="#org0c0b950">10.8.1. Check services status</a></li>
+<li><a href="#orgc6799ae">10.8.2. Fetch changes</a></li>
 </ul>
 </li>
-<li><a href="#org3a96ae5">10.9. update master</a></li>
-<li><a href="#org6afa32f">10.10. git repo change remote</a></li>
-<li><a href="#orgde669b5">10.11. user question answer implementation</a>
+<li><a href="#org34e5811">10.9. update master</a></li>
+<li><a href="#org6d325bd">10.10. git repo change remote</a></li>
+<li><a href="#org44aa421">10.11. user question answer implementation</a>
 <ul>
-<li><a href="#orgc7f7501">10.11.1. First created the models:</a></li>
-<li><a href="#org6e7399a">10.11.2. Then the views:</a></li>
-<li><a href="#org6788c0f">10.11.3. Then the urls:</a></li>
-<li><a href="#org922d5fc">10.11.4. And forms:</a></li>
+<li><a href="#org2d7936a">10.11.1. First created the models:</a></li>
+<li><a href="#org0fe03b2">10.11.2. Then the views:</a></li>
+<li><a href="#orgc4aca9c">10.11.3. Then the urls:</a></li>
+<li><a href="#org9f45684">10.11.4. And forms:</a></li>
 </ul>
 </li>
-<li><a href="#orga699ebf">10.12. And templates:</a>
+<li><a href="#orgfd3cc3a">10.12. And templates:</a>
 <ul>
-<li><a href="#org1a894c1">10.12.1. quiz_app_add_question.html</a></li>
-<li><a href="#org5ef6db7">10.12.2. quiz_app_home.html</a></li>
-<li><a href="#orgfcc50b5">10.12.3. quiz_app_question.html</a></li>
-<li><a href="#org1ca2cb8">10.12.4. quiz_app_questions.html</a></li>
-<li><a href="#orgcdd3f2d">10.12.5. quiz_app_ready.html</a></li>
-<li><a href="#orgfb99206">10.12.6. quiz_app_summary.html</a></li>
-<li><a href="#org5e6303e">10.12.7. Quiz looks like this:</a></li>
+<li><a href="#org2c8f001">10.12.1. quiz_app_add_question.html</a></li>
+<li><a href="#org5b74e8b">10.12.2. quiz_app_home.html</a></li>
+<li><a href="#org8e7ce91">10.12.3. quiz_app_question.html</a></li>
+<li><a href="#org00b5c31">10.12.4. quiz_app_questions.html</a></li>
+<li><a href="#org1803cd7">10.12.5. quiz_app_ready.html</a></li>
+<li><a href="#org4e0d56e">10.12.6. quiz_app_summary.html</a></li>
+<li><a href="#org514bde6">10.12.7. Quiz looks like this:</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org5faa707">11. code</a>
+<li><a href="#orgf430d1a">11. code</a>
 <ul>
-<li><a href="#org932b464">11.1. Step 1 Create a separate django app</a></li>
-<li><a href="#org322dc05">11.2. Step 2 Storing entries from an api in db</a></li>
-<li><a href="#org6829926">11.3. Step 3 Displaying from an api AND storing to db</a></li>
-<li><a href="#orgd1b493e">11.4. Step 4 Automating fetching and storing into DB with cron</a></li>
-<li><a href="#orgd01aacc">11.5. Step 5 creating cronjob</a></li>
+<li><a href="#orgd9387be">11.1. Step 1 Create a separate django app</a></li>
+<li><a href="#orgf626b74">11.2. Step 2 Storing entries from an api in db</a></li>
+<li><a href="#orgfeaa5b4">11.3. Step 3 Displaying from an api AND storing to db</a></li>
+<li><a href="#orga31924d">11.4. Step 4 Automating fetching and storing into DB with cron</a></li>
+<li><a href="#org0b98d54">11.5. Step 5 creating cronjob</a></li>
 </ul>
 </li>
 </ul>
@@ -149,12 +149,12 @@ Some messy notes from Lifeapi project which is currently on hold.
 Instead of throwing them out, keeping it here for future reference.
 </p>
 
-<div id="outline-container-org4505b55" class="outline-2">
-<h2 id="org4505b55"><span class="section-number-2">1</span> 2024-03-05 Lifeapi has to close</h2>
+<div id="outline-container-orge23a061" class="outline-2">
+<h2 id="orge23a061"><span class="section-number-2">1</span> 2024-03-05 Lifeapi has to close</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org7f020df" class="outline-3">
-<h3 id="org7f020df"><span class="section-number-3">1.1</span> WHY</h3>
+<div id="outline-container-orgcfcf97e" class="outline-3">
+<h3 id="orgcfcf97e"><span class="section-number-3">1.1</span> WHY</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 This is a project that provides daily usage, but does not really provide a
@@ -202,8 +202,8 @@ quote.
 </div>
 </div>
 
-<div id="outline-container-orgbf3c00e" class="outline-3">
-<h3 id="orgbf3c00e"><span class="section-number-3">1.2</span> THINGS LEARNED</h3>
+<div id="outline-container-orgcc92153" class="outline-3">
+<h3 id="orgcc92153"><span class="section-number-3">1.2</span> THINGS LEARNED</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>How to fetch from an API</li>
@@ -217,8 +217,8 @@ added email reminders or smth, or create an app)</li>
 </div>
 </div>
 
-<div id="outline-container-org1a510bb" class="outline-3">
-<h3 id="org1a510bb"><span class="section-number-3">1.3</span> STEPS</h3>
+<div id="outline-container-orgb6e39b2" class="outline-3">
+<h3 id="orgb6e39b2"><span class="section-number-3">1.3</span> STEPS</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>Make lifeapi repo private</li>
@@ -231,12 +231,12 @@ added email reminders or smth, or create an app)</li>
 </div>
 </div>
 
-<div id="outline-container-org11aaa94" class="outline-2">
-<h2 id="org11aaa94"><span class="section-number-2">2</span> How to’s</h2>
+<div id="outline-container-orga378e5c" class="outline-2">
+<h2 id="orga378e5c"><span class="section-number-2">2</span> How to’s</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org987c23c" class="outline-3">
-<h3 id="org987c23c"><span class="section-number-3">2.1</span> lifeapi ip change procedure</h3>
+<div id="outline-container-orgb4bdee9" class="outline-3">
+<h3 id="orgb4bdee9"><span class="section-number-3">2.1</span> lifeapi ip change procedure</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 When the server is turned off and then turned on again - the IP of it changes.
@@ -283,8 +283,8 @@ show Julyte how to use it, the new ip.
 </div>
 </div>
 
-<div id="outline-container-org4877bc4" class="outline-2">
-<h2 id="org4877bc4"><span class="section-number-2">3</span> Intro</h2>
+<div id="outline-container-org5f90860" class="outline-2">
+<h2 id="org5f90860"><span class="section-number-2">3</span> Intro</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Dates in data_table were messed up. Installed updates on the server. Upgrade
@@ -297,8 +297,8 @@ have to do all the installation steps again.
 </div>
 </div>
 
-<div id="outline-container-org1c33d66" class="outline-2">
-<h2 id="org1c33d66"><span class="section-number-2">4</span> Inspiration</h2>
+<div id="outline-container-org8b04c15" class="outline-2">
+<h2 id="org8b04c15"><span class="section-number-2">4</span> Inspiration</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 <a href="https://www.youtube.com/watch?v=_ZMGp-bSQhg&amp;ab_channel=ScalableScripts">https://www.youtube.com/watch?v=_ZMGp-bSQhg&amp;ab_channel=ScalableScripts</a>
@@ -306,8 +306,8 @@ have to do all the installation steps again.
 </div>
 </div>
 
-<div id="outline-container-org7cdac26" class="outline-2">
-<h2 id="org7cdac26"><span class="section-number-2">5</span> Try to do the installation steps for a new gcp instance</h2>
+<div id="outline-container-org12357c9" class="outline-2">
+<h2 id="org12357c9"><span class="section-number-2">5</span> Try to do the installation steps for a new gcp instance</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 First try this, then dockerize in the free time maybe.
@@ -315,8 +315,8 @@ First try this, then dockerize in the free time maybe.
 </div>
 </div>
 
-<div id="outline-container-org0ed8748" class="outline-2">
-<h2 id="org0ed8748"><span class="section-number-2">6</span> Creating a separate branch for this</h2>
+<div id="outline-container-org42ad2cd" class="outline-2">
+<h2 id="org42ad2cd"><span class="section-number-2">6</span> Creating a separate branch for this</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Version of the Master branch before the changes -
@@ -330,8 +330,8 @@ Dockerzing branch was created -
 </div>
 </div>
 
-<div id="outline-container-org164038d" class="outline-2">
-<h2 id="org164038d"><span class="section-number-2">7</span> Creating a test docker container and running it locally</h2>
+<div id="outline-container-orgd10c4f7" class="outline-2">
+<h2 id="orgd10c4f7"><span class="section-number-2">7</span> Creating a test docker container and running it locally</h2>
 <div class="outline-text-2" id="text-7">
 <div class="org-src-container">
 <pre class="src src-bash">  FROM python:3.8-slim-buster
@@ -356,8 +356,8 @@ docker run -p 8000:8000 django-docker-starter
 </div>
 </div>
 
-<div id="outline-container-org5befe4a" class="outline-2">
-<h2 id="org5befe4a"><span class="section-number-2">8</span> Create a test docker container and run it in GCP over gcp shell</h2>
+<div id="outline-container-orge469da0" class="outline-2">
+<h2 id="orge469da0"><span class="section-number-2">8</span> Create a test docker container and run it in GCP over gcp shell</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 <a href="https://www.youtube.com/watch?v=H0kQL_KHt3o&amp;ab_channel=TechTrapture">https://www.youtube.com/watch?v=H0kQL_KHt3o&amp;ab_channel=TechTrapture</a>
@@ -365,8 +365,8 @@ docker run -p 8000:8000 django-docker-starter
 </div>
 </div>
 
-<div id="outline-container-org603748a" class="outline-2">
-<h2 id="org603748a"><span class="section-number-2">9</span> Run the locally created container in GCP</h2>
+<div id="outline-container-org066e40e" class="outline-2">
+<h2 id="org066e40e"><span class="section-number-2">9</span> Run the locally created container in GCP</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li>Enable <code>Artifact Registry API</code> service. Sorry, not this, but <code>Google
@@ -487,20 +487,20 @@ local development on a new machine
 </div>
 </div>
 
-<div id="outline-container-orge09d533" class="outline-2">
-<h2 id="orge09d533"><span class="section-number-2">10</span> step by step setup</h2>
+<div id="outline-container-org9facf39" class="outline-2">
+<h2 id="org9facf39"><span class="section-number-2">10</span> step by step setup</h2>
 <div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-org7c22e71" class="outline-3">
-<h3 id="org7c22e71"><span class="section-number-3">10.1</span> Initial deployment</h3>
+<div id="outline-container-org6d55e1a" class="outline-3">
+<h3 id="org6d55e1a"><span class="section-number-3">10.1</span> Initial deployment</h3>
 <div class="outline-text-3" id="text-10-1">
 </div>
-<div id="outline-container-org26ee92c" class="outline-4">
-<h4 id="org26ee92c"><span class="section-number-4">10.1.1</span> step by step deployment</h4>
+<div id="outline-container-orgf1b54b2" class="outline-4">
+<h4 id="orgf1b54b2"><span class="section-number-4">10.1.1</span> step by step deployment</h4>
 <div class="outline-text-4" id="text-10-1-1">
 </div>
 <ol class="org-ol">
-<li><a id="orged08813"></a>ssh to the GCP server<br>
+<li><a id="orge836313"></a>ssh to the GCP server<br>
 <div class="outline-text-5" id="text-10-1-1-1">
 <p>
 First - <a href="file:///home/runner/GIT/devnotes/20240104T070918--ssh-into-gcp-server__gcp_ssh.html">ssh-into-gcp-server</a>
@@ -512,7 +512,7 @@ Second(optional) - <a href="file:///home/runner/GIT/devnotes/20240104T075039--lo
 </div>
 </li>
 
-<li><a id="org8ab53f3"></a>winscp to GCP server<br>
+<li><a id="org3b85a3c"></a>winscp to GCP server<br>
 <div class="outline-text-5" id="text-10-1-1-2">
 <p>
 add private key - connect
@@ -537,7 +537,7 @@ the file must remain there, otherwise the connection will not work
 </div>
 </li>
 
-<li><a id="org80481a2"></a>setup virtual env/server modifications<br>
+<li><a id="org7aedefe"></a>setup virtual env/server modifications<br>
 <div class="outline-text-5" id="text-10-1-1-3">
 <p>
 sudo su -
@@ -614,7 +614,7 @@ python manage.py runserver &#x2013;settings=settings.production 0.0.0.0:8000
 </div>
 </li>
 
-<li><a id="org003b828"></a>Okay why I am spending so much time on gunicorn and nginx<br>
+<li><a id="org044a386"></a>Okay why I am spending so much time on gunicorn and nginx<br>
 <div class="outline-text-5" id="text-10-1-1-4">
 <p>
 I was like dude if I can just run django in the terminal.. why bother.
@@ -834,7 +834,7 @@ go to the 34.88.9.236 without any ports. Should work.
 </div>
 </li>
 
-<li><a id="org4ad848e"></a>Configuring static files<br>
+<li><a id="org3c89439"></a>Configuring static files<br>
 <div class="outline-text-5" id="text-10-1-1-5">
 <p>
 this video inspiration - 74 - Static Files in Development - Python &amp;
@@ -911,7 +911,7 @@ panel should be displayed, as well as your global styles.
 </div>
 </li>
 
-<li><a id="org3b6b474"></a>Running the server<br>
+<li><a id="org3b5ab50"></a>Running the server<br>
 <div class="outline-text-5" id="text-10-1-1-6">
 <div class="org-src-container">
 <pre class="src src-bash">python manage.py runserver --settings=settings.production 0.0.0.0:8000
@@ -947,7 +947,7 @@ or simply reuse the prod DB
 </div>
 </li>
 
-<li><a id="orge672517"></a>Restarting the services<br>
+<li><a id="org560f220"></a>Restarting the services<br>
 <div class="outline-text-5" id="text-10-1-1-7">
 <p>
 Link to the instructions - <a href="20240104T082011--restarting-lifeapi-services__lifeapi.html">Restarting the services</a>
@@ -955,7 +955,7 @@ Link to the instructions - <a href="20240104T082011--restarting-lifeapi-services
 </div>
 </li>
 
-<li><a id="orgef78d39"></a>Source venv on each login to root<br>
+<li><a id="org614bae3"></a>Source venv on each login to root<br>
 <div class="outline-text-5" id="text-10-1-1-8">
 <div class="org-src-container">
 <pre class="src src-bash">sudo su -
@@ -970,7 +970,7 @@ source ~/.bashrc
 </div>
 </li>
 
-<li><a id="org1a407e0"></a>Cron job to fetch data automatically<br>
+<li><a id="org2852593"></a>Cron job to fetch data automatically<br>
 <div class="outline-text-5" id="text-10-1-1-9">
 <p>
 <a href="file:///home/runner/GIT/devnotes/20240104T082156--set-the-correct-server-time__linux.html">set the correct server time</a>
@@ -992,8 +992,8 @@ This cron job now should run every day at 17:00.
 </ol>
 </div>
 
-<div id="outline-container-org659a9a2" class="outline-4">
-<h4 id="org659a9a2"><span class="section-number-4">10.1.2</span> deployment to gcp</h4>
+<div id="outline-container-org73752f1" class="outline-4">
+<h4 id="org73752f1"><span class="section-number-4">10.1.2</span> deployment to gcp</h4>
 <div class="outline-text-4" id="text-10-1-2">
 <p>
 Attempt2 - bare metal
@@ -1032,12 +1032,12 @@ thanks.
 </div>
 </div>
 
-<div id="outline-container-org5b5f61e" class="outline-3">
-<h3 id="org5b5f61e"><span class="section-number-3">10.2</span> Second attempt</h3>
+<div id="outline-container-orga09a87e" class="outline-3">
+<h3 id="orga09a87e"><span class="section-number-3">10.2</span> Second attempt</h3>
 <div class="outline-text-3" id="text-10-2">
 </div>
-<div id="outline-container-orgb84cf22" class="outline-4">
-<h4 id="orgb84cf22"><span class="section-number-4">10.2.1</span> The plan</h4>
+<div id="outline-container-orgc061e68" class="outline-4">
+<h4 id="orgc061e68"><span class="section-number-4">10.2.1</span> The plan</h4>
 <div class="outline-text-4" id="text-10-2-1">
 <ul class="org-ul">
 <li>create new instance, make it run</li>
@@ -1047,8 +1047,8 @@ thanks.
 </div>
 </div>
 
-<div id="outline-container-org0c014b6" class="outline-4">
-<h4 id="org0c014b6"><span class="section-number-4">10.2.2</span> Creating a new GCP instance</h4>
+<div id="outline-container-org3bba192" class="outline-4">
+<h4 id="org3bba192"><span class="section-number-4">10.2.2</span> Creating a new GCP instance</h4>
 <div class="outline-text-4" id="text-10-2-2">
 <p>
 Before clicking "Create", I copied the equivalent code.
@@ -1062,7 +1062,7 @@ packages during sudo apt upgrade -
 </div>
 
 <ol class="org-ol">
-<li><a id="orgd19f88e"></a>Code for creating instance<br>
+<li><a id="org945e7be"></a>Code for creating instance<br>
 <div class="outline-text-5" id="text-10-2-2-1">
 <p>
 Can look at this code and know what settings I have chosen.
@@ -1090,7 +1090,7 @@ Can look at this code and know what settings I have chosen.
 </div>
 </li>
 
-<li><a id="org6ed84b1"></a>Pricing<br>
+<li><a id="org6414779"></a>Pricing<br>
 <div class="outline-text-5" id="text-10-2-2-2">
 <p>
 Basically it's a e2-micro instance
@@ -1124,8 +1124,8 @@ US$6.51
 </ol>
 </div>
 
-<div id="outline-container-orgd9d1157" class="outline-4">
-<h4 id="orgd9d1157"><span class="section-number-4">10.2.3</span> Connect to the machine over gcp console</h4>
+<div id="outline-container-org5640dd2" class="outline-4">
+<h4 id="org5640dd2"><span class="section-number-4">10.2.3</span> Connect to the machine over gcp console</h4>
 <div class="outline-text-4" id="text-10-2-3">
 <p>
 connect over the provided default console first. should log you in with
@@ -1134,8 +1134,8 @@ arvydas_gaspa username.
 </div>
 </div>
 
-<div id="outline-container-orgb665e6e" class="outline-4">
-<h4 id="orgb665e6e"><span class="section-number-4">10.2.4</span> Connect over ssh</h4>
+<div id="outline-container-org5a57dcd" class="outline-4">
+<h4 id="org5a57dcd"><span class="section-number-4">10.2.4</span> Connect over ssh</h4>
 <div class="outline-text-4" id="text-10-2-4">
 <p>
 First - <a href="file:///home/runner/GIT/devnotes/20240104T070918--ssh-into-gcp-server__gcp_ssh.html">ssh-into-gcp-server</a>
@@ -1147,7 +1147,7 @@ Second(optional) - <a href="file:///home/runner/GIT/devnotes/20240104T075039--lo
 </div>
 
 <ol class="org-ol">
-<li><a id="org721f4a3"></a>ssh key info for instace2 (everything is no longer relevant here)<br>
+<li><a id="orge26a79a"></a>ssh key info for instace2 (everything is no longer relevant here)<br>
 <div class="outline-text-5" id="text-10-2-4-1">
 <p>
 fingerprint
@@ -1218,8 +1218,8 @@ cronjobs
 </ol>
 </div>
 </div>
-<div id="outline-container-orge40f308" class="outline-3">
-<h3 id="orge40f308"><span class="section-number-3">10.3</span> weather fetch cron</h3>
+<div id="outline-container-org0809858" class="outline-3">
+<h3 id="org0809858"><span class="section-number-3">10.3</span> weather fetch cron</h3>
 <div class="outline-text-3" id="text-10-3">
 <div class="org-src-container">
 <pre class="src src-bash">0 18 * * * /opt/app/lifeapi/venv/bin/python /opt/app/lifeapi/weather_job_prod.py &gt;&gt; /opt/app/lifeapi/weather_job_prod.log 2&gt;&amp;1
@@ -1228,8 +1228,8 @@ cronjobs
 </div>
 </div>
 
-<div id="outline-container-org0a37a1a" class="outline-3">
-<h3 id="org0a37a1a"><span class="section-number-3">10.4</span> rescuetime fetch</h3>
+<div id="outline-container-org2736309" class="outline-3">
+<h3 id="org2736309"><span class="section-number-3">10.4</span> rescuetime fetch</h3>
 <div class="outline-text-3" id="text-10-4">
 <p>
 making the cronjob a bit later, like at 5am, because linux "date" command shows
@@ -1239,8 +1239,8 @@ with pytz, but no matter for now, lets see if it works with 5am.
 </div>
 </div>
 
-<div id="outline-container-org8445c75" class="outline-3">
-<h3 id="org8445c75"><span class="section-number-3">10.5</span> make backup push to git cron</h3>
+<div id="outline-container-orgaef11e0" class="outline-3">
+<h3 id="orgaef11e0"><span class="section-number-3">10.5</span> make backup push to git cron</h3>
 <div class="outline-text-3" id="text-10-5">
 <div class="org-src-container">
 <pre class="src src-bash">0 0 * * * /opt/app/lifeapi_db_backups/backup_prd.sh &gt;&gt; /opt/app/lifeapi_db_backups/db_backups.log 2&gt;&amp;1
@@ -1372,8 +1372,8 @@ but can also do it like such in view:
 </div>
 </div>
 
-<div id="outline-container-org61415a6" class="outline-3">
-<h3 id="org61415a6"><span class="section-number-3">10.6</span> daylt api implementation</h3>
+<div id="outline-container-org3732647" class="outline-3">
+<h3 id="org3732647"><span class="section-number-3">10.6</span> daylt api implementation</h3>
 <div class="outline-text-3" id="text-10-6">
 <p>
 Vardadieniai bei dienos informacija Tavo svetainėje!-
@@ -1387,8 +1387,8 @@ dies. If it runs - it runs.
 </div>
 </div>
 
-<div id="outline-container-org9cace9e" class="outline-3">
-<h3 id="org9cace9e"><span class="section-number-3">10.7</span> implementing strava api</h3>
+<div id="outline-container-org91799e2" class="outline-3">
+<h3 id="org91799e2"><span class="section-number-3">10.7</span> implementing strava api</h3>
 <div class="outline-text-3" id="text-10-7">
 <ul class="org-ul">
 <li>strava developers - <a href="https://developers.strava.com/">https://developers.strava.com/</a></li>
@@ -1405,12 +1405,12 @@ lifeapi git work
 </p>
 </div>
 </div>
-<div id="outline-container-org467f395" class="outline-3">
-<h3 id="org467f395"><span class="section-number-3">10.8</span> applying the change from dev to PRD</h3>
+<div id="outline-container-orgff0d4fb" class="outline-3">
+<h3 id="orgff0d4fb"><span class="section-number-3">10.8</span> applying the change from dev to PRD</h3>
 <div class="outline-text-3" id="text-10-8">
 </div>
-<div id="outline-container-orgd4921ba" class="outline-4">
-<h4 id="orgd4921ba"><span class="section-number-4">10.8.1</span> Check services status</h4>
+<div id="outline-container-org0c0b950" class="outline-4">
+<h4 id="org0c0b950"><span class="section-number-4">10.8.1</span> Check services status</h4>
 <div class="outline-text-4" id="text-10-8-1">
 <div class="org-src-container">
 <pre class="src src-bash">systemctl status gunicorn.socket
@@ -1421,8 +1421,8 @@ systemctl status nginx
 </div>
 </div>
 
-<div id="outline-container-org01f432a" class="outline-4">
-<h4 id="org01f432a"><span class="section-number-4">10.8.2</span> Fetch changes</h4>
+<div id="outline-container-orgc6799ae" class="outline-4">
+<h4 id="orgc6799ae"><span class="section-number-4">10.8.2</span> Fetch changes</h4>
 <div class="outline-text-4" id="text-10-8-2">
 <p>
 check if there are any changes upstream(on github repo on the web)
@@ -1468,8 +1468,8 @@ restart gunicorn.service (gal ir socket?)
 </div>
 </div>
 
-<div id="outline-container-org3a96ae5" class="outline-3">
-<h3 id="org3a96ae5"><span class="section-number-3">10.9</span> update master</h3>
+<div id="outline-container-org34e5811" class="outline-3">
+<h3 id="org34e5811"><span class="section-number-3">10.9</span> update master</h3>
 <div class="outline-text-3" id="text-10-9">
 <p>
 To login to MASTER branch on GCP - username "arvydas", ssh setup, so
@@ -1490,8 +1490,8 @@ bashrc is made</li>
 </div>
 </div>
 
-<div id="outline-container-org6afa32f" class="outline-3">
-<h3 id="org6afa32f"><span class="section-number-3">10.10</span> git repo change remote</h3>
+<div id="outline-container-org6d325bd" class="outline-3">
+<h3 id="org6d325bd"><span class="section-number-3">10.10</span> git repo change remote</h3>
 <div class="outline-text-3" id="text-10-10">
 <p>
 krc buvo taip. as parsiputes repo buvau su https. paskui pasetupinau
@@ -1641,12 +1641,12 @@ By nesting the loops, the code checks each question and its associated answer ob
 </div>
 </div>
 
-<div id="outline-container-orgde669b5" class="outline-3">
-<h3 id="orgde669b5"><span class="section-number-3">10.11</span> user question answer implementation</h3>
+<div id="outline-container-org44aa421" class="outline-3">
+<h3 id="org44aa421"><span class="section-number-3">10.11</span> user question answer implementation</h3>
 <div class="outline-text-3" id="text-10-11">
 </div>
-<div id="outline-container-orgc7f7501" class="outline-4">
-<h4 id="orgc7f7501"><span class="section-number-4">10.11.1</span> First created the models:</h4>
+<div id="outline-container-org2d7936a" class="outline-4">
+<h4 id="org2d7936a"><span class="section-number-4">10.11.1</span> First created the models:</h4>
 <div class="outline-text-4" id="text-10-11-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> django.db <span style="font-weight: bold;">import</span> models
@@ -1666,8 +1666,8 @@ By nesting the loops, the code checks each question and its associated answer ob
 </div>
 </div>
 
-<div id="outline-container-org6e7399a" class="outline-4">
-<h4 id="org6e7399a"><span class="section-number-4">10.11.2</span> Then the views:</h4>
+<div id="outline-container-org0fe03b2" class="outline-4">
+<h4 id="org0fe03b2"><span class="section-number-4">10.11.2</span> Then the views:</h4>
 <div class="outline-text-4" id="text-10-11-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> django.shortcuts <span style="font-weight: bold;">import</span> render, redirect
@@ -1767,8 +1767,8 @@ answer.save()
 </div>
 </div>
 
-<div id="outline-container-org6788c0f" class="outline-4">
-<h4 id="org6788c0f"><span class="section-number-4">10.11.3</span> Then the urls:</h4>
+<div id="outline-container-orgc4aca9c" class="outline-4">
+<h4 id="orgc4aca9c"><span class="section-number-4">10.11.3</span> Then the urls:</h4>
 <div class="outline-text-4" id="text-10-11-3">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> django.urls <span style="font-weight: bold;">import</span> path
@@ -1787,8 +1787,8 @@ answer.save()
 </div>
 </div>
 
-<div id="outline-container-org922d5fc" class="outline-4">
-<h4 id="org922d5fc"><span class="section-number-4">10.11.4</span> And forms:</h4>
+<div id="outline-container-org9f45684" class="outline-4">
+<h4 id="org9f45684"><span class="section-number-4">10.11.4</span> And forms:</h4>
 <div class="outline-text-4" id="text-10-11-4">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> django <span style="font-weight: bold;">import</span> forms
@@ -1804,12 +1804,12 @@ answer.save()
 </div>
 </div>
 
-<div id="outline-container-orga699ebf" class="outline-3">
-<h3 id="orga699ebf"><span class="section-number-3">10.12</span> And templates:</h3>
+<div id="outline-container-orgfd3cc3a" class="outline-3">
+<h3 id="orgfd3cc3a"><span class="section-number-3">10.12</span> And templates:</h3>
 <div class="outline-text-3" id="text-10-12">
 </div>
-<div id="outline-container-org1a894c1" class="outline-4">
-<h4 id="org1a894c1"><span class="section-number-4">10.12.1</span> quiz_app_add_question.html</h4>
+<div id="outline-container-org2c8f001" class="outline-4">
+<h4 id="org2c8f001"><span class="section-number-4">10.12.1</span> quiz_app_add_question.html</h4>
 <div class="outline-text-4" id="text-10-12-1">
 <div class="org-src-container">
 <pre class="src src-html">{% extends 'base.html' %}
@@ -1827,8 +1827,8 @@ answer.save()
 </div>
 </div>
 
-<div id="outline-container-org5ef6db7" class="outline-4">
-<h4 id="org5ef6db7"><span class="section-number-4">10.12.2</span> quiz_app_home.html</h4>
+<div id="outline-container-org5b74e8b" class="outline-4">
+<h4 id="org5b74e8b"><span class="section-number-4">10.12.2</span> quiz_app_home.html</h4>
 <div class="outline-text-4" id="text-10-12-2">
 <div class="org-src-container">
 <pre class="src src-html">{% extends 'base.html' %}
@@ -1844,8 +1844,8 @@ answer.save()
 </div>
 </div>
 
-<div id="outline-container-orgfcc50b5" class="outline-4">
-<h4 id="orgfcc50b5"><span class="section-number-4">10.12.3</span> quiz_app_question.html</h4>
+<div id="outline-container-org8e7ce91" class="outline-4">
+<h4 id="org8e7ce91"><span class="section-number-4">10.12.3</span> quiz_app_question.html</h4>
 <div class="outline-text-4" id="text-10-12-3">
 <div class="org-src-container">
 <pre class="src src-html">{% extends 'base.html' %}
@@ -1865,8 +1865,8 @@ answer.save()
 </div>
 </div>
 
-<div id="outline-container-org1ca2cb8" class="outline-4">
-<h4 id="org1ca2cb8"><span class="section-number-4">10.12.4</span> quiz_app_questions.html</h4>
+<div id="outline-container-org00b5c31" class="outline-4">
+<h4 id="org00b5c31"><span class="section-number-4">10.12.4</span> quiz_app_questions.html</h4>
 <div class="outline-text-4" id="text-10-12-4">
 <div class="org-src-container">
 <pre class="src src-html">{% extends 'base.html' %}
@@ -1897,8 +1897,8 @@ answer.save()
 </div>
 </div>
 
-<div id="outline-container-orgcdd3f2d" class="outline-4">
-<h4 id="orgcdd3f2d"><span class="section-number-4">10.12.5</span> quiz_app_ready.html</h4>
+<div id="outline-container-org1803cd7" class="outline-4">
+<h4 id="org1803cd7"><span class="section-number-4">10.12.5</span> quiz_app_ready.html</h4>
 <div class="outline-text-4" id="text-10-12-5">
 <div class="org-src-container">
 <pre class="src src-html">{% extends 'base.html' %}
@@ -1924,8 +1924,8 @@ answer.save()
 </div>
 </div>
 
-<div id="outline-container-orgfb99206" class="outline-4">
-<h4 id="orgfb99206"><span class="section-number-4">10.12.6</span> quiz_app_summary.html</h4>
+<div id="outline-container-org4e0d56e" class="outline-4">
+<h4 id="org4e0d56e"><span class="section-number-4">10.12.6</span> quiz_app_summary.html</h4>
 <div class="outline-text-4" id="text-10-12-6">
 <div class="org-src-container">
 <pre class="src src-html">{% extends 'base.html' %}
@@ -1954,8 +1954,8 @@ answer.save()
 </div>
 </div>
 
-<div id="outline-container-org5e6303e" class="outline-4">
-<h4 id="org5e6303e"><span class="section-number-4">10.12.7</span> Quiz looks like this:</h4>
+<div id="outline-container-org514bde6" class="outline-4">
+<h4 id="org514bde6"><span class="section-number-4">10.12.7</span> Quiz looks like this:</h4>
 <div class="outline-text-4" id="text-10-12-7">
 <p>
 If there are answers to the quiz already for today - you won’t be able to do
@@ -1966,8 +1966,8 @@ the quiz. You can delete the entries before that. Weather api implementation
 </div>
 </div>
 
-<div id="outline-container-org5faa707" class="outline-2">
-<h2 id="org5faa707"><span class="section-number-2">11</span> code</h2>
+<div id="outline-container-orgf430d1a" class="outline-2">
+<h2 id="orgf430d1a"><span class="section-number-2">11</span> code</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 Using this as an api - Meteo.lt API
@@ -1978,8 +1978,8 @@ Display data from an api in html.
 </p>
 </div>
 
-<div id="outline-container-org932b464" class="outline-3">
-<h3 id="org932b464"><span class="section-number-3">11.1</span> Step 1 Create a separate django app</h3>
+<div id="outline-container-orgd9387be" class="outline-3">
+<h3 id="orgd9387be"><span class="section-number-3">11.1</span> Step 1 Create a separate django app</h3>
 <div class="outline-text-3" id="text-11-1">
 <p>
 add it to the project. Inside the app’s views.py write such code:
@@ -2056,8 +2056,8 @@ Then /templates/weather/weather_template.html can be like such:
 </div>
 </div>
 
-<div id="outline-container-org322dc05" class="outline-3">
-<h3 id="org322dc05"><span class="section-number-3">11.2</span> Step 2 Storing entries from an api in db</h3>
+<div id="outline-container-orgf626b74" class="outline-3">
+<h3 id="orgf626b74"><span class="section-number-3">11.2</span> Step 2 Storing entries from an api in db</h3>
 <div class="outline-text-3" id="text-11-2">
 <p>
 Let’s create a DB first. Inside app/model.py file:
@@ -2103,8 +2103,8 @@ data will be fetched and stored in the DB.
 </div>
 </div>
 
-<div id="outline-container-org6829926" class="outline-3">
-<h3 id="org6829926"><span class="section-number-3">11.3</span> Step 3 Displaying from an api AND storing to db</h3>
+<div id="outline-container-orgfeaa5b4" class="outline-3">
+<h3 id="orgfeaa5b4"><span class="section-number-3">11.3</span> Step 3 Displaying from an api AND storing to db</h3>
 <div class="outline-text-3" id="text-11-3">
 <p>
 Its possible to do this in one single views.py file. We must have
@@ -2266,8 +2266,8 @@ intervention.
 </div>
 </div>
 
-<div id="outline-container-orgd1b493e" class="outline-3">
-<h3 id="orgd1b493e"><span class="section-number-3">11.4</span> Step 4 Automating fetching and storing into DB with cron</h3>
+<div id="outline-container-orga31924d" class="outline-3">
+<h3 id="orga31924d"><span class="section-number-3">11.4</span> Step 4 Automating fetching and storing into DB with cron</h3>
 <div class="outline-text-3" id="text-11-4">
 <p>
 So since we don’t want fetch and storing to DB happen each time we
@@ -2386,8 +2386,8 @@ Check the DB to confirm that additional line was added.
 </div>
 </div>
 
-<div id="outline-container-orgd01aacc" class="outline-3">
-<h3 id="orgd01aacc"><span class="section-number-3">11.5</span> Step 5 creating cronjob</h3>
+<div id="outline-container-org0b98d54" class="outline-3">
+<h3 id="org0b98d54"><span class="section-number-3">11.5</span> Step 5 creating cronjob</h3>
 <div class="outline-text-3" id="text-11-5">
 <p>
 We don’t want to run this command manually daily, so let’s create a
@@ -2429,8 +2429,8 @@ Great!!
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:14</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:13</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:28</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:28</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2023-06-15 Thu 13:40</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

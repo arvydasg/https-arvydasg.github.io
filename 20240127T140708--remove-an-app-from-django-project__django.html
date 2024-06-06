@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-06 Thu 13:14 -->
+<!-- 2024-06-06 Thu 13:28 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Remove an app from django project</title>
@@ -28,7 +28,7 @@
  </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:13</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:28</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
@@ -38,10 +38,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga2bfff9">1. 1. making the app invisible from the UI</a></li>
-<li><a href="#orgec3852a">2. 2. Dealing with the DB table</a></li>
-<li><a href="#org045345c">3. 3. In PROD</a></li>
-<li><a href="#orgec299a9">4. 4. Delete the app folder</a></li>
+<li><a href="#org25b464c">1. 1. making the app invisible from the UI</a></li>
+<li><a href="#org4a93263">2. 2. Dealing with the DB table</a></li>
+<li><a href="#orgc71bc60">3. 3. In PROD</a></li>
+<li><a href="#org7c99e2a">4. 4. Delete the app folder</a></li>
 </ul>
 </div>
 </nav>
@@ -65,8 +65,8 @@ And below are the steps I took:
 Each heading can be a single commit. Do this step by step.
 </p>
 
-<div id="outline-container-orga2bfff9" class="outline-2">
-<h2 id="orga2bfff9"><span class="section-number-2">1</span> 1. making the app invisible from the UI</h2>
+<div id="outline-container-org25b464c" class="outline-2">
+<h2 id="org25b464c"><span class="section-number-2">1</span> 1. making the app invisible from the UI</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Hiding the links to the app (base.html, etc), removing it from project's
@@ -79,8 +79,8 @@ When you navigate in the page - you should not get any errors.
 </div>
 </div>
 
-<div id="outline-container-orgec3852a" class="outline-2">
-<h2 id="orgec3852a"><span class="section-number-2">2</span> 2. Dealing with the DB table</h2>
+<div id="outline-container-org4a93263" class="outline-2">
+<h2 id="org4a93263"><span class="section-number-2">2</span> 2. Dealing with the DB table</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Luckily my app did not have dependencies to other apps at this time. So it's quite simple.
@@ -119,8 +119,8 @@ Commit those changes.
 </div>
 </div>
 
-<div id="outline-container-org045345c" class="outline-2">
-<h2 id="org045345c"><span class="section-number-2">3</span> 3. In PROD</h2>
+<div id="outline-container-orgc71bc60" class="outline-2">
+<h2 id="orgc71bc60"><span class="section-number-2">3</span> 3. In PROD</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Pull the most recent repo changes, run <code>migrate</code> (since the newest deletion
@@ -149,8 +149,8 @@ Tables should no longer be there.
 </div>
 </div>
 
-<div id="outline-container-orgec299a9" class="outline-2">
-<h2 id="orgec299a9"><span class="section-number-2">4</span> 4. Delete the app folder</h2>
+<div id="outline-container-org7c99e2a" class="outline-2">
+<h2 id="org7c99e2a"><span class="section-number-2">4</span> 4. Delete the app folder</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Delete and commit.
@@ -168,8 +168,8 @@ Delete and commit.
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:14</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:13</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:28</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:28</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-01-27 Sat 14:07</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

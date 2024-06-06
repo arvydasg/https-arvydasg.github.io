@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-06 Thu 13:14 -->
+<!-- 2024-06-06 Thu 13:28 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Getting to know to built in django authentication system</title>
@@ -28,7 +28,7 @@
  </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:13</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:28</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
@@ -38,12 +38,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org479d280">1. Get to know to Django's built-in in authentication system</a></li>
-<li><a href="#org51231fe">2. Log In functionality</a></li>
-<li><a href="#org40b5a10">3. Log Out functionality</a></li>
-<li><a href="#org5ee4427">4. Sign Up functionality</a></li>
-<li><a href="#org5e74d40">5. Password Change</a></li>
-<li><a href="#org3082da7">6. Password Reset</a></li>
+<li><a href="#org99bdf56">1. Get to know to Django's built-in in authentication system</a></li>
+<li><a href="#org71aae1c">2. Log In functionality</a></li>
+<li><a href="#org72e5c5e">3. Log Out functionality</a></li>
+<li><a href="#orgb4e20be">4. Sign Up functionality</a></li>
+<li><a href="#org1f4a325">5. Password Change</a></li>
+<li><a href="#orgfee2c34">6. Password Reset</a></li>
 </ul>
 </div>
 </nav>
@@ -60,8 +60,8 @@ this post was replaced by it. The concepts below are still good to know and are
 very relevant.
 </p>
 
-<div id="outline-container-org479d280" class="outline-2">
-<h2 id="org479d280"><span class="section-number-2">1</span> Get to know to Django's built-in in authentication system</h2>
+<div id="outline-container-org99bdf56" class="outline-2">
+<h2 id="org99bdf56"><span class="section-number-2">1</span> Get to know to Django's built-in in authentication system</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 In this section, we'll configure a complete <a href="https://docs.djangoproject.com/en/5.0/topics/auth/">user authentication system</a> in
@@ -128,8 +128,8 @@ accounts/reset/done/ [<span style="font-weight: bold; font-style: italic;">name<
 </div>
 </div>
 
-<div id="outline-container-org51231fe" class="outline-2">
-<h2 id="org51231fe"><span class="section-number-2">2</span> Log In functionality</h2>
+<div id="outline-container-org71aae1c" class="outline-2">
+<h2 id="org71aae1c"><span class="section-number-2">2</span> Log In functionality</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Let's make our login page! By default, Django will look within a templates
@@ -227,8 +227,8 @@ earlier.
 </div>
 </div>
 
-<div id="outline-container-org40b5a10" class="outline-2">
-<h2 id="org40b5a10"><span class="section-number-2">3</span> Log Out functionality</h2>
+<div id="outline-container-org72e5c5e" class="outline-2">
+<h2 id="org72e5c5e"><span class="section-number-2">3</span> Log Out functionality</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 But how do we log out? The only option currently is to go into the admin panel
@@ -277,8 +277,8 @@ the <code>settings.py</code> file should look as follows:
 </div>
 </div>
 
-<div id="outline-container-org5ee4427" class="outline-2">
-<h2 id="org5ee4427"><span class="section-number-2">4</span> Sign Up functionality</h2>
+<div id="outline-container-orgb4e20be" class="outline-2">
+<h2 id="orgb4e20be"><span class="section-number-2">4</span> Sign Up functionality</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Now that we have sorted out logging in and logging out, it is time to add a
@@ -442,8 +442,8 @@ And then, after a successful login, you'll be redirected to the homepage.
 </div>
 </div>
 
-<div id="outline-container-org5e74d40" class="outline-2">
-<h2 id="org5e74d40"><span class="section-number-2">5</span> Password Change</h2>
+<div id="outline-container-org1f4a325" class="outline-2">
+<h2 id="org1f4a325"><span class="section-number-2">5</span> Password Change</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Django provides a default implementation of password change functionality. To
@@ -480,8 +480,8 @@ We can add a password change link to the <code>base.html</code>.
 </div>
 </div>
 
-<div id="outline-container-org3082da7" class="outline-2">
-<h2 id="org3082da7"><span class="section-number-2">6</span> Password Reset</h2>
+<div id="outline-container-orgfee2c34" class="outline-2">
+<h2 id="orgfee2c34"><span class="section-number-2">6</span> Password Reset</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 A password reset page is useful when a user forgets their log in information: a
@@ -589,8 +589,8 @@ override them.
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:14</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:13</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:28</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:28</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-05-31 Fri 08:42</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
