@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-14 Fri 10:38 -->
+<!-- 2024-06-14 Fri 10:44 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Installing monospaced font in nixos</title>
@@ -28,19 +28,31 @@
  </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-14 Fri 10:38</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-14 Fri 10:44</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
 <header>
 <h1 class="title">Installing monospaced font in nixos</h1>
 </header><p>
-At first it's related to company package. So created an issue -
+One day I have realized that it would be nice if Emacs would auto complete my
+writing. Not coding (have <a href="https://github.com/minad/corfu">corfu</a> for that), but writing. Remembered that
+<a href="https://company-mode.github.io/">company-mode</a> does that.
+</p>
+
+<p>
+Okay, installed company and then noticed that it's misbehaving.. So I created
+an issue -
 <a href="https://github.com/company-mode/company-mode/discussions/1475#discussioncomment-9732566">https://github.com/company-mode/company-mode/discussions/1475#discussioncomment-9732566</a>
 </p>
 
 <p>
-Then realized it's a problem with fonts.
+Then realized it's not a problem with company-mode, but it's a problem with
+fonts on my NixOS installation.
+</p>
+
+<p>
+Let's try to fix it:
 </p>
 
 <p>
@@ -103,8 +115,8 @@ Then everything was fixed. Wohoo!
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-14 Fri 10:38</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-14 Fri 10:38</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-14 Fri 10:44</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-14 Fri 10:44</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-06-13 Thu 10:40</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
