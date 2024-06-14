@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-06 Thu 13:28 -->
+<!-- 2024-06-14 Fri 10:39 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Print that info, tips for debugging django with print statements</title>
@@ -28,7 +28,7 @@
  </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-06 Thu 13:28</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-14 Fri 10:38</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
@@ -38,38 +38,38 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb2a2e9f">1. Print that info</a>
+<li><a href="#org4f95a42">1. Print that info</a>
 <ul>
-<li><a href="#org9a58949">1.1. Check out debug-toolbar package.</a></li>
-<li><a href="#org4314123">1.2. Print attributes through <code>__init__</code></a></li>
-<li><a href="#org95eb73c">1.3. Print <code>attrs, values, ojb, request</code> through <code>get_fields</code></a></li>
-<li><a href="#org40e17a9">1.4. See the <code>query</code> that django is executing</a></li>
-<li><a href="#orgcd46120">1.5. Fetch <code>opt</code> values. Write this in the template</a></li>
-<li><a href="#orgb3a3484">1.6. <code>opts</code> again</a></li>
-<li><a href="#org236a10f">1.7. Print the current object</a></li>
-<li><a href="#orga3cb0ba">1.8. Introspection!! Create an instance of a class and print out its attributes/methods</a></li>
-<li><a href="#orgb2a9349">1.9. Built in <code>dir</code> and <code>locals</code> methods</a></li>
-<li><a href="#orgfb8b0c6">1.10. Print <code>request</code> info on each page with <code>context_processor</code></a></li>
-<li><a href="#org90f2905">1.11. Print out ALL the CONTEXT variables</a></li>
-<li><a href="#orgc4f3f10">1.12. Print out ALL info about the object</a></li>
-<li><a href="#org22f4a78">1.13. Add a custom variable to object list</a></li>
-<li><a href="#orgf67ddac">1.14. _meta !!!!!!!!!!!</a></li>
-<li><a href="#org5ad0802">1.15. Create a debugging decorator! Printerino</a></li>
+<li><a href="#org3a3e02d">1.1. Check out debug-toolbar package.</a></li>
+<li><a href="#orgebac45a">1.2. Print attributes through <code>__init__</code></a></li>
+<li><a href="#org3e7803d">1.3. Print <code>attrs, values, ojb, request</code> through <code>get_fields</code></a></li>
+<li><a href="#orgd23f7e2">1.4. See the <code>query</code> that django is executing</a></li>
+<li><a href="#org58bfb97">1.5. Fetch <code>opt</code> values. Write this in the template</a></li>
+<li><a href="#org41c5679">1.6. <code>opts</code> again</a></li>
+<li><a href="#org887bf8e">1.7. Print the current object</a></li>
+<li><a href="#org49d8ff7">1.8. Introspection!! Create an instance of a class and print out its attributes/methods</a></li>
+<li><a href="#org1f1d25e">1.9. Built in <code>dir</code> and <code>locals</code> methods</a></li>
+<li><a href="#org45e10d4">1.10. Print <code>request</code> info on each page with <code>context_processor</code></a></li>
+<li><a href="#orga9c2dc2">1.11. Print out ALL the CONTEXT variables</a></li>
+<li><a href="#org56bb52c">1.12. Print out ALL info about the object</a></li>
+<li><a href="#orgff4c757">1.13. Add a custom variable to object list</a></li>
+<li><a href="#org9d25548">1.14. _meta !!!!!!!!!!!</a></li>
+<li><a href="#org5bb6751">1.15. Create a debugging decorator! Printerino</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgb2a2e9f" class="outline-2">
-<h2 id="orgb2a2e9f"><span class="section-number-2">1</span> Print that info</h2>
+<div id="outline-container-org4f95a42" class="outline-2">
+<h2 id="org4f95a42"><span class="section-number-2">1</span> Print that info</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org9a58949" class="outline-3">
-<h3 id="org9a58949"><span class="section-number-3">1.1</span> Check out <a href="https://django-debug-toolbar.readthedocs.io/en/latest/installation.html">debug-toolbar</a> package.</h3>
+<div id="outline-container-org3a3e02d" class="outline-3">
+<h3 id="org3a3e02d"><span class="section-number-3">1.1</span> Check out <a href="https://django-debug-toolbar.readthedocs.io/en/latest/installation.html">debug-toolbar</a> package.</h3>
 </div>
-<div id="outline-container-org4314123" class="outline-3">
-<h3 id="org4314123"><span class="section-number-3">1.2</span> Print attributes through <code>__init__</code></h3>
+<div id="outline-container-orgebac45a" class="outline-3">
+<h3 id="orgebac45a"><span class="section-number-3">1.2</span> Print attributes through <code>__init__</code></h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 In Django, when you define methods or attributes directly within a class body
@@ -123,8 +123,8 @@ __init__.
 </div>
 </div>
 
-<div id="outline-container-org95eb73c" class="outline-3">
-<h3 id="org95eb73c"><span class="section-number-3">1.3</span> Print <code>attrs, values, ojb, request</code> through <code>get_fields</code></h3>
+<div id="outline-container-org3e7803d" class="outline-3">
+<h3 id="org3e7803d"><span class="section-number-3">1.3</span> Print <code>attrs, values, ojb, request</code> through <code>get_fields</code></h3>
 <div class="outline-text-3" id="text-1-3">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> django.contrib <span style="font-weight: bold;">import</span> admin
@@ -195,8 +195,8 @@ admin.site.register(Collateral)
 </div>
 </div>
 
-<div id="outline-container-org40e17a9" class="outline-3">
-<h3 id="org40e17a9"><span class="section-number-3">1.4</span> See the <code>query</code> that django is executing</h3>
+<div id="outline-container-orgd23f7e2" class="outline-3">
+<h3 id="orgd23f7e2"><span class="section-number-3">1.4</span> See the <code>query</code> that django is executing</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Multiple ways to SEE the SQL that Django executes: 8 different ways -
@@ -234,8 +234,8 @@ installation can do: <code>python manage.py shell_plus --print-sql</code>
 </div>
 </div>
 
-<div id="outline-container-orgcd46120" class="outline-3">
-<h3 id="orgcd46120"><span class="section-number-3">1.5</span> Fetch <code>opt</code> values. Write this in the template</h3>
+<div id="outline-container-org58bfb97" class="outline-3">
+<h3 id="org58bfb97"><span class="section-number-3">1.5</span> Fetch <code>opt</code> values. Write this in the template</h3>
 <div class="outline-text-3" id="text-1-5">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="font-weight: bold;">script</span>&gt;
@@ -255,8 +255,8 @@ installation can do: <code>python manage.py shell_plus --print-sql</code>
 </div>
 </div>
 
-<div id="outline-container-orgb3a3484" class="outline-3">
-<h3 id="orgb3a3484"><span class="section-number-3">1.6</span> <code>opts</code> again</h3>
+<div id="outline-container-org41c5679" class="outline-3">
+<h3 id="org41c5679"><span class="section-number-3">1.6</span> <code>opts</code> again</h3>
 <div class="outline-text-3" id="text-1-6">
 <div class="org-src-container">
 <pre class="src src-html">{% extends "admin/change_form.html" %}
@@ -292,8 +292,8 @@ console.log("Model name: {{ opts.model_name }}");
 </div>
 </div>
 
-<div id="outline-container-org236a10f" class="outline-3">
-<h3 id="org236a10f"><span class="section-number-3">1.7</span> Print the current object</h3>
+<div id="outline-container-org887bf8e" class="outline-3">
+<h3 id="org887bf8e"><span class="section-number-3">1.7</span> Print the current object</h3>
 <div class="outline-text-3" id="text-1-7">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">QuoteUpdateView</span>(UpdateView):
@@ -323,8 +323,8 @@ console.log("Model name: {{ opts.model_name }}");
 </div>
 </div>
 
-<div id="outline-container-orga3cb0ba" class="outline-3">
-<h3 id="orga3cb0ba"><span class="section-number-3">1.8</span> Introspection!! Create an instance of a class and print out its attributes/methods</h3>
+<div id="outline-container-org49d8ff7" class="outline-3">
+<h3 id="org49d8ff7"><span class="section-number-3">1.8</span> Introspection!! Create an instance of a class and print out its attributes/methods</h3>
 <div class="outline-text-3" id="text-1-8">
 <p>
 Was trying to find out the csss that is being used for autocomplete widget.
@@ -369,8 +369,8 @@ where the stylesheets are, can override them.
 </div>
 </div>
 
-<div id="outline-container-orgb2a9349" class="outline-3">
-<h3 id="orgb2a9349"><span class="section-number-3">1.9</span> Built in <code>dir</code> and <code>locals</code> methods</h3>
+<div id="outline-container-org1f1d25e" class="outline-3">
+<h3 id="org1f1d25e"><span class="section-number-3">1.9</span> Built in <code>dir</code> and <code>locals</code> methods</h3>
 <div class="outline-text-3" id="text-1-9">
 <p>
 See current local scope
@@ -385,8 +385,8 @@ Locals()
 </div>
 </div>
 
-<div id="outline-container-orgfb8b0c6" class="outline-3">
-<h3 id="orgfb8b0c6"><span class="section-number-3">1.10</span> Print <code>request</code> info on each page with <code>context_processor</code></h3>
+<div id="outline-container-org45e10d4" class="outline-3">
+<h3 id="org45e10d4"><span class="section-number-3">1.10</span> Print <code>request</code> info on each page with <code>context_processor</code></h3>
 <div class="outline-text-3" id="text-1-10">
 <p>
 Can probably do it in the shell or views.py, but another way, to do it for
@@ -423,8 +423,8 @@ Then in template:
 </div>
 </div>
 
-<div id="outline-container-org90f2905" class="outline-3">
-<h3 id="org90f2905"><span class="section-number-3">1.11</span> Print out ALL the CONTEXT variables</h3>
+<div id="outline-container-orga9c2dc2" class="outline-3">
+<h3 id="orga9c2dc2"><span class="section-number-3">1.11</span> Print out ALL the CONTEXT variables</h3>
 <div class="outline-text-3" id="text-1-11">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">OneListView</span>(generic.ListView):
@@ -451,8 +451,8 @@ Result:
 </div>
 </div>
 
-<div id="outline-container-orgc4f3f10" class="outline-3">
-<h3 id="orgc4f3f10"><span class="section-number-3">1.12</span> Print out ALL info about the object</h3>
+<div id="outline-container-org56bb52c" class="outline-3">
+<h3 id="org56bb52c"><span class="section-number-3">1.12</span> Print out ALL info about the object</h3>
 <div class="outline-text-3" id="text-1-12">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">OneListView</span>(ListView):
@@ -490,8 +490,8 @@ Result:
 </div>
 </div>
 
-<div id="outline-container-org22f4a78" class="outline-3">
-<h3 id="org22f4a78"><span class="section-number-3">1.13</span> Add a custom variable to object list</h3>
+<div id="outline-container-orgff4c757" class="outline-3">
+<h3 id="orgff4c757"><span class="section-number-3">1.13</span> Add a custom variable to object list</h3>
 <div class="outline-text-3" id="text-1-13">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">from</span> django.shortcuts <span style="font-weight: bold;">import</span> render
@@ -540,8 +540,8 @@ Can then use it in the templates like so:
 </div>
 </div>
 
-<div id="outline-container-orgf67ddac" class="outline-3">
-<h3 id="orgf67ddac"><span class="section-number-3">1.14</span> _meta !!!!!!!!!!!</h3>
+<div id="outline-container-org9d25548" class="outline-3">
+<h3 id="org9d25548"><span class="section-number-3">1.14</span> _meta !!!!!!!!!!!</h3>
 <div class="outline-text-3" id="text-1-14">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">TwoListView</span>(ListView):
@@ -555,8 +555,8 @@ Can then use it in the templates like so:
 </div>
 </div>
 
-<div id="outline-container-org5ad0802" class="outline-3">
-<h3 id="org5ad0802"><span class="section-number-3">1.15</span> Create a debugging decorator! Printerino</h3>
+<div id="outline-container-org5bb6751" class="outline-3">
+<h3 id="org5bb6751"><span class="section-number-3">1.15</span> Create a debugging decorator! Printerino</h3>
 <div class="outline-text-3" id="text-1-15">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">def</span> <span style="font-weight: bold;">printerino</span>(cls):
@@ -625,8 +625,8 @@ Then to use it in the python code, add this above the classes:  <code>@printerin
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-06 Thu 13:28</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-06 Thu 13:28</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-14 Fri 10:39</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-14 Fri 10:38</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-05-29 Wed 17:16</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

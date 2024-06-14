@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-14 Fri 10:39 -->
+<!-- 2024-06-14 Fri 10:38 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vim - hardcore</title>
+<title>Installing monospaced font in nixos</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Arvydas Gasparavicius">
 <meta name="description" content="Welcome to my devnotes site"
@@ -33,58 +33,79 @@
 </div>
 <div id="content">
 <header>
-<h1 class="title">Vim - hardcore</h1>
-</header>
-<figure>
-<img src="./media/vim-html.png" alt="vim-html.png" width="1200px">
-
-</figure>
-
-<p>
-Some random vim - okay I can not Not share <a href="https://www.youtube.com/watch?v=c68MkeMBjhE">this</a>. During my long pomodoro break
-I found this vim shortcut tutorial. Learned a bunch. You can use numbers in the
-commands? Mindblown.
+<h1 class="title">Installing monospaced font in nixos</h1>
+</header><p>
+At first it's related to company package. So created an issue -
+<a href="https://github.com/company-mode/company-mode/discussions/1475#discussioncomment-9732566">https://github.com/company-mode/company-mode/discussions/1475#discussioncomment-9732566</a>
 </p>
 
 <p>
-I think I will also install some plugins for my vim. Been using it raw since I
-first installed it. Making these pages is quite slow when you constantly have
-to add paragraphs, make lists, make the text bald and etc, so I think emmet-vim
-is a good first pluging for me. Later I would like something that would
-auto-correct my text lol since I am still getting used to homerow key typing and
-making some mistakes from time to time (although surprisingly no mistakes in
-the last sentence :o). Aaand what else. It would be nice to browse throuhgt my
-system in vim, to acces files quickly, hm ah yeah, this thing called syntax
-highlighting would also be nice. That might be in one of the plugins that the
-guy above in the picture has.
+Then realized it's a problem with fonts.
 </p>
 
 <p>
-You don't imagine how often I think about just using sublime or some other code
-editor environment where everything looks so nice and colorful. But then I
-remember all those hardcore dudes on youtube that tell you to use vim, since
-after climbing that steep learning curve it's all smooth sailing from there. I
-wouldn't want to believe them blindly, but when I am using octave for example
-or some other program, can't remember which, AND I get to use the same keybinds
-like in vim or in linux in general, I get shocked! If I learn vim and linux I
-can pretty much do and edit stuff anywhere, the workflow will be so smooth! So
-yeah, sticking with vim for now, will try to get some plugins, maybe it will
-make my experience more enjoyable :)
+Check the fonts on nixos:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">nixos-option fonts.packages
+</pre>
+</div>
+
+<p>
+List the fonts:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">fc-list
+</pre>
+</div>
+
+<p>
+Got recommended to install fira-code font.
+</p>
+
+<p>
+On work machine nixos installed it as such (emacs used it by default):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">fire-code monospace font, so stuff is aligned in Emacs</span>
+fira-code
+</pre>
+</div>
+
+<p>
+AT home machine installed as such(for some reason had to explicitly apply the
+font also):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">installing monospaced font so stuff aligns well in Emacs</span>
+fira-code
+
+fonts = {
+    enableDefaultFonts = true;
+    fonts = with pkgs; [ fira-code ];
+};
+</pre>
+</div>
+
+<p>
+Then everything was fixed. Wohoo!
 </p>
 </div>
 <div id="postamble" class="status">
 <hr/>
 	 <footer>
-	 <p class="date generated">This note is <u>first written</u>: 2021-03-15 Mon 18:18</p>
+	 <p class="date generated">This note is <u>first written</u>: 2024-06-13 Thu 10:40</p>
 	 <div class="copyright-container generated">
 	 <div class="copyright">
 	 Copyright &copy; 2023-2024 Arvydas Gasparavicius
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-14 Fri 10:39</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-14 Fri 10:38</p> -->
 	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-14 Fri 10:38</p> -->
-	 <!-- <p class="date">This org file is <u>created</u>: 2021-03-15 Mon 18:18</p> -->
+	 <!-- <p class="date">This org file is <u>created</u>: 2024-06-13 Thu 10:40</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
 	</div>
