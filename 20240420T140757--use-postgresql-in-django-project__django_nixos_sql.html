@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-14 Fri 10:45 -->
+<!-- 2024-06-18 Tue 05:10 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Use PostgreSQL in django project</title>
@@ -28,7 +28,7 @@
  </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-14 Fri 10:44</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-18 Tue 05:09</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
@@ -38,26 +38,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1a0fa97">1. Create a local postgresql db instance over pgAdmin</a></li>
-<li><a href="#org8c4928e">2. Preparation for connection for both Linux and Windows</a>
+<li><a href="#orgac53c73">1. Create a local postgresql db instance over pgAdmin</a></li>
+<li><a href="#orgd680047">2. Preparation for connection for both Linux and Windows</a>
 <ul>
-<li><a href="#orga70b64d">2.1. Install psycopg2 python package</a></li>
-<li><a href="#org9c14b61">2.2. Modify <code>settings.py</code> of the Django app</a></li>
-<li><a href="#org2b6bc38">2.3. Set up the .env file:</a></li>
+<li><a href="#org6af749d">2.1. Install psycopg2 python package</a></li>
+<li><a href="#org2cd6ea4">2.2. Modify <code>settings.py</code> of the Django app</a></li>
+<li><a href="#org7b9423b">2.3. Set up the .env file:</a></li>
 </ul>
 </li>
-<li><a href="#orgf24619d">3. Connect to a local PostgreSQL instance over Windows</a>
+<li><a href="#orgfccbcf7">3. Connect to a local PostgreSQL instance over Windows</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orge867085">3.0.1. Connect to the postgresql db over windows terminal</a></li>
-<li><a href="#orgb11bdcb">3.0.2. Run a Django app</a></li>
+<li><a href="#orgec2ae14">3.0.1. Connect to the postgresql db over windows terminal</a></li>
+<li><a href="#orgdb41d58">3.0.2. Run a Django app</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgcdf9900">4. Connect to a local PostgreSQL instance over Linux(NixOS)</a></li>
-<li><a href="#org0512d99">5. Connect to a remote PostgreSQL instance that runs on Railway</a></li>
+<li><a href="#org211adaa">4. Connect to a local PostgreSQL instance over Linux(NixOS)</a></li>
+<li><a href="#orgc3fb3ba">5. Connect to a remote PostgreSQL instance that runs on Railway</a></li>
 </ul>
 </div>
 </nav>
@@ -74,8 +74,8 @@ PostgreSQL is recommended database for production Django project.
 <li><a href="https://stackpython.medium.com/how-to-start-django-project-with-a-database-postgresql-aaa1d74659d8">https://stackpython.medium.com/how-to-start-django-project-with-a-database-postgresql-aaa1d74659d8</a></li>
 </ul>
 
-<div id="outline-container-org1a0fa97" class="outline-2">
-<h2 id="org1a0fa97"><span class="section-number-2">1</span> Create a local postgresql db instance over pgAdmin</h2>
+<div id="outline-container-orgac53c73" class="outline-2">
+<h2 id="orgac53c73"><span class="section-number-2">1</span> Create a local postgresql db instance over pgAdmin</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Download "pgADmin 4"(or the newest version) tool.
@@ -101,12 +101,12 @@ password - yourStrongPassword1
 </div>
 </div>
 
-<div id="outline-container-org8c4928e" class="outline-2">
-<h2 id="org8c4928e"><span class="section-number-2">2</span> Preparation for connection for both Linux and Windows</h2>
+<div id="outline-container-orgd680047" class="outline-2">
+<h2 id="orgd680047"><span class="section-number-2">2</span> Preparation for connection for both Linux and Windows</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orga70b64d" class="outline-3">
-<h3 id="orga70b64d"><span class="section-number-3">2.1</span> Install psycopg2 python package</h3>
+<div id="outline-container-org6af749d" class="outline-3">
+<h3 id="org6af749d"><span class="section-number-3">2.1</span> Install psycopg2 python package</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Different on windows and linux because of this -
@@ -131,8 +131,8 @@ On linux:
 </div>
 </div>
 
-<div id="outline-container-org9c14b61" class="outline-3">
-<h3 id="org9c14b61"><span class="section-number-3">2.2</span> Modify <code>settings.py</code> of the Django app</h3>
+<div id="outline-container-org2cd6ea4" class="outline-3">
+<h3 id="org2cd6ea4"><span class="section-number-3">2.2</span> Modify <code>settings.py</code> of the Django app</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Add postgresql entry next to the default sqlite database:
@@ -172,8 +172,8 @@ Like so:
 </div>
 </div>
 
-<div id="outline-container-org2b6bc38" class="outline-3">
-<h3 id="org2b6bc38"><span class="section-number-3">2.3</span> Set up the .env file:</h3>
+<div id="outline-container-org7b9423b" class="outline-3">
+<h3 id="org7b9423b"><span class="section-number-3">2.3</span> Set up the .env file:</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Make sure you write the correct values of the database from the step above into
@@ -192,12 +192,12 @@ your <code>.env</code> file:
 </div>
 </div>
 
-<div id="outline-container-orgf24619d" class="outline-2">
-<h2 id="orgf24619d"><span class="section-number-2">3</span> Connect to a local PostgreSQL instance over Windows</h2>
+<div id="outline-container-orgfccbcf7" class="outline-2">
+<h2 id="orgfccbcf7"><span class="section-number-2">3</span> Connect to a local PostgreSQL instance over Windows</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orge867085" class="outline-4">
-<h4 id="orge867085"><span class="section-number-4">3.0.1</span> Connect to the postgresql db over windows terminal</h4>
+<div id="outline-container-orgec2ae14" class="outline-4">
+<h4 id="orgec2ae14"><span class="section-number-4">3.0.1</span> Connect to the postgresql db over windows terminal</h4>
 <div class="outline-text-4" id="text-3-0-1">
 <p>
 The db can be locally running.
@@ -238,8 +238,8 @@ SELECT * FROM pg_catalog.pg_tables;
 </div>
 </div>
 
-<div id="outline-container-orgb11bdcb" class="outline-4">
-<h4 id="orgb11bdcb"><span class="section-number-4">3.0.2</span> Run a Django app</h4>
+<div id="outline-container-orgdb41d58" class="outline-4">
+<h4 id="orgdb41d58"><span class="section-number-4">3.0.2</span> Run a Django app</h4>
 <div class="outline-text-4" id="text-3-0-2">
 <p>
 On windows it's easy, since pgadmin4 is installed on windows - you will connect
@@ -254,8 +254,8 @@ If the above connection works, running Django app should work just fine also.
 </div>
 
 
-<div id="outline-container-orgcdf9900" class="outline-2">
-<h2 id="orgcdf9900"><span class="section-number-2">4</span> Connect to a local PostgreSQL instance over Linux(NixOS)</h2>
+<div id="outline-container-org211adaa" class="outline-2">
+<h2 id="org211adaa"><span class="section-number-2">4</span> Connect to a local PostgreSQL instance over Linux(NixOS)</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 First, add <code>postgresql</code> to installed apps of NixOS.
@@ -399,8 +399,8 @@ postgresql db that runs on WSL host machine - Windows.
 </div>
 </div>
 
-<div id="outline-container-org0512d99" class="outline-2">
-<h2 id="org0512d99"><span class="section-number-2">5</span> Connect to a remote PostgreSQL instance that runs on Railway</h2>
+<div id="outline-container-orgc3fb3ba" class="outline-2">
+<h2 id="orgc3fb3ba"><span class="section-number-2">5</span> Connect to a remote PostgreSQL instance that runs on Railway</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Did not find any simpler remote development than this - <a href="https://railway.app/">https://railway.app/</a>
@@ -443,8 +443,8 @@ virutal environment</li>
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-14 Fri 10:45</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-14 Fri 10:44</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-18 Tue 05:10</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-18 Tue 05:09</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2024-04-20 Sat 14:07</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
