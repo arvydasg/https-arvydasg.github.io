@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-18 Tue 05:12 -->
+<!-- 2024-06-19 Wed 13:14 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Build a website with emacs and org-static-blog</title>
@@ -28,7 +28,7 @@
  </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-18 Tue 05:12</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-19 Wed 13:13</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
@@ -38,23 +38,23 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4e74d2c">1. Docs</a></li>
-<li><a href="#org06799bc">2. Installation</a></li>
-<li><a href="#orgce991fe">3. Try using the minimal config</a></li>
-<li><a href="#org7813736">4. Decide where to place the configuration</a></li>
-<li><a href="#org545ef7c">5. My configuration as of <span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span></a></li>
-<li><a href="#org26e8355">6. CSS</a>
+<li><a href="#orgb4f9eec">1. Docs</a></li>
+<li><a href="#org8bf3247">2. Installation</a></li>
+<li><a href="#org7cd69bd">3. Try using the minimal config</a></li>
+<li><a href="#orgf12224d">4. Decide where to place the configuration</a></li>
+<li><a href="#orgb6c18d9">5. My configuration as of <span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span></a></li>
+<li><a href="#orgda887b5">6. CSS</a>
 <ul>
-<li><a href="#org794d1dc">6.1. use CSS built in css from ox-html</a></li>
-<li><a href="#org94c53ef">6.2. org-html-themes</a></li>
+<li><a href="#org3333d03">6.1. use CSS built in css from ox-html</a></li>
+<li><a href="#org559b5d2">6.2. org-html-themes</a></li>
 </ul>
 </li>
-<li><a href="#org690104d">7. pros/cons</a>
+<li><a href="#org659bdfe">7. pros/cons</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orge4525f1">7.0.1. PROS</a></li>
-<li><a href="#org71bf41c">7.0.2. CONS</a></li>
+<li><a href="#org6a5e9db">7.0.1. PROS</a></li>
+<li><a href="#org2c5d866">7.0.2. CONS</a></li>
 </ul>
 </li>
 </ul>
@@ -63,8 +63,8 @@
 </div>
 </nav>
 
-<div id="outline-container-org4e74d2c" class="outline-2">
-<h2 id="org4e74d2c"><span class="section-number-2">1</span> Docs</h2>
+<div id="outline-container-orgb4f9eec" class="outline-2">
+<h2 id="orgb4f9eec"><span class="section-number-2">1</span> Docs</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Official docs - <a href="https://github.com/bastibe/org-static-blog">https://github.com/bastibe/org-static-blog</a>
@@ -72,8 +72,8 @@ Official docs - <a href="https://github.com/bastibe/org-static-blog">https://git
 </div>
 </div>
 
-<div id="outline-container-org06799bc" class="outline-2">
-<h2 id="org06799bc"><span class="section-number-2">2</span> Installation</h2>
+<div id="outline-container-org8bf3247" class="outline-2">
+<h2 id="org8bf3247"><span class="section-number-2">2</span> Installation</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package org-static-blog
@@ -83,8 +83,8 @@ Official docs - <a href="https://github.com/bastibe/org-static-blog">https://git
 </div>
 </div>
 
-<div id="outline-container-orgce991fe" class="outline-2">
-<h2 id="orgce991fe"><span class="section-number-2">3</span> Try using the minimal config</h2>
+<div id="outline-container-org7cd69bd" class="outline-2">
+<h2 id="org7cd69bd"><span class="section-number-2">3</span> Try using the minimal config</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Taken from the docs.
@@ -147,8 +147,8 @@ site not to write repetitive code for each! Great!
 </p>
 </div>
 </div>
-<div id="outline-container-org7813736" class="outline-2">
-<h2 id="org7813736"><span class="section-number-2">4</span> Decide where to place the configuration</h2>
+<div id="outline-container-orgf12224d" class="outline-2">
+<h2 id="orgf12224d"><span class="section-number-2">4</span> Decide where to place the configuration</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Now the configuration above might get large if you start modifying the head,
@@ -275,8 +275,8 @@ the end it will print out "Build complete!"
 </div>
 </div>
 
-<div id="outline-container-org545ef7c" class="outline-2">
-<h2 id="org545ef7c"><span class="section-number-2">5</span> My configuration as of <span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span></h2>
+<div id="outline-container-orgb6c18d9" class="outline-2">
+<h2 id="orgb6c18d9"><span class="section-number-2">5</span> My configuration as of <span class="timestamp-wrapper"><span class="timestamp">[2023-12-19 Tue]</span></span></h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Stopped using it before I went to build devnotes site with ox-publish -
@@ -352,12 +352,12 @@ Stopped using it before I went to build devnotes site with ox-publish -
 </div>
 </div>
 </div>
-<div id="outline-container-org26e8355" class="outline-2">
-<h2 id="org26e8355"><span class="section-number-2">6</span> CSS</h2>
+<div id="outline-container-orgda887b5" class="outline-2">
+<h2 id="orgda887b5"><span class="section-number-2">6</span> CSS</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org794d1dc" class="outline-3">
-<h3 id="org794d1dc"><span class="section-number-3">6.1</span> use CSS built in css from ox-html</h3>
+<div id="outline-container-org3333d03" class="outline-3">
+<h3 id="org3333d03"><span class="section-number-3">6.1</span> use CSS built in css from ox-html</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 We can customize <code>org-static-blog-page-header</code> and add your custom css
@@ -385,8 +385,8 @@ keep the first option that I have suggested with style.css file.
 </p>
 </div>
 </div>
-<div id="outline-container-org94c53ef" class="outline-3">
-<h3 id="org94c53ef"><span class="section-number-3">6.2</span> org-html-themes</h3>
+<div id="outline-container-org559b5d2" class="outline-3">
+<h3 id="org559b5d2"><span class="section-number-3">6.2</span> org-html-themes</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 ORRR last thing that you can try when it comes to styling your website, try
@@ -420,12 +420,12 @@ using my own custom stylesheet.
 </div>
 </div>
 
-<div id="outline-container-org690104d" class="outline-2">
-<h2 id="org690104d"><span class="section-number-2">7</span> pros/cons</h2>
+<div id="outline-container-org659bdfe" class="outline-2">
+<h2 id="org659bdfe"><span class="section-number-2">7</span> pros/cons</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orge4525f1" class="outline-4">
-<h4 id="orge4525f1"><span class="section-number-4">7.0.1</span> PROS</h4>
+<div id="outline-container-org6a5e9db" class="outline-4">
+<h4 id="org6a5e9db"><span class="section-number-4">7.0.1</span> PROS</h4>
 <div class="outline-text-4" id="text-7-0-1">
 <ul class="org-ul">
 <li>does everything for you</li>
@@ -437,8 +437,8 @@ using my own custom stylesheet.
 </div>
 </div>
 
-<div id="outline-container-org71bf41c" class="outline-4">
-<h4 id="org71bf41c"><span class="section-number-4">7.0.2</span> CONS</h4>
+<div id="outline-container-org2c5d866" class="outline-4">
+<h4 id="org2c5d866"><span class="section-number-4">7.0.2</span> CONS</h4>
 <div class="outline-text-4" id="text-7-0-2">
 <ul class="org-ul">
 <li>big program(installable package, not built in)</li>
@@ -459,8 +459,8 @@ using my own custom stylesheet.
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-18 Tue 05:12</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-18 Tue 05:12</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-19 Wed 13:14</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-19 Wed 13:13</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2023-12-19 Tue 05:19</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

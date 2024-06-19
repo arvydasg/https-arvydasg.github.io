@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-18 Tue 05:12 -->
+<!-- 2024-06-19 Wed 13:14 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Run Multiple Flask Applications from the same server</title>
@@ -28,7 +28,7 @@
  </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-18 Tue 05:12</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-19 Wed 13:13</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
@@ -38,13 +38,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orged703c1">1. Why I Wanted to Run Multiple Flask Applications</a></li>
-<li><a href="#org36fb928">2. How to Configure Flask Application Dispatching</a></li>
-<li><a href="#org1d2d3fd">3. Set up the Separate Applications</a></li>
-<li><a href="#orgf55467f">4. Combine the Applications</a></li>
-<li><a href="#orgb99dfd5">5. Invoke a Development Server</a></li>
-<li><a href="#org974382f">6. Running both apps</a></li>
-<li><a href="#orgbad1806">7. Conclusion</a></li>
+<li><a href="#org87ea9bc">1. Why I Wanted to Run Multiple Flask Applications</a></li>
+<li><a href="#orgf604086">2. How to Configure Flask Application Dispatching</a></li>
+<li><a href="#org29e28c7">3. Set up the Separate Applications</a></li>
+<li><a href="#orga1018fc">4. Combine the Applications</a></li>
+<li><a href="#org1731441">5. Invoke a Development Server</a></li>
+<li><a href="#org78ca611">6. Running both apps</a></li>
+<li><a href="#org73c5a9a">7. Conclusion</a></li>
 </ul>
 </div>
 </nav>
@@ -66,8 +66,8 @@ instead of by accessing a different port. Application dispatching
 seems to be a solution.
 </p>
 
-<div id="outline-container-orged703c1" class="outline-2">
-<h2 id="orged703c1"><span class="section-number-2">1</span> Why I Wanted to Run Multiple Flask Applications</h2>
+<div id="outline-container-org87ea9bc" class="outline-2">
+<h2 id="org87ea9bc"><span class="section-number-2">1</span> Why I Wanted to Run Multiple Flask Applications</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 As a part of my <a href="https://arvydas.dev/codeacademy/">CodeAcademy</a> Python journey I decided to set up a
@@ -93,8 +93,8 @@ you can run them in the same interpreter side by side if you want.
 </div>
 </div>
 
-<div id="outline-container-org36fb928" class="outline-2">
-<h2 id="org36fb928"><span class="section-number-2">2</span> How to Configure Flask Application Dispatching</h2>
+<div id="outline-container-orgf604086" class="outline-2">
+<h2 id="orgf604086"><span class="section-number-2">2</span> How to Configure Flask Application Dispatching</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Setting this up is relatively straightforward when you take a modular
@@ -109,8 +109,8 @@ approach.
 </div>
 </div>
 
-<div id="outline-container-org1d2d3fd" class="outline-2">
-<h2 id="org1d2d3fd"><span class="section-number-2">3</span> Set up the Separate Applications</h2>
+<div id="outline-container-org29e28c7" class="outline-2">
+<h2 id="org29e28c7"><span class="section-number-2">3</span> Set up the Separate Applications</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Here are 2 Flask applications:
@@ -150,8 +150,8 @@ flask_app_1
 </div>
 </div>
 
-<div id="outline-container-orgf55467f" class="outline-2">
-<h2 id="orgf55467f"><span class="section-number-2">4</span> Combine the Applications</h2>
+<div id="outline-container-orga1018fc" class="outline-2">
+<h2 id="orga1018fc"><span class="section-number-2">4</span> Combine the Applications</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 You will utilize the Werkzeug <a href="https://werkzeug.palletsprojects.com/en/2.2.x/middleware/dispatcher/">Dispatcher Middleware</a>. flask_app_1 will
@@ -171,8 +171,8 @@ run on “/” and flask_app_2 will run on “/flask_app_2”.
 </div>
 </div>
 
-<div id="outline-container-orgb99dfd5" class="outline-2">
-<h2 id="orgb99dfd5"><span class="section-number-2">5</span> Invoke a Development Server</h2>
+<div id="outline-container-org1731441" class="outline-2">
+<h2 id="org1731441"><span class="section-number-2">5</span> Invoke a Development Server</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Here is a small file that calls the <a href="https://werkzeug.palletsprojects.com/en/2.2.x/serving/#werkzeug.serving.run_simple">Werkzeug Run Simple</a> server that is
@@ -191,8 +191,8 @@ suitable for development. <code>For deployment</code>, you’ll need to configur
 </div>
 </div>
 
-<div id="outline-container-org974382f" class="outline-2">
-<h2 id="org974382f"><span class="section-number-2">6</span> Running both apps</h2>
+<div id="outline-container-org78ca611" class="outline-2">
+<h2 id="org78ca611"><span class="section-number-2">6</span> Running both apps</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-python">python3 run.py
@@ -213,8 +213,8 @@ suitable for development. <code>For deployment</code>, you’ll need to configur
 </div>
 </div>
 
-<div id="outline-container-orgbad1806" class="outline-2">
-<h2 id="orgbad1806"><span class="section-number-2">7</span> Conclusion</h2>
+<div id="outline-container-org73c5a9a" class="outline-2">
+<h2 id="org73c5a9a"><span class="section-number-2">7</span> Conclusion</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 As stated before, this is a simple setup that only requires a modular approach
@@ -240,8 +240,8 @@ and clone it to get a working example.
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-18 Tue 05:12</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-18 Tue 05:12</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-19 Wed 13:14</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-19 Wed 13:13</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2023-02-06 Mon 05:39</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>

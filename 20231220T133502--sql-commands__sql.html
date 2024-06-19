@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-06-18 Tue 05:12 -->
+<!-- 2024-06-19 Wed 13:14 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SQL commands</title>
@@ -28,7 +28,7 @@
  </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-06-18 Tue 05:12</div> -->
+	 <!-- <div id="updated">Updated: 2024-06-19 Wed 13:13</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
@@ -68,6 +68,32 @@ Select a few objects
 <pre class="src src-sql"><span style="font-weight: bold;">SELECT</span> *
 <span style="font-weight: bold;">FROM</span> Vessel
 <span style="font-weight: bold;">WHERE</span> vessel_code <span style="font-weight: bold;">IN</span> (<span style="font-style: italic;">'7324211'</span>, <span style="font-style: italic;">'88888'</span>);
+</pre>
+</div>
+
+<p>
+Create a table
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold; font-style: italic;">-- Switch to the database</span>
+USE maint;
+
+<span style="font-weight: bold; font-style: italic;">-- Create the table</span>
+<span style="font-weight: bold;">CREATE</span> <span style="font-weight: bold;">TABLE</span> <span style="font-weight: bold;">ag_test</span> (
+    <span style="font-weight: bold;">name</span> <span style="font-weight: bold; text-decoration: underline;">VARCHAR</span>(100) <span style="font-weight: bold;">NOT</span> <span style="font-weight: bold;">NULL</span>
+);
+</pre>
+</div>
+
+<p>
+Drop the table
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold; font-style: italic;">-- Switch to the database</span>
+USE maint;
+
+<span style="font-weight: bold; font-style: italic;">-- Drop the table</span>
+<span style="font-weight: bold;">DROP</span> <span style="font-weight: bold;">TABLE</span> <span style="font-weight: bold;">ag_test</span>;
 </pre>
 </div>
 
@@ -132,8 +158,8 @@ Insert into
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-18 Tue 05:12</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-18 Tue 05:12</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-06-19 Wed 13:14</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-06-19 Wed 13:13</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2023-12-20 Wed 13:35</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
