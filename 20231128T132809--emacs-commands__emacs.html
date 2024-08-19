@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-07-11 Thu 05:31 -->
+<!-- 2024-08-19 Mon 08:17 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs commands</title>
@@ -28,7 +28,7 @@
  </div><div id="preamble" class="status">
 
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <div id="updated">Updated: 2024-07-11 Thu 05:30</div> -->
+	 <!-- <div id="updated">Updated: 2024-08-19 Mon 08:17</div> -->
 	  <div id="google_translate_element" style="float:right;"></div>
 </div>
 <div id="content">
@@ -38,38 +38,38 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org96dbbcc">1. 2024-02-12 I have decided to put emacs on the shelf for a little while</a></li>
-<li><a href="#orgd5f219b">2. Emacs commands (from work)</a>
+<li><a href="#orgdaf95b3">1. 2024-02-12 I have decided to put emacs on the shelf for a little while</a></li>
+<li><a href="#orgabd07c6">2. Emacs commands (from work)</a>
 <ul>
-<li><a href="#org3f7ff99">2.1. C-c C-e m M (org-md-export-as-markdown)</a></li>
-<li><a href="#org3426f72">2.2. mx truncate lines - wrap long lines</a></li>
-<li><a href="#orga67c9ee">2.3. unfill paragraph - unfill paragraph :)</a></li>
-<li><a href="#org1da3ef6">2.4. Naudok sparse trees su C-c /</a></li>
-<li><a href="#org46d95ec">2.5. C-x 4 c - clone current buffer</a></li>
-<li><a href="#orgecf28b1">2.6. C-h m - current mode commands n stuff?</a></li>
-<li><a href="#org8b618a8">2.7. org-change-tag-in-region - batch apply tags</a></li>
-<li><a href="#orga35f688">2.8. org-md-export-to/as-markdown - export org to markdown</a></li>
-<li><a href="#org844149a">2.9. ctrl+c+/ in org file for filtering - org sparse tree!!!</a></li>
-<li><a href="#org829003e">2.10. clear sparse tree ctrl+c+/ ctrl+c+'</a></li>
-<li><a href="#org6d559fc">2.11. in org agenda press / and find ANYHTING you need!!!</a></li>
-<li><a href="#orga7ca146">2.12. Query replace from all files within folder:</a></li>
+<li><a href="#org797a8c7">2.1. C-c C-e m M (org-md-export-as-markdown)</a></li>
+<li><a href="#org5801b2f">2.2. mx truncate lines - wrap long lines</a></li>
+<li><a href="#orgb775222">2.3. unfill paragraph - unfill paragraph :)</a></li>
+<li><a href="#org47ecca3">2.4. Naudok sparse trees su C-c /</a></li>
+<li><a href="#org64c0c21">2.5. C-x 4 c - clone current buffer</a></li>
+<li><a href="#org955cc39">2.6. C-h m - current mode commands n stuff?</a></li>
+<li><a href="#org89b5405">2.7. org-change-tag-in-region - batch apply tags</a></li>
+<li><a href="#orgb510fd6">2.8. org-md-export-to/as-markdown - export org to markdown</a></li>
+<li><a href="#org7f2a6d2">2.9. ctrl+c+/ in org file for filtering - org sparse tree!!!</a></li>
+<li><a href="#org72005bd">2.10. clear sparse tree ctrl+c+/ ctrl+c+'</a></li>
+<li><a href="#orgdc084b9">2.11. in org agenda press / and find ANYHTING you need!!!</a></li>
+<li><a href="#org6efda6f">2.12. Query replace from all files within folder:</a></li>
 </ul>
 </li>
-<li><a href="#org99cbfe6">3. Shortcuts</a>
+<li><a href="#org9aed5d5">3. Shortcuts</a>
 <ul>
-<li><a href="#org41a54ea">3.1. Shortcuts</a>
+<li><a href="#org9a031f4">3.1. Shortcuts</a>
 <ul>
-<li><a href="#org4c1212b">3.1.1. network</a></li>
-<li><a href="#orga933f6c">3.1.2. emacs</a></li>
-<li><a href="#org7ab5b3b">3.1.3. Bindings</a></li>
+<li><a href="#orge92f658">3.1.1. network</a></li>
+<li><a href="#orgf42efd0">3.1.2. emacs</a></li>
+<li><a href="#orgbd7a09c">3.1.3. Bindings</a></li>
 </ul>
 </li>
-<li><a href="#orgfad4341">3.2. commands emacs</a>
+<li><a href="#org36124d9">3.2. commands emacs</a>
 <ul>
-<li><a href="#org73b7d34">3.2.1. ansi-term copy/paste</a></li>
+<li><a href="#orgfcc5237">3.2.1. ansi-term copy/paste</a></li>
 </ul>
 </li>
-<li><a href="#org89e53e3">3.3. Bookmarks emacs</a></li>
+<li><a href="#orgc836cba">3.3. Bookmarks emacs</a></li>
 </ul>
 </li>
 </ul>
@@ -77,8 +77,8 @@
 </nav>
 
 
-<div id="outline-container-org96dbbcc" class="outline-2">
-<h2 id="org96dbbcc"><span class="section-number-2">1</span> 2024-02-12 I have decided to put emacs on the shelf for a little while</h2>
+<div id="outline-container-orgdaf95b3" class="outline-2">
+<h2 id="orgdaf95b3"><span class="section-number-2">1</span> 2024-02-12 I have decided to put emacs on the shelf for a little while</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Here are a few key bindings that I have intensely used back then, not to forget:
@@ -98,53 +98,58 @@ C-h D - devdocs
 C-M a - start of class
 C-M e - start of class
 </p>
+
+<p>
+C-M u / C-M d / C-M n - jump to beginning/end of a block
+</p>
 </div>
 </div>
 
-<div id="outline-container-orgd5f219b" class="outline-2">
-<h2 id="orgd5f219b"><span class="section-number-2">2</span> Emacs commands (from work)</h2>
+
+<div id="outline-container-orgabd07c6" class="outline-2">
+<h2 id="orgabd07c6"><span class="section-number-2">2</span> Emacs commands (from work)</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org3f7ff99" class="outline-3">
-<h3 id="org3f7ff99"><span class="section-number-3">2.1</span> C-c C-e m M (org-md-export-as-markdown)</h3>
+<div id="outline-container-org797a8c7" class="outline-3">
+<h3 id="org797a8c7"><span class="section-number-3">2.1</span> C-c C-e m M (org-md-export-as-markdown)</h3>
 </div>
-<div id="outline-container-org3426f72" class="outline-3">
-<h3 id="org3426f72"><span class="section-number-3">2.2</span> mx truncate lines - wrap long lines</h3>
+<div id="outline-container-org5801b2f" class="outline-3">
+<h3 id="org5801b2f"><span class="section-number-3">2.2</span> mx truncate lines - wrap long lines</h3>
 </div>
-<div id="outline-container-orga67c9ee" class="outline-3">
-<h3 id="orga67c9ee"><span class="section-number-3">2.3</span> unfill paragraph - unfill paragraph :)</h3>
+<div id="outline-container-orgb775222" class="outline-3">
+<h3 id="orgb775222"><span class="section-number-3">2.3</span> unfill paragraph - unfill paragraph :)</h3>
 </div>
-<div id="outline-container-org1da3ef6" class="outline-3">
-<h3 id="org1da3ef6"><span class="section-number-3">2.4</span> Naudok sparse trees su C-c /</h3>
+<div id="outline-container-org47ecca3" class="outline-3">
+<h3 id="org47ecca3"><span class="section-number-3">2.4</span> Naudok sparse trees su C-c /</h3>
 </div>
-<div id="outline-container-org46d95ec" class="outline-3">
-<h3 id="org46d95ec"><span class="section-number-3">2.5</span> C-x 4 c - clone current buffer</h3>
+<div id="outline-container-org64c0c21" class="outline-3">
+<h3 id="org64c0c21"><span class="section-number-3">2.5</span> C-x 4 c - clone current buffer</h3>
 </div>
-<div id="outline-container-orgecf28b1" class="outline-3">
-<h3 id="orgecf28b1"><span class="section-number-3">2.6</span> C-h m - current mode commands n stuff?</h3>
+<div id="outline-container-org955cc39" class="outline-3">
+<h3 id="org955cc39"><span class="section-number-3">2.6</span> C-h m - current mode commands n stuff?</h3>
 </div>
-<div id="outline-container-org8b618a8" class="outline-3">
-<h3 id="org8b618a8"><span class="section-number-3">2.7</span> org-change-tag-in-region - batch apply tags</h3>
+<div id="outline-container-org89b5405" class="outline-3">
+<h3 id="org89b5405"><span class="section-number-3">2.7</span> org-change-tag-in-region - batch apply tags</h3>
 </div>
-<div id="outline-container-orga35f688" class="outline-3">
-<h3 id="orga35f688"><span class="section-number-3">2.8</span> org-md-export-to/as-markdown - export org to markdown</h3>
+<div id="outline-container-orgb510fd6" class="outline-3">
+<h3 id="orgb510fd6"><span class="section-number-3">2.8</span> org-md-export-to/as-markdown - export org to markdown</h3>
 </div>
-<div id="outline-container-org844149a" class="outline-3">
-<h3 id="org844149a"><span class="section-number-3">2.9</span> ctrl+c+/ in org file for filtering - org sparse tree!!!</h3>
+<div id="outline-container-org7f2a6d2" class="outline-3">
+<h3 id="org7f2a6d2"><span class="section-number-3">2.9</span> ctrl+c+/ in org file for filtering - org sparse tree!!!</h3>
 </div>
-<div id="outline-container-org829003e" class="outline-3">
-<h3 id="org829003e"><span class="section-number-3">2.10</span> clear sparse tree ctrl+c+/ ctrl+c+'</h3>
+<div id="outline-container-org72005bd" class="outline-3">
+<h3 id="org72005bd"><span class="section-number-3">2.10</span> clear sparse tree ctrl+c+/ ctrl+c+'</h3>
 </div>
-<div id="outline-container-org6d559fc" class="outline-3">
-<h3 id="org6d559fc"><span class="section-number-3">2.11</span> in org agenda press / and find ANYHTING you need!!!</h3>
+<div id="outline-container-orgdc084b9" class="outline-3">
+<h3 id="orgdc084b9"><span class="section-number-3">2.11</span> in org agenda press / and find ANYHTING you need!!!</h3>
 <div class="outline-text-3" id="text-2-11">
 <p>
 not necessarily by tag or todokwd
 </p>
 </div>
 </div>
-<div id="outline-container-orga7ca146" class="outline-3">
-<h3 id="orga7ca146"><span class="section-number-3">2.12</span> Query replace from all files within folder:</h3>
+<div id="outline-container-org6efda6f" class="outline-3">
+<h3 id="org6efda6f"><span class="section-number-3">2.12</span> Query replace from all files within folder:</h3>
 <div class="outline-text-3" id="text-2-12">
 <p>
 <a href="https://stackoverflow.com/questions/270930/using-emacs-to-recursively-find-and-replace-in-text-files-not-already-open">https://stackoverflow.com/questions/270930/using-emacs-to-recursively-find-and-replace-in-text-files-not-already-open</a>
@@ -173,8 +178,8 @@ Type * u to mark all unsaved files, type S to save all marked files
 </div>
 
 
-<div id="outline-container-org99cbfe6" class="outline-2">
-<h2 id="org99cbfe6"><span class="section-number-2">3</span> Shortcuts</h2>
+<div id="outline-container-org9aed5d5" class="outline-2">
+<h2 id="org9aed5d5"><span class="section-number-2">3</span> Shortcuts</h2>
 <div class="outline-text-2" id="text-3">
 <table>
 
@@ -437,15 +442,15 @@ Type * u to mark all unsaved files, type S to save all marked files
 </table>
 </div>
 
-<div id="outline-container-org41a54ea" class="outline-3">
-<h3 id="org41a54ea"><span class="section-number-3">3.1</span> Shortcuts</h3>
+<div id="outline-container-org9a031f4" class="outline-3">
+<h3 id="org9a031f4"><span class="section-number-3">3.1</span> Shortcuts</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Sasha - <a href="http://emacslife.com/read-lisp-tweak-emacs/beginner-3-make-things-more-convenient.html">http://emacslife.com/read-lisp-tweak-emacs/beginner-3-make-things-more-convenient.html</a>
 </p>
 </div>
-<div id="outline-container-org4c1212b" class="outline-4">
-<h4 id="org4c1212b"><span class="section-number-4">3.1.1</span> network</h4>
+<div id="outline-container-orge92f658" class="outline-4">
+<h4 id="orge92f658"><span class="section-number-4">3.1.1</span> network</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
 <li>traceroute delfi.lt</li>
@@ -458,8 +463,8 @@ n- ping
 </p>
 </div>
 </div>
-<div id="outline-container-orga933f6c" class="outline-4">
-<h4 id="orga933f6c"><span class="section-number-4">3.1.2</span> emacs</h4>
+<div id="outline-container-orgf42efd0" class="outline-4">
+<h4 id="orgf42efd0"><span class="section-number-4">3.1.2</span> emacs</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <ol class="org-ol">
 <li>M-g j     = Dumb jump</li>
@@ -676,12 +681,12 @@ you are reading the docs. NIIICE.
 </div>
 </div>
 
-<div id="outline-container-org7ab5b3b" class="outline-4">
-<h4 id="org7ab5b3b"><span class="section-number-4">3.1.3</span> Bindings</h4>
+<div id="outline-container-orgbd7a09c" class="outline-4">
+<h4 id="orgbd7a09c"><span class="section-number-4">3.1.3</span> Bindings</h4>
 <div class="outline-text-4" id="text-3-1-3">
 </div>
 <ol class="org-ol">
-<li><a id="orgfaf439b"></a>Emacs pasidaryk bindings patogesnius<br>
+<li><a id="orgafee8ad"></a>Emacs pasidaryk bindings patogesnius<br>
 <div class="outline-text-5" id="text-3-1-3-1">
 <p>
 Last change
@@ -698,18 +703,18 @@ Gal kaip revit??
 </p>
 </div>
 </li>
-<li><a id="org525ec64"></a>go to next paragraph su M-n M-p maybe<br></li>
-<li><a id="org40aa235"></a>go to last change emacs M={ }<br></li>
-<li><a id="org656806a"></a>go to last change emacs M={ }<br></li>
-<li><a id="org53ae119"></a>go to next paragraph su M-n M-p maybe<br></li>
-<li><a id="org19f2d51"></a>kaip suzinoti visas commands? pvz agenda&#x2026; shift + r clocktable, shift + L follow mode<br>
+<li><a id="orge8db826"></a>go to next paragraph su M-n M-p maybe<br></li>
+<li><a id="org1bf9ddd"></a>go to last change emacs M={ }<br></li>
+<li><a id="org18e5ddb"></a>go to last change emacs M={ }<br></li>
+<li><a id="orgeb0a8ca"></a>go to next paragraph su M-n M-p maybe<br></li>
+<li><a id="org116f2ec"></a>kaip suzinoti visas commands? pvz agenda&#x2026; shift + r clocktable, shift + L follow mode<br>
 <div class="outline-text-5" id="text-3-1-3-6">
 <p>
 gal su hydrom galima matyti?
 </p>
 </div>
 </li>
-<li><a id="org14c2527"></a>Vim bindings<br>
+<li><a id="orgdae102e"></a>Vim bindings<br>
 <div class="outline-text-5" id="text-3-1-3-7">
 <p>
 <a href="https://bbbscarter.wordpress.com/2012/09/13/emacs-bits-and-bobs/">https://bbbscarter.wordpress.com/2012/09/13/emacs-bits-and-bobs/</a>
@@ -738,16 +743,16 @@ Evil collection plugin in the future - "evil bindings in every package"
 </ul>
 </div>
 </li>
-<li><a id="orga354056"></a>M-x customize group RET org-pomodoro RET<br></li>
+<li><a id="orgfec1692"></a>M-x customize group RET org-pomodoro RET<br></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgfad4341" class="outline-3">
-<h3 id="orgfad4341"><span class="section-number-3">3.2</span> commands emacs</h3>
+<div id="outline-container-org36124d9" class="outline-3">
+<h3 id="org36124d9"><span class="section-number-3">3.2</span> commands emacs</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org73b7d34" class="outline-4">
-<h4 id="org73b7d34"><span class="section-number-4">3.2.1</span> ansi-term copy/paste</h4>
+<div id="outline-container-orgfcc5237" class="outline-4">
+<h4 id="orgfcc5237"><span class="section-number-4">3.2.1</span> ansi-term copy/paste</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 :CAPTURED:<span class="timestamp-wrapper"><span class="timestamp">[2023-06-15 Thu 08:30]</span></span>
@@ -766,8 +771,8 @@ with <code>C-c C-k</code>.
 </div>
 </div>
 </div>
-<div id="outline-container-org89e53e3" class="outline-3">
-<h3 id="org89e53e3"><span class="section-number-3">3.3</span> Bookmarks emacs</h3>
+<div id="outline-container-orgc836cba" class="outline-3">
+<h3 id="orgc836cba"><span class="section-number-3">3.3</span> Bookmarks emacs</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 C+h i - info mode
@@ -792,8 +797,8 @@ C+x r l - see all bookmarks
 	 </div>
 	 </div>
 	 <!-- Had to comment out this, because of the github actions, read in the docs for more detail -->
-	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-07-11 Thu 05:31</p> -->
-	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-07-11 Thu 05:30</p> -->
+	 <!-- <p class="date">This org file is <u>exported</u> to HTML: 2024-08-19 Mon 08:17</p> -->
+	 <!-- <p class="date">This org file is last <u>modified</u>: 2024-08-19 Mon 08:17</p> -->
 	 <!-- <p class="date">This org file is <u>created</u>: 2023-11-28 Tue 13:28</p> -->
 	 <div class="generated">
 	Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3) on <a href="https://www.gnu.org">GNU</a>/<a href="https://www.kernel.org/">Linux</a>
